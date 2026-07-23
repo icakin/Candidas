@@ -993,10 +993,10 @@ cand <- c(file.path(.d0, "supp_data"), file.path(.d0, "..", "outputs", "supp_dat
 DD <- cand[which(vapply(cand, dir.exists, logical(1)))[1]]
 if (is.na(DD)) stop("supp_data/ not found.")
 # project tables/ (isolate-level economics live here, not in supp_data)
-tcand <- c(file.path(.d0, "..", "tables"), file.path(.d0, "tables"), "tables")
+tcand <- c(file.path(.d0, "..", "results", "tables"), file.path(.d0, "results", "tables"), file.path("results", "tables"))
 TD <- tcand[which(vapply(tcand, dir.exists, logical(1)))[1]]
 if (is.na(TD)) stop("tables/ not found (need carbon_tax_isolate.csv, derived_N0_R_results_with_carbon.csv).")
-FD <- file.path(.d0, "..", "figures"); if (!dir.exists(FD)) FD <- file.path(DD, "..")
+FD <- file.path(.d0, "..", "results", "figures"); if (!dir.exists(FD)) FD <- file.path(DD, "..")
 FD <- normalizePath(FD, mustWork = FALSE)
 rd  <- function(f) read.csv(file.path(DD, f))
 rdt <- function(f) read.csv(file.path(TD, f))

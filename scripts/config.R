@@ -79,9 +79,9 @@ base_dir_manual <- ""   # e.g. "/Users/you/Desktop/Projects/Candidas"
 base_dir    <- .detect_base_dir()
 message("config.R: base_dir = ", base_dir)
 data_dir    <- file.path(base_dir, "data")
-tables_dir  <- file.path(base_dir, "tables")
-figures_dir <- file.path(base_dir, "figures")
-models_dir  <- file.path(base_dir, "models")
+tables_dir  <- file.path(base_dir, "results", "tables")
+figures_dir <- file.path(base_dir, "results", "figures")
+models_dir  <- file.path(base_dir, "results", "rds")
 
 for (d in c(data_dir, tables_dir, figures_dir, models_dir)) {
   dir.create(d, showWarnings = FALSE, recursive = TRUE)

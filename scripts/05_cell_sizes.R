@@ -43,7 +43,7 @@
 })
 
 base_dir   <- dirname(.script_dir)
-tables_dir <- file.path(base_dir, "tables")
+tables_dir <- file.path(base_dir, "results", "tables")
 dir.create(tables_dir, showWarnings = FALSE, recursive = TRUE)
 out_csv <- file.path(tables_dir, "otu_cell_sizes.csv")
 

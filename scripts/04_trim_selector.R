@@ -52,12 +52,12 @@
 
 # base_dir = parent of scripts/ (same rule as config.R); tables/ lives there.
 base_dir   <- dirname(.script_dir)
-tables_dir <- file.path(base_dir, "tables")
+tables_dir <- file.path(base_dir, "results", "tables")
 
 # Fallback ONLY to tables/ dirs relative to the working directory — never to any
 # hard-coded external location — so files can only ever land inside this project.
 if (!dir.exists(tables_dir)) {
-  cand <- c(file.path(getwd(), "tables"), file.path(getwd(), "..", "tables"))
+  cand <- c(file.path(base_dir, "results", "tables"), file.path(getwd(), "results", "tables"), file.path(getwd(), "..", "results", "tables"))
   hit  <- cand[dir.exists(cand)]
   if (length(hit)) tables_dir <- normalizePath(hit[1], mustWork = FALSE)
 }

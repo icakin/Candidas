@@ -46,7 +46,7 @@ cand <- c(file.path(.d0, "supp_data"), file.path(.d0, "..", "outputs", "supp_dat
           "supp_data")
 DD <- cand[which(vapply(cand, dir.exists, logical(1)))[1]]
 if (is.na(DD)) stop("supp_data/ not found.")
-FD <- file.path(.d0, "..", "figures"); if (!dir.exists(FD)) FD <- file.path(DD, "..")
+FD <- file.path(.d0, "..", "results", "figures"); if (!dir.exists(FD)) FD <- file.path(DD, "..")
 FD <- normalizePath(FD, mustWork = FALSE)
 rd <- function(f) read.csv(file.path(DD, f))
 save_fig <- function(f, name, h_mm, w_mm = 183) {
@@ -181,7 +181,7 @@ cand <- c(file.path(.d0, "supp_data"), file.path(.d0, "..", "outputs", "supp_dat
           "supp_data")
 DD <- cand[which(vapply(cand, dir.exists, logical(1)))[1]]
 if (is.na(DD)) stop("supp_data/ not found.")
-FD <- file.path(.d0, "..", "figures"); if (!dir.exists(FD)) FD <- file.path(DD, "..")
+FD <- file.path(.d0, "..", "results", "figures"); if (!dir.exists(FD)) FD <- file.path(DD, "..")
 FD <- normalizePath(FD, mustWork = FALSE)
 
 # ---- a  capacity is a clade-level trait (variance components) ----------------
