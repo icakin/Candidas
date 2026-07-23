@@ -105,5 +105,8 @@ colored_center(50,0.35,[("C. auris ",INK,"bold",True),("II 0.39",CIA["II"],"bold
     ("   <   ",SUB,"normal",False),("I 0.60",CIA["I"],"bold",False),("   ≈   ",SUB,"normal",False),
     ("III 0.62",CIA["III"],"bold",False),("   <   ",SUB,"normal",False),("IV 0.71",CIA["IV"],"bold",False)],8.4)
 
-plt.savefig("/home/claude/FIG_model_schematic.png",dpi=300,bbox_inches="tight",facecolor="white")
+import os as _os
+_out = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "results", "figures", "manuscript")
+_os.makedirs(_out, exist_ok=True)
+plt.savefig(_os.path.join(_out, "FIG_model_schematic.png"), dpi=300, bbox_inches="tight", facecolor="white")
 print("saved")

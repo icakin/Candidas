@@ -311,11 +311,12 @@ TG <- seq(T_MIN, T_MAX, by = 0.25)
 
 save_fig <- function(f, name, h_mm, w_mm = 183) {
   W <- w_mm / 25.4; H <- h_mm / 25.4
-  ggsave(file.path(figures_dir, paste0(name, ".png")), f, width = W, height = H,
+  figMSdir <- file.path(figures_dir, "manuscript"); dir.create(figMSdir, recursive = TRUE, showWarnings = FALSE)
+  ggsave(file.path(figMSdir, paste0(name, ".png")), f, width = W, height = H,
          dpi = 600, bg = "white")
   ok <- tryCatch({
     dv <- if (isTRUE(capabilities("cairo"))) grDevices::cairo_pdf else grDevices::pdf
-    ggsave(file.path(figures_dir, paste0(name, ".pdf")), f, width = W, height = H,
+    ggsave(file.path(figMSdir, paste0(name, ".pdf")), f, width = W, height = H,
            device = dv, bg = "white"); TRUE
   }, error = function(e) { message("  PDF failed (", name, "): ",
                                    conditionMessage(e)); FALSE })
@@ -996,7 +997,7 @@ if (is.na(DD)) stop("supp_data/ not found.")
 tcand <- c(file.path(.d0, "..", "results", "tables"), file.path(.d0, "results", "tables"), file.path("results", "tables"))
 TD <- tcand[which(vapply(tcand, dir.exists, logical(1)))[1]]
 if (is.na(TD)) stop("tables/ not found (need carbon_tax_isolate.csv, derived_N0_R_results_with_carbon.csv).")
-FD <- file.path(.d0, "..", "results", "figures"); if (!dir.exists(FD)) FD <- file.path(DD, "..")
+FD <- file.path(.d0, "..", "results", "figures", "manuscript"); dir.create(FD, recursive = TRUE, showWarnings = FALSE)
 FD <- normalizePath(FD, mustWork = FALSE)
 rd  <- function(f) read.csv(file.path(DD, f))
 rdt <- function(f) read.csv(file.path(TD, f))

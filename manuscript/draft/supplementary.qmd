@@ -4,7 +4,7 @@ subtitle: "The metabolic cost of the febrile host across the priority Candida"
 ---
 
 # Supplementary figures
-![](../../results/figures/FIG_MODEL_SUPP.png){width=100%}
+![](../../results/figures/manuscript/FIG_MODEL_SUPP.png){width=100%}
 
 **Supplementary Figure 1. The effective growth-capacity axis is a real,
 clade-level, non-coding, non-transcriptional trait.** (**a**) Capacity
@@ -19,7 +19,7 @@ for the model\'s 928 metabolic-enzyme genes (red) against the genome
 background (grey), from GEO GSE165762; the metabolic set is not
 coordinately shifted (Wilcoxon P = 0.93).
 
-![](../../results/figures/FIG_MODEL_SUPP_consistency.png){width=100%}
+![](../../results/figures/manuscript/FIG_MODEL_SUPP_consistency.png){width=100%}
 
 **Supplementary Figure 2. Self-consistency check.** Effective
 growth-capacity (the fitted curve-height parameter) versus measured peak
