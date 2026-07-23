@@ -25,7 +25,6 @@ _to_delete/
 
 # --- external sub-projects (their own git repos / GitHub) ---
 /etcGEMs/
-/cauris_etcgem/
 
 # --- large regenerable data blobs (kept out of git; regenerate from data/) ---
 Oxygen_All_Long.csv
