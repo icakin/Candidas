@@ -136,9 +136,11 @@ Clade II (0.85, 0.68-1.04) and Clade I versus Clade III (1.18,
 
 ![](../../results/figures/manuscript/FIG2_the_bill.png){width=100%}
 
+**Figure 2. A febrile host imposes a quantifiable, taxon-specific carbon tax.** (**a**) Relative respiratory cost — per-cell respiration per unit growth, expressed relative to each taxon's own cheapest temperature — versus temperature (bold lines, clade-level posterior medians; bands, 95% CrI). At 40 °C (fever) this cost ranged from 1.34× for *C. auris* Clade IV to 3.13× for *C. parapsilosis*. Shaded band, 37–40 °C (body to fever). (**b**) Environmental growth optimum versus the metabolic cost of fever across the five taxa: warmer-adapted taxa pay less at fever (Spearman ρ = −0.90, 95% CrI −1.00 to −0.30; points, taxon medians; bars, 95% CrI). (**c**) The three-degree step from body temperature (37 °C) to fever (40 °C): growth retained (left) and the rise in respiratory cost per unit growth (right) for each taxon (points, posterior medians; bars, 95% CrI). (**d**) Pairwise contrasts of the 40 °C fever cost; 8 of 10 are resolved (95% CrI excluding a ratio of 1), and all four *C. auris* clades pay credibly less than *C. parapsilosis*.
+
 ![](../../results/figures/manuscript/FIG_model_schematic.png){width=100%}
 
-**Figure 4. The sequence-grounded etc-GEM pipeline.** Fixed,
+**Figure 3. The sequence-grounded etc-GEM pipeline.** Fixed,
 genome-derived inputs (the iRV973 metabolic network; per-reaction
 turnover kcat from EC/DLKcat; enzyme molecular weights and per-clade
 sequences; per-enzyme thermal parameters Topt, Tm and ΔCp; and
@@ -148,20 +150,20 @@ to a shared enzyme budget. Three parameters (ΔTopt, ΔCp-scale, and
 effective-capacity kcat-scale) are then calibrated by differential
 evolution and MCMC to each clade\'s measured growth curve. Because the
 genome is \>99% identical across clades, only the effective
-growth-capacity axis differs, giving the per-clade values in Figure 3.
+growth-capacity axis differs, giving the per-clade values in Figure 4.
 
 The four clades are near-identical at the enzyme level: median
 whole-proteome amino-acid identity was 99.4-100% across clades I-IV
 (reciprocal best-hit alignment of the four reference proteomes).
 Consequently the genome-derived model predicts a single, essentially
 identical thermal curve for all four clades, whereas the measured clades
-differ roughly two-fold in peak growth (Fig. 3b). Sequence variation
+differ roughly two-fold in peak growth (Fig. 4b). Sequence variation
 therefore cannot account for the clade differences.
 
 The difference resides instead in an effective growth-capacity axis
 (kcat-scale), an effective flux-generating capacity per unit modelled
 metabolic proteome that lumps enzyme abundance, active fraction,
-substrate saturation, maintenance and respiratory coupling (Fig. 3c). It
+substrate saturation, maintenance and respiratory coupling (Fig. 4c). It
 is a single proteome-wide capacity scaling, not a change in the
 individual database-derived kcat values, which are shared across the
 near-identical clades. Its posterior ordered with thermotolerance (Clade
@@ -176,10 +178,10 @@ economics.** The growth-fitted effective-capacity scalar covaried across
 the twelve isolates with independently measured, respiration-containing
 outcomes. It was negatively associated with the cost of a fever (r =
 -0.86, 95% CI -0.96 to -0.76): the higher a clade\'s capacity, the
-cheaper its fever (Fig. 3d). It was likewise negatively associated with
+cheaper its fever (Fig. 4d). It was likewise negatively associated with
 per-cell respiration at the growth optimum (r = -0.64), so that
 higher-capacity clades sustain growth while respiring less carbon (Fig.
-3e). These cross-phenotype associations indicate that the scalar
+4e). These cross-phenotype associations indicate that the scalar
 captures a reproducible physiological axis extending beyond peak-growth
 amplitude, but they do not constitute independent mechanistic validation
 of enzyme abundance. The fever tax is itself derived from measured
@@ -221,7 +223,7 @@ partitions but does not fully close these branches.
 
 ![](../../results/figures/manuscript/FIG_MODEL.png){width=100%}
 
-**Figure 3. Clade thermotolerance is a growth-tunable trait, not
+**Figure 4. Clade thermotolerance is a growth-tunable trait, not
 sequence.** (**a**) Per-clade calibration of the sequence-grounded
 etc-GEM: grey dashed, genome-only (a-priori) prediction; white dashed,
 calibrated model; colour and band, Bayesian data fit (95% CrI); points,

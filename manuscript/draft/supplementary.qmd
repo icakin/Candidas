@@ -26,4 +26,4 @@ growth-capacity (the fitted curve-height parameter) versus measured peak
 growth across the twelve isolates (r = 0.96). Because capacity scales
 curve height by construction, this relationship is expected and is shown
 as a consistency check, not as independent evidence; the out-of-sample
-tests are in Fig. 3d-e.
+tests are in Fig. 4d-e.
