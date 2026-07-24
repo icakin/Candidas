@@ -6,7 +6,7 @@ crossref:
   fig-prefix: "Fig."
 ---
 
-## Results
+# Results
 
 Dissolved-oxygen respirometry was used to fit thermal performance curves
 for four Candida *auris* clades (I-IV; three isolates each) and C.
@@ -44,7 +44,7 @@ performance curves (Fig. 1a) and E~G~ thus derive from a rate constant;
 the r-to-carbon conversion enters only where CUE and downstream ratios
 are formed.
 
-# Growth and respiration decouple, placing the carbon-economy optimum below body temperature
+## Growth and respiration decouple, placing the carbon-economy optimum below body temperature
 Growth rate rose with temperature to a clade-level optimum near 33-36 °C
 and then declined, following the expected unimodal thermal performance
 curve (Fig. 1a). Per-cell respiration showed no such turnover: it
@@ -88,7 +88,7 @@ optimum of CUE (filled points, 95% CrI; open points, growth optimum;
 small points, isolates), with the posterior probability that it lies
 below 37 °C. Shaded band, 37 to 40 °C (body to fever).
 
-**A febrile host imposes a quantifiable, taxon-specific carbon tax**
+## A febrile host imposes a quantifiable, taxon-specific carbon tax
 
 Because the economic optimum lies below 37 °C, every taxon operates at a
 carbon penalty in the host. We express this as the relative respiratory
@@ -138,6 +138,10 @@ Clade II (0.85, 0.68-1.04) and Clade I versus Clade III (1.18,
 
 **Figure 2. A febrile host imposes a quantifiable, taxon-specific carbon tax.** (**a**) Relative respiratory cost — per-cell respiration per unit growth, expressed relative to each taxon's own cheapest temperature — versus temperature (bold lines, clade-level posterior medians; bands, 95% CrI). At 40 °C (fever) this cost ranged from 1.34× for C. *auris* Clade IV to 3.13× for C. *parapsilosis*. Shaded band, 37–40 °C (body to fever). (**b**) Environmental growth optimum versus the metabolic cost of fever across the five taxa: warmer-adapted taxa pay less at fever (Spearman ρ = −0.90, 95% CrI −1.00 to −0.30; points, taxon medians; bars, 95% CrI). (**c**) The three-degree step from body temperature (37 °C) to fever (40 °C): growth retained (left) and the rise in respiratory cost per unit growth (right) for each taxon (points, posterior medians; bars, 95% CrI). (**d**) Pairwise contrasts of the 40 °C fever cost; 8 of 10 are resolved (95% CrI excluding a ratio of 1), and all four C. *auris* clades pay credibly less than C. *parapsilosis*.
 
+## Clade thermotolerance is a growth-tunable trait, not a sequence difference
+
+The respirometry establishes that the four *C. auris* clades differ roughly two-fold in peak growth — and correspondingly in their cost of fever — despite being almost identical in coding sequence. What sets these differences? To ask whether they are written into the genome, we built a sequence-grounded, enzyme- and temperature-constrained genome-scale model (etc-GEM) that predicts each clade's thermal growth curve from genome-derived inputs alone, then calibrates a small number of physiological parameters to the measured curves (Fig. 3). If coding-sequence differences drive the clade variation, this genome-grounded model should reproduce it directly; if they do not, calibration localises the difference to whichever non-sequence axis remains.
+
 ![](../../results/figures/manuscript/FIG_model_schematic.png){width=100%}
 
 **Figure 3. The sequence-grounded etc-GEM pipeline.** Fixed,
@@ -155,7 +159,7 @@ growth-capacity axis differs, giving the per-clade values in Figure 4.
 The four clades are near-identical at the enzyme level: median
 whole-proteome amino-acid identity was 99.4-100% across clades I-IV
 (reciprocal best-hit alignment of the four reference proteomes).
-Consequently the genome-derived model (Fig. 3) predicts a single, essentially
+Consequently the genome-derived model predicts a single, essentially
 identical thermal curve for all four clades, whereas the measured clades
 differ roughly two-fold in peak growth (Fig. 4b). Sequence variation
 therefore cannot account for the clade differences. A per-clade calibration nonetheless recovers each measured growth curve (Fig. 4a).
