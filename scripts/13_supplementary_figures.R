@@ -12,17 +12,35 @@
 # Data: cauris_etcgem outputs/supp_data/. Style matches 12_main_figures.R.
 #   Rscript 13_supplementary_figures.R   (needs ggplot2, patchwork)
 # =============================================================================
-.d0 <- tryCatch(dirname(sys.frame(1)$ofile), error = function(e) NA_character_)
+# script directory: works under Rscript (--file=), source() and RStudio
+.fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+.d0 <- if (length(.fa)) dirname(normalizePath(sub("^--file=", "", .fa[1]), mustWork = FALSE)) else
+         tryCatch(dirname(sys.frame(1)$ofile), error = function(e) NA_character_)
 if (length(.d0) == 0 || is.na(.d0) || !nzchar(.d0)) {
   if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable() &&
       nzchar(rstudioapi::getActiveDocumentContext()$path))
     .d0 <- dirname(rstudioapi::getActiveDocumentContext()$path) else .d0 <- getwd()
 }
+# project root: nearest ancestor of the script (or cwd) holding results/ and scripts/
+.find_root <- function(p) {
+  p <- normalizePath(p, mustWork = FALSE)
+  for (i in 0:4) {
+    if (dir.exists(file.path(p, "results")) && dir.exists(file.path(p, "scripts"))) return(p)
+    p <- normalizePath(file.path(p, ".."), mustWork = FALSE)
+  }
+  NA_character_
+}
+.root <- .find_root(.d0)
+if (is.na(.root)) .root <- .find_root(getwd())
+if (is.na(.root)) stop("Cannot locate the project root (a folder containing results/ and scripts/).")
 suppressPackageStartupMessages({ library(ggplot2); library(patchwork) })
 
 OI <- c(I = "#0072B2", II = "#CC79A7", III = "#009E73", IV = "#E69F00")
 SHORT <- c(I = "C. auris I", II = "C. auris II", III = "C. auris III", IV = "C. auris IV")
 RED <- "#B22222"; GRPS <- c("I", "II", "III", "IV")
+# species name italic, clade numeral roman, in every legend and axis
+SHORT_P <- setNames(paste0("italic('C. auris')~", GRPS), GRPS)
+lab_sp  <- function(x) { p <- SHORT_P[as.character(x)]; p[is.na(p)] <- paste0("'", x[is.na(p)], "'"); parse(text = p) }
 T_BODY <- 37; T_FEVER <- 40; T_MIN <- 22; T_MAX <- 44
 XLAB_T <- expression("Temperature ("*degree*"C)")
 th <- theme_classic(base_size = 8) + theme(
@@ -41,12 +59,15 @@ febrile <- function() list(
   annotate("rect", xmin = T_BODY, xmax = T_FEVER, ymin = -Inf, ymax = Inf, fill = RED, alpha = .07),
   geom_vline(xintercept = c(T_BODY, T_FEVER), colour = RED, linetype = "22", linewidth = .32))
 
-cand <- c(file.path(.d0, "supp_data"), file.path(.d0, "..", "outputs", "supp_data"),
-          file.path(.d0, "..", "cauris_etcgem", "strains", "eci_cauris", "outputs", "supp_data"),
+cand <- c(file.path(.root, "cauris_etcgem", "strains", "eci_cauris", "outputs", "supp_data"),
+          file.path(.root, "outputs", "supp_data"),
+          file.path(.d0,  "supp_data"),
+          file.path(.d0,  "..", "outputs", "supp_data"),
+          file.path(.d0,  "..", "cauris_etcgem", "strains", "eci_cauris", "outputs", "supp_data"),
           "supp_data")
 DD <- cand[which(vapply(cand, dir.exists, logical(1)))[1]]
-if (is.na(DD)) stop("supp_data/ not found.")
-FD <- file.path(.d0, "..", "results", "figures", "manuscript"); dir.create(FD, recursive = TRUE, showWarnings = FALSE)
+if (is.na(DD)) stop("supp_data/ not found. Looked in:\n  ", paste(cand, collapse = "\n  "))
+FD <- file.path(.root, "results", "figures", "manuscript"); dir.create(FD, recursive = TRUE, showWarnings = FALSE)
 FD <- normalizePath(FD, mustWork = FALSE)
 rd <- function(f) read.csv(file.path(DD, f))
 save_fig <- function(f, name, h_mm, w_mm = 183) {
@@ -69,7 +90,7 @@ fa <- ggplot(pvo, aes(observed, predicted, colour = clade)) +
   annotate("text", x = lim[1], y = lim[2], hjust = 0, vjust = 1, size = 2.2, parse = TRUE,
            fontface = "bold", colour = "grey15",
            label = sprintf("RMSE == %.3f~h^-1", sqrt(mean(pvo$residual^2)))) +
-  scale_colour_manual(values = OI, labels = SHORT) +
+  scale_colour_manual(values = OI, labels = lab_sp) +
   coord_equal(xlim = lim, ylim = lim) +
   labs(x = expression("Observed "*italic(mu)*" (h"^-1*")"), y = expression("Predicted (h"^-1*")"),
        title = "Predictions track measurements",
@@ -83,8 +104,9 @@ fb <- ggplot(pvo, aes(temp_C, residual, colour = clade)) +
   geom_line(linewidth = .5, alpha = .7) + geom_point(size = 1.2, alpha = .9) +
   scale_colour_manual(values = OI, guide = "none") +
   scale_x_continuous(breaks = seq(24, 44, 4)) +
-  labs(x = XLAB_T, y = expression("Residual (h"^-1*")"), title = "Residuals unstructured",
-       subtitle = "No bias across temperature", tag = "b") + th
+  labs(x = XLAB_T, y = expression("Residual (h"^-1*")"), title = "Residuals unstructured across the working range",
+       subtitle = paste0("No bias 24-40 \u00B0C; all four clades deviate together at the 22 and 44 \u00B0C limits.\n",
+                         "Dashed lines and shading, 37-40 \u00B0C febrile window."), tag = "b") + th
 
 # ---- c: identifiability (3 knobs) -------------------------------------------
 prof <- rd("identifiability_profiles.csv"); opt <- rd("identifiability_optima.csv")
@@ -96,11 +118,12 @@ fc <- ggplot(prof, aes(value, rmse, colour = clade)) +
   geom_point(data = opt, aes(opt_value, opt_rmse, fill = clade), shape = 21, size = 1.9,
              colour = "white", stroke = .4) +
   facet_wrap(~ kn, scales = "free_x", nrow = 1) +
-  scale_colour_manual(values = OI, labels = SHORT) + scale_fill_manual(values = OI, guide = "none") +
+  scale_colour_manual(values = OI, labels = lab_sp) + scale_fill_manual(values = OI, guide = "none") +
   coord_cartesian(ylim = c(0, quantile(prof$rmse, .95, na.rm = TRUE))) +
   labs(x = NULL, y = expression("RMSE (h"^-1*")"),
-       title = "Every knob is identifiable (a single clear RMSE valley; dot = fit)",
-       subtitle = "The point-estimate stand-in for a posterior", tag = "c") +
+       title = "Each knob has a well-defined optimum (dot = fit)",
+       subtitle = paste0("One-dimensional profiles, remaining knobs held at the fit; not a joint identifiability test.\n",
+                         "In the posterior dCp-scale and kcat-scale are correlated (r = 0.43 to 0.70 by clade)."), tag = "c") +
   guides(colour = guide_legend(nrow = 1)) +
   th + theme(strip.background = element_blank(),
              strip.text = element_text(size = 6.8, face = "bold", colour = "grey20"),
@@ -118,17 +141,17 @@ fd <- ggplot(cap) +
   geom_point(aes(capacity, clade), shape = 4, size = 2.2, stroke = .9, colour = "grey25") +
   geom_text(aes(median, clade, label = sprintf("%.2f", median)), vjust = -1.05,
             size = 2.0, colour = "grey15") +
-  scale_colour_manual(values = OI, guide = "none") + scale_y_discrete(labels = SHORT) +
+  scale_colour_manual(values = OI, guide = "none") + scale_y_discrete(labels = lab_sp) +
   labs(x = "Effective growth-capacity (kcat-scale)", y = NULL,
        title = "Two calibration methods agree on the ordering",
-       subtitle = "Dot + bar = Bayesian (median, 95% CrI);  x = differential evolution (runs slightly lower)", tag = "d") +
-  th + theme(axis.text.y = element_text(size = 6.8, face = "italic"),
+       subtitle = "Dot + bar = Bayesian (median, 95% CrI);  x = differential evolution (the two agree to within 0.02)", tag = "d") +
+  th + theme(axis.text.y = element_text(size = 6.8),
              axis.line.y = element_blank(), axis.ticks.y = element_blank(),
              panel.grid.major.y = element_line(linewidth = .2, colour = "grey94"))
 
 FIG <- (fa | fb) / fc / fd + patchwork::plot_layout(heights = c(1, .95, .5)) +
   patchwork::plot_annotation(
-    title = "Supplementary | etc-GEM model diagnostics: fit, identifiability, and method robustness",
+    title = "etc-GEM model diagnostics: fit, identifiability, and method robustness",
     theme = theme(plot.title = element_text(size = 9.5, face = "bold", colour = "grey5",
                                             margin = margin(b = 3)))) &
   theme(plot.tag = element_text(size = 10, face = "bold"))
@@ -155,12 +178,27 @@ message("FIG_MODEL_SUPP -> ", FD)
 #   d  metabolic vs genome log2FC, Clade I vs II, GSE165762     [capacity_expression_CladeI_vs_II.csv]
 # Style matches 20/21 (Okabe-Ito, theme_classic).  Rscript 13_supplementary_figures.R
 # =============================================================================
-.d0 <- tryCatch(dirname(sys.frame(1)$ofile), error = function(e) NA_character_)
+# script directory: works under Rscript (--file=), source() and RStudio
+.fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+.d0 <- if (length(.fa)) dirname(normalizePath(sub("^--file=", "", .fa[1]), mustWork = FALSE)) else
+         tryCatch(dirname(sys.frame(1)$ofile), error = function(e) NA_character_)
 if (length(.d0) == 0 || is.na(.d0) || !nzchar(.d0)) {
   if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable() &&
       nzchar(rstudioapi::getActiveDocumentContext()$path))
     .d0 <- dirname(rstudioapi::getActiveDocumentContext()$path) else .d0 <- getwd()
 }
+# project root: nearest ancestor of the script (or cwd) holding results/ and scripts/
+.find_root <- function(p) {
+  p <- normalizePath(p, mustWork = FALSE)
+  for (i in 0:4) {
+    if (dir.exists(file.path(p, "results")) && dir.exists(file.path(p, "scripts"))) return(p)
+    p <- normalizePath(file.path(p, ".."), mustWork = FALSE)
+  }
+  NA_character_
+}
+.root <- .find_root(.d0)
+if (is.na(.root)) .root <- .find_root(getwd())
+if (is.na(.root)) stop("Cannot locate the project root (a folder containing results/ and scripts/).")
 suppressPackageStartupMessages({ library(ggplot2); library(patchwork) })
 
 OI <- c(I = "#0072B2", II = "#CC79A7", III = "#009E73", IV = "#E69F00")
@@ -176,12 +214,15 @@ th <- theme_classic(base_size = 8) + theme(
   plot.subtitle = element_text(size = 6.8, colour = "grey35"),
   plot.title.position = "plot", plot.margin = margin(4, 6, 3, 4))
 
-cand <- c(file.path(.d0, "supp_data"), file.path(.d0, "..", "outputs", "supp_data"),
-          file.path(.d0, "..", "cauris_etcgem", "strains", "eci_cauris", "outputs", "supp_data"),
+cand <- c(file.path(.root, "cauris_etcgem", "strains", "eci_cauris", "outputs", "supp_data"),
+          file.path(.root, "outputs", "supp_data"),
+          file.path(.d0,  "supp_data"),
+          file.path(.d0,  "..", "outputs", "supp_data"),
+          file.path(.d0,  "..", "cauris_etcgem", "strains", "eci_cauris", "outputs", "supp_data"),
           "supp_data")
 DD <- cand[which(vapply(cand, dir.exists, logical(1)))[1]]
-if (is.na(DD)) stop("supp_data/ not found.")
-FD <- file.path(.d0, "..", "results", "figures", "manuscript"); dir.create(FD, recursive = TRUE, showWarnings = FALSE)
+if (is.na(DD)) stop("supp_data/ not found. Looked in:\n  ", paste(cand, collapse = "\n  "))
+FD <- file.path(.root, "results", "figures", "manuscript"); dir.create(FD, recursive = TRUE, showWarnings = FALSE)
 FD <- normalizePath(FD, mustWork = FALSE)
 
 # ---- a  capacity is a clade-level trait (variance components) ----------------
@@ -233,7 +274,9 @@ fc <- ggplot(idd, aes(clade, pid, fill = clade)) +
        title = "Coding sequence is >99% identical", subtitle = "diamond RBH, whole proteome (~5,400 prot.)", tag = "c") + th
 
 # ---- d  not bulk transcription either (GSE165762, Clade I vs II) -------------
-nf <- file.path(.d0, "..", "data", "expression", "capacity_expression_CladeI_vs_II.csv")
+nf <- file.path(.root, "data", "expression", "capacity_expression_CladeI_vs_II.csv")
+if (!file.exists(nf)) nf <- file.path(.d0, "..", "data", "expression", "capacity_expression_CladeI_vs_II.csv")
+if (!file.exists(nf)) nf <- file.path(.d0, "capacity_expression_CladeI_vs_II.csv")
 if (file.exists(nf)) {
   de <- read.csv(nf); de$grp <- ifelse(de$is_metab, "metabolic", "genome background")
   m <- de$logFC[de$is_metab]; o <- de$logFC[!de$is_metab]

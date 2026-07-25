@@ -209,13 +209,13 @@ Candida}
 \section{Results}\label{results}
 
 Dissolved-oxygen respirometry was used to fit thermal performance curves
-for four Candida \emph{auris} clades (I-IV; three isolates each) and C.
-\emph{parapsilosis} (three isolates), across 22-44 °C (12 temperatures).
-Growth was modelled with a Sharpe-Schoolfield function and per-cell
-respiration with a Boltzmann-Arrhenius function, both fitted
-hierarchically (isolates nested within clades) in a Bayesian framework.
-Unless stated, values are posterior medians with 95\% credible intervals
-(CrI).
+for four \emph{Candida auris} clades (I-IV; three isolates each) and
+\emph{C. parapsilosis} (three isolates), across 22-44 °C (12
+temperatures). Growth was modelled with a Sharpe-Schoolfield function
+and per-cell respiration with a Boltzmann-Arrhenius function, both
+fitted hierarchically (isolates nested within clades) in a Bayesian
+framework. Unless stated, values are posterior medians with 95\%
+credible intervals (CrI).
 
 \subsection{Methods (summary)}\label{methods-summary}
 
@@ -248,6 +248,80 @@ comparable to the respiration activation energy E\textsubscript{R}.
 Growth thermal performance curves (Fig. 1a) and E\textsubscript{G} thus
 derive from a rate constant; the r-to-carbon conversion enters only
 where CUE and downstream ratios are formed.
+
+\subsection{Model construction and
+calibration}\label{model-construction-and-calibration}
+
+\textbf{Metabolic network and enzyme constraint.} The metabolic backbone
+was iRV973, the curated genome-scale reconstruction of \emph{C. auris}
+(strain B8441, Clade I; 973 genes, 2,863 reactions, 2,150
+metabolites)\textsuperscript{2}. Following the enzyme- and
+temperature-constrained (etc-GEM) framework\textsuperscript{3}, as
+implemented in the etcGEMs pipeline\textsuperscript{4,5}, each reaction
+was required to draw enzyme mass (flux / kcat × molecular weight) from a
+shared, bounded proteome pool, so that flux is limited by catalytic
+capacity as well as by stoichiometry. The constraint was applied through
+a per-reaction kcat and molecular-weight table rather than a full GECKO
+reconstruction\textsuperscript{6}; unconstrained flux-balance growth of
+the base network was 0.49 h\textsuperscript{−1}.
+
+\textbf{Gene-to-protein assignment and enzyme parameters.} The
+reconstruction's gene identifiers (CJI97 locus tags) were mapped to the
+B8441 reference proteome (B9J08 locus tags) by a prefix reconciliation
+that was cross-validated against two independent NCBI annotations, which
+agreed on the protein sequence for 99.5\% of genes; 928 of 973 genes
+(95\%) received a sequence and a molecular weight (median 47 kDa).
+Per-reaction turnover numbers were assigned from enzyme-class (EC)
+medians of the DLKcat experimental kcat compilation\textsuperscript{7}
+(approximately 17,000 values), covering 858 reactions with a median
+fallback elsewhere, referenced to 30 °C. Per-enzyme thermal optima
+(Topt) were predicted from sequence with TOME\textsuperscript{8};
+melting temperatures (Tm) were transferred by homology from the
+\emph{Saccharomyces cerevisiae} meltome\textsuperscript{9} (median 42\%
+identity; assigned for 47\% of enzymes, with a proteome-mean fallback of
+49.6 °C otherwise); and the heat-capacity change (ΔCp) was set from a
+literature macromolecular-rate-theory prior\textsuperscript{10}.
+
+\textbf{Thermal response and growth prediction.} Each enzyme's turnover
+was made temperature-dependent, and the high-temperature decline of
+growth was modelled with macromolecular rate theory (MMRT), in which the
+heat-capacity curvature (ΔCp) produces a smooth, rounded fall-off. This
+formulation was chosen in preference to a two-state unfolding
+(``melting-cliff'') collapse because the measured \emph{C. auris}
+thermal-performance curves rise to a peak near 34 °C and decline
+gradually rather than terminating in an abrupt high-temperature cliff.
+At each temperature on a 20--46 °C grid (approximately 1 °C steps) the
+model maximised growth subject to the temperature-adjusted enzyme
+budget, drawn from a total protein content of about 0.5 g
+gDW\textsuperscript{−1} partitioned into metabolic and maintenance
+sectors anchored to a single 30 °C \emph{C. auris}
+proteome\textsuperscript{11}; carbon (glucose) uptake was left
+unconstrained so that the enzyme budget, and not a medium-supply cap,
+set the height of the curve.
+
+\textbf{Calibration.} Three global parameters (a thermal-optimum shift
+ΔTopt, a curvature scale ΔCp-scale, and an effective-capacity scale
+kcat-scale) were fitted jointly to each clade's measured growth curve by
+differential evolution, with Markov-chain Monte Carlo (emcee) providing
+posterior distributions and credible intervals; all remaining inputs
+were fixed a priori. Joint rather than sequential optimisation was
+required because the parameters interact strongly. The calibrated model
+reproduced the measured curves with R\textsuperscript{2} = 0.96, 0.94,
+0.97 and 0.96 for Clades I--IV respectively (Clade I peak 0.80
+h\textsuperscript{−1} at 34 °C, against a measured 0.85
+h\textsuperscript{−1} at 34 °C).
+
+\textbf{Extension to four clades.} The Clade I reconstruction was
+propagated to Clades II--IV by orthology-mapping the iRV973 genes to
+each clade's reference proteome (B11220, B11221, B11243; 922--924 of 928
+orthologs recovered, median identity 99.5--100\%) and substituting each
+clade's sequence-derived molecular weights; all other inputs were held
+fixed. Because the enzymes are near-identical across clades, the
+a-priori (genome-only) model returns an essentially identical curve for
+all four clades, so that the per-clade calibration localises the
+between-clade differences to the effective-capacity axis. Analyses used
+cobrapy\textsuperscript{12}, with differential evolution from SciPy and
+MCMC from emcee\textsuperscript{13}.
 
 \subsection{Growth and respiration decouple, placing the carbon-economy
 optimum below body
@@ -307,18 +381,18 @@ Because the economic optimum lies below 37 °C, every taxon operates at a
 carbon penalty in the host. We express this as the relative respiratory
 cost, i.e.~respiration per unit growth relative to each taxon's own
 cheapest temperature (Fig. 2a). At 40 °C (fever), this cost reached
-1.34× for C. \emph{auris} Clade IV but 3.13× for C. \emph{parapsilosis}.
+1.34× for \emph{C. auris} Clade IV but 3.13× for \emph{C. parapsilosis}.
 
 The three-degree step from body temperature (37 °C) to fever (40 °C)
 captures the clinical penalty most directly (Fig. 2c). Over this
-interval C. \emph{parapsilosis} retained only 58\% of its 37 °C growth
+interval \emph{C. parapsilosis} retained only 58\% of its 37 °C growth
 rate (0.58, 95\% CrI 0.50-0.67) while its respiratory cost per unit
-growth rose 1.96× (1.71-2.31). The C. \emph{auris} clades were far less
+growth rose 1.96× (1.71-2.31). The \emph{C. auris} clades were far less
 affected: Clade IV retained 89\% of growth (0.89, 0.85-0.93) at a cost
 increase of only 1.25× (1.19-1.31), with Clades I-III intermediate
 (growth retained 0.67-0.84; cost 1.37×-1.73×). Fever thus suppresses
 growth without suppressing respiration, and it does so most severely in
-C. \emph{parapsilosis}.
+\emph{C. parapsilosis}.
 
 \textbf{A warmer environmental optimum predicts a lower cost of fever.}
 Across the five taxa, the environmental growth optimum was strongly and
@@ -327,8 +401,8 @@ thermotolerant a taxon, the less a fever cost it (Fig. 2b). Computed as
 a posterior distribution over Spearman's ρ (propagating parameter
 uncertainty rather than treating the five taxon medians as fixed), the
 correlation was ρ = −0.90 (95\% CrI −1.00 to −0.30; P(ρ \textless{} 0) =
-0.996). C. \emph{parapsilosis} occupied the cool-optimum,
-expensive-fever extreme and C. \emph{auris} Clade IV the warm-optimum,
+0.996). \emph{C. parapsilosis} occupied the cool-optimum,
+expensive-fever extreme and \emph{C. auris} Clade IV the warm-optimum,
 cheap-fever extreme. This links adaptation to a warm environment with
 tolerance of the febrile host as facets of a single thermal trait,
 consistent with the hypothesis that environmental thermal selection
@@ -339,51 +413,52 @@ an independent parameter that could have broken the relationship and did
 not. The correlation rests on only five taxa; it is therefore reported
 as suggestive and will be tested directly with additional species.
 
-\textbf{Clade-level differences within} C. \emph{auris}\textbf{.}
-Pairwise comparison of the fever cost resolved 8 of 10 taxon contrasts
-(95\% CrI excluding a ratio of 1; Fig. 2d). All four C. \emph{auris}
-clades credibly paid less at fever than C. \emph{parapsilosis} (cost
-ratios 0.43-0.72), and Clade IV was credibly the cheapest of all clades.
-Only two contrasts, Clade I versus Clade II (0.85, 0.68-1.04) and Clade
-I versus Clade III (1.18, 0.98-1.42), could not be separated at three
+\textbf{Clade-level differences within \emph{C. auris}.} Pairwise
+comparison of the fever cost resolved 8 of 10 taxon contrasts (95\% CrI
+excluding a ratio of 1; Fig. 2d). All four \emph{C. auris} clades
+credibly paid less at fever than \emph{C. parapsilosis} (cost ratios
+0.43-0.72), and Clade IV was credibly the cheapest of all clades. Only
+two contrasts, Clade I versus Clade II (0.85, 0.68-1.04) and Clade I
+versus Clade III (1.18, 0.98-1.42), could not be separated at three
 isolates per clade.
 
 \includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{../../results/figures/manuscript/FIG2_the_bill.png}
 
 \textbf{Figure 2. A febrile host imposes a quantifiable, taxon-specific
-carbon tax.} (\textbf{a}) Relative respiratory cost -- per-cell
+carbon tax.} (\textbf{a}) Relative respiratory cost (per-cell
 respiration per unit growth, expressed relative to each taxon's own
-cheapest temperature -- versus temperature (bold lines, clade-level
+cheapest temperature) versus temperature (bold lines, clade-level
 posterior medians; bands, 95\% CrI). At 40 °C (fever) this cost ranged
-from 1.34× for C. \emph{auris} Clade IV to 3.13× for C.
-\emph{parapsilosis}. Shaded band, 37--40 °C (body to fever).
-(\textbf{b}) Environmental growth optimum versus the metabolic cost of
-fever across the five taxa: warmer-adapted taxa pay less at fever
-(Spearman ρ = −0.90, 95\% CrI −1.00 to −0.30; points, taxon medians;
-bars, 95\% CrI). (\textbf{c}) The three-degree step from body
-temperature (37 °C) to fever (40 °C): growth retained (left) and the
-rise in respiratory cost per unit growth (right) for each taxon (points,
-posterior medians; bars, 95\% CrI). (\textbf{d}) Pairwise contrasts of
-the 40 °C fever cost; 8 of 10 are resolved (95\% CrI excluding a ratio
-of 1), and all four C. \emph{auris} clades pay credibly less than C.
-\emph{parapsilosis}.
+from 1.34× for \emph{C. auris} Clade IV to 3.13× for \emph{C.
+parapsilosis}. Shaded band, 37--40 °C (body to fever). (\textbf{b})
+Environmental growth optimum versus the metabolic cost of fever across
+the five taxa: warmer-adapted taxa pay less at fever (Spearman ρ =
+−0.90, 95\% CrI −1.00 to −0.30; points, taxon medians; bars, 95\% CrI).
+(\textbf{c}) The three-degree step from body temperature (37 °C) to
+fever (40 °C): growth retained (left) and the rise in respiratory cost
+per unit growth (right) for each taxon (points, posterior medians; bars,
+95\% CrI). (\textbf{d}) Pairwise contrasts of the 40 °C fever cost; 8 of
+10 are resolved (95\% CrI excluding a ratio of 1), and all four \emph{C.
+auris} clades pay credibly less than \emph{C. parapsilosis}.
 
 \subsection{Clade thermotolerance is a growth-tunable trait, not a
 sequence
 difference}\label{clade-thermotolerance-is-a-growth-tunable-trait-not-a-sequence-difference}
 
-The respirometry establishes that the four C. \emph{auris} clades differ
-roughly two-fold in peak growth -- and correspondingly in their cost of
-fever -- despite being almost identical in coding sequence. What sets
-these differences? To ask whether they are written into the genome, we
-built a sequence-grounded, enzyme- and temperature-constrained
-genome-scale model (etc-GEM) that predicts each clade's thermal growth
-curve from genome-derived inputs alone, then calibrates a small number
-of physiological parameters to the measured curves (Fig. 3). If
-coding-sequence differences drive the clade variation, this
-genome-grounded model should reproduce it directly; if they do not,
-calibration localises the difference to whichever non-sequence axis
-remains.
+The respirometry establishes that the four \emph{C. auris} clades differ
+roughly two-fold in peak growth, and correspondingly in their cost of
+fever, despite being almost identical in coding sequence. We therefore
+asked how much of this thermal physiology can be read from the genome
+itself. To do so we built a sequence-grounded, enzyme- and
+temperature-constrained genome-scale model (etc-GEM), which derives each
+enzyme's molecular weight, turnover and thermal stability from its
+protein sequence and predicts growth at every temperature under a shared
+enzyme budget, with three physiological parameters calibrated to the
+measured curve (Fig. 3). Every clade-specific input is sequence-derived,
+so the model sees a clade only through its proteome. That makes it a
+direct test of how far genomic data alone carries: if the clade
+differences are written into coding sequence, the model should generate
+them unaided.
 
 \includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{../../results/figures/manuscript/FIG_model_schematic.png}
 
@@ -503,6 +578,90 @@ earlier capacity-versus-growth panel, which was a self-consistency check
 \href{https://doi.org/10.1093/ismeco/ycag024}{A novel method to
 simultaneously estimate bacterial respiration and growth from oxygen
 dynamics}. \emph{ISME Communications} \textbf{6}, ycag024 (2026).}
+
+\bibitem[\citeproctext]{ref-viana2023}
+\CSLLeftMargin{2. }%
+\CSLRightInline{Viana, R. \emph{et al.}
+\href{https://doi.org/10.1093/femsyr/foad045}{Metabolic reconstruction
+of the human pathogen {Candida} auris: Using a cross-species approach
+for drug target prediction}. \emph{FEMS Yeast Research} \textbf{23},
+foad045 (2023).}
+
+\bibitem[\citeproctext]{ref-Li2021}
+\CSLLeftMargin{3. }%
+\CSLRightInline{Li, G. \emph{et al.}
+\href{https://doi.org/10.1038/s41467-020-20338-2}{Bayesian genome scale
+modelling identifies thermal determinants of yeast metabolism}.
+\emph{Nature Communications} \textbf{12}, 190 (2021).}
+
+\bibitem[\citeproctext]{ref-yvondurocher_etcgem}
+\CSLLeftMargin{4. }%
+\CSLRightInline{{Yvon-Durocher, G. \emph{et al.}} {etcGEMs}: An enzyme-
+and temperature-constrained genome-scale modelling pipeline. (2024).}
+
+\bibitem[\citeproctext]{ref-Madkaikar2023}
+\CSLLeftMargin{5. }%
+\CSLRightInline{Madkaikar, A. Predicting the temperature dependence of
+microbial metabolism with enzyme- and temperature-constrained
+genome-scale models. (Imperial College London, 2023).}
+
+\bibitem[\citeproctext]{ref-Domenzain2022}
+\CSLLeftMargin{6. }%
+\CSLRightInline{Domenzain, I. \emph{et al.}
+\href{https://doi.org/10.1038/s41467-022-31421-1}{Reconstruction of a
+catalogue of genome-scale metabolic models with enzymatic constraints
+using {GECKO} 2.0}. \emph{Nature Communications} \textbf{13}, 3766
+(2022).}
+
+\bibitem[\citeproctext]{ref-dlkcat2022}
+\CSLLeftMargin{7. }%
+\CSLRightInline{Li, F. \emph{et al.}
+\href{https://doi.org/10.1038/s41929-022-00798-z}{Deep learning-based
+{kcat} prediction enables improved enzyme-constrained model
+reconstruction}. \emph{Nature Catalysis} \textbf{5}, 662--672 (2022).}
+
+\bibitem[\citeproctext]{ref-LiEngqvist2019}
+\CSLLeftMargin{8. }%
+\CSLRightInline{Li, G., Rabe, K. S., Nielsen, J. \& Engqvist, M. K. M.
+\href{https://doi.org/10.1021/acssynbio.9b00099}{Machine learning
+applied to predicting microorganism growth temperatures and enzyme
+catalytic optima}. \emph{ACS Synthetic Biology} \textbf{8}, 1411--1420
+(2019).}
+
+\bibitem[\citeproctext]{ref-Jarzab2020}
+\CSLLeftMargin{9. }%
+\CSLRightInline{{Jarzab, A., Kurzawa, N., \emph{et al.}}
+\href{https://doi.org/10.1038/s41592-020-0801-4}{Meltome atlas---thermal
+proteome stability across the tree of life}. \emph{Nature Methods}
+\textbf{17}, 495--503 (2020).}
+
+\bibitem[\citeproctext]{ref-Hobbs2013}
+\CSLLeftMargin{10. }%
+\CSLRightInline{Hobbs, J. K. \emph{et al.}
+\href{https://doi.org/10.1021/cb4005029}{Change in heat capacity for
+enzyme catalysis determines temperature dependence of enzyme catalyzed
+rates}. \emph{ACS Chemical Biology} \textbf{8}, 2388--2393 (2013).}
+
+\bibitem[\citeproctext]{ref-zamithmiranda2019}
+\CSLLeftMargin{11. }%
+\CSLRightInline{Zamith-Miranda, D. \emph{et al.}
+\href{https://doi.org/10.1128/mSystems.00257-19}{Multi-omics signature
+of {Candida} auris, an emerging and multidrug-resistant pathogen}.
+\emph{mSystems} \textbf{4}, e00257--19 (2019).}
+
+\bibitem[\citeproctext]{ref-Ebrahim2013}
+\CSLLeftMargin{12. }%
+\CSLRightInline{Ebrahim, A., Lerman, J. A., Palsson, B. O. \& Hyduke, D.
+R. \href{https://doi.org/10.1186/1752-0509-7-74}{{COBRApy}:
+{COnstraints}-{Based} {Reconstruction} and {Analysis} for {Python}}.
+\emph{BMC Systems Biology} \textbf{7}, 74 (2013).}
+
+\bibitem[\citeproctext]{ref-ForemanMackey2013}
+\CSLLeftMargin{13. }%
+\CSLRightInline{Foreman-Mackey, D., Hogg, D. W., Lang, D. \& Goodman, J.
+\href{https://doi.org/10.1086/670067}{Emcee: The {MCMC} hammer}.
+\emph{Publications of the Astronomical Society of the Pacific}
+\textbf{125}, 306--312 (2013).}
 
 \end{CSLReferences}
 

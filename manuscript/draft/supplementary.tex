@@ -181,7 +181,7 @@ Candida}
 
 \section{Supplementary figures}\label{supplementary-figures}
 
-\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{../../results/figures/manuscript/FIG_MODEL_SUPP.png}
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{../../results/figures/manuscript/FIG_MODEL_SUPP_validation.png}
 
 \textbf{Supplementary Figure 1. The effective growth-capacity axis is a
 real, clade-level, non-coding, non-transcriptional trait.} (\textbf{a})
@@ -197,9 +197,30 @@ fold-change for the model\textquotesingle s 928 metabolic-enzyme genes
 (red) against the genome background (grey), from GEO GSE165762; the
 metabolic set is not coordinately shifted (Wilcoxon P = 0.93).
 
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{../../results/figures/manuscript/FIG_MODEL_SUPP.png}
+
+\textbf{Supplementary Figure 2. etc-GEM model diagnostics: fit,
+identifiability and method robustness.} (\textbf{a}) Predicted versus
+observed growth rate for each clade under its own calibration; points on
+the 1:1 line are perfect (R\textsuperscript{2} = 0.96, 0.94, 0.97 and
+0.96 for Clades I-IV; overall RMSE 0.038 h\textsuperscript{-1}).
+(\textbf{b}) Residuals against temperature. They are unbiased between 24
+and 40 °C; at the 22 and 44 °C limits all four clades deviate together
+(mean residual -0.035 and +0.071 h\textsuperscript{-1} respectively), so
+the fit degrades at the edges of the assayed range. Dashed lines and
+shading mark the 37-40 °C febrile window. (\textbf{c}) RMSE as each
+calibration knob is swept around its optimum with the remaining knobs
+held at the fit (dot). Each knob has a well-defined optimum, but these
+are one-dimensional profiles and are not a joint identifiability test:
+in the posterior, dCp-scale and kcat-scale are correlated (r = 0.43 to
+0.70 depending on clade). (\textbf{d}) Effective growth-capacity per
+clade from the two calibration methods, Bayesian median with 95\% CrI
+(dot and bar) and differential evolution (x). The two agree to within
+0.02 in every clade and give the same ordering.
+
 \includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{../../results/figures/manuscript/FIG_MODEL_SUPP_consistency.png}
 
-\textbf{Supplementary Figure 2. Self-consistency check.} Effective
+\textbf{Supplementary Figure 3. Self-consistency check.} Effective
 growth-capacity (the fitted curve-height parameter) versus measured peak
 growth across the twelve isolates (r = 0.96). Because capacity scales
 curve height by construction, this relationship is expected and is shown
