@@ -49,3 +49,11 @@ submission/
 /renv/staging/
 cauris_etcgem/.venv/
 /logs/
+
+# --- C1 reproduction run: keep the tables and the manuscript figures, not the
+#     regenerable bulk (68 MB of diagnostic figures, 29 MB of brms fits, and the
+#     22 MB staging render). Everything here is reproduced by run_c1.sh.
+/results_C1/figures/*
+!/results_C1/figures/manuscript/
+/results_C1/rds/
+/results_C1/manuscript_build/
