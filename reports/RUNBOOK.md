@@ -18,7 +18,10 @@ working **C++17 compiler** (macOS: `xcode-select --install`; Linux:
 Disk: **~3 GB** total (repo ~200 MB, renv library ~1.5 GB, Python venv ~400 MB,
 TinyTeX ~500 MB, one results tree ~70 MB, `_output/` ~20 MB).
 
-Time: **~1.5–4 h** for a cold end-to-end run. Script 08 (brms) dominates.
+Time: **49 minutes** for a full run on this hardware (16 cores) once installed —
+etc-GEM 35 m, R pipeline 12.5 m, render 44 s. Add 15–45 min for the first-ever
+install (rstan compiles). On a slower or lower-core machine, budget 2–4 h: the
+two long poles are the etc-GEM `calibrate`/`bayes` stages and script 08.
 
 ---
 
@@ -63,7 +66,7 @@ package the pipeline loads, works out which Stan backend brms will use, then
 **Check:** the last lines read
 
 ```
-  [ok]   all 21 packages present
+  [ok]   all 22 packages present
   ==> 08_bayesian_models.R will use backend: rstan
   [ok]   toy model sampled: mu = 3.0837 (truth 3), sigma = 0.8454 (truth 1)
 ```
@@ -165,17 +168,18 @@ a-priori TPC**. If you see `mu* = 1.089`, you are on the OLD anchor
 
 | script | wall time | note |
 |---|---:|---|
-| 02 longdata | 3 s | 1.47 M rows kept of 1.49 M (Time ≤ 1455 min) |
-| 03 trimming | 2 min | 1 080 curves; writes a large diagnostics PDF |
+| 02 longdata | 4.2 s | 1 469 340 rows kept of 1 486 800 (Time ≤ 1455 min) |
+| 03 trimming | 1 m 55 s | 1 080 curves; writes a large diagnostics PDF |
 | 06 inoculation | 0.3 s | app NOT launched; `otu_inoc.csv` read as data |
-| 07 oxygen_fits | ~14 min | per-series `nlsLM` fits + descriptive plots |
-| **08 bayesian_models** | **~1–3 h** | 4 models × 4 chains × 4 000 iterations |
-| 09 bayesian_plots | ~4 min | |
-| 10 carbon_tax | ~1 min | |
-| 11 capacity_expression | ~1 min | reads the COMMITTED GEO matrix; no download |
-| 12 main_figures | ~4 min | needs 08 **and** the etc-GEM outputs |
-| 13 supplementary_figures | ~1 min | needs 11 **and** the etc-GEM outputs |
-| 14 schematic.py | ~5 s | |
+| 07 oxygen_fits | 2 m 10 s | per-series `nlsLM` fits + descriptive plots |
+| **08 bayesian_models** | **8 m 00 s** | 3 models × 4 chains × 4 000 iterations (growth SS 4 m 58 s, resp Arrhenius 36 s, resp SS 2 m 18 s) |
+| 09 bayesian_plots | 10.4 s | |
+| 10 carbon_tax | 1.2 s | |
+| 11 capacity_expression | 0.7 s | reads the COMMITTED GEO matrix; no download |
+| 12 main_figures | 6.0 s | needs 08 **and** the etc-GEM outputs |
+| 13 supplementary_figures | 1.8 s | needs 11 **and** the etc-GEM outputs |
+| 14 schematic.py | 2.6 s | |
+| **total** | **12 m 33 s** | |
 
 **Check after 02:** `Time cutoff applied: kept 1469340 of 1486800 rows`.
 

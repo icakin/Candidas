@@ -159,18 +159,21 @@ Per-stage numbers as actually observed are in
 | `00_install.R` — subsequent runs | < 1 min (`--no-stan`: seconds) |
 | Python venv + `requirements.lock` | 2–5 min |
 | etc-GEM: model build | ~4 s |
-| etc-GEM: `calibrate` (differential evolution, 4 clades) | ~5–10 min |
+| etc-GEM: `calibrate` (differential evolution, 4 clades) | ~16 min |
 | etc-GEM: `curves` / `fit` / `apriori` | seconds each |
-| etc-GEM: `ident` (3 knobs × 25 values × 4 clades) | ~5 min |
-| etc-GEM: `boot` (120-point grid + 4000 bootstrap draws) | ~5 min |
-| etc-GEM: `bayes` (15³ emulator grid, then 4 × 32-walker × 4000-step emcee) | ~20–40 min |
-| R 02 → 03 (reshape + spline trimming, ~1,900 series) | ~5–15 min |
-| R 07 (per-series fits + descriptive plots) | ~5–15 min |
-| **R 08 (brms: 4 models × 4 chains × 4000 iter)** | **~1–3 h — the long pole** |
-| R 09 / 10 / 11 / 12 / 13 / 14 | ~5–20 min total |
+| etc-GEM: `ident` (3 knobs × 25 values × 4 clades) | ~1 min |
+| etc-GEM: `boot` (120-point grid + 4000 bootstrap draws) | ~1.5 min |
+| etc-GEM: `bayes` (15³ emulator grid, then 4 × 32-walker × 4000-step emcee) | ~16 min |
+| R 02 → 03 (reshape + spline trimming, 1 080 series) | ~2 min |
+| R 07 (per-series fits + descriptive plots) | ~2 min |
+| **R 08 (brms: 3 models × 4 chains × 4000 iter)** | **8 min measured on 16 cores; budget ~1 h on a slow machine** |
+| R 09 / 10 / 11 / 12 / 13 / 14 | ~25 s total |
 | `quarto render` (3 documents × docx + pdf) | ~1 min |
 
-**Budget several hours for a cold end-to-end run.** 08 dominates.
+**Measured total on the reference machine: 48 min 50 s** (etc-GEM 35 m 29 s,
+R pipeline 12 m 37 s, render 44 s) — see `reports/REPRODUCTION.md` §7. Budget
+2–4 h on a slower or lower-core machine; the etc-GEM `calibrate`/`bayes` stages
+and script 08 are the long poles.
 
 Disk:
 

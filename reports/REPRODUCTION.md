@@ -720,22 +720,28 @@ the non-destructive path variables), started 09:47:44, finished 10:36:34 on
 
 ### R pipeline, per script
 
+As reported by `run_all.R`'s own timing table (final clean run):
+
 | script | wall time |
 |---|---:|
-| 02_longdata.R | 2.5 s |
-| 03_trimming.R | 2 m 00 s |
-| 06_inoculation.R | 0.3 s (app not launched) |
+| 02_longdata.R | 4.2 s |
+| 03_trimming.R | 1 m 55 s |
+| 06_inoculation.R | 0.3 s (app defined, not launched) |
 | 07_oxygen_fits.R | 2 m 10 s |
-| **08_bayesian_models.R** | **7 m 56 s** |
-| — growth Sharpe-Schoolfield | 4 m 55 s |
+| **08_bayesian_models.R** | **8 m 00 s** |
+| — growth Sharpe-Schoolfield | 4 m 58 s |
 | — respiration Arrhenius | 36 s |
-| — respiration SS (for LOO) | 2 m 17 s |
-| 09_bayesian_plots.R | 10 s |
-| 10_carbon_tax.R | 1 s |
-| 11_capacity_expression.R | 1 s |
-| 12_main_figures.R | 6 s |
-| 13_supplementary_figures.R | 2 s |
-| 14_schematic.py | ~5 s |
+| — respiration SS (for LOO) | 2 m 18 s |
+| 09_bayesian_plots.R | 10.4 s |
+| 10_carbon_tax.R | 1.2 s |
+| 11_capacity_expression.R | 0.7 s |
+| 12_main_figures.R | 6.0 s |
+| 13_supplementary_figures.R | 1.8 s |
+| 14_schematic.py | 2.6 s |
+| **TOTAL (as printed by run_all.R)** | **12 m 33 s** |
+
+(The 12 m 37 s in the stage table above is the same work plus R start-up and
+the `Rscript` process wrapper.)
 
 `SETUP.md` quotes 1–3 h for 08 as a safe upper bound for slower machines; on
 this 16-core box it is 8 minutes.
