@@ -70,7 +70,7 @@ library(shiny)
 out_csv <- file.path(tables_dir, "otu_inoc.csv")
 
 # ---- isolates + groups -------------------------------------------------------
-nm_csv <- file.path(tables_dir, "otu_names.csv")
+nm_csv <- app_input("otu_names.csv")        # committed app INPUT (config.R)
 if (!file.exists(nm_csv)) stop("Not found: ", nm_csv, "\nRun 01_convert_xlsx.R first.")
 NM <- readr::read_csv(nm_csv, show_col_types = FALSE)
 if (!"group" %in% names(NM)) stop("otu_names.csv has no `group` column - re-run 01.")
@@ -80,7 +80,7 @@ GROUPS <- unique(NM$group)
 
 # Cell sizes (if 05_cell_sizes.R has been run) - used only to SUGGEST a factor.
 VOL <- stats::setNames(rep(NA_real_, length(GROUPS)), GROUPS)
-sz_csv <- file.path(tables_dir, "otu_cell_sizes.csv")
+sz_csv <- app_input("otu_cell_sizes.csv")   # committed app INPUT (config.R)
 if (file.exists(sz_csv)) {
   .sz <- tryCatch(readr::read_csv(sz_csv, show_col_types = FALSE), error = function(e) NULL)
   if (!is.null(.sz) && "cell_volume_um3" %in% names(.sz)) {
