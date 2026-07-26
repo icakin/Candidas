@@ -22,7 +22,9 @@
 #
 # RUN:
 #   RStudio: open this file -> "Run App".
-#   Terminal: Rscript scripts/04_trim_selector.R
+#   Terminal: Rscript scripts/04_trim_selector.R --app      <- the --app flag is REQUIRED
+#             (without it the file just defines the app and returns, so that
+#              run_all.R can source it without blocking on a Shiny server)
 #
 # Needs 02_longdata.R + 03_trimming.R to have run (for the data + metadata).
 #
@@ -1409,4 +1411,24 @@ server <- function(input, output, session) {
   )
 }
 
-shinyApp(ui, server)
+# ---- headless guard (C1) ----------------------------------------------------
+# A bare shinyApp(ui, server) at top level starts a blocking server under
+# Rscript. tables/manual_fit_windows.csv and tables/plot_exclude_points.csv are
+# committed INPUTS (config.R reads them when USE_APP_TRIM_FILES is TRUE), so an
+# unattended run must define this app and walk away without regenerating them.
+.candidas_run_app <- function() {
+  if (isTRUE(getOption("candidas.headless")))            return(FALSE)
+  if (identical(Sys.getenv("CANDIDAS_HEADLESS"), "1"))   return(FALSE)
+  if (identical(Sys.getenv("CANDIDAS_RUN_APP"), "1"))    return(TRUE)
+  if ("--app" %in% commandArgs(trailingOnly = TRUE))     return(TRUE)
+  interactive()
+}
+
+if (.candidas_run_app()) {
+  shinyApp(ui, server)
+} else {
+  message("04_trim_selector.R: headless - ui/server defined, app NOT launched, ",
+          "nothing written\n  (tables/manual_fit_windows.csv + plot_exclude_points.csv ",
+          "are read as data by config.R).\n",
+          "  To use it: Rscript scripts/04_trim_selector.R --app")
+}

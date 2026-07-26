@@ -211,7 +211,7 @@ if (!"has_curvature" %in% names(res)) {
 res$has_curvature <- res$has_curvature %in% TRUE
 
 # ---- isolate + clade/species group ----------------------------------------
-nm <- readr::read_csv(file.path(tables_dir, "otu_names.csv"), show_col_types = FALSE)
+nm <- readr::read_csv(app_input("otu_names.csv"), show_col_types = FALSE)
 if (!"group" %in% names(nm)) {
   stop("otu_names.csv has no `group` column - re-run 01_convert_xlsx.R.")
 }

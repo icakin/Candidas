@@ -366,7 +366,7 @@ if (file.exists(derived_csv)) {
   .d <- tryCatch(readr::read_csv(derived_csv, show_col_types = FALSE),
                  error = function(e) NULL)
   if (!is.null(.d) && "CUE" %in% names(.d)) {
-    .nm <- readr::read_csv(file.path(tables_dir, "otu_names.csv"), show_col_types = FALSE) %>%
+    .nm <- readr::read_csv(app_input("otu_names.csv"), show_col_types = FALSE) %>%
       dplyr::transmute(OTU = as.integer(OTU), Isolate = as.character(otu_name),
                        Group = as.character(group))
     cue_obs <- .d %>%

@@ -79,12 +79,77 @@ base_dir_manual <- ""   # e.g. "/Users/you/Desktop/Projects/Candidas"
 base_dir    <- .detect_base_dir()
 message("config.R: base_dir = ", base_dir)
 data_dir    <- file.path(base_dir, "data")
-tables_dir  <- file.path(base_dir, "results", "tables")
-figures_dir <- file.path(base_dir, "results", "figures")
-models_dir  <- file.path(base_dir, "results", "rds")
+
+# ---- results tree (the ONE override) ----------------------------------------
+# RESULTS_DIR is where every generated table, figure and cached model fit goes.
+# It defaults to <project>/results, exactly as before, so nothing changes for a
+# normal run. Set CANDIDAS_RESULTS to redirect the WHOLE tree somewhere else and
+# leave results/ untouched for comparison:
+#
+#     CANDIDAS_RESULTS=/abs/path/results_C1 Rscript scripts/run_all.R
+#
+# NOTE the cached brms fits (models_dir) follow RESULTS_DIR too, so pointing
+# CANDIDAS_RESULTS at an empty tree genuinely REFITS rather than silently reusing
+# results/rds/*.rds. That is the whole point of the override.
+# This is a PATH knob only. It changes no analysis decision.
+RESULTS_DIR <- Sys.getenv("CANDIDAS_RESULTS", unset = file.path(base_dir, "results"))
+if (!nzchar(RESULTS_DIR)) RESULTS_DIR <- file.path(base_dir, "results")
+RESULTS_DIR <- normalizePath(RESULTS_DIR, mustWork = FALSE)
+
+tables_dir  <- file.path(RESULTS_DIR, "tables")
+figures_dir <- file.path(RESULTS_DIR, "figures")
+models_dir  <- file.path(RESULTS_DIR, "rds")
+
+if (!identical(RESULTS_DIR, normalizePath(file.path(base_dir, "results"), mustWork = FALSE)))
+  message("config.R: RESULTS_DIR overridden by CANDIDAS_RESULTS -> ", RESULTS_DIR)
+
+# ---- expression outputs (11_capacity_expression.R) --------------------------
+# 11 writes capacity_expression_CladeI_vs_II.csv + the barcode PDF. Historically
+# it dropped them next to its gene list in data/expression/, i.e. INTO the data
+# tree. Default is unchanged; CANDIDAS_EXPRESSION_OUT redirects them so a
+# non-destructive re-run never writes into data/.
+EXPRESSION_DIR     <- file.path(data_dir, "expression")
+EXPRESSION_OUT_DIR <- Sys.getenv("CANDIDAS_EXPRESSION_OUT", unset = EXPRESSION_DIR)
+if (!nzchar(EXPRESSION_OUT_DIR)) EXPRESSION_OUT_DIR <- EXPRESSION_DIR
+EXPRESSION_OUT_DIR <- normalizePath(EXPRESSION_OUT_DIR, mustWork = FALSE)
 
 for (d in c(data_dir, tables_dir, figures_dir, models_dir)) {
   dir.create(d, showWarnings = FALSE, recursive = TRUE)
+}
+
+# ---- committed app INPUTS vs generated outputs -------------------------------
+# results/tables/ holds two different kinds of file, and conflating them is a
+# trap. Most of it is generated. But five files are HAND-MADE DECISIONS produced
+# by the four click-driven apps, and every downstream script reads them as DATA:
+#
+#   manual_fit_windows.csv   plot_exclude_points.csv   (04_trim_selector.R)
+#   otu_cell_sizes.csv                                 (05_cell_sizes.R)
+#   otu_inoc.csv                                       (06_inoculation.R)
+#   otu_names.csv                                      (01_convert_xlsx.R)
+#
+# If RESULTS_DIR is redirected to a fresh tree, those five are NOT there - and
+# the pipeline would silently run with no manual trim windows, no exclusions,
+# the global fallback cell size and no isolate names. That is a different
+# analysis, not a re-run. So: look in the redirected tree first (someone may
+# have deliberately staged different ones), then fall back to the canonical
+# results/tables/. CANDIDAS_APP_INPUTS overrides the fallback location.
+APP_INPUT_FILES <- c("manual_fit_windows.csv", "plot_exclude_points.csv",
+                     "otu_cell_sizes.csv", "otu_inoc.csv", "otu_names.csv")
+APP_INPUT_DIR <- Sys.getenv("CANDIDAS_APP_INPUTS",
+                            unset = file.path(base_dir, "results", "tables"))
+
+# Path to a committed app input: redirected tree first, canonical tree second.
+# Returns a non-existent path (in the redirected tree) if neither has it, so
+# callers' file.exists() guards keep working unchanged.
+app_input <- function(f) {
+  p <- file.path(tables_dir, f)
+  if (file.exists(p)) return(p)
+  q <- file.path(APP_INPUT_DIR, f)
+  if (file.exists(q)) {
+    message("  app input '", f, "' not in the results tree; using committed copy: ", q)
+    return(q)
+  }
+  p
 }
 
 # ===== Input files ============================================================
@@ -344,7 +409,7 @@ MANUAL_FIT_WINDOWS <- data.frame(
 # FALSE to ignore the app files and use the hand-edited blocks above instead.
 USE_APP_TRIM_FILES <- TRUE
 if (isTRUE(USE_APP_TRIM_FILES)) {
-  .mfw_csv <- file.path(tables_dir, "manual_fit_windows.csv")
+  .mfw_csv <- app_input("manual_fit_windows.csv")
   if (file.exists(.mfw_csv)) {
     .tmp <- tryCatch(read.csv(.mfw_csv, stringsAsFactors = FALSE), error = function(e) NULL)
     if (!is.null(.tmp) &&
@@ -353,7 +418,7 @@ if (isTRUE(USE_APP_TRIM_FILES)) {
       message("  Loaded MANUAL_FIT_WINDOWS from app file (", nrow(.tmp), " curves).")
     }
   }
-  .pep_csv <- file.path(tables_dir, "plot_exclude_points.csv")
+  .pep_csv <- app_input("plot_exclude_points.csv")
   if (file.exists(.pep_csv)) {
     .tmp <- tryCatch(read.csv(.pep_csv, stringsAsFactors = FALSE), error = function(e) NULL)
     if (!is.null(.tmp) && all(c("T", "OTU", "Replicate") %in% names(.tmp))) {
@@ -492,6 +557,63 @@ pred_arr_log <- function(TK, alpha, E, k_B = 0.00008617, T_ref = 293.15) {
 make_dir <- function(path) {
   dir.create(path, showWarnings = FALSE, recursive = TRUE)
   path
+}
+
+# ---- etc-GEM supp_data resolution (fail LOUDLY) ------------------------------
+# 12 and 13 read the Python etc-GEM outputs. They used to pick a directory with
+#     DD <- cand[which(vapply(cand, dir.exists, logical(1)))[1]]
+# which is NA when nothing matches - and, worse, happily returned a directory
+# that EXISTS BUT IS EMPTY. cauris_etcgem was an unpopulated git submodule for
+# most of this project's life, so that is exactly the failure that happened, and
+# it surfaced far downstream as an unreadable read.csv() rather than at the
+# point of the mistake. These two helpers make both cases a named, actionable
+# error at the point of resolution.
+#
+# CANDIDAS_SUPP_DATA overrides the search (used by C1 to read supp_data_C1/).
+
+resolve_supp_data <- function(candidates, what = "etc-GEM outputs/supp_data") {
+  env <- Sys.getenv("CANDIDAS_SUPP_DATA", unset = "")
+  if (nzchar(env)) candidates <- c(env, candidates)
+  candidates <- unique(candidates)
+
+  hit <- NA_character_
+  for (p in candidates) if (dir.exists(p)) { hit <- p; break }
+
+  if (is.na(hit))
+    stop("ETCGEM_SUPP_DATA_MISSING: no ", what, " directory exists.\n",
+         "  Looked in (in order):\n    ", paste(candidates, collapse = "\n    "), "\n",
+         "  Fix: populate the submodule and run the Python pipeline -\n",
+         "    git submodule update --init --recursive\n",
+         "    cd cauris_etcgem/strains/eci_cauris/scripts && \\\n",
+         "      ../../../.venv/bin/python generate_model_data.py all\n",
+         "  Or point CANDIDAS_SUPP_DATA at an existing outputs directory.",
+         call. = FALSE)
+
+  n_csv <- length(list.files(hit, pattern = "\\.csv$", ignore.case = TRUE))
+  if (n_csv == 0L)
+    stop("ETCGEM_SUPP_DATA_EMPTY: ", what, " exists but holds no .csv files.\n",
+         "    ", hit, "\n",
+         "  That is what an UNPOPULATED GIT SUBMODULE looks like - the directory\n",
+         "  is created by the checkout but never filled. Fix:\n",
+         "    git submodule update --init --recursive\n",
+         "    cd cauris_etcgem/strains/eci_cauris/scripts && \\\n",
+         "      ../../../.venv/bin/python generate_model_data.py all",
+         call. = FALSE)
+
+  hit <- normalizePath(hit, mustWork = FALSE)
+  message("  etc-GEM supp_data: ", hit, "  (", n_csv, " csv)")
+  hit
+}
+
+# Read a required CSV out of a resolved directory, naming the file in the error.
+require_csv <- function(dir, file, produced_by = NULL) {
+  p <- file.path(dir, file)
+  if (!file.exists(p))
+    stop("ETCGEM_FILE_MISSING: ", file, " is not in\n    ", dir, "\n",
+         if (!is.null(produced_by)) paste0("  It is produced by: ", produced_by, "\n") else "",
+         "  Re-run the etc-GEM pipeline (including that stage) and try again.",
+         call. = FALSE)
+  read.csv(p)
 }
 
 message("config.R loaded: base_dir = ", base_dir)

@@ -377,7 +377,7 @@ pts <- dplyr::bind_rows(
                 growth_fgC_h > 0, growth_C_per_C_h > 0) %>%
   dplyr::mutate(OTU = as.integer(OTU), q = growth_fgC_h / growth_C_per_C_h) %>%
   dplyr::left_join(
-    readr::read_csv(file.path(tables_dir, "otu_names.csv"), show_col_types = FALSE) %>%
+    readr::read_csv(app_input("otu_names.csv"), show_col_types = FALSE) %>%
       dplyr::transmute(OTU = as.integer(OTU), Group = as.character(group)),
     by = "OTU") %>%
   dplyr::group_by(Group) %>% dplyr::summarise(q = stats::median(q), .groups = "drop")
@@ -988,19 +988,36 @@ febrile <- function() list(
   geom_vline(xintercept = c(T_BODY, T_FEVER), colour = RED, linetype = "22", linewidth = .32))
 
 # ---- locate data + output ---------------------------------------------------
-cand <- c(file.path(.d0, "supp_data"), file.path(.d0, "..", "outputs", "supp_data"),
+# C1: resolve_supp_data() (config.R) replaces the old
+#     DD <- cand[which(vapply(cand, dir.exists, logical(1)))[1]]
+# which silently yielded NA when nothing matched and, worse, accepted a
+# directory that existed but was EMPTY (the unpopulated-submodule case).
+# CANDIDAS_SUPP_DATA overrides the search order.
+cand <- c(file.path(.d0, "supp_data"),
+          file.path(.d0, "..", "outputs", "supp_data"),
           file.path(.d0, "..", "cauris_etcgem", "strains", "eci_cauris", "outputs", "supp_data"),
           "supp_data")
-DD <- cand[which(vapply(cand, dir.exists, logical(1)))[1]]
-if (is.na(DD)) stop("supp_data/ not found.")
-# project tables/ (isolate-level economics live here, not in supp_data)
-tcand <- c(file.path(.d0, "..", "results", "tables"), file.path(.d0, "results", "tables"), file.path("results", "tables"))
-TD <- tcand[which(vapply(tcand, dir.exists, logical(1)))[1]]
-if (is.na(TD)) stop("tables/ not found (need carbon_tax_isolate.csv, derived_N0_R_results_with_carbon.csv).")
-FD <- file.path(.d0, "..", "results", "figures", "manuscript"); dir.create(FD, recursive = TRUE, showWarnings = FALSE)
+DD <- resolve_supp_data(cand)
+
+# project tables/ (isolate-level economics live here, not in supp_data).
+# tables_dir comes from config.R and therefore follows CANDIDAS_RESULTS.
+TD <- tables_dir
+if (!dir.exists(TD))
+  stop("RESULTS_TABLES_MISSING: ", TD, "\n",
+       "  Needed: carbon_tax_isolate.csv, derived_N0_R_results_with_carbon.csv\n",
+       "  Run 07 -> 08 -> 09 -> 10 first (Rscript scripts/run_all.R).", call. = FALSE)
+
+# figures follow CANDIDAS_RESULTS too (was hard-coded .d0/../results/figures)
+FD <- file.path(figures_dir, "manuscript"); dir.create(FD, recursive = TRUE, showWarnings = FALSE)
 FD <- normalizePath(FD, mustWork = FALSE)
-rd  <- function(f) read.csv(file.path(DD, f))
-rdt <- function(f) read.csv(file.path(TD, f))
+rd  <- function(f) require_csv(DD, f, produced_by = "generate_model_data.py")
+rdt <- function(f) {
+  p <- file.path(TD, f)
+  if (!file.exists(p))
+    stop("RESULTS_FILE_MISSING: ", f, " is not in\n    ", TD,
+         "\n  Run the R pipeline stages that produce it (07-10).", call. = FALSE)
+  read.csv(p)
+}
 save_fig <- function(f, name, h_mm, w_mm = 183) {
   ggsave(file.path(FD, paste0(name, ".png")), f, width = w_mm/25.4, height = h_mm/25.4,
          dpi = 600, bg = "white")
@@ -1100,7 +1117,8 @@ fc <- ggplot() +
 #   The non-circular test: capacity (fit to GROWTH only) predicts the
 #   INDEPENDENTLY MEASURED fever tax (d) and respiration (e).
 # =============================================================================
-capi <- read.csv(file.path(DD, "capacity_isolates.csv"))  # clade,isolate,capacity,peak
+capi <- require_csv(DD, "capacity_isolates.csv",          # clade,isolate,capacity,peak
+                    produced_by = "generate_model_data.py stage `boot`")
 tax  <- rdt("carbon_tax_isolate.csv")                     # Isolate,Group,T_C,tax
 der  <- rdt("derived_N0_R_results_with_carbon.csv")       # already carries otu_name
 

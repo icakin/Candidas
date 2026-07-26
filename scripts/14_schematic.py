@@ -106,7 +106,12 @@ colored_center(50,0.35,[("C. auris ",INK,"bold",True),("II 0.39",CIA["II"],"bold
     ("III 0.62",CIA["III"],"bold",False),("   <   ",SUB,"normal",False),("IV 0.71",CIA["IV"],"bold",False)],8.4)
 
 import os as _os
-_out = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "results", "figures", "manuscript")
+# C1: the results tree follows CANDIDAS_RESULTS, matching config.R, so a
+# non-destructive re-run writes to results_C1/ instead of results/.
+_base = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_results = _os.environ.get("CANDIDAS_RESULTS") or _os.path.join(_base, "results")
+_out = _os.path.join(_results, "figures", "manuscript")
 _os.makedirs(_out, exist_ok=True)
-plt.savefig(_os.path.join(_out, "FIG_model_schematic.png"), dpi=300, bbox_inches="tight", facecolor="white")
-print("saved")
+_png = _os.path.join(_out, "FIG_model_schematic.png")
+plt.savefig(_png, dpi=300, bbox_inches="tight", facecolor="white")
+print("saved", _png)

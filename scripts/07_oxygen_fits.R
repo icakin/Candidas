@@ -363,7 +363,7 @@ group_lookup <- o2f %>%
 #
 # respiration = K / N0  and  N0 = N_inoc * exp(r * delta), so respiration scales
 # as 1/N_inoc. GROWTH is unaffected (it depends on cell carbon, not cell count).
-.inoc_csv <- file.path(tables_dir, "otu_inoc.csv")
+.inoc_csv <- app_input("otu_inoc.csv")   # committed app INPUT (see config.R)
 if (file.exists(.inoc_csv)) {
   .inoc <- tryCatch(readr::read_csv(.inoc_csv, show_col_types = FALSE),
                     error = function(e) NULL)
@@ -831,8 +831,8 @@ readr::write_csv(coef_wide, coef_wide_csv)
 # there falls back to the single global cell size from config.R. Cell carbon
 # scales growth (fg C) and CUE; it does NOT change respiration_fgC_h or the
 # temperature-response shapes.
-otu_size_csv  <- file.path(tables_dir, "otu_cell_sizes.csv")   # from 05_cell_sizes.R
-otu_names_csv <- file.path(tables_dir, "otu_names.csv")        # from 01_convert_xlsx.R
+otu_size_csv  <- app_input("otu_cell_sizes.csv")   # from 05_cell_sizes.R
+otu_names_csv <- app_input("otu_names.csv")        # from 01_convert_xlsx.R
 .otu_ids <- sort(unique(coef_wide$OTU))
 otu_size_lookup <- tibble::tibble(
   OTU             = .otu_ids,

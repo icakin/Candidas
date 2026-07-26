@@ -20,7 +20,9 @@
 #
 # RUN (like the other apps):
 #   RStudio: open this file -> "Run App".
-#   Terminal: Rscript scripts/05_cell_sizes.R
+#   Terminal: Rscript scripts/05_cell_sizes.R --app      <- the --app flag is REQUIRED
+#             (without it the file just defines the app and returns, so that
+#              run_all.R can source it without blocking on a Shiny server)
 #
 # You can run this any time before 07_oxygen_fits.R (it does not depend on the
 # other steps). Re-run 06 afterwards to apply new sizes.
@@ -177,9 +179,26 @@ server <- function(input, output, session) {
   })
 }
 
-if (interactive()) {
-  shinyApp(ui, server)
+# ---- headless guard (C1) ----------------------------------------------------
+# See 01_convert_xlsx.R for the rationale: sourcing this file must never block on
+# a Shiny server. tables/otu_cell_sizes.csv is a committed INPUT to the pipeline;
+# an unattended run must not regenerate it.
+.candidas_run_app <- function() {
+  if (isTRUE(getOption("candidas.headless")))            return(FALSE)
+  if (identical(Sys.getenv("CANDIDAS_HEADLESS"), "1"))   return(FALSE)
+  if (identical(Sys.getenv("CANDIDAS_RUN_APP"), "1"))    return(TRUE)
+  if ("--app" %in% commandArgs(trailingOnly = TRUE))     return(TRUE)
+  interactive()
+}
+
+if (.candidas_run_app()) {
+  if (interactive()) {
+    shinyApp(ui, server)
+  } else {
+    message("Launching cell-size app at http://127.0.0.1:7799 ...")
+    runApp(shinyApp(ui, server), host = "127.0.0.1", port = 7799, launch.browser = TRUE)
+  }
 } else {
-  message("Launching cell-size app at http://127.0.0.1:7799 ...")
-  runApp(shinyApp(ui, server), host = "127.0.0.1", port = 7799, launch.browser = TRUE)
+  message("05_cell_sizes.R: headless - ui/server defined, app NOT launched, ",
+          "nothing written.\n  To use it: Rscript scripts/05_cell_sizes.R --app")
 }

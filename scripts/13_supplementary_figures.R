@@ -35,6 +35,56 @@ if (is.na(.root)) .root <- .find_root(getwd())
 if (is.na(.root)) stop("Cannot locate the project root (a folder containing results/ and scripts/).")
 suppressPackageStartupMessages({ library(ggplot2); library(patchwork) })
 
+# ---- C1: path knobs + fail-loud data resolution -----------------------------
+# This script deliberately does NOT source config.R (it is meant to run on its
+# own), so the path knobs are re-implemented here to match config.R exactly:
+#   CANDIDAS_RESULTS        -> where figures go     (default <root>/results)
+#   CANDIDAS_SUPP_DATA      -> which etc-GEM outputs dir to read
+#   CANDIDAS_EXPRESSION_OUT -> where 11 wrote its expression CSV
+# Defined once here; the second (merged-in) prologue further down reuses them.
+.RESULTS_DIR <- Sys.getenv("CANDIDAS_RESULTS", unset = file.path(.root, "results"))
+if (!nzchar(.RESULTS_DIR)) .RESULTS_DIR <- file.path(.root, "results")
+.RESULTS_DIR <- normalizePath(.RESULTS_DIR, mustWork = FALSE)
+
+# Replaces  DD <- cand[which(vapply(cand, dir.exists, logical(1)))[1]]  which
+# yielded NA when nothing matched AND happily accepted a directory that exists
+# but is EMPTY - exactly the unpopulated-git-submodule state this repo shipped
+# in, where the failure only surfaced far downstream inside read.csv().
+.resolve_supp_data <- function(candidates, what = "etc-GEM outputs/supp_data") {
+  env <- Sys.getenv("CANDIDAS_SUPP_DATA", unset = "")
+  if (nzchar(env)) candidates <- c(env, candidates)
+  candidates <- unique(candidates)
+  hit <- NA_character_
+  for (p in candidates) if (dir.exists(p)) { hit <- p; break }
+  if (is.na(hit))
+    stop("ETCGEM_SUPP_DATA_MISSING: no ", what, " directory exists.\n",
+         "  Looked in (in order):\n    ", paste(candidates, collapse = "\n    "), "\n",
+         "  Fix:\n    git submodule update --init --recursive\n",
+         "    cd cauris_etcgem/strains/eci_cauris/scripts && \\\n",
+         "      ../../../.venv/bin/python generate_model_data.py all", call. = FALSE)
+  n_csv <- length(list.files(hit, pattern = "\\.csv$", ignore.case = TRUE))
+  if (n_csv == 0L)
+    stop("ETCGEM_SUPP_DATA_EMPTY: ", what, " exists but holds no .csv files.\n",
+         "    ", hit, "\n",
+         "  That is what an UNPOPULATED GIT SUBMODULE looks like. Fix:\n",
+         "    git submodule update --init --recursive\n",
+         "    cd cauris_etcgem/strains/eci_cauris/scripts && \\\n",
+         "      ../../../.venv/bin/python generate_model_data.py all", call. = FALSE)
+  hit <- normalizePath(hit, mustWork = FALSE)
+  message("  etc-GEM supp_data: ", hit, "  (", n_csv, " csv)")
+  hit
+}
+
+.require_csv <- function(dir, file, produced_by = NULL) {
+  p <- file.path(dir, file)
+  if (!file.exists(p))
+    stop("ETCGEM_FILE_MISSING: ", file, " is not in\n    ", dir, "\n",
+         if (!is.null(produced_by)) paste0("  It is produced by: ", produced_by, "\n") else "",
+         "  Re-run the etc-GEM pipeline (including that stage) and try again.",
+         call. = FALSE)
+  read.csv(p)
+}
+
 OI <- c(I = "#0072B2", II = "#CC79A7", III = "#009E73", IV = "#E69F00")
 SHORT <- c(I = "C. auris I", II = "C. auris II", III = "C. auris III", IV = "C. auris IV")
 RED <- "#B22222"; GRPS <- c("I", "II", "III", "IV")
@@ -65,11 +115,10 @@ cand <- c(file.path(.root, "cauris_etcgem", "strains", "eci_cauris", "outputs", 
           file.path(.d0,  "..", "outputs", "supp_data"),
           file.path(.d0,  "..", "cauris_etcgem", "strains", "eci_cauris", "outputs", "supp_data"),
           "supp_data")
-DD <- cand[which(vapply(cand, dir.exists, logical(1)))[1]]
-if (is.na(DD)) stop("supp_data/ not found. Looked in:\n  ", paste(cand, collapse = "\n  "))
-FD <- file.path(.root, "results", "figures", "manuscript"); dir.create(FD, recursive = TRUE, showWarnings = FALSE)
+DD <- .resolve_supp_data(cand)
+FD <- file.path(.RESULTS_DIR, "figures", "manuscript"); dir.create(FD, recursive = TRUE, showWarnings = FALSE)
 FD <- normalizePath(FD, mustWork = FALSE)
-rd <- function(f) read.csv(file.path(DD, f))
+rd <- function(f) .require_csv(DD, f, produced_by = "generate_model_data.py")
 save_fig <- function(f, name, h_mm, w_mm = 183) {
   ggsave(file.path(FD, paste0(name, ".png")), f, width = w_mm/25.4, height = h_mm/25.4,
          dpi = 600, bg = "white")
@@ -220,13 +269,13 @@ cand <- c(file.path(.root, "cauris_etcgem", "strains", "eci_cauris", "outputs", 
           file.path(.d0,  "..", "outputs", "supp_data"),
           file.path(.d0,  "..", "cauris_etcgem", "strains", "eci_cauris", "outputs", "supp_data"),
           "supp_data")
-DD <- cand[which(vapply(cand, dir.exists, logical(1)))[1]]
-if (is.na(DD)) stop("supp_data/ not found. Looked in:\n  ", paste(cand, collapse = "\n  "))
-FD <- file.path(.root, "results", "figures", "manuscript"); dir.create(FD, recursive = TRUE, showWarnings = FALSE)
+DD <- .resolve_supp_data(cand)
+FD <- file.path(.RESULTS_DIR, "figures", "manuscript"); dir.create(FD, recursive = TRUE, showWarnings = FALSE)
 FD <- normalizePath(FD, mustWork = FALSE)
 
 # ---- a  capacity is a clade-level trait (variance components) ----------------
-cap <- read.csv(file.path(DD, "capacity_isolates.csv"))
+cap <- .require_csv(DD, "capacity_isolates.csv",
+                    produced_by = "generate_model_data.py stage `boot`")
 cap$clade <- factor(cap$clade, levels = GRPS)
 av  <- summary(aov(capacity ~ clade, cap))[[1]]
 msb <- av["clade", "Mean Sq"]; msw <- av["Residuals", "Mean Sq"]; ni <- 3
@@ -244,7 +293,8 @@ fa <- ggplot(cap, aes(cl2, capacity, colour = clade)) +
        title = "Effective capacity is a clade-level trait (n = 12)", subtitle = "isolate-level", tag = "a") + th
 
 # ---- b  only capacity separates clades (non-overlapping 95% CrI) -------------
-bs <- read.csv(file.path(DD, "bayes_summary.csv"))
+bs <- .require_csv(DD, "bayes_summary.csv",
+                   produced_by = "generate_model_data.py stage `bayes`")
 sep_count <- function(param) {
   s <- bs[bs$param == param, ]; rownames(s) <- s$clade; n <- 0L
   for (p in combn(GRPS, 2, simplify = FALSE))
@@ -274,10 +324,22 @@ fc <- ggplot(idd, aes(clade, pid, fill = clade)) +
        title = "Coding sequence is >99% identical", subtitle = "diamond RBH, whole proteome (~5,400 prot.)", tag = "c") + th
 
 # ---- d  not bulk transcription either (GSE165762, Clade I vs II) -------------
-nf <- file.path(.root, "data", "expression", "capacity_expression_CladeI_vs_II.csv")
-if (!file.exists(nf)) nf <- file.path(.d0, "..", "data", "expression", "capacity_expression_CladeI_vs_II.csv")
-if (!file.exists(nf)) nf <- file.path(.d0, "capacity_expression_CladeI_vs_II.csv")
-if (file.exists(nf)) {
+# C1: honour CANDIDAS_EXPRESSION_OUT first, so a non-destructive re-run reads
+# the CSV that THIS run's 11_capacity_expression.R just wrote rather than the
+# committed one in data/expression/.
+.exp_cand <- c(Sys.getenv("CANDIDAS_EXPRESSION_OUT", unset = ""),
+               file.path(.RESULTS_DIR, "expression"),
+               file.path(.root, "data", "expression"),
+               file.path(.d0, "..", "data", "expression"),
+               .d0)
+.exp_cand <- .exp_cand[nzchar(.exp_cand)]
+nf <- NA_character_
+for (p in .exp_cand) {
+  q <- file.path(p, "capacity_expression_CladeI_vs_II.csv")
+  if (file.exists(q)) { nf <- q; break }
+}
+if (!is.na(nf)) message("  expression CSV: ", nf)
+if (!is.na(nf) && file.exists(nf)) {
   de <- read.csv(nf); de$grp <- ifelse(de$is_metab, "metabolic", "genome background")
   m <- de$logFC[de$is_metab]; o <- de$logFC[!de$is_metab]
   pw <- suppressWarnings(wilcox.test(m, o)$p.value)

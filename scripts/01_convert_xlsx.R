@@ -25,22 +25,32 @@
 #
 # RUN:
 #   RStudio: open this file -> click "Run App".
-#   Terminal: Rscript scripts/01_convert_xlsx.R
+#   Terminal: Rscript scripts/01_convert_xlsx.R --app      <- the --app flag is REQUIRED
+#             (without it the file just defines the app and returns, so that
+#              run_all.R can source it without blocking on a Shiny server)
 #
 # You only need to run this once, before 02_longdata.R. After the CSVs exist,
 # run the normal pipeline (run_all.R -> 02 -> 03 -> 06).
 # =============================================================================
 
 # ---- Locate the project and load shared registry ----------------------------
-.this_dir <- tryCatch(dirname(sys.frame(1)$ofile), error = function(e) NA_character_)
-if (length(.this_dir) == 0 || is.na(.this_dir) || !nzchar(.this_dir)) {
-  if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable() &&
-      nzchar(rstudioapi::getActiveDocumentContext()$path)) {
-    .this_dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
-  } else {
-    .this_dir <- getwd()
+# --file= is checked FIRST (C1): under `Rscript scripts/01_convert_xlsx.R`
+# neither sys.frame(1)$ofile nor rstudioapi is available, so this used to fall
+# through to getwd() and then fail on "cannot open file .../config.R".
+.this_dir <- local({
+  fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+  if (length(fa)) return(dirname(normalizePath(sub("^--file=", "", fa[1]), mustWork = FALSE)))
+  d <- tryCatch(dirname(sys.frame(1)$ofile), error = function(e) NA_character_)
+  if (length(d) == 0 || is.na(d) || !nzchar(d)) {
+    if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable() &&
+        nzchar(rstudioapi::getActiveDocumentContext()$path)) {
+      d <- dirname(rstudioapi::getActiveDocumentContext()$path)
+    } else {
+      d <- getwd()
+    }
   }
-}
+  d
+})
 
 # config.R provides STRAIN_GROUPS, GROUP_SPECIES, PLATE_ROWS, N_REPLICATES,
 # canonical_group() and isolate_code(), so the code assignment is defined in one
@@ -336,11 +346,34 @@ server <- function(input, output, session) {
   })
 }
 
-# Rscript launches the browser; RStudio uses "Run App".
-if (interactive()) {
-  shinyApp(ui, server)
+# ---- headless guard (C1) ----------------------------------------------------
+# This file used to call runApp() whenever it was NOT interactive, which is
+# exactly the case under Rscript - so `Rscript scripts/run_all.R` blocked
+# forever on a Shiny server nobody could see. Now: sourcing this file always
+# DEFINES ui/server and returns; the app launches only when a human asked for
+# it. Nothing is written unless the app runs, so the committed converter output
+# is never touched by an unattended run.
+#   RStudio               -> "Run App", or just source() (interactive)
+#   Terminal, on purpose  -> Rscript scripts/01_convert_xlsx.R --app
+#                            (or CANDIDAS_RUN_APP=1 Rscript scripts/01_convert_xlsx.R)
+#   run_all.R / any batch -> defines objects, launches nothing
+.candidas_run_app <- function() {
+  if (isTRUE(getOption("candidas.headless")))            return(FALSE)
+  if (identical(Sys.getenv("CANDIDAS_HEADLESS"), "1"))   return(FALSE)
+  if (identical(Sys.getenv("CANDIDAS_RUN_APP"), "1"))    return(TRUE)
+  if ("--app" %in% commandArgs(trailingOnly = TRUE))     return(TRUE)
+  interactive()
+}
+
+if (.candidas_run_app()) {
+  if (interactive()) {
+    shinyApp(ui, server)
+  } else {
+    message("Launching converter app at http://127.0.0.1:7788 ...")
+    runApp(shinyApp(ui, server), host = "127.0.0.1", port = 7788,
+           launch.browser = TRUE)
+  }
 } else {
-  message("Launching converter app at http://127.0.0.1:7788 ...")
-  runApp(shinyApp(ui, server), host = "127.0.0.1", port = 7788,
-         launch.browser = TRUE)
+  message("01_convert_xlsx.R: headless - ui/server defined, app NOT launched, ",
+          "nothing written.\n  To use it: Rscript scripts/01_convert_xlsx.R --app")
 }
