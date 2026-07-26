@@ -71,13 +71,22 @@
 # RUN AFTER 08_bayesian_models.R.
 # =============================================================================
 
-.this_dir <- tryCatch(dirname(sys.frame(1)$ofile), error = function(e) NA_character_)
-if (length(.this_dir) == 0 || is.na(.this_dir) || !nzchar(.this_dir)) {
-  if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable() &&
-      nzchar(rstudioapi::getActiveDocumentContext()$path)) {
-    .this_dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
-  } else .this_dir <- getwd()
-}
+# C1: --file= FIRST. Under `Rscript scripts/<this>.R` neither sys.frame(1)$ofile
+# nor rstudioapi resolves, so this fell back to getwd() and then died on
+# "cannot open file .../config.R". Sourcing from run_all.R was unaffected,
+# which is why the bug stayed hidden.
+.this_dir <- local({
+  fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+  if (length(fa)) return(dirname(normalizePath(sub("^--file=", "", fa[1]), mustWork = FALSE)))
+  d <- tryCatch(dirname(sys.frame(1)$ofile), error = function(e) NA_character_)
+  if (length(d) == 0 || is.na(d) || !nzchar(d)) {
+    if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable() &&
+        nzchar(rstudioapi::getActiveDocumentContext()$path)) {
+      d <- dirname(rstudioapi::getActiveDocumentContext()$path)
+    } else d <- getwd()
+  }
+  d
+})
 source(file.path(.this_dir, "config.R"))
 
 need <- c("posterior", "ggplot2", "dplyr", "tidyr", "tibble", "readr", "patchwork")

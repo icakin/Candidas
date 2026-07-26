@@ -51,15 +51,19 @@
 # 0) Config + packages
 # =============================================================================
 
-.this_dir <- if (
-  requireNamespace("rstudioapi", quietly = TRUE) &&
-  rstudioapi::isAvailable() &&
-  nzchar(rstudioapi::getActiveDocumentContext()$path)
-) {
-  dirname(rstudioapi::getActiveDocumentContext()$path)
-} else {
+# C1: --file= FIRST. Under `Rscript scripts/<this>.R` neither rstudioapi nor
+# sys.frame(1)$ofile resolves, so this fell back to getwd() and then died on
+# "cannot open file .../config.R". Sourcing from run_all.R was unaffected,
+# which is why the bug stayed hidden.
+.this_dir <- local({
+  fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+  if (length(fa)) return(dirname(normalizePath(sub("^--file=", "", fa[1]), mustWork = FALSE)))
+  if (requireNamespace("rstudioapi", quietly = TRUE) &&
+      rstudioapi::isAvailable() &&
+      nzchar(rstudioapi::getActiveDocumentContext()$path))
+    return(dirname(rstudioapi::getActiveDocumentContext()$path))
   tryCatch(dirname(sys.frame(1)$ofile), error = function(e) getwd())
-}
+})
 
 source(file.path(.this_dir, "config.R"))
 
