@@ -62,10 +62,10 @@ _canon = {g.lower(): g for g in GROUPS}
 ti["group"] = ti.group.str.strip().str.lower().map(_canon)
 if ti.group.isna().any():
     raise SystemExit("unrecognised group prefix in c2_Tinternal.csv")
-der = pd.read_csv(os.path.join(ROOT, "results_C1", "tables",
+der = pd.read_csv(os.path.join(ROOT, "runs/C1_reproduction", "tables",
                                "derived_N0_R_results_with_carbon.csv"))
 der["group"] = der.otu_name.str.extract(r"^([A-Za-z0-9]+)_")[0]
-ss = pd.read_csv(os.path.join(ROOT, "results_C1", "tables",
+ss = pd.read_csv(os.path.join(ROOT, "runs/C1_reproduction", "tables",
                               "sharpe_schoolfield_growth_fgC_h_coefs.csv"))
 ssm = ss.pivot_table(index="OTU", columns="parameter", values="Estimate")
 pb = pd.read_csv(os.path.join(TOOLS, "c2_partB_per_series.csv"))

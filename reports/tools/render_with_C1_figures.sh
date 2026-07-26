@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 # ---------------------------------------------------------------------------
-# Render the manuscript against the REGENERATED (results_C1) figures, without
+# Render the manuscript against the REGENERATED (runs/C1_reproduction) figures, without
 # touching manuscript/draft/*.qmd and without writing into results/.
 #
 # _body_main.qmd and _body_supp.qmd reference figures as
 #     ![](../../results/figures/manuscript/FIG1_decoupling.png)
 # i.e. relative to manuscript/draft. So we build a STAGING COPY of the Quarto
 # project whose sibling ../../results/figures/manuscript is a symlink to
-# results_C1/figures/manuscript. Same .qmd bytes, different figures.
+# runs/C1_reproduction/figures/manuscript. Same .qmd bytes, different figures.
 #
 #   bash reports/tools/render_with_C1_figures.sh
-#   -> results_C1/manuscript_build/draft/_output/{manuscript,supplementary,
+#   -> runs/C1_reproduction/manuscript_build/draft/_output/{manuscript,supplementary,
 #                                                 manuscript_combined}.{docx,pdf}
 # ---------------------------------------------------------------------------
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-RES="${CANDIDAS_RESULTS:-$ROOT/results_C1}"
+RES="${CANDIDAS_RESULTS:-$ROOT/runs/C1_reproduction}"
 STAGE="$RES/manuscript_build"
 
 rm -rf "$STAGE"

@@ -107,7 +107,7 @@ colored_center(50,0.35,[("C. auris ",INK,"bold",True),("II 0.39",CIA["II"],"bold
 
 import os as _os
 # C1: the results tree follows CANDIDAS_RESULTS, matching config.R, so a
-# non-destructive re-run writes to results_C1/ instead of results/.
+# non-destructive re-run writes to runs/C1_reproduction/ instead of results/.
 _base = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 _results = _os.environ.get("CANDIDAS_RESULTS") or _os.path.join(_base, "results")
 _out = _os.path.join(_results, "figures", "manuscript")

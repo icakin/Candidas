@@ -56,10 +56,10 @@ def med(x):
 # data
 # ---------------------------------------------------------------------------
 print("loading raw oxygen traces ...", flush=True)
-long = pd.read_csv(os.path.join(ROOT, "results_C1", "tables", "Oxygen_All_Long.csv"))
-meta = pd.read_csv(os.path.join(ROOT, "results_C1", "tables",
+long = pd.read_csv(os.path.join(ROOT, "runs/C1_reproduction", "tables", "Oxygen_All_Long.csv"))
+meta = pd.read_csv(os.path.join(ROOT, "runs/C1_reproduction", "tables",
                                 "Oxygen_Trimmed_Series_Metadata.csv"))
-der = pd.read_csv(os.path.join(ROOT, "results_C1", "tables",
+der = pd.read_csv(os.path.join(ROOT, "runs/C1_reproduction", "tables",
                                "derived_N0_R_results_with_carbon.csv"))
 der["group"] = der.otu_name.str.extract(r"^([A-Za-z0-9]+)_")[0]
 print(f"  {len(long):,} rows, {len(meta)} series in the trimming metadata, "
@@ -494,7 +494,7 @@ R["EK_after_contamination_band"] = ekband
 # ---------------------------------------------------------------------------
 head("B5. thermal-ramp error: a ramp-aware N0")
 
-ss = pd.read_csv(os.path.join(ROOT, "results_C1", "tables",
+ss = pd.read_csv(os.path.join(ROOT, "runs/C1_reproduction", "tables",
                               "sharpe_schoolfield_growth_fgC_h_coefs.csv"))
 print(f"  per-isolate Sharpe-Schoolfield growth fits: {len(ss)} rows, "
       f"columns {[c for c in ss.columns][:8]}")

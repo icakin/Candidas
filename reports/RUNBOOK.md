@@ -120,10 +120,10 @@ To regenerate without touching the committed outputs, use `run_c1.sh` (or set
 the same five variables yourself):
 
 ```bash
-CANDIDAS_RESULTS="$PWD/results_C1" \
+CANDIDAS_RESULTS="$PWD/runs/C1_reproduction" \
 ETCGEM_OUT_SUFFIX=_C1 \
-CANDIDAS_SUPP_DATA="$PWD/cauris_etcgem/strains/eci_cauris/outputs/supp_data_C1" \
-CANDIDAS_EXPRESSION_OUT="$PWD/results_C1/expression" \
+CANDIDAS_SUPP_DATA="$PWD/cauris_etcgem/runs/C1/supp_data" \
+CANDIDAS_EXPRESSION_OUT="$PWD/runs/C1_reproduction/expression" \
   bash scripts/run_all.sh
 ```
 
@@ -270,7 +270,7 @@ That message is expected and correct for a redirected run.
 
 ## 8. What "success" looks like
 
-* `results_C1/` holds **37 tables** (40 with the three large oxygen
+* `runs/C1_reproduction/` holds **37 tables** (40 with the three large oxygen
   intermediates, which `.gitignore` keeps out of the repo), **78 figures**,
   **5 `.rds`** model objects and **2** expression outputs.
 * The committed `results/` holds 39 tables and 83 figures. Every difference is
@@ -283,11 +283,11 @@ That message is expected and correct for a redirected run.
     layout. **No current script writes them** — 12, 13 and 14 all write to
     `figures/manuscript/`. They are duplicates and should be deleted; that is a
     housekeeping change, not a C1 one.
-  * *only in `results_C1/`* — `Oxygen_All_Long.csv`,
+  * *only in `runs/C1_reproduction/`* — `Oxygen_All_Long.csv`,
     `Oxygen_Data_Filtered.csv`, `Oxygen_Data_Smoothed_Trimmed.csv` (gitignored
     by name, so absent from the committed tree) and the two large diagnostic
     PDFs `per_series_fits.pdf`, `oxygen_trimming_diagnostics.pdf`.
-* `cauris_etcgem/strains/eci_cauris/outputs/supp_data_C1/` holds **13 CSVs**
+* `cauris_etcgem/runs/C1/supp_data/` holds **13 CSVs**
   plus `bayes_chain_raw.npz`.
 * `manuscript/draft/_output/` holds **6** documents.
 * `git status` shows no modification to `data/`, `results/`, or the committed

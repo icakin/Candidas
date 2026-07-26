@@ -4,7 +4,7 @@ C2. Diagnostic plus a full downstream sensitivity analysis under three N0
 treatments. **It changes no shipped default.** `N0_BACKPROJECT` is still `TRUE`.
 
 Everything here was measured on this machine, from the C1 regeneration
-(`results_C1/`) and the raw exports in `data/`. Tools and raw JSON:
+(`runs/C1_reproduction/`) and the raw exports in `data/`. Tools and raw JSON:
 `reports/tools/c2_*`. Figures: `reports/figures_N0/`.
 
 ---
@@ -365,17 +365,17 @@ new estimator.**
 
 | | treatment | tree | wall time |
 |---|---|---|---:|
-| **ARM 1** | `N0 = N_inoc · e^(r·δ)` (shipped) | `results_C2_current/` | 10 m 33 s |
-| **ARM 2** | `N0 = N_inoc · e^(r·δ) · f_ramp` | `results_C2_ramp/` | 10 m 23 s |
-| **ARM 3** | `N0 = N_inoc` — **LOWER BOUND on N0, not a candidate** | `results_C2_nobp/` | 11 m 07 s |
+| **ARM 1** | `N0 = N_inoc · e^(r·δ)` (shipped) | `runs/C2_arm_current/` | 10 m 33 s |
+| **ARM 2** | `N0 = N_inoc · e^(r·δ) · f_ramp` | `runs/C2_arm_ramp/` | 10 m 23 s |
+| **ARM 3** | `N0 = N_inoc` — **LOWER BOUND on N0, not a candidate** | `runs/C2_arm_nobp/` | 11 m 07 s |
 
 Each is a complete 07 → 08 → 09 → 10 → 12 → 13 with a **full brms refit**.
 Held fixed across arms: the committed trim windows, exclusions, inoculum and
 cell-carbon constants; every brms formula, prior and the seed 1234; and the
-etc-GEM capacity values (`outputs/supp_data_C1/` for every arm — C1 established
+etc-GEM capacity values (`runs/C1/supp_data/` for every arm — C1 established
 the etc-GEM is not reproducible, so letting capacity vary would confound the
 comparison). 02/03/06/11 are N0-independent and their outputs are carried over
-from `results_C1/`, so all three arms literally share the same inputs.
+from `runs/C1_reproduction/`, so all three arms literally share the same inputs.
 
 brms per arm: `iter 4000, warmup 1000, chains 4, seed 1234, adapt_delta 0.99 /
 0.95, max_treedepth 12`. **max R̂ = 1.00297, min ESS bulk = 2601, no divergent
@@ -384,7 +384,7 @@ across arms, so these are the same numbers, not merely similar ones).
 
 ### 3.0 The reproducibility floor (PART C0) — established first
 
-`results_C2_current` vs `results_C1`: same treatment, different run.
+`runs/C2_arm_current` vs `runs/C1_reproduction`: same treatment, different run.
 
 **35 of 36 comparable tables are IDENTICAL (max |diff| < 1e-10)** — including
 `fig_values.csv`, `fig_contrasts.csv`, `carbon_tax_group.csv` and
@@ -520,7 +520,7 @@ finding, restated here so it is not lost; **no fourth number is introduced**.
 
 ### 3.5 Fig 4d and 4e — capacity correlations
 
-Capacity is held fixed at `supp_data_C1/` in all three arms, so only the
+Capacity is held fixed at `runs/C1/supp_data/` in all three arms, so only the
 economics axis moves.
 
 | arm | **4d** r(capacity, fever tax at 40 °C) | **4e** r(capacity, per-cell respiration) |

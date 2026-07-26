@@ -6,7 +6,7 @@ c2_compare_arms.py -- C2 PARTs C0 and D.
 Read-only. Writes reports/tools/c2_arms.json and prints every table the
 sensitivity report needs.
 
-  C0  the reproducibility floor: results_C2_current vs results_C1 (same
+  C0  the reproducibility floor: runs/C2_arm_current vs runs/C1_reproduction (same
       treatment, different run). Anything smaller than the floor is not
       evidence.
   D   the three arms side by side, plus the growth-side invariance check.
@@ -19,7 +19,7 @@ from scipy import stats
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 TOOLS = os.path.join(ROOT, "reports", "tools")
 ARMS = ["current", "ramp", "nobp"]
-ARM_DIR = {a: os.path.join(ROOT, f"results_C2_{a}") for a in ARMS}
+ARM_DIR = {a: os.path.join(ROOT, "runs", f"C2_arm_{a}") for a in ARMS}
 TAXA = ["Clade1", "Clade2", "Clade3", "Clade4", "para"]
 CLADES = ["I", "II", "III", "IV"]
 R = {}
@@ -37,9 +37,9 @@ def rd(arm, f):
 # =============================================================================
 # C0. the reproducibility floor
 # =============================================================================
-head("C0. reproducibility floor -- results_C2_current vs results_C1 (same treatment)")
+head("C0. reproducibility floor -- runs/C2_arm_current vs runs/C1_reproduction (same treatment)")
 
-a_dir = os.path.join(ROOT, "results_C1", "tables")
+a_dir = os.path.join(ROOT, "runs/C1_reproduction", "tables")
 b_dir = os.path.join(ARM_DIR["current"], "tables")
 floor = {}
 print(f"  {'file':46} {'rows':>6} {'max abs diff':>14} {'max rel diff':>14}  verdict")
@@ -209,9 +209,9 @@ for g in TAXA:
 R["cue"] = cue
 
 # ---- Fig 4d/4e capacity correlations --------------------------------------
-head("D5. Fig 4d / 4e capacity correlations (capacity held FIXED at supp_data_C1)")
+head("D5. Fig 4d / 4e capacity correlations (capacity held FIXED at runs/C1/supp_data)")
 cap = pd.read_csv(os.path.join(ROOT, "cauris_etcgem", "strains", "eci_cauris",
-                               "outputs", "supp_data_C1", "capacity_isolates.csv"))
+                               "outputs", "runs/C1/supp_data", "capacity_isolates.csv"))
 print(f"  {'arm':>8} | {'r(capacity, fever tax 40C)':>28} | {'r(capacity, respiration)':>26}")
 corr = {}
 for a in got:

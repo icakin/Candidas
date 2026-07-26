@@ -105,10 +105,10 @@ Every path is an environment knob, so you can regenerate everything into a fresh
 tree and leave the committed outputs untouched for comparison:
 
 ```bash
-CANDIDAS_RESULTS="$PWD/results_C1" \
+CANDIDAS_RESULTS="$PWD/runs/C1_reproduction" \
 ETCGEM_OUT_SUFFIX=_C1 \
-CANDIDAS_SUPP_DATA="$PWD/cauris_etcgem/strains/eci_cauris/outputs/supp_data_C1" \
-CANDIDAS_EXPRESSION_OUT="$PWD/results_C1/expression" \
+CANDIDAS_SUPP_DATA="$PWD/cauris_etcgem/runs/C1/supp_data" \
+CANDIDAS_EXPRESSION_OUT="$PWD/runs/C1_reproduction/expression" \
   bash scripts/run_all.sh
 ```
 
@@ -183,7 +183,7 @@ Disk:
 | `renv/library` | ~1.5 GB |
 | `cauris_etcgem/.venv` | ~400 MB |
 | TinyTeX | ~500 MB |
-| one full results tree (`results/` or `results_C1/`) | ~150 MB |
+| one full results tree (`results/` or `runs/C1_reproduction/`) | ~150 MB |
 | one etc-GEM outputs tree | ~5 MB (+ ~15 MB if raw emcee chains are kept) |
 | `manuscript/draft/_output/` | ~20 MB |
 | **total, comfortably** | **~3 GB** |

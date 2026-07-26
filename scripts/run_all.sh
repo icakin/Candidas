@@ -21,10 +21,10 @@
 #   LOG_DIR                  log destination        (default: <root>/logs)
 #
 # Non-destructive C1-style run (writes nothing into results/ or supp_data/):
-#   CANDIDAS_RESULTS="$PWD/results_C1" \
+#   CANDIDAS_RESULTS="$PWD/runs/C1_reproduction" \
 #   ETCGEM_OUT_SUFFIX=_C1 \
-#   CANDIDAS_SUPP_DATA="$PWD/cauris_etcgem/strains/eci_cauris/outputs/supp_data_C1" \
-#   CANDIDAS_EXPRESSION_OUT="$PWD/results_C1/expression" \
+#   CANDIDAS_SUPP_DATA="$PWD/cauris_etcgem/runs/C1/supp_data" \
+#   CANDIDAS_EXPRESSION_OUT="$PWD/runs/C1_reproduction/expression" \
 #     bash scripts/run_all.sh
 # =============================================================================
 set -euo pipefail

@@ -86,7 +86,7 @@ data_dir    <- file.path(base_dir, "data")
 # normal run. Set CANDIDAS_RESULTS to redirect the WHOLE tree somewhere else and
 # leave results/ untouched for comparison:
 #
-#     CANDIDAS_RESULTS=/abs/path/results_C1 Rscript scripts/run_all.R
+#     CANDIDAS_RESULTS=/abs/path/runs/C1_reproduction Rscript scripts/run_all.R
 #
 # NOTE the cached brms fits (models_dir) follow RESULTS_DIR too, so pointing
 # CANDIDAS_RESULTS at an empty tree genuinely REFITS rather than silently reusing
@@ -673,7 +673,7 @@ make_dir <- function(path) {
 # point of the mistake. These two helpers make both cases a named, actionable
 # error at the point of resolution.
 #
-# CANDIDAS_SUPP_DATA overrides the search (used by C1 to read supp_data_C1/).
+# CANDIDAS_SUPP_DATA overrides the search (used by C1 to read runs/C1/supp_data/).
 
 resolve_supp_data <- function(candidates, what = "etc-GEM outputs/supp_data") {
   env <- Sys.getenv("CANDIDAS_SUPP_DATA", unset = "")

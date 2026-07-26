@@ -2,7 +2,7 @@
 c1_compare.py -- row-by-row numeric comparison of two output trees.
 
     cauris_etcgem/.venv/bin/python reports/tools/c1_compare.py \
-        --a results --b results_C1 --label "results vs results_C1" \
+        --a results --b runs/C1_reproduction --label "results vs runs/C1_reproduction" \
         --out reports/tools/compare_results.json
 
 Read-only on the inputs. Writes one JSON (and a markdown table on stdout).

@@ -1,5 +1,5 @@
 {
-  "_comment": "Environment captured by C1 (prompts/C1_environment_and_end_to_end_reproduction_prompt.md). Every version below was READ FROM THE LIVE ENVIRONMENT that produced results_C1/ and outputs/supp_data_C1/, not copied from documentation.",
+  "_comment": "Environment captured by C1 (prompts/C1_environment_and_end_to_end_reproduction_prompt.md). Every version below was READ FROM THE LIVE ENVIRONMENT that produced runs/C1_reproduction/ and runs/C1/supp_data/, not copied from documentation.",
   "captured_on": "2026-07-25",
   "captured_by": "C1 environment + end-to-end reproduction",
 

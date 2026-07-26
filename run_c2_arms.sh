@@ -4,25 +4,25 @@
 # =============================================================================
 #   bash run_c2_arms.sh [current|ramp|nobp ...]     (default: all three)
 #
-#   ARM 1  current   N0 = N_inoc * exp(r*delta)              -> results_C2_current/
-#   ARM 2  ramp      N0 = N_inoc * exp(r*delta) * f_ramp     -> results_C2_ramp/
-#   ARM 3  nobp      N0 = N_inoc                             -> results_C2_nobp/
+#   ARM 1  current   N0 = N_inoc * exp(r*delta)              -> runs/C2_arm_current/
+#   ARM 2  ramp      N0 = N_inoc * exp(r*delta) * f_ramp     -> runs/C2_arm_ramp/
+#   ARM 3  nobp      N0 = N_inoc                             -> runs/C2_arm_nobp/
 #                    LOWER BOUND on N0, not a candidate.
 #
 # Everything except the N0 treatment is held fixed:
 #   * the same committed trim windows, exclusions, inoculum and cell constants
 #     (they come from results/tables via config.R's app_input() fallback);
 #   * the same brms formulae, priors and seed (1234);
-#   * the same etc-GEM capacity values -- outputs/supp_data_C1/ for every arm,
+#   * the same etc-GEM capacity values -- runs/C1/supp_data/ for every arm,
 #     because C1 established the etc-GEM is not reproducible, so letting
 #     capacity vary would confound the comparison;
 #   * ONE seed (CANDIDAS_SEED) for the four previously-unseeded R subsample /
 #     bootstrap stages, identical across arms.
 #
 # 02/03/06 are N0-INDEPENDENT (N0 enters only at 07). Their outputs are copied
-# from results_C1/ so all three arms literally share the same inputs, which is
+# from runs/C1_reproduction/ so all three arms literally share the same inputs, which is
 # what makes the growth-side invariance check meaningful. 11 is likewise
-# N0-independent; 13 reads its committed output from results_C1/expression/.
+# N0-independent; 13 reads its committed output from runs/C1_reproduction/expression/.
 # =============================================================================
 set -uo pipefail
 cd "$(dirname "$0")"
@@ -31,8 +31,8 @@ ROOT="$PWD"
 ARMS=("$@"); [ ${#ARMS[@]} -eq 0 ] && ARMS=(current ramp nobp)
 
 export CANDIDAS_SEED=20260726          # recorded in reports/N0_SENSITIVITY.md
-export CANDIDAS_SUPP_DATA="$ROOT/cauris_etcgem/strains/eci_cauris/outputs/supp_data_C1"
-export CANDIDAS_EXPRESSION_OUT="$ROOT/results_C1/expression"
+export CANDIDAS_SUPP_DATA="$ROOT/cauris_etcgem/runs/C1/supp_data"
+export CANDIDAS_EXPRESSION_OUT="$ROOT/runs/C1_reproduction/expression"
 export CANDIDAS_N0_RAMP_CSV="$ROOT/reports/tools/c2_ramp_n0_factors.csv"
 export CANDIDAS_SKIP="02,03,06,11,14"
 
@@ -45,7 +45,7 @@ mkdir -p logs
 STAMP="$(date +%Y%m%d_%H%M%S)"
 
 for ARM in "${ARMS[@]}"; do
-  OUT="$ROOT/results_C2_${ARM}"
+  OUT="$ROOT/runs/C2_arm_${ARM}"
   LOG="$ROOT/logs/c2_arm_${ARM}_${STAMP}.log"
   echo ""
   echo "======================================================================"
@@ -57,9 +57,9 @@ for ARM in "${ARMS[@]}"; do
   echo "======================================================================"
 
   rm -rf "$OUT"
-  mkdir -p "$OUT/tables" "$OUT/figures" "$OUT/rds"
+  mkdir -p "$ROOT/runs" "$OUT/tables" "$OUT/figures" "$OUT/rds"
   for f in "${CARRY[@]}"; do
-    [ -f "$ROOT/results_C1/tables/$f" ] && cp "$ROOT/results_C1/tables/$f" "$OUT/tables/"
+    [ -f "$ROOT/runs/C1_reproduction/tables/$f" ] && cp "$ROOT/runs/C1_reproduction/tables/$f" "$OUT/tables/"
   done
 
   t0=$(date +%s)
@@ -75,6 +75,6 @@ echo ""
 echo "======================================================================"
 echo "all arms done"
 for ARM in "${ARMS[@]}"; do
-  echo "  results_C2_${ARM}/tables : $(ls "$ROOT/results_C2_${ARM}/tables"/*.csv 2>/dev/null | wc -l | tr -d ' ') csv"
+  echo "  runs/C2_arm_${ARM}/tables : $(ls "$ROOT/runs/C2_arm_${ARM}/tables"/*.csv 2>/dev/null | wc -l | tr -d ' ') csv"
 done
 echo "======================================================================"

@@ -50,7 +50,7 @@ INK, SUB, GRID = "#0b0b0b", "#52514e", "#e6e5e1"
 # ---------------------------------------------------------------------------
 copied = []
 for arm in ARMS:
-    src = os.path.join(ROOT, f"results_C2_{arm}", "figures", "manuscript")
+    src = os.path.join(ROOT, "runs", f"C2_arm_{arm}", "figures", "manuscript")
     if not os.path.isdir(src):
         print(f"  no figures for arm {arm} at {src}")
         continue
@@ -66,7 +66,7 @@ print(f"collected {len(copied)} per-arm figures into {os.path.relpath(OUT, ROOT)
 # ---------------------------------------------------------------------------
 fv = {}
 for arm in ARMS:
-    p = os.path.join(ROOT, f"results_C2_{arm}", "tables", "fig_values.csv")
+    p = os.path.join(ROOT, "runs", f"C2_arm_{arm}", "tables", "fig_values.csv")
     if os.path.exists(p):
         fv[arm] = pd.read_csv(p).set_index("Group")
 have = [a for a in ARMS if a in fv]

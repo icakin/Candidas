@@ -8,8 +8,8 @@ What is `delta`, how big is exp(r*delta), and how much of E_R is it?
 Read-only. Writes reports/tools/c2_partA.json and prints the tables.
 
 Inputs (all from the C1 regeneration, so provenance is known):
-    results_C1/tables/derived_N0_R_results_with_carbon.csv
-    results_C1/tables/Oxygen_Trimmed_Series_Metadata.csv
+    runs/C1_reproduction/tables/derived_N0_R_results_with_carbon.csv
+    runs/C1_reproduction/tables/Oxygen_Trimmed_Series_Metadata.csv
 
 Definitions, taken from the source rather than assumed:
     07_oxygen_fits.R:361   delta_Ninoc_to_N0_min = fit_start_time   (if N0_BACKPROJECT)
@@ -53,9 +53,9 @@ def desc(x):
                 min=float(x.min()), max=float(x.max()), mean=float(x.mean()))
 
 
-d = pd.read_csv(os.path.join(ROOT, "results_C1", "tables",
+d = pd.read_csv(os.path.join(ROOT, "runs/C1_reproduction", "tables",
                              "derived_N0_R_results_with_carbon.csv"))
-meta = pd.read_csv(os.path.join(ROOT, "results_C1", "tables",
+meta = pd.read_csv(os.path.join(ROOT, "runs/C1_reproduction", "tables",
                                 "Oxygen_Trimmed_Series_Metadata.csv"))
 
 d["group"] = d.otu_name.str.extract(r"^([A-Za-z0-9]+)_")[0]

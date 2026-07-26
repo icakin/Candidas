@@ -4,8 +4,8 @@ Everything below was produced by re-running this repository end to end from the
 committed raw data, on the machine recorded in `env/versions.json`
 (macOS 26.2, Apple silicon, 16 cores; R 4.5.2; Python 3.9.6; rstan 2.32.7;
 etc-GEM engine pinned to `7d32383`). Nothing in `results/`, `data/` or the
-committed etc-GEM outputs was modified — everything went to `results_C1/` and
-`outputs/supp_data_C1/`.
+committed etc-GEM outputs was modified — everything went to `runs/C1_reproduction/` and
+`runs/C1/supp_data/`.
 
 This is a **reproduction report**, not a science report. It changes no analysis
 decision. Where a number does not come back, it says so, with the number.
@@ -59,7 +59,7 @@ overlap) / **NOT REPRODUCED**.
 Raw JSON with per-column detail: `reports/tools/compare_tables.json`,
 `compare_etcgem.json`, `compare_fig3.json`.
 
-### 1a. `results/` vs `results_C1/` (R pipeline)
+### 1a. `results/` vs `runs/C1_reproduction/` (R pipeline)
 
 | file | rows | max abs Δ | max rel Δ | worst column | verdict |
 |---|---:|---:|---:|---|---|
@@ -116,11 +116,11 @@ Notes.
 * The five **NOT REGENERATED** files are the committed outputs of the four
   click-driven apps. They are **inputs**, treated as data; regenerating them
   would require a human to re-make hand judgements. See §5.
-* `results_C1/tables/` additionally contains three large intermediates
+* `runs/C1_reproduction/tables/` additionally contains three large intermediates
   (`Oxygen_All_Long.csv`, `Oxygen_Data_Filtered.csv`,
   `Oxygen_Data_Smoothed_Trimmed.csv`) that `.gitignore` keeps out of the repo.
 * **A figure-inventory difference worth recording.** `results/figures/` has 83
-  files, `results_C1/figures/` 78. Every difference is accounted for. Only in
+  files, `runs/C1_reproduction/figures/` 78. Every difference is accounted for. Only in
   `results/`: **7 stale top-level copies** of the manuscript figures
   (`FIG1_decoupling.png`, `FIG2_the_bill.png`, `FIG_MODEL.png`,
   `FIG_MODEL_SUPP.png`, `FIG_MODEL_SUPP_validation.png`,
@@ -128,11 +128,11 @@ Notes.
   the real ones in `figures/manuscript/`. **No current script writes them** —
   12, 13 and 14 all write to `figures/manuscript/`. They are leftovers from an
   older layout, and a reader cannot tell which copy is current. Not deleted
-  here (that would be a change to `results/`). Only in `results_C1/`: the two
+  here (that would be a change to `results/`). Only in `runs/C1_reproduction/`: the two
   large diagnostic PDFs `per_series_fits.pdf` and
   `oxygen_trimming_diagnostics.pdf`.
 
-### 1b. `outputs/supp_data/` vs `outputs/supp_data_C1/` (etc-GEM)
+### 1b. `outputs/supp_data/` vs `runs/C1/supp_data/` (etc-GEM)
 
 | file | rows | max abs Δ | max rel Δ | worst column | verdict |
 |---|---:|---:|---:|---|---|
@@ -151,7 +151,7 @@ Notes.
 | `bayes_posterior_samples.csv` | 10000 | 2.36e+00 | 2.00e+00 | dTopt | **DIVERGENT** |
 | `bayes_chain_raw.npz` | – | – | – | – | new in C1 (raw emcee chains; no committed counterpart) |
 
-### 1c. `outputs/figure3_data/` vs `outputs/figure3_data_C1/`
+### 1c. `outputs/figure3_data/` vs `runs/C1/figure3_data/`
 
 | file | rows (committed → C1) | max abs Δ | verdict |
 |---|---|---:|---|
@@ -327,7 +327,7 @@ Against `data/expression/capacity_expression_CladeI_vs_II.csv`: same 5 396
 genes, all matched, **max |ΔlogFC| = 8.58e-04**. **NUMERICALLY EQUIVALENT** at
 the level the conclusion depends on (the residual is edgeR/limma version drift,
 not sampling — edgeR is deterministic). The regenerated copy went to
-`results_C1/expression/`; `data/` was not written to.
+`runs/C1_reproduction/expression/`; `data/` was not written to.
 
 ---
 
@@ -373,7 +373,7 @@ not sampling — edgeR is deterministic). The regenerated copy went to
   construction (§4.5).
 
 **Whole-pipeline determinism, measured on two complete `run_all.sh` runs:**
-39 of the 40 CSVs in `results_C1/tables/` are **byte-identical** between runs —
+39 of the 40 CSVs in `runs/C1_reproduction/tables/` are **byte-identical** between runs —
 including every brms output — and the one exception is `carbon_tax_curves.csv`.
 The etc-GEM side is not reproducible at all. Full numbers in **§8**.
 
@@ -678,9 +678,9 @@ Reporting only, per the constraints:
 
 | # | requirement | result |
 |---|---|---|
-| 1 | `bash scripts/run_all.sh` completes on a clean checkout, zero interaction, per-stage timings, logs written | **PASS, with one honest qualification** — it completed in **48 m 50 s**, zero interaction, per-stage timings printed, four logs written (§7). `results_C1/`, `supp_data_C1/`, `figure3_data_C1/` and the DE fit cache were **deleted before the run**, so every output was regenerated from the committed raw data. It was run on this working tree, **not on a fresh `git clone`**: the R library and the Python venv were already installed. `scripts/00_install.R` was written and exercised, and every version it pins is recorded in `env/versions.json`, but a genuinely from-zero clone-and-install was not re-timed end to end. |
+| 1 | `bash scripts/run_all.sh` completes on a clean checkout, zero interaction, per-stage timings, logs written | **PASS, with one honest qualification** — it completed in **48 m 50 s**, zero interaction, per-stage timings printed, four logs written (§7). `runs/C1_reproduction/`, `runs/C1/supp_data/`, `runs/C1/figure3_data/` and the DE fit cache were **deleted before the run**, so every output was regenerated from the committed raw data. It was run on this working tree, **not on a fresh `git clone`**: the R library and the Python venv were already installed. `scripts/00_install.R` was written and exercised, and every version it pins is recorded in `env/versions.json`, but a genuinely from-zero clone-and-install was not re-timed end to end. |
 | 2 | Every one of the 14 scripts ran or is documented as intentionally not run | **PASS** — §5b |
-| 3 | `results_C1/` and `outputs/supp_data_C1/` fully populated; `results/` and `outputs/supp_data/` byte-identical to their pre-run state | **PASS** — `shasum -a 256 -c env/baseline_checksums_{results,etcgem,data}.txt` all OK; `git status` shows no modification to `data/`, `results/` or the committed etc-GEM outputs |
+| 3 | `runs/C1_reproduction/` and `runs/C1/supp_data/` fully populated; `results/` and `outputs/supp_data/` byte-identical to their pre-run state | **PASS** — `shasum -a 256 -c env/baseline_checksums_{results,etcgem,data}.txt` all OK; `git status` shows no modification to `data/`, `results/` or the committed etc-GEM outputs |
 | 4 | Manuscript renders to .docx and .pdf with no missing figure and no unresolved reference | **PASS** — rendered twice (committed figures, and the regenerated C1 figures via a staging copy). 6 documents each time; 7/7 referenced figures resolve; 0 unresolved citations in any of the three `.tex`; no LaTeX undefined-reference warning; no quarto WARN/ERROR |
 | 5 | `reports/REPRODUCTION.md` with all six sections and actual numbers | **PASS** — this file: §1 file-by-file comparison, §2 headline numbers, §3 seeds and determinism, §4 known inconsistencies, §5 blockers, plus `reports/RUNBOOK.md`. Every committed load-bearing number is classified. |
 | 6 | `env/versions.json`, `SETUP.md`, `reports/RUNBOOK.md`, `requirements.lock`, `renv.lock` committed | **PASS** |
@@ -778,7 +778,7 @@ the edge of its prior and should not be read as well-identified.
 
 The full un-thinned chains, with walker and step indices, per-walker acceptance
 fractions and τ, are in
-`cauris_etcgem/strains/eci_cauris/outputs/supp_data_C1/bayes_chain_raw.npz`
+`cauris_etcgem/runs/C1/supp_data/bayes_chain_raw.npz`
 (`chain_<clade>`: shape `(step = 4000, walker = 32, param = 3)`), for the
 convergence work in the C-series.
 
@@ -807,15 +807,15 @@ Rendered twice, deliberately:
    (44 s).
 2. **Against the regenerated C1 figures**, by
    `reports/tools/render_with_C1_figures.sh` →
-   `results_C1/manuscript_build/manuscript/draft/_output/`.
+   `runs/C1_reproduction/manuscript_build/manuscript/draft/_output/`.
 
 **Which method:** a **staging copy**. `_body_main.qmd` and `_body_supp.qmd`
 reference figures as `../../results/figures/manuscript/…`, relative to
 `manuscript/draft`. The script copies the Quarto project (identical `.qmd`
 bytes — nothing in `manuscript/draft/` is edited) into
-`results_C1/manuscript_build/manuscript/draft/`, whose sibling
+`runs/C1_reproduction/manuscript_build/manuscript/draft/`, whose sibling
 `../../results/figures/manuscript` is a **symlink to
-`results_C1/figures/manuscript`**. Same document, C1 figures. It also verifies
+`runs/C1_reproduction/figures/manuscript`**. Same document, C1 figures. It also verifies
 every referenced figure resolves *before* invoking quarto, because quarto
 otherwise downgrades a missing image to a warning in docx and only fails in PDF.
 
@@ -839,7 +839,7 @@ code (09:47 and the earlier 08:49 run).
 
 ### R pipeline: bit-reproducible, with one exception
 
-Of the 40 CSVs written to `results_C1/tables/`, **39 are byte-identical between
+Of the 40 CSVs written to `runs/C1_reproduction/tables/`, **39 are byte-identical between
 the two runs** — including every brms output (`bayes_growth_ss_summary.csv`,
 `bayes_clade_params.csv`, `bayes_clade_contrasts.csv`, `bayes_cue_*`,
 `fig_values.csv`, `fig_contrasts.csv`).
