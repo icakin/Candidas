@@ -1,0 +1,21 @@
+project:
+  type: default
+  output-dir: .
+
+csl: nature-communications.csl
+
+format:
+  pdf:
+    pdf-engine: xelatex
+    documentclass: article
+    geometry: margin=1in
+    include-in-header: header.tex
+    number-sections: true
+    toc: true
+    toc-depth: 2
+    keep-tex: false
+    fig-pos: "H"
+  docx:
+    number-sections: true
+    toc: true
+    toc-depth: 2
