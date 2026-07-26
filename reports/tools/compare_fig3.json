@@ -1,0 +1,84 @@
+{
+ "label": "etc-GEM: committed figure3_data vs regenerated figure3_data_C1",
+ "a": "/Users/g.yvon-durocher/Library/CloudStorage/OneDrive-UniversityofExeter/Documents/work/Candidas TPC/Candidas/cauris_etcgem/strains/eci_cauris/outputs/figure3_data",
+ "b": "/Users/g.yvon-durocher/Library/CloudStorage/OneDrive-UniversityofExeter/Documents/work/Candidas TPC/Candidas/cauris_etcgem/strains/eci_cauris/outputs/figure3_data_C1",
+ "n_files_a": 4,
+ "n_files_b": 4,
+ "only_in_b": [],
+ "files": [
+  {
+   "file": "capacity.csv",
+   "verdict": "DIVERGENT (no interval in file)",
+   "aligned_by": "keys: clade",
+   "rows": 4,
+   "n_numeric_cols": 3,
+   "max_abs_diff": 0.17238403327192797,
+   "max_rel_diff": 0.21035711645103197,
+   "worst_column": "capacity",
+   "interval": null,
+   "per_column": {
+    "capacity": {
+     "max_abs": 0.17238403327192797,
+     "max_rel": 0.21035711645103197,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "peak_growth": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "r2": {
+     "max_abs": 0.08587508025603863,
+     "max_rel": 0.0891814546396343,
+     "n": 4,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "capacity.csv"
+  },
+  {
+   "file": "measured.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: clade",
+   "rows": 48,
+   "n_numeric_cols": 2,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "temp_C": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 48,
+     "n_finite_mismatch": 0
+    },
+    "growth": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 48,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "measured.csv"
+  },
+  {
+   "file": "model_curves.csv",
+   "verdict": "SHAPE MISMATCH",
+   "detail": "row counts differ (128 vs 212)",
+   "rows_a": 128,
+   "rows_b": 212,
+   "rel": "model_curves.csv"
+  },
+  {
+   "file": "model_uniform.csv",
+   "verdict": "SHAPE MISMATCH",
+   "detail": "row counts differ (32 vs 53)",
+   "rows_a": 32,
+   "rows_b": 53,
+   "rel": "model_uniform.csv"
+  }
+ ]
+}

@@ -72,22 +72,22 @@ Sys.setenv(CANDIDAS_HEADLESS = "1")
 .SKIP <- trimws(unlist(strsplit(Sys.getenv("CANDIDAS_SKIP", ""), ",")))
 .SKIP <- .SKIP[nzchar(.SKIP)]
 
-fmt_dur <- function(secs) {
+.runall_fmt_dur <- function(secs) {
   secs <- as.numeric(secs)
   h <- floor(secs / 3600); m <- floor((secs %% 3600) / 60); s <- round(secs %% 60)
   if (h > 0) sprintf("%dh %02dm %02ds", h, m, s) else
   if (m > 0) sprintf("%dm %02ds", m, s) else sprintf("%.1fs", secs)
 }
 
-.T0      <- Sys.time()
-.TIMINGS <- list()
-.FAILED  <- character(0)
+.RUNALL_T0      <- Sys.time()
+.RUNALL_TIMINGS <- list()
+.RUNALL_FAILED  <- character(0)
 
 run_script <- function(name) {
   num <- sub("_.*$", "", name)
   if (num %in% .SKIP) {
     message("\n", strrep("-", 70), "\nSKIPPED (CANDIDAS_SKIP): ", name, "\n", strrep("-", 70))
-    .TIMINGS[[name]] <<- NA_real_
+    .RUNALL_TIMINGS[[name]] <<- NA_real_
     return(invisible(NULL))
   }
   message("\n", strrep("=", 70), "\nRunning: ", name,
@@ -95,9 +95,9 @@ run_script <- function(name) {
   t0 <- Sys.time()
   source(file.path(script_dir, name), local = FALSE)
   el <- as.numeric(difftime(Sys.time(), t0, units = "secs"))
-  .TIMINGS[[name]] <<- el
-  message("\n--- DONE ", name, " in ", fmt_dur(el),
-          "  (total elapsed ", fmt_dur(difftime(Sys.time(), .T0, units = "secs")), ")")
+  .RUNALL_TIMINGS[[name]] <<- el
+  message("\n--- DONE ", name, " in ", .runall_fmt_dur(el),
+          "  (total elapsed ", .runall_fmt_dur(difftime(Sys.time(), .RUNALL_T0, units = "secs")), ")")
   invisible(NULL)
 }
 
@@ -123,32 +123,32 @@ if (!("14" %in% .SKIP)) {
   py  <- Sys.which("python3"); if (!nzchar(py)) py <- Sys.which("python")
   if (!nzchar(py)) {
     message("!! python3 not found on PATH - 14_schematic.py NOT run.")
-    .FAILED <- c(.FAILED, "14_schematic.py (no python3)")
+    .RUNALL_FAILED <- c(.RUNALL_FAILED, "14_schematic.py (no python3)")
   } else {
     rc <- system2(py, shQuote(file.path(script_dir, "14_schematic.py")))
     if (!identical(as.integer(rc), 0L))
-      .FAILED <- c(.FAILED, sprintf("14_schematic.py (exit %s)", rc))
+      .RUNALL_FAILED <- c(.RUNALL_FAILED, sprintf("14_schematic.py (exit %s)", rc))
   }
-  .TIMINGS[["14_schematic.py"]] <- as.numeric(difftime(Sys.time(), t0, units = "secs"))
+  .RUNALL_TIMINGS[["14_schematic.py"]] <- as.numeric(difftime(Sys.time(), t0, units = "secs"))
 }
 
 # ---- summary -----------------------------------------------------------------
 message("\n", strrep("=", 70))
 message("PIPELINE TIMINGS")
 message(strrep("=", 70))
-for (nm in names(.TIMINGS)) {
-  v <- .TIMINGS[[nm]]
-  message(sprintf("  %-28s %s", nm, if (is.na(v)) "skipped" else fmt_dur(v)))
+for (nm in names(.RUNALL_TIMINGS)) {
+  v <- .RUNALL_TIMINGS[[nm]]
+  message(sprintf("  %-28s %s", nm, if (is.na(v)) "skipped" else .runall_fmt_dur(v)))
 }
 message(sprintf("  %-28s %s", "TOTAL",
-                fmt_dur(difftime(Sys.time(), .T0, units = "secs"))))
+                .runall_fmt_dur(difftime(Sys.time(), .RUNALL_T0, units = "secs"))))
 message(strrep("=", 70))
 message("NOT RUN (click-driven apps; their outputs are committed INPUTS):")
 message("  01_convert_xlsx.R, 04_trim_selector.R, 05_cell_sizes.R")
 message("  -> launch one deliberately with:  Rscript scripts/0N_name.R --app")
-if (length(.FAILED)) {
+if (length(.RUNALL_FAILED)) {
   message(strrep("=", 70))
-  message("FAILURES: ", paste(.FAILED, collapse = "; "))
+  message("FAILURES: ", paste(.RUNALL_FAILED, collapse = "; "))
   message(strrep("=", 70))
   quit(status = 1L)
 }

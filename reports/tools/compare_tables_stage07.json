@@ -1,0 +1,1495 @@
+{
+ "label": "R pipeline through 07: committed results/tables vs results_C1/tables",
+ "a": "/Users/g.yvon-durocher/Library/CloudStorage/OneDrive-UniversityofExeter/Documents/work/Candidas TPC/Candidas/results/tables",
+ "b": "/Users/g.yvon-durocher/Library/CloudStorage/OneDrive-UniversityofExeter/Documents/work/Candidas TPC/Candidas/results_C1/tables",
+ "n_files_a": 39,
+ "n_files_b": 23,
+ "only_in_b": [
+  "Oxygen_All_Long.csv",
+  "Oxygen_Data_Filtered.csv",
+  "Oxygen_Data_Smoothed_Trimmed.csv"
+ ],
+ "files": [
+  {
+   "file": "Oxygen_Curve_Code_Key.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: curve_code,series_id,Replicate",
+   "rows": 1080,
+   "n_numeric_cols": 2,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "Oxygen_Curve_Code_Key.csv"
+  },
+  {
+   "file": "Oxygen_Trimmed_Series_Metadata.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: curve_code,series_id,Replicate,end_reason",
+   "rows": 1080,
+   "n_numeric_cols": 17,
+   "max_abs_diff": 6.366462912410498e-12,
+   "max_rel_diff": 9.273647461562297e-15,
+   "worst_column": "main_run_score",
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "n_points_total": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "n_points_trimmed": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "peak_time_raw": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "peak_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "main_run_start_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "main_run_end_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "steepest_drop_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "chosen_end_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "fit_duration_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "delta_Ninoc_to_N0_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "start_shift_points": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "start_shift_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "main_run_duration": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "main_run_drop": {
+     "max_abs": 8.881784197001252e-15,
+     "max_rel": 9.03808450940029e-15,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "main_run_score": {
+     "max_abs": 6.366462912410498e-12,
+     "max_rel": 9.273647461562297e-15,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "Oxygen_Trimmed_Series_Metadata.csv"
+  },
+  {
+   "file": "Skipped_Series_Log.csv",
+   "verdict": "NO NUMERIC COLUMNS",
+   "detail": "keys: curve_code,series_id,reason",
+   "rows_a": 0,
+   "rows_b": 0,
+   "rel": "Skipped_Series_Log.csv"
+  },
+  {
+   "file": "activation_energy_summary.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: otu_name",
+   "rows": 18,
+   "n_numeric_cols": 11,
+   "max_abs_diff": 8.881784197001252e-16,
+   "max_rel_diff": 3.6377711684800115e-15,
+   "worst_column": "respiration_E_eV",
+   "interval": null,
+   "per_column": {
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "growth_E_eV": {
+     "max_abs": 6.938893903907228e-16,
+     "max_rel": 3.6377711684800115e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "respiration_E_eV": {
+     "max_abs": 8.881784197001252e-16,
+     "max_rel": 2.6094454543344778e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "growth_se_E_eV": {
+     "max_abs": 9.71445146547012e-17,
+     "max_rel": 1.527587108171335e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "respiration_se_E_eV": {
+     "max_abs": 1.0408340855860843e-16,
+     "max_rel": 2.4598358870766958e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "growth_r_squared": {
+     "max_abs": 6.106226635438361e-16,
+     "max_rel": 2.6122692337539755e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "respiration_r_squared": {
+     "max_abs": 6.106226635438361e-16,
+     "max_rel": 1.4224340848776504e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "growth_n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "respiration_n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "activation_energy_summary.csv"
+  },
+  {
+   "file": "arrhenius_growth_fgC_h_coefs.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: otu_name",
+   "rows": 18,
+   "n_numeric_cols": 8,
+   "max_abs_diff": 2.6645352591003757e-15,
+   "max_rel_diff": 3.6377711684800115e-15,
+   "worst_column": "alpha",
+   "interval": null,
+   "per_column": {
+    "alpha": {
+     "max_abs": 2.6645352591003757e-15,
+     "max_rel": 4.767635855957377e-16,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "E_eV": {
+     "max_abs": 6.938893903907228e-16,
+     "max_rel": 3.6377711684800115e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "se_E_eV": {
+     "max_abs": 9.71445146547012e-17,
+     "max_rel": 1.527587108171335e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "r_squared": {
+     "max_abs": 6.106226635438361e-16,
+     "max_rel": 2.6122692337539755e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "arrhenius_growth_fgC_h_coefs.csv"
+  },
+  {
+   "file": "arrhenius_respiration_fgC_h_coefs.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: otu_name",
+   "rows": 18,
+   "n_numeric_cols": 8,
+   "max_abs_diff": 3.552713678800501e-15,
+   "max_rel_diff": 2.6094454543344778e-15,
+   "worst_column": "alpha",
+   "interval": null,
+   "per_column": {
+    "alpha": {
+     "max_abs": 3.552713678800501e-15,
+     "max_rel": 5.5908014951346e-16,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "E_eV": {
+     "max_abs": 8.881784197001252e-16,
+     "max_rel": 2.6094454543344778e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "se_E_eV": {
+     "max_abs": 1.0408340855860843e-16,
+     "max_rel": 2.4598358870766958e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "r_squared": {
+     "max_abs": 6.106226635438361e-16,
+     "max_rel": 1.4224340848776504e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "arrhenius_respiration_fgC_h_coefs.csv"
+  },
+  {
+   "file": "bayes_E_resp_minus_growth.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 5,
+   "rel": "bayes_E_resp_minus_growth.csv"
+  },
+  {
+   "file": "bayes_clade_contrasts.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 40,
+   "rel": "bayes_clade_contrasts.csv"
+  },
+  {
+   "file": "bayes_clade_params.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 5,
+   "rel": "bayes_clade_params.csv"
+  },
+  {
+   "file": "bayes_cue_by_clade.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 600,
+   "rel": "bayes_cue_by_clade.csv"
+  },
+  {
+   "file": "bayes_cue_by_isolate.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 1800,
+   "rel": "bayes_cue_by_isolate.csv"
+  },
+  {
+   "file": "bayes_growth_ss_summary.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 72,
+   "rel": "bayes_growth_ss_summary.csv"
+  },
+  {
+   "file": "bayes_resp_arr_summary.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 46,
+   "rel": "bayes_resp_arr_summary.csv"
+  },
+  {
+   "file": "bayes_resp_model_comparison_loo.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 2,
+   "rel": "bayes_resp_model_comparison_loo.csv"
+  },
+  {
+   "file": "carbon_tax_contrasts_fever.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 4,
+   "rel": "carbon_tax_contrasts_fever.csv"
+  },
+  {
+   "file": "carbon_tax_curves.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 445,
+   "rel": "carbon_tax_curves.csv"
+  },
+  {
+   "file": "carbon_tax_group.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 20,
+   "rel": "carbon_tax_group.csv"
+  },
+  {
+   "file": "carbon_tax_isolate.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 30,
+   "rel": "carbon_tax_isolate.csv"
+  },
+  {
+   "file": "cue_quadratic_fit_coefs.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: otu_name",
+   "rows": 18,
+   "n_numeric_cols": 11,
+   "max_abs_diff": 4.618527782440651e-14,
+   "max_rel_diff": 5.145413992181837e-14,
+   "worst_column": "T_opt_C",
+   "interval": null,
+   "per_column": {
+    "b0": {
+     "max_abs": 3.885780586188048e-14,
+     "max_rel": 1.962736134724655e-14,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "b1_T": {
+     "max_abs": 2.220446049250313e-15,
+     "max_rel": 1.5483058671117722e-14,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "b2_T2": {
+     "max_abs": 9.996344030316351e-17,
+     "max_rel": 5.145413992181837e-14,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "T_opt_C": {
+     "max_abs": 4.618527782440651e-14,
+     "max_rel": 1.5626253591995055e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "CUE_at_opt": {
+     "max_abs": 2.6645352591003757e-15,
+     "max_rel": 8.238268410216322e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "concave": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "r_squared": {
+     "max_abs": 5.10702591327572e-15,
+     "max_rel": 9.031153706988584e-15,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "cue_quadratic_fit_coefs.csv"
+  },
+  {
+   "file": "derived_N0_R_results_with_carbon.csv",
+   "verdict": "NUMERICALLY EQUIVALENT",
+   "aligned_by": "keys: Replicate,otu_name",
+   "rows": 991,
+   "n_numeric_cols": 26,
+   "max_abs_diff": 2.3578650143463165e-10,
+   "max_rel_diff": 2.614096129674657e-12,
+   "worst_column": "delta_aicc_curv",
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "r": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "K": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "O2_0": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "T_end_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "keep": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "has_curvature": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "delta_aicc_curv": {
+     "max_abs": 2.3578650143463165e-10,
+     "max_rel": 2.614096129674657e-12,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "fit_valid": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "fit_start_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "fit_end_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "delta_Ninoc_to_N0_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "N_inoculation_cells_per_L": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "N0_cells_per_L": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "C_tot_O2_mg_per_L": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "biomass_integral_cells_min_per_L": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "R_O2_mg_cell_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "growth_fgC_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "respiration_fgC_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "growth_C_per_C_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "respiration_C_per_C_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "CUE": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "resp_over_growth": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "derived_N0_R_results_with_carbon.csv"
+  },
+  {
+   "file": "diagnostic_hot_temps_growth_check.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Replicate",
+   "rows": 111,
+   "n_numeric_cols": 12,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "r": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "K": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "O2_0": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "T_end_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "delta_Ninoc_to_N0_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "N0_cells_per_L": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "growth_fgC_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "respiration_fgC_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "CUE": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "resp_over_growth": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "diagnostic_hot_temps_growth_check.csv"
+  },
+  {
+   "file": "failed_fits_at_bound.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Replicate",
+   "rows": 17,
+   "n_numeric_cols": 5,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 17,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 17,
+     "n_finite_mismatch": 0
+    },
+    "r": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 17,
+     "n_finite_mismatch": 0
+    },
+    "K": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 17,
+     "n_finite_mismatch": 0
+    },
+    "O2_0": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 17,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "failed_fits_at_bound.csv"
+  },
+  {
+   "file": "fig_contrasts.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 10,
+   "rel": "fig_contrasts.csv"
+  },
+  {
+   "file": "fig_values.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 5,
+   "rel": "fig_values.csv"
+  },
+  {
+   "file": "fit_coefficients_long.csv",
+   "verdict": "NUMERICALLY EQUIVALENT",
+   "aligned_by": "keys: Replicate,parameter",
+   "rows": 3240,
+   "n_numeric_cols": 11,
+   "max_abs_diff": 2.3578650143463165e-10,
+   "max_rel_diff": 8.571140979209634e-11,
+   "worst_column": "delta_aicc_curv",
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "Estimate": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "SE": {
+     "max_abs": 1.0408340855860843e-16,
+     "max_rel": 3.3285594308999266e-13,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "t value": {
+     "max_abs": 1.000444171950221e-11,
+     "max_rel": 4.900372025771907e-15,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "p_value": {
+     "max_abs": 3.3306690738754696e-16,
+     "max_rel": 9.093678311353165e-13,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "T_end_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "keep": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "has_curvature": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "delta_aicc_curv": {
+     "max_abs": 2.3578650143463165e-10,
+     "max_rel": 8.571140979209634e-11,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "fit_valid": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "fit_coefficients_long.csv"
+  },
+  {
+   "file": "fit_coefficients_wide.csv",
+   "verdict": "NUMERICALLY EQUIVALENT",
+   "aligned_by": "keys: Replicate",
+   "rows": 1063,
+   "n_numeric_cols": 10,
+   "max_abs_diff": 2.3578650143463165e-10,
+   "max_rel_diff": 1.4045818891755442e-11,
+   "worst_column": "delta_aicc_curv",
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "r": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "K": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "O2_0": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "T_end_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "keep": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "has_curvature": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "delta_aicc_curv": {
+     "max_abs": 2.3578650143463165e-10,
+     "max_rel": 1.4045818891755442e-11,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "fit_valid": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "fit_coefficients_wide.csv"
+  },
+  {
+   "file": "fit_metrics.csv",
+   "verdict": "NUMERICALLY EQUIVALENT",
+   "aligned_by": "keys: Replicate",
+   "rows": 1080,
+   "n_numeric_cols": 17,
+   "max_abs_diff": 2.3578650143463165e-10,
+   "max_rel_diff": 8.571140979209634e-11,
+   "worst_column": "delta_aicc_curv",
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "r2": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "rmse": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "rss": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "aic": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "aicc": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "aicc_lin": {
+     "max_abs": 2.355591277591884e-10,
+     "max_rel": 8.724887048393174e-14,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "delta_aicc_curv": {
+     "max_abs": 2.3578650143463165e-10,
+     "max_rel": 8.571140979209634e-11,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "rt_curv": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "has_curvature": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "r_at_bound": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "K_at_bound": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "fit_valid": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "T_end_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "keep": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "fit_metrics.csv"
+  },
+  {
+   "file": "group_lookup_with_delta.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Replicate",
+   "rows": 1080,
+   "n_numeric_cols": 6,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "fit_start_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "fit_end_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "delta_Ninoc_to_N0_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "N_inoculation_cells_per_L": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "group_lookup_with_delta.csv"
+  },
+  {
+   "file": "manual_fit_windows.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 1080,
+   "rel": "manual_fit_windows.csv"
+  },
+  {
+   "file": "otu_cell_sizes.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 18,
+   "rel": "otu_cell_sizes.csv"
+  },
+  {
+   "file": "otu_inoc.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 18,
+   "rel": "otu_inoc.csv"
+  },
+  {
+   "file": "otu_names.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 18,
+   "rel": "otu_names.csv"
+  },
+  {
+   "file": "plot_exclude_points.csv",
+   "verdict": "NOT REPRODUCED",
+   "detail": "absent from B",
+   "rows_a": 88,
+   "rel": "plot_exclude_points.csv"
+  },
+  {
+   "file": "removed_points.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Replicate,reason",
+   "rows": 72,
+   "n_numeric_cols": 2,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "removed_points.csv"
+  },
+  {
+   "file": "replication_summary_by_temperature.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "row order",
+   "rows": 204,
+   "n_numeric_cols": 3,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 204,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 204,
+     "n_finite_mismatch": 0
+    },
+    "n_replicates": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 204,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "replication_summary_by_temperature.csv"
+  },
+  {
+   "file": "sharpe_schoolfield_K_O2_rate_coefs.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: parameter,otu_name",
+   "rows": 72,
+   "n_numeric_cols": 7,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "Estimate": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "r_squared": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "rmse_log": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "sharpe_schoolfield_K_O2_rate_coefs.csv"
+  },
+  {
+   "file": "sharpe_schoolfield_growth_fgC_h_coefs.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: parameter,otu_name",
+   "rows": 72,
+   "n_numeric_cols": 7,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "Estimate": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "r_squared": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "rmse_log": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "sharpe_schoolfield_growth_fgC_h_coefs.csv"
+  },
+  {
+   "file": "sharpe_schoolfield_respiration_fgC_h_coefs.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: parameter,otu_name",
+   "rows": 72,
+   "n_numeric_cols": 7,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "Estimate": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "r_squared": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "rmse_log": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "sharpe_schoolfield_respiration_fgC_h_coefs.csv"
+  },
+  {
+   "file": "summary_hot_temps_growth_check.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "row order",
+   "rows": 26,
+   "n_numeric_cols": 9,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "mean_r": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "median_r": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "mean_growth_fgC_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "median_growth_fgC_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "mean_T_end_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "median_T_end_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "summary_hot_temps_growth_check.csv"
+  }
+ ]
+}
