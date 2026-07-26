@@ -22,7 +22,8 @@ Status legend: ✅ run · ▶ in progress · ⏳ pending
    capacity regenerates 1.33–1.37× higher, traced to an anchor change, and `figure3_data/` uses a
    temperature grid the current code cannot emit. All seven predicted inconsistencies confirmed.
 
-**Respirometry — the load-bearing checks**
+**Respirometry — the load-bearing checks**  *(C3, C4: pending, NOT YET WRITTEN — the
+summaries below are a specification, not a prompt you can paste)*
 
 2. `C2_n0_backprojection_decision_prompt.md` — ✅ the N₀ back-calculation, in one prompt.
    Establishes that δ is the vial/optode equilibration time, not a biological lag (δ ≈ 58–82 min at
@@ -43,33 +44,42 @@ Status legend: ✅ run · ▶ in progress · ⏳ pending
    is recorded in all 72 raw exports and discarded by `01_convert_xlsx.R` — the optode compensated at
    `Tm` while the sample sat up to 4.8 K colder.
 
-3. `C2b_report_and_repo_tidy_prompt.md` — ⏳ write the C1/C2 findings up as a standalone Quarto
-   report rendered to PDF + docx, then consolidate the ~1 GB of parallel run trees under `runs/`
-   with a manifest, prune only what is provably regenerable and uncited, and document the layout.
-   No analysis, no refits, no number changes. **Run after C2.**
+3. `C2b_report_and_repo_tidy_prompt.md` — ✅ wrote the C1/C2 findings up as a standalone Quarto
+   report rendered to PDF + docx, then consolidated the ~1 GB of parallel run trees under `runs/`
+   with a manifest, pruned only what is provably regenerable and uncited, and documented the layout.
+   No analysis, no refits, no number changes.
+   **Outcome:** `reports/n0/n0_report.pdf` (17 pp) + `.docx`, carrying the φ/ψ identifiability
+   argument — φ, the true growth over δ, is *not identified* by the oxygen record, so the three arms
+   are three priors rather than three estimates. `runs/` holds the four trees with
+   `runs/MANIFEST.md`; 654 MB pruned, every table kept. Of the 7 duplicate figures in
+   `results/figures/`, only 5 are byte-identical — two are superseded renders — so all seven were
+   left and the difference reported.
 
-4. `C3` — ⏳ the 88 hand exclusions and the hot-end coverage. 43% are flagged by no automatic
+4. `handover_and_push_prompt.md` — ✅ wrote `HANDOVER.md` and pushed C1/C2/C2b to GitHub as
+   `gyd/c1-c2-review` branches (submodule first), for review rather than for unexamined merge.
+
+5. `C3` — ⏳ the 88 hand exclusions and the hot-end coverage. 43% are flagged by no automatic
    criterion, they are directional (lower `r` in 14/18 testable cells), and *C. parapsilosis*
    has no data above 40 °C yet is tabulated and plotted to 44 °C. Document each exclusion,
    model the non-respiring wells as zeros rather than as missing, and stop extrapolating.
-5. `C4` — ⏳ model specification: correlated isolate random effects `(1|i|Isolate)`, a
+6. `C4` — ⏳ model specification: correlated isolate random effects `(1|i|Isolate)`, a
    replicate/plate level, honest measurement error (`se_r/r` ≈ 0.01 is ~11× smaller than the
    observed replicate reproducibility), Pareto-k on the LOO, and the curved-monotone
    respiration alternative that `08_bayesian_models.R:157-186` says wins but `:187` disables.
 
-**etc-GEM — the load-bearing checks** *(pending, to be written)*
+**etc-GEM — the load-bearing checks**  *(C5-C8: pending, NOT YET WRITTEN — same)*
 
-6. `C5` — ⏳ build the model PER CLADE. `build()` is currently called once from one MW file
+7. `C5` — ⏳ build the model PER CLADE. `build()` is currently called once from one MW file
    keyed to the Clade I proteome, so the four a-priori curves are bit-identical by
    construction and "thermotolerance is not sequence-encoded" is untested.
-7. `C6` — ⏳ the a-priori curve. It is a flat-topped plateau (the biosynthesis cap), not a
+8. `C6` — ⏳ the a-priori curve. It is a flat-topped plateau (the biosynthesis cap), not a
    TPC, and the pool budget is bisected to a measured growth rate — a fourth fitted parameter.
    Make the genome-only prediction a real prediction and report its (negative) R² honestly.
-8. `C7` — ⏳ capacity as an amplitude. `kcat_scale` scales growth exactly linearly, so
+9. `C7` — ⏳ capacity as an amplitude. `kcat_scale` scales growth exactly linearly, so
    corr(kcat_scale, measured peak) = 0.996 by construction and a bare 3-parameter MMRT curve
    reproduces the published R² to 3–4 decimals. Either demonstrate the network contributes, or
    reframe the claim.
-9. `C8` — ⏳ Methods provenance: Topt is `0.5·Tm + 10.107`, not TOME; ΔCp is a single global
+10. `C8` — ⏳ Methods provenance: Topt is `0.5·Tm + 10.107`, not TOME; ΔCp is a single global
    constant chosen because the fit demanded it; sector fractions are hard-coded, not from a
    *C. auris* proteome; Tm coverage is 67%, not 47%. Align the text with the files.
 
