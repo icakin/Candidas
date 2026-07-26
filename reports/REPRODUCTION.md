@@ -690,7 +690,7 @@ Reporting only, per the constraints:
 
 ## 7. Wall time and logs
 
-One clean end-to-end `bash scripts/run_all.sh` (through `run_c1.sh`, which sets
+One clean end-to-end `bash scripts/run_all.sh` (through `scripts/run_c1.sh`, which sets
 the non-destructive path variables), started 09:47:44, finished 10:36:34 on
 2026-07-26. Zero user interaction. Logs: `logs/run_all_20260726_094744.log`,
 `logs/etcgem_20260726_094744.log`, `logs/r_pipeline_20260726_094744.log`,
