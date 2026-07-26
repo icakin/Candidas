@@ -38,3 +38,14 @@ per_series_fits.pdf
 **/*.quarto_ipynb
 _output/
 submission/
+
+# --- C1: environment + non-destructive reproduction outputs ---
+/renv/library/
+/renv/local/
+/renv/cellar/
+/renv/lock/
+/renv/python/
+/renv/sandbox/
+/renv/staging/
+cauris_etcgem/.venv/
+/logs/

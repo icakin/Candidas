@@ -1,0 +1,140 @@
+{
+  "_comment": "Environment captured by C1 (prompts/C1_environment_and_end_to_end_reproduction_prompt.md). Every version below was READ FROM THE LIVE ENVIRONMENT that produced results_C1/ and outputs/supp_data_C1/, not copied from documentation.",
+  "captured_on": "2026-07-25",
+  "captured_by": "C1 environment + end-to-end reproduction",
+
+  "machine": {
+    "os": "macOS 26.2 (build 25C56)",
+    "kernel": "Darwin 25.2.0",
+    "arch": "arm64 (Apple silicon)",
+    "cpu_cores": 16
+  },
+
+  "r": {
+    "version": "4.5.2",
+    "nickname": "[Not] Part in a Rumble",
+    "release_date": "2025-10-31",
+    "platform": "aarch64-apple-darwin20",
+    "binary": "/usr/local/bin/Rscript",
+    "renv": "1.2.3",
+    "lockfile": "renv.lock",
+    "lockfile_packages": 170,
+    "cran_repo": "https://cloud.r-project.org",
+    "bioconductor_version": "3.22",
+    "bioconductor_manager": "BiocManager 1.30.27",
+    "key_packages": {
+      "tidyverse": "2.0.0",
+      "dplyr": "1.2.0",
+      "tidyr": "1.3.2",
+      "readr": "2.2.0",
+      "purrr": "1.2.1",
+      "tibble": "3.3.1",
+      "stringr": "1.6.0",
+      "ggplot2": "4.0.2",
+      "scales": "1.4.0",
+      "ggrepel": "0.9.7",
+      "ggdist": "3.3.3",
+      "patchwork": "1.3.2",
+      "rlang": "1.1.7",
+      "minpack.lm": "1.2.4",
+      "zoo": "1.8-15",
+      "shiny": "1.13.0",
+      "rstudioapi": "0.18.0",
+      "readxl": "1.4.5",
+      "brms": "2.23.0",
+      "posterior": "1.6.1",
+      "loo": "2.9.0",
+      "bayesplot": "1.15.0",
+      "Rcpp": "1.1.1",
+      "edgeR": "4.8.2",
+      "limma": "3.66.0",
+      "statmod": "1.5.2",
+      "locfit": "1.5-9.12"
+    }
+  },
+
+  "stan": {
+    "backend_used_by_08_bayesian_models.R": "rstan",
+    "backend_detection": "08_bayesian_models.R never sets brms's `backend` argument and the project never sets options(brms.backend); brms therefore falls back to its default, which is rstan. cmdstanr is NOT installed.",
+    "rstan": "2.32.7",
+    "StanHeaders": "2.32.10",
+    "stan_library_version": "2.32.2",
+    "toolchain": {
+      "cxx17": "clang++ -arch arm64",
+      "cxx17flags": "-falign-functions=64 -Wall -g -O2",
+      "compiler": "Apple clang version 17.0.0 (clang-1700.6.3.2)",
+      "target": "arm64-apple-darwin25.2.0",
+      "make": "/usr/bin/make (GNU make, Xcode CLT)",
+      "gfortran": "NOT INSTALLED - not needed here because every CRAN package used resolves to a macOS arm64 BINARY; it would be needed for any source install of a Fortran-using package",
+      "user_makevars": "none (~/.R/Makevars does not exist)"
+    },
+    "verified": true,
+    "verification": "A 10-line toy Stan model (normal likelihood, 2 parameters, 50 data points) was compiled from source and sampled: 1 chain x 200 iterations, seed 1. Recovered mu = 3.0837, sigma = 0.8454 from data simulated as rnorm(50, 3, 1). Total wall time including C++ compilation: 37 s."
+  },
+
+  "python": {
+    "version": "3.9.6",
+    "implementation": "CPython, macOS system python (/usr/bin/python3), arm64",
+    "note": "3.9.6 is the ONLY python on this machine; no homebrew or python.org build is present. requirements.txt asks for >= 3.9, so this satisfies it, but 3.9 reached end of life in Oct 2025 and pins several packages to old majors (see below).",
+    "venv": "cauris_etcgem/.venv",
+    "lockfile": "cauris_etcgem/requirements.lock",
+    "pip": "26.0.1",
+    "setuptools": "82.0.1",
+    "engine": {
+      "package": "etcgem",
+      "version": "0.1.0",
+      "source": "git+https://github.com/GabYvonDurocher/etcGEMs",
+      "pinned_sha": "7d32383d902184c085662031b802406353e7b083",
+      "pinned_sha_date": "2026-07-11T18:39:21+01:00",
+      "pinned_sha_subject": "reports: rename etcgem -> ecoli_tpc (housekeeping)",
+      "resolved_from": "refs/heads/main HEAD at the time of this capture",
+      "is_this_the_engine_that_produced_the_committed_outputs": "UNKNOWN a priori; tested empirically in reports/REPRODUCTION.md. Timeline evidence is CONSISTENT with yes: the last engine commit that changes model behaviour (8085036, 'close four uncosted O2-sink reactions by default', 2026-07-11) predates the cauris_etcgem commits that added outputs/supp_data (ef3a2b9 2026-07-23, c37177a 2026-07-24). But the repository has no tag, no version bump and no recorded SHA, so before C1 there was NOTHING pinning it and the model could change under the results at any time."
+    },
+    "lp_solver": {
+      "name": "GLPK",
+      "version": "5.0",
+      "binding": "swiglpk 5.0.13",
+      "cobra_solvers_available": ["glpk", "glpk_exact", "scipy"],
+      "note": "cobra's default is glpk; no commercial solver (gurobi/cplex) is installed, so the choice is not ambiguous on this machine."
+    },
+    "key_packages": {
+      "cobra": "0.31.1",
+      "optlang": "1.9.1",
+      "numpy": "2.0.2",
+      "scipy": "1.13.1",
+      "pandas": "2.3.3",
+      "matplotlib": "3.9.4",
+      "emcee": "3.1.6",
+      "python-libsbml": "5.21.1",
+      "sympy": "1.14.0",
+      "pydantic": "2.13.4"
+    }
+  },
+
+  "quarto": {
+    "version": "1.8.27",
+    "binary": "/usr/local/bin/quarto",
+    "pandoc": "3.6.3 (bundled with quarto)",
+    "pdf_engine": "xelatex",
+    "tinytex": {
+      "installed": "v2026.02",
+      "latest_available": "v2026.07",
+      "path": "~/Library/TinyTeX/bin/universal-darwin/xelatex",
+      "xetex": "XeTeX 3.141592653-2.6-0.999997 (TeX Live 2025)",
+      "note": "This is the engine quarto actually invoked (confirmed from the render log). It is quarto's own managed TinyTeX, installed via `quarto install tinytex`."
+    },
+    "other_tex_on_path": {
+      "path": "/Library/TeX/texbin/xelatex",
+      "xetex": "XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)",
+      "distribution": "/usr/local/texlive/2026basic (BasicTeX), tlmgr revision 78301",
+      "note": "Present but NOT the engine quarto used. Recorded so the difference is not mistaken for a version drift later."
+    }
+  },
+
+  "git": {
+    "version": "2.50.1 (Apple Git-155)",
+    "candidas_repo_head_at_capture": "c4e775f",
+    "cauris_etcgem_submodule_head_at_capture": "d19aab7708eac5789c772525d04d27a91b3aed39",
+    "cauris_etcgem_remote": "https://github.com/icakin/cauris_etcgem.git"
+  }
+}
