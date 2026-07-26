@@ -32,7 +32,7 @@ points at it explicitly.
 | | |
 |---|---|
 | **produced by** | `prompts/C1_environment_and_end_to_end_reproduction_prompt.md` |
-| **command** | `bash run_c1.sh` — i.e. `bash scripts/run_all.sh` with `CANDIDAS_RESULTS=<tree>`, `ETCGEM_OUT_SUFFIX=_C1`, `CANDIDAS_SUPP_DATA=<etc-GEM C1 tree>`, `CANDIDAS_EXPRESSION_OUT=<tree>/expression` |
+| **command** | `bash scripts/run_c1.sh` — i.e. `bash scripts/run_all.sh` with `CANDIDAS_RESULTS=<tree>`, `ETCGEM_OUT_SUFFIX=_C1`, `CANDIDAS_SUPP_DATA=<etc-GEM C1 tree>`, `CANDIDAS_EXPRESSION_OUT=<tree>/expression` |
 | **when** | 2026-07-26, 09:47:44 → 10:36:34 (48 m 50 s: etc-GEM 35 m 29 s, R 12 m 37 s, render 44 s) |
 | **commit** | `ab1686d` — *C1: rerun the R pipeline into results_C1 + render the manuscript* |
 | **N0 treatment** | shipped (`N0_BACKPROJECT = TRUE`), no seed |
@@ -73,7 +73,7 @@ every PART A/B diagnostic in that report reads its
 | | |
 |---|---|
 | **produced by** | `prompts/C2_n0_backprojection_decision_prompt.md` |
-| **command** | `bash run_c2_arms.sh` |
+| **command** | `bash scripts/run_c2_arms.sh` |
 | **when** | 2026-07-26, 11:18 → 11:57 (current 10 m 33 s, ramp 10 m 23 s, nobp 11 m 07 s) |
 | **commit** | `ada23b8` — *C2: run three N0 arms end to end* |
 | **logs** | `logs/c2_arm_{current,ramp,nobp}_20260726_111821.log` |
@@ -125,7 +125,7 @@ Inside the submodule, because that is where the etc-GEM pipeline writes.
 | | |
 |---|---|
 | **produced by** | `prompts/C1_environment_and_end_to_end_reproduction_prompt.md`, PART C |
-| **command** | `generate_model_data.py all --out-suffix _C1` (via `run_c1.sh`) |
+| **command** | `generate_model_data.py all --out-suffix _C1` (via `scripts/run_c1.sh`) |
 | **when** | 2026-07-26, 09:47:47 → 10:23:16 (35 m 29 s) |
 | **commit** | submodule `ead1e20` — *C1: rerun the etc-GEM pipeline into supp_data_C1 (incl. stage_boot)* |
 | **stage timings** | build 2.5 s · calibrate 16 m 00 s · curves/fit < 1 s · ident 61.7 s · boot 92.6 s · apriori 8.6 s · bayes 16 m 26 s |
@@ -167,10 +167,10 @@ so letting capacity vary would confound the arm comparison.
 
 ```bash
 # C1_reproduction/ and cauris_etcgem/runs/C1/          (~49 min)
-bash run_c1.sh
+bash scripts/run_c1.sh
 
 # C2_arm_current/, C2_arm_ramp/, C2_arm_nobp/          (~32 min)
-bash run_c2_arms.sh                 # or: bash run_c2_arms.sh ramp
+bash scripts/run_c2_arms.sh                 # or: bash scripts/run_c2_arms.sh ramp
 ```
 
 Both scripts are non-destructive: they write only to their own tree and never

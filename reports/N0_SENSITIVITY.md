@@ -719,7 +719,7 @@ Rscript                        reports/tools/c2_extract_Tinternal.R
 cauris_etcgem/.venv/bin/python reports/tools/c2_partB5_ramp_measured.py
 
 # PART C: the three arms  (~32 min total)
-bash run_c2_arms.sh                       # or: bash run_c2_arms.sh ramp
+bash scripts/run_c2_arms.sh                       # or: bash scripts/run_c2_arms.sh ramp
 
 # PART D: comparison + figures
 cauris_etcgem/.venv/bin/python reports/tools/c2_compare_arms.py
