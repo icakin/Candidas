@@ -25,7 +25,8 @@
 # N0-independent; 13 reads its committed output from runs/C1_reproduction/expression/.
 # =============================================================================
 set -uo pipefail
-cd "$(dirname "$0")"
+# lives in scripts/, but runs from the PROJECT ROOT
+cd "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 ROOT="$PWD"
 
 ARMS=("$@"); [ ${#ARMS[@]} -eq 0 ] && ARMS=(current ramp nobp)

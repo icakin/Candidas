@@ -116,16 +116,51 @@ Three stages, timed, with a tee'd log per stage in `logs/`:
 2. `Rscript scripts/run_all.R` (02 → 03 → 06 → 07 → 08 → 09 → 10 → 11 → 12 → 13, then 14),
 3. `quarto render` in `manuscript/draft` → `_output/`.
 
-To regenerate without touching the committed outputs, use `run_c1.sh` (or set
-the same five variables yourself):
+That writes into **`results/`**, the canonical tree.
+
+To regenerate **without touching** the committed outputs, use one of the two
+ready-made non-destructive runners, which write into `runs/` instead:
 
 ```bash
-CANDIDAS_RESULTS="$PWD/runs/C1_reproduction" \
-ETCGEM_OUT_SUFFIX=_C1 \
-CANDIDAS_SUPP_DATA="$PWD/cauris_etcgem/runs/C1/supp_data" \
-CANDIDAS_EXPRESSION_OUT="$PWD/runs/C1_reproduction/expression" \
+bash scripts/run_c1.sh        # the full reproduction  -> runs/C1_reproduction/
+bash scripts/run_c2_arms.sh   # the three N0 arms      -> runs/C2_arm_{current,ramp,nobp}/
+```
+
+Both just set the path knobs from §6 and call `scripts/run_all.sh`; they can be
+read in a few lines. To do it by hand:
+
+```bash
+CANDIDAS_RESULTS="$PWD/runs/my_run" \
+ETCGEM_OUT_SUPP="$PWD/cauris_etcgem/runs/my_run/supp_data" \
+ETCGEM_OUT_FIG3="$PWD/cauris_etcgem/runs/my_run/figure3_data" \
+CANDIDAS_SUPP_DATA="$PWD/cauris_etcgem/runs/my_run/supp_data" \
+CANDIDAS_EXPRESSION_OUT="$PWD/runs/my_run/expression" \
   bash scripts/run_all.sh
 ```
+
+---
+
+## 3a. Where things live
+
+| tree | status | who writes it | tracked |
+|---|---|---|---|
+| **`results/`** | **canonical, shipped** — what the manuscript renders against | `bash scripts/run_all.sh` with no overrides | tables + `figures/manuscript/` |
+| **`runs/<name>/`** | **non-canonical**, one per analysis prompt, kept as evidence for a report | a runner with `CANDIDAS_RESULTS` pointed at it | tables + `figures/manuscript/`; the per-series figures, the cached `rds/` and any staging render are ignored and rebuilt on demand |
+| `cauris_etcgem/runs/<name>/` | the etc-GEM half of the same run | `ETCGEM_OUT_SUPP` / `ETCGEM_OUT_FIG3` | CSVs and the raw chains |
+| `reports/` | the written findings, their figures and their tools | by hand, and by `reports/tools/*` | everything |
+
+Every tree in `runs/` is catalogued in **[`runs/MANIFEST.md`](../runs/MANIFEST.md)**
+with the prompt that produced it, the exact command, its timings, the
+environment, what it is evidence for, and a SHA-256 index of its tables. Verify
+one with:
+
+```bash
+cd runs/<tree>/tables && shasum -a 256 -c ../CHECKSUMS_tables.txt
+```
+
+Prune policy: tables are never deleted, and neither is anything a report cites.
+Only provably regenerable, uncited bulk is removed, and `runs/MANIFEST.md`
+records what each tree still contains.
 
 ---
 
@@ -281,8 +316,19 @@ That message is expected and correct for a redirected run.
     regenerated; plus **7 stale top-level copies** of the manuscript figures
     (`results/figures/FIG1_decoupling.png` and friends) left over from an older
     layout. **No current script writes them** — 12, 13 and 14 all write to
-    `figures/manuscript/`. They are duplicates and should be deleted; that is a
-    housekeeping change, not a C1 one.
+    `figures/manuscript/`.
+
+    **C2b checked whether they are safe to delete, and only 5 of the 7 are.**
+    `FIG1_decoupling`, `FIG2_the_bill`, `FIG_MODEL`,
+    `FIG_MODEL_SUPP_consistency` and `FIG_model_schematic` are byte-identical
+    to their `manuscript/` counterparts. **`FIG_MODEL_SUPP.png` (1 002 404 vs
+    1 045 093 bytes) and `FIG_MODEL_SUPP_validation.png` (490 745 vs 490 632)
+    are NOT** — same pixel dimensions, different content, i.e. the top-level
+    copies are superseded renders. All seven were therefore **left in place**:
+    deleting only some would be worse than leaving all, and removing any would
+    break `env/baseline_checksums_results.txt`. A reader who picks the
+    top-level `FIG_MODEL_SUPP.png` gets an out-of-date figure; take figures
+    from `results/figures/manuscript/`.
   * *only in `runs/C1_reproduction/`* — `Oxygen_All_Long.csv`,
     `Oxygen_Data_Filtered.csv`, `Oxygen_Data_Smoothed_Trimmed.csv` (gitignored
     by name, so absent from the committed tree) and the two large diagnostic
