@@ -1,5 +1,5 @@
 {
- "label": "etc-GEM: committed figure3_data vs regenerated figure3_data_C1",
+ "label": "etc-GEM figure3_data: committed vs regenerated",
  "a": "/Users/g.yvon-durocher/Library/CloudStorage/OneDrive-UniversityofExeter/Documents/work/Candidas TPC/Candidas/cauris_etcgem/strains/eci_cauris/outputs/figure3_data",
  "b": "/Users/g.yvon-durocher/Library/CloudStorage/OneDrive-UniversityofExeter/Documents/work/Candidas TPC/Candidas/cauris_etcgem/strains/eci_cauris/outputs/figure3_data_C1",
  "n_files_a": 4,
@@ -12,14 +12,14 @@
    "aligned_by": "keys: clade",
    "rows": 4,
    "n_numeric_cols": 3,
-   "max_abs_diff": 0.17238403327192797,
-   "max_rel_diff": 0.21035711645103197,
+   "max_abs_diff": 0.17238409125072718,
+   "max_rel_diff": 0.21035700504443464,
    "worst_column": "capacity",
    "interval": null,
    "per_column": {
     "capacity": {
-     "max_abs": 0.17238403327192797,
-     "max_rel": 0.21035711645103197,
+     "max_abs": 0.17238409125072718,
+     "max_rel": 0.21035700504443464,
      "n": 4,
      "n_finite_mismatch": 0
     },
@@ -30,8 +30,8 @@
      "n_finite_mismatch": 0
     },
     "r2": {
-     "max_abs": 0.08587508025603863,
-     "max_rel": 0.0891814546396343,
+     "max_abs": 0.08587508025712409,
+     "max_rel": 0.08918145464076155,
      "n": 4,
      "n_finite_mismatch": 0
     }

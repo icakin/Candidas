@@ -1,15 +1,49 @@
 {
- "label": "R pipeline: committed vs regenerated",
- "a": "/Users/g.yvon-durocher/Library/CloudStorage/OneDrive-UniversityofExeter/Documents/work/Candidas TPC/Candidas/results/tables",
+ "label": "R pipeline run 1 vs run 2 (determinism)",
+ "a": "/private/tmp/claude-502/-Users-g-yvon-durocher-Library-CloudStorage-OneDrive-UniversityofExeter-Documents-work-Candidas-TPC-Candidas/401069cd-280e-4d5c-b6d7-89626c728e0f/scratchpad/tables_C1_run1",
  "b": "/Users/g.yvon-durocher/Library/CloudStorage/OneDrive-UniversityofExeter/Documents/work/Candidas TPC/Candidas/results_C1/tables",
- "n_files_a": 39,
+ "n_files_a": 37,
  "n_files_b": 37,
- "only_in_b": [
-  "Oxygen_All_Long.csv",
-  "Oxygen_Data_Filtered.csv",
-  "Oxygen_Data_Smoothed_Trimmed.csv"
- ],
+ "only_in_b": [],
  "files": [
+  {
+   "file": "Oxygen_All_Long.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: File,Replicate",
+   "rows": 1486800,
+   "n_numeric_cols": 4,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "Time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1486800,
+     "n_finite_mismatch": 0
+    },
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1486800,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1486800,
+     "n_finite_mismatch": 0
+    },
+    "Oxygen": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1486800,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "Oxygen_All_Long.csv"
+  },
   {
    "file": "Oxygen_Curve_Code_Key.csv",
    "verdict": "IDENTICAL",
@@ -37,14 +71,186 @@
    "rel": "Oxygen_Curve_Code_Key.csv"
   },
   {
+   "file": "Oxygen_Data_Filtered.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: curve_code,Replicate",
+   "rows": 393487,
+   "n_numeric_cols": 5,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "Time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "Oxygen": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "O2_fit": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "Oxygen_Data_Filtered.csv"
+  },
+  {
+   "file": "Oxygen_Data_Smoothed_Trimmed.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: File,Replicate,series_id,curve_code,end_reason",
+   "rows": 393487,
+   "n_numeric_cols": 19,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "Time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "Oxygen": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "O2_fit": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "peak_time_raw": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "peak_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "main_run_start_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "main_run_end_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "steepest_drop_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "end_time_chosen": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "peak_idx_raw": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "peak_idx": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "main_run_start_idx": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "main_run_end_idx": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "steepest_drop_idx": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "end_idx": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "start_shift_points": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "start_shift_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "Oxygen_Data_Smoothed_Trimmed.csv"
+  },
+  {
    "file": "Oxygen_Trimmed_Series_Metadata.csv",
    "verdict": "IDENTICAL",
    "aligned_by": "keys: curve_code,series_id,Replicate,end_reason",
    "rows": 1080,
    "n_numeric_cols": 17,
-   "max_abs_diff": 6.366462912410498e-12,
-   "max_rel_diff": 9.273647461562297e-15,
-   "worst_column": "main_run_score",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": null,
    "per_column": {
     "T": {
@@ -138,14 +344,14 @@
      "n_finite_mismatch": 0
     },
     "main_run_drop": {
-     "max_abs": 8.881784197001252e-15,
-     "max_rel": 9.03808450940029e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 1080,
      "n_finite_mismatch": 0
     },
     "main_run_score": {
-     "max_abs": 6.366462912410498e-12,
-     "max_rel": 9.273647461562297e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 1080,
      "n_finite_mismatch": 0
     }
@@ -166,9 +372,9 @@
    "aligned_by": "keys: otu_name",
    "rows": 18,
    "n_numeric_cols": 11,
-   "max_abs_diff": 8.881784197001252e-16,
-   "max_rel_diff": 3.6377711684800115e-15,
-   "worst_column": "respiration_E_eV",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": null,
    "per_column": {
     "OTU": {
@@ -178,38 +384,38 @@
      "n_finite_mismatch": 0
     },
     "growth_E_eV": {
-     "max_abs": 6.938893903907228e-16,
-     "max_rel": 3.6377711684800115e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "respiration_E_eV": {
-     "max_abs": 8.881784197001252e-16,
-     "max_rel": 2.6094454543344778e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "growth_se_E_eV": {
-     "max_abs": 9.71445146547012e-17,
-     "max_rel": 1.527587108171335e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "respiration_se_E_eV": {
-     "max_abs": 1.0408340855860843e-16,
-     "max_rel": 2.4598358870766958e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "growth_r_squared": {
-     "max_abs": 6.106226635438361e-16,
-     "max_rel": 2.6122692337539755e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "respiration_r_squared": {
-     "max_abs": 6.106226635438361e-16,
-     "max_rel": 1.4224340848776504e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
@@ -246,32 +452,32 @@
    "aligned_by": "keys: otu_name",
    "rows": 18,
    "n_numeric_cols": 8,
-   "max_abs_diff": 2.6645352591003757e-15,
-   "max_rel_diff": 3.6377711684800115e-15,
-   "worst_column": "alpha",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": null,
    "per_column": {
     "alpha": {
-     "max_abs": 2.6645352591003757e-15,
-     "max_rel": 4.767635855957377e-16,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "E_eV": {
-     "max_abs": 6.938893903907228e-16,
-     "max_rel": 3.6377711684800115e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "se_E_eV": {
-     "max_abs": 9.71445146547012e-17,
-     "max_rel": 1.527587108171335e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "r_squared": {
-     "max_abs": 6.106226635438361e-16,
-     "max_rel": 2.6122692337539755e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
@@ -308,32 +514,32 @@
    "aligned_by": "keys: otu_name",
    "rows": 18,
    "n_numeric_cols": 8,
-   "max_abs_diff": 3.552713678800501e-15,
-   "max_rel_diff": 2.6094454543344778e-15,
-   "worst_column": "alpha",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": null,
    "per_column": {
     "alpha": {
-     "max_abs": 3.552713678800501e-15,
-     "max_rel": 5.5908014951346e-16,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "E_eV": {
-     "max_abs": 8.881784197001252e-16,
-     "max_rel": 2.6094454543344778e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "se_E_eV": {
-     "max_abs": 1.0408340855860843e-16,
-     "max_rel": 2.4598358870766958e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "r_squared": {
-     "max_abs": 6.106226635438361e-16,
-     "max_rel": 1.4224340848776504e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
@@ -366,13 +572,13 @@
   },
   {
    "file": "bayes_E_resp_minus_growth.csv",
-   "verdict": "STOCHASTIC-BUT-CONSISTENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: Group",
    "rows": 5,
    "n_numeric_cols": 4,
-   "max_abs_diff": 0.005990610877633751,
-   "max_rel_diff": 0.014429994987287977,
-   "worst_column": "lo",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": {
     "pairs": [
      {
@@ -392,20 +598,20 @@
    },
    "per_column": {
     "E_resp_minus_growth": {
-     "max_abs": 0.002251252368002832,
-     "max_rel": 0.004119146252425424,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "lo": {
-     "max_abs": 0.005990610877633751,
-     "max_rel": 0.009175149834234817,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "hi": {
-     "max_abs": 0.004371182272114749,
-     "max_rel": 0.014429994987287977,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
@@ -420,13 +626,13 @@
   },
   {
    "file": "bayes_clade_contrasts.csv",
-   "verdict": "STOCHASTIC-BUT-CONSISTENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: parameter,group_a,group_b",
    "rows": 40,
    "n_numeric_cols": 4,
-   "max_abs_diff": 0.16548835411953444,
-   "max_rel_diff": 0.4689712359622608,
-   "worst_column": "lo",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": {
     "pairs": [
      {
@@ -446,26 +652,26 @@
    },
    "per_column": {
     "diff": {
-     "max_abs": 0.04148399698945576,
-     "max_rel": 0.1976063479465705,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 40,
      "n_finite_mismatch": 0
     },
     "lo": {
-     "max_abs": 0.16548835411953444,
-     "max_rel": 0.4689712359622608,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 40,
      "n_finite_mismatch": 0
     },
     "hi": {
-     "max_abs": 0.061108709533945316,
-     "max_rel": 0.07012915584037857,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 40,
      "n_finite_mismatch": 0
     },
     "P_a_greater": {
-     "max_abs": 0.009416666666666629,
-     "max_rel": 0.22222222222222215,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 40,
      "n_finite_mismatch": 0
     }
@@ -474,13 +680,13 @@
   },
   {
    "file": "bayes_clade_params.csv",
-   "verdict": "STOCHASTIC-BUT-CONSISTENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: Group",
    "rows": 5,
    "n_numeric_cols": 10,
-   "max_abs_diff": 0.018676524669558603,
-   "max_rel_diff": 0.006977228233377805,
-   "worst_column": "growth_Th_K",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": {
     "pairs": [
      {
@@ -518,26 +724,26 @@
    },
    "per_column": {
     "growth_E_eV": {
-     "max_abs": 0.001155065308861003,
-     "max_rel": 0.0010096091899144308,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "growth_E_lo": {
-     "max_abs": 0.004510109284622699,
-     "max_rel": 0.006453278200165238,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "growth_E_hi": {
-     "max_abs": 0.008108009204410571,
-     "max_rel": 0.006977228233377805,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "growth_Th_K": {
-     "max_abs": 0.018676524669558603,
-     "max_rel": 6.022707074896161e-05,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
@@ -582,13 +788,13 @@
   },
   {
    "file": "bayes_cue_by_clade.csv",
-   "verdict": "STOCHASTIC-BUT-CONSISTENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: Group",
    "rows": 600,
    "n_numeric_cols": 4,
-   "max_abs_diff": 0.003586929328891042,
-   "max_rel_diff": 0.017500447317397114,
-   "worst_column": "hi",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": {
     "pairs": [
      {
@@ -614,20 +820,20 @@
      "n_finite_mismatch": 0
     },
     "CUE": {
-     "max_abs": 0.0011957543165720952,
-     "max_rel": 0.00690973424046759,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 600,
      "n_finite_mismatch": 0
     },
     "lo": {
-     "max_abs": 0.0022179075808921866,
-     "max_rel": 0.01598652631715075,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 600,
      "n_finite_mismatch": 0
     },
     "hi": {
-     "max_abs": 0.003586929328891042,
-     "max_rel": 0.017500447317397114,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 600,
      "n_finite_mismatch": 0
     }
@@ -636,13 +842,13 @@
   },
   {
    "file": "bayes_cue_by_isolate.csv",
-   "verdict": "STOCHASTIC-BUT-CONSISTENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: Group,Isolate",
    "rows": 1800,
    "n_numeric_cols": 4,
-   "max_abs_diff": 0.0014178725075669196,
-   "max_rel_diff": 0.014529889197468535,
-   "worst_column": "hi",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": {
     "pairs": [
      {
@@ -668,20 +874,20 @@
      "n_finite_mismatch": 0
     },
     "CUE": {
-     "max_abs": 0.0005525810097818107,
-     "max_rel": 0.005439249762222707,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 1800,
      "n_finite_mismatch": 0
     },
     "lo": {
-     "max_abs": 0.0012991399749509025,
-     "max_rel": 0.014529889197468535,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 1800,
      "n_finite_mismatch": 0
     },
     "hi": {
-     "max_abs": 0.0014178725075669196,
-     "max_rel": 0.010389236011578904,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 1800,
      "n_finite_mismatch": 0
     }
@@ -690,13 +896,13 @@
   },
   {
    "file": "bayes_growth_ss_summary.csv",
-   "verdict": "STOCHASTIC-BUT-CONSISTENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: variable",
    "rows": 72,
    "n_numeric_cols": 8,
-   "max_abs_diff": 3399.394058702377,
-   "max_rel_diff": 0.6020159165130957,
-   "worst_column": "ess_bulk",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": {
     "pairs": [
      {
@@ -716,50 +922,50 @@
    },
    "per_column": {
     "mean": {
-     "max_abs": 0.1741140987826384,
-     "max_rel": 0.6020159165130957,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 72,
      "n_finite_mismatch": 0
     },
     "sd": {
-     "max_abs": 0.04370330966567426,
-     "max_rel": 0.02926243134761356,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 72,
      "n_finite_mismatch": 0
     },
     "q2.5": {
-     "max_abs": 0.4792111425482517,
-     "max_rel": 0.0983054837516127,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 72,
      "n_finite_mismatch": 0
     },
     "q50": {
-     "max_abs": 0.02361186442371377,
-     "max_rel": 0.5430519006413163,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 72,
      "n_finite_mismatch": 0
     },
     "q97.5": {
-     "max_abs": 0.5491965874745119,
-     "max_rel": 0.0667573082571726,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 72,
      "n_finite_mismatch": 0
     },
     "rhat": {
-     "max_abs": 0.00236652634173784,
-     "max_rel": 0.002359518833362136,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 72,
      "n_finite_mismatch": 0
     },
     "ess_bulk": {
-     "max_abs": 3399.394058702377,
-     "max_rel": 0.20996050200025249,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 72,
      "n_finite_mismatch": 0
     },
     "ess_tail": {
-     "max_abs": 1553.7032874453853,
-     "max_rel": 0.19091913683347247,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 72,
      "n_finite_mismatch": 0
     }
@@ -772,9 +978,9 @@
    "aligned_by": "keys: variable",
    "rows": 46,
    "n_numeric_cols": 8,
-   "max_abs_diff": 1.7280399333685637e-11,
-   "max_rel_diff": 2.729563999864367e-15,
-   "worst_column": "ess_tail",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": {
     "pairs": [
      {
@@ -830,14 +1036,14 @@
      "n_finite_mismatch": 0
     },
     "ess_bulk": {
-     "max_abs": 1.0913936421275139e-11,
-     "max_rel": 1.2436039997950397e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 46,
      "n_finite_mismatch": 0
     },
     "ess_tail": {
-     "max_abs": 1.7280399333685637e-11,
-     "max_rel": 2.729563999864367e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 46,
      "n_finite_mismatch": 0
     }
@@ -846,60 +1052,60 @@
   },
   {
    "file": "bayes_resp_model_comparison_loo.csv",
-   "verdict": "DIVERGENT (no interval in file)",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: model",
    "rows": 2,
    "n_numeric_cols": 8,
-   "max_abs_diff": 8.899934255168773e-05,
-   "max_rel_diff": 1.2255361189493142e-05,
-   "worst_column": "looic",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": null,
    "per_column": {
     "elpd_diff": {
-     "max_abs": 3.719680541003356e-05,
-     "max_rel": 1.2255361189493142e-05,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 2,
      "n_finite_mismatch": 0
     },
     "se_diff": {
-     "max_abs": 2.4970004257607314e-06,
-     "max_rel": 7.014157304605942e-06,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 2,
      "n_finite_mismatch": 0
     },
     "elpd_loo": {
-     "max_abs": 4.4499671275843866e-05,
-     "max_rel": 1.4258408589618068e-07,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 2,
      "n_finite_mismatch": 0
     },
     "se_elpd_loo": {
-     "max_abs": 6.963833602213754e-06,
-     "max_rel": 3.132426383824342e-07,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 2,
      "n_finite_mismatch": 0
     },
     "p_loo": {
-     "max_abs": 4.449967125097487e-05,
-     "max_rel": 1.811441105013356e-06,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 2,
      "n_finite_mismatch": 0
     },
     "se_p_loo": {
-     "max_abs": 6.754903438377369e-06,
-     "max_rel": 5.986122848874631e-06,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 2,
      "n_finite_mismatch": 0
     },
     "looic": {
-     "max_abs": 8.899934255168773e-05,
-     "max_rel": 1.4258408589618068e-07,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 2,
      "n_finite_mismatch": 0
     },
     "se_looic": {
-     "max_abs": 1.3927667204427507e-05,
-     "max_rel": 3.132426383824342e-07,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 2,
      "n_finite_mismatch": 0
     }
@@ -908,13 +1114,13 @@
   },
   {
    "file": "carbon_tax_contrasts_fever.csv",
-   "verdict": "STOCHASTIC-BUT-CONSISTENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: auris,comp",
    "rows": 4,
    "n_numeric_cols": 5,
-   "max_abs_diff": 0.010428080460336497,
-   "max_rel_diff": 0.019537236954378236,
-   "worst_column": "lo",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": {
     "pairs": [
      {
@@ -934,26 +1140,26 @@
    },
    "per_column": {
     "ratio": {
-     "max_abs": 0.0006590871003386845,
-     "max_rel": 0.0015344469531242202,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 4,
      "n_finite_mismatch": 0
     },
     "lo": {
-     "max_abs": 0.010428080460336497,
-     "max_rel": 0.019537236954378236,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 4,
      "n_finite_mismatch": 0
     },
     "hi": {
-     "max_abs": 0.0028959132719530434,
-     "max_rel": 0.003635509461092172,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 4,
      "n_finite_mismatch": 0
     },
     "P_cheaper": {
-     "max_abs": 0.00024999999999986144,
-     "max_rel": 0.000253506844684666,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 4,
      "n_finite_mismatch": 0
     },
@@ -972,8 +1178,8 @@
    "aligned_by": "keys: Group",
    "rows": 445,
    "n_numeric_cols": 4,
-   "max_abs_diff": 0.43138775712818855,
-   "max_rel_diff": 0.04316527125394298,
+   "max_abs_diff": 0.20472920229141067,
+   "max_rel_diff": 0.022054831618708998,
    "worst_column": "hi",
    "interval": {
     "pairs": [
@@ -1000,20 +1206,20 @@
      "n_finite_mismatch": 0
     },
     "tax": {
-     "max_abs": 0.05061089500723437,
-     "max_rel": 0.013810455701972583,
+     "max_abs": 0.043554571468670034,
+     "max_rel": 0.009578882100933713,
      "n": 445,
      "n_finite_mismatch": 0
     },
     "lo": {
-     "max_abs": 0.27720140537073057,
-     "max_rel": 0.04316527125394298,
+     "max_abs": 0.05407213555491719,
+     "max_rel": 0.014260912856766979,
      "n": 445,
      "n_finite_mismatch": 0
     },
     "hi": {
-     "max_abs": 0.43138775712818855,
-     "max_rel": 0.036576416703964144,
+     "max_abs": 0.20472920229141067,
+     "max_rel": 0.022054831618708998,
      "n": 445,
      "n_finite_mismatch": 0
     }
@@ -1022,13 +1228,13 @@
   },
   {
    "file": "carbon_tax_group.csv",
-   "verdict": "STOCHASTIC-BUT-CONSISTENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: Group",
    "rows": 20,
    "n_numeric_cols": 4,
-   "max_abs_diff": 0.043191744923607445,
-   "max_rel_diff": 0.0103771362927303,
-   "worst_column": "tax",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": {
     "pairs": [
      {
@@ -1054,20 +1260,20 @@
      "n_finite_mismatch": 0
     },
     "tax": {
-     "max_abs": 0.043191744923607445,
-     "max_rel": 0.004897175963345337,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 20,
      "n_finite_mismatch": 0
     },
     "lo": {
-     "max_abs": 0.01853249520035316,
-     "max_rel": 0.004149209725797027,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 20,
      "n_finite_mismatch": 0
     },
     "hi": {
-     "max_abs": 0.04222355372905984,
-     "max_rel": 0.0103771362927303,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 20,
      "n_finite_mismatch": 0
     }
@@ -1076,13 +1282,13 @@
   },
   {
    "file": "carbon_tax_isolate.csv",
-   "verdict": "STOCHASTIC-BUT-CONSISTENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: Isolate,Group",
    "rows": 30,
    "n_numeric_cols": 4,
-   "max_abs_diff": 0.01936767076320578,
-   "max_rel_diff": 0.0062264013233405595,
-   "worst_column": "hi",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": {
     "pairs": [
      {
@@ -1108,20 +1314,20 @@
      "n_finite_mismatch": 0
     },
     "tax": {
-     "max_abs": 0.005644503458600791,
-     "max_rel": 0.002753792062887994,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 30,
      "n_finite_mismatch": 0
     },
     "lo": {
-     "max_abs": 0.007277790241726034,
-     "max_rel": 0.0029453861904749404,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 30,
      "n_finite_mismatch": 0
     },
     "hi": {
-     "max_abs": 0.01936767076320578,
-     "max_rel": 0.0062264013233405595,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 30,
      "n_finite_mismatch": 0
     }
@@ -1134,38 +1340,38 @@
    "aligned_by": "keys: otu_name",
    "rows": 18,
    "n_numeric_cols": 11,
-   "max_abs_diff": 4.618527782440651e-14,
-   "max_rel_diff": 5.145413992181837e-14,
-   "worst_column": "T_opt_C",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": null,
    "per_column": {
     "b0": {
-     "max_abs": 3.885780586188048e-14,
-     "max_rel": 1.962736134724655e-14,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "b1_T": {
-     "max_abs": 2.220446049250313e-15,
-     "max_rel": 1.5483058671117722e-14,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "b2_T2": {
-     "max_abs": 9.996344030316351e-17,
-     "max_rel": 5.145413992181837e-14,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "T_opt_C": {
-     "max_abs": 4.618527782440651e-14,
-     "max_rel": 1.5626253591995055e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
     "CUE_at_opt": {
-     "max_abs": 2.6645352591003757e-15,
-     "max_rel": 8.238268410216322e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
@@ -1176,8 +1382,8 @@
      "n_finite_mismatch": 0
     },
     "r_squared": {
-     "max_abs": 5.10702591327572e-15,
-     "max_rel": 9.031153706988584e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 18,
      "n_finite_mismatch": 0
     },
@@ -1210,13 +1416,13 @@
   },
   {
    "file": "derived_N0_R_results_with_carbon.csv",
-   "verdict": "NUMERICALLY EQUIVALENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: Replicate,otu_name",
    "rows": 991,
    "n_numeric_cols": 26,
-   "max_abs_diff": 2.3578650143463165e-10,
-   "max_rel_diff": 2.614096129674657e-12,
-   "worst_column": "delta_aicc_curv",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": null,
    "per_column": {
     "T": {
@@ -1268,8 +1474,8 @@
      "n_finite_mismatch": 0
     },
     "delta_aicc_curv": {
-     "max_abs": 2.3578650143463165e-10,
-     "max_rel": 2.614096129674657e-12,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 991,
      "n_finite_mismatch": 0
     },
@@ -1510,13 +1716,13 @@
   },
   {
    "file": "fig_contrasts.csv",
-   "verdict": "STOCHASTIC-BUT-CONSISTENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: a,b",
    "rows": 10,
    "n_numeric_cols": 4,
-   "max_abs_diff": 0.010428080460336497,
-   "max_rel_diff": 0.019537236954378236,
-   "worst_column": "lo",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": {
     "pairs": [
      {
@@ -1536,20 +1742,20 @@
    },
    "per_column": {
     "ratio": {
-     "max_abs": 0.0025545216475990618,
-     "max_rel": 0.0018273558020255427,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 10,
      "n_finite_mismatch": 0
     },
     "lo": {
-     "max_abs": 0.010428080460336497,
-     "max_rel": 0.019537236954378236,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 10,
      "n_finite_mismatch": 0
     },
     "hi": {
-     "max_abs": 0.006176651548972956,
-     "max_rel": 0.004349793165225871,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 10,
      "n_finite_mismatch": 0
     },
@@ -1564,13 +1770,13 @@
   },
   {
    "file": "fig_values.csv",
-   "verdict": "STOCHASTIC-BUT-CONSISTENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: Group",
    "rows": 5,
    "n_numeric_cols": 39,
-   "max_abs_diff": 0.2222999964472976,
-   "max_rel_diff": 0.014429994987287977,
-   "worst_column": "g40_hi",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": {
     "pairs": [
      {
@@ -1689,20 +1895,20 @@
    },
    "per_column": {
     "E": {
-     "max_abs": 0.001155065308861003,
-     "max_rel": 0.0010096091899144308,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "E_lo": {
-     "max_abs": 0.004510109284622699,
-     "max_rel": 0.006453278200165238,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "E_hi": {
-     "max_abs": 0.008108009204410571,
-     "max_rel": 0.006977228233377805,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
@@ -1725,20 +1931,20 @@
      "n_finite_mismatch": 0
     },
     "dE": {
-     "max_abs": 0.002251252368002832,
-     "max_rel": 0.004119146252425424,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "dE_lo": {
-     "max_abs": 0.004371182272114749,
-     "max_rel": 0.014429994987287977,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "dE_hi": {
-     "max_abs": 0.00599061087763364,
-     "max_rel": 0.009175149834234649,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
@@ -1749,56 +1955,56 @@
      "n_finite_mismatch": 0
     },
     "Eh": {
-     "max_abs": 0.008924472742674716,
-     "max_rel": 0.002784229342798179,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "Eh_lo": {
-     "max_abs": 0.008708916002710954,
-     "max_rel": 0.0030403065038796294,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "Eh_hi": {
-     "max_abs": 0.008445827711934584,
-     "max_rel": 0.002676074145523233,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "Topt": {
-     "max_abs": 0.010600688505576272,
-     "max_rel": 0.0002981988497683389,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "Topt_lo": {
-     "max_abs": 0.0316369169438957,
-     "max_rel": 0.0008908964113687974,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "Topt_hi": {
-     "max_abs": 0.0159688967905538,
-     "max_rel": 0.00043904311169536386,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "Tcue": {
-     "max_abs": 0.01386517149612132,
-     "max_rel": 0.0004428156026434185,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "Tcue_lo": {
-     "max_abs": 0.01817962770906334,
-     "max_rel": 0.0006020554143194479,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "Tcue_hi": {
-     "max_abs": 0.02144270482541799,
-     "max_rel": 0.0006333880093442919,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
@@ -1809,116 +2015,116 @@
      "n_finite_mismatch": 0
     },
     "tax37": {
-     "max_abs": 0.0010129986327600538,
-     "max_rel": 0.0007781127673731965,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "tax37_lo": {
-     "max_abs": 0.0026287732628775817,
-     "max_rel": 0.0018962512695300424,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "tax37_hi": {
-     "max_abs": 0.006806487184375598,
-     "max_rel": 0.0036512347186285054,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "tax40": {
-     "max_abs": 0.007506033372578713,
-     "max_rel": 0.0023944445827680286,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "tax40_lo": {
-     "max_abs": 0.00638453763092639,
-     "max_rel": 0.003328477365755601,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "tax40_hi": {
-     "max_abs": 0.04222355372905984,
-     "max_rel": 0.0103771362927303,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "growth37": {
-     "max_abs": 0.022005219694804623,
-     "max_rel": 0.000280930233272113,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "growth40": {
-     "max_abs": 0.06572922162960992,
-     "max_rel": 0.0013375120312145966,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "g40_lo": {
-     "max_abs": 0.193805865645011,
-     "max_rel": 0.00539279909006439,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "g40_hi": {
-     "max_abs": 0.2222999964472976,
-     "max_rel": 0.004044813387161158,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "growth_lost": {
-     "max_abs": 0.08894392244934579,
-     "max_rel": 0.00276041585375638,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "growth_lost_lo": {
-     "max_abs": 0.04448084063731983,
-     "max_rel": 0.0031465644007118293,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "growth_lost_hi": {
-     "max_abs": 0.09398728892785257,
-     "max_rel": 0.005834950473617793,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "growth_kept": {
-     "max_abs": 0.0008371214218008127,
-     "max_rel": 0.0014362616450148593,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "gk_lo": {
-     "max_abs": 0.0010145659460605305,
-     "max_rel": 0.001292364012674302,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "gk_hi": {
-     "max_abs": 0.0009556498147919035,
-     "max_rel": 0.00143686115134604,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "fever_cost": {
-     "max_abs": 0.0026860983494392254,
-     "max_rel": 0.001371594672117667,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "fc_lo": {
-     "max_abs": 0.001366418743668385,
-     "max_rel": 0.0009863702955157552,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     },
     "fc_hi": {
-     "max_abs": 0.004022187493295526,
-     "max_rel": 0.0017426589495565655,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 5,
      "n_finite_mismatch": 0
     }
@@ -1927,13 +2133,13 @@
   },
   {
    "file": "fit_coefficients_long.csv",
-   "verdict": "NUMERICALLY EQUIVALENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: Replicate,parameter",
    "rows": 3240,
    "n_numeric_cols": 11,
-   "max_abs_diff": 2.3578650143463165e-10,
-   "max_rel_diff": 8.571140979209634e-11,
-   "worst_column": "delta_aicc_curv",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": null,
    "per_column": {
     "T": {
@@ -1955,20 +2161,20 @@
      "n_finite_mismatch": 0
     },
     "SE": {
-     "max_abs": 1.0408340855860843e-16,
-     "max_rel": 3.3285594308999266e-13,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 3240,
      "n_finite_mismatch": 0
     },
     "t value": {
-     "max_abs": 1.000444171950221e-11,
-     "max_rel": 4.900372025771907e-15,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 3240,
      "n_finite_mismatch": 0
     },
     "p_value": {
-     "max_abs": 3.3306690738754696e-16,
-     "max_rel": 9.093678311353165e-13,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 3240,
      "n_finite_mismatch": 0
     },
@@ -1991,8 +2197,8 @@
      "n_finite_mismatch": 0
     },
     "delta_aicc_curv": {
-     "max_abs": 2.3578650143463165e-10,
-     "max_rel": 8.571140979209634e-11,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 3240,
      "n_finite_mismatch": 0
     },
@@ -2007,13 +2213,13 @@
   },
   {
    "file": "fit_coefficients_wide.csv",
-   "verdict": "NUMERICALLY EQUIVALENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: Replicate",
    "rows": 1063,
    "n_numeric_cols": 10,
-   "max_abs_diff": 2.3578650143463165e-10,
-   "max_rel_diff": 1.4045818891755442e-11,
-   "worst_column": "delta_aicc_curv",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": null,
    "per_column": {
     "T": {
@@ -2065,8 +2271,8 @@
      "n_finite_mismatch": 0
     },
     "delta_aicc_curv": {
-     "max_abs": 2.3578650143463165e-10,
-     "max_rel": 1.4045818891755442e-11,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 1063,
      "n_finite_mismatch": 0
     },
@@ -2081,13 +2287,13 @@
   },
   {
    "file": "fit_metrics.csv",
-   "verdict": "NUMERICALLY EQUIVALENT",
+   "verdict": "IDENTICAL",
    "aligned_by": "keys: Replicate",
    "rows": 1080,
    "n_numeric_cols": 17,
-   "max_abs_diff": 2.3578650143463165e-10,
-   "max_rel_diff": 8.571140979209634e-11,
-   "worst_column": "delta_aicc_curv",
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
    "interval": null,
    "per_column": {
     "T": {
@@ -2139,14 +2345,14 @@
      "n_finite_mismatch": 0
     },
     "aicc_lin": {
-     "max_abs": 2.355591277591884e-10,
-     "max_rel": 8.724887048393174e-14,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 1080,
      "n_finite_mismatch": 0
     },
     "delta_aicc_curv": {
-     "max_abs": 2.3578650143463165e-10,
-     "max_rel": 8.571140979209634e-11,
+     "max_abs": 0.0,
+     "max_rel": 0.0,
      "n": 1080,
      "n_finite_mismatch": 0
     },
@@ -2244,41 +2450,6 @@
     }
    },
    "rel": "group_lookup_with_delta.csv"
-  },
-  {
-   "file": "manual_fit_windows.csv",
-   "verdict": "NOT REPRODUCED",
-   "detail": "absent from B",
-   "rows_a": 1080,
-   "rel": "manual_fit_windows.csv"
-  },
-  {
-   "file": "otu_cell_sizes.csv",
-   "verdict": "NOT REPRODUCED",
-   "detail": "absent from B",
-   "rows_a": 18,
-   "rel": "otu_cell_sizes.csv"
-  },
-  {
-   "file": "otu_inoc.csv",
-   "verdict": "NOT REPRODUCED",
-   "detail": "absent from B",
-   "rows_a": 18,
-   "rel": "otu_inoc.csv"
-  },
-  {
-   "file": "otu_names.csv",
-   "verdict": "NOT REPRODUCED",
-   "detail": "absent from B",
-   "rows_a": 18,
-   "rel": "otu_names.csv"
-  },
-  {
-   "file": "plot_exclude_points.csv",
-   "verdict": "NOT REPRODUCED",
-   "detail": "absent from B",
-   "rows_a": 88,
-   "rel": "plot_exclude_points.csv"
   },
   {
    "file": "removed_points.csv",

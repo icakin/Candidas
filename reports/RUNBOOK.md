@@ -266,10 +266,25 @@ That message is expected and correct for a redirected run.
 
 ## 8. What "success" looks like
 
-* `results/` (or `results_C1/`) holds **43 tables**, **~127 figures** and
-  **5 `.rds`** model objects.
-* `cauris_etcgem/strains/eci_cauris/outputs/supp_data*/` holds **13 CSVs**
-  (14 with `bayes_chain_raw.npz`).
+* `results_C1/` holds **37 tables** (40 with the three large oxygen
+  intermediates, which `.gitignore` keeps out of the repo), **78 figures**,
+  **5 `.rds`** model objects and **2** expression outputs.
+* The committed `results/` holds 39 tables and 83 figures. Every difference is
+  accounted for:
+  * *only in `results/`* — the five committed app inputs
+    (`manual_fit_windows.csv`, `plot_exclude_points.csv`, `otu_cell_sizes.csv`,
+    `otu_inoc.csv`, `otu_names.csv`), which are inputs and are never
+    regenerated; plus **7 stale top-level copies** of the manuscript figures
+    (`results/figures/FIG1_decoupling.png` and friends) left over from an older
+    layout. **No current script writes them** — 12, 13 and 14 all write to
+    `figures/manuscript/`. They are duplicates and should be deleted; that is a
+    housekeeping change, not a C1 one.
+  * *only in `results_C1/`* — `Oxygen_All_Long.csv`,
+    `Oxygen_Data_Filtered.csv`, `Oxygen_Data_Smoothed_Trimmed.csv` (gitignored
+    by name, so absent from the committed tree) and the two large diagnostic
+    PDFs `per_series_fits.pdf`, `oxygen_trimming_diagnostics.pdf`.
+* `cauris_etcgem/strains/eci_cauris/outputs/supp_data_C1/` holds **13 CSVs**
+  plus `bayes_chain_raw.npz`.
 * `manuscript/draft/_output/` holds **6** documents.
 * `git status` shows no modification to `data/`, `results/`, or the committed
   etc-GEM outputs — verify with:
