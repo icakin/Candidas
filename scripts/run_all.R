@@ -53,7 +53,12 @@
 # to getwd() - which made every source() below look in the project ROOT and fail.
 script_dir <- local({
   fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
-  if (length(fa)) return(dirname(normalizePath(sub("^--file=", "", fa[1]), mustWork = FALSE)))
+  if (length(fa)) return(dirname(normalizePath(
+    # R replaces every space in --file= with "~+~". A project path with a
+    # space in it (this one has two) therefore comes back mangled, and
+    # source() then fails on a path that does not exist.
+    gsub("~+~", " ", sub("^--file=", "", fa[1]), fixed = TRUE),
+    mustWork = FALSE)))
   if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable() &&
       nzchar(rstudioapi::getActiveDocumentContext()$path))
     return(dirname(rstudioapi::getActiveDocumentContext()$path))

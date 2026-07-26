@@ -14,7 +14,10 @@
 # =============================================================================
 # script directory: works under Rscript (--file=), source() and RStudio
 .fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
-.d0 <- if (length(.fa)) dirname(normalizePath(sub("^--file=", "", .fa[1]), mustWork = FALSE)) else
+# C1: R encodes every space in --file= as "~+~"; this project path has two.
+.d0 <- if (length(.fa)) dirname(normalizePath(
+           gsub("~+~", " ", sub("^--file=", "", .fa[1]), fixed = TRUE),
+           mustWork = FALSE)) else
          tryCatch(dirname(sys.frame(1)$ofile), error = function(e) NA_character_)
 if (length(.d0) == 0 || is.na(.d0) || !nzchar(.d0)) {
   if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable() &&
@@ -229,7 +232,10 @@ message("FIG_MODEL_SUPP -> ", FD)
 # =============================================================================
 # script directory: works under Rscript (--file=), source() and RStudio
 .fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
-.d0 <- if (length(.fa)) dirname(normalizePath(sub("^--file=", "", .fa[1]), mustWork = FALSE)) else
+# C1: R encodes every space in --file= as "~+~"; this project path has two.
+.d0 <- if (length(.fa)) dirname(normalizePath(
+           gsub("~+~", " ", sub("^--file=", "", .fa[1]), fixed = TRUE),
+           mustWork = FALSE)) else
          tryCatch(dirname(sys.frame(1)$ofile), error = function(e) NA_character_)
 if (length(.d0) == 0 || is.na(.d0) || !nzchar(.d0)) {
   if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable() &&

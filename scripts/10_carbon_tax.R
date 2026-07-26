@@ -72,7 +72,12 @@
 # which is why the bug stayed hidden.
 .this_dir <- local({
   fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
-  if (length(fa)) return(dirname(normalizePath(sub("^--file=", "", fa[1]), mustWork = FALSE)))
+  if (length(fa)) return(dirname(normalizePath(
+    # R replaces every space in --file= with "~+~". A project path with a
+    # space in it (this one has two) therefore comes back mangled, and
+    # source() then fails on a path that does not exist.
+    gsub("~+~", " ", sub("^--file=", "", fa[1]), fixed = TRUE),
+    mustWork = FALSE)))
   d <- tryCatch(dirname(sys.frame(1)$ofile), error = function(e) NA_character_)
   if (length(d) == 0 || is.na(d) || !nzchar(d)) {
     if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable() &&
