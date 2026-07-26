@@ -57,3 +57,8 @@ cauris_etcgem/.venv/
 !/results_C1/figures/manuscript/
 /results_C1/rds/
 /results_C1/manuscript_build/
+
+# --- C2 arm outputs: keep the tables, not the regenerable bulk ---
+/results_C2_*/figures/*
+!/results_C2_*/figures/manuscript/
+/results_C2_*/rds/

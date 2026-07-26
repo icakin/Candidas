@@ -354,14 +354,53 @@ if (exists("MANUAL_FIT_WINDOWS") && nrow(MANUAL_FIT_WINDOWS) > 0) {
 #            drops the exp(r * delta) term, so respiration (= K / N0) scales with
 #            K and a fixed stock constant, giving a clean TPC comparable to
 #            growth. fit_start_time is still kept as a reference column.
+# C2 arm selector. Unset CANDIDAS_N0_MODE -> exactly the shipped behaviour.
+.n0_arm <- if (nzchar(N0_MODE)) N0_MODE else
+  (if (isTRUE(N0_BACKPROJECT)) "current" else "nobp")
+
 group_lookup <- o2f %>%
   dplyr::distinct(T, OTU, Replicate) %>%
   dplyr::left_join(fit_windows, by = c("T", "OTU", "Replicate")) %>%
   dplyr::mutate(
-    delta_Ninoc_to_N0_min = if (isTRUE(N0_BACKPROJECT)) fit_start_time else 0,
+    delta_Ninoc_to_N0_min = if (identical(.n0_arm, "nobp")) 0 else fit_start_time,
+    n0_ramp_factor            = 1,
     N_inoculation_cells_per_L = N_inoculation_cells_per_L
   ) %>%
   dplyr::arrange(T, OTU, Replicate)
+
+# ARM 2: per-series ramp-aware multiplier on N0. Built in PART B by letting the
+# sample temperature follow the fitted equilibration trajectory and the
+# instantaneous growth rate follow each isolate's own TPC at that temperature.
+# Series without a factor keep 1, i.e. fall back to ARM 1.
+if (identical(.n0_arm, "ramp")) {
+  if (!nzchar(N0_RAMP_CSV) || !file.exists(N0_RAMP_CSV))
+    stop("N0_ARM_RAMP_MISSING: CANDIDAS_N0_MODE=ramp needs CANDIDAS_N0_RAMP_CSV to ",
+         "point at a readable file with columns T, OTU, Replicate, n0_factor.\n",
+         "  Got: '", N0_RAMP_CSV, "'\n",
+         "  Build it with: cauris_etcgem/.venv/bin/python ",
+         "reports/tools/c2_partB_transient.py", call. = FALSE)
+  .rf <- readr::read_csv(N0_RAMP_CSV, show_col_types = FALSE)
+  if (!all(c("T", "OTU", "Replicate", "n0_factor") %in% names(.rf)))
+    stop("N0_ARM_RAMP_BADCOLS: ", N0_RAMP_CSV,
+         " must have columns T, OTU, Replicate, n0_factor.", call. = FALSE)
+  .rf <- .rf %>%
+    dplyr::transmute(T = as.numeric(T), OTU = as.integer(OTU),
+                     Replicate = as.character(Replicate),
+                     .f = suppressWarnings(as.numeric(n0_factor))) %>%
+    dplyr::filter(is.finite(.f), .f > 0) %>%
+    dplyr::distinct(T, OTU, Replicate, .keep_all = TRUE)
+  group_lookup <- group_lookup %>%
+    dplyr::left_join(.rf, by = c("T", "OTU", "Replicate")) %>%
+    dplyr::mutate(n0_ramp_factor = dplyr::coalesce(.f, 1)) %>%
+    dplyr::select(-.f)
+  message(sprintf(
+    "ARM 2 (ramp): N0 multipliers loaded for %d of %d series from %s; median %.4f, range [%.4f, %.4f]. %d fall back to 1.",
+    sum(group_lookup$n0_ramp_factor != 1), nrow(group_lookup), basename(N0_RAMP_CSV),
+    stats::median(group_lookup$n0_ramp_factor),
+    min(group_lookup$n0_ramp_factor), max(group_lookup$n0_ramp_factor),
+    sum(group_lookup$n0_ramp_factor == 1)))
+}
+message("07: N0 arm = ", .n0_arm)
 
 # ---- PER-ISOLATE inoculation density (from 06_inoculation.R) ----------------
 # Everything went in at the same OD, but OD measures BIOMASS, not cell number -
@@ -915,11 +954,14 @@ results <- coef_wide %>%
   dplyr::left_join(group_lookup, by = c("T", "OTU", "Replicate")) %>%
   dplyr::left_join(otu_size_lookup, by = "OTU") %>%
   dplyr::mutate(
+    # n0_ramp_factor is 1 in every arm except ARM 2, so this is the shipped
+    # expression unchanged unless CANDIDAS_N0_MODE=ramp is set.
     N0_cells_per_L = dplyr::if_else(
       is.finite(N_inoculation_cells_per_L) & N_inoculation_cells_per_L > 0 &
         is.finite(delta_Ninoc_to_N0_min) & delta_Ninoc_to_N0_min >= 0 &
         is.finite(r) & r > 0,
-      N_inoculation_cells_per_L * exp(r * delta_Ninoc_to_N0_min),
+      N_inoculation_cells_per_L * exp(r * delta_Ninoc_to_N0_min) *
+        dplyr::coalesce(n0_ramp_factor, 1),
       NA_real_
     ),
     C_tot_O2_mg_per_L = dplyr::if_else(

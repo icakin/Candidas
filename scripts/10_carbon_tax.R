@@ -214,6 +214,7 @@ print(as.data.frame(wide), row.names = FALSE)
 TGRID <- seq(T_MIN_C, T_MAX_C, by = 0.25)
 tax_curves <- lapply(GRPS, function(g) {
   p <- dplyr::filter(grp_par, Group == g)
+  candidas_seed(1L)   # C2: no-op unless CANDIDAS_SEED is set (config.R)
   idx <- if (nrow(p) > 1500) sample.int(nrow(p), 1500) else seq_len(nrow(p))
   M <- vapply(TGRID, function(tc)
     tax_draws(p$E[idx], p$ER[idx], p$Eh[idx], p$Th[idx], tc), numeric(length(idx)))

@@ -355,6 +355,7 @@ save_fig <- function(f, name, h_mm, w_mm = 183) {
 # =============================================================================
 cur <- lapply(GRPS, function(g) {
   p <- dplyr::filter(P, Group == g)
+  candidas_seed(11L)   # C2: no-op unless CANDIDAS_SEED is set (config.R)
   i <- if (nrow(p) > 1200) sample.int(nrow(p), 1200) else seq_len(nrow(p))
   Gm <- vapply(TG, function(t)
     exp(p$lnB0[i] + lnG(t, p$E[i], p$Eh[i], p$Th[i])), numeric(length(i)))
@@ -617,6 +618,7 @@ save_fig(FIG1, "FIG1_decoupling", 215)   # full page
 # also the bridge between the two figures.
 taxcv <- lapply(GRPS, function(g) {
   p <- dplyr::filter(P, Group == g)
+  candidas_seed(12L)   # C2: no-op unless CANDIDAS_SEED is set (config.R)
   i <- if (nrow(p) > 1200) sample.int(nrow(p), 1200) else seq_len(nrow(p))
   M <- vapply(TG, function(t) tax(t, p$E[i], p$ER[i], p$Eh[i], p$Th[i]),
               numeric(length(i)))
@@ -669,6 +671,7 @@ f2def <- ggplot(taxcv, aes(T_C, med, colour = Group, fill = Group)) +
 TRAJ_END <- 42
 traj <- lapply(GRPS, function(g) {
   p <- dplyr::filter(P, Group == g)
+  candidas_seed(13L)   # C2: no-op unless CANDIDAS_SEED is set (config.R)
   i <- if (nrow(p) > 1200) sample.int(nrow(p), 1200) else seq_len(nrow(p))
   tp <- med(topt(p$E, p$Eh, p$Th)); if (!is.finite(tp)) tp <- T_MIN
   tg <- TG[TG >= tp & TG <= TRAJ_END]
@@ -1146,6 +1149,7 @@ iso$clade <- factor(iso$clade, levels = GRPS)
 
 corci <- function(x, y, B = 5000) {                              # r + bootstrap 95% CI + p
   r <- cor(x, y); p <- suppressWarnings(cor.test(x, y)$p.value); n <- length(x)
+  candidas_seed(20L)  # C2: no-op unless CANDIDAS_SEED is set (config.R)
   bs <- replicate(B, { i <- sample.int(n, n, TRUE)
                        if (sd(x[i]) > 0 && sd(y[i]) > 0) cor(x[i], y[i]) else NA_real_ })
   ci <- quantile(bs, c(.025, .975), na.rm = TRUE)

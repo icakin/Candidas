@@ -520,6 +520,68 @@ O2_TO_C_MASS   <- M_C_G_PER_MOL / M_O2_G_PER_MOL   # ~0.3754
 #           growth. fit_start_time is still recorded for reference.
 N0_BACKPROJECT <- TRUE
 
+# ---- C2: N0 treatment selector (SENSITIVITY ARMS; default = shipped) ---------
+# The shipped default is UNCHANGED. CANDIDAS_N0_MODE selects one of three
+# treatments so the C2 sensitivity analysis can run them side by side without
+# editing anything:
+#
+#   ""        (unset)  use N0_BACKPROJECT exactly as shipped        <- DEFAULT
+#   "current"          N0 = N_inoc * exp(r * delta)                    ARM 1
+#   "ramp"             N0 = N_inoc * exp(r * delta) * f_ramp           ARM 2
+#                      f_ramp is a per-series multiplier from
+#                      CANDIDAS_N0_RAMP_CSV (columns T, OTU, Replicate,
+#                      n0_factor), built in reports/tools/c2_partB_transient.py
+#                      by integrating each isolate's own TPC along the fitted
+#                      thermal equilibration trajectory. Series with no factor
+#                      fall back to 1, i.e. to ARM 1.
+#   "nobp"             N0 = N_inoc  (delta = 0)                        ARM 3
+#                      A LOWER BOUND ON N0, not a candidate: delta is a
+#                      detection delay, so asserting zero growth through it is
+#                      known to be wrong. Labelled that way throughout.
+#
+# See reports/N0_SENSITIVITY.md. This is a switch, not a decision: leaving
+# CANDIDAS_N0_MODE unset reproduces the shipped pipeline exactly.
+N0_MODE <- Sys.getenv("CANDIDAS_N0_MODE", unset = "")
+if (nzchar(N0_MODE)) {
+  N0_MODE <- tolower(trimws(N0_MODE))
+  if (!N0_MODE %in% c("current", "ramp", "nobp"))
+    stop("CANDIDAS_N0_MODE must be one of 'current', 'ramp', 'nobp' (got '",
+         N0_MODE, "')", call. = FALSE)
+  message("config.R: N0 arm = ", N0_MODE,
+          switch(N0_MODE,
+                 current = "  (N0 = N_inoc * exp(r*delta) -- same as shipped)",
+                 ramp    = "  (N0 = N_inoc * exp(r*delta) * f_ramp)",
+                 nobp    = "  (N0 = N_inoc -- LOWER BOUND, not a candidate)"))
+}
+
+N0_RAMP_CSV <- Sys.getenv("CANDIDAS_N0_RAMP_CSV", unset = "")
+
+# ---- C2: seeds for the four previously-unseeded stages -----------------------
+# C1 established that set.seed() appears NOWHERE in the analysis scripts, and
+# that four stages draw pseudo-random subsamples:
+#     10_carbon_tax.R:217    sample.int(nrow(p), 1500)   -> carbon_tax_curves.csv
+#     12_main_figures.R x3   sample.int(nrow(p), 1200)   -> plotted curves only
+#     12_main_figures.R:1149 replicate(B, sample.int())  -> the Fig 4d/4e CIs
+# Unseeded, carbon_tax_curves.csv moves by up to 4.92% between runs, which is
+# larger than some of the arm-to-arm differences C2 needs to resolve. Setting a
+# seed is a COMPARISON fix, not an analysis change: it removes run-to-run noise
+# without moving any point estimate. Unset -> no seed, i.e. shipped behaviour.
+CANDIDAS_SEED <- local({
+  s <- Sys.getenv("CANDIDAS_SEED", unset = "")
+  if (!nzchar(s)) return(NA_integer_)
+  v <- suppressWarnings(as.integer(s))
+  if (is.na(v)) stop("CANDIDAS_SEED must be an integer (got '", s, "')", call. = FALSE)
+  message("config.R: CANDIDAS_SEED = ", v,
+          " (seeds the subsample/bootstrap stages in 10 and 12)")
+  v
+})
+
+# Call at the top of any stage that draws random numbers. No-op when unset.
+candidas_seed <- function(offset = 0L) {
+  if (!is.na(CANDIDAS_SEED)) set.seed(CANDIDAS_SEED + as.integer(offset))
+  invisible(NULL)
+}
+
 # ===== Helper functions =======================================================
 
 get_baseline <- function(x, head_max = 30, min_valid = 5) {
