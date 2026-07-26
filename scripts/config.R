@@ -510,14 +510,56 @@ O2_TO_C_MASS   <- M_C_G_PER_MOL / M_O2_G_PER_MOL   # ~0.3754
 
 # N0 anchoring for per-cell respiration (respiration = K / N0).
 #   TRUE  = N0 = N_inoc * exp(r * delta), delta = time to the green line.
-#           Back-projects biomass across the (largely lag-phase) interval before
-#           the fit window; the exp(r * delta) term injects the inverted growth
-#           curve and fit noise into respiration -> no thermal optimum, noisy.
-#   FALSE = N0 = N_inoc (delta = 0): anchor at the consumption onset. Respiration
-#           then scales with K (a shape-derived rate) divided by the same stock
-#           constant for every curve, mirroring how growth = r * constant. This
-#           removes the artifact so respiration shows a clean TPC comparable to
-#           growth. fit_start_time is still recorded for reference.
+#   FALSE = N0 = N_inoc (delta = 0): anchor at the consumption onset.
+#           fit_start_time is still recorded for reference.
+#
+# -----------------------------------------------------------------------------
+# ADJUDICATED BY C2 -- see reports/N0_SENSITIVITY.md. Read that before changing
+# this. Two comment blocks in this repository used to contradict each other on
+# this switch, and NEITHER cited an analysis. Both have been rewritten to point
+# here; the other one is in 04_trim_selector.R at STAB_MIN_START_SLOPE_FRAC.
+#
+# What this comment used to say, verbatim:
+#     "the exp(r * delta) term injects the inverted growth curve and fit noise
+#      into respiration -> no thermal optimum, noisy"
+# and, for FALSE:
+#     "This removes the artifact so respiration shows a clean TPC comparable to
+#      growth."
+#
+# What C2 measured:
+#   * The MECHANISM is real, and stronger than "noise". respiration = K/N0
+#     EXACTLY (the window length cancels), so
+#         log R = log K - log N_inoc - r*delta
+#     to within 1.3e-14. Respiration is an explicit DECREASING function of the
+#     fitted growth rate. r*delta has median 0.679, so the median deflation is
+#     ~2x, p95 4.0x, max 35.7x, and it is largest near the growth optimum -
+#     which is exactly the shape an inverted growth curve would impose.
+#   * The CONSEQUENCE is real. Removing the term raises E_R by 0.107-0.306 eV
+#     unevenly by taxon, and the between-taxon ORDERING of E_R does not survive:
+#     Clade IV moves from LOWEST E_R (0.291) to 4th of 6 (0.597), and the
+#     Spearman rank correlation between the two orderings is +0.486 (p = 0.33).
+#   * But "removes the artifact" is NOT supported, because delta is not a lag.
+#     delta is a DETECTION delay: it is ~58-82 min at every temperature with no
+#     trend (slope +0.49 min/degC, R2 = 0.013), whereas a biological lag would
+#     be ~3x shorter near 34 C where growth is ~3x faster. Its only taxon effect
+#     is glabrata (+44.9 min; excluding it, ANOVA p = 0.097). The cells WERE
+#     present and growing through delta, so N0 = N_inoc (FALSE) asserts zero
+#     growth over an interval where growth demonstrably occurred. C2 therefore
+#     treats FALSE as a LOWER BOUND on N0, not as a candidate estimator.
+#   * The true error is smaller and has a different shape: the plate is
+#     measurably 1.6-2.9 K below its settled temperature over the first ~hour
+#     (from the T_internal trace in the raw exports, which the pipeline
+#     discards), so exp(r*delta) OVER-corrects below ~36 C and UNDER-corrects
+#     above it - because above the optimum the ramp passes through
+#     faster-growing temperatures than the supra-optimal set point.
+#
+# NET: TRUE is directionally right and is kept as the shipped default. It is
+# not "the artifact"; nor is it clean. The paper's four load-bearing claims were
+# re-run under all three treatments (reports/N0_SENSITIVITY.md, PART D): three
+# survive everywhere; "Clade IV is credibly the cheapest at fever" fails under
+# the lower bound. Do not flip this switch on the strength of a comment - use
+# CANDIDAS_N0_MODE below to re-run the arms.
+# -----------------------------------------------------------------------------
 N0_BACKPROJECT <- TRUE
 
 # ---- C2: N0 treatment selector (SENSITIVITY ARMS; default = shipped) ---------

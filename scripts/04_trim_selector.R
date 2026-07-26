@@ -251,7 +251,33 @@ STAB_MAX_RT <- 3.0
 # after all - but it is the window END, not the start. Its windows spanned rt ~ 4,
 # so K was extrapolated backwards through e^4 (~55x). Capping rt fixes it:
 # sd(log K) 0.58 -> 0.37, and glab's respiration moves by 2.5x. See
-# STAB_RT_TARGETS / STAB_MAX_RT above. Do NOT set N0_BACKPROJECT <- FALSE.
+# STAB_RT_TARGETS / STAB_MAX_RT above.
+#
+# ---------------------------------------------------------------------------
+# ADJUDICATED BY C2 -- see reports/N0_SENSITIVITY.md.
+# This block used to end "Do NOT set N0_BACKPROJECT <- FALSE.", flatly
+# contradicting the block at N0_BACKPROJECT in config.R, which called the same
+# term "the artifact". Neither cited an analysis. C2 is that analysis; both
+# blocks now point at it, and the flat instruction is withdrawn in favour of
+# the evidence.
+#
+# WHAT SURVIVES HERE. The rt diagnosis above is correct and is NOT what C2
+# tested - glabrata's K noise really is a window-END problem, and the rt cap
+# really does fix it. That claim stands.
+#
+# WHAT IS WITHDRAWN. "Do NOT set N0_BACKPROJECT <- FALSE" was an instruction,
+# not a finding. Fixing glabrata's windows says nothing about whether
+# exp(r*delta) is the right N0 for the other five taxa, and C2 measured that it
+# materially changes the between-taxon ordering of E_R (Clade IV moves from
+# lowest to 4th of 6). The right reading is narrower and is now in config.R:
+# TRUE is directionally right because delta is a DETECTION delay rather than a
+# lag, so FALSE (N0 = N_inoc) asserts zero growth over an interval where growth
+# demonstrably occurred - which makes FALSE a LOWER BOUND, not a candidate.
+# That is a reason not to ADOPT it, not a reason not to TEST it.
+#
+# Use CANDIDAS_N0_MODE (config.R) to re-run the three arms rather than editing
+# either switch.
+# ---------------------------------------------------------------------------
 #
 # Set to ~0.05 only if you have a specific curve with a genuinely dead flat start.
 STAB_MIN_START_SLOPE_FRAC <- 0
