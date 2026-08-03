@@ -120,7 +120,16 @@ read_presens_sheet <- function(path) {
     suppressWarnings(stats::median(as.numeric(dat[[tm_col]]), na.rm = TRUE))
   } else NA_real_
 
-  list(time = time_vals, wells = well_df, well_labels = wells, tm = tm_val)
+  # Per-timepoint block temperature (Tm) and internal/sample temperature
+  # (T_internal) are preserved so the early-warmup temperature offset is NOT lost
+  # at conversion. Kept as extra columns; 02_longdata ignores any column that is
+  # not Time / T / OTU<code>_R<rep>, so this is safe for the rest of the pipeline.
+  tint_col    <- which(grepl("internal", hdr, ignore.case = TRUE))[1]
+  tm_series   <- if (!is.na(tm_col))   suppressWarnings(as.numeric(dat[[tm_col]]))   else rep(NA_real_, length(time_vals))
+  tint_series <- if (!is.na(tint_col)) suppressWarnings(as.numeric(dat[[tint_col]])) else rep(NA_real_, length(time_vals))
+
+  list(time = time_vals, wells = well_df, well_labels = wells, tm = tm_val,
+       tm_series = tm_series, t_internal = tint_series)
 }
 
 # Assemble the tidy wide frame for one plate (one group).
@@ -150,6 +159,10 @@ build_output <- function(sheet, group, n_rep = N_REPLICATES, temperature) {
       out[[nm]] <- if (is.null(col)) NA_real_ else col
     }
   }
+  # preserve the plate temperatures (see read_presens_sheet): set-point/block Tm
+  # and the measured internal/sample temperature T_internal, per timepoint.
+  out[["Tm"]]         <- sheet$tm_series
+  out[["T_internal"]] <- sheet$t_internal
   out
 }
 
