@@ -1,5 +1,5 @@
 # =============================================================================
-# 12_uncertainty_bands.R   (ADD-ON, non-destructive)
+# 15_uncertainty_bands.R   (ADD-ON, non-destructive)
 # =============================================================================
 # Respiration and CUE versus temperature, per clade, with an HONEST uncertainty
 # band that combines TWO sources:
@@ -18,7 +18,7 @@
 # OUTPUT  results/figures/fig_respiration_uncertainty.png
 #         results/figures/fig_cue_uncertainty.png
 #         results/tables/respiration_cue_uncertainty.csv
-# RUN     Rscript scripts/12_uncertainty_bands.R   (run 11 first)
+# RUN     Rscript scripts/15_uncertainty_bands.R   (run 11 first)
 # =============================================================================
 
 .this_dir <- {
@@ -29,7 +29,7 @@ source(file.path(.this_dir, "config.R"))
 suppressPackageStartupMessages({ library(dplyr); library(ggplot2) })
 
 pcurve <- file.path(tables_dir, "temperature_equilibration_percurve.csv")
-if (!file.exists(pcurve)) stop("Run 11_temperature_equilibration_sensitivity.R first; missing ", pcurve)
+if (!file.exists(pcurve)) stop("Run 08_temperature_equilibration_sensitivity.R first; missing ", pcurve)
 pv <- readr::read_csv(pcurve, show_col_types = FALSE)
 
 # ---- combine the two uncertainty sources per clade x temperature ------------

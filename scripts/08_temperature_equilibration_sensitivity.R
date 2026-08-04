@@ -1,5 +1,5 @@
 # =============================================================================
-# 11_temperature_equilibration_sensitivity.R   (ADD-ON, non-destructive)
+# 08_temperature_equilibration_sensitivity.R   (ADD-ON, non-destructive)
 # =============================================================================
 # The vials are inoculated at bench temperature and take time to reach setpoint.
 # During that onset window (inoculation -> fit-window start) the growth rate is
@@ -19,7 +19,7 @@
 # OUTPUT  results/tables/temperature_equilibration_sensitivity.csv
 #         results/tables/rdt_term_respiration_ranking.csv
 #         results/figures/Fig_temperature_equilibration.png
-# RUN     Rscript scripts/11_temperature_equilibration_sensitivity.R   (needs readxl, ggplot2, patchwork)
+# RUN     Rscript scripts/08_temperature_equilibration_sensitivity.R   (needs readxl, ggplot2, patchwork)
 # =============================================================================
 
 .this_dir <- {
@@ -101,7 +101,7 @@ summ <- d %>% group_by(T) %>% summarise(
   cue_swing_hi   = quantile(cue_swing, .75),
   growth_swing = 0, .groups = "drop")
 readr::write_csv(summ, file.path(tables_dir, "temperature_equilibration_sensitivity.csv"))
-# per-vial corrected values, so 12_uncertainty_bands.R can combine the temperature
+# per-vial corrected values, so 15_uncertainty_bands.R can combine the temperature
 # component with replicate scatter into one honest band.
 readr::write_csv(
   d %>% select(T, OTU, Replicate, clade, respiration_fgC_h, resp_corr,
