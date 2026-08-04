@@ -1,7 +1,0 @@
----
-title: "Supplementary Information"
-subtitle: "The metabolic cost of the febrile host across the priority Candida"
-engine: markdown
----
-
-{{< include _body_supp.qmd >}}

@@ -500,3 +500,50 @@ message("  Project: Candida (temperature x isolate) | groups = {",
         length(OTUS), " | inoc = ", N_inoculation_cells_per_L, " cells/L")
 message("  Cell volume: ", round(CELL_VOLUME_UM3, 2), " um^3 | C/cell: ",
         round(CELL_CARBON_FG_PER_CELL, 2), " fg")
+
+# =============================================================================
+# FIGURE WHITELIST - only write the manuscript figures, skip the redundant ones
+# =============================================================================
+# Every script still BUILDS its plots, but ggsave()/pdf() only write to disk when
+# the figure's base name (no extension) is in FIG_KEEP. Flip FIG_ONLY_KEEP to
+# FALSE to restore the full figure set.
+FIG_ONLY_KEEP <- TRUE
+FIG_KEEP <- c(
+  "FIG_MODEL_SUPP_consistency","arrhenius_respiration_fgC_h","boxplot_CUE",
+  "boxplot_growth_C_per_C_h","boxplot_growth_fgC_h","boxplot_K_O2_rate",
+  "boxplot_respiration_C_per_C_h","boxplot_respiration_fgC_h",
+  "boxplot_total_respiration_O2_mg_per_L","CUE_vs_T","fig_bayes_contrasts",
+  "fig_bayes_cue_by_clade","fig_bayes_cue_by_isolate","fig_bayes_E_resp_minus_growth",
+  "fig_bayes_growth_tpc_by_clade","fig_bayes_resp_arrhenius","FIG_carbon_tax",
+  "FIG_model_schematic","FIG_MODEL_SUPP_validation","FIG_MODEL_SUPP","FIG_MODEL",
+  "FIG1_decoupling","FIG2_the_bill","per_series_fits",
+  "TPC_growth_by_isolate","TPC_respiration_by_isolate",
+  "Fig_temperature_equilibration","fig_cue_uncertainty","fig_respiration_uncertainty")
+
+if (isTRUE(FIG_ONLY_KEEP) && !isTRUE(getOption("FIG_GATE_INSTALLED"))) {
+  .fig_keep_ok <- function(f) {
+    b <- sub("\\.[^.]+$", "", basename(as.character(f)[1]))
+    b %in% FIG_KEEP
+  }
+  assign(".fig_keep_ok", .fig_keep_ok, envir = globalenv())
+  if (requireNamespace("ggplot2", quietly = TRUE)) {
+    .orig_ggsave <- ggplot2::ggsave
+    assign(".orig_ggsave", .orig_ggsave, envir = globalenv())
+    .gated_ggsave <- function(filename, ...) {
+      if (.fig_keep_ok(filename)) .orig_ggsave(filename, ...) else invisible(NULL)
+    }
+    try(utils::assignInNamespace("ggsave", .gated_ggsave, ns = "ggplot2"), silent = TRUE)
+    assign("ggsave", .gated_ggsave, envir = globalenv())
+  }
+  .orig_pdf <- grDevices::pdf
+  assign(".orig_pdf", .orig_pdf, envir = globalenv())
+  .gated_pdf <- function(file = "", ...) {
+    if (nchar(as.character(file)[1]) == 0 || .fig_keep_ok(file))
+      .orig_pdf(file = file, ...)
+    else .orig_pdf(file = tempfile(fileext = ".pdf"), ...)
+  }
+  assign("pdf", .gated_pdf, envir = globalenv())
+  options(FIG_GATE_INSTALLED = TRUE)
+  message("  Figure whitelist ON: only the ", length(FIG_KEEP),
+          " listed figures are written (set FIG_ONLY_KEEP <- FALSE to disable).")
+}

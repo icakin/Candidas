@@ -109,6 +109,15 @@ CURV_MIN_RT <- 0.5
 # was never reliable either.
 MIN_O2_DRAWDOWN <- 2.0   # mg/L. Set to 0 to disable this check.
 
+# ---- Minimum fit-window length: reject tail-window selector misfires ---------
+# For a subset of series (16 of them at 26 degC, plus a handful at 24/40/42/44)
+# the trimming step latched onto a tiny late drawdown and returned a fit window
+# of only ~9-22 min instead of the main ~200-400 min run. Fitting the 3-parameter
+# exponential to a ~10 min sliver returns nonsense r/K (r ~0.06-0.09 vs a real
+# ~0.007). These pass every other check, so they need their own guard. A real
+# main-run window here is hundreds of minutes; 60 is a low, safe floor.
+MIN_FIT_WINDOW_MIN <- 60   # min. Set to 0 to disable this check.
+
 # Temperatures to drop from the descriptive plots. Set to numeric(0) to keep
 # every temperature. (The dataset contains 22, 24, ..., 44 degC; none excluded
 # by default.)
@@ -600,7 +609,10 @@ fit_one <- function(df, y_limits = NULL) {
 
   # No RMSE quality filter: keep every series that produced a usable fit
   # (>= 6 points, needed for the 3-parameter model). Every point is retained.
-  keep <- (n >= 6)
+  # Guard: drop tail-window selector misfires whose fit window is implausibly
+  # short (see MIN_FIT_WINDOW_MIN) - these return spurious r/K.
+  win_ok <- is.finite(T_end_min) && T_end_min >= MIN_FIT_WINDOW_MIN
+  keep <- (n >= 6) && win_ok
 
   co_sum <- as.data.frame(summary(fit)$parameters) %>%
     tibble::rownames_to_column("parameter") %>%
