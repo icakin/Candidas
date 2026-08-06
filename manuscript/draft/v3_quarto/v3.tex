@@ -1,25 +1,28 @@
 % Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
 ]{article}
-
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 \usepackage{lmodern}
-\ifPDFTeX\else  
-    % xetex/luatex font selection
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -37,10 +40,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
-\usepackage[margin=1in]{geometry}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Make \paragraph and \subparagraph free-standing
 \makeatletter
 \ifx\paragraph\undefined\else
@@ -66,8 +65,8 @@
 \makeatother
 
 
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -79,18 +78,38 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{lineno}
+\linenumbers
+\usepackage{float}
+\usepackage[font=small,labelfont=bf]{caption}
 \usepackage{lineno}
 \linenumbers
 \usepackage{float}
@@ -136,14 +155,9 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
-
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage{bookmark}
-
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={The metabolic cost of the febrile host across priority Candida species},
   pdfauthor={Ilgaz Cakin},
@@ -159,7 +173,6 @@
 species}
 \author{Ilgaz Cakin}
 \date{}
-
 \begin{document}
 \maketitle
 
@@ -221,11 +234,12 @@ every taxon, the activation energy of growth exceeded that of
 respiration: E\textsubscript{G} ranged 0.83-1.14 eV and
 E\textsubscript{R} 0.30-0.52 eV, with the growth-respiration difference
 credibly greater than zero in all five taxa (0.39-0.73 eV; 95\% CrI
-excluding zero throughout). Growth is thus roughly twice as
-temperature-sensitive as respiration. The respiration activation
-energies additionally carry a small, temperature-structured uncertainty
-from the inoculum back-projection (Robustness, below); it does not alter
-the growth-minus-respiration ordering in any taxon.
+excluding zero throughout). Growth is thus substantially more
+temperature-sensitive than respiration. The respiration activation
+energies additionally carry a temperature-structured uncertainty from
+the inoculum back-projection (Robustness, below); this shifts their
+absolute values but not the growth-minus-respiration ordering in any
+taxon, which is the comparison that matters here.
 
 Because respiration continues to rise while growth saturates and falls,
 carbon-use efficiency (CUE = G/(G+R)) is itself a unimodal function of
@@ -283,10 +297,16 @@ and the among-taxon ranking are unaffected.
 Pairwise comparison of the fever cost resolved 8 of 10 taxon contrasts
 (95\% CrI excluding a ratio of 1; Fig. 2d). All four C. \emph{auris}
 clades credibly paid less at fever than C. \emph{parapsilosis} (cost
-ratios 0.43-0.72), and Clade IV was credibly the cheapest of all clades.
-Only two contrasts, Clade I versus Clade II (0.85, 0.68-1.04) and Clade
-I versus Clade III (1.18, 0.98-1.42), could not be separated at three
-isolates per clade.
+ratios 0.43-0.72); this contrast is the robust result and holds under
+every treatment of the inoculum back-projection (Robustness). Within C.
+\emph{auris}, Clade IV had the lowest fever cost under the
+back-projection used throughout, but the fine ranking among the four
+clades is the one result sensitive to how N0 is handled: it does not
+survive removal of the back-projection term (Robustness; Supplementary
+Fig. 6), so we report Clade IV as the cheapest under the analysis as
+specified rather than as an unconditional ordering. Only two contrasts,
+Clade I versus Clade II (0.85, 0.68-1.04) and Clade I versus Clade III
+(1.18, 0.98-1.42), could not be separated at three isolates per clade.
 
 \includegraphics[width=6.39583in,height=7.33997in]{media/media/image2.png}
 
@@ -319,8 +339,11 @@ selection contributing to tolerance of the mammalian host.
 
 Temperature-equilibration uncertainty in the inoculum back-projection
 affected the absolute per-cell values most at the temperature extremes
-(≥40 °C) but changed neither the direction, the significance, nor the
-taxon ranking of these results (Robustness and limitations).
+(≥40 °C) but changed neither the direction nor the significance of these
+results, and preserved the C. \emph{auris}-versus-\emph{C. parapsilosis}
+ordering. The finer ranking among the C. \emph{auris} clades is more
+sensitive to the back-projection and is treated as conditional
+throughout (Robustness and limitations).
 
 \textbf{Clade differences are captured by an effective growth-capacity
 axis despite near-identical sequences}
@@ -379,7 +402,14 @@ respiration: it was negatively associated with the cost of a fever (r =
 −0.86, 95\% CI −0.96 to −0.76), so the higher a clade's capacity the
 cheaper its fever (Fig. 4d), and with per-cell respiration at the growth
 optimum (r = −0.64), so that higher-capacity clades sustain growth while
-respiring less carbon (Fig. 4e). Capacity behaved as a reproducible
+respiring less carbon (Fig. 4e). This second association is itself
+sensitive to the inoculum back-projection: removing the back-projection
+term weakens it to r ≈ −0.2 (not significant), so we treat the
+capacity-versus-respiration relationship (Fig. 4e) as exploratory
+(Robustness). The capacity-versus-fever-cost relationship (Fig. 4d) is
+the more stable of the two but, being derived from the same respiration
+measurements, is read in the same cross-phenotype rather than
+confirmatory sense (below). Capacity behaved as a reproducible
 clade-level trait, with 90\% of its variance falling between clades
 (ICC₁ = 0.90; ANOVA F₃,₈ = 27.7, P = 1.4×10⁻⁴; Supplementary Fig. 1a).
 
@@ -475,18 +505,44 @@ each posterior credible interval by this component leaves an outer
 envelope that coincides with the credible interval through the mid-range
 and separates only toward the extremes (Supplementary Figs. 4 and 5).
 
-The uncertainty is roughly an order of magnitude smaller than the trends
-it could threaten. The CUE optimum still lies below 37 °C in every
-taxon, growth remains credibly more temperature-sensitive than
-respiration, respiration's monotonic rise is unchanged, and C. auris
-Clade IV remains the cheapest at fever. We therefore keep the per-cell
-point estimates unchanged but treat their absolute values at the
-temperature extremes (≥40 °C) as approximate. Separately, the absolute
-carbon scale carries a systematic uncertainty from the assumed
-respiratory quotient and per-cell carbon content; varying these within
-literature ranges rescales CUE proportionally but does not change its
-thermal shape, its sub-37 °C optimum, or any among-taxon ranking. All
-conclusions in the preceding sections are robust to these sources.
+This equilibration correction is roughly an order of magnitude smaller
+than the trends it could threaten: the CUE optimum still lies below 37
+°C in every taxon, growth remains credibly more temperature-sensitive
+than respiration, and respiration's monotonic rise is unchanged. We
+therefore keep the per-cell point estimates unchanged but treat their
+absolute values at the temperature extremes (≥40 °C) as approximate.
+
+A stronger stress test is to remove the back-projection term entirely
+(N0 = N\_inoc), the opposite bound to the equilibration correction. This
+is not the physical null---the inoculum did grow before the fit window,
+which is what the back-projection accounts for---so the true values lie
+between it and the published table rather than at either end; but it
+isolates every quantity that leans on the term. The primary conclusions
+are unchanged or strengthened under it: r and its activation energy are
+independent of N0 by construction, and the sub-37 °C CUE optimum in fact
+sharpens. Two secondary results are sensitive and we report them
+accordingly. First, the fine fever-cost ordering among the C.
+\emph{auris} clades: Clade IV has the lowest respiration activation
+energy with the term but not without it (its rank moves from first to
+fourth of five), whereas the C. \emph{auris}-versus-\emph{C.
+parapsilosis} contrast survives both bounds; we therefore state the
+within-\emph{auris} ranking as conditional on the back-projection.
+Second, the capacity-versus-respiration association of Fig. 4e, which
+weakens to r ≈ −0.2 (not significant) under the same test and is read as
+exploratory. The between-clade respiration activation energy under all
+three treatments---with the term (published), equilibration-corrected,
+and term-free---is compared directly in Supplementary Fig. 6.
+
+Separately, the absolute carbon scale carries a systematic uncertainty
+from the assumed respiratory quotient and per-cell carbon content;
+varying these within literature ranges rescales CUE proportionally but
+does not change its thermal shape, its sub-37 °C optimum, or any
+among-taxon ranking. The primary conclusions in the preceding
+sections---the sub-37 °C carbon-economy optimum, the growth-respiration
+decoupling, and the C. \emph{auris}-versus-\emph{C. parapsilosis}
+fever-cost contrast---are robust to all of these sources; the finer
+within-\emph{auris} ordering and the Fig. 4e association are reported as
+conditional on the inoculum back-projection.
 
 Across the \emph{Candida} taxa tested, host and fever temperatures lie
 above the optimum for carbon-use efficiency, because respiration
@@ -557,6 +613,26 @@ overlaid. Solid band, 95\% credible interval; dashed envelope, widened
 by the equilibration component. Even with the added uncertainty, CUE
 peaks below body temperature and declines with further warming in every
 clade.
+
+\includegraphics[width=6.6in,height=3in]{media/media/image10.png}
+
+\textbf{Supplementary Figure 6.} The between-clade respiration
+activation energy under three treatments of the inoculum
+back-projection. Each panel shows the hierarchical Bayesian Arrhenius
+activation energy E\textsubscript{R} per clade (posterior median; bars,
+95\% credible interval), refitting the same model under: (left) the
+published back-projection, N0 = N\_inoc·exp(r·Δt); (centre) the
+equilibration-corrected N0, recomputed from the logged internal vial
+temperature over the onset window; and (right) the term removed
+entirely, N0 = N\_inoc. The C. \emph{auris}-versus-\emph{C.
+parapsilosis} separation is preserved across all three, but the finer
+ordering within C. \emph{auris} is not: Clade IV holds the lowest
+activation energy under the published and equilibration-corrected
+treatments and moves to fourth of five when the term is removed. The
+term-free case is not the physical null (the inoculum grows before the
+fit window), so it bounds the correction from the opposite side rather
+than representing the correct value; it is shown to make the dependence
+explicit. Generated by \texttt{scripts/16b\_n0\_treatment\_panel.R}.
 
 \section{}\label{section-2}
 
