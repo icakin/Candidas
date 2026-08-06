@@ -1,5 +1,5 @@
 # =============================================================================
-# 16b_n0_treatment_panel.R  ->  Supplementary Figure 6
+# 18_n0_treatment_panel.R  ->  Supplementary Figure 6
 #   Between-clade respiration activation energy under THREE treatments of the
 #   inoculum back-projection, as one figure.
 # =============================================================================
@@ -30,7 +30,7 @@
 #       lower BAYES_ITER / BAYES_CHAINS in 09_bayesian_models.R first.
 # NOTE  leaves derived_csv restored to the original at the end, but the other
 #       bayes_*/rds outputs reflect the LAST fit; re-run 09 to refresh them.
-# RUN   Rscript scripts/16b_n0_treatment_panel.R
+# RUN   Rscript scripts/18_n0_treatment_panel.R
 # =============================================================================
 
 # ---- locate scripts/ dir + shared config (same pattern as the other scripts) -
