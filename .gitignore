@@ -1,5 +1,10 @@
 # OS / editor
 .DS_Store
+# LibreOffice / OpenOffice lock files. Four of these were tracked under
+# manuscript/ (.~lock.Results_report.pdf# and friends); they are per-machine
+# editor state, never content.
+.~lock.*#
+manuscript/.~lock.*#
 *~
 .Rproj.user/
 .Rhistory
@@ -38,3 +43,30 @@ per_series_fits.pdf
 **/*.quarto_ipynb
 _output/
 submission/
+
+# --- LaTeX artefacts, scoped to the directories that hold a rendered report ---
+# Deliberately NOT a global *.log: run_all.sh writes real, wanted logs to logs/
+# and a blanket rule would swallow them.
+manuscript/**/*.aux
+manuscript/**/*.bbl
+manuscript/**/*.blg
+manuscript/**/*.fdb_latexmk
+manuscript/**/*.fls
+manuscript/**/*.log
+manuscript/**/*.out
+manuscript/**/*.synctex.gz
+manuscript/**/*.toc
+
+# --- pinned environment: restore it, never commit it -------------------------
+# renv.lock and renv/activate.R ARE tracked; the restored library is not.
+/renv/library/
+/renv/local/
+/renv/cellar/
+/renv/lock/
+/renv/python/
+/renv/sandbox/
+/renv/staging/
+cauris_etcgem/.venv/
+
+# --- run_all.sh output -------------------------------------------------------
+/logs/
