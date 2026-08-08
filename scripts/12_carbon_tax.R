@@ -66,13 +66,24 @@
 # RUN AFTER 09_bayesian_models.R (13 is not required, but they should agree).
 # =============================================================================
 
-.this_dir <- tryCatch(dirname(sys.frame(1)$ofile), error = function(e) NA_character_)
-if (length(.this_dir) == 0 || is.na(.this_dir) || !nzchar(.this_dir)) {
-  if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable() &&
-      nzchar(rstudioapi::getActiveDocumentContext()$path)) {
-    .this_dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
-  } else .this_dir <- getwd()
-}
+# Packaging: resolve the script directory from --file= FIRST. Under
+# `Rscript scripts/<this>.R` neither rstudioapi nor sys.frame(1)$ofile resolves,
+# so this fell back to getwd() and then died on "cannot open file .../config.R".
+# Sourcing it from run_all.R was unaffected, which is why the bug stayed hidden.
+.this_dir <- local({
+  fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+  if (length(fa)) return(dirname(normalizePath(
+    # R replaces every space in --file= with "~+~", so a project path that
+    # contains a space comes back mangled and source() then fails on a path
+    # that does not exist. Un-mangle it before normalising.
+    gsub("~+~", " ", sub("^--file=", "", fa[1]), fixed = TRUE),
+    mustWork = FALSE)))
+  if (requireNamespace("rstudioapi", quietly = TRUE) &&
+      rstudioapi::isAvailable() &&
+      nzchar(rstudioapi::getActiveDocumentContext()$path))
+    return(dirname(rstudioapi::getActiveDocumentContext()$path))
+  tryCatch(dirname(sys.frame(1)$ofile), error = function(e) getwd())
+})
 source(file.path(.this_dir, "config.R"))
 
 need <- c("posterior", "ggplot2", "dplyr", "tidyr", "tibble", "readr", "patchwork")
