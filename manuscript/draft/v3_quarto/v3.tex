@@ -208,12 +208,18 @@ derived on a matched per-cell basis. Full methods are given at the end.
 Unless stated, values are posterior medians with 95\% credible intervals
 (CrI).
 
-One qualification applies to several derived per-cell quantities.
-Because these depend on the estimated starting cell number, the primary
-among-taxon contrast is robust whereas the finer within-clade ranking is
-conditional on the inoculum back-projection. We flag this recurring
-distinction where it bears on a result and give its full treatment in
-Robustness and limitations.
+The results below sit in a deliberate hierarchy of assumptions. The
+central claims (the position of the carbon-economy optimum below 37 °C,
+the growth-respiration decoupling, and the fold-change in their balance
+across temperature) are reported scale-free: they are identifiable from
+the fitted growth rate r and volumetric consumption rate K alone, and
+require no starting cell number, per-cell carbon quota, oxygen-to-carbon
+conversion, or respiratory quotient. Absolute per-cell magnitudes
+(per-cell respiration, the level of CUE) do depend on those quantities
+and carry their uncertainty; we flag this where it bears on a result and
+give the full treatment in Robustness and limitations. A fine ranking
+among the C. \emph{auris} clades is not reported, because it does not
+survive the starting-cell-number treatments (Robustness).
 
 \section{\texorpdfstring{\textbf{Growth and respiration decouple,
 placing the carbon-economy optimum below body
@@ -234,21 +240,42 @@ respiration: E\textsubscript{G} ranged 0.83--1.14 eV and
 E\textsubscript{R} 0.30--0.52 eV, with the growth-respiration difference
 credibly greater than zero in all five taxa (0.39--0.73 eV; 95\% CrI
 excluding zero throughout). Growth is thus substantially more
-temperature-sensitive than respiration. (The absolute respiration
+temperature-sensitive than respiration. This decoupling also holds
+entirely scale-free: comparing the activation energy of the fitted
+growth rate r directly against that of the volumetric consumption rate
+K, which involves no per-cell conversion at all, gives
+E\textsubscript{r} 0.87--1.23 eV against E\textsubscript{K} 0.55--0.62
+eV (P = 1.000 in all five taxa), agreeing with the per-cell, term-free
+treatment to within 0.03 eV. The absolute per-cell respiration
 activation energies carry a temperature-structured uncertainty from the
-inoculum back-projection, but the growth-minus-respiration ordering, the
-comparison that matters here, is unaffected in every taxon.)
+inoculum back-projection, but the decoupling itself does not depend on
+it.
 
 Because respiration continues to rise while growth saturates and falls,
 carbon-use efficiency (CUE = G/(G+R)) is itself a unimodal function of
-temperature that peaks early and then collapses (Fig. 1d). The
-temperature of this economic optimum, T\textsubscript{opt}(CUE) lay
-below human body temperature in every taxon: 31.3--34.1 °C, with
-posterior probability P(T\textsubscript{opt}(CUE) \textless{} 37 °C) ≥
-0.999 for all five (Fig. 1e). The economic optimum sat 1.6--3.9 °C below
-the growth optimum and 2.9--5.7 °C below 37 °C. The mammalian host
-temperature therefore lies beyond the point at which warming still
-improves the carbon economy of any species tested.
+temperature that peaks early and then collapses (Fig. 1d). Critically,
+the position of this economic optimum is identifiable without any of the
+assumptions that set absolute scale. Writing G = r·q and R = c·K, CUE =
+1/(1 + (c/q)·K/r), so maximising CUE is equivalent to minimising K/r and
+the constant c/q drops out of the optimum entirely:
+T\textsubscript{opt}(CUE) follows from the fitted r and K alone, with no
+starting cell number, carbon quota, oxygen-to-carbon factor, or
+respiratory quotient. This model-free estimate places the optimum at
+26.1--31.5 °C across the five taxa, a margin of 5.5--10.9 °C below body
+temperature, with P(T\textsubscript{opt}(CUE) \textless{} 37 °C) =
+1.0000 for all five.
+
+The parametric (Sharpe--Schoolfield) counterpart on the per-cell scale
+gives 31.3--34.1 °C with P ≥ 0.999 (Fig. 1e), sitting on average 3.8 °C
+above the model-free estimate; that gap decomposes into the inoculum
+back-projection (1.6 °C) and the smoothing of the fitted functional form
+(2.2 °C), so the model-free value is the more conservative anchor and
+the fitted value the smooth-curve refinement. Under either estimate the
+economic optimum sat below the growth optimum and well below 37 °C. The
+mammalian host temperature therefore lies beyond the point at which
+warming still improves the carbon economy of any species tested, and
+this conclusion requires no assumption about cell numbers or carbon
+content.
 
 \includegraphics[width=6.39583in,height=7.51459in]{media/media/image1.png}
 
@@ -295,14 +322,17 @@ C. \emph{parapsilosis}.
 
 \textbf{Clade-level differences within \emph{C. auris}.} Pairwise
 comparison of the fever cost resolved 8 of 10 taxon contrasts (95\% CrI
-excluding a ratio of 1; Fig. 2d). All four C. \emph{auris} clades
-credibly paid less at fever than C. \emph{parapsilosis} (cost ratios
-0.43--0.72), the robust contrast. The finer ordering within C.
-\emph{auris}, under which Clade IV is the cheapest, is conditional on
-the inoculum back-projection (Robustness; Supplementary Fig. 6) and is
-reported as such. Only two contrasts, Clade I versus Clade II (0.85,
-0.68--1.04) and Clade I versus Clade III (1.18, 0.98--1.42), could not
-be separated at three isolates per clade.
+excluding a ratio of 1; Fig. 2d). The robust contrast is at the species
+level: all four C. \emph{auris} clades credibly paid less at fever than
+C. \emph{parapsilosis} (cost ratios 0.43--0.72), and this survives every
+treatment of the starting cell number. We do not report a finer ranking
+among the C. \emph{auris} clades. The apparent within-\emph{auris}
+ordering depends on the inoculum back-projection (its leader moves from
+first to fourth of five when the term is removed; Supplementary Fig. 6),
+and in the scale-free analysis the between-clade spread in respiration
+activation energy collapses from 0.22 eV to 0.07 eV, indicating that
+most of that apparent signal derives from the N0 construction rather
+than from clade biology (Robustness).
 
 \includegraphics[width=6.39583in,height=7.33997in]{media/media/image2.png}
 
@@ -378,14 +408,14 @@ maintenance and respiratory coupling (Fig. 4c). It is a single
 proteome-wide capacity scaling, not a change in the individual
 database-derived kcat values, which are shared across the near-identical
 clades. Its posterior ordered with thermotolerance (Clade II lowest at
-0.39, Clades I and III intermediate at 0.60 and 0.62, Clade IV highest
-at 0.71), and of the three calibration parameters it was the only one
-that separated the clades (5 of 6 pairwise contrasts with
-non-overlapping 95\% CrI, versus 1 of 6 for the optimum shift and 0 of 6
-for curvature; Supplementary Fig. 1b). Capacity behaved as a
-reproducible clade-level trait, with 90\% of its variance falling
-between clades (ICC₁ = 0.90; ANOVA F₃,₈ = 27.7, P = 1.4×10⁻⁴;
-Supplementary Fig. 1a).
+0.56, Clades I and III intermediate at 0.83 and 0.85, Clade IV highest
+at 0.95; values from the current calibrated model), and of the three
+calibration parameters it was the only one that separated the clades (5
+of 6 pairwise contrasts with non-overlapping 95\% CrI, versus 1 of 6 for
+the optimum shift and 0 of 6 for curvature; Supplementary Fig. 1b).
+Capacity behaved as a reproducible clade-level trait, with 90\% of its
+variance falling between clades (ICC₁ = 0.90; ANOVA F₃,₈ = 27.7, P =
+1.4×10⁻⁴; Supplementary Fig. 1a).
 
 \textbf{Effective capacity covaries with respiratory economics.} The
 growth-fitted scalar covaried across the twelve isolates with outcomes
@@ -506,18 +536,30 @@ between it and the published table rather than at either end; but it
 isolates every quantity that leans on the term. The primary conclusions
 are unchanged or strengthened under it: r and its activation energy are
 independent of N0 by construction, and the sub-37 °C CUE optimum in fact
-sharpens. Two secondary results are sensitive and we report them
+sharpens. Two secondary results are sensitive and we treat them
 accordingly. First, the fine fever-cost ordering among the C.
-\emph{auris} clades: Clade IV has the lowest respiration activation
-energy with the term but not without it (its rank moves from first to
-fourth of five), whereas the C. \emph{auris} versus C.
-\emph{parapsilosis} contrast survives both bounds; we therefore state
-the within-\emph{auris} ranking as conditional on the back-projection.
-Second, the capacity-versus-respiration association of Fig. 4e, which
-weakens to r ≈ −0.2 (not significant) under the same test and is read as
-exploratory. The between-clade respiration activation energy under all
-three treatments, with the term (published), equilibration-corrected,
-and term-free, is compared directly in Supplementary Fig. 6.
+\emph{auris} clades: its leader moves from first to fourth of five when
+the term is removed, whereas the C. \emph{auris} versus C.
+\emph{parapsilosis} contrast survives both bounds; the scale-free
+analysis sharpens this further, collapsing the between-clade spread in
+respiration activation energy from 0.22 eV (with the term) to 0.07 eV,
+so we do not report a within-\emph{auris} ranking at all. Second, the
+capacity-versus-respiration association of Fig. 4e, which weakens to r ≈
+−0.2 (not significant) under the same test and is read as exploratory.
+The between-clade respiration activation energy under all three
+treatments, with the term (published), equilibration-corrected, and
+term-free, is compared directly in Supplementary Fig. 6.
+
+The strongest statement, however, is not robustness across N0 treatments
+but independence from them. As shown in the Results, the position of the
+CUE optimum, the growth-respiration decoupling (E\textsubscript{r}
+versus E\textsubscript{K}), and the fold-change in the
+respiration-to-growth balance across the range (3.1×--6.5×) are all
+identifiable from the fitted r and K alone, verified against the
+pipeline's own identities across all 823 series. The starting cell
+number, carbon quota, oxygen-to-carbon conversion and respiratory
+quotient enter only the absolute level of CUE and per-cell respiration,
+not any of these conclusions.
 
 Separately, the absolute carbon scale carries a systematic uncertainty
 from the assumed respiratory quotient and per-cell carbon content;
@@ -526,22 +568,26 @@ does not change its thermal shape, its sub-37 °C optimum, or any
 among-taxon ranking. The primary conclusions in the preceding sections
 (the sub-37 °C carbon-economy optimum, the growth-respiration
 decoupling, and the C. \emph{auris} versus C. \emph{parapsilosis}
-fever-cost contrast) are robust to all of these sources; the finer
-within-\emph{auris} ordering and the Fig. 4e association are reported as
-conditional on the inoculum back-projection.
+fever-cost contrast) are independent of or robust to all of these
+sources; a finer within-\emph{auris} ordering is not reported, and the
+Fig. 4e association is reported as exploratory.
 
 \section{\texorpdfstring{\textbf{Conclusion}}{Conclusion}}\label{conclusion}
 
 Across the \emph{Candida} taxa tested, host and fever temperatures lie
 above the optimum for carbon-use efficiency: growth turns over below
 body temperature while respiration keeps rising, so the mammalian host
-is, for every species measured, a carbon-inefficient environment. That
-penalty is taxon-specific and tracks thermal adaptation: it is steepest
-in the cold-adapted \emph{C. parapsilosis} and shallowest in the
-warm-adapted \emph{C. auris} clades, so the \emph{C. auris} versus
-\emph{C. parapsilosis} contrast is the firm biological result, while the
-finer ranking among the \emph{C. auris} clades is conditional on the
-inoculum back-projection.
+is, for every species measured, a carbon-inefficient environment. This
+central claim holds scale-free: the position of the optimum follows from
+the fitted growth and consumption rates alone, independent of every
+assumption about cell numbers or carbon content, with P(\textless{} 37
+°C) = 1.0000 in all five taxa. The penalty is taxon-specific and tracks
+thermal adaptation: it is steepest in the cold-adapted \emph{C.
+parapsilosis} and shallowest in the warm-adapted \emph{C. auris} clades,
+so the \emph{C. auris} versus \emph{C. parapsilosis} contrast is the
+firm biological result. A finer ranking among the \emph{C. auris} clades
+is not resolvable in these data once the starting-cell-number
+construction is accounted for, and we do not report one.
 
 A sequence-grounded metabolic model adds a candidate explanation for the
 clade differences: near-identical proteomes do not account for them in
@@ -628,9 +674,13 @@ unaffected.
 \textbf{Supplementary Figure 5.} Carbon-use efficiency versus
 temperature, per clade, with the temperature-equilibration uncertainty
 overlaid. Solid band, 95\% credible interval; dashed envelope, widened
-by the equilibration component. Even with the added uncertainty, CUE
-peaks below body temperature and declines with further warming in every
-clade.
+by the equilibration component. The two coincide through the mid-range
+and separate toward the extremes. Under this correction the fitted
+optimum of the warmest clade approaches body temperature (C.
+\emph{auris} Clade IV, 36.6 °C, P(\textless{} 37 °C) = 0.80); the sub-37
+°C conclusion does not rest on this treatment, however, as the
+model-free, scale-free estimate places every optimum at 26.1--31.5 °C
+with P = 1.0000 regardless of the N0 correction adopted (main text).
 
 \includegraphics[width=6.6in,height=3in]{media/media/image10.png}
 
@@ -650,7 +700,7 @@ treatments and moves to fourth of five when the term is removed. The
 term-free case is not the physical null (the inoculum grows before the
 fit window), so it bounds the correction from the opposite side rather
 than representing the correct value; it is shown to make the dependence
-explicit. Generated by \texttt{scripts/16b\_n0\_treatment\_panel.R}.
+explicit. Generated by \texttt{scripts/18\_n0\_treatment\_panel.R}.
 
 \section{}\label{section}
 
