@@ -26,13 +26,30 @@
 #   Run that first. Without it, 14 still writes Fig 1 & 2 and stops before Fig 3.
 # =============================================================================
 
-script_dir <- if (requireNamespace("rstudioapi", quietly = TRUE) &&
-                  rstudioapi::isAvailable() &&
-                  nzchar(rstudioapi::getActiveDocumentContext()$path)) {
-  dirname(rstudioapi::getActiveDocumentContext()$path)
-} else {
+# Packaging: resolve the script directory from --file= FIRST. Under
+# `Rscript scripts/<this>.R` neither rstudioapi nor sys.frame(1)$ofile resolves,
+# so this fell back to getwd() and then died on "cannot open file .../config.R".
+# Sourcing it from run_all.R was unaffected, which is why the bug stayed hidden.
+script_dir <- local({
+  fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+  if (length(fa)) return(dirname(normalizePath(
+    # R replaces every space in --file= with "~+~", so a project path that
+    # contains a space comes back mangled and source() then fails on a path
+    # that does not exist. Un-mangle it before normalising.
+    gsub("~+~", " ", sub("^--file=", "", fa[1]), fixed = TRUE),
+    mustWork = FALSE)))
+  if (requireNamespace("rstudioapi", quietly = TRUE) &&
+      rstudioapi::isAvailable() &&
+      nzchar(rstudioapi::getActiveDocumentContext()$path))
+    return(dirname(rstudioapi::getActiveDocumentContext()$path))
   tryCatch(dirname(sys.frame(1)$ofile), error = function(e) getwd())
-}
+})
+# THE flag that stops 06 (a Shiny app) from blocking this runner. Sourcing 06
+# under it defines the app and returns; results/tables/otu_inoc.csv is a
+# committed INPUT and is not regenerated here.
+options(candidas.headless = TRUE)
+Sys.setenv(CANDIDAS_HEADLESS = "1")
+
 run_script <- function(name) {
   message("\n", strrep("=", 70), "\nRunning: ", name, "\n", strrep("=", 70), "\n")
   source(file.path(script_dir, name), local = FALSE)
