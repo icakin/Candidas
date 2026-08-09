@@ -13,14 +13,24 @@
 #   Rscript 16_supplementary_figures.R   (needs ggplot2, patchwork)
 # =============================================================================
 # script directory: works under Rscript (--file=), source() and RStudio
-.fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
-.d0 <- if (length(.fa)) dirname(normalizePath(sub("^--file=", "", .fa[1]), mustWork = FALSE)) else
-         tryCatch(dirname(sys.frame(1)$ofile), error = function(e) NA_character_)
-if (length(.d0) == 0 || is.na(.d0) || !nzchar(.d0)) {
-  if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable() &&
+# Packaging: resolve the script directory from --file= FIRST. Under
+# `Rscript scripts/<this>.R` neither rstudioapi nor sys.frame(1)$ofile resolves,
+# so this fell back to getwd() and then died on "cannot open file .../config.R".
+# Sourcing it from run_all.R was unaffected, which is why the bug stayed hidden.
+.d0 <- local({
+  fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+  if (length(fa)) return(dirname(normalizePath(
+    # R replaces every space in --file= with "~+~", so a project path that
+    # contains a space comes back mangled and source() then fails on a path
+    # that does not exist. Un-mangle it before normalising.
+    gsub("~+~", " ", sub("^--file=", "", fa[1]), fixed = TRUE),
+    mustWork = FALSE)))
+  if (requireNamespace("rstudioapi", quietly = TRUE) &&
+      rstudioapi::isAvailable() &&
       nzchar(rstudioapi::getActiveDocumentContext()$path))
-    .d0 <- dirname(rstudioapi::getActiveDocumentContext()$path) else .d0 <- getwd()
-}
+    return(dirname(rstudioapi::getActiveDocumentContext()$path))
+  tryCatch(dirname(sys.frame(1)$ofile), error = function(e) getwd())
+})
 # project root: nearest ancestor of the script (or cwd) holding results/ and scripts/
 .find_root <- function(p) {
   p <- normalizePath(p, mustWork = FALSE)
@@ -179,14 +189,24 @@ message("FIG_MODEL_SUPP -> ", FD)
 # Style matches 20/21 (Okabe-Ito, theme_classic).  Rscript 16_supplementary_figures.R
 # =============================================================================
 # script directory: works under Rscript (--file=), source() and RStudio
-.fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
-.d0 <- if (length(.fa)) dirname(normalizePath(sub("^--file=", "", .fa[1]), mustWork = FALSE)) else
-         tryCatch(dirname(sys.frame(1)$ofile), error = function(e) NA_character_)
-if (length(.d0) == 0 || is.na(.d0) || !nzchar(.d0)) {
-  if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable() &&
+# Packaging: resolve the script directory from --file= FIRST. Under
+# `Rscript scripts/<this>.R` neither rstudioapi nor sys.frame(1)$ofile resolves,
+# so this fell back to getwd() and then died on "cannot open file .../config.R".
+# Sourcing it from run_all.R was unaffected, which is why the bug stayed hidden.
+.d0 <- local({
+  fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+  if (length(fa)) return(dirname(normalizePath(
+    # R replaces every space in --file= with "~+~", so a project path that
+    # contains a space comes back mangled and source() then fails on a path
+    # that does not exist. Un-mangle it before normalising.
+    gsub("~+~", " ", sub("^--file=", "", fa[1]), fixed = TRUE),
+    mustWork = FALSE)))
+  if (requireNamespace("rstudioapi", quietly = TRUE) &&
+      rstudioapi::isAvailable() &&
       nzchar(rstudioapi::getActiveDocumentContext()$path))
-    .d0 <- dirname(rstudioapi::getActiveDocumentContext()$path) else .d0 <- getwd()
-}
+    return(dirname(rstudioapi::getActiveDocumentContext()$path))
+  tryCatch(dirname(sys.frame(1)$ofile), error = function(e) getwd())
+})
 # project root: nearest ancestor of the script (or cwd) holding results/ and scripts/
 .find_root <- function(p) {
   p <- normalizePath(p, mustWork = FALSE)

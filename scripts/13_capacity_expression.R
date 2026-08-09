@@ -17,10 +17,11 @@
 #                      Clade II = CBS10913 (CBS109, 3 reps). Gene IDs = CJI97_*.
 # Your model's enzyme_gene_map.csv `gene_id` column is ALSO CJI97_* -> direct join.
 #
-# RUN THIS ON YOUR MAC, from the scripts/ folder:
-#   Rscript 13_capacity_expression.R
+# RUN (from anywhere):
+#   Rscript scripts/13_capacity_expression.R
 # Needs ONLY edgeR (Bioconductor). GEOquery is NOT required anymore.
-# model_metabolic_genes_CJI97.txt must sit in the same folder.
+# Inputs and outputs both live in data/expression/, resolved from this script's
+# own location - no setwd(), no machine-specific path.
 # =====================================================================
 
 suppressMessages({
@@ -28,22 +29,41 @@ suppressMessages({
   library(edgeR)
 })
 
-# --- find the gene list wherever R was started, then work from its folder ---
-.cand <- c("model_metabolic_genes_CJI97.txt",                                   # current dir
-           "../data/expression/model_metabolic_genes_CJI97.txt",                # when run from scripts/
-           "data/expression/model_metabolic_genes_CJI97.txt",                   # when run from project root
-           "/Users/ilgazcakin/Desktop/Projects/Candidas/data/expression/model_metabolic_genes_CJI97.txt")
-.hit <- .cand[file.exists(.cand)]
-if (length(.hit) == 0) stop("Cannot find model_metabolic_genes_CJI97.txt. ",
-    "Put it next to this script, or run setwd() to that folder first. Currently in: ", getwd())
-setwd(dirname(normalizePath(.hit[1])))   # everything below lands beside the gene list
-GENELIST <- "model_metabolic_genes_CJI97.txt"
+# --- inputs and outputs, resolved from this script's own location ------------
+# Packaging: the previous version searched four relative candidates plus a
+# hard-coded /Users/ilgazcakin/... path and then setwd()'d into whichever it
+# found. That made every path below depend on where R happened to be started,
+# left the caller's working directory silently changed, and could not work on
+# another machine. Everything is now derived from --file= and written out in
+# full. Same files, same locations - only the resolution changed.
+.this_dir <- local({
+  fa <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+  if (length(fa)) return(dirname(normalizePath(
+    # R replaces every space in --file= with "~+~", so a project path that
+    # contains a space comes back mangled. Un-mangle it before normalising.
+    gsub("~+~", " ", sub("^--file=", "", fa[1]), fixed = TRUE),
+    mustWork = FALSE)))
+  if (requireNamespace("rstudioapi", quietly = TRUE) &&
+      rstudioapi::isAvailable() &&
+      nzchar(rstudioapi::getActiveDocumentContext()$path))
+    return(dirname(rstudioapi::getActiveDocumentContext()$path))
+  tryCatch(dirname(sys.frame(1)$ofile), error = function(e) getwd())
+})
+# NOTE: this script deliberately does NOT source config.R. config.R installs a
+# figure whitelist that gates pdf(), which would silently drop the barcode PDF.
+EXPR_DIR <- file.path(dirname(.this_dir), "data", "expression")
+
+GENELIST <- file.path(EXPR_DIR, "model_metabolic_genes_CJI97.txt")
+if (!file.exists(GENELIST))
+  stop("Cannot find ", GENELIST, "\n",
+       "  This file is committed to the repository; a missing copy means an\n",
+       "  incomplete checkout. Restore data/expression/ and retry.", call. = FALSE)
 met_genes <- readLines(GENELIST)
-cat(sprintf("Working dir: %s\nModel metabolic enzyme genes: %d\n", getwd(), length(met_genes)))
+cat(sprintf("Gene list: %s\nModel metabolic enzyme genes: %d\n", GENELIST, length(met_genes)))
 
 # ---- 1. get the GEO processed count matrix (single file) -----------
-dir.create("GSE165762", showWarnings=FALSE)
-cf <- "GSE165762/GSE165762_Raw_counts.txt.gz"
+dir.create(file.path(EXPR_DIR, "GSE165762"), showWarnings=FALSE, recursive=TRUE)
+cf <- file.path(EXPR_DIR, "GSE165762", "GSE165762_Raw_counts.txt.gz")
 if (!file.exists(cf)) {
   url <- "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE165nnn/GSE165762/suppl/GSE165762_Raw_counts.txt.gz"
   cat("Downloading", url, "...\n"); options(timeout=1200)
@@ -100,9 +120,11 @@ cat("  AND the Wilcoxon specificity p < 0.05 (metabolic enzymes down in Clade II
 cat("  by MORE than the genome-wide slow-growth shift). If metabolic == background,\n")
 cat("  that's just the growth-rate effect, not a capacity-allocation signal.\n")
 
+.out_csv <- file.path(EXPR_DIR, "capacity_expression_CladeI_vs_II.csv")
+.out_pdf <- file.path(EXPR_DIR, "capacity_expression_barcode.pdf")
 write.csv(tt[,c("gene","logFC","logCPM","PValue","FDR","is_metab")],
-          "capacity_expression_CladeI_vs_II.csv", row.names=FALSE)
-pdf("capacity_expression_barcode.pdf", width=7, height=4)
+          .out_csv, row.names=FALSE)
+pdf(.out_pdf, width=7, height=4)
 o <- order(tt$logFC)
 plot(tt$logFC[o], type="n", xlab="genes ranked by log2FC (CladeI vs II)",
      ylab="log2 fold change", main="Metabolic enzymes (red) vs genome")
@@ -110,4 +132,4 @@ abline(h=0, col="grey70")
 points(which(!tt$is_metab[o]), tt$logFC[o][!tt$is_metab[o]], pch=".", col="grey75")
 points(which(tt$is_metab[o]),  tt$logFC[o][tt$is_metab[o]],  pch="|", col="red", cex=0.6)
 dev.off()
-cat("\nWrote capacity_expression_CladeI_vs_II.csv and capacity_expression_barcode.pdf\n")
+cat("\nWrote:\n  ", .out_csv, "\n  ", .out_pdf, "\n")

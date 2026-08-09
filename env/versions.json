@@ -1,0 +1,118 @@
+{
+  "_comment": "The environment that ran `bash scripts/run_all.sh` end to end on this repository at the commit this file was added. Every version below was READ FROM THE LIVE ENVIRONMENT, not copied from documentation. Regenerate it whenever the toolchain moves.",
+  "captured_on": "2026-08-08",
+  "captured_by": "packaging PR (gyd/packaging): pinned environment, headless guards, complete runner",
+  "candidas_head_at_capture": "41589e6 (origin/main) + the packaging commits on gyd/packaging",
+
+  "machine": {
+    "os": "macOS 26.2 (build 25C56)",
+    "kernel": "Darwin 25.2.0",
+    "arch": "arm64 (Apple silicon)",
+    "cpu_cores": 16
+  },
+
+  "r": {
+    "version": "4.5.2",
+    "nickname": "[Not] Part in a Rumble",
+    "release_date": "2025-10-31",
+    "platform": "aarch64-apple-darwin20",
+    "binary": "/usr/local/bin/Rscript",
+    "renv": "1.2.3",
+    "lockfile": "renv.lock",
+    "lockfile_packages": 170,
+    "cran_repo": "https://cloud.r-project.org",
+    "bioconductor_version": "3.22",
+    "bioconductor_manager": "BiocManager 1.30.27",
+    "lockfile_covers_all_eighteen_scripts": true,
+    "packages_added_for_the_four_new_scripts": "none - 08_temperature_equilibration_sensitivity.R, 10_n0_term_test.R, 15_uncertainty_bands.R and 18_n0_treatment_panel.R load only readxl, ggplot2, patchwork, dplyr and readr, all already pinned",
+    "key_packages": {
+      "tidyverse": "2.0.0",
+      "dplyr": "1.2.0",
+      "tidyr": "1.3.2",
+      "readr": "2.2.0",
+      "purrr": "1.2.1",
+      "tibble": "3.3.1",
+      "stringr": "1.6.0",
+      "ggplot2": "4.0.2",
+      "scales": "1.4.0",
+      "ggrepel": "0.9.7",
+      "ggdist": "3.3.3",
+      "patchwork": "1.3.2",
+      "rlang": "1.1.7",
+      "minpack.lm": "1.2.4",
+      "zoo": "1.8-15",
+      "shiny": "1.13.0",
+      "rstudioapi": "0.18.0",
+      "readxl": "1.4.5",
+      "brms": "2.23.0",
+      "posterior": "1.6.1",
+      "loo": "2.9.0",
+      "bayesplot": "1.15.0",
+      "Rcpp": "1.1.1",
+      "edgeR": "4.8.2",
+      "limma": "3.66.0",
+      "statmod": "1.5.2",
+      "locfit": "1.5-9.12"
+    }
+  },
+
+  "stan": {
+    "backend_used_by_09_bayesian_models.R": "rstan",
+    "backend_detection": "09_bayesian_models.R never sets brms's `backend` argument and the project never sets options(brms.backend); brms therefore falls back to its default, which is rstan. cmdstanr is NOT installed.",
+    "rstan": "2.32.7",
+    "StanHeaders": "2.32.10",
+    "stan_library_version": "2.32.2",
+    "toolchain": {
+      "cxx17": "clang++ -arch arm64",
+      "cxx17flags": "-falign-functions=64 -Wall -g -O2",
+      "compiler": "Apple clang version 17.0.0 (clang-1700.6.3.2)",
+      "make": "/usr/bin/make (GNU make, Xcode CLT)",
+      "gfortran": "NOT INSTALLED - not needed here because every CRAN package used resolves to a macOS arm64 BINARY; it would be needed for any source install of a Fortran-using package",
+      "user_makevars": "none (~/.R/Makevars does not exist)"
+    },
+    "verified": "scripts/00_install.R compiles and samples a 10-line toy model before the pipeline is allowed to run; run it without --no-stan to repeat that check."
+  },
+
+  "python": {
+    "version": "3.9.6",
+    "implementation": "CPython, macOS system python (/usr/bin/python3), arm64",
+    "used_for": "17_schematic.py only, in the default run. The etc-GEM engine is NOT exercised by scripts/run_all.sh (see etcgem below).",
+    "packages_used_by_17_schematic.py": {
+      "numpy": "2.0.2",
+      "matplotlib": "3.9.4"
+    },
+    "NOT_PINNED": "There is no Python lockfile on main. This is a real gap, deliberately left open by the packaging PR because closing it requires moving the cauris_etcgem submodule pointer, which that PR must not do. See etcgem below."
+  },
+
+  "etcgem": {
+    "submodule": "cauris_etcgem",
+    "pointer_on_main": "d19aab7708eac5789c772525d04d27a91b3aed39",
+    "remote": "https://github.com/icakin/cauris_etcgem.git",
+    "outputs_are_vendored": "outputs/supp_data/ (13 CSVs) is committed at the repository root and is byte-identical to the submodule's strains/eci_cauris/outputs/supp_data/. 14_main_figures.R and 16_supplementary_figures.R read one of those two copies; because they are identical, which one they pick does not matter today.",
+    "python_engine_pin": "ABSENT at this submodule pointer. requirements.txt asks for `pip install git+https://github.com/GabYvonDurocher/etcGEMs` with no ref, so it tracks main and the model can change under the committed results with no version bump and no record. A requirements.lock that pins the engine to a commit exists on a LATER submodule commit that main does not reference.",
+    "consequence": "scripts/run_all.sh leaves the etc-GEM stage OFF by default (RUN_ETCGEM=1 turns it on). Regenerating those outputs against an unpinned engine could silently move the model figures, which is exactly what an unattended reproduction run must not do."
+  },
+
+  "quarto": {
+    "version": "1.8.27",
+    "binary": "/usr/local/bin/quarto",
+    "pandoc": "3.6.3 (bundled with quarto)",
+    "pdf_engine": "xelatex",
+    "tinytex": {
+      "path": "~/Library/TinyTeX/bin/universal-darwin/xelatex",
+      "xetex": "XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)",
+      "release": "TeX Live 2026",
+      "r_tinytex_package": "0.58",
+      "note": "quarto's own managed TinyTeX, installed via `quarto install tinytex`."
+    },
+    "other_tex_on_path": {
+      "path": "/Library/TeX/texbin/xelatex",
+      "xetex": "XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)",
+      "note": "Present but not the engine quarto uses. Recorded so the presence of two TeX installations is not later mistaken for version drift."
+    }
+  },
+
+  "git": {
+    "version": "2.50.1 (Apple Git-155)"
+  }
+}
