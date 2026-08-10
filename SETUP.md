@@ -118,7 +118,73 @@ brew install openssl freetype harfbuzz fribidi fontconfig libpng jpeg-turbo libt
 rest are the remaining source builds' declared needs and are cheap to install at
 the same time.
 
-### 4. Known issue: conda breaks the `curl` build {#conda-libkrb5}
+### 4. Stan — the heaviest single dependency {#stan-prereq}
+
+**The backend is `rstan`.** `09_bayesian_models.R` calls `brms::brm()` without a
+`backend` argument and nothing in the project sets `options(brms.backend)`, so
+brms falls back to its default, which is rstan. **`cmdstanr` is not in
+`renv.lock`, is not installed, and is not used** — it is not a CRAN package, so
+`renv` could not restore it from the lockfile even if it were listed.
+
+Good news: `rstan` **2.32.7** and `StanHeaders` **2.32.10** both have exact CRAN
+binaries at their pinned versions today, so the notorious multi-hour rstan
+compile is avoidable. What does still build from source in the Stan stack is
+`Rcpp` (1.1.1), `RcppParallel` (5.1.11-1) and `QuickJSR` (1.9.0) — all C++ only,
+needing nothing beyond the Xcode tools, but `RcppParallel` builds a bundled TBB
+and takes a few minutes.
+
+Verify Stan **before** you start a pipeline run:
+
+```bash
+Rscript scripts/00_install.R          # compiles and samples a toy model
+```
+
+Expected: about **40 seconds**, ending with a line reporting the recovered
+parameters. Measured on the reference machine: 36.7 s, recovering
+`mu = 3.0837` (truth 3) and `sigma = 0.8454` (truth 1), with rstan 2.32.7 /
+StanHeaders 2.32.10 / Stan 2.32.2.
+
+A restore that "succeeds" while Stan cannot compile is worse than one that fails,
+because the failure then surfaces an hour into `09_bayesian_models.R`. That is
+why the check is part of the installer and not an optional extra.
+
+### 5. Bioconductor — a different failure mode {#bioconductor-prereq}
+
+`edgeR` is Bioconductor, not CRAN, and `13_capacity_expression.R` needs it. This
+fails differently from a compile problem: without Bioconductor repositories
+configured, `renv::restore()` cannot **find** the package at all, whatever
+toolchain you have.
+
+What the lockfile records:
+
+- the **release is pinned**: `renv.lock` carries `"Bioconductor": {"Version": "3.22"}`;
+- `BiocManager` 1.30.27 is itself in the lockfile;
+- three packages have `"Source": "Bioconductor"` — `BiocVersion` 3.22.0,
+  `edgeR` 4.8.2, `limma` 3.66.0.
+
+`renv` uses `BiocManager` to configure the Bioconductor repositories for the
+pinned release, so **install `BiocManager` first** if the bootstrap has not
+already:
+
+```r
+install.packages("BiocManager")
+BiocManager::install(version = "3.22")   # configure, do not upgrade
+```
+
+`scripts/00_install.R` does this in the right order for you.
+
+> **A finding worth knowing, not fixed here.** The lockfile records the
+> Bioconductor packages' `Repository` as `https://bioc-release.r-universe.dev`.
+> That mirror serves **none** of the three at their pinned versions as a macOS
+> arm64 binary, so they build from source — which is why `edgeR` lands in the
+> gfortran list above. The canonical mirror
+> `https://bioconductor.org/packages/3.22/bioc` has **all three at exactly the
+> pinned versions** as arm64 binaries. `00_install.R` therefore puts the
+> canonical Bioconductor repository ahead of the recorded one when resolving.
+> Correcting the `Repository` field in `renv.lock` would be the proper fix, but
+> that is an edit to the pin file and belongs in its own change.
+
+### 6. Known issue: conda breaks the `curl` build {#conda-libkrb5}
 
 **Symptom.** `renv::restore()` fails while building `curl`, with a linker error
 mentioning `libkrb5`, `gssapi`, or a Kerberos symbol.
@@ -338,6 +404,9 @@ options(brms.backend = "cmdstanr")   # in ~/.Rprofile
 ```r
 install.packages("BiocManager"); BiocManager::install(version = "3.22")
 ```
+
+See [Bioconductor](#bioconductor-prereq) for why the recorded repository makes
+edgeR build from source, and how `00_install.R` works around it.
 
 **`renv::restore()` fails building a Fortran package** (`Matrix`, `mgcv`,
 `nlme`, `mvtnorm`, `nleqslv`, `edgeR`) — install the CRAN gfortran toolchain,
