@@ -21,7 +21,7 @@ arrangement, whatever the short-term convenience of a Word round-trip, because:
 
 ## 2. Final state
 
-`manuscript/draft/v3_quarto/v3.qmd` references ten figures, all by path into
+`manuscript/v3.qmd` references ten figures, all by path into
 `results/`. `manuscript/draft/v3_quarto/media/` has been deleted.
 
 | # | Manuscript figure | Path referenced from `v3.qmd` | Producing script |
@@ -165,7 +165,8 @@ None of these blocks anything; all are cheap and worth doing.
    `figsize` if it is to be checksummable.
 4. **`v3.tex` is a tracked build artefact** that every render rewrites. It is refreshed
    in this change so it no longer points at deleted files, but it will drift again.
-   Add it to `manuscript/draft/.gitignore` and `git rm --cached` it.
+   Add it to a `manuscript/.gitignore` and `git rm --cached` it. The same now
+   applies to the tracked `manuscript/v3.pdf`.
 5. **Stale script-number references in comments,** left over from the renumbering:
    `10_n0_term_test.R:95` says "re-run 08" where it means 09;
    `15_uncertainty_bands.R:7` and `:17` say "from script 11" where they mean 08.
@@ -173,3 +174,71 @@ None of these blocks anything; all are cheap and worth doing.
    anything matches, plus an assertion that every path it references exists under
    `results/`. Without something of this shape the arrangement decays the next time the
    manuscript goes through Word.
+
+
+---
+
+## 7. The merge-order accident, and how the work was recovered
+
+Recorded because nobody will reconstruct this from the git history later, and
+because it is the sort of thing that recurs.
+
+### What happened
+
+Three pull requests were stacked — packaging → figure sourcing → scale-free
+analysis — and merged bottom-up, but **out of order**:
+
+| PR | merged | into |
+|---|---|---|
+| #2 `gyd/packaging` | 10:22:13 | `main` |
+| #3 `gyd/figure-sourcing` | 10:22:54 | `gyd/packaging` |
+| #4 `gyd/scale-free` | 10:23:39 | `gyd/figure-sourcing` |
+
+`#2` landed on `main` **41 seconds before** `#3` merged into the branch `#2` had
+just consumed. From that moment `gyd/packaging` and `gyd/figure-sourcing` were
+parent branches that had already been merged away, and everything subsequently
+merged into them accumulated off to one side. `origin/gyd/figure-sourcing`
+finished 9 commits ahead of `main` and 4 behind, and none of the C10 or C11 work
+ever reached `main`.
+
+### What was stranded
+
+* `scripts/config.R` had no `fig_keep_add`, so `18_n0_treatment_panel.R` still
+  exited 0 and wrote nothing — Supplementary Figure 6 could not be regenerated;
+* `results/figures/Fig_n0_treatment_panel.png` did not exist;
+* `reports/C11_scale_free/` did not exist;
+* the manuscript still embedded `media/media/image1..10.png`.
+
+**Why that was urgent rather than tidy-up.** Commit `b987f68` on `main` had
+already rewritten the manuscript to *lead* with the C11 scale-free result. So the
+paper cited conclusions whose supporting analysis was not in the repository —
+the same class of failure the C-series exists to catch, arrived at from the
+opposite direction. The analysis was right and the paper was right; the audit
+trail between them was missing.
+
+### How it was recovered
+
+`gyd/figure-sourcing` was merged into a branch off `main`. The merge was
+favourable because `main`'s four commits touch only `manuscript/` and two renames
+under `reports/review_figures/`:
+
+* **ten conflicts, all rename/delete under `manuscript/media/media/`**, and none
+  anywhere else. Every one resolved to **main's** side, preserving the flattened
+  layout of `dbdb59d`. Resolving them the other way would have resurrected the
+  `manuscript/draft/` nesting that commit deliberately retired.
+* `manuscript/v3.qmd` and `v3.tex` **auto-merged** rather than conflicting, and
+  the auto-merge silently took the branch's `../../../results/...` paths while
+  keeping main's text. Those were correct from `manuscript/draft/v3_quarto/` and
+  are wrong by two levels from `manuscript/`. Both were reset to main's version
+  in the merge commit and repointed properly afterwards, as `../results/...`.
+
+That second point is the trap worth remembering: **a clean auto-merge is not
+evidence of a correct one.** Relative paths merge textually and break silently.
+
+### The lesson
+
+Merge a stack **top-down**, or rebase each PR onto the new base after its parent
+lands. Merging bottom-up works only if every merge happens before its parent is
+consumed, which is a race nobody should have to win. If GitHub's "merge" button
+is used on a stack, check afterwards that the branch you merged *into* is still
+an ancestor of `main`.
