@@ -20,17 +20,139 @@ If you just want the commands, read [Install](#install) and [Run](#run).
 
 Platform notes:
 
-* **macOS** — `xcode-select --install` gives you clang and `make`. That is the
-  whole toolchain requirement; every CRAN package this project uses resolves to
-  an arm64 **binary**, so no `gfortran` is needed. (If you force a source
-  install of something Fortran-flavoured you will need it —
-  see <https://mac.r-project.org/tools/>.)
-* **Linux** — `sudo apt install build-essential` (needs `g++` and GNU make).
-* **Windows** — install Rtools matching your R version.
+* **macOS** — see [System prerequisites](#system-prerequisites) below. `xcode-select
+  --install` is necessary but **not sufficient**.
+* **Linux** — `sudo apt install build-essential` (needs `g++` and GNU make). Not
+  otherwise documented here; nobody has run this project on Linux.
+* **Windows** — install Rtools matching your R version. Likewise undocumented.
 
-Stan is the fussy dependency. `scripts/00_install.R` **compiles and samples a
-toy model** to prove the toolchain works before you spend hours on the real fit;
-if it cannot, it fails loudly with per-platform instructions.
+> **An earlier version of this file said "every CRAN package this project uses
+> resolves to an arm64 binary, so no `gfortran` is needed."** That was true on the
+> machine that captured `renv.lock`, at the moment it was captured, and it is
+> false for anyone restoring the lockfile later. See below for why, and what you
+> actually need.
+
+---
+
+## System prerequisites (macOS) {#system-prerequisites}
+
+**Read this before `renv::restore()`.** On a clean Mac the restore fails without
+these. `scripts/00_install.R` now checks for each of them and stops with the
+specific missing item rather than letting a build fail deep in a dependency tree.
+
+### Why a *pinned* environment needs a compiler at all
+
+`renv.lock` pins exact versions. **CRAN's macOS binary repository only ever
+carries the *current* version of each package.** So any pin that has since been
+superseded has no binary, and `renv` falls back to the source tarball — which
+needs whatever that package needs to build.
+
+Measured against this lockfile on 2026-08-10, R 4.5.2, `aarch64-apple-darwin20`:
+
+| | packages |
+|---|---|
+| pinned versions with an exact CRAN **binary** today | **97** of 170 |
+| pinned versions that would **build from source** | **73** of 170 |
+
+That number grows as the lockfile ages. It is not a defect in the lockfile; it is
+how CRAN binaries work.
+
+### 1. Xcode command line tools — required, always
+
+```bash
+xcode-select --install
+```
+
+Gives `clang`, `clang++` and `make`. Every source build needs these, and so does
+Stan.
+
+### 2. The CRAN gfortran toolchain — required
+
+Six pinned packages link the Fortran runtime **and** currently have no binary at
+their pinned version, so they build from source:
+
+| package | pin | what needs it |
+|---|---|---|
+| `Matrix` | 1.7-4 | base of almost everything |
+| `mgcv` | 1.9-3 | dependency of `brms` |
+| `nlme` | 3.1-168 | dependency of `mgcv` |
+| `mvtnorm` | 1.3-3 | `brms` |
+| `nleqslv` | 3.3.5 | `brms` |
+| `edgeR` | 4.8.2 | `13_capacity_expression.R` |
+
+(`minpack.lm`, `quadprog`, `RcppEigen` and `statmod` also link Fortran but do
+currently have binaries at their pins. That can change at any time — install the
+toolchain regardless.)
+
+Download the **CRAN-built** toolchain, not Homebrew's:
+
+<https://mac.r-project.org/tools/>
+
+— specifically the *GNU Fortran* installer for your architecture
+(`gfortran-…-universal.pkg`).
+
+> **Homebrew's `gcc`/`gfortran` is not a substitute.** CRAN-built R is compiled
+> against the CRAN toolchain and expects its `libgfortran`/`libquadmath` at the
+> paths and ABI that toolchain provides. Mixing Homebrew's produces link errors,
+> or worse, packages that load and misbehave.
+
+### 3. Homebrew system libraries — required
+
+Seven pinned packages need a named system library and currently build from source:
+
+| Homebrew formula | R packages it serves |
+|---|---|
+| `openssl` | `openssl` (2.3.5), `curl` (7.0.0) |
+| `freetype` | `ragg` (1.5.0), `textshaping` (1.0.4), `systemfonts` (1.3.1) |
+| `harfbuzz`, `fribidi` | `textshaping` |
+| `fontconfig` | `systemfonts` |
+| `libpng`, `jpeg-turbo`, `libtiff` | `ragg` |
+| `libxml2` | `xml2` (1.5.2) |
+| `icu4c` | `stringi` (1.8.7) — bundles its own ICU if it must, slowly |
+
+```bash
+brew install openssl freetype harfbuzz fribidi fontconfig libpng jpeg-turbo libtiff libxml2 icu4c
+```
+
+`openssl` and `freetype` are the two that were actually reported as failing; the
+rest are the remaining source builds' declared needs and are cheap to install at
+the same time.
+
+### 4. Known issue: conda breaks the `curl` build {#conda-libkrb5}
+
+**Symptom.** `renv::restore()` fails while building `curl`, with a linker error
+mentioning `libkrb5`, `gssapi`, or a Kerberos symbol.
+
+**Cause.** An active conda environment puts its own `lib` directory ahead of the
+system libraries on `PATH`/`LDFLAGS`. `curl` then compiles against conda's
+`libkrb5` while linking against the system `libcurl`, and the two disagree.
+
+**Workaround.** Take conda out of the way for the duration of the restore:
+
+```bash
+conda deactivate            # repeat until no (env) prefix remains
+# if conda auto-activates 'base' from your shell profile:
+conda config --set auto_activate_base false
+# or, for one shell only:
+env PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin" Rscript scripts/00_install.R
+```
+
+Re-activate conda afterwards; nothing in this project needs it.
+
+### What has and has not been verified
+
+**Verified on the reference machine** (the one in `env/versions.json`): the
+package-by-package analysis above — which packages contain compiled code, which
+link Fortran or a named system library, and which pinned versions do or do not
+have a CRAN binary today — was measured directly from `renv.lock` and from the
+restored library with `otool -L`. The Stan toy-model check was run and passed.
+
+**NOT verified here: that `renv::restore()` now succeeds on a clean Mac.** No
+clean machine was available. The prerequisite list is derived from a reported
+clean-Mac failure plus the dependency analysis above; it is our best
+reconstruction, not a tested procedure. If you are the person with the clean
+machine, please work through this section and report anything missing or
+unnecessary — that feedback is the only way this gets confirmed.
 
 ---
 
@@ -45,10 +167,11 @@ cd Candidas
 git submodule update --init --recursive
 ```
 
-Then:
+Then — **after** working through
+[System prerequisites](#system-prerequisites), which is not optional on macOS:
 
 ```bash
-# 1. R side  (restores renv.lock, then verifies Stan by compiling a toy model)
+# 1. R side  (checks prerequisites, restores renv.lock, verifies Stan)
 Rscript scripts/00_install.R
 
 # 2. Python side  (only 17_schematic.py needs Python in a default run)
@@ -215,6 +338,17 @@ options(brms.backend = "cmdstanr")   # in ~/.Rprofile
 ```r
 install.packages("BiocManager"); BiocManager::install(version = "3.22")
 ```
+
+**`renv::restore()` fails building a Fortran package** (`Matrix`, `mgcv`,
+`nlme`, `mvtnorm`, `nleqslv`, `edgeR`) — install the CRAN gfortran toolchain,
+not Homebrew's. See [System prerequisites](#system-prerequisites) §2.
+
+**`renv::restore()` fails building `openssl`, `curl`, `ragg`, `textshaping`,
+`systemfonts`, `xml2` or `stringi`** — a Homebrew system library is missing. See
+[System prerequisites](#system-prerequisites) §3.
+
+**`curl` fails to link, mentioning `libkrb5` or Kerberos** — that is conda on
+`PATH`. See [Known issue](#conda-libkrb5).
 
 **A script hangs with no output.** It should not any more — that was the four
 Shiny apps, and they are guarded. If it happens, check nothing sets
