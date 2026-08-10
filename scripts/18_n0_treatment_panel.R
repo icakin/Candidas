@@ -54,9 +54,18 @@
 })
 source(file.path(.this_dir, "config.R"))
 
-# config.R installs a figure whitelist (FIG_KEEP) that silently drops any ggsave
-# whose base name is not listed. Add this figure so it is actually written.
-if (exists("FIG_KEEP")) FIG_KEEP <- unique(c(FIG_KEEP, "Fig_n0_treatment_panel"))
+# config.R installs a figure whitelist that drops any ggsave whose base name is
+# not listed. Declare this figure through the supported entry point.
+#
+# This used to read:
+#     if (exists("FIG_KEEP")) FIG_KEEP <- unique(c(FIG_KEEP, "Fig_n0_treatment_panel"))
+# which did not work. FIG_KEEP is a global, and each of the three
+# run_and_get_E() calls below sources 09_bayesian_models.R, which re-sources
+# config.R into the GLOBAL environment and resets FIG_KEEP to its base list.
+# The append was wiped before the ggsave at the bottom of this file ever ran, so
+# the script reported success and wrote nothing. fig_keep_add() records the name
+# in an option that config.R never resets, so it survives the nested runs.
+fig_keep_add("Fig_n0_treatment_panel")
 
 suppressPackageStartupMessages({
   library(dplyr); library(readr); library(ggplot2)
