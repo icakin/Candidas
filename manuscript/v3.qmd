@@ -35,7 +35,7 @@ Because respiration continues to rise while growth saturates and falls, carbon-u
 
 The parametric (Sharpe--Schoolfield) counterpart on the per-cell scale gives 31.3--34.1 °C with P ≥ 0.999 (Fig. 1e), sitting on average 3.8 °C above the model-free estimate; that gap decomposes into the inoculum back-projection (1.6 °C) and the smoothing of the fitted functional form (2.2 °C), so the model-free value is the more conservative anchor and the fitted value the smooth-curve refinement. Under either estimate the economic optimum sat below the growth optimum and well below 37 °C. The mammalian host temperature therefore lies beyond the point at which warming still improves the carbon economy of any species tested, and this conclusion requires no assumption about cell numbers or carbon content.
 
-![](media/media/image1.png){width="6.395833333333333in" height="7.514586614173228in"}
+![](../results/figures/manuscript/FIG1_decoupling.png){width="6.395833333333333in" height="7.514586614173228in"}
 
 **Figure 1. Growth and respiration decouple with temperature, placing every carbon-economy optimum below body temperature.** (**a**) Specific growth rate *r* (h⁻¹) and (**b**) per-cell respiration carbon flux (fg C cell⁻¹ h⁻¹) versus temperature (points, isolate-level observations; thin lines, per-isolate fits; bold lines, clade-level posterior medians; bands, 95% CrI). Growth turns over; respiration does not (Arrhenius favoured over Sharpe–Schoolfield by leave-one-out cross-validation). (**c**) Activation energies of growth (circles) and respiration (triangles); dashed line, the 0.65 eV metabolic-theory value. Growth is credibly more temperature-sensitive than respiration in all five taxa. (**d**) Carbon-use efficiency, CUE = G/(G+R), collapses with warming and peaks early; filled points mark each curve's peak. (**e**) Thermal optimum of CUE (filled points, 95% CrI; open points, growth optimum; small points, isolates), with the posterior probability that it lies below 37 °C. Shaded band, 37 to 40 °C (body to fever).
 
@@ -47,7 +47,7 @@ The three-degree step from body temperature (37 °C) to fever (40 °C) captures 
 
 **Clade-level differences within *C. auris*.** Pairwise comparison of the fever cost resolved 8 of 10 taxon contrasts (95% CrI excluding a ratio of 1; Fig. 2d). The robust contrast is at the species level: all four C. *auris* clades credibly paid less at fever than C. *parapsilosis* (cost ratios 0.43--0.72), and this survives every treatment of the starting cell number. We do not report a finer ranking among the C. *auris* clades. The apparent within-*auris* ordering depends on the inoculum back-projection (its leader moves from first to fourth of five when the term is removed; Supplementary Fig. 6), and in the scale-free analysis the between-clade spread in respiration activation energy collapses from 0.22 eV to 0.07 eV, indicating that most of that apparent signal derives from the N0 construction rather than from clade biology (Robustness).
 
-![](media/media/image2.png){width="6.395833333333333in" height="7.339966097987752in"}
+![](../results/figures/manuscript/FIG2_the_bill.png){width="6.395833333333333in" height="7.339966097987752in"}
 
 **Figure 2.** A febrile host imposes a quantifiable, taxon-specific carbon cost. (a) Relative respiratory cost (respiration per unit growth, each taxon normalised to its own cheapest temperature) versus temperature; the minimum marks the CUE optimum, Topt(CUE). (b) Environmental growth optimum versus the cost of a fever across the five taxa; warmer-adapted taxa pay less. (c) The 37 to 40 °C step: growth retained (left) and the rise in respiratory cost per unit growth (right). (d) Pairwise contrasts of the 40 °C fever cost among clades and against *C. parapsilosis* (ratio \< 1 means the first taxon pays less). Points and bars are posterior medians with 95% credible intervals.
 
@@ -57,7 +57,7 @@ We next asked whether the variation in fever cost was related to each taxon's br
 
 The four C. *auris* clades differ markedly in thermal performance despite near-identical reference proteomes (median whole-proteome amino-acid identity 99.4–100% across clades I–IV, by reciprocal best-hit alignment), so we asked whether a single enzyme- and temperature-constrained genome-scale metabolic model (etc-GEM), grounded in those sequences, could explain the phenotypes. In the model, fixed genome-derived inputs drive growth at each temperature under a shared enzyme budget, and three parameters are then calibrated to each clade's growth curve (Fig. 3). Run from the genome alone, before any clade-specific calibration, the same model predicts nearly identical thermal curves for all four clades despite their roughly two-fold difference in measured peak growth (Fig. 4b), so broad coding-sequence divergence is unlikely to be the explanation; what separates the clades must therefore lie in the calibrated parameters.
 
-![](media/media/image3.png){width="5.5993000874890635in" height="7.452285651793526in"}
+![](../results/figures/manuscript/FIG_model_schematic.png){width="5.5993000874890635in" height="7.452285651793526in"}
 
 **Figure 3.** The sequence-grounded etc-GEM pipeline. Fixed, genome-derived inputs (the iRV973 metabolic network; per-reaction turnover kcat from EC/DLKcat; enzyme molecular weights and per-clade sequences; per-enzyme thermal parameters Topt, Tm and ΔCp; and proteome-sector fractions) feed an enzyme- and temperature-constrained genome-scale model that, at each temperature, maximises growth subject to a shared enzyme budget. Three parameters (ΔTopt, ΔCp-scale, and effective-capacity kcat-scale) are then calibrated by differential evolution and MCMC to each clade's measured growth curve. Within the calibrated model, the effective growth-capacity axis is the only parameter that clearly separates the clades, despite their \>99% reference-proteome identity; the per-clade values are given in Figure 4.
 
@@ -65,7 +65,7 @@ The four C. *auris* clades differ markedly in thermal performance despite near-i
 
 **Effective capacity covaries with respiratory economics.** The growth-fitted scalar covaried across the twelve isolates with outcomes not used to fit the model and that incorporate measured respiration: it was negatively associated with the cost of a fever (r = −0.86, 95% CI −0.96 to −0.76), so the higher a clade's capacity the cheaper its fever (Fig. 4d), and with per-cell respiration at the growth optimum (r = −0.64), so that higher-capacity clades sustain growth while respiring less carbon (Fig. 4e). Both are cross-phenotype associations rather than independent validation (see below), and the second is additionally conditional on the inoculum back-projection: removing the term weakens it to r ≈ −0.2 (not significant; Robustness), so Fig. 4e is read as exploratory.
 
-![](media/media/image4.png){width="6.395833333333333in" height="7.514586614173228in"}
+![](../results/figures/manuscript/FIG_MODEL.png){width="6.395833333333333in" height="7.514586614173228in"}
 
 **Figure 4.** Clade differences are captured by an effective growth-capacity axis despite near-identical sequences. (a) Per-clade calibration of the sequence-grounded etc-GEM: grey dashed, genome-only (a-priori) prediction; white dashed, calibrated model; colour and band, Bayesian data fit (95% CrI); points, measured. (b) The genome yields one curve for all clades (black), yet the measured clades differ \~2-fold. (c) Posterior of the effective growth-capacity parameter (kcat-scale) per clade; the only calibration parameter that separates the clades. (d) Effective growth-capacity versus the measured fever cost at 40 °C and (e) versus per-cell respiration at 32--36 °C (points, twelve isolates coloured by clade). The scalar was fitted to growth only; d--e are cross-phenotype associations, not independent mechanistic validation (see text). They replace the earlier capacity-versus-growth self-consistency panel (Supplementary Fig. 2).
 
@@ -101,27 +101,27 @@ Growth and respiratory carbon flux were expressed on a matched per-cell basis, s
 
 # **Supplementary figures**
 
-![](media/media/image5.png){width="6.395833333333333in" height="5.243044619422572in"}
+![](../results/figures/manuscript/FIG_MODEL_SUPP_validation.png){width="6.395833333333333in" height="5.243044619422572in"}
 
 **Supplementary Figure 1.** The effective-capacity axis is clade-structured and is not explained by coding variation or by coordinated metabolic-transcript allocation in the available dataset. (a) Capacity across the twelve isolates by clade (bars, clade means); 90% of the variance lies between clades (ICC₁ = 0.90). (b) Number of clade pairs resolved (non-overlapping 95% CrI) by each calibration parameter; only the effective growth-capacity parameter (kcat-scale) separates the clades. (c) Median whole-proteome amino-acid identity of each clade to Clade I (diamond reciprocal best-hit); coding sequence is \>99% identical. (d) Distribution of Clade I-versus-II log₂ fold-change for the model's 928 metabolic-enzyme genes (red) against the genome background (grey), from GEO GSE165762; the metabolic set is not coordinately shifted (Wilcoxon P = 0.93).
 
-![](media/media/image6.png){width="6.395833333333333in" height="4.975205599300088in"}
+![](../results/figures/manuscript/FIG_MODEL_SUPP_consistency.png){width="6.395833333333333in" height="4.975205599300088in"}
 
 **Supplementary Figure 2.** Self-consistency check. Effective growth-capacity (the fitted curve-height parameter) versus measured peak growth across the twelve isolates (r = 0.96). Because capacity scales curve height by construction, this relationship is expected and is shown as a consistency check, not as independent evidence; the out-of-sample tests are in Fig. 4d--e.
 
-![](media/media/image7.png){width="6.6in" height="2.335384951881015in"}
+![](../results/figures/Fig_temperature_equilibration.png){width="6.6in" height="2.335384951881015in"}
 
 **Supplementary Figure 3.** Sensitivity of each per-cell quantity to temperature equilibration. Median percentage shift from the pipeline value versus setpoint, estimated from the logged internal vial temperature against each clade's growth curve (band, interquartile range across vials). Growth per cell is immune because it does not use N0; per-cell respiration shifts by a few percent through the mid-range and up to about −27% at 44 °C; CUE follows, buffered.
 
-![](media/media/image8.png){width="6.6in" height="3.8076924759405073in"}
+![](../results/figures/fig_bayes_resp_arrhenius.png){width="6.6in" height="3.8076924759405073in"}
 
 **Supplementary Figure 4.** Per-cell respiration versus temperature (Bayesian Arrhenius, log scale), per clade, with the temperature-equilibration uncertainty overlaid. Solid band, 95% credible interval; dashed envelope, the same interval widened by the equilibration component. The two coincide through the mid-range and separate only toward the extremes; respiration's monotonic rise is unaffected.
 
-![](media/media/image9.png){width="6.6in" height="3.8076924759405073in"}
+![](../results/figures/fig_bayes_cue_by_clade.png){width="6.6in" height="3.8076924759405073in"}
 
 **Supplementary Figure 5.** Carbon-use efficiency versus temperature, per clade, with the temperature-equilibration uncertainty overlaid. Solid band, 95% credible interval; dashed envelope, widened by the equilibration component. The two coincide through the mid-range and separate toward the extremes. Under this correction the fitted optimum of the warmest clade approaches body temperature (C. *auris* Clade IV, 36.6 °C, P(\< 37 °C) = 0.80); the sub-37 °C conclusion does not rest on this treatment, however, as the model-free, scale-free estimate places every optimum at 26.1--31.5 °C with P = 1.0000 regardless of the N0 correction adopted (main text).
 
-![](media/media/image10.png){width="6.6in" height="3.0in"}
+![](../results/figures/Fig_n0_treatment_panel.png){width="6.6in" height="3.0in"}
 
 **Supplementary Figure 6.** The between-clade respiration activation energy under three treatments of the inoculum back-projection. Each panel shows the hierarchical Bayesian Arrhenius activation energy E~R~ per clade (posterior median; bars, 95% credible interval), refitting the same model under: (left) the published back-projection, N0 = N_inoc·exp(r·Δt); (centre) the equilibration-corrected N0, recomputed from the logged internal vial temperature over the onset window; and (right) the term removed entirely, N0 = N_inoc. The C. *auris*-versus-*C. parapsilosis* separation is preserved across all three, but the finer ordering within C. *auris* is not: Clade IV holds the lowest activation energy under the published and equilibration-corrected treatments and moves to fourth of five when the term is removed. The term-free case is not the physical null (the inoculum grows before the fit window), so it bounds the correction from the opposite side rather than representing the correct value; it is shown to make the dependence explicit. Generated by `scripts/18_n0_treatment_panel.R`.
 
