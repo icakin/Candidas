@@ -1,0 +1,547 @@
+{
+ "label": "etc-GEM: committed vs regenerated",
+ "a": "/Users/g.yvon-durocher/Library/CloudStorage/OneDrive-UniversityofExeter/Documents/work/Candidas TPC/Candidas/cauris_etcgem/strains/eci_cauris/outputs/supp_data",
+ "b": "/Users/g.yvon-durocher/Library/CloudStorage/OneDrive-UniversityofExeter/Documents/work/Candidas TPC/Candidas/cauris_etcgem/strains/eci_cauris/outputs/supp_data_C1",
+ "n_files_a": 13,
+ "n_files_b": 13,
+ "only_in_b": [],
+ "files": [
+  {
+   "file": "bayes_posterior_samples.csv",
+   "verdict": "DIVERGENT (no interval in file)",
+   "aligned_by": "keys: clade",
+   "rows": 10000,
+   "n_numeric_cols": 3,
+   "max_abs_diff": 2.3628832748026967,
+   "max_rel_diff": 1.9996279863936333,
+   "worst_column": "dTopt",
+   "interval": null,
+   "per_column": {
+    "dTopt": {
+     "max_abs": 2.3628832748026967,
+     "max_rel": 1.9996279863936333,
+     "n": 10000,
+     "n_finite_mismatch": 0
+    },
+    "dCp_scale": {
+     "max_abs": 1.0682731054915302,
+     "max_rel": 0.5696360280691452,
+     "n": 10000,
+     "n_finite_mismatch": 0
+    },
+    "kcat_scale": {
+     "max_abs": 0.3912343996394799,
+     "max_rel": 0.4332614207365496,
+     "n": 10000,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "bayes_posterior_samples.csv"
+  },
+  {
+   "file": "bayes_predictive.csv",
+   "verdict": "DIVERGENT",
+   "aligned_by": "keys: clade",
+   "rows": 116,
+   "n_numeric_cols": 4,
+   "max_abs_diff": 0.17206707436918256,
+   "max_rel_diff": 0.17783109175984352,
+   "worst_column": "hi",
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "lo",
+       "hi"
+      ],
+      "n": 116,
+      "n_overlap": 108,
+      "all_overlap": false
+     }
+    ],
+    "n_pairs": 1,
+    "n": 116,
+    "n_overlap": 108,
+    "all_overlap": false
+   },
+   "per_column": {
+    "temp_C": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 116,
+     "n_finite_mismatch": 0
+    },
+    "med": {
+     "max_abs": 0.1279034608338251,
+     "max_rel": 0.13851007646045985,
+     "n": 116,
+     "n_finite_mismatch": 0
+    },
+    "lo": {
+     "max_abs": 0.07987026777645156,
+     "max_rel": 0.1288582402564077,
+     "n": 116,
+     "n_finite_mismatch": 0
+    },
+    "hi": {
+     "max_abs": 0.17206707436918256,
+     "max_rel": 0.17783109175984352,
+     "n": 116,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "bayes_predictive.csv"
+  },
+  {
+   "file": "bayes_summary.csv",
+   "verdict": "DIVERGENT",
+   "aligned_by": "keys: clade,param",
+   "rows": 12,
+   "n_numeric_cols": 3,
+   "max_abs_diff": 0.29315746058922776,
+   "max_rel_diff": 0.6864784109248295,
+   "worst_column": "hi",
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "lo",
+       "hi"
+      ],
+      "n": 12,
+      "n_overlap": 8,
+      "all_overlap": false
+     }
+    ],
+    "n_pairs": 1,
+    "n": 12,
+    "n_overlap": 8,
+    "all_overlap": false
+   },
+   "per_column": {
+    "median": {
+     "max_abs": 0.24618845126284772,
+     "max_rel": 0.2715585509667832,
+     "n": 12,
+     "n_finite_mismatch": 0
+    },
+    "lo": {
+     "max_abs": 0.21803177435530363,
+     "max_rel": 0.6864784109248295,
+     "n": 12,
+     "n_finite_mismatch": 0
+    },
+    "hi": {
+     "max_abs": 0.29315746058922776,
+     "max_rel": 0.29151011231387625,
+     "n": 12,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "bayes_summary.csv"
+  },
+  {
+   "file": "calibration_curves.csv",
+   "verdict": "DIVERGENT (no interval in file)",
+   "aligned_by": "keys: clade",
+   "rows": 228,
+   "n_numeric_cols": 3,
+   "max_abs_diff": 0.13592143233941056,
+   "max_rel_diff": 0.14592589570839415,
+   "worst_column": "calibrated",
+   "interval": null,
+   "per_column": {
+    "temp_C": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 228,
+     "n_finite_mismatch": 0
+    },
+    "apriori": {
+     "max_abs": 2.2315482794965646e-14,
+     "max_rel": 3.846769814662653e-14,
+     "n": 228,
+     "n_finite_mismatch": 0
+    },
+    "calibrated": {
+     "max_abs": 0.13592143233941056,
+     "max_rel": 0.14592589570839415,
+     "n": 228,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "calibration_curves.csv"
+  },
+  {
+   "file": "calibration_measured.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: clade",
+   "rows": 48,
+   "n_numeric_cols": 2,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "temp_C": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 48,
+     "n_finite_mismatch": 0
+    },
+    "observed": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 48,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "calibration_measured.csv"
+  },
+  {
+   "file": "calibration_r2.csv",
+   "verdict": "DIVERGENT (no interval in file)",
+   "aligned_by": "keys: clade",
+   "rows": 4,
+   "n_numeric_cols": 9,
+   "max_abs_diff": 10.34664488987426,
+   "max_rel_diff": 1.4409896030833869,
+   "worst_column": "r2_apriori",
+   "interval": null,
+   "per_column": {
+    "rmse_apriori": {
+     "max_abs": 0.24494701433535765,
+     "max_rel": 0.7381643846564255,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "rmse_calibrated": {
+     "max_abs": 0.0354878569693834,
+     "max_rel": 0.45156644199991564,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "r2_apriori": {
+     "max_abs": 10.34664488987426,
+     "max_rel": 1.4409896030833869,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "r2_calibrated": {
+     "max_abs": 0.08596901297655546,
+     "max_rel": 0.0892702957133793,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "apriori_Topt": {
+     "max_abs": 10.0,
+     "max_rel": 0.25,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "measured_Topt": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "dTopt": {
+     "max_abs": 0.0800262367310951,
+     "max_rel": 0.17877499528275997,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "dCp_scale": {
+     "max_abs": 0.05555951861204156,
+     "max_rel": 0.057252293517146134,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "kcat_scale": {
+     "max_abs": 0.2350021266145622,
+     "max_rel": 0.26955648496620443,
+     "n": 4,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "calibration_r2.csv"
+  },
+  {
+   "file": "capacity_bootstrap.csv",
+   "verdict": "DIVERGENT",
+   "aligned_by": "keys: clade",
+   "rows": 4,
+   "n_numeric_cols": 7,
+   "max_abs_diff": 0.2639937232532178,
+   "max_rel_diff": 0.2839686835279945,
+   "worst_column": "cap_hi",
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "cap_lo",
+       "cap_hi"
+      ],
+      "n": 4,
+      "n_overlap": 0,
+      "all_overlap": false
+     },
+     {
+      "cols": [
+       "peak_lo",
+       "peak_hi"
+      ],
+      "n": 4,
+      "n_overlap": 4,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 2,
+    "n": 8,
+    "n_overlap": 4,
+    "all_overlap": false
+   },
+   "per_column": {
+    "n_isolates": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "capacity": {
+     "max_abs": 0.2350021266145622,
+     "max_rel": 0.26955648496620443,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "cap_lo": {
+     "max_abs": 0.22946538296291874,
+     "max_rel": 0.2839686835279945,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "cap_hi": {
+     "max_abs": 0.2639937232532178,
+     "max_rel": 0.28228101137115635,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "peak": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "peak_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "peak_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 4,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "capacity_bootstrap.csv"
+  },
+  {
+   "file": "capacity_bootstrap_draws.csv",
+   "verdict": "DIVERGENT (no interval in file)",
+   "aligned_by": "keys: clade",
+   "rows": 6000,
+   "n_numeric_cols": 2,
+   "max_abs_diff": 0.27258798983439425,
+   "max_rel_diff": 0.4271862112042386,
+   "worst_column": "capacity",
+   "interval": null,
+   "per_column": {
+    "capacity": {
+     "max_abs": 0.27258798983439425,
+     "max_rel": 0.4271862112042386,
+     "n": 6000,
+     "n_finite_mismatch": 0
+    },
+    "peak": {
+     "max_abs": 0.24455400000000005,
+     "max_rel": 0.34049111785909714,
+     "n": 6000,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "capacity_bootstrap_draws.csv"
+  },
+  {
+   "file": "capacity_corr.csv",
+   "verdict": "STOCHASTIC-BUT-CONSISTENT",
+   "aligned_by": "row order",
+   "rows": 1,
+   "n_numeric_cols": 4,
+   "max_abs_diff": 0.0373571583420752,
+   "max_rel_diff": 0.03925079690950715,
+   "worst_column": "r_lo",
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "r_lo",
+       "r_hi"
+      ],
+      "n": 1,
+      "n_overlap": 1,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 1,
+    "n": 1,
+    "n_overlap": 1,
+    "all_overlap": true
+   },
+   "per_column": {
+    "r_point": {
+     "max_abs": 0.002548332020603117,
+     "max_rel": 0.002558183694903731,
+     "n": 1,
+     "n_finite_mismatch": 0
+    },
+    "r_med": {
+     "max_abs": 0.004678181573855689,
+     "max_rel": 0.004723519988237742,
+     "n": 1,
+     "n_finite_mismatch": 0
+    },
+    "r_lo": {
+     "max_abs": 0.0373571583420752,
+     "max_rel": 0.03925079690950715,
+     "n": 1,
+     "n_finite_mismatch": 0
+    },
+    "r_hi": {
+     "max_abs": 0.0004507178395920519,
+     "max_rel": 0.00045094941077862305,
+     "n": 1,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "capacity_corr.csv"
+  },
+  {
+   "file": "capacity_isolates.csv",
+   "verdict": "DIVERGENT (no interval in file)",
+   "aligned_by": "keys: clade,isolate",
+   "rows": 12,
+   "n_numeric_cols": 2,
+   "max_abs_diff": 0.18204795679694563,
+   "max_rel_diff": 0.2125133850321917,
+   "worst_column": "capacity",
+   "interval": null,
+   "per_column": {
+    "capacity": {
+     "max_abs": 0.18204795679694563,
+     "max_rel": 0.2125133850321917,
+     "n": 12,
+     "n_finite_mismatch": 0
+    },
+    "peak": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 12,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "capacity_isolates.csv"
+  },
+  {
+   "file": "identifiability_optima.csv",
+   "verdict": "DIVERGENT (no interval in file)",
+   "aligned_by": "keys: knob,clade",
+   "rows": 12,
+   "n_numeric_cols": 2,
+   "max_abs_diff": 0.2350021266145622,
+   "max_rel_diff": 0.4515664419999176,
+   "worst_column": "opt_value",
+   "interval": null,
+   "per_column": {
+    "opt_value": {
+     "max_abs": 0.2350021266145622,
+     "max_rel": 0.26955648496620443,
+     "n": 12,
+     "n_finite_mismatch": 0
+    },
+    "opt_rmse": {
+     "max_abs": 0.035487856969384,
+     "max_rel": 0.4515664419999176,
+     "n": 12,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "identifiability_optima.csv"
+  },
+  {
+   "file": "identifiability_profiles.csv",
+   "verdict": "DIVERGENT (no interval in file)",
+   "aligned_by": "keys: knob,clade",
+   "rows": 300,
+   "n_numeric_cols": 2,
+   "max_abs_diff": 0.2515279941675223,
+   "max_rel_diff": 0.8460386002122878,
+   "worst_column": "rmse",
+   "interval": null,
+   "per_column": {
+    "value": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 300,
+     "n_finite_mismatch": 0
+    },
+    "rmse": {
+     "max_abs": 0.2515279941675223,
+     "max_rel": 0.8460386002122878,
+     "n": 300,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "identifiability_profiles.csv"
+  },
+  {
+   "file": "predicted_vs_observed.csv",
+   "verdict": "DIVERGENT (no interval in file)",
+   "aligned_by": "keys: clade",
+   "rows": 48,
+   "n_numeric_cols": 4,
+   "max_abs_diff": 0.13592143233940068,
+   "max_rel_diff": 1.6287597833280278,
+   "worst_column": "predicted",
+   "interval": null,
+   "per_column": {
+    "temp_C": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 48,
+     "n_finite_mismatch": 0
+    },
+    "observed": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 48,
+     "n_finite_mismatch": 0
+    },
+    "predicted": {
+     "max_abs": 0.13592143233940068,
+     "max_rel": 0.14592589570838507,
+     "n": 48,
+     "n_finite_mismatch": 0
+    },
+    "residual": {
+     "max_abs": 0.13592143233940068,
+     "max_rel": 1.6287597833280278,
+     "n": 48,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "predicted_vs_observed.csv"
+  }
+ ]
+}

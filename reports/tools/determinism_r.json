@@ -1,0 +1,2749 @@
+{
+ "label": "R pipeline run 1 vs run 2 (determinism)",
+ "a": "/private/tmp/claude-502/-Users-g-yvon-durocher-Library-CloudStorage-OneDrive-UniversityofExeter-Documents-work-Candidas-TPC-Candidas/401069cd-280e-4d5c-b6d7-89626c728e0f/scratchpad/tables_C1_run1",
+ "b": "/Users/g.yvon-durocher/Library/CloudStorage/OneDrive-UniversityofExeter/Documents/work/Candidas TPC/Candidas/results_C1/tables",
+ "n_files_a": 37,
+ "n_files_b": 37,
+ "only_in_b": [],
+ "files": [
+  {
+   "file": "Oxygen_All_Long.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: File,Replicate",
+   "rows": 1486800,
+   "n_numeric_cols": 4,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "Time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1486800,
+     "n_finite_mismatch": 0
+    },
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1486800,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1486800,
+     "n_finite_mismatch": 0
+    },
+    "Oxygen": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1486800,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "Oxygen_All_Long.csv"
+  },
+  {
+   "file": "Oxygen_Curve_Code_Key.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: curve_code,series_id,Replicate",
+   "rows": 1080,
+   "n_numeric_cols": 2,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "Oxygen_Curve_Code_Key.csv"
+  },
+  {
+   "file": "Oxygen_Data_Filtered.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: curve_code,Replicate",
+   "rows": 393487,
+   "n_numeric_cols": 5,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "Time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "Oxygen": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "O2_fit": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "Oxygen_Data_Filtered.csv"
+  },
+  {
+   "file": "Oxygen_Data_Smoothed_Trimmed.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: File,Replicate,series_id,curve_code,end_reason",
+   "rows": 393487,
+   "n_numeric_cols": 19,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "Time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "Oxygen": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "O2_fit": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "peak_time_raw": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "peak_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "main_run_start_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "main_run_end_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "steepest_drop_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "end_time_chosen": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "peak_idx_raw": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "peak_idx": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "main_run_start_idx": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "main_run_end_idx": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "steepest_drop_idx": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "end_idx": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "start_shift_points": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    },
+    "start_shift_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 393487,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "Oxygen_Data_Smoothed_Trimmed.csv"
+  },
+  {
+   "file": "Oxygen_Trimmed_Series_Metadata.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: curve_code,series_id,Replicate,end_reason",
+   "rows": 1080,
+   "n_numeric_cols": 17,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "n_points_total": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "n_points_trimmed": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "peak_time_raw": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "peak_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "main_run_start_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "main_run_end_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "steepest_drop_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "chosen_end_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "fit_duration_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "delta_Ninoc_to_N0_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "start_shift_points": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "start_shift_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "main_run_duration": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "main_run_drop": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "main_run_score": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "Oxygen_Trimmed_Series_Metadata.csv"
+  },
+  {
+   "file": "Skipped_Series_Log.csv",
+   "verdict": "NO NUMERIC COLUMNS",
+   "detail": "keys: curve_code,series_id,reason",
+   "rows_a": 0,
+   "rows_b": 0,
+   "rel": "Skipped_Series_Log.csv"
+  },
+  {
+   "file": "activation_energy_summary.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: otu_name",
+   "rows": 18,
+   "n_numeric_cols": 11,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "growth_E_eV": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "respiration_E_eV": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "growth_se_E_eV": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "respiration_se_E_eV": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "growth_r_squared": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "respiration_r_squared": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "growth_n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "respiration_n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "activation_energy_summary.csv"
+  },
+  {
+   "file": "arrhenius_growth_fgC_h_coefs.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: otu_name",
+   "rows": 18,
+   "n_numeric_cols": 8,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "alpha": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "E_eV": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "se_E_eV": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "r_squared": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "arrhenius_growth_fgC_h_coefs.csv"
+  },
+  {
+   "file": "arrhenius_respiration_fgC_h_coefs.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: otu_name",
+   "rows": 18,
+   "n_numeric_cols": 8,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "alpha": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "E_eV": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "se_E_eV": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "r_squared": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "arrhenius_respiration_fgC_h_coefs.csv"
+  },
+  {
+   "file": "bayes_E_resp_minus_growth.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Group",
+   "rows": 5,
+   "n_numeric_cols": 4,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "lo",
+       "hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 1,
+    "n": 5,
+    "n_overlap": 5,
+    "all_overlap": true
+   },
+   "per_column": {
+    "E_resp_minus_growth": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "P_resp_more_sensitive": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "bayes_E_resp_minus_growth.csv"
+  },
+  {
+   "file": "bayes_clade_contrasts.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: parameter,group_a,group_b",
+   "rows": 40,
+   "n_numeric_cols": 4,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "lo",
+       "hi"
+      ],
+      "n": 40,
+      "n_overlap": 40,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 1,
+    "n": 40,
+    "n_overlap": 40,
+    "all_overlap": true
+   },
+   "per_column": {
+    "diff": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 40,
+     "n_finite_mismatch": 0
+    },
+    "lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 40,
+     "n_finite_mismatch": 0
+    },
+    "hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 40,
+     "n_finite_mismatch": 0
+    },
+    "P_a_greater": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 40,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "bayes_clade_contrasts.csv"
+  },
+  {
+   "file": "bayes_clade_params.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Group",
+   "rows": 5,
+   "n_numeric_cols": 10,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "growth_E_lo",
+       "growth_E_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     },
+     {
+      "cols": [
+       "growth_Topt_lo",
+       "growth_Topt_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     },
+     {
+      "cols": [
+       "resp_E_lo",
+       "resp_E_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 3,
+    "n": 15,
+    "n_overlap": 15,
+    "all_overlap": true
+   },
+   "per_column": {
+    "growth_E_eV": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "growth_E_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "growth_E_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "growth_Th_K": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "growth_Topt_C": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "growth_Topt_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "growth_Topt_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "resp_E_eV": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "resp_E_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "resp_E_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "bayes_clade_params.csv"
+  },
+  {
+   "file": "bayes_cue_by_clade.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Group",
+   "rows": 600,
+   "n_numeric_cols": 4,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "lo",
+       "hi"
+      ],
+      "n": 600,
+      "n_overlap": 600,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 1,
+    "n": 600,
+    "n_overlap": 600,
+    "all_overlap": true
+   },
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 600,
+     "n_finite_mismatch": 0
+    },
+    "CUE": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 600,
+     "n_finite_mismatch": 0
+    },
+    "lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 600,
+     "n_finite_mismatch": 0
+    },
+    "hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 600,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "bayes_cue_by_clade.csv"
+  },
+  {
+   "file": "bayes_cue_by_isolate.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Group,Isolate",
+   "rows": 1800,
+   "n_numeric_cols": 4,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "lo",
+       "hi"
+      ],
+      "n": 1800,
+      "n_overlap": 1800,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 1,
+    "n": 1800,
+    "n_overlap": 1800,
+    "all_overlap": true
+   },
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1800,
+     "n_finite_mismatch": 0
+    },
+    "CUE": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1800,
+     "n_finite_mismatch": 0
+    },
+    "lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1800,
+     "n_finite_mismatch": 0
+    },
+    "hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1800,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "bayes_cue_by_isolate.csv"
+  },
+  {
+   "file": "bayes_growth_ss_summary.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: variable",
+   "rows": 72,
+   "n_numeric_cols": 8,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "q2.5",
+       "q97.5"
+      ],
+      "n": 72,
+      "n_overlap": 72,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 1,
+    "n": 72,
+    "n_overlap": 72,
+    "all_overlap": true
+   },
+   "per_column": {
+    "mean": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "sd": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "q2.5": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "q50": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "q97.5": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "rhat": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "ess_bulk": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "ess_tail": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "bayes_growth_ss_summary.csv"
+  },
+  {
+   "file": "bayes_resp_arr_summary.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: variable",
+   "rows": 46,
+   "n_numeric_cols": 8,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "q2.5",
+       "q97.5"
+      ],
+      "n": 46,
+      "n_overlap": 46,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 1,
+    "n": 46,
+    "n_overlap": 46,
+    "all_overlap": true
+   },
+   "per_column": {
+    "mean": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 46,
+     "n_finite_mismatch": 0
+    },
+    "sd": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 46,
+     "n_finite_mismatch": 0
+    },
+    "q2.5": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 46,
+     "n_finite_mismatch": 0
+    },
+    "q50": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 46,
+     "n_finite_mismatch": 0
+    },
+    "q97.5": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 46,
+     "n_finite_mismatch": 0
+    },
+    "rhat": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 46,
+     "n_finite_mismatch": 0
+    },
+    "ess_bulk": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 46,
+     "n_finite_mismatch": 0
+    },
+    "ess_tail": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 46,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "bayes_resp_arr_summary.csv"
+  },
+  {
+   "file": "bayes_resp_model_comparison_loo.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: model",
+   "rows": 2,
+   "n_numeric_cols": 8,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "elpd_diff": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 2,
+     "n_finite_mismatch": 0
+    },
+    "se_diff": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 2,
+     "n_finite_mismatch": 0
+    },
+    "elpd_loo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 2,
+     "n_finite_mismatch": 0
+    },
+    "se_elpd_loo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 2,
+     "n_finite_mismatch": 0
+    },
+    "p_loo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 2,
+     "n_finite_mismatch": 0
+    },
+    "se_p_loo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 2,
+     "n_finite_mismatch": 0
+    },
+    "looic": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 2,
+     "n_finite_mismatch": 0
+    },
+    "se_looic": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 2,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "bayes_resp_model_comparison_loo.csv"
+  },
+  {
+   "file": "carbon_tax_contrasts_fever.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: auris,comp",
+   "rows": 4,
+   "n_numeric_cols": 5,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "lo",
+       "hi"
+      ],
+      "n": 4,
+      "n_overlap": 4,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 1,
+    "n": 4,
+    "n_overlap": 4,
+    "all_overlap": true
+   },
+   "per_column": {
+    "ratio": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "P_cheaper": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 4,
+     "n_finite_mismatch": 0
+    },
+    "credible": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 4,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "carbon_tax_contrasts_fever.csv"
+  },
+  {
+   "file": "carbon_tax_curves.csv",
+   "verdict": "STOCHASTIC-BUT-CONSISTENT",
+   "aligned_by": "keys: Group",
+   "rows": 445,
+   "n_numeric_cols": 4,
+   "max_abs_diff": 0.20472920229141067,
+   "max_rel_diff": 0.022054831618708998,
+   "worst_column": "hi",
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "lo",
+       "hi"
+      ],
+      "n": 445,
+      "n_overlap": 445,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 1,
+    "n": 445,
+    "n_overlap": 445,
+    "all_overlap": true
+   },
+   "per_column": {
+    "T_C": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 445,
+     "n_finite_mismatch": 0
+    },
+    "tax": {
+     "max_abs": 0.043554571468670034,
+     "max_rel": 0.009578882100933713,
+     "n": 445,
+     "n_finite_mismatch": 0
+    },
+    "lo": {
+     "max_abs": 0.05407213555491719,
+     "max_rel": 0.014260912856766979,
+     "n": 445,
+     "n_finite_mismatch": 0
+    },
+    "hi": {
+     "max_abs": 0.20472920229141067,
+     "max_rel": 0.022054831618708998,
+     "n": 445,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "carbon_tax_curves.csv"
+  },
+  {
+   "file": "carbon_tax_group.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Group",
+   "rows": 20,
+   "n_numeric_cols": 4,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "lo",
+       "hi"
+      ],
+      "n": 20,
+      "n_overlap": 20,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 1,
+    "n": 20,
+    "n_overlap": 20,
+    "all_overlap": true
+   },
+   "per_column": {
+    "T_C": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 20,
+     "n_finite_mismatch": 0
+    },
+    "tax": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 20,
+     "n_finite_mismatch": 0
+    },
+    "lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 20,
+     "n_finite_mismatch": 0
+    },
+    "hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 20,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "carbon_tax_group.csv"
+  },
+  {
+   "file": "carbon_tax_isolate.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Isolate,Group",
+   "rows": 30,
+   "n_numeric_cols": 4,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "lo",
+       "hi"
+      ],
+      "n": 30,
+      "n_overlap": 30,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 1,
+    "n": 30,
+    "n_overlap": 30,
+    "all_overlap": true
+   },
+   "per_column": {
+    "T_C": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 30,
+     "n_finite_mismatch": 0
+    },
+    "tax": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 30,
+     "n_finite_mismatch": 0
+    },
+    "lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 30,
+     "n_finite_mismatch": 0
+    },
+    "hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 30,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "carbon_tax_isolate.csv"
+  },
+  {
+   "file": "cue_quadratic_fit_coefs.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: otu_name",
+   "rows": 18,
+   "n_numeric_cols": 11,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "b0": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "b1_T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "b2_T2": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "T_opt_C": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "CUE_at_opt": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "concave": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "r_squared": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 18,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "cue_quadratic_fit_coefs.csv"
+  },
+  {
+   "file": "derived_N0_R_results_with_carbon.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Replicate,otu_name",
+   "rows": 991,
+   "n_numeric_cols": 26,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "r": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "K": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "O2_0": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "T_end_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "keep": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "has_curvature": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "delta_aicc_curv": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "fit_valid": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "fit_start_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "fit_end_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "delta_Ninoc_to_N0_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "N_inoculation_cells_per_L": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "N0_cells_per_L": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "C_tot_O2_mg_per_L": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "biomass_integral_cells_min_per_L": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "R_O2_mg_cell_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "growth_fgC_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "respiration_fgC_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "growth_C_per_C_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "respiration_C_per_C_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "CUE": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    },
+    "resp_over_growth": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 991,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "derived_N0_R_results_with_carbon.csv"
+  },
+  {
+   "file": "diagnostic_hot_temps_growth_check.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Replicate",
+   "rows": 111,
+   "n_numeric_cols": 12,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "r": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "K": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "O2_0": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "T_end_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "delta_Ninoc_to_N0_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "N0_cells_per_L": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "growth_fgC_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "respiration_fgC_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "CUE": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    },
+    "resp_over_growth": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 111,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "diagnostic_hot_temps_growth_check.csv"
+  },
+  {
+   "file": "failed_fits_at_bound.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Replicate",
+   "rows": 17,
+   "n_numeric_cols": 5,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 17,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 17,
+     "n_finite_mismatch": 0
+    },
+    "r": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 17,
+     "n_finite_mismatch": 0
+    },
+    "K": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 17,
+     "n_finite_mismatch": 0
+    },
+    "O2_0": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 17,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "failed_fits_at_bound.csv"
+  },
+  {
+   "file": "fig_contrasts.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: a,b",
+   "rows": 10,
+   "n_numeric_cols": 4,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "lo",
+       "hi"
+      ],
+      "n": 10,
+      "n_overlap": 10,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 1,
+    "n": 10,
+    "n_overlap": 10,
+    "all_overlap": true
+   },
+   "per_column": {
+    "ratio": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 10,
+     "n_finite_mismatch": 0
+    },
+    "lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 10,
+     "n_finite_mismatch": 0
+    },
+    "hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 10,
+     "n_finite_mismatch": 0
+    },
+    "credible": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 10,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "fig_contrasts.csv"
+  },
+  {
+   "file": "fig_values.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Group",
+   "rows": 5,
+   "n_numeric_cols": 39,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": {
+    "pairs": [
+     {
+      "cols": [
+       "E_lo",
+       "E_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     },
+     {
+      "cols": [
+       "ER_lo",
+       "ER_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     },
+     {
+      "cols": [
+       "dE_lo",
+       "dE_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     },
+     {
+      "cols": [
+       "Eh_lo",
+       "Eh_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     },
+     {
+      "cols": [
+       "Topt_lo",
+       "Topt_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     },
+     {
+      "cols": [
+       "Tcue_lo",
+       "Tcue_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     },
+     {
+      "cols": [
+       "tax37_lo",
+       "tax37_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     },
+     {
+      "cols": [
+       "tax40_lo",
+       "tax40_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     },
+     {
+      "cols": [
+       "g40_lo",
+       "g40_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     },
+     {
+      "cols": [
+       "growth_lost_lo",
+       "growth_lost_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     },
+     {
+      "cols": [
+       "gk_lo",
+       "gk_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     },
+     {
+      "cols": [
+       "fc_lo",
+       "fc_hi"
+      ],
+      "n": 5,
+      "n_overlap": 5,
+      "all_overlap": true
+     }
+    ],
+    "n_pairs": 12,
+    "n": 60,
+    "n_overlap": 60,
+    "all_overlap": true
+   },
+   "per_column": {
+    "E": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "E_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "E_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "ER": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "ER_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "ER_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "dE": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "dE_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "dE_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "dE_credible": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "Eh": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "Eh_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "Eh_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "Topt": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "Topt_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "Topt_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "Tcue": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "Tcue_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "Tcue_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "P_below_body": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "tax37": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "tax37_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "tax37_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "tax40": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "tax40_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "tax40_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "growth37": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "growth40": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "g40_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "g40_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "growth_lost": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "growth_lost_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "growth_lost_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "growth_kept": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "gk_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "gk_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "fever_cost": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "fc_lo": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    },
+    "fc_hi": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 5,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "fig_values.csv"
+  },
+  {
+   "file": "fit_coefficients_long.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Replicate,parameter",
+   "rows": 3240,
+   "n_numeric_cols": 11,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "Estimate": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "SE": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "t value": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "p_value": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "T_end_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "keep": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "has_curvature": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "delta_aicc_curv": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    },
+    "fit_valid": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 3240,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "fit_coefficients_long.csv"
+  },
+  {
+   "file": "fit_coefficients_wide.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Replicate",
+   "rows": 1063,
+   "n_numeric_cols": 10,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "r": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "K": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "O2_0": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "T_end_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "keep": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "has_curvature": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "delta_aicc_curv": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    },
+    "fit_valid": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1063,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "fit_coefficients_wide.csv"
+  },
+  {
+   "file": "fit_metrics.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Replicate",
+   "rows": 1080,
+   "n_numeric_cols": 17,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "r2": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "rmse": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "rss": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "aic": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "aicc": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "aicc_lin": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "delta_aicc_curv": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "rt_curv": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "has_curvature": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "r_at_bound": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "K_at_bound": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "fit_valid": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "T_end_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "keep": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "fit_metrics.csv"
+  },
+  {
+   "file": "group_lookup_with_delta.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Replicate",
+   "rows": 1080,
+   "n_numeric_cols": 6,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "fit_start_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "fit_end_time": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "delta_Ninoc_to_N0_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    },
+    "N_inoculation_cells_per_L": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 1080,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "group_lookup_with_delta.csv"
+  },
+  {
+   "file": "removed_points.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: Replicate,reason",
+   "rows": 72,
+   "n_numeric_cols": 2,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "removed_points.csv"
+  },
+  {
+   "file": "replication_summary_by_temperature.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "row order",
+   "rows": 204,
+   "n_numeric_cols": 3,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 204,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 204,
+     "n_finite_mismatch": 0
+    },
+    "n_replicates": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 204,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "replication_summary_by_temperature.csv"
+  },
+  {
+   "file": "sharpe_schoolfield_K_O2_rate_coefs.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: parameter,otu_name",
+   "rows": 72,
+   "n_numeric_cols": 7,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "Estimate": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "r_squared": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "rmse_log": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "sharpe_schoolfield_K_O2_rate_coefs.csv"
+  },
+  {
+   "file": "sharpe_schoolfield_growth_fgC_h_coefs.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: parameter,otu_name",
+   "rows": 72,
+   "n_numeric_cols": 7,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "Estimate": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "r_squared": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "rmse_log": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "sharpe_schoolfield_growth_fgC_h_coefs.csv"
+  },
+  {
+   "file": "sharpe_schoolfield_respiration_fgC_h_coefs.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "keys: parameter,otu_name",
+   "rows": 72,
+   "n_numeric_cols": 7,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "Estimate": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "r_squared": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "rmse_log": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "cell_volume_um3": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    },
+    "cell_carbon_fg": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 72,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "sharpe_schoolfield_respiration_fgC_h_coefs.csv"
+  },
+  {
+   "file": "summary_hot_temps_growth_check.csv",
+   "verdict": "IDENTICAL",
+   "aligned_by": "row order",
+   "rows": 26,
+   "n_numeric_cols": 9,
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "worst_column": null,
+   "interval": null,
+   "per_column": {
+    "T": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "OTU": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "n": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "mean_r": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "median_r": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "mean_growth_fgC_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "median_growth_fgC_h": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "mean_T_end_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    },
+    "median_T_end_min": {
+     "max_abs": 0.0,
+     "max_rel": 0.0,
+     "n": 26,
+     "n_finite_mismatch": 0
+    }
+   },
+   "rel": "summary_hot_temps_growth_check.csv"
+  }
+ ]
+}
