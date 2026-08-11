@@ -11,12 +11,22 @@ If you just want the commands, read [Install](#install) and [Run](#run).
 
 | Thing | Minimum | What this project was built and verified with |
 |---|---|---|
-| **R** | 4.4 | **4.5.2** (`aarch64-apple-darwin20`) |
+| **R** | **4.5.0** (hard) | **4.5.2** (`aarch64-apple-darwin20`) |
 | **A C++17 toolchain** | any working one | Apple clang 17.0.0 (Xcode CLT); `R CMD config CXX17` → `clang++ -arch arm64` |
 | **Python** | 3.9 | **3.9.6** (macOS system `/usr/bin/python3`, arm64) — with `numpy` and `matplotlib` |
 | **git** | 2.x | 2.50.1 |
 | **Quarto** | 1.4 | **1.8.27** (bundles pandoc 3.6.3) |
 | **A LaTeX engine** | xelatex | quarto's own TinyTeX (XeTeX 3.141592653-2.6-0.999998, TeX Live 2026) |
+
+**R 4.5 is a hard floor, not a preference.** The lockfile pins Bioconductor 3.22
+(`BiocVersion`, `edgeR 4.8.2`, `limma 3.66.0`) and CRAN packages including
+`ggrepel 0.9.7`, all of which declare `Depends: R (>= 4.5.0)`. On R 4.4 the
+restore installs the ~150 packages that can build, then aborts on those, and
+because `renv` links a restore into the project library only once the whole
+transaction succeeds, the library is left empty and step 4/6 reports every
+package missing. That is the R version, not a broken toolchain.
+`scripts/00_install.R` now checks this first and stops with the fix. The Oxygen
+model repository pins the same R, so one install serves both.
 
 Platform notes:
 
