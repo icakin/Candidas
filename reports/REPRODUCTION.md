@@ -12,6 +12,28 @@ decision. Where a number does not come back, it says so, with the number.
 
 ---
 
+
+> ### Note added 2026-08-11 — the etc-GEM sections are now historical
+>
+> **The etc-GEM has been cut from the manuscript.** `manuscript/v3.qmd` no longer
+> mentions it (`grep -c -i "etc-GEM"` returns 0), and the six figures the paper now
+> carries are all respirometry. Sections **1b**, **1c**, **2d**, **2e**, **2f** and
+> the whole of §4 concern a model that no longer supports a published claim.
+>
+> They are kept unchanged, because they are the record of what was found at the
+> time and because the model code has not gone anywhere: the `cauris_etcgem`
+> submodule, the vendored `outputs/supp_data/`, and scripts 13, 16 and 17 all
+> remain, with `run_all.sh` running those figure stages behind a flag.
+> `scripts/README.md` records what a future treatment would need.
+>
+> **What still stands, and is now the whole paper:** the respirometry half
+> reproduces — worst disagreement 2.4 × 10⁻¹⁰ through stage 07, every load-bearing
+> Bayesian number within 0.4 % relative. Two later exceptions to that, both traced
+> to the environment rather than to the code, are documented in the C9 pull request
+> and in [`README.md`](README.md).
+>
+> Read the numbers below as of 2026-07-25, not as current.
+
 ## VERDICT
 
 **No — not today, not as it stands, and the failure is specific rather than

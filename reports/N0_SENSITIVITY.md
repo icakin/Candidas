@@ -9,6 +9,38 @@ Everything here was measured on this machine, from the C1 regeneration
 
 ---
 
+
+> ### Note added 2026-08-11 — two things have closed since
+>
+> This report was written on 2026-07-26. Two developments since bear directly on
+> its recommendation, and neither is reflected in the text below.
+>
+> **1. The reconciliation closed.** This report left open the disagreement between
+> the inoculation density as entered and the biomass implied at the fit-window
+> start. With `N_inoc` now regenerated in code, `FC_Initial` against N₀ at fit
+> start comes to **1.53×**, range **0.79–3.24** — a factor of order one, not the
+> order-of-magnitude gap that was open when this was written.
+>
+> **2. The headline no longer depends on the N₀ treatment at all.**
+> [`C11_scale_free/`](C11_scale_free/C11_scale_free.pdf) established that
+> CUE = 1/(1 + a·K/(r·e^{rδ})), where every conversion constant — the carbon
+> quota, the O₂-to-C factor, RQ, the inoculation density — sits inside a
+> temperature-independent `a` that **cancels in the argmin**. The CUE optimum is
+> therefore identifiable from the fitted `r` and `K` alone. Taken model-free, it is
+> **26.1–31.5 °C**, *P*(< 37 °C) = **1.0000** in all five taxa, margins
+> 5.5–10.9 °C — *cooler* than the fitted estimate, so the claim strengthens.
+>
+> That does not overturn anything below. The structural finding —
+> `log R = log K − log N_inoc − r·δ`, so respiration is a decreasing function of
+> the fitted growth rate by construction — is exactly why the scale-free route was
+> worth taking, and the conclusion that the fine within-*C. auris* ordering does
+> not survive the treatment stands: the scale-free between-taxon spread in E_K is
+> **0.07 eV** against a published 0.22 eV.
+>
+> What it does change is the framing of the recommendation below. The sub-37 °C
+> claim no longer needs the N₀ question settled. The absolute CUE level and
+> per-cell respiration still do.
+
 ## RECOMMENDATION, up front
 
 **Keep ARM 1 (the shipped `N0 = N_inoc · e^(r·δ)`) for the paper as it stands,
