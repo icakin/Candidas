@@ -80,6 +80,71 @@ message("  project : ", PROJ)
 message("  R       : ", getRversion(), "  (", R.version$platform, ")")
 
 
+# ---- 1. R version vs the lockfile -------------------------------------------
+
+if (file.exists(LOCK)) {
+  lock_r <- tryCatch({
+    j <- readLines(LOCK, warn = FALSE)
+    i <- grep('"Version"', j)[1]
+    sub('.*"Version"\\s*:\\s*"([^"]+)".*', "\\1", j[i])
+  }, error = function(e) NA_character_)
+  if (!is.na(lock_r)) {
+    have <- getRversion()
+    want <- package_version(lock_r)
+    same_minor <- identical(unlist(want)[1:2], unlist(have)[1:2])
+
+    if (identical(as.character(have), lock_r)) {
+      ok("R version matches renv.lock (", lock_r, ")")
+
+    } else if (!same_minor && have < want) {
+      # HARD STOP, not a warning. A minor-version downgrade is not a
+      # reproducibility inconvenience, it is a wall: the lock pins Bioconductor
+      # 3.22 (BiocVersion, edgeR, limma), whose DESCRIPTION files carry
+      # `Depends: R (>= 4.5.0)`, and ggrepel 0.9.7 does too. renv installs the
+      # ~150 packages that CAN build, then aborts on those, and because renv
+      # only links a restore into the project library once the WHOLE
+      # transaction succeeds, the library is left empty and step 4/6 reports
+      # every package missing. That cascade is what this check exists to
+      # pre-empt, 30 seconds of downloads earlier and with a readable cause.
+      bad("R ", have, " is older than the R this project is pinned to (", lock_r, ")")
+      message("")
+      message("         This CANNOT be worked around by installing system libraries.")
+      message("         Bioconductor ",
+              tryCatch({
+                j <- readLines(LOCK, warn = FALSE)
+                k <- grep('"Bioconductor"', j)[1]
+                sub('.*"Version"\\s*:\\s*"([^"]+)".*', "\\1", j[k + 1])
+              }, error = function(e) "(pinned)"),
+              " and several CRAN pins require R >= ",
+              paste(unlist(want)[1:2], collapse = "."), ".0.")
+      message("")
+      message("         fix: install R ", lock_r, " from")
+      message("              https://cran.r-project.org/bin/macosx/")
+      message("         Both this project and the Oxygen model pin the same R, so one")
+      message("         install serves both. Installing 4.5 does not remove 4.4.")
+      message("")
+      message("         Then re-run this script. The packages already downloaded are in")
+      message("         the renv cache, so the retry is much faster than the first run.")
+      message("")
+      message("         If you must stay on R ", have, ", the only correct route is to")
+      message("         re-solve the lockfile against an older Bioconductor release")
+      message("         (renv::init(bioconductor = '3.20')), which changes ~170 pins and")
+      message("         diverges from the environment the co-author packaged. Not advised.")
+      stop("R ", have, " < pinned R ", lock_r, ". Install the pinned R and re-run.")
+
+    } else {
+      message("  [warn] renv.lock was built on R ", lock_r, "; you are on ", have, ".\n",
+              "         renv will still restore, but binaries may be rebuilt from source\n",
+              "         and exact numeric reproduction is no longer guaranteed.")
+    }
+  }
+} else {
+  bad("renv.lock not found at ", LOCK)
+  stop("Cannot pin the environment without renv.lock. Is this the project root?")
+}
+
+
+
 # =============================================================================
 # 0. SYSTEM PREREQUISITES  (macOS; see SETUP.md "System prerequisites")
 # =============================================================================
@@ -251,28 +316,6 @@ if (CHECK_ONLY) {
 }
 
 
-# ---- 1. R version vs the lockfile -------------------------------------------
-
-if (file.exists(LOCK)) {
-  lock_r <- tryCatch({
-    j <- readLines(LOCK, warn = FALSE)
-    i <- grep('"Version"', j)[1]
-    sub('.*"Version"\\s*:\\s*"([^"]+)".*', "\\1", j[i])
-  }, error = function(e) NA_character_)
-  if (!is.na(lock_r)) {
-    if (identical(as.character(getRversion()), lock_r)) {
-      ok("R version matches renv.lock (", lock_r, ")")
-    } else {
-      message("  [warn] renv.lock was built on R ", lock_r, "; you are on ",
-              getRversion(), ".\n",
-              "         renv will still restore, but binaries may be rebuilt from source\n",
-              "         and exact numeric reproduction is no longer guaranteed.")
-    }
-  }
-} else {
-  bad("renv.lock not found at ", LOCK)
-  stop("Cannot pin the environment without renv.lock. Is this the project root?")
-}
 
 
 # ---- 2. renv ----------------------------------------------------------------
