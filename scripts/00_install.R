@@ -272,6 +272,39 @@ if (identical(Sys.info()[["sysname"]], "Darwin")) {
   } else {
     ok("conda not on PATH        (no libkrb5 interference expected)")
   }
+
+  # ---- 0.45 gettext headers (libintl.h) for data.table ---------------------
+  # data.table's src/po.h includes <libintl.h> for message translation, and
+  # from 1.18 it does so without a fallback. CRAN's own macOS builders have
+  # gettext in /opt/R/arm64, which is why the CRAN binary exists and why R's
+  # Makeconf already puts -I/opt/R/arm64/include on every compile line - but a
+  # user machine has that directory empty unless it was populated deliberately.
+  # So data.table compiles on CRAN and dies here with
+  #     ./po.h:2:10: fatal error: 'libintl.h' file not found
+  # taking dtplyr and tidyverse (and therefore the entire pipeline) with it.
+  # Homebrew's gettext is keg-only, so `brew install gettext` alone does NOT
+  # put the header anywhere the compiler looks; CRAN's own tarball does.
+  intl_dirs <- c("/opt/R/arm64/include", "/opt/R/x86_64/include",
+                 "/opt/homebrew/opt/gettext/include", "/usr/local/opt/gettext/include",
+                 "/opt/homebrew/include", "/usr/local/include")
+  intl_hit <- intl_dirs[file.exists(file.path(intl_dirs, "libintl.h"))]
+  if (length(intl_hit)) {
+    ok("libintl.h                (", intl_hit[1], ")")
+  } else {
+    arch    <- if (identical(R.version$arch, "aarch64")) "arm64" else "x86_64"
+    tarball <- if (arch == "arm64") "gettext-0.21-darwin.20-arm64.tar.gz"
+               else                 "gettext-0.21-darwin.17-x86_64.tar.gz"
+    prob("gettext headers missing (libintl.h)",
+         paste0("data.table's po.h includes <libintl.h> unconditionally. Without it the\n",
+                "           build fails, and dtplyr and tidyverse fail with it - which is every\n",
+                "           script in this project. Searched: ",
+                paste(intl_dirs, collapse = ", ")),
+         paste0("install CRAN's own gettext into /opt/R/", arch,
+                ", which R already\n                searches:\n",
+                "                  curl -fO https://mac.R-project.org/libs-", arch, "/", tarball, "\n",
+                "                  sudo tar fvxz ", tarball, " -C /\n",
+                "                (Homebrew's gettext is keg-only and will NOT be found.)"))
+  }
 } else {
   message("\n  Not macOS (", Sys.info()[["sysname"]], ") - the prerequisite checks are ",
           "macOS-specific and are skipped.\n  Linux: build-essential. Windows: Rtools. ",
