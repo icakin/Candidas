@@ -1,351 +1,176 @@
 # RUNBOOK — Candidas, from scratch
 
-The definitive from-nothing instructions. Every number below was measured on the
-machine recorded in `env/versions.json` (macOS 26.2, Apple silicon, 16 cores,
-R 4.5.2, Python 3.9.6) during the C1 reproduction run.
+What to run, in what order, what it should take, and what to check at each stage.
 
-`SETUP.md` is the short version. This is the one that tells you what you should
-see at each stage and what to do when you do not.
+**Updated 2026-08-11.** The original was written for C1, before the script
+renumbering (14 → 19 scripts), before `run_all.sh` gained its current stage list,
+and before the manuscript was flattened from `manuscript/draft/v3_quarto/` to
+`manuscript/v3.qmd`. It has been corrected for all three rather than annotated:
+this is instructions, not a finding, and its only value is being right. The C1-era
+original is in the git history of this file.
+
+For **installation and system prerequisites**, read
+[`SETUP.md`](../SETUP.md) — it is the authority, and it is more complete than the
+install section this runbook used to carry. What follows assumes the environment
+is already in place.
 
 ---
 
 ## 0. Before you start
 
-You need, on `PATH`: **R ≥ 4.4**, **Python ≥ 3.9**, **git**, **quarto**, and a
-working **C++17 compiler** (macOS: `xcode-select --install`; Linux:
-`build-essential`; Windows: Rtools).
+| | |
+|---|---|
+| Time | **~13 min** for a full run once installed, on 16 cores. The Bayesian stage (09) is ~8 min of it. |
+| Disk | ~3 GB all in: repository, `renv/library`, TinyTeX. |
+| Network | Not needed for a run. The GEO count matrix is committed; the etc-GEM outputs are vendored. |
 
-Disk: **~3 GB** total (repo ~200 MB, renv library ~1.5 GB, Python venv ~400 MB,
-TinyTeX ~500 MB, one results tree ~70 MB, `_output/` ~20 MB).
-
-Time: **49 minutes** for a full run on this hardware (16 cores) once installed —
-etc-GEM 35 m, R pipeline 12.5 m, render 44 s. Add 15–45 min for the first-ever
-install (rstan compiles). On a slower or lower-core machine, budget 2–4 h: the
-two long poles are the etc-GEM `calibrate`/`bayes` stages and script 08.
+Install first: `Rscript scripts/00_install.R`. It checks system prerequisites
+before touching the library, restores `renv.lock`, and compiles and samples a toy
+Stan model so a broken toolchain fails in 40 seconds rather than an hour into 09.
 
 ---
 
 ## 1. Clone — with submodules
 
 ```bash
-git clone --recursive <repo-url> Candidas
+git clone --recursive https://github.com/icakin/Candidas.git
 cd Candidas
-```
-
-If you already cloned without `--recursive`:
-
-```bash
+# already cloned without --recursive?
 git submodule update --init --recursive
 ```
 
-**Check:** `ls cauris_etcgem/strains/eci_cauris/scripts/` must list
-`generate_model_data.py`. An empty `cauris_etcgem/` is the single most common
-failure mode in this project — the etc-GEM figures used to fail far downstream
-inside `read.csv()` with no clue why. They now stop immediately with
-`ETCGEM_SUPP_DATA_MISSING` or `ETCGEM_SUPP_DATA_EMPTY`.
-
-**Avoid a path containing spaces if you can.** This project lives under
-`.../Candidas TPC/Candidas`, and R encodes spaces in `--file=` as `~+~`, which
-broke every `source()` until C1 fixed it. The fix is in, but it is one less
-thing to think about.
+An unpopulated submodule is the single most common way this project fails. The
+etc-GEM outputs are also vendored at `outputs/supp_data/`, so the model figures
+resolve even without it, but the submodule is where the model itself lives.
 
 ---
 
-## 2. Install
-
-### 2a. R (10–40 min cold — rstan and StanHeaders compile)
-
-```bash
-Rscript scripts/00_install.R
-```
-
-It restores `renv.lock` (170 packages, CRAN + Bioconductor 3.22), checks every
-package the pipeline loads, works out which Stan backend brms will use, then
-**compiles and samples a 10-line toy model**.
-
-**Check:** the last lines read
-
-```
-  [ok]   all 22 packages present
-  ==> 08_bayesian_models.R will use backend: rstan
-  [ok]   toy model sampled: mu = 3.0837 (truth 3), sigma = 0.8454 (truth 1)
-```
-
-If Stan fails here, **stop**. 08 cannot run, and you will otherwise find that
-out three hours in. `00_install.R` prints per-platform instructions.
-`--no-stan` skips the compile check when you already know it works.
-
-### 2b. Python (2–5 min)
-
-```bash
-cd cauris_etcgem
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.lock
-cd ..
-```
-
-**Check:**
-
-```bash
-cauris_etcgem/.venv/bin/python -c "import etcgem, cobra; print(cobra.__version__)"
-```
-
-`requirements.lock` pins the etc-GEM **engine** to commit
-`7d32383d902184c085662031b802406353e7b083`. Before C1 it was installed from a
-bare branch reference, so the model could change under the results with no
-record. If you deliberately move the pin, re-run the whole etc-GEM pipeline —
-never mix engines across the outputs.
-
-### 2c. PDF engine (once)
-
-```bash
-quarto install tinytex
-```
-
----
-
-## 3. Run everything
+## 2. Run everything
 
 ```bash
 bash scripts/run_all.sh
 ```
 
-Three stages, timed, with a tee'd log per stage in `logs/`:
+Unattended: no prompts, no browser. Per-stage timing, tee'd logs in `logs/`,
+`set -euo pipefail`, and a SUMMARY table at the end.
 
-1. the Python etc-GEM pipeline (`generate_model_data.py all`),
-2. `Rscript scripts/run_all.R` (02 → 03 → 06 → 07 → 08 → 09 → 10 → 11 → 12 → 13, then 14),
-3. `quarto render` in `manuscript/draft` → `_output/`.
+| Stage | What runs |
+|---|---|
+| 0 *(optional, off)* | etc-GEM Python pipeline — `RUN_ETCGEM=1` to enable |
+| 1 | `Rscript scripts/run_all.R` → **02 → 03 → 06 → 07 → 08 → 09 → 11 → 12 → 14 → 15** |
+| 2 | the C11 scale-free report (`reports/C11_scale_free/R/*.R`, then its render) |
+| 3 *(optional)* | `13_capacity_expression.R`, `16_supplementary_figures.R`, `17_schematic.py` — the etc-GEM figure stages, gated off by default |
+| 4 | `quarto render` on `manuscript/v3.qmd` |
 
-That writes into **`results/`**, the canonical tree.
+Knobs, all optional: `RUN_ETCGEM`, `ETCGEM_STAGES`, `SKIP_R`, `SKIP_C11`,
+`SKIP_RENDER`, `LOG_DIR`. Read the header of `scripts/run_all.sh`; it is the
+authority on which script runs where and why.
 
-To regenerate **without touching** the committed outputs, use one of the two
-ready-made non-destructive runners, which write into `runs/` instead:
+### Which scripts do *not* run, and why
 
-```bash
-bash scripts/run_c1.sh        # the full reproduction  -> runs/C1_reproduction/
-bash scripts/run_c2_arms.sh   # the three N0 arms      -> runs/C2_arm_{current,ramp,nobp}/
-```
+**The four click-driven Shiny apps — 01, 04, 05, 06.** Their outputs are
+committed **inputs** and are treated as data. Sourcing any of them defines the
+app and returns; none launches a browser in a batch run. 06 *is* sourced by
+`run_all.R` (headless); 01, 04 and 05 are not run at all.
 
-Both just set the path knobs from §6 and call `scripts/run_all.sh`; they can be
-read in a few lines. To do it by hand:
-
-```bash
-CANDIDAS_RESULTS="$PWD/runs/my_run" \
-ETCGEM_OUT_SUPP="$PWD/cauris_etcgem/runs/my_run/supp_data" \
-ETCGEM_OUT_FIG3="$PWD/cauris_etcgem/runs/my_run/figure3_data" \
-CANDIDAS_SUPP_DATA="$PWD/cauris_etcgem/runs/my_run/supp_data" \
-CANDIDAS_EXPRESSION_OUT="$PWD/runs/my_run/expression" \
-  bash scripts/run_all.sh
-```
-
----
-
-## 3a. Where things live
-
-| tree | status | who writes it | tracked |
-|---|---|---|---|
-| **`results/`** | **canonical, shipped** — what the manuscript renders against | `bash scripts/run_all.sh` with no overrides | tables + `figures/manuscript/` |
-| **`runs/<name>/`** | **non-canonical**, one per analysis prompt, kept as evidence for a report | a runner with `CANDIDAS_RESULTS` pointed at it | tables + `figures/manuscript/`; the per-series figures, the cached `rds/` and any staging render are ignored and rebuilt on demand |
-| `cauris_etcgem/runs/<name>/` | the etc-GEM half of the same run | `ETCGEM_OUT_SUPP` / `ETCGEM_OUT_FIG3` | CSVs and the raw chains |
-| `reports/` | the written findings, their figures and their tools | by hand, and by `reports/tools/*` | everything |
-
-Every tree in `runs/` is catalogued in **[`runs/MANIFEST.md`](../runs/MANIFEST.md)**
-with the prompt that produced it, the exact command, its timings, the
-environment, what it is evidence for, and a SHA-256 index of its tables. Verify
-one with:
-
-```bash
-cd runs/<tree>/tables && shasum -a 256 -c ../CHECKSUMS_tables.txt
-```
-
-Prune policy: tables are never deleted, and neither is anything a report cites.
-Only provably regenerable, uncited bulk is removed, and `runs/MANIFEST.md`
-records what each tree still contains.
-
----
-
-## 4. Stage by stage — timings, and what to check
-
-### Stage 1 — Python etc-GEM · **35 min**
-
-| step | wall time | writes |
-|---|---:|---|
-| model build (SBML → GECKO → sectors → budget bisection) | 2.4 s | — |
-| `calibrate` — differential evolution × 4 clades | **16 min** | `_percladefit*.npy` |
-| `curves` | < 1 s | `figure3_data*/` |
-| `fit` | < 1 s | `predicted_vs_observed.csv` |
-| `ident` — 3 knobs × 25 values × 4 clades | 62 s | `identifiability_*.csv` |
-| `boot` — 120-point grid, 4 000 bootstrap replicates | 93 s | `capacity_*.csv` |
-| `apriori` | 9 s | `calibration_*.csv` |
-| `bayes` — 15³ emulator grid then 4 × (32 walkers × 4 000 steps) | **16 min** | `bayes_*.csv`, `bayes_chain_raw.npz` |
-
-**Check:** the model build prints
-
-```
-[sectors] P_total=5.483  f=(metab 0.5, bio 0.20, maint 0.3)  translation_coeff=1.378 (mu*=0.7955)
-```
-
-`mu* = 0.7955` is the anchored growth rate and therefore the **ceiling of the
-a-priori TPC**. If you see `mu* = 1.089`, you are on the OLD anchor
-(`ANCHOR_MU = 1.1 @ 313.15 K`), and your numbers will match the committed
-`calibration_r2.csv` instead of the current code. See
-`REPRODUCTION.md` §4.2 — this is the single biggest provenance trap in the repo.
-
-**Check:** each clade reports `R2 = 0.88–0.96`. Clade IV is the weak one
-(0.88); its emcee posterior for `kcat_scale` presses the upper prior bound
-(1.05) and one of its 32 walkers gets stuck at an acceptance fraction of 0.30.
-
-**Check:** the emcee diagnostics print acceptance fractions of ≈ 0.59–0.65 and
-`tau ≈ 35–54`. With 4 000 steps that is 75–115 autocorrelation times, so
-`get_autocorr_time()` returns rather than raising.
-
-### Stage 2 — R pipeline
-
-| script | wall time | note |
-|---|---:|---|
-| 02 longdata | 4.2 s | 1 469 340 rows kept of 1 486 800 (Time ≤ 1455 min) |
-| 03 trimming | 1 m 55 s | 1 080 curves; writes a large diagnostics PDF |
-| 06 inoculation | 0.3 s | app NOT launched; `otu_inoc.csv` read as data |
-| 07 oxygen_fits | 2 m 10 s | per-series `nlsLM` fits + descriptive plots |
-| **08 bayesian_models** | **8 m 00 s** | 3 models × 4 chains × 4 000 iterations (growth SS 4 m 58 s, resp Arrhenius 36 s, resp SS 2 m 18 s) |
-| 09 bayesian_plots | 10.4 s | |
-| 10 carbon_tax | 1.2 s | |
-| 11 capacity_expression | 0.7 s | reads the COMMITTED GEO matrix; no download |
-| 12 main_figures | 6.0 s | needs 08 **and** the etc-GEM outputs |
-| 13 supplementary_figures | 1.8 s | needs 11 **and** the etc-GEM outputs |
-| 14 schematic.py | 2.6 s | |
-| **total** | **12 m 33 s** | |
-
-**Check after 02:** `Time cutoff applied: kept 1469340 of 1486800 rows`.
-
-**Check after 03:** `Loaded MANUAL_FIT_WINDOWS from app file (1080 curves)` and
-`Loaded PLOT_EXCLUDE_POINTS from app file (88 points)`. If you instead see
-`0 curves`, the committed trim decisions are not being found and **you are
-running a different analysis** — see §6.
-
-**Check after 08:** no divergent transitions, `max Rhat ≤ 1.01`, `min ESS` in
-the thousands. 08 prints its own timing table.
-
-**Check after 12/13:** the console prints which `supp_data` directory it
-resolved and how many CSVs it found.
-
-### Stage 3 — quarto render · **~40 s**
-
-**Check:** six files in `manuscript/draft/_output/` —
-`manuscript`, `supplementary`, `manuscript_combined`, each `.docx` and `.pdf`.
-
----
-
-## 5. The four click-driven apps (01, 04, 05, 06)
-
-These are **not** part of an unattended run and **must not be** — they encode
-hand judgements that are committed to the repository and read as data:
-
-| app | what it owns |
+| App | Output it owns |
 |---|---|
 | `01_convert_xlsx.R` | `data/*_Oxygen.csv`, `results/tables/otu_names.csv` |
 | `04_trim_selector.R` | `results/tables/manual_fit_windows.csv` (1 080 curves), `plot_exclude_points.csv` (88 points) |
 | `05_cell_sizes.R` | `results/tables/otu_cell_sizes.csv` |
 | `06_inoculation.R` | `results/tables/otu_inoc.csv` |
 
-Sourcing any of them defines the app and returns. To open one deliberately:
+To open one deliberately:
 
 ```bash
-Rscript scripts/04_trim_selector.R --app       # or CANDIDAS_RUN_APP=1 Rscript ...
+Rscript scripts/04_trim_selector.R --app     # or CANDIDAS_RUN_APP=1 Rscript ...
 ```
 
-In RStudio, "Run App" behaves as before.
+**The two N₀ diagnostics — 10 and 18.** Both refit the Bayesian respiration model
+(twice and three times) and write each alternative fit over
+`results/tables/bayes_resp_arr_summary.csv` and `results/rds/`, restoring only
+`derived_N0_R_results_with_carbon.csv`. A batch ending with either would leave the
+*published* tables holding an alternative fit. Run them deliberately, then restore
+the published set:
+
+```bash
+Rscript scripts/18_n0_treatment_panel.R       # Supplementary Figure 6, ~24 min
+Rscript scripts/09_bayesian_models.R && Rscript scripts/11_bayesian_plots.R \
+  && Rscript scripts/12_carbon_tax.R && Rscript scripts/14_main_figures.R \
+  && Rscript scripts/15_uncertainty_bands.R
+```
+
+**`19_rk_covariance_check.R`** is a standalone diagnostic and is in no runner.
 
 ---
 
-## 6. Path knobs
+## 3. Stage by stage — timings and what to check
 
-All are path-only. **None of them changes an analysis decision.**
+Measured on the machine in `env/versions.json` (Apple silicon, 16 cores).
 
-| variable | effect | default |
+### Stage 1 — the R pipeline · **~12 min**
+
+| script | time | check |
 |---|---|---|
-| `CANDIDAS_RESULTS` | the whole results tree (`tables/`, `figures/`, `rds/`) | `results/` |
-| `CANDIDAS_APP_INPUTS` | where the five committed app decisions are looked up **as a fallback** | `results/tables/` |
-| `CANDIDAS_SUPP_DATA` | which etc-GEM outputs 12/13 read | submodule `outputs/supp_data` |
-| `CANDIDAS_EXPRESSION_OUT` | where 11 writes | `data/expression/` |
-| `ETCGEM_OUT_SUFFIX` | suffix for the etc-GEM output dirs | none |
-| `ETCGEM_STAGES` | which etc-GEM stages to run | `all` |
-| `CANDIDAS_SKIP` | script numbers to skip, e.g. `08,09` | none |
-| `SKIP_PY` / `SKIP_R` / `SKIP_RENDER` | skip a stage of `run_all.sh` | off |
+| 02 longdata | ~1 min | 1 080 series; row count reported |
+| 03 trimming | ~1 min | spline trimming; `manual_fit_windows.csv` loaded for 1 080 curves |
+| 06 inoculation | seconds | prints "headless — app NOT launched" |
+| 07 oxygen_fits | ~2 min | per-series fits; writes `derived_N0_R_results_with_carbon.csv` |
+| 08 temperature_equilibration | ~30 s | writes `temperature_equilibration_percurve.csv`, an input to 11 and 15 |
+| **09 bayesian_models** | **~8 min** | 3 models × 4 chains × 4 000 iter. **Check R̂ < 1.01 and no divergences** in the summary CSVs |
+| 11 bayesian_plots | ~30 s | posterior/contrast/CUE, with the equilibration envelope from 08 |
+| 12 carbon_tax | ~20 s | `carbon_tax_isolate.csv` |
+| 14 main_figures | ~30 s | Fig 1 and Fig 2 into `results/figures/manuscript/` |
+| 15 uncertainty_bands | ~10 s | `fig_respiration_uncertainty.png`, `fig_cue_uncertainty.png` |
 
-`results/tables/` mixes two kinds of file: generated output, and five hand-made
-app decisions. Redirecting `CANDIDAS_RESULTS` alone would silently drop the
-manual trim windows, the exclusions, the per-isolate cell sizes and the isolate
-names — a *different analysis*, not a re-run. `app_input()` in `config.R`
-therefore looks in the redirected tree first and falls back to the canonical
-`results/tables/`. You will see, in the log:
+### Stage 2 — the C11 scale-free report · **~1 min**
 
-```
-app input 'manual_fit_windows.csv' not in the results tree; using committed copy: .../results/tables/manual_fit_windows.csv
-```
+Four scripts under `reports/C11_scale_free/R/` then a Quarto render. It runs with
+the pipeline on purpose: the manuscript's scale-free numbers are produced here
+rather than under `scripts/`, so if this does not regenerate, those numbers drift.
 
-That message is expected and correct for a redirected run.
+**Check:** `reports/C11_scale_free/C11_scale_free.pdf`, 13 pages.
+
+### Stage 3 — the etc-GEM figure stages · *off by default*
+
+13, 16 and 17. The etc-GEM section has been cut from the manuscript, so these no
+longer feed it; they are kept for the separate methods thread.
+
+### Stage 4 — the manuscript · **~25 s**
+
+`quarto render` on `manuscript/v3.qmd`, xelatex via quarto's TinyTeX.
+
+**Check:** `manuscript/v3.pdf`, **15 pages, 6 figures**, and every figure
+resolving through `../results/…` rather than an embedded bitmap. If a figure is
+missing, the path is wrong, not the pipeline — see
+[`MANUSCRIPT_FIGURE_LINKAGE.md`](MANUSCRIPT_FIGURE_LINKAGE.md).
 
 ---
 
-## 7. Troubleshooting
+## 4. What "success" looks like
 
-| symptom | cause | fix |
+* `run_all.sh` ends with a SUMMARY table, every stage `exit 0`.
+* `results/tables/` regenerates with no table moving beyond floating-point noise.
+  Two exceptions are known and documented, both traced to the environment rather
+  than to the code: see `REPRODUCTION.md` and the C9 pull request.
+* `results/tables/carbon_tax_curves.csv` **will** differ between runs — it uses an
+  unseeded `sample.int`. So will several PNGs, from unseeded jitter. That is a
+  known defect, recorded as residual item 2 in
+  [`MANUSCRIPT_FIGURE_LINKAGE.md`](MANUSCRIPT_FIGURE_LINKAGE.md), not a failure.
+* `manuscript/v3.pdf` is 15 pages with 6 figures.
+* `env/baseline_checksums_*.txt` — re-run and diff against these to prove nothing
+  under `data/`, `results/` or the etc-GEM outputs moved.
+
+---
+
+## 5. Troubleshooting
+
+Nearly everything is in [`SETUP.md`](../SETUP.md), which has a full
+prerequisites section and a troubleshooting list. The three that bite most often:
+
+| Symptom | Cause | Fix |
 |---|---|---|
-| `ETCGEM_SUPP_DATA_MISSING` / `_EMPTY` | submodule not populated, or the Python stage never ran | `git submodule update --init --recursive`, then run the etc-GEM pipeline |
-| `ETCGEM_FILE_MISSING: capacity_isolates.csv` | the `boot` stage was skipped | `generate_model_data.py boot` (needs `_percladefit*.npy`) |
-| `cannot open file .../config.R` | script-directory resolution; a path containing spaces | fixed in C1; check you are on the current commit |
-| a script hangs with no output | a Shiny app got launched | make sure nothing sets `CANDIDAS_RUN_APP=1` |
+| `cannot open file '.../config.R'` | a script's directory resolution, on a path containing a space | every script un-mangles R's `~+~` now; if you see this, that script is unpatched |
 | Stan will not compile | C++ toolchain | `Rscript scripts/00_install.R` and follow its output |
-| `renv::restore()` fails on edgeR | edgeR is Bioconductor | `BiocManager::install(version = "3.22")` |
-| PDF render fails | no LaTeX | `quarto install tinytex` |
-| `mu* = 1.089` in the build banner | you are on the OLD anchor | see `REPRODUCTION.md` §4.2 |
-
----
-
-## 8. What "success" looks like
-
-* `runs/C1_reproduction/` holds **37 tables** (40 with the three large oxygen
-  intermediates, which `.gitignore` keeps out of the repo), **78 figures**,
-  **5 `.rds`** model objects and **2** expression outputs.
-* The committed `results/` holds 39 tables and 83 figures. Every difference is
-  accounted for:
-  * *only in `results/`* — the five committed app inputs
-    (`manual_fit_windows.csv`, `plot_exclude_points.csv`, `otu_cell_sizes.csv`,
-    `otu_inoc.csv`, `otu_names.csv`), which are inputs and are never
-    regenerated; plus **7 stale top-level copies** of the manuscript figures
-    (`results/figures/FIG1_decoupling.png` and friends) left over from an older
-    layout. **No current script writes them** — 12, 13 and 14 all write to
-    `figures/manuscript/`.
-
-    **C2b checked whether they are safe to delete, and only 5 of the 7 are.**
-    `FIG1_decoupling`, `FIG2_the_bill`, `FIG_MODEL`,
-    `FIG_MODEL_SUPP_consistency` and `FIG_model_schematic` are byte-identical
-    to their `manuscript/` counterparts. **`FIG_MODEL_SUPP.png` (1 002 404 vs
-    1 045 093 bytes) and `FIG_MODEL_SUPP_validation.png` (490 745 vs 490 632)
-    are NOT** — same pixel dimensions, different content, i.e. the top-level
-    copies are superseded renders. All seven were therefore **left in place**:
-    deleting only some would be worse than leaving all, and removing any would
-    break `env/baseline_checksums_results.txt`. A reader who picks the
-    top-level `FIG_MODEL_SUPP.png` gets an out-of-date figure; take figures
-    from `results/figures/manuscript/`.
-  * *only in `runs/C1_reproduction/`* — `Oxygen_All_Long.csv`,
-    `Oxygen_Data_Filtered.csv`, `Oxygen_Data_Smoothed_Trimmed.csv` (gitignored
-    by name, so absent from the committed tree) and the two large diagnostic
-    PDFs `per_series_fits.pdf`, `oxygen_trimming_diagnostics.pdf`.
-* `cauris_etcgem/runs/C1/supp_data/` holds **13 CSVs**
-  plus `bayes_chain_raw.npz`.
-* `manuscript/draft/_output/` holds **6** documents.
-* `git status` shows no modification to `data/`, `results/`, or the committed
-  etc-GEM outputs — verify with:
-
-```bash
-shasum -a 256 -c env/baseline_checksums_results.txt
-shasum -a 256 -c env/baseline_checksums_etcgem.txt
-shasum -a 256 -c env/baseline_checksums_data.txt
-```
-
-**Getting the pipeline to run is not the same as reproducing the numbers.**
-Read `reports/REPRODUCTION.md` before trusting any regenerated value: the
-etc-GEM outputs do **not** reproduce from the current code, and the reason is
-identified there.
+| A script hangs with no output | a Shiny app launched in a batch | check nothing sets `CANDIDAS_RUN_APP=1` |
+| `renv::restore()` builds everything from source | 73 of 170 pins have no current CRAN binary | expected; see `SETUP.md` "System prerequisites" |

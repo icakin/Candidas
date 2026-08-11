@@ -3,6 +3,30 @@
 For whoever picks this up next, including its author returning cold. Everything
 links out rather than restating.
 
+> ### Superseded — kept as the C1/C2-era record
+>
+> **This document was written on 2026-07-26, at the end of C1/C2/C2b, and describes
+> the repository as it was then: fourteen numbered scripts, a 48 min 50 s run, the
+> manuscript at `manuscript/draft/`, and the etc-GEM still in the paper. None of
+> those is true now.**
+>
+> It is kept rather than rewritten because it is the record of what was handed
+> over, and several of its findings are still the clearest statement of their
+> point. For the **current** state read, in order:
+>
+> * [`reports/README.md`](reports/README.md) — the live index, one line per report
+> * [`SETUP.md`](SETUP.md) — install and system prerequisites
+> * [`reports/RUNBOOK.md`](reports/RUNBOOK.md) — what to run and what to check
+> * [`prompts/README.md`](prompts/README.md) — the C-series, with outcomes
+>
+> What has changed since, in brief: nineteen numbered scripts (renumbered from 08
+> on); `run_all.sh` runs in ~13 min with the etc-GEM stages gated off; the
+> manuscript is flattened to `manuscript/v3.qmd` and **the etc-GEM section has been
+> cut from it**; every manuscript figure now resolves to a pipeline file by path;
+> and the headline CUE result has been established scale-free
+> ([`reports/C11_scale_free/`](reports/C11_scale_free/)), which removes its
+> dependence on the N₀ treatment this document spends most of its length on.
+
 ---
 
 ## What is solid
