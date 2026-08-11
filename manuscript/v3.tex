@@ -66,6 +66,7 @@
 
 
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -323,7 +324,7 @@ C. \emph{parapsilosis} (cost ratios 0.43--0.72), and this survives every
 treatment of the starting cell number. We do not report a finer ranking
 among the C. \emph{auris} clades. The apparent within-\emph{auris}
 ordering depends on the inoculum back-projection (its leader moves from
-first to fourth of five when the term is removed; Supplementary Fig. 6),
+first to fourth of five when the term is removed; Supplementary Fig. 4),
 and in the scale-free analysis the between-clade spread in respiration
 activation energy collapses from 0.22 eV to 0.07 eV, indicating that
 most of that apparent signal derives from the N0 construction rather
@@ -360,123 +361,31 @@ suggestive, to be tested directly with additional species. It is
 consistent with environmental thermal selection contributing to
 tolerance of the mammalian host.
 
-\section{\texorpdfstring{\textbf{Clade differences are captured by an
-effective growth-capacity axis despite near-identical
-sequences}}{Clade differences are captured by an effective growth-capacity axis despite near-identical sequences}}\label{clade-differences-are-captured-by-an-effective-growth-capacity-axis-despite-near-identical-sequences}
+\section{\texorpdfstring{\textbf{Near-identical coding sequences do not
+account for the clade
+differences}}{Near-identical coding sequences do not account for the clade differences}}\label{near-identical-coding-sequences-do-not-account-for-the-clade-differences}
 
-The four C. \emph{auris} clades differ markedly in thermal performance
-despite near-identical reference proteomes (median whole-proteome
-amino-acid identity 99.4--100\% across clades I--IV, by reciprocal
-best-hit alignment), so we asked whether a single enzyme- and
-temperature-constrained genome-scale metabolic model (etc-GEM), grounded
-in those sequences, could explain the phenotypes. In the model, fixed
-genome-derived inputs drive growth at each temperature under a shared
-enzyme budget, and three parameters are then calibrated to each clade's
-growth curve (Fig. 3). Run from the genome alone, before any
-clade-specific calibration, the same model predicts nearly identical
-thermal curves for all four clades despite their roughly two-fold
-difference in measured peak growth (Fig. 4b), so broad coding-sequence
-divergence is unlikely to be the explanation; what separates the clades
-must therefore lie in the calibrated parameters.
+The four C. \emph{auris} clades differ up to two-fold in peak growth
+rate, and measurably in the cost of a fever, yet their reference
+proteomes are near-identical: median whole-proteome amino-acid identity
+is 99.4--100\% across clades I--IV by reciprocal best-hit alignment.
+Broad coding-sequence divergence is therefore an unlikely explanation
+for the physiological differences reported here, which points instead to
+regulatory, post-transcriptional, post-translational or bioenergetic
+differences in how metabolic capacity is deployed rather than in what is
+encoded.
 
-\includegraphics[width=5.5993in,height=7.45229in]{../results/figures/manuscript/FIG_model_schematic.png}
-
-\textbf{Figure 3.} The sequence-grounded etc-GEM pipeline. Fixed,
-genome-derived inputs (the iRV973 metabolic network; per-reaction
-turnover kcat from EC/DLKcat; enzyme molecular weights and per-clade
-sequences; per-enzyme thermal parameters Topt, Tm and ΔCp; and
-proteome-sector fractions) feed an enzyme- and temperature-constrained
-genome-scale model that, at each temperature, maximises growth subject
-to a shared enzyme budget. Three parameters (ΔTopt, ΔCp-scale, and
-effective-capacity kcat-scale) are then calibrated by differential
-evolution and MCMC to each clade's measured growth curve. Within the
-calibrated model, the effective growth-capacity axis is the only
-parameter that clearly separates the clades, despite their
-\textgreater99\% reference-proteome identity; the per-clade values are
-given in Figure 4.
-
-\textbf{Effective capacity separates the clades.} The difference is
-captured instead by an effective growth-capacity axis (kcat-scale), an
-effective flux-generating capacity per unit modelled metabolic proteome
-that lumps enzyme abundance, active fraction, substrate saturation,
-maintenance and respiratory coupling (Fig. 4c). It is a single
-proteome-wide capacity scaling, not a change in the individual
-database-derived kcat values, which are shared across the near-identical
-clades. Its posterior ordered with thermotolerance (Clade II lowest at
-0.56, Clades I and III intermediate at 0.83 and 0.85, Clade IV highest
-at 0.95; values from the current calibrated model), and of the three
-calibration parameters it was the only one that separated the clades (5
-of 6 pairwise contrasts with non-overlapping 95\% CrI, versus 1 of 6 for
-the optimum shift and 0 of 6 for curvature; Supplementary Fig. 1b).
-Capacity behaved as a reproducible clade-level trait, with 90\% of its
-variance falling between clades (ICC₁ = 0.90; ANOVA F₃,₈ = 27.7, P =
-1.4×10⁻⁴; Supplementary Fig. 1a).
-
-\textbf{Effective capacity covaries with respiratory economics.} The
-growth-fitted scalar covaried across the twelve isolates with outcomes
-not used to fit the model and that incorporate measured respiration: it
-was negatively associated with the cost of a fever (r = −0.86, 95\% CI
-−0.96 to −0.76), so the higher a clade's capacity the cheaper its fever
-(Fig. 4d), and with per-cell respiration at the growth optimum (r =
-−0.64), so that higher-capacity clades sustain growth while respiring
-less carbon (Fig. 4e). Both are cross-phenotype associations rather than
-independent validation (see below), and the second is additionally
-conditional on the inoculum back-projection: removing the term weakens
-it to r ≈ −0.2 (not significant; Robustness), so Fig. 4e is read as
-exploratory.
-
-\includegraphics[width=6.39583in,height=7.51459in]{../results/figures/manuscript/FIG_MODEL.png}
-
-\textbf{Figure 4.} Clade differences are captured by an effective
-growth-capacity axis despite near-identical sequences. (a) Per-clade
-calibration of the sequence-grounded etc-GEM: grey dashed, genome-only
-(a-priori) prediction; white dashed, calibrated model; colour and band,
-Bayesian data fit (95\% CrI); points, measured. (b) The genome yields
-one curve for all clades (black), yet the measured clades differ
-\textasciitilde2-fold. (c) Posterior of the effective growth-capacity
-parameter (kcat-scale) per clade; the only calibration parameter that
-separates the clades. (d) Effective growth-capacity versus the measured
-fever cost at 40 °C and (e) versus per-cell respiration at 32--36 °C
-(points, twelve isolates coloured by clade). The scalar was fitted to
-growth only; d--e are cross-phenotype associations, not independent
-mechanistic validation (see text). They replace the earlier
-capacity-versus-growth self-consistency panel (Supplementary Fig. 2).
-
-\textbf{What effective capacity does and does not identify.} These
-associations are not independent mechanistic validation. First, the
-fever cost is itself derived from measured growth and respiration
-through carbon-use efficiency, so it is not a fully independent target.
-Second, a flux-variability analysis showed that oxygen consumption at
-fixed optimal growth is not uniquely determined by the growth-calibrated
-model, so the model's respiration is an objective-selected flux solution
-rather than a unique prediction. Third, growth-only fits of alternative
-capacity, maintenance and uptake constraints each reproduced the clade
-growth ranking but none recovered the observed ranking in respiratory
-cost, with Clade II combining the lowest growth with the highest
-respiratory cost. We therefore read the fitted parameter as an effective
-growth-capacity axis that does not by itself distinguish reduced enzyme
-deployment from a coupling or maintenance component. The
-capacity-versus-peak-growth relationship, by contrast, is a
-self-consistency check rather than independent evidence, because
-capacity is itself the fitted height term (Supplementary Fig. 2).
-
-Turning from the model to the underlying molecular layer, a direct
-transcriptional test likewise did not support a coordinated relative
-down-allocation of metabolic transcripts: in the only public
-clade-resolved RNA-seq at a controlled condition (Clade I versus Clade
-II, 37 °C; GEO GSE165762), the model's 928 central-metabolic enzyme
-genes were not coordinately lower in the low-capacity clade (median log₂
-fold-change -0.005 versus +0.031 for the genome background; Wilcoxon P =
-0.93; Supplementary Fig. 1d). Because that analysis is compositional
-(standard library-size-normalised RNA-seq, a single Clade II isolate,
-one 37 °C snapshot), it rules out a relative down-allocation of
-metabolic transcripts, not lower absolute output. The causal layer is
-therefore non-coding, regulatory, post-transcriptional,
-post-translational, or bioenergetic, and remains undetermined among
-these; distinguishing them will require a model-identifiability analysis
-(profiling capacity against maintenance, uptake and respiratory
-coupling) together with absolute, spike-in-calibrated proteomics, which
-partitions but does not fully close these branches.
+The available transcriptional evidence does not resolve which. In the
+only public clade-resolved RNA-seq at a controlled condition (Clade I
+versus Clade II, 37 °C; GEO GSE165762), central-metabolic enzyme genes
+are not coordinately lower in the slower-growing clade (median
+log\textsubscript{2} fold-change −0.005 against +0.031 for the genome
+background; Wilcoxon P = 0.93). Because that dataset is compositional,
+from a single isolate at one temperature, it can rule out a relative
+down-allocation of metabolic transcripts but not a difference in
+absolute output. Distinguishing regulatory from bioenergetic
+explanations will require absolute, spike-in-calibrated proteomics under
+the thermal conditions used here.
 
 \section{\texorpdfstring{\textbf{Robustness and
 limitations}}{Robustness and limitations}}\label{robustness-and-limitations}
@@ -511,10 +420,10 @@ optimum (below it, a cooler onset implies slower early growth and
 slightly higher per-cell respiration; above it, the reverse). The median
 shift on respiration reaches about +14\% near 30 °C and −27\% at 44 °C,
 mirrored and buffered in CUE, while growth per cell is immune throughout
-(Supplementary Fig. 3). Shown on the thermal curves themselves, widening
+(Supplementary Fig. 1). Shown on the thermal curves themselves, widening
 each posterior credible interval by this component leaves an outer
 envelope that coincides with the credible interval through the mid-range
-and separates only toward the extremes (Supplementary Figs. 4 and 5).
+and separates only toward the extremes (Supplementary Figs. 2 and 3).
 
 This equilibration correction is roughly an order of magnitude smaller
 than the trends it could threaten: the CUE optimum still lies below 37
@@ -538,12 +447,10 @@ the term is removed, whereas the C. \emph{auris} versus C.
 \emph{parapsilosis} contrast survives both bounds; the scale-free
 analysis sharpens this further, collapsing the between-clade spread in
 respiration activation energy from 0.22 eV (with the term) to 0.07 eV,
-so we do not report a within-\emph{auris} ranking at all. Second, the
-capacity-versus-respiration association of Fig. 4e, which weakens to r ≈
-−0.2 (not significant) under the same test and is read as exploratory.
-The between-clade respiration activation energy under all three
-treatments, with the term (published), equilibration-corrected, and
-term-free, is compared directly in Supplementary Fig. 6.
+so we do not report a within-\emph{auris} ranking at all. The
+between-clade respiration activation energy under all three treatments,
+with the term (published), equilibration-corrected, and term-free, is
+compared directly in Supplementary Fig. 4.
 
 The strongest statement, however, is not robustness across N0 treatments
 but independence from them. As shown in the Results, the position of the
@@ -564,8 +471,7 @@ among-taxon ranking. The primary conclusions in the preceding sections
 (the sub-37 °C carbon-economy optimum, the growth-respiration
 decoupling, and the C. \emph{auris} versus C. \emph{parapsilosis}
 fever-cost contrast) are independent of or robust to all of these
-sources; a finer within-\emph{auris} ordering is not reported, and the
-Fig. 4e association is reported as exploratory.
+sources; a finer within-\emph{auris} ordering is not reported.
 
 \section{\texorpdfstring{\textbf{Conclusion}}{Conclusion}}\label{conclusion}
 
@@ -584,15 +490,14 @@ firm biological result. A finer ranking among the \emph{C. auris} clades
 is not resolvable in these data once the starting-cell-number
 construction is accounted for, and we do not report one.
 
-A sequence-grounded metabolic model adds a candidate explanation for the
-clade differences: near-identical proteomes do not account for them in
-the sequence-grounded model, but a single effective growth-capacity
-parameter can, and that same parameter covaries with the measured
-respiratory economics. What remains unresolved is the molecular and
-bioenergetic basis of that capacity (whether it reflects enzyme
-deployment, maintenance, or respiratory coupling), which the present
-data can partition but not close, and which absolute proteomics and a
-model-identifiability analysis are the natural next steps to resolve.
+What remains unresolved is the basis of the differences among the C.
+\emph{auris} clades themselves. Their coding sequences are
+near-identical, so the explanation is unlikely to lie in what is
+encoded, and the available single-condition transcriptional data cannot
+distinguish a regulatory from a bioenergetic origin. Resolving it will
+require absolute, spike-in-calibrated proteomics under these thermal
+conditions, together with direct measurement of the carbon quota across
+temperature.
 
 \section{\texorpdfstring{\textbf{Methods
 (summary)}}{Methods (summary)}}\label{methods-summary}
@@ -612,41 +517,25 @@ computed as in that study.
 
 Growth and respiratory carbon flux were expressed on a matched per-cell
 basis, so carbon-use efficiency could be computed as CUE = G/(G + R).
-Because the assumed per-cell carbon quota is temperature-independent,
-the activation energy of growth is directly comparable with that of
-respiration.
+The per-cell carbon quota is taken as a single temperature-independent
+value, and it is that assumption which makes the per-cell activation
+energy of growth directly comparable with that of respiration. The
+assumption is not innocuous across 22--44 °C: fungal cell volume and
+wall composition can shift under thermal stress, and any systematic
+temperature dependence in the carbon quota would propagate into the
+per-cell growth activation energy rather than cancelling from it. The
+scale-free comparison reported in the Results avoids the assumption
+altogether, since the activation energy of the fitted growth rate r
+against that of the volumetric consumption rate K involves no per-cell
+conversion at all; the two agree to within 0.03 eV, and we treat the
+scale-free comparison as primary for that reason.
 
 \section{\texorpdfstring{\textbf{Supplementary
 figures}}{Supplementary figures}}\label{supplementary-figures}
 
-\includegraphics[width=6.39583in,height=5.24304in]{../results/figures/manuscript/FIG_MODEL_SUPP_validation.png}
-
-\textbf{Supplementary Figure 1.} The effective-capacity axis is
-clade-structured and is not explained by coding variation or by
-coordinated metabolic-transcript allocation in the available dataset.
-(a) Capacity across the twelve isolates by clade (bars, clade means);
-90\% of the variance lies between clades (ICC₁ = 0.90). (b) Number of
-clade pairs resolved (non-overlapping 95\% CrI) by each calibration
-parameter; only the effective growth-capacity parameter (kcat-scale)
-separates the clades. (c) Median whole-proteome amino-acid identity of
-each clade to Clade I (diamond reciprocal best-hit); coding sequence is
-\textgreater99\% identical. (d) Distribution of Clade I-versus-II log₂
-fold-change for the model's 928 metabolic-enzyme genes (red) against the
-genome background (grey), from GEO GSE165762; the metabolic set is not
-coordinately shifted (Wilcoxon P = 0.93).
-
-\includegraphics[width=6.39583in,height=4.97521in]{../results/figures/manuscript/FIG_MODEL_SUPP_consistency.png}
-
-\textbf{Supplementary Figure 2.} Self-consistency check. Effective
-growth-capacity (the fitted curve-height parameter) versus measured peak
-growth across the twelve isolates (r = 0.96). Because capacity scales
-curve height by construction, this relationship is expected and is shown
-as a consistency check, not as independent evidence; the out-of-sample
-tests are in Fig. 4d--e.
-
 \includegraphics[width=6.6in,height=2.33538in]{../results/figures/Fig_temperature_equilibration.png}
 
-\textbf{Supplementary Figure 3.} Sensitivity of each per-cell quantity
+\textbf{Supplementary Figure 1.} Sensitivity of each per-cell quantity
 to temperature equilibration. Median percentage shift from the pipeline
 value versus setpoint, estimated from the logged internal vial
 temperature against each clade's growth curve (band, interquartile range
@@ -656,7 +545,7 @@ up to about −27\% at 44 °C; CUE follows, buffered.
 
 \includegraphics[width=6.6in,height=3.80769in]{../results/figures/fig_bayes_resp_arrhenius.png}
 
-\textbf{Supplementary Figure 4.} Per-cell respiration versus temperature
+\textbf{Supplementary Figure 2.} Per-cell respiration versus temperature
 (Bayesian Arrhenius, log scale), per clade, with the
 temperature-equilibration uncertainty overlaid. Solid band, 95\%
 credible interval; dashed envelope, the same interval widened by the
@@ -666,7 +555,7 @@ unaffected.
 
 \includegraphics[width=6.6in,height=3.80769in]{../results/figures/fig_bayes_cue_by_clade.png}
 
-\textbf{Supplementary Figure 5.} Carbon-use efficiency versus
+\textbf{Supplementary Figure 3.} Carbon-use efficiency versus
 temperature, per clade, with the temperature-equilibration uncertainty
 overlaid. Solid band, 95\% credible interval; dashed envelope, widened
 by the equilibration component. The two coincide through the mid-range
@@ -679,7 +568,7 @@ with P = 1.0000 regardless of the N0 correction adopted (main text).
 
 \includegraphics[width=6.6in,height=3in]{../results/figures/Fig_n0_treatment_panel.png}
 
-\textbf{Supplementary Figure 6.} The between-clade respiration
+\textbf{Supplementary Figure 4.} The between-clade respiration
 activation energy under three treatments of the inoculum
 back-projection. Each panel shows the hierarchical Bayesian Arrhenius
 activation energy E\textsubscript{R} per clade (posterior median; bars,

@@ -121,3 +121,47 @@ source("scripts/07_oxygen_fits.R")
 > Thermal-performance fitting is **frequentist only** (nlsLM Sharpe-Schoolfield
 > and lm-based Boltzmann-Arrhenius, one curve per isolate, in `07_oxygen_fits.R`).
 > There is no Bayesian / MCMC stage in this build.
+
+---
+
+## Scripts NOT part of the current manuscript (etc-GEM model work)
+
+The enzyme- and temperature-constrained genome-scale model (etc-GEM) analysis has
+been **removed from the manuscript**. An audit found that the model was built once
+from a single proteome and reused for every clade, so its "genome-only predictions
+are identical across clades" result was a property of the build rather than a
+finding; that the fitted `kcat_scale` parameter scales predicted growth exactly
+linearly and correlates 0.996 with measured peak growth, so it restates the data it
+was fitted to; that the proteome pool budget is calibrated rather than fixed, making
+it non-identifiable against `kcat_scale`; that one clade's measured peak growth
+exceeds the model's feasible maximum; and that a three-parameter empirical curve
+reproduces the fit equally well. A flux-variability analysis had already shown that
+oxygen consumption at fixed growth is not uniquely determined, so the model permits
+rather than predicts respiration.
+
+The code is retained here for a separate methods paper, where the per-clade build,
+the `kcat_scale` x pool identifiability, the binding-constraint analysis and an
+out-of-sample respiration prediction can be done properly.
+
+Not part of the current manuscript pipeline:
+
+- `13_capacity_expression.R` — RNA-seq test of the fitted capacity parameter
+- `16_supplementary_figures.R` — etc-GEM diagnostic supplementaries
+- `17_schematic.py` — the etc-GEM pipeline schematic
+- the Figure 3 (etc-GEM) block inside `14_main_figures.R`; its Figure 1 and
+  Figure 2 blocks remain part of the pipeline
+
+`run_all.R` still calls `14_main_figures.R`, which will regenerate the unused
+etc-GEM figure alongside Figures 1 and 2. That is harmless; the manuscript does not
+reference it.
+
+## Figures used by the current manuscript
+
+| Manuscript figure | File | Produced by |
+|---|---|---|
+| Figure 1 | `results/figures/manuscript/FIG1_decoupling.png` | `14_main_figures.R` |
+| Figure 2 | `results/figures/manuscript/FIG2_the_bill.png` | `14_main_figures.R` |
+| Supplementary 1 | `results/figures/Fig_temperature_equilibration.png` | `08_temperature_equilibration_sensitivity.R` |
+| Supplementary 2 | `results/figures/fig_bayes_resp_arrhenius.png` | `11_bayesian_plots.R` / `15_uncertainty_bands.R` |
+| Supplementary 3 | `results/figures/fig_bayes_cue_by_clade.png` | `11_bayesian_plots.R` / `15_uncertainty_bands.R` |
+| Supplementary 4 | `results/figures/Fig_n0_treatment_panel.png` | `18_n0_treatment_panel.R` |
