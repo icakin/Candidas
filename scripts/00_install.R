@@ -465,18 +465,53 @@ NEEDED <- c(
   "readxl"
 )
 
-status <- vapply(NEEDED, function(p)
-  isTRUE(suppressWarnings(requireNamespace(p, quietly = TRUE))), logical(1))
+# WHERE TO LOOK. Under renv, .libPaths() is the project library plus renv's
+# sandbox, and renv rebinds .Library to that sandbox. Packages that ship WITH R -
+# the base and recommended set, which includes lattice, Matrix, survival, nlme,
+# mgcv and 24 others - live in the real system library at R.home("library"). If
+# the sandbox is disabled or has not been built, they are invisible to a search
+# over .libPaths() alone, and a scan that looks only there reports packages as
+# missing that are installed with R itself and cannot be installed from CRAN.
+#
+# So: search the full path INCLUDING the true system library, and work the
+# base/recommended set out programmatically rather than naming the three that
+# happened to be reported - anyone can hit this with any of the 29.
+SYS_LIB   <- R.home("library")
+ALL_LIBS  <- unique(c(.libPaths(), SYS_LIB))
+BASE_REC  <- tryCatch(
+  rownames(installed.packages(lib.loc = SYS_LIB,
+                              priority = c("base", "recommended"))),
+  error = function(e) character(0))
+
+# present anywhere on the full path (not just where R would load it from)
+.pkg_present <- function(p) {
+  length(find.package(p, lib.loc = ALL_LIBS, quiet = TRUE)) > 0 ||
+    isTRUE(suppressWarnings(requireNamespace(p, quietly = TRUE)))
+}
+.pkg_version <- function(p) {
+  f <- find.package(p, lib.loc = ALL_LIBS, quiet = TRUE)
+  if (!length(f)) return(NA_character_)
+  tryCatch(read.dcf(file.path(f[1], "DESCRIPTION"), "Version")[1, 1],
+           error = function(e) NA_character_)
+}
+
+status <- vapply(NEEDED, .pkg_present, logical(1))
 
 for (p in NEEDED) {
-  if (status[[p]]) ok(sprintf("%-12s %s", p, as.character(packageVersion(p))))
-  else             bad(sprintf("%-12s MISSING", p))
+  tag <- if (p %in% BASE_REC) "  (ships with R)" else ""
+  if (status[[p]]) ok(sprintf("%-12s %-10s%s", p, .pkg_version(p), tag))
+  else             bad(sprintf("%-12s MISSING%s", p, tag))
 }
 
 if (any(!status)) {
   missing <- names(status)[!status]
   message("")
   bad(length(missing), " package(s) missing: ", paste(missing, collapse = ", "))
+  if (any(missing %in% BASE_REC))
+    message("      ", paste(intersect(missing, BASE_REC), collapse = ", "),
+            " ship WITH R (base/recommended).\n",
+            "      Missing ones usually mean a broken R installation rather than a\n",
+            "      missing CRAN package - reinstall R rather than install.packages().")
   if ("edgeR" %in% missing)
     message("      edgeR is Bioconductor, not CRAN:\n",
             "          install.packages('BiocManager')\n",
@@ -484,6 +519,7 @@ if (any(!status)) {
   stop("Environment incomplete - fix the above before running the pipeline.")
 }
 ok("all ", length(NEEDED), " packages present")
+message("    searched ", length(ALL_LIBS), " libraries, including the system library at\n    ", SYS_LIB)
 
 
 # ---- 5. Stan backend + toolchain --------------------------------------------
