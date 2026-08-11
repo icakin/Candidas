@@ -1,0 +1,12 @@
+check,value,detail
+07_oxygen_fits.R fit-target switch,FIT_TO_SPLINE <- FALSE,line 79
+model,O2(t) = O2_0 + (K/r)(1 - exp(r t)),config.R resp_model()
+units of K,mg O2 / L / min  (volumetric),-dO2/dt at t = 0
+units of r,1 / min,
+units of K / r,mg O2 / L,the drawdown amplitude of the fitted curve
+solubility / O2ref term required?,NO,"fit is to raw Oxygen (FIT_TO_SPLINE = FALSE), so K is already volumetric"
+max rel. error   R_O2_mg_cell_min = K / N0,5.97e-15,823 series
+max rel. error   N0 = N_inoc exp(r delta),1.04e-15,
+max rel. error   CUE = 1/(1 + (c/60q) K/(r N0)),7.56e-15,c = 2.252203e+13
+isolates whose 'a' varies with temperature,0,of 15 isolates; a = c/(60 q N_inoc)
+taxa where argmax(pipeline CUE) != argmin(B_bp),0,"Clade1, Clade2, Clade3, Clade4, para"
