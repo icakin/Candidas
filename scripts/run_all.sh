@@ -62,7 +62,11 @@
 #                    under the committed figures.
 #   ETCGEM_STAGES    which etc-GEM stages to run when RUN_ETCGEM=1 (default: all)
 #   SKIP_R=1         skip the R pipeline
-#   SKIP_RENDER=1    skip the manuscript render
+#   SKIP_C11=1       skip the C11 scale-free report (reports/C11_scale_free/).
+#                    ON by default: the manuscript's scale-free numbers are
+#                    produced there rather than under scripts/, so it has to
+#                    regenerate with the pipeline or those numbers drift.
+#   SKIP_RENDER=1    skip the manuscript render (and the C11 report render)
 #   LOG_DIR          log destination        (default: <root>/logs)
 # =============================================================================
 set -euo pipefail
@@ -167,7 +171,7 @@ fi
 # 1. R pipeline: 02, 03, 06, 07, 08, 09, 11, 12, 14, 15
 # ---------------------------------------------------------------------------
 if [ "${SKIP_R:-0}" != "1" ]; then
-  stage "1/3 R pipeline 02-15 (run_all.R)" "$LOG_DIR/r_pipeline_${STAMP}.log" \
+  stage "1/4 R pipeline 02-15 (run_all.R)" "$LOG_DIR/r_pipeline_${STAMP}.log" \
     Rscript "$HERE/run_all.R"
 
   # 13, 16 and 17 belong to the etc-GEM model work, which is NOT part of the
@@ -175,14 +179,14 @@ if [ "${SKIP_R:-0}" != "1" ]; then
   # downloads from GEO, and all three produce figures the manuscript no longer
   # references. Set RUN_ETCGEM_FIGS=1 to run them.
   if [ "${RUN_ETCGEM_FIGS:-0}" = "1" ]; then
-    stage "2/3 13_capacity_expression.R (etc-GEM, needs network)" "$LOG_DIR/r_13_${STAMP}.log" \
+    stage "3/4 13_capacity_expression.R (etc-GEM, needs network)" "$LOG_DIR/r_13_${STAMP}.log" \
       Rscript "$HERE/13_capacity_expression.R"
 
-    stage "2/3 16_supplementary_figures.R (etc-GEM)" "$LOG_DIR/r_16_${STAMP}.log" \
+    stage "3/4 16_supplementary_figures.R (etc-GEM)" "$LOG_DIR/r_16_${STAMP}.log" \
       Rscript "$HERE/16_supplementary_figures.R"
 
     if command -v python3 >/dev/null 2>&1; then
-      stage "2/3 17_schematic.py (etc-GEM)" "$LOG_DIR/py_17_${STAMP}.log" \
+      stage "3/4 17_schematic.py (etc-GEM)" "$LOG_DIR/py_17_${STAMP}.log" \
         python3 "$HERE/17_schematic.py"
     else
       echo ""; echo "!! python3 not on PATH - 17_schematic.py NOT run."
@@ -195,11 +199,51 @@ else
 fi
 
 # ---------------------------------------------------------------------------
-# 2. Manuscript
+# 2. C11 scale-free report  ->  reports/C11_scale_free/
+# ---------------------------------------------------------------------------
+# WHY THIS IS A PIPELINE STAGE AND NOT A ONE-OFF.
+# The manuscript's scale-free results - E_r against E_K, the model-free CUE
+# optimum and its margin below 37 C, the gap decomposition against the fitted
+# optimum - are produced HERE, not by anything under scripts/. Those numbers are
+# typed into v3.qmd by hand, so if this report does not regenerate alongside the
+# pipeline they silently drift away from the tables they came from. That is the
+# whole reason for the stage.
+#
+# Safe to run unattended: reports/C11_scale_free/R/00_common.R sources config.R
+# for the carbon constants and the figure whitelist, reads the tables stage 1
+# has just rewritten, and writes ONLY under reports/C11_scale_free/. It cannot
+# disturb results/ or data/.
+#
+# Cheap: least squares and a bootstrap, no MCMC and no network. Seconds, not
+# minutes. The four scripts are order-dependent (04 plots what 01-03 compute).
+#
+#   SKIP_C11=1   skip this stage
+if [ "${SKIP_C11:-0}" != "1" ]; then
+  C11_DIR="$ROOT/reports/C11_scale_free"
+  if [ -d "$C11_DIR/R" ]; then
+    for f in 01_balance_quantity 02_scale_free 03_gap_decomposition 04_figures; do
+      stage "2/4 C11 $f" "$LOG_DIR/c11_${f}_${STAMP}.log" \
+        Rscript "$C11_DIR/R/$f.R"
+    done
+
+    if [ "${SKIP_RENDER:-0}" != "1" ] && command -v quarto >/dev/null 2>&1; then
+      stage "2/4 C11 report render" "$LOG_DIR/c11_render_${STAMP}.log" \
+        bash -c "cd '$C11_DIR' && quarto render C11_scale_free.qmd"
+    fi
+  else
+    echo ""; echo "!! reports/C11_scale_free/R not found - C11 stage skipped."
+    echo "   The manuscript's scale-free numbers come from there; check the checkout."
+  fi
+else
+  echo ""; echo "C11 scale-free report skipped (SKIP_C11=1)."
+fi
+
+# ---------------------------------------------------------------------------
+# 3. Manuscript
 # ---------------------------------------------------------------------------
 if [ "${SKIP_RENDER:-0}" != "1" ]; then
   if command -v quarto >/dev/null 2>&1; then
-    stage "3/3 quarto render (manuscript/v3.qmd)" "$LOG_DIR/quarto_${STAMP}.log" \
+    stage "4/4 quarto render (manuscript/v3.qmd)" "$LOG_DIR/quarto_${STAMP}.log" \
       bash -c "cd '$ROOT/manuscript' && quarto render v3.qmd"
   else
     echo ""; echo "!! quarto not on PATH - manuscript NOT rendered."
