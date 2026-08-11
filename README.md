@@ -36,7 +36,7 @@ The model code itself lives in separate repositories, not copied into this one:
 ## Rendering the manuscript
 
 ```
-cd manuscript/draft
+cd manuscript
 quarto install tinytex   # once, provides the PDF engine
-quarto render            # -> _output/ : manuscript, supplementary, manuscript_combined (.docx + .pdf)
+quarto render v3.qmd     # -> v3.pdf
 ```

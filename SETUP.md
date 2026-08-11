@@ -293,9 +293,9 @@ Fully unattended: no prompts, no browser. Per-stage timing, with a tee'd log in
 | 2 | `13_capacity_expression.R` |
 | 3 | `16_supplementary_figures.R` |
 | 4 | `17_schematic.py` |
-| 5 | `quarto render` in `manuscript/draft` → `_output/` |
+| 3 | `quarto render v3.qmd` in `manuscript/` → `manuscript/v3.pdf` |
 
-Knobs (all optional): `RUN_ETCGEM`, `ETCGEM_STAGES`, `SKIP_R`, `SKIP_RENDER`,
+Knobs (all optional): `RUN_ETCGEM`, `ETCGEM_STAGES`, `RUN_ETCGEM_FIGS`, `SKIP_R`, `SKIP_RENDER`,
 `LOG_DIR`.
 
 ### The four click-driven apps (01, 04, 05, 06)
@@ -374,7 +374,7 @@ Disk:
 | repository (with submodule) | ~350 MB |
 | `renv/library` | ~1.5 GB (mostly symlinks into the renv cache) |
 | TinyTeX | ~500 MB |
-| `manuscript/draft/_output/` | ~20 MB |
+| rendered manuscript | ~10 MB |
 | **total, comfortably** | **~3 GB** |
 
 ---

@@ -167,21 +167,28 @@ fi
 # 1. R pipeline: 02, 03, 06, 07, 08, 09, 11, 12, 14, 15
 # ---------------------------------------------------------------------------
 if [ "${SKIP_R:-0}" != "1" ]; then
-  stage "1/5 R pipeline 02-15 (run_all.R)" "$LOG_DIR/r_pipeline_${STAMP}.log" \
+  stage "1/3 R pipeline 02-15 (run_all.R)" "$LOG_DIR/r_pipeline_${STAMP}.log" \
     Rscript "$HERE/run_all.R"
 
-  stage "2/5 13_capacity_expression.R" "$LOG_DIR/r_13_${STAMP}.log" \
-    Rscript "$HERE/13_capacity_expression.R"
+  # 13, 16 and 17 belong to the etc-GEM model work, which is NOT part of the
+  # current manuscript (see scripts/README.md). They are off by default: 13
+  # downloads from GEO, and all three produce figures the manuscript no longer
+  # references. Set RUN_ETCGEM_FIGS=1 to run them.
+  if [ "${RUN_ETCGEM_FIGS:-0}" = "1" ]; then
+    stage "2/3 13_capacity_expression.R (etc-GEM, needs network)" "$LOG_DIR/r_13_${STAMP}.log" \
+      Rscript "$HERE/13_capacity_expression.R"
 
-  stage "3/5 16_supplementary_figures.R" "$LOG_DIR/r_16_${STAMP}.log" \
-    Rscript "$HERE/16_supplementary_figures.R"
+    stage "2/3 16_supplementary_figures.R (etc-GEM)" "$LOG_DIR/r_16_${STAMP}.log" \
+      Rscript "$HERE/16_supplementary_figures.R"
 
-  if command -v python3 >/dev/null 2>&1; then
-    stage "4/5 17_schematic.py" "$LOG_DIR/py_17_${STAMP}.log" \
-      python3 "$HERE/17_schematic.py"
+    if command -v python3 >/dev/null 2>&1; then
+      stage "2/3 17_schematic.py (etc-GEM)" "$LOG_DIR/py_17_${STAMP}.log" \
+        python3 "$HERE/17_schematic.py"
+    else
+      echo ""; echo "!! python3 not on PATH - 17_schematic.py NOT run."
+    fi
   else
-    echo ""; echo "!! python3 not on PATH - 17_schematic.py NOT run."
-    exit 1
+    echo ""; echo "etc-GEM figure stages skipped (RUN_ETCGEM_FIGS=1 to enable)."
   fi
 else
   echo ""; echo "SKIP_R=1 -> R pipeline skipped."
@@ -192,8 +199,8 @@ fi
 # ---------------------------------------------------------------------------
 if [ "${SKIP_RENDER:-0}" != "1" ]; then
   if command -v quarto >/dev/null 2>&1; then
-    stage "5/5 quarto render (manuscript/draft)" "$LOG_DIR/quarto_${STAMP}.log" \
-      bash -c "cd '$ROOT/manuscript/draft' && quarto render"
+    stage "3/3 quarto render (manuscript/v3.qmd)" "$LOG_DIR/quarto_${STAMP}.log" \
+      bash -c "cd '$ROOT/manuscript' && quarto render v3.qmd"
   else
     echo ""; echo "!! quarto not on PATH - manuscript NOT rendered."
     echo "   Install quarto, then: quarto install tinytex"
