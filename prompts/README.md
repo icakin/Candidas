@@ -22,8 +22,8 @@ Status legend: ✅ run · ▶ in progress · ⏳ pending
    capacity regenerates 1.33–1.37× higher, traced to an anchor change, and `figure3_data/` uses a
    temperature grid the current code cannot emit. All seven predicted inconsistencies confirmed.
 
-**Respirometry — the load-bearing checks**  *(C3, C4: pending, NOT YET WRITTEN — the
-summaries below are a specification, not a prompt you can paste)*
+**Respirometry — the load-bearing checks**  *(C3, C4: still pending and STILL NOT
+WRITTEN — the summaries below are a specification, not a prompt you can paste)*
 
 2. `C2_n0_backprojection_decision_prompt.md` — ✅ the N₀ back-calculation, in one prompt.
    Establishes that δ is the vial/optode equilibration time, not a biological lag (δ ≈ 58–82 min at
@@ -67,7 +67,8 @@ summaries below are a specification, not a prompt you can paste)*
    observed replicate reproducibility), Pareto-k on the LOO, and the curved-monotone
    respiration alternative that `08_bayesian_models.R:157-186` says wins but `:187` disables.
 
-**etc-GEM — the load-bearing checks**  *(C5-C8: pending, NOT YET WRITTEN — same)*
+**etc-GEM — the load-bearing checks**  *(C5-C8: NEVER WRITTEN, and now MOOT — see
+the note under the through-line)*
 
 7. `C5` — ⏳ build the model PER CLADE. `build()` is currently called once from one MW file
    keyed to the Clade I proteome, so the four a-priori curves are bit-identical by
@@ -83,11 +84,65 @@ summaries below are a specification, not a prompt you can paste)*
    constant chosen because the fit demanded it; sector fractions are hard-coded, not from a
    *C. auris* proteome; Tm coverage is 67%, not 47%. Align the text with the files.
 
+
+**Packaging, recovery and the scale-free result**  *(written and run after the branch
+above was cut)*
+
+11. `C9_reapply_packaging_prompt.md` — ✅ reapplied the C1 packaging onto Ilgaz's main by hand
+    against the renumbered eighteen scripts (not a cherry-pick: the numbering had shifted from 08
+    on). Pinned environment, headless guards, `--file=` resolution, `run_all.sh`.
+    **Outcome:** merged as PR #2. Full run 12 min 23 s, exit 0. His committed `results/` reproduce,
+    with two documented exceptions traced to the environment rather than to packaging — established
+    by running *his own unmodified* `09_bayesian_models.R` as a control. Found that Supplementary
+    Figure 6 had no pipeline counterpart at all.
+
+12. `C10_figure_sourcing_prompt.md` — ✅ fixed the bug that stopped `18_n0_treatment_panel.R`
+    writing anything, and repointed the manuscript at pipeline-produced figures.
+    **Outcome:** the figure whitelist in `config.R` gated `ggsave`, and 18's workaround was wiped by
+    the three nested `09` runs re-sourcing `config.R` into the global environment — so 18 exited 0,
+    reported success, and wrote nothing. Fixed at the root with `fig_keep_add()`, which records the
+    name in an option `config.R` never resets. `09`'s output byte-identical before and after.
+
+13. `C11_scale_free_balance_prompt.md` — ✅ established the CUE optimum without the absolute scale.
+    **Outcome:** `reports/C11_scale_free/`. CUE = 1/(1 + a·K/(r·e^{rδ})); every conversion constant
+    sits in a temperature-independent `a` that cancels in the argmin. Model-free optimum
+    26.1–31.5 °C, *P*(< 37 °C) = 1.0000 in all five taxa — **cooler** than the fitted estimate, so
+    the headline strengthens. No solubility term applies here (unlike the sister repository), which
+    was checked rather than assumed.
+
+14. `C12_setup_prerequisites_prompt.md` — ✅ made `renv::restore()` documentable on a clean Mac.
+    **Outcome:** merged as PR #5. Only **97 of 170** pinned versions have an exact CRAN binary — CRAN
+    serves binaries for the current version only — so 73 build from source, and those 73 contain
+    exactly the packages needing gfortran and Homebrew libraries. Prerequisite checks added to
+    `00_install.R`, ordered so the first failure names the missing item. **Not** confirmed on a clean
+    machine; the documentation says so.
+
+15. `C13_recover_stranded_work_prompt.md` — ✅ recovered nine commits stranded by an out-of-order
+    merge and reapplied the figure sourcing to the flattened manuscript.
+    **Outcome:** merged as PR #6. C10 and C11 had merged into parent branches already consumed by
+    `main`, so neither reached it while the manuscript had already been rewritten to lead with the
+    C11 result. Ten conflicts, all under `manuscript/`, all resolved to main's side. The trap worth
+    remembering: `v3.qmd` **auto-merged** and silently took paths that were correct from the old
+    nesting and wrong by two levels from the new one.
+
+16. `C14_docs_and_fixes_prompt.md` — ✅ this one. Brought the C1/C2 reports and this prompt series
+    onto `main`, added dated notes where their findings have been superseded, and fixed the compile
+    scan and the Bioconductor repository URL.
+
 ## The through-line
 
 Measured O₂ respirometry gives growth and respiration TPCs for four *C. auris* clades and
 *C. parapsilosis*; their different thermal sensitivities put the carbon-economy optimum below
-37 °C and make a febrile host a quantifiable carbon tax. A sequence-grounded etc-GEM then asks
+37 °C and make a febrile host a quantifiable carbon tax. A sequence-grounded etc-GEM then asked
 how much of the clade differences the genome alone explains. The C-series exists to make each
 step of that chain reproducible and to test the parts of it that are currently generated by
 the setup rather than by the data.
+
+**Update, 2026-08-11 — the etc-GEM half has been cut from the manuscript.** `manuscript/v3.qmd`
+no longer mentions it, and the six figures it now carries are all respirometry. C5–C8 were
+specified above but never written, and they are now moot as manuscript checks: the claims they
+would have tested are not being made. The model code, the `cauris_etcgem` submodule and the
+vendored `outputs/supp_data/` all remain in the repository, `run_all.sh` still runs the
+etc-GEM figure stages behind a flag, and `scripts/README.md` records what a future treatment
+would need. C3 and C4 remain live and unwritten: they concern the respirometry, which is what
+the paper now rests on entirely.
