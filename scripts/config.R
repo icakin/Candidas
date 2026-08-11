@@ -520,17 +520,50 @@ FIG_KEEP <- c(
   "TPC_growth_by_isolate","TPC_respiration_by_isolate",
   "Fig_temperature_equilibration","fig_cue_uncertainty","fig_respiration_uncertainty")
 
+# A script that legitimately writes a figure not in the list above declares it
+# with fig_keep_add("its_figure_name"), NOT by appending to FIG_KEEP.
+#
+# WHY THIS EXISTS. FIG_KEEP is a plain global, and config.R re-assigns it on
+# every source(). Several scripts invoke another script that sources config.R
+# again - 10_n0_term_test.R and 18_n0_treatment_panel.R both call
+# 09_bayesian_models.R, whose `source(file.path(.this_dir, "config.R"))` is
+# local = FALSE and therefore re-evaluates in the GLOBAL environment whoever
+# called it. Any append to FIG_KEEP made by the caller is silently wiped by the
+# first nested run. That is exactly how 18 came to exit 0, report "wrote
+# Fig_n0_treatment_panel.png", and write nothing at all.
+#
+# The extra names live in an OPTION instead. config.R never resets it, so a
+# declaration survives any number of nested source()s. The base list above is
+# untouched, so with no caller adding anything the gate allows precisely the
+# same figures it always did.
+fig_keep_add <- function(...) {
+  nms <- as.character(unlist(list(...)))
+  nms <- sub("\\.[^.]+$", "", basename(nms))
+  options(candidas.fig_keep_extra =
+            unique(c(getOption("candidas.fig_keep_extra", character(0)), nms)))
+  invisible(getOption("candidas.fig_keep_extra"))
+}
+
 if (isTRUE(FIG_ONLY_KEEP) && !isTRUE(getOption("FIG_GATE_INSTALLED"))) {
   .fig_keep_ok <- function(f) {
     b <- sub("\\.[^.]+$", "", basename(as.character(f)[1]))
-    b %in% FIG_KEEP
+    b %in% c(FIG_KEEP, getOption("candidas.fig_keep_extra", character(0)))
   }
   assign(".fig_keep_ok", .fig_keep_ok, envir = globalenv())
+  # A dropped write must never again be silent - that is what hid the 18 bug.
+  .fig_keep_drop_msg <- function(f) {
+    b <- basename(as.character(f)[1])
+    message("  [figure whitelist] NOT written: ", b,
+            "  (not in FIG_KEEP; declare it with fig_keep_add(\"",
+            sub("\\.[^.]+$", "", b), "\") if it is wanted)")
+  }
+  assign(".fig_keep_drop_msg", .fig_keep_drop_msg, envir = globalenv())
   if (requireNamespace("ggplot2", quietly = TRUE)) {
     .orig_ggsave <- ggplot2::ggsave
     assign(".orig_ggsave", .orig_ggsave, envir = globalenv())
     .gated_ggsave <- function(filename, ...) {
-      if (.fig_keep_ok(filename)) .orig_ggsave(filename, ...) else invisible(NULL)
+      if (.fig_keep_ok(filename)) .orig_ggsave(filename, ...)
+      else { .fig_keep_drop_msg(filename); invisible(NULL) }
     }
     try(utils::assignInNamespace("ggsave", .gated_ggsave, ns = "ggplot2"), silent = TRUE)
     assign("ggsave", .gated_ggsave, envir = globalenv())
@@ -540,10 +573,11 @@ if (isTRUE(FIG_ONLY_KEEP) && !isTRUE(getOption("FIG_GATE_INSTALLED"))) {
   .gated_pdf <- function(file = "", ...) {
     if (nchar(as.character(file)[1]) == 0 || .fig_keep_ok(file))
       .orig_pdf(file = file, ...)
-    else .orig_pdf(file = tempfile(fileext = ".pdf"), ...)
+    else { .fig_keep_drop_msg(file); .orig_pdf(file = tempfile(fileext = ".pdf"), ...) }
   }
   assign("pdf", .gated_pdf, envir = globalenv())
   options(FIG_GATE_INSTALLED = TRUE)
   message("  Figure whitelist ON: only the ", length(FIG_KEEP),
-          " listed figures are written (set FIG_ONLY_KEEP <- FALSE to disable).")
+          " listed figures are written (set FIG_ONLY_KEEP <- FALSE to disable);")
+  message("  a script may add its own with fig_keep_add().")
 }
