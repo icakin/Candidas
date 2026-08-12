@@ -1,0 +1,339 @@
+{
+ "tables": "/Users/g.yvon-durocher/Library/CloudStorage/OneDrive-UniversityofExeter/Documents/work/Candidas TPC/Candidas/results/tables",
+ "supp": "/Users/g.yvon-durocher/Library/CloudStorage/OneDrive-UniversityofExeter/Documents/work/Candidas TPC/Candidas/cauris_etcgem/strains/eci_cauris/outputs/supp_data",
+ "per_taxon": {
+  "Clade1": {
+   "E_G": 0.9131450513391878,
+   "E_G_lo": 0.7948213065659077,
+   "E_G_hi": 1.0542006799494603,
+   "E_R": 0.5192617748458839,
+   "E_R_lo": 0.4427938224170104,
+   "E_R_hi": 0.5942167522553456,
+   "dE": 0.3946297125706354,
+   "dE_lo": 0.2547739343166919,
+   "dE_hi": 0.5543021970770992,
+   "dE_credible": "True",
+   "Topt_CUE": 31.26590413766192,
+   "Topt_CUE_lo": 30.018448032751564,
+   "Topt_CUE_hi": 32.43606969805838,
+   "tax37": 1.2977578748862086,
+   "tax37_lo": 1.1855595588177228,
+   "tax37_hi": 1.4380310689582785,
+   "tax40": 1.8993346513741065,
+   "tax40_lo": 1.6575296278515228,
+   "tax40_hi": 2.189725664067595,
+   "fever_cost": 1.461573821429374
+  },
+  "Clade2": {
+   "E_G": 1.14407170655697,
+   "E_G_lo": 1.0078760296094147,
+   "E_G_hi": 1.293039454943772,
+   "E_R": 0.4140784044015555,
+   "E_R_lo": 0.3310924958778073,
+   "E_R_hi": 0.4968831778780826,
+   "dE": 0.7306516499378057,
+   "dE_lo": 0.5702319891869644,
+   "dE_hi": 0.8989145110749535,
+   "dE_credible": "True",
+   "Topt_CUE": 32.972289338704286,
+   "Topt_CUE_lo": 32.06943766083878,
+   "Topt_CUE_hi": 33.89414763870656,
+   "tax37": 1.301866098637348,
+   "tax37_lo": 1.178808463772955,
+   "tax37_hi": 1.455285442137905,
+   "tax40": 2.248168485798253,
+   "tax40_lo": 1.918155639756628,
+   "tax40_hi": 2.6642782190494607,
+   "fever_cost": 1.7256367502989751
+  },
+  "Clade3": {
+   "E_G": 0.9465137993251342,
+   "E_G_lo": 0.8304113823225653,
+   "E_G_hi": 1.073872350956484,
+   "E_R": 0.4012812971685907,
+   "E_R_lo": 0.3256445302292254,
+   "E_R_hi": 0.4787732536708344,
+   "dE": 0.5442824781780431,
+   "dE_lo": 0.4075740967331323,
+   "dE_hi": 0.6928398406184116,
+   "dE_credible": "True",
+   "Topt_CUE": 32.78057532470632,
+   "Topt_CUE_lo": 31.72208367047024,
+   "Topt_CUE_hi": 33.85397972344996,
+   "tax37": 1.169893637961622,
+   "tax37_lo": 1.093871870138407,
+   "tax37_hi": 1.2656631851127755,
+   "tax40": 1.6068112029294244,
+   "tax40_lo": 1.4342786681778112,
+   "tax40_hi": 1.8154537740799117,
+   "fever_cost": 1.3727657402140614
+  },
+  "Clade4": {
+   "E_G": 1.0192606693594526,
+   "E_G_lo": 0.898127173976156,
+   "E_G_hi": 1.1620673615954418,
+   "E_R": 0.3006469372140554,
+   "E_R_lo": 0.2261907074204031,
+   "E_R_hi": 0.3798175743451981,
+   "dE": 0.7184660889075194,
+   "dE_lo": 0.5758883884466336,
+   "dE_hi": 0.8747140429848252,
+   "dE_credible": "True",
+   "Topt_CUE": 34.10413833965913,
+   "Topt_CUE_lo": 33.06076440167001,
+   "Topt_CUE_hi": 35.12873833800892,
+   "tax37": 1.0733486848696263,
+   "tax37_lo": 1.0309992357010669,
+   "tax37_hi": 1.1354704575767751,
+   "tax40": 1.3415355981409731,
+   "tax40_lo": 1.2307139230186468,
+   "tax40_hi": 1.481935399933764,
+   "fever_cost": 1.2491580981398336
+  },
+  "para": {
+   "E_G": 0.8291528892143739,
+   "E_G_lo": 0.6943764325209384,
+   "E_G_hi": 0.985197199376752,
+   "E_R": 0.363160414901015,
+   "E_R_lo": 0.2641859305527019,
+   "E_R_hi": 0.4633302491890274,
+   "dE": 0.467646923748519,
+   "dE_lo": 0.2985521573385724,
+   "dE_hi": 0.6469263426179112,
+   "dE_credible": "True",
+   "Topt_CUE": 31.31138878881461,
+   "Topt_CUE_lo": 30.17775794991948,
+   "Topt_CUE_hi": 32.39984863076968,
+   "tax37": 1.5965213780452852,
+   "tax37_lo": 1.3836712942007998,
+   "tax37_hi": 1.8573539157744032,
+   "tax40": 3.1347701369231857,
+   "tax40_lo": 2.483754680521333,
+   "tax40_hi": 4.026678746285977,
+   "fever_cost": 1.958376190899048
+  }
+ },
+ "contrasts": [
+  {
+   "a": "Clade4",
+   "b": "para",
+   "ratio": 0.428868371634384,
+   "lo": 0.3285026097775295,
+   "hi": 0.5524231578843691,
+   "credible": "True"
+  },
+  {
+   "a": "Clade3",
+   "b": "para",
+   "ratio": 0.514020348737717,
+   "lo": 0.3901547146144501,
+   "hi": 0.6659588970610859,
+   "credible": "True"
+  },
+  {
+   "a": "Clade1",
+   "b": "para",
+   "ratio": 0.6068542680464317,
+   "lo": 0.4534335818038809,
+   "hi": 0.7936673477910671,
+   "credible": "True"
+  },
+  {
+   "a": "Clade2",
+   "b": "para",
+   "ratio": 0.7176554396392674,
+   "lo": 0.5337541068211079,
+   "hi": 0.9567354654064668,
+   "credible": "True"
+  },
+  {
+   "a": "Clade1",
+   "b": "Clade2",
+   "ratio": 0.8456165225153032,
+   "lo": 0.6788157048964594,
+   "hi": 1.0422892112377045,
+   "credible": "False"
+  },
+  {
+   "a": "Clade1",
+   "b": "Clade3",
+   "ratio": 1.182036886250634,
+   "lo": 0.9841656051798984,
+   "hi": 1.4199874141951807,
+   "credible": "False"
+  },
+  {
+   "a": "Clade3",
+   "b": "Clade4",
+   "ratio": 1.1974637083288358,
+   "lo": 1.0319520654223509,
+   "hi": 1.3885515969009352,
+   "credible": "True"
+  },
+  {
+   "a": "Clade2",
+   "b": "Clade3",
+   "ratio": 1.3979333662155384,
+   "lo": 1.142904838583097,
+   "hi": 1.711097622699941,
+   "credible": "True"
+  },
+  {
+   "a": "Clade1",
+   "b": "Clade4",
+   "ratio": 1.4146332575607476,
+   "lo": 1.1954292324315745,
+   "hi": 1.6683222164872202,
+   "credible": "True"
+  },
+  {
+   "a": "Clade2",
+   "b": "Clade4",
+   "ratio": 1.673951639342528,
+   "lo": 1.3856034366070735,
+   "hi": 2.0262935622480156,
+   "credible": "True"
+  }
+ ],
+ "contrasts_n": 10,
+ "contrasts_n_resolved": 8,
+ "spearman_Topt_vs_fever_cost": {
+  "rho_on_posterior_medians": -0.9999999999999999,
+  "p": 1.4042654220543672e-24,
+  "n": 5,
+  "note": "12_main_figures.R reports the POSTERIOR MEDIAN of rho computed draw-by-draw (printed, never written to a CSV). This is the point estimate on the posterior medians -- the closest reproducible proxy from the committed tables."
+ },
+ "etcgem": {
+  "I": {
+   "r2_calibrated": 0.955597008063518,
+   "r2_apriori": -2.1792439716525225,
+   "kcat_scale": 0.6136443844759888,
+   "dTopt": -0.388493297367808,
+   "dCp_scale": 0.9811134856359924,
+   "apriori_Topt": 40.0
+  },
+  "II": {
+   "r2_calibrated": 0.9421691613953076,
+   "r2_apriori": -14.265384562086345,
+   "kcat_scale": 0.4096579459847352,
+   "dTopt": -1.2009768038847275,
+   "dCp_scale": 1.486332073671061,
+   "apriori_Topt": 30.0
+  },
+  "III": {
+   "r2_calibrated": 0.96521830240116,
+   "r2_apriori": -1.827978989522844,
+   "kcat_scale": 0.6218047431914859,
+   "dTopt": -0.0725690978552763,
+   "dCp_scale": 1.0039389259399565,
+   "apriori_Topt": 30.0
+  },
+  "IV": {
+   "r2_calibrated": 0.9630192472149606,
+   "r2_apriori": -0.1026829175730841,
+   "kcat_scale": 0.7104159094868902,
+   "dTopt": 0.8252647250547197,
+   "dCp_scale": 0.9704330638807052,
+   "apriori_Topt": 40.0
+  }
+ },
+ "capacity_isolates": [
+  {
+   "clade": "I",
+   "isolate": "Clade1_2068",
+   "capacity": 0.6702817372570633,
+   "peak": 0.828546
+  },
+  {
+   "clade": "I",
+   "isolate": "Clade1_2069",
+   "capacity": 0.6412901406184077,
+   "peak": 0.876384
+  },
+  {
+   "clade": "I",
+   "isolate": "Clade1_2070",
+   "capacity": 0.6992733338957187,
+   "peak": 0.892133
+  },
+  {
+   "clade": "II",
+   "isolate": "Clade2_2071",
+   "capacity": 0.5104710899883091,
+   "peak": 0.718239
+  },
+  {
+   "clade": "II",
+   "isolate": "Clade2_2072",
+   "capacity": 0.4718156278034351,
+   "peak": 0.567447
+  },
+  {
+   "clade": "II",
+   "isolate": "Clade2_2073",
+   "capacity": 0.3655131067950318,
+   "peak": 0.473685
+  },
+  {
+   "clade": "III",
+   "isolate": "Clade3_2074",
+   "capacity": 0.6788860349036775,
+   "peak": 0.828809
+  },
+  {
+   "clade": "III",
+   "isolate": "Clade3_2075",
+   "capacity": 0.688549900449896,
+   "peak": 0.841681
+  },
+  {
+   "clade": "III",
+   "isolate": "Clade3_2076",
+   "capacity": 0.669222169357459,
+   "peak": 0.842879
+  },
+  {
+   "clade": "IV",
+   "isolate": "Clade4_2077",
+   "capacity": 0.7842511525473275,
+   "peak": 0.939824
+  },
+  {
+   "clade": "IV",
+   "isolate": "Clade4_2078",
+   "capacity": 0.8229066147322013,
+   "peak": 1.012432
+  },
+  {
+   "clade": "IV",
+   "isolate": "Clade4_2079",
+   "capacity": 0.735931824816235,
+   "peak": 1.014402
+  }
+ ],
+ "capacity_anova": {
+  "ICC1": 0.898935867281392,
+  "F": 27.684121550351335,
+  "df": [
+   3,
+   8
+  ],
+  "p": 0.00014140238044834866
+ },
+ "isolate_correlations": {
+  "n": 12,
+  "r_capacity_vs_fever_tax40": {
+   "r": -0.8608527473333331,
+   "p": 0.0003237070376347007
+  },
+  "r_capacity_vs_respiration": {
+   "r": -0.6431754549722121,
+   "p": 0.024055846279625044
+  },
+  "r_capacity_vs_peak_growth": {
+   "r": 0.9620387427031536,
+   "p": 5.824731001323116e-07
+  },
+  "note": "Point estimates only. 12_main_figures.R prints a 95% CI from replicate(5000, sample.int(...)) with NO seed set, so that CI is not reproducible run to run."
+ }
+}
