@@ -1,0 +1,497 @@
+{
+ "test3_capacity_isolates_provenance": {
+  "sha_supp": "907dd418ea2f1c301791328d0f476a5d15ddd72bb7b6cc81ec44555b3fa10f47",
+  "sha_backup": "907dd418ea2f1c301791328d0f476a5d15ddd72bb7b6cc81ec44555b3fa10f47",
+  "byte_identical": true,
+  "grid_step": 0.00966386554621848,
+  "per_isolate": [
+   {
+    "clade": "I",
+    "isolate": "Clade1_2068",
+    "capacity": 0.6702817372570633,
+    "steps_vs_backup": 0.0,
+    "steps_vs_current": 5.860734766041627,
+    "backup_is_integer": true,
+    "current_is_integer": false
+   },
+   {
+    "clade": "I",
+    "isolate": "Clade1_2069",
+    "capacity": 0.6412901406184077,
+    "steps_vs_backup": -3.000000000000014,
+    "steps_vs_current": 2.860734766041613,
+    "backup_is_integer": true,
+    "current_is_integer": false
+   },
+   {
+    "clade": "I",
+    "isolate": "Clade1_2070",
+    "capacity": 0.6992733338957187,
+    "steps_vs_backup": 2.9999999999999916,
+    "steps_vs_current": 8.860734766041618,
+    "backup_is_integer": true,
+    "current_is_integer": false
+   },
+   {
+    "clade": "II",
+    "isolate": "Clade2_2071",
+    "capacity": 0.5104710899883091,
+    "steps_vs_backup": 7.000000000000009,
+    "steps_vs_current": 10.431968814282875,
+    "backup_is_integer": true,
+    "current_is_integer": false
+   },
+   {
+    "clade": "II",
+    "isolate": "Clade2_2072",
+    "capacity": 0.4718156278034351,
+    "steps_vs_backup": 2.9999999999999973,
+    "steps_vs_current": 6.431968814282865,
+    "backup_is_integer": true,
+    "current_is_integer": false
+   },
+   {
+    "clade": "II",
+    "isolate": "Clade2_2073",
+    "capacity": 0.3655131067950318,
+    "steps_vs_backup": -8.000000000000005,
+    "steps_vs_current": -4.568031185717139,
+    "backup_is_integer": true,
+    "current_is_integer": false
+   },
+   {
+    "clade": "III",
+    "isolate": "Clade3_2074",
+    "capacity": 0.6788860349036775,
+    "steps_vs_backup": 0.0,
+    "steps_vs_current": 5.906672794565914,
+    "backup_is_integer": true,
+    "current_is_integer": false
+   },
+   {
+    "clade": "III",
+    "isolate": "Clade3_2075",
+    "capacity": 0.688549900449896,
+    "steps_vs_backup": 0.9999999999999971,
+    "steps_vs_current": 6.90667279456591,
+    "backup_is_integer": true,
+    "current_is_integer": false
+   },
+   {
+    "clade": "III",
+    "isolate": "Clade3_2076",
+    "capacity": 0.669222169357459,
+    "steps_vs_backup": -0.9999999999999971,
+    "steps_vs_current": 4.9066727945659165,
+    "backup_is_integer": true,
+    "current_is_integer": false
+   },
+   {
+    "clade": "IV",
+    "isolate": "Clade4_2077",
+    "capacity": 0.7842511525473275,
+    "steps_vs_backup": 0.9999999999999971,
+    "steps_vs_current": 7.640342542775692,
+    "backup_is_integer": true,
+    "current_is_integer": false
+   },
+   {
+    "clade": "IV",
+    "isolate": "Clade4_2078",
+    "capacity": 0.8229066147322013,
+    "steps_vs_backup": 4.999999999999986,
+    "steps_vs_current": 11.64034254277568,
+    "backup_is_integer": true,
+    "current_is_integer": false
+   },
+   {
+    "clade": "IV",
+    "isolate": "Clade4_2079",
+    "capacity": 0.735931824816235,
+    "steps_vs_backup": -4.0000000000000115,
+    "steps_vs_current": 2.640342542775684,
+    "backup_is_integer": true,
+    "current_is_integer": false
+   }
+  ],
+  "n_integer_vs_backup": 12,
+  "n_integer_vs_current": 0
+ },
+ "test3_downstream_stats_committed": {
+  "ICC1": 0.898935867281392,
+  "F": 27.684121550351335,
+  "df": [
+   3,
+   8
+  ],
+  "p": 0.00014140238044834866,
+  "MSb": 0.05860304241751041,
+  "MSw": 0.0021168467386954775
+ },
+ "test4_fig3_vs_calibration_r2": {
+  "per_clade": [
+   {
+    "clade": "I",
+    "fig3_capacity": 0.6702817372570633,
+    "supp_kcat": 0.6136443844759888,
+    "backup_kcat": 0.6702817372570633,
+    "diff_vs_supp": 0.05663735278107451,
+    "diff_vs_backup": 0.0,
+    "equals_backup_exactly": true
+   },
+   {
+    "clade": "II",
+    "fig3_capacity": 0.4428240311647797,
+    "supp_kcat": 0.4096579459847352,
+    "backup_kcat": 0.4428240311647797,
+    "diff_vs_supp": 0.03316608518004449,
+    "diff_vs_backup": 0.0,
+    "equals_backup_exactly": true
+   },
+   {
+    "clade": "III",
+    "fig3_capacity": 0.6788860349036775,
+    "supp_kcat": 0.6218047431914859,
+    "backup_kcat": 0.6788860349036775,
+    "diff_vs_supp": 0.05708129171219156,
+    "diff_vs_backup": 0.0,
+    "equals_backup_exactly": true
+   },
+   {
+    "clade": "IV",
+    "fig3_capacity": 0.774587287001109,
+    "supp_kcat": 0.7104159094868902,
+    "backup_kcat": 0.774587287001109,
+    "diff_vs_supp": 0.06417137751421886,
+    "diff_vs_backup": 0.0,
+    "equals_backup_exactly": true
+   }
+  ],
+  "r2_matches_backup": true,
+  "r2_matches_current": false
+ },
+ "test5_apriori_Topt_supp_data": {
+  "across_clade_spread": 0.0,
+  "apriori_peak": 0.7955200481434287,
+  "apriori_argmax_T": 31.0,
+  "n_exact_ties": 6,
+  "tie_range": [
+   31.0,
+   37.0
+  ],
+  "plateau_within": {
+   "1e-06": [
+    30.0,
+    40.0,
+    21
+   ],
+   "0.001": [
+    30.0,
+    40.0,
+    21
+   ],
+   "0.01": [
+    30.0,
+    40.0,
+    21
+   ],
+   "0.05": [
+    29.5,
+    40.5,
+    23
+   ]
+  },
+  "reported_apriori_Topt": [
+   40.0,
+   30.0,
+   30.0,
+   40.0
+  ],
+  "consistent": false
+ },
+ "test5_apriori_Topt_backup": {
+  "across_clade_spread": 9.070522111187529e-14,
+  "apriori_peak": 0.8518999711604505,
+  "apriori_argmax_T": 30.0,
+  "n_exact_ties": 1,
+  "tie_range": [
+   30.0,
+   30.0
+  ],
+  "plateau_within": {
+   "1e-06": [
+    30.0,
+    46.0,
+    33
+   ],
+   "0.001": [
+    30.0,
+    46.0,
+    33
+   ],
+   "0.01": [
+    30.0,
+    46.0,
+    33
+   ],
+   "0.05": [
+    29.5,
+    46.0,
+    34
+   ]
+  },
+  "reported_apriori_Topt": [
+   30.0,
+   30.0,
+   30.0,
+   30.0
+  ],
+  "consistent": true
+ },
+ "test6_exclude_groups": {
+  "drop_excluded_calls": {
+   "08_bayesian_models.R": {
+    "defined": 0,
+    "called": 1
+   },
+   "09_bayesian_plots.R": {
+    "defined": 0,
+    "called": 1
+   },
+   "config.R": {
+    "defined": 1,
+    "called": -1
+   }
+  },
+  "tables": {
+   "Oxygen_Curve_Code_Key.csv": {
+    "rows": 1080,
+    "glab_rows": 180,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "Oxygen_Trimmed_Series_Metadata.csv": {
+    "rows": 1080,
+    "glab_rows": 180,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "activation_energy_summary.csv": {
+    "rows": 18,
+    "glab_rows": 3,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "arrhenius_growth_fgC_h_coefs.csv": {
+    "rows": 18,
+    "glab_rows": 3,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "arrhenius_respiration_fgC_h_coefs.csv": {
+    "rows": 18,
+    "glab_rows": 3,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "bayes_E_resp_minus_growth.csv": {
+    "rows": 5,
+    "glab_rows": 0,
+    "key_col": "Group",
+    "pct": 0.0
+   },
+   "bayes_clade_params.csv": {
+    "rows": 5,
+    "glab_rows": 0,
+    "key_col": "Group",
+    "pct": 0.0
+   },
+   "bayes_cue_by_clade.csv": {
+    "rows": 600,
+    "glab_rows": 0,
+    "key_col": "Group",
+    "pct": 0.0
+   },
+   "bayes_cue_by_isolate.csv": {
+    "rows": 1800,
+    "glab_rows": 0,
+    "key_col": "Group",
+    "pct": 0.0
+   },
+   "carbon_tax_curves.csv": {
+    "rows": 445,
+    "glab_rows": 0,
+    "key_col": "Group",
+    "pct": 0.0
+   },
+   "carbon_tax_group.csv": {
+    "rows": 20,
+    "glab_rows": 0,
+    "key_col": "Group",
+    "pct": 0.0
+   },
+   "carbon_tax_isolate.csv": {
+    "rows": 30,
+    "glab_rows": 0,
+    "key_col": "Group",
+    "pct": 0.0
+   },
+   "cue_quadratic_fit_coefs.csv": {
+    "rows": 18,
+    "glab_rows": 3,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "derived_N0_R_results_with_carbon.csv": {
+    "rows": 991,
+    "glab_rows": 168,
+    "key_col": "OTU",
+    "pct": 16.95
+   },
+   "diagnostic_hot_temps_growth_check.csv": {
+    "rows": 111,
+    "glab_rows": 20,
+    "key_col": "OTU",
+    "pct": 18.02
+   },
+   "failed_fits_at_bound.csv": {
+    "rows": 17,
+    "glab_rows": 2,
+    "key_col": "OTU",
+    "pct": 11.76
+   },
+   "fig_values.csv": {
+    "rows": 5,
+    "glab_rows": 0,
+    "key_col": "Group",
+    "pct": 0.0
+   },
+   "fit_coefficients_long.csv": {
+    "rows": 3240,
+    "glab_rows": 540,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "fit_coefficients_wide.csv": {
+    "rows": 1063,
+    "glab_rows": 178,
+    "key_col": "OTU",
+    "pct": 16.75
+   },
+   "fit_metrics.csv": {
+    "rows": 1080,
+    "glab_rows": 180,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "group_lookup_with_delta.csv": {
+    "rows": 1080,
+    "glab_rows": 180,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "manual_fit_windows.csv": {
+    "rows": 1080,
+    "glab_rows": 180,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "otu_cell_sizes.csv": {
+    "rows": 18,
+    "glab_rows": 3,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "otu_inoc.csv": {
+    "rows": 18,
+    "glab_rows": 3,
+    "key_col": "group",
+    "pct": 16.67
+   },
+   "otu_names.csv": {
+    "rows": 18,
+    "glab_rows": 3,
+    "key_col": "group",
+    "pct": 16.67
+   },
+   "plot_exclude_points.csv": {
+    "rows": 88,
+    "glab_rows": 11,
+    "key_col": "OTU",
+    "pct": 12.5
+   },
+   "removed_points.csv": {
+    "rows": 72,
+    "glab_rows": 10,
+    "key_col": "OTU",
+    "pct": 13.89
+   },
+   "replication_summary_by_temperature.csv": {
+    "rows": 204,
+    "glab_rows": 34,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "sharpe_schoolfield_K_O2_rate_coefs.csv": {
+    "rows": 72,
+    "glab_rows": 12,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "sharpe_schoolfield_growth_fgC_h_coefs.csv": {
+    "rows": 72,
+    "glab_rows": 12,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "sharpe_schoolfield_respiration_fgC_h_coefs.csv": {
+    "rows": 72,
+    "glab_rows": 12,
+    "key_col": "OTU",
+    "pct": 16.67
+   },
+   "summary_hot_temps_growth_check.csv": {
+    "rows": 26,
+    "glab_rows": 4,
+    "key_col": "OTU",
+    "pct": 15.38
+   }
+  }
+ },
+ "test7_bootstrap_pairing": {
+  "per_clade": {
+   "I": {
+    "n": 1500,
+    "corr": 0.15522366863215684
+   },
+   "II": {
+    "n": 1500,
+    "corr": 0.9234165348388376
+   },
+   "III": {
+    "n": 1500,
+    "corr": -0.16001506084510925
+   },
+   "IV": {
+    "n": 1500,
+    "corr": -0.2665632020405341
+   }
+  },
+  "pooled_corr": 0.9777678465037221
+ },
+ "supp_vs_backup_identical": {
+  "bayes_posterior_samples.csv": false,
+  "bayes_predictive.csv": false,
+  "bayes_summary.csv": false,
+  "calibration_curves.csv": false,
+  "calibration_measured.csv": true,
+  "calibration_r2.csv": false,
+  "capacity_bootstrap.csv": false,
+  "capacity_bootstrap_draws.csv": true,
+  "capacity_corr.csv": true,
+  "capacity_isolates.csv": true,
+  "identifiability_optima.csv": false,
+  "identifiability_profiles.csv": false,
+  "predicted_vs_observed.csv": false
+ }
+}
