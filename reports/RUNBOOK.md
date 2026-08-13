@@ -153,11 +153,9 @@ missing, the path is wrong, not the pipeline — see
 * `results/tables/` regenerates with no table moving beyond floating-point noise.
   Two exceptions are known and documented, both traced to the environment rather
   than to the code: see `REPRODUCTION.md` and the C9 pull request.
-* `results/tables/carbon_tax_curves.csv` **will** differ between runs — it uses an
-  unseeded `sample.int`. So will several PNGs, from unseeded jitter. That is a
-  known defect, recorded as residual item 2 in
-  [`MANUSCRIPT_FIGURE_LINKAGE.md`](MANUSCRIPT_FIGURE_LINKAGE.md), not a failure.
 * `manuscript/v3.pdf` is 15 pages with 6 figures.
+* A handful of files show as modified afterwards. That is expected, and §4a says
+  exactly which and why — check there before treating any of it as a failure.
 
 ---
 
