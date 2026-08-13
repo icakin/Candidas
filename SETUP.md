@@ -267,7 +267,18 @@ quarto install tinytex
 | R packages | `renv.lock` | 170 packages, R 4.5.2, CRAN + **Bioconductor 3.22** (edgeR 4.8.2, limma 3.66.0). `renv::restore()` handles both. Verified to cover every package the eighteen numbered scripts load. |
 | Stan | via `renv.lock` | rstan 2.32.7 / StanHeaders 2.32.10 / Stan 2.32.2. **`09_bayesian_models.R` never sets `backend`, so brms uses its default: rstan.** cmdstanr is not used. |
 | Everything, as measured | `env/versions.json` | Every version above, read from the live environment. |
-| Committed inputs and outputs | `env/baseline_checksums_*.txt` | SHA-256 of every tracked file under `data/`, `results/`, and the etc-GEM outputs. Re-run the pipeline and diff against these to prove nothing moved. |
+| Committed inputs and outputs | **git itself** | Every file under `data/`, `results/` and `outputs/` is tracked, so git's own content hashes are the record. After a run, `git status --short data/ results/ outputs/` shows exactly what moved — see [`reports/RUNBOOK.md`](reports/RUNBOOK.md) §4a, including which files are *expected* to differ. The etc-GEM tree is a submodule: add `git -C cauris_etcgem status --short`. |
+
+> **`env/baseline_checksums_*.txt` are gone, and this is a correction to something
+> we introduced.** They recorded a SHA-256 of every file under `data/`, `results/`
+> and the etc-GEM outputs, and this file used to tell you to re-run and diff
+> against them. That check could only ever pass on the machine that generated it:
+> R's `pdf()` device embeds a wall-clock `/CreationDate`, several figures carry
+> unseeded jitter, and PNG/PDF output depends on locally-installed font libraries.
+> Anyone following the old instruction on a second machine saw ~50 failures and
+> could reasonably have concluded the repository was broken. Git already records
+> the content of every file those baselines covered, on any machine, and never
+> goes stale.
 
 **Not pinned: the Python side.** There is no Python lockfile on `main`.
 `17_schematic.py` needs only numpy and matplotlib, so that is low risk — but the

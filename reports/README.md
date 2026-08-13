@@ -33,6 +33,12 @@ the point. As of 2026-08-11 that applies to:
   the code could not emit). **That section is now historical: the etc-GEM has
   been cut from the manuscript.** The code, the submodule and the vendored
   outputs remain in the repository.
+* **`REPRODUCTION.md` §5, the checksum verification.** It records
+  `shasum -a 256 -c env/baseline_checksums_{results,etcgem,data}.txt` passing.
+  Those files are no longer tracked: a byte checksum over a figure can only pass
+  on the machine that made it, so the check produced false alarms for everyone
+  else. Git is the checksum record now — see [`RUNBOOK.md`](RUNBOOK.md) §4a. The
+  report's statement was true when written; the command no longer exists.
 * **`N0_SENSITIVITY.md`.** Predates the in-code `N_inoc` regeneration and the
   C11 scale-free result. The reconciliation it left open has since closed, and
   the headline CUE claim no longer depends on the N₀ treatment at all.

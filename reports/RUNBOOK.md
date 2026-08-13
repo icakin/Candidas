@@ -158,8 +158,55 @@ missing, the path is wrong, not the pipeline — see
   known defect, recorded as residual item 2 in
   [`MANUSCRIPT_FIGURE_LINKAGE.md`](MANUSCRIPT_FIGURE_LINKAGE.md), not a failure.
 * `manuscript/v3.pdf` is 15 pages with 6 figures.
-* `env/baseline_checksums_*.txt` — re-run and diff against these to prove nothing
-  under `data/`, `results/` or the etc-GEM outputs moved.
+
+---
+
+## 4a. Verify the run touched nothing it should not
+
+```bash
+git status --short data/ results/ outputs/
+git -C cauris_etcgem status --short          # the etc-GEM tree is a submodule
+```
+
+`data/` must be empty. `results/` will list what the run rewrote — that is
+expected, since a run always writes there. `git diff` on any file shows exactly
+what moved; `git checkout -- results/` restores the committed tree.
+
+> A previous version of this runbook used
+> `shasum -a 256 -c env/baseline_checksums_*.txt`. Those files are no longer
+> tracked; **git is the checksum record here.** They could only ever pass on the
+> machine that generated them — see below.
+
+### What is expected to differ after a re-run, and why
+
+A file listed by `git status` after a run is **not** evidence of a problem. On
+this project, re-running rewrites about twenty tracked files whose bytes change
+for reasons that have nothing to do with the analysis. Measured directly, two
+identical back-to-back runs on the *same* machine:
+
+| what changes | why |
+|---|---|
+| `results/figures/TPC_*.pdf` (2) | R's `pdf()` device embeds `/CreationDate` and `/ModDate`. Two renders a second apart differ by **exactly 2 bytes**, and are byte-identical once those fields are stripped. |
+| ~14 PNGs, incl. `boxplot_*`, `FIG1_decoupling`, `FIG2_the_bill` | unseeded jitter in the plotting layer — the point positions genuinely move. Mean absolute pixel differences 0.11–1.21. |
+| `results/rds/bayes_*.rds` (3–5) | brms stamps each fit with its date and elapsed sampling times. The summaries derived from them are byte-identical. |
+| `results/tables/carbon_tax_curves.csv` | **the one text table that moves** — `12_carbon_tax.R` calls `sample.int(nrow(p), 1500)` unseeded. |
+
+The first three are format and timestamp artefacts. **The fourth is a real
+defect**, recorded as residual item 2 in
+[`MANUSCRIPT_FIGURE_LINKAGE.md`](MANUSCRIPT_FIGURE_LINKAGE.md): seeding that
+subsample, and the jitter, would make "the figure changed" mean something. It is
+listed here so nobody mistakes it for the harmless kind.
+
+Every *other* table is deterministic and should come back byte-identical. If one
+does not, that is worth investigating — use `git diff` and compare with a stated
+tolerance, which is what the substantive verifications in `REPRODUCTION.md`, C9
+and C13 did.
+
+**Figures are deliberately not byte-verified.** Beyond the timestamp and jitter
+issues above, PNG and PDF output depends on font paths and on the installed
+`ragg` / `systemfonts` / freetype versions, which differ legitimately between
+machines. A byte-level check over a figure can therefore only pass on the machine
+that made it — the opposite of what a verification is for.
 
 ---
 
