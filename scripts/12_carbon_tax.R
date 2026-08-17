@@ -208,6 +208,9 @@ wide <- grp_tax %>%
 print(as.data.frame(wide), row.names = FALSE)
 
 # ---- full curves -------------------------------------------------------------
+# Seeded: the subsample below used an unseeded sample.int, so carbon_tax_curves.csv
+# differed between otherwise identical runs (flagged in PR #8 review).
+set.seed(1204)
 TGRID <- seq(T_MIN_C, T_MAX_C, by = 0.25)
 tax_curves <- lapply(GRPS, function(g) {
   p <- dplyr::filter(grp_par, Group == g)
