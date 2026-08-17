@@ -399,7 +399,7 @@ Because several derived respiratory quantities depend on the estimated
 starting cell number, we next tested which conclusions were sensitive to
 the inoculum back-projection. Per-cell respiration and carbon-use
 efficiency depend on the starting cell number N0, obtained by
-back-projecting the measured inoculum over the pre-fit interval, N0 =
+back-projecting the inoculum over the pre-fit interval, N0 =
 N\_inoc·exp(r·Δt). The specific growth rate r and its activation energy
 are recovered directly from the oxygen dynamics and are independent of
 N0; only the per-cell respiratory flux, CUE and quantities derived from
@@ -524,16 +524,21 @@ Growth and respiratory carbon flux were expressed on a matched per-cell
 basis, so carbon-use efficiency could be computed as CUE = G/(G + R).
 The per-cell carbon quota is taken as a single temperature-independent
 value, and it is that assumption which makes the per-cell activation
-energy of growth directly comparable with that of respiration. The
-assumption is not innocuous across 22--44 °C: fungal cell volume and
-wall composition can shift under thermal stress, and any systematic
-temperature dependence in the carbon quota would propagate into the
-per-cell growth activation energy rather than cancelling from it. The
-scale-free comparison reported in the Results avoids the assumption
-altogether, since the activation energy of the fitted growth rate r
-against that of the volumetric consumption rate K involves no per-cell
-conversion at all; the two agree to within 0.03 eV, and we treat the
-scale-free comparison as primary for that reason.
+energy of growth directly comparable with that of respiration. Cell
+volumes were 8 µm³ for the C. \emph{auris} clades (from cells of 2--3 µm
+measured here, consistent with the species description of Satoh et
+al.~2009) and 32 µm³ for C. \emph{parapsilosis} (a prolate ellipsoid of
+3.25 × 5.75 µm from published dimensions, Silva et al.~2012), converted
+to carbon at 165 fg C µm⁻³ from yeast dry-mass density and carbon
+fraction (Klis et al.~2014). The assumption is not innocuous across
+22--44 °C: fungal cell volume and wall composition can shift under
+thermal stress, and any systematic temperature dependence in the carbon
+quota would propagate into the per-cell growth activation energy rather
+than cancelling from it. The scale-free comparison reported in the
+Results avoids the assumption altogether, since the activation energy of
+the fitted growth rate r against that of the volumetric consumption rate
+K involves no per-cell conversion at all; the two agree to within 0.03
+eV, and we treat the scale-free comparison as primary for that reason.
 
 \section{\texorpdfstring{\textbf{Supplementary
 figures}}{Supplementary figures}}\label{supplementary-figures}
@@ -599,6 +604,22 @@ Cakin I, Millington R, Pawar S, Buckling A, Smirnoff N, Padfield D,
 Duffy J, Yvon-Durocher G. \emph{A novel method to simultaneously
 estimate bacterial respiration and growth from oxygen dynamics.} ISME
 Communications 2026;6(1):ycag024. https://doi.org/10.1093/ismeco/ycag024
+
+Klis FM, de Koster CG, Brul S. \emph{Cell wall-related bionumbers and
+bioestimates of Saccharomyces cerevisiae and Candida albicans.}
+Eukaryotic Cell 2014;13(1):2--9. https://doi.org/10.1128/EC.00250-13
+
+Satoh K, Makimura K, Hasumi Y, Nishiyama Y, Uchida K, Yamaguchi H.
+\emph{Candida auris sp. nov., a novel ascomycetous yeast isolated from
+the external ear canal of an inpatient in a Japanese hospital.}
+Microbiology and Immunology 2009;53(1):41--44.
+https://doi.org/10.1111/j.1348-0421.2008.00083.x
+
+Silva S, Negri M, Henriques M, Oliveira R, Williams DW, Azeredo J.
+\emph{Candida glabrata, Candida parapsilosis and Candida tropicalis:
+biology, epidemiology, pathogenicity and antifungal resistance.} FEMS
+Microbiology Reviews 2012;36(2):288--305.
+https://doi.org/10.1111/j.1574-6976.2011.00278.x
 
 
 
