@@ -111,6 +111,18 @@ _kc = {s: pd.read_csv(f'{G}/kcat_reaction_{s}.csv')[['reaction', 'best_gene']].d
 
 
 def _paired(param):
+    """Mean paired difference over UNIQUE ortholog pairs, not over reactions.
+
+    The pairing is by shared reaction, so a gene catalysing several reactions would
+    otherwise contribute several rows: 1041 rows come from 407 distinct C. auris genes
+    and 432 unique pairs, one gene appearing under 23 reactions. Counting rows does two
+    things, and the second is worse than the first. It over-states n, shrinking the
+    standard error. And it weights the MEAN by promiscuity, so central-metabolism enzymes
+    dominate an estimate that is supposed to describe the proteome. Collapsing to unique
+    (auris gene, relative gene) pairs fixes both; gem/paired_dedup_audit.py reports the
+    reaction-level version alongside, and a cluster bootstrap over pairs that agrees with
+    the interval below.
+    """
     f, col = (('thermal_tm.csv', 'pred_tm') if param == 'Tm'
               else ('thermal_topt.csv', 'pred_topt'))
     d = pd.read_csv(f'{G}/{f}')
@@ -119,8 +131,11 @@ def _paired(param):
     out = {}
     for r in RELS:
         m = _kc['auris'].merge(_kc[r], on='reaction', suffixes=('_a', '_b'))
-        dd = np.array([v['auris'][x] - v[r][y] for x, y in zip(m.best_gene_a, m.best_gene_b)
-                       if x in v['auris'] and y in v[r]])
+        uq = {}
+        for x, y in zip(m.best_gene_a, m.best_gene_b):
+            if x in v['auris'] and y in v[r]:
+                uq[(x, y)] = v['auris'][x] - v[r][y]
+        dd = np.array(list(uq.values()))
         t, p = _st.ttest_1samp(dd, 0)
         se = float(dd.std(ddof=1) / np.sqrt(len(dd)))
         out[r] = dict(n=len(dd), mean=float(dd.mean()), p=float(p), se=se,
@@ -221,8 +236,10 @@ axB.text(X0 + (X1 - X0) * 0.435, pk * 0.235,
          fontsize=7.2, color=INK, ha='left', va='center', linespacing=1.55)
 axB.set_xlabel(f'predicted enzyme {TM} ({DEG}C)')
 axB.set_ylabel('density')
-# 33/0.52 = 63x in the fitted formulation; 18/0.52 = 35x once the unfolding width is
-# set to its physical value. The heading takes the smaller, which holds either way.
+# On the deduplicated statistic: 32.5/0.41 = 79x in the fitted formulation, 18/0.41 = 44x
+# once the unfolding width is set to its physical value. The heading quotes the first and
+# says so; an earlier draft wrote ">=35x" from the reaction-level 0.52, which was not a
+# bound (18/0.67, the top of that interval, is 27x).
 FOLD_ROBUST = 18.0 / dpair                       # corrected unfolding width
 FOLD_STRICT = 18.0 / paired[best_rel]['hi']      # smallest requirement / largest dTm
 axB.set_title('B  Paired Δ{} is directionally consistent but ~{:.0f}× below the fitted '
@@ -249,10 +266,13 @@ for sp_ in axI.spines.values(): sp_.set_linewidth(.6)
 
 # ---- C --------------------------------------------------------------------
 axC = fig.add_subplot(gs[1, 0])
+# Deduplication widened both intervals: the Tm CI now reaches 0.19, below the old 0.30
+# left limit, so the axis is extended rather than the bar clipped.
+C_XLO = 0.12                      # left limit of the log axis, and the open-end anchor
 # Paired ortholog differences, the same quantity panel B reports. Using the unpaired
-# median gap here instead would put two near-identical but different ratios in one figure
-# (62x in C against 63x in B), which reads as an inconsistency rather than as the two
-# distinct comparisons it is. One quantity, one ratio per axis.
+# median gap here instead would put two near-identical but different ratios in one figure,
+# which reads as an inconsistency rather than as the two distinct comparisons it is.
+# One quantity, one ratio per axis.
 pred = {'Tm': dpair,
         'Topt': max(v['mean'] for v in paired_topt.values())}
 # An independent MEASURED anchor for the Tm axis. Walunjkar et al. 2025 (Mol Biol Evol
@@ -272,9 +292,23 @@ for k in ('Tm', 'Topt'):
     # the requirement the range it moves over as the detection threshold varies.
     _pp = (paired if k == 'Tm' else paired_topt)
     _br = max(_pp, key=lambda r: _pp[r]['mean'])
-    axC.plot([_pp[_br]['lo'], _pp[_br]['hi']], [y, y], color='#6f6f6f', lw=1.5, zorder=2)
-    for e in (_pp[_br]['lo'], _pp[_br]['hi']):
-        axC.plot([e, e], [y - 0.075, y + 0.075], color='#6f6f6f', lw=1.5, zorder=2)
+    _lo, _hi = _pp[_br]['lo'], _pp[_br]['hi']
+    if _lo <= 0:
+        # Deduplicated, the Topt interval reaches zero: -0.00 to 1.10, p = 0.05. A capped
+        # bar on a log axis cannot show that, and clipping it silently would assert a
+        # positive lower bound the data do not support. Drawn open to the left and
+        # labelled, exactly as the unbounded requirement bar is drawn open to the right.
+        axC.plot([C_XLO * 1.55, _hi], [y, y], color='#6f6f6f', lw=1.5, zorder=2)
+        axC.annotate('', xy=(C_XLO * 1.06, y), xytext=(C_XLO * 1.60, y), zorder=2,
+                     arrowprops=dict(arrowstyle='-|>', color='#6f6f6f', lw=1.3,
+                                     mutation_scale=8))
+        axC.text(_hi * 1.10, y - 0.30, 'interval includes zero', fontsize=6.4,
+                 color='#6f6f6f', ha='left', va='center', style='italic')
+        axC.plot([_hi, _hi], [y - 0.075, y + 0.075], color='#6f6f6f', lw=1.5, zorder=2)
+    else:
+        axC.plot([_lo, _hi], [y, y], color='#6f6f6f', lw=1.5, zorder=2)
+        for e in (_lo, _hi):
+            axC.plot([e, e], [y - 0.075, y + 0.075], color='#6f6f6f', lw=1.5, zorder=2)
     rlo, rhi, unb = _req_range[k]
     axC.plot([rlo, rhi], [y, y], color=C_REQ, lw=1.5, alpha=.6, zorder=2)
     axC.plot([rlo, rlo], [y - 0.075, y + 0.075], color=C_REQ, lw=1.5, alpha=.6, zorder=2)
@@ -308,7 +342,7 @@ for k in ('Tm', 'Topt'):
     else:
         axC.text(np.sqrt(pred[k] * reqd[k]), y - 0.20, f'≈{reqd[k] / pred[k]:.0f}×',
                  ha='center', fontsize=10, fontweight='bold')
-axC.set_xscale('log'); axC.set_xlim(0.30, 55); axC.set_ylim(-0.62, 1.45)
+axC.set_xscale('log'); axC.set_xlim(C_XLO, 55); axC.set_ylim(-0.62, 1.45)
 axC.set_yticks([0, 1]); axC.set_yticklabels([f'enzyme {TOPT}', f'enzyme {TM}'], fontsize=9.5)
 axC.tick_params(axis='y', pad=2)
 axC.set_xlabel(f'interspecies separation ({DEG}C, log)')

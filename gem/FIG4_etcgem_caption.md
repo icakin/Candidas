@@ -52,14 +52,13 @@ kernel densities for each proteome, on an axis spanning the separation the model
 distributions magnified, still superimposed, medians spanning 0.69 °C. The predictor does
 resolve a real difference in the expected direction, and it is reported here rather than
 dismissed: pairing enzymes by shared reaction (functional orthologs), the MEAN paired
-difference has *C. auris*'s enzymes 0.52 °C more thermostable than *C. haemulonii*'s
-(95% CI 0.37 to 0.67 °C, *n* = 1041 pairs, *p* = 1 × 10⁻¹¹) and 0.37 °C above
-*C. duobushaemulonii*'s (95% CI 0.21 to 0.54, *n* = 1045, *p* = 1 × 10⁻⁵). The interval,
-not the *P* value, is the quantity that matters here: with *n* > 1000 the *P* value
-establishes that the difference is consistent in sign, not that it is large. Against *C. parapsilosis* the paired difference is −0.13 °C and not
-significant (*n* = 689, *p* = 0.26), i.e. absent and if anything reversed. So the signal
-is real, consistent in sign for the two closest relatives, and roughly 63× smaller than
-the model requires. (**C**) Interspecies separation
+difference has *C. auris*'s enzymes 0.41 °C more thermostable than *C. haemulonii*'s
+(95% CI 0.19 to 0.63 °C, *n* = 432 unique ortholog pairs, *p* = 2.2 × 10⁻⁴) and 0.33 °C
+above *C. duobushaemulonii*'s (95% CI 0.08 to 0.57, *n* = 440, *p* = 0.011). The interval,
+not the *P* value, is the quantity that matters here. Against *C. parapsilosis* the paired
+difference is −0.21 °C and not significant (*n* = 389, *p* = 0.20), i.e. absent and if
+anything reversed. So the signal is real, consistent in sign for the two closest
+relatives, and roughly 79× smaller than the model requires. (**C**) Interspecies separation
 predicted from sequence, and independently **measured** in an analogous species pair,
 against the minimum the model requires (dumbbells, fold-gap annotated). The measured anchor
 (blue diamond) is *Saccharomyces cerevisiae* against *S. uvarum* — congeners whose thermal
@@ -75,17 +74,17 @@ range drives 40 °C growth below detection at all. The bar is drawn with an arro
 than a cap for that reason. The *T*~opt~ range is closed, 12.9 to 17.2 °C.
 
 The fold-gaps are distinct quantities and are labelled as such rather than merged:
-33/0.52 ≈ 63× against the sequence-predicted paired difference in the fitted formulation,
-33/1.6 ≈ 20× against the measured congeneric benchmark, and 16/0.48 ≈ 32× for *T*~opt~.
-Panel B's heading quotes the first of these, 63×, and states it as the fitted
+33/0.41 ≈ 79× against the sequence-predicted paired difference in the fitted formulation,
+33/1.6 ≈ 20× against the measured congeneric benchmark, and 16/0.55 ≈ 29× for *T*~opt~.
+Panel B's heading quotes the first of these, 79×, and states it as the fitted
 formulation's value with a tilde rather than as a bound. An earlier draft wrote "≥35×",
 reasoning that correcting the unfolding width to its physical value lowers the *T*~m~
 requirement from 33 °C to 18 °C and so the multiple to 18/0.52 ≈ 35×, which would hold in
-both formulations. That is not a valid bound: 18/0.67, using the upper end of the
-confidence interval on the paired difference, is 27×, so the "≥" fails inside the
-uncertainty already reported two sentences earlier. The heading therefore quotes one
-formulation's number and the corrected value is given here rather than folded into a
-claim that does not survive its own interval.
+both formulations. That was not a valid bound even on the number it used: 18/0.67, the
+upper end of that interval, is 27×. On the deduplicated statistic the corrected-width
+multiple is 18/0.41 ≈ 44×. The heading therefore quotes one formulation's number and the
+corrected value is given here rather than folded into a claim that does not survive its
+own interval.
 (**D**) Dynamic sparse test: predicted 40 °C growth as bottleneck enzymes are shifted
 −8 °C, added best-first from a pool of the 80 strongest flux-weighted candidates, with
 marginal effects recomputed after every addition so that bottlenecks exposed by flux
@@ -158,11 +157,49 @@ function is shaped.
 The comparison is deliberately PAIRED. Comparing the four *T*~m~ distributions as
 independent samples gives Cohen's *d* ≤ 0.19 and near-total overlap, which would support a
 stronger claim — that the proteomes are indistinguishable. That claim would be wrong, and
-any reader who pairs the orthologs would find it wrong within minutes (*p* = 1 × 10⁻¹¹).
+any reader who pairs the orthologs would find it wrong within minutes (*p* = 2 × 10⁻⁴).
 Reporting the paired result costs the stronger wording and buys a claim that survives
 scrutiny: the difference exists, points the right way for the two closest relatives, and is
 still two orders of magnitude short. That is the claim the paper should rest on, and it generalises beyond *Candida* to
 any etcGEM built on sequence-predicted enzyme thermal parameters.
+
+## THE PAIRING IS DEDUPLICATED, AND WHY THAT MATTERS
+
+Orthologs are paired by shared reaction: the same reaction in two models is catalysed by
+each species' counterpart enzyme. A gene catalysing several reactions therefore appears
+several times, and an earlier version of this figure counted reactions rather than protein
+pairs. For *C. haemulonii* that meant 1041 rows drawn from 407 distinct *C. auris* genes
+and 432 unique pairs, with one gene appearing under 23 reactions.
+
+Two things follow, and the second is the worse one. The standard error was too small,
+because 1041 independent observations were claimed where 432 exist. And the MEAN was
+weighted by promiscuity: a gene under 23 reactions counted 23 times, and highly connected
+enzymes are central-metabolism enzymes, not a random sample of the proteome. That is a
+bias, not only a precision problem.
+
+Collapsing to unique (auris gene, relative gene) pairs changes the numbers as follows.
+
+| | reaction-level (old) | unique pairs (reported) |
+|---|---|---|
+| *T*~m~, *C. haemulonii* | 0.518 °C [0.37, 0.67], n = 1041, p = 1 × 10⁻¹¹ | 0.411 °C [0.19, 0.63], n = 432, p = 2.2 × 10⁻⁴ |
+| *T*~m~, *C. duobushaemulonii* | 0.374 °C [0.21, 0.54], p = 1 × 10⁻⁵ | 0.326 °C [0.08, 0.57], p = 0.011 |
+| *T*~m~, *C. parapsilosis* | −0.129 °C, p = 0.26 | −0.207 °C, p = 0.20 |
+| *T*~opt~, largest | 0.484 °C (*C. duobushaemulonii*), p = 0.008 | 0.548 °C (*C. haemulonii*), p = 0.051 |
+
+A cluster bootstrap resampling pairs rather than rows gives the same intervals
+([0.20, 0.63] for *T*~m~ against *C. haemulonii*), so the widening is a property of the
+data and not of how ties were collapsed. `gem/paired_dedup_audit.py` reproduces all three
+versions.
+
+The *T*~m~ conclusion strengthens: the difference is smaller, so the fold gap rises from
+63× to 79×. The *T*~opt~ conclusion changes in kind and the panel says so. Deduplicated,
+no relative shows a significant *T*~opt~ difference from *C. auris* — the largest is
+0.55 °C with an interval reaching zero (p = 0.051), and *C. duobushaemulonii* falls from
+p = 0.008 to p = 0.57. Panel C therefore draws the *T*~opt~ interval open to the left and
+labels it "interval includes zero", rather than clipping it at the axis and implying a
+positive lower bound the data do not support. The honest statement for *T*~opt~ is that
+there is no resolvable interspecies difference at all, which is a stronger version of the
+same argument, not a weaker one.
 
 ## THE SENSITIVITY CAVEAT (state this; do not wait to be asked)
 
@@ -187,13 +224,13 @@ correlation and not a demonstrated causal coupling; it bounds the scale of the d
 not its explanatory power. Second, the requirement survives the correction that most
 plausibly inflates it: setting the unfolding width to the value implied by protein
 thermodynamics halves the requirement to 18 °C, still an order of magnitude above the
-0.52 °C predicted and 11× the 1.6 °C measured.
+0.41 °C predicted and 11× the 1.6 °C measured.
 
 ## THE MEASURED ANCHOR, AND WHY IT MATTERS
 
 The obvious objection to panel B is that the predictor is attenuated: an imperfect
 regressor shrinks differences toward the mean, so the true interspecies separation could be
-larger than 0.52 °C. The objection is fair, and the predictor's reported r² does not
+larger than 0.41 °C. The objection is fair, and the predictor's reported r² does not
 answer it — a cross-species r² is inflated by the model's ability to separate thermophiles
 from mesophiles, and says little about resolution across a one-degree gap between
 congeners. Benchmarking of sequence-based *T*~m~ predictors finds exactly this: RMS errors
@@ -207,9 +244,11 @@ The measured anchor settles it without needing the predictor to be right. Walunj
 ~16 Mya and differ by 8 °C in growth thermal limit (IT50), and found a mean ortholog *T*~m~
 difference of 1.6 °C across 827 pairs. So the empirical scale of proteome-wide
 thermostability divergence between congeners with a *larger* thermal difference than ours
-is 1.6 °C — three times our predicted 0.52 °C, and still 20× below what this model needs.
-The attenuation objection therefore changes the fold gap from ≈60× to ≈20×, and changes
-nothing about the conclusion.
+is 1.6 °C — four times our predicted 0.41 °C, and still 20× below what this model needs.
+The attenuation objection therefore changes the fold gap from ≈79× to ≈20×, and changes
+nothing about the conclusion. Note also that Walunjkar's 1.6 °C is the parental-context,
+whole-proteome value; in a shared hybrid environment the same study reports 0.68 °C. The
+larger figure is quoted here because it is the more demanding benchmark for this argument.
 
 Two further points from that study reinforce rather than undermine the direction taken
 here. First, the divergence is real and pervasive: 85% of *S. cerevisiae* proteins were
@@ -224,8 +263,8 @@ conclusion this figure reaches by a completely different route.
 
 The sequence-predicted separations are PAIRED ortholog differences — the same quantity
 panel B reports, so the figure carries one ratio per axis rather than two near-identical
-ones computed different ways. They are 0.52 °C for *T*~m~ (*C. haemulonii*, n = 1041 pairs,
-p = 1 × 10⁻¹¹) and 0.48 °C for *T*~opt~ (*C. duobushaemulonii*, n = 1045, p = 0.008), the
+ones computed different ways. They are 0.41 °C for *T*~m~ (*C. haemulonii*, n = 432 unique
+pairs, p = 2.2 × 10⁻⁴) and 0.55 °C for *T*~opt~ (*C. haemulonii*, n = 432, p = 0.051), the
 largest in *C. auris*'s favour in each case, from per-enzyme predictions by the
 DLKcat-style models (*T*~m~ r² = 0.76, *T*~opt~ r² = 0.57 on held-out
 data). Predictions from an imperfect regressor are attenuated toward the mean, so between
@@ -233,8 +272,8 @@ proteomes as similar as these the predicted separation is in part a statement ab
 resolution of the predictor rather than a biological estimate. The fold gaps are therefore
 upper bounds and the argument should not rest on them. What the panel establishes is the
 requirement: reproducing the observed boundary inside this model needs roughly 33 °C of
-interspecies separation in enzyme *T*~m~ (≈63× the paired difference) or 16 °C in *T*~opt~
-(≈32×), and no plausible value for congeneric species approaches either. Against the
+interspecies separation in enzyme *T*~m~ (≈79× the paired difference) or 16 °C in *T*~opt~
+(≈29×), and no plausible value for congeneric species approaches either. Against the
 measured congeneric anchor of 1.6 °C the *T*~m~ requirement is still ≈20× too large.
 
 ## MECHANISM FEASIBILITY TABLE (supplementary)
@@ -244,7 +283,7 @@ Ten mechanisms, each tested with the same two-sided criterion.
 | Mechanism | Required interspecies change | 40 °C failure? | 34 °C growth kept? | Both? |
 |---|---|---|---|---|
 | Uniform *T*~m~ shift | 32.5 °C (32.4 in *C. duobushaemulonii*, 32.6 in *C. parapsilosis*; unbounded within ±35 °C in *C. haemulonii*) | yes, at ≈33 °C | No | No |
-| Uniform *T*~opt~ shift | 15.6 °C (14.9–15.8 across the three relatives), ≈32× the 0.48 °C paired difference | yes, at ≈16 °C | No | No |
+| Uniform *T*~opt~ shift | 15.6 °C (14.9–15.8 across the three relatives), ≈29× the 0.55 °C paired difference | yes, at ≈16 °C | No | No |
 | Joint *T*~m~ + *T*~opt~ (2-D) | frontier from (32.4, 0) to (0, 16) | yes, everywhere on the frontier | No, at every point | No |
 | Targeted/sparse (best-first, ≤8 °C, 60 enzymes from a pool of 80, plus beam pairs/triples) | not reached | No | yes | No |
 | Weakest-link (bottom decile of *T*~m~ only) | >60 °C in two relatives; 54 °C in *C. parapsilosis* | No | yes | No |
@@ -332,7 +371,7 @@ optimum is unique, alternative optimal flux distributions do not change these µ
 ## VERDICT
 
 The requirement stands at ≈20× the largest *measured* congeneric proteome divergence, and
-≈60× the value predicted for these four species. Ten mechanisms, spanning enzyme thermostability, enzyme optima, proteome capacity,
+≈79× the value predicted for these four species. Ten mechanisms, spanning enzyme thermostability, enzyme optima, proteome capacity,
 targeted enzyme sets, maintenance energetics and oxygen availability, fail the same
 two-sided test — and they fail it after the model's unfolding physics and metabolic mode
 have both been corrected in the direction that helps. The reason is upstream of all of
@@ -358,6 +397,7 @@ Supporting analyses, not required for the figure:
 
 ```
 python3 gem/loocv_nested.py               # species-held-out validation (~16 min, 4 folds)
+python3 gem/paired_dedup_audit.py         # reaction-level vs unique-pair paired statistics
 python3 gem/carbon_budget_check.py        # RQ and carbon-use-efficiency disclosure
 python3 gem/atp_audit.py                  # energy-generating-cycle test
 python3 gem/ngam_falsification.py         # maintenance-axis rows of the table
