@@ -65,7 +65,7 @@
 # INPUTS   models/bayes_growth_ss.rds, bayes_resp_arr.rds,
 #          models/bayes_data_growth.rds, bayes_data_resp.rds
 # OUTPUTS  figures/FIG1_decoupling.png/.pdf
-#          figures/FIG2_the_bill.png/.pdf
+#          figures/FIG2_consequences.png/.pdf   (name follows save_fig() below, not this comment)
 #          tables/fig_values.csv, tables/fig_contrasts.csv
 #
 # RUN AFTER 09_bayesian_models.R.
@@ -293,9 +293,12 @@ OI <- c(Clade1 = "#0072B2",   # blue
         Clade3 = "#009E73",   # green
         Clade4 = "#E69F00",   # orange
         glab   = "#56B4E9",   # light blue (unused while excluded)
-        para   = "#D55E00")   # vermillion
+        para   = "#D55E00",   # vermillion
+        Hae    = "#984EA3",   # violet (C. haemulonii; was grey)
+        Duo    = "#00A6A6")   # teal   (C. duobushaemulonii; was black)
 SHORT <- c(Clade1 = "C. auris I", Clade2 = "C. auris II", Clade3 = "C. auris III",
-           Clade4 = "C. auris IV", glab = "C. glabrata", para = "C. parapsilosis")
+           Clade4 = "C. auris IV", glab = "C. glabrata", para = "C. parapsilosis",
+           Hae = "C. haemulonii", Duo = "C. duobushaemulonii")
 FULL  <- GROUP_LABEL_1L
 RED   <- "#B22222"
 
@@ -372,6 +375,16 @@ pts <- dplyr::bind_rows(
                             T_C = as.numeric(T), y = y_raw)) %>%
   dplyr::mutate(Group = factor(Group, levels = GRPS))
 
+# ---- CLIP FITTED CURVES AT EACH TAXON'S LAST OBSERVED TEMPERATURE ------------
+# No extrapolated predictions are drawn: e.g. Duo has no kept data above 38 C
+# (its 40-44 C curves showed no growth and are excluded), so its curve stops
+# there instead of being extrapolated to 44 C. Purely cosmetic - the posterior,
+# Topt, activation energies and all contrasts are untouched.
+TMAX_G <- pts %>% dplyr::group_by(Group) %>%
+  dplyr::summarise(Tmax_obs = max(T_C, na.rm = TRUE), .groups = "drop")
+cur <- cur %>% dplyr::left_join(TMAX_G, by = "Group") %>%
+  dplyr::filter(T_C <= Tmax_obs) %>% dplyr::select(-Tmax_obs)
+
 # ---- DISPLAY GROWTH AS THE RATE CONSTANT r (h^-1), NOT A CARBON FLUX ----------
 # The oxygen-dynamics model recovers r; the growth carbon flux is G = r x q, where
 # q is a temperature-INDEPENDENT per-cell carbon quota (constant per taxon). So
@@ -423,8 +436,25 @@ cur_iso <- lapply(seq_len(nrow(iso_map)), function(k) {
   dplyr::bind_rows(mk(Gm, "Growth"), mk(Rm, "Respiration"))
 }) %>% dplyr::bind_rows() %>% dplyr::mutate(Group = factor(Group, levels = GRPS))
 cur_iso <- .rescale_growth(cur_iso, "med")   # same r (h^-1) rescale as the clade curve
+cur_iso <- cur_iso %>% dplyr::left_join(TMAX_G, by = "Group") %>%
+  dplyr::filter(T_C <= Tmax_obs) %>% dplyr::select(-Tmax_obs)  # same clip as cur
 
 # ---- a, b: the two rates -----------------------------------------------------
+# ND = assayed-but-no-quantifiable-growth: temperatures a group was run at (every
+# group was assayed at all 12 temperatures) with NO kept growth curve. Drawn as
+# crosses at the panel's lower margin so non-detections are visible rather than
+# silently absent (e.g. Duo at 40-44 C).
+ND_TEMPS <- seq(T_MIN, T_MAX, by = 2)
+nd_growth <- pts %>% dplyr::filter(rate == "Growth") %>%
+  dplyr::group_by(Group) %>%
+  dplyr::summarise(kept = list(unique(round(T_C))), .groups = "drop") %>%
+  dplyr::rowwise() %>%
+  dplyr::mutate(nd = list(setdiff(ND_TEMPS, kept))) %>%
+  dplyr::ungroup() %>%
+  dplyr::select(Group, nd) %>% tidyr::unnest(nd) %>%
+  dplyr::rename(T_C = nd) %>%
+  dplyr::mutate(Group = factor(Group, levels = GRPS))
+
 tpc_panel <- function(w, ylab, ttl, sub, legend) {
   cv <- dplyr::filter(cur, rate == w); pp <- dplyr::filter(pts, rate == w)
   cvi <- dplyr::filter(cur_iso, rate == w)
@@ -434,30 +464,34 @@ tpc_panel <- function(w, ylab, ttl, sub, legend) {
     # size .5 / alpha .30: these are the only MEASUREMENTS in the whole figure and
     # the first version rendered them as a ghost (size .3, alpha .16).
     geom_point(data = pp, aes(y = y), shape = 16, size = .5, alpha = .30) +
-    geom_ribbon(aes(ymin = lo, ymax = hi), colour = NA, alpha = .14) +
-    # one thin line per isolate (all isolates of every clade), then the clade median on top
-    geom_line(data = cvi, aes(T_C, med, group = Isolate, colour = Group),
-              linewidth = .28, alpha = .55, inherit.aes = FALSE) +
+    geom_ribbon(aes(ymin = lo, ymax = hi), colour = NA, alpha = .10) +
     geom_line(linewidth = .8) +
-    scale_colour_manual(values = OI, labels = FULL) +
+    { if (w == "Growth" && nrow(nd_growth) > 0)
+        geom_point(data = nd_growth %>%
+                     dplyr::mutate(y_nd = min(pp$y, na.rm = TRUE) * .55),
+                   aes(T_C, y_nd, colour = Group), shape = 4, size = 1.5,
+                   stroke = .6, alpha = .9, inherit.aes = FALSE,
+                   show.legend = FALSE)
+      else NULL } +
+    scale_colour_manual(values = OI, labels = SHORT) +
     scale_fill_manual(values = OI, guide = "none") +
     scale_x_continuous(breaks = seq(24, 44, 4)) +
     scale_y_log10() +
     coord_cartesian(xlim = c(T_MIN, T_MAX)) +
     labs(x = "Temperature (°C)", y = ylab, title = ttl, subtitle = sub) + th
-  if (legend) g + guides(colour = guide_legend(ncol = 1)) +
-      theme(legend.position = c(.26, .24))
-  else g + theme(legend.position = "none")
+  if (legend) g + guides(colour = guide_legend(nrow = 1))  # collected at assembly
+  else g + guides(colour = "none")
 }
 # Panel a: SPECIFIC GROWTH RATE r (h^-1) - the rate constant the model recovers,
 # so E_G is unambiguously the activation energy of a rate. Panel b: per-cell
 # respiration carbon flux (fg C cell^-1 h^-1), the quantity that pairs with growth
 # in CUE. They are deliberately NOT in the same units - that is the point.
 f1a <- tpc_panel("Growth", expression("Specific growth rate, "*italic(r)*" (h"^-1*")"),
-                 "Growth turns over", "Sharpe-Schoolfield", TRUE)
-f1b <- tpc_panel("Respiration", expression("Respiration (fg C cell"^-1*" h"^-1*")"),
-                 "Respiration does not",
-                 "Arrhenius, favoured over Sharpe-Schoolfield by LOO", FALSE)
+                 "Growth rates turn over with temperature",
+                 "Sharpe-Schoolfield.  × = assayed, no detectable growth", TRUE)
+f1b <- tpc_panel("Respiration", expression("O"[2]*"-derived per-cell respiration (fg C cell"^-1*" h"^-1*")"),
+                 "No respiratory downturn detected over 22–44 °C",
+                 "Arrhenius posterior fits", FALSE)
 
 # ---- c: the mechanism --------------------------------------------------------
 El <- dplyr::bind_rows(
@@ -467,7 +501,7 @@ El <- dplyr::bind_rows(
                 Group = factor(Group, levels = rev(GRPS)))
 
 f1c <- ggplot(El, aes(e, Group, colour = Group, shape = what)) +
-  geom_vline(xintercept = E_MTE, colour = "grey35", linetype = "22", linewidth = .4) +
+  geom_vline(xintercept = E_MTE, colour = "grey78", linetype = "22", linewidth = .3) +
   geom_linerange(aes(xmin = lo, xmax = hi), position = position_dodge(width = .62),
                  linewidth = .9) +
   geom_point(aes(fill = Group), position = position_dodge(width = .62),
@@ -479,11 +513,11 @@ f1c <- ggplot(El, aes(e, Group, colour = Group, shape = what)) +
   scale_y_discrete(labels = SHORT, expand = expansion(add = c(.6, 1.2))) +
   # parked ABOVE the top row - it used to sit ON the line it annotates
   annotate("text", x = E_MTE, y = length(GRPS) + 1.05, size = 2.1, colour = "grey30",
-           label = "0.65 eV — metabolic theory", hjust = .5) +
+           label = "0.65 eV — MTE reference", hjust = .5) +
   scale_x_continuous(breaks = seq(0.2, 1.4, 0.2)) +   # was only 0.5 and 1.0
   labs(x = "Activation energy (eV)", y = NULL,
-       title = "Why: growth is ~2× more temperature-sensitive",
-       subtitle = sprintf("Difference credible in %d of %d taxa. A slope in log space — invariant.",
+       title = "Growth has higher ascending-limb activation energy than respiration",
+       subtitle = sprintf("Ascending-limb activation energies; difference credible in %d of %d taxa.",
                           sum(S$dE_credible), nrow(S))) +
   th + theme(axis.text.y = element_text(size = 7, face = "italic"),
              axis.line.y = element_blank(), axis.ticks.y = element_blank(),
@@ -500,27 +534,22 @@ f1d <- ggplot(cue, aes(T_C, med, colour = Group, fill = Group)) +
            fill = RED, alpha = .07) +
   geom_vline(xintercept = c(T_BODY, T_FEVER), colour = RED,
              linetype = "22", linewidth = .32) +
-  geom_ribbon(aes(ymin = lo, ymax = hi), colour = NA, alpha = .12) +
+  geom_ribbon(aes(ymin = lo, ymax = hi), colour = NA, alpha = .10) +
   geom_line(linewidth = .8) +
-  # drop-lines from each peak: this is exactly the quantity panel e then pins down
-  geom_segment(data = cue_pk, aes(x = T_C, xend = T_C, y = -Inf, yend = med),
-               linewidth = .3, linetype = "13", alpha = .8) +
   geom_point(data = cue_pk, aes(fill = Group), shape = 21, size = 2.4,
              colour = "white", stroke = .6) +
   scale_colour_manual(values = OI, guide = "none") +
   scale_fill_manual(values = OI, guide = "none") +
   scale_x_continuous(breaks = seq(24, 44, 4)) +
   coord_cartesian(xlim = c(T_MIN, T_MAX), ylim = c(0, 1)) +
-  annotate("text", x = T_BODY - 0.5, y = .04, hjust = 1, size = 2.1, colour = RED,
-           label = "body 37 °C") +
-  annotate("text", x = T_FEVER + 0.5, y = .04, hjust = 0, size = 2.1, colour = RED,
-           label = "fever 40 °C") +
-  labs(x = "Temperature (°C)", y = "Carbon-use efficiency,  G / (G + R)",
-       title = "So: efficiency collapses — and peaks early",
+  annotate("text", x = (T_BODY + T_FEVER)/2, y = .985, vjust = 1, size = 2.1,
+           colour = RED, label = "body 37 \u2192 fever 40 \u00b0C") +
+  labs(x = "Temperature (°C)", y = "Apparent carbon-use efficiency,  G / (G + R)",
+       title = "Apparent carbon-use efficiency declines through the febrile range",
        subtitle = "● peak of each curve") + th
 
 # ---- e: the result -----------------------------------------------------------
-ord1 <- S %>% dplyr::arrange(Tcue) %>% dplyr::pull(Group) %>% as.character()
+ord1 <- rev(as.character(GRPS))   # fixed taxonomic order, matches Fig 1c
 S1  <- S    %>% dplyr::mutate(Group = factor(Group, levels = ord1))
 Si1 <- Siso %>% dplyr::mutate(Group = factor(Group, levels = ord1))
 
@@ -535,9 +564,10 @@ f1e <- ggplot(S1, aes(y = Group, colour = Group)) +
                linewidth = .35, linetype = "13") +
   geom_linerange(aes(xmin = Tcue_lo, xmax = Tcue_hi), linewidth = 1.15,
                  lineend = "round") +
-  geom_point(data = Si1, aes(x = Tcue), shape = 16, size = 1.1, alpha = .5,
-             position = position_nudge(y = .3)) +
-  geom_point(aes(x = Topt), shape = 21, size = 2.2, fill = "white",
+  # faint isolate-level CUE optima behind the group summary (nudged up a touch)
+  geom_point(data = Si1, aes(x = Tcue), shape = 16, size = 1.1, alpha = .45,
+             position = position_nudge(y = .30)) +
+  geom_point(aes(x = Topt), shape = 22, size = 2.2, fill = "white",
              colour = "grey40", stroke = .5) +
   geom_point(aes(x = Tcue, fill = Group), shape = 21, size = 3.1,
              colour = "white", stroke = .6) +
@@ -552,35 +582,26 @@ f1e <- ggplot(S1, aes(y = Group, colour = Group)) +
   annotate("text", x = (T_BODY + T_FEVER) / 2, y = length(ord1) + .85, size = 2.1,
            colour = RED, label = "febrile") +
   labs(x = "Temperature (°C)", y = NULL,
-       title = "Therefore: every economic optimum lies below body temperature",
-       subtitle = "● T_opt of carbon-use efficiency (95% CrI)   ○ T_opt of growth   · the 3 isolates") +
+       title = "Apparent CUE optima lie below 37 °C",
+       subtitle = "\u25cf CUE optimum (95% CrI)   \u25a1 growth optimum   \u00b7 isolates") +
   th + theme(axis.text.y = element_text(size = 7.5, face = "italic"),
              axis.line.y = element_blank(), axis.ticks.y = element_blank(),
              panel.grid.major.y = element_line(linewidth = .2, colour = "grey94"))
 
-# The P column gets its OWN narrow strip. It used to be a geom_text at x = Inf,
-# floating inside the plot area past the febrile band - reading as a stray
-# annotation rather than a statistic tied to each row.
-f1e_p <- ggplot(S1, aes(y = Group)) +
-  geom_text(aes(x = 0, label = ifelse(P_below_body > .999, ">0.999",
-                                      sprintf("%.3f", P_below_body))),
-            size = 2.3, colour = "grey10") +
-  annotate("text", x = 0, y = length(ord1) + .88, size = 2.1, fontface = "bold",
-           colour = "grey30", label = "P(< 37 °C)") +
-  scale_y_discrete(expand = expansion(add = c(.7, 1.0))) +
-  coord_cartesian(xlim = c(-.5, .5)) +
-  theme_void() + theme(plot.margin = margin(4, 2, 3, 0))
-
-FIG1 <- (f1a | f1b) / (f1c | f1d) /
-        (f1e + f1e_p + patchwork::plot_layout(widths = c(1, .10))) +
-  patchwork::plot_layout(heights = c(1, 1, .80)) +
-  patchwork::plot_annotation(tag_levels = list(c("a", "b", "c", "d", "e", ""))) &
-  # `& th` would apply the WHOLE theme to every panel and OVERRIDE each panel's own
-  # legend.position, flinging in-panel legends out to the right. Share only the tag.
-  theme(plot.tag = element_text(size = 10, face = "bold"))
-
 message("\nWriting figures:")
-save_fig(FIG1, "FIG1_decoupling", 215)   # full page
+
+# TWO REBALANCED MAIN FIGURES (not a 3-way split of one continuous result).
+# Figure 1 = the rate decoupling (MECHANISM): a growth turns over, b respiration
+# does not, c the activation-energy gap. Figure 2 (assembled at the end, once the
+# fever panel f2b exists) = CONSEQUENCES: a apparent-CUE curves, b CUE optima,
+# c the 37->40 C change. The full relative-R/G cost curves (f2def) are a monotonic
+# transform of the CUE curves [R/G = (1-CUE)/CUE] and move to the Supplement.
+FIG1 <- (f1a | f1b) / f1c +
+  patchwork::plot_layout(heights = c(1, 0.95), guides = "collect") +
+  patchwork::plot_annotation(tag_levels = list(c("a", "b", "c"))) &
+  theme(plot.tag = element_text(size = 10, face = "bold"),
+        legend.position = "bottom", legend.box = "horizontal")
+save_fig(FIG1, "FIG1_decoupling", 150)
 
 
 # =============================================================================
@@ -621,7 +642,9 @@ taxcv <- lapply(GRPS, function(g) {
     med = apply(M, 2, stats::median),
     lo  = apply(M, 2, stats::quantile, .025, names = FALSE),
     hi  = apply(M, 2, stats::quantile, .975, names = FALSE))
-}) %>% dplyr::bind_rows() %>% dplyr::mutate(Group = factor(Group, levels = GRPS))
+}) %>% dplyr::bind_rows() %>% dplyr::mutate(Group = factor(Group, levels = GRPS)) %>%
+  dplyr::left_join(TMAX_G, by = "Group") %>%
+  dplyr::filter(T_C <= Tmax_obs) %>% dplyr::select(-Tmax_obs)  # clip at last observed T
 
 tax_min <- taxcv %>% dplyr::group_by(Group) %>%
   dplyr::slice_min(med, n = 1, with_ties = FALSE) %>% dplyr::ungroup()
@@ -642,20 +665,16 @@ f2def <- ggplot(taxcv, aes(T_C, med, colour = Group, fill = Group)) +
   scale_y_log10(breaks = c(1, 1.5, 2, 3, 5, 8),
                 labels = c("1x", "1.5x", "2x", "3x", "5x", "8x")) +
   coord_cartesian(xlim = c(T_MIN, T_MAX), ylim = c(.95, 8)) +
-  # moved OFF the curve minima (was at y = 1.06, running straight through the
-  # points) into the empty band just under the 1x line.
-  annotate("text", x = T_MAX - 0.5, y = 1.03, hjust = 1, size = 2.0,
-           colour = "grey35", fontface = "italic",
-           label = "1\u00d7 = each taxon's own cheapest temperature") +
   annotate("text", x = T_BODY - 0.5, y = 7.2, hjust = 1, size = 2.1, colour = RED,
-           label = "body") +
+           label = "body 37 \u00b0C") +
   annotate("text", x = T_FEVER + 0.5, y = 7.2, hjust = 0, size = 2.1, colour = RED,
-           label = "fever") +
+           label = "fever 40 \u00b0C") +
   labs(x = "Temperature (\u00b0C)",
-       y = "Relative respiratory cost (\u00d7)",
-       title = "Relative respiratory cost: what warmth costs",
-       subtitle = paste0("[R/G](T) \u00f7 min[R/G]: carbon burned per unit growth, vs each taxon's own ",
-                         "cheapest\ntemperature (\u25cf = that minimum = T_opt(CUE), Fig 1e).")) +
+       y = "Relative R/G,  (R/G)(T) / min(R/G)",
+       title = "Temperature dependence of the respiration-to-growth ratio",
+       subtitle = paste0("(R/G)(T) \u00f7 min(R/G): respiration per unit growth, relative to each ",
+                         "taxon's own\nminimum (\u25cf = that minimum = T_opt(CUE), Fig 1e; ",
+                         "1\u00d7 = each taxon's cheapest temperature).")) +
   guides(colour = guide_legend(ncol = 1)) +
   th + theme(legend.position = c(.28, .72))
 
@@ -748,8 +767,8 @@ f2a <- ggplot() +
 # ("hrough the fever (growth", "n per unit growth ([R/G] a"). The formulae are
 # already spelled out in the panel subtitle, so the strips only need to name the
 # quantity.
-LAB_KEPT <- "Growth kept"
-LAB_COST <- "Extra carbon cost"
+LAB_KEPT <- "Growth-rate retention, 37\u219240 \u00b0C"
+LAB_COST <- "R/G change, 37\u219240 \u00b0C"
 bill <- dplyr::bind_rows(
   S %>% dplyr::transmute(Group, panel = LAB_KEPT,
                          v = growth_kept, lo = gk_lo, hi = gk_hi,
@@ -757,9 +776,51 @@ bill <- dplyr::bind_rows(
   S %>% dplyr::transmute(Group, panel = LAB_COST,
                          v = fever_cost, lo = fc_lo, hi = fc_hi,
                          lab = sprintf("%.2f×", fever_cost))) %>%
-  dplyr::mutate(panel = factor(panel, levels = c(LAB_KEPT, LAB_COST)))
-ordb <- S %>% dplyr::arrange(dplyr::desc(growth_kept)) %>%
-  dplyr::pull(Group) %>% as.character()
+  dplyr::mutate(panel = factor(panel, levels = c(LAB_KEPT, LAB_COST)),
+                # dagger: Duo's 40 C values extrapolate beyond its last observed
+                # temperature (38 C) - flagged on the value label + in the subtitle
+                lab = ifelse(as.character(Group) == "Duo", "\u2020", lab))
+
+# Isolate-level fever cost (tax40/tax37 per isolate) - faint points behind the
+# group estimates on the cost panel (the "expose heterogeneity" layer).
+# Which isolates actually had detectable growth at 40 C?  wells_by_isolate.csv is
+# written by the same filter used for Fig 3 (fit_valid & has_curvature, after the
+# 04 exclusions).  Isolates with 0/5 wells at 40 C still receive a model-implied
+# ratio, but that ratio is identified by the TPC beyond observed positive growth,
+# so it is drawn HOLLOW and excluded from the growth-positive subset marker.
+grew40 <- tryCatch({
+  readr::read_csv(file.path(tables_dir, "wells_by_isolate.csv"),
+                  show_col_types = FALSE) %>%
+    dplyr::rename(Isolate = 1) %>%
+    dplyr::transmute(Isolate, grew = .data[["40"]] > 0)
+}, error = function(e) NULL)
+
+bill_iso <- tryCatch({
+  ti <- readr::read_csv(file.path(tables_dir, "carbon_tax_isolate.csv"),
+                        show_col_types = FALSE) %>%
+    dplyr::filter(Group %in% GRPS)
+  out <- ti %>% tidyr::pivot_wider(id_cols = c(Isolate, Group), names_from = T_C,
+                                   values_from = tax) %>%
+    dplyr::transmute(Isolate, Group,
+                     panel = factor(LAB_COST, levels = c(LAB_KEPT, LAB_COST)),
+                     v = `40` / `37`) %>%
+    dplyr::filter(is.finite(v))
+  if (!is.null(grew40)) out <- dplyr::left_join(out, grew40, by = "Isolate")
+  if (!"grew" %in% names(out)) out$grew <- TRUE
+  out %>% dplyr::mutate(grew = ifelse(is.na(grew), TRUE, grew))
+}, error = function(e) NULL)
+
+# Descriptive summary over ONLY the growth-positive isolates of each taxon. For
+# C. auris clades all 3/3 isolates grew, so this sits on the all-isolate estimate;
+# for Hae and para it is a single isolate, so it is drawn as a diamond WITHOUT an
+# interval - a subset marker, not a replacement group estimate.
+bill_pos <- if (!is.null(bill_iso)) {
+  bill_iso %>% dplyr::filter(grew %in% TRUE) %>%
+    dplyr::group_by(Group, panel) %>%
+    dplyr::summarise(v = median(v), n = dplyr::n(), .groups = "drop")
+} else NULL
+
+ordb <- rev(as.character(GRPS))   # fixed taxonomic order, matches Fig 1c
 bill$Group <- factor(bill$Group, levels = ordb)
 
 # The reference line differs by panel: 1.0 = "no change" in BOTH, but it means
@@ -767,12 +828,49 @@ bill$Group <- factor(bill$Group, levels = ordb)
 ref1 <- tibble::tibble(panel = factor(c(LAB_KEPT, LAB_COST),
                                       levels = c(LAB_KEPT, LAB_COST)), x = 1)
 
-f2b <- ggplot(bill, aes(v, Group, colour = Group)) +
+# Duo's 40 C quantities (both columns) require extrapolation past its last
+# temperature with quantifiable growth (38 C), so NO quantitative estimate is
+# drawn for it here: its row carries an explicit annotation instead, and the
+# model-conditional numbers are reported in the text/supplement only.
+bill_est <- bill     %>% dplyr::filter(as.character(Group) != "Duo")
+iso_est  <- if (!is.null(bill_iso)) bill_iso %>%
+              dplyr::filter(as.character(Group) != "Duo") else NULL
+pos_est  <- if (!is.null(bill_pos)) bill_pos %>%
+              dplyr::filter(as.character(Group) != "Duo") else NULL
+duo_note <- tibble::tibble(
+  panel = factor(c(LAB_KEPT, LAB_COST), levels = c(LAB_KEPT, LAB_COST)),
+  Group = factor("Duo", levels = ordb),
+  x     = c(0.67, 1.52),
+  lab   = c("no detectable growth at 40 \u00b0C",
+            "(R/G) not data-supported at 40 \u00b0C"))
+
+f2b <- ggplot(bill_est, aes(v, Group, colour = Group)) +
   geom_vline(data = ref1, aes(xintercept = x), colour = "grey55",
              linewidth = .4, inherit.aes = FALSE) +
+  { if (!is.null(iso_est) && nrow(iso_est) > 0)
+      geom_point(data = iso_est %>% dplyr::mutate(Group = factor(Group, levels = ordb)),
+                 aes(shape = grew), size = 1.15, alpha = .55,
+                 position = position_nudge(y = -.52))
+    else NULL } +
+  scale_shape_manual(values = c(`TRUE` = 16, `FALSE` = 1), guide = "none") +
   geom_linerange(aes(xmin = lo, xmax = hi), linewidth = 1.0, lineend = "round") +
   geom_point(aes(fill = Group), shape = 21, size = 2.8, colour = "white", stroke = .6) +
+  { if (!is.null(pos_est) && nrow(pos_est) > 0)
+      geom_point(data = pos_est %>% dplyr::mutate(Group = factor(Group, levels = ordb)),
+                 shape = 23, size = 2.3, colour = "white", stroke = .5,
+                 aes(fill = Group), position = position_nudge(y = -.26))
+    else NULL } +
+  { if (!is.null(pos_est) && nrow(pos_est) > 0)
+      geom_text(data = pos_est %>% dplyr::filter(n < 3) %>%
+                  dplyr::mutate(Group = factor(Group, levels = ordb)),
+                aes(label = sprintf("%.2f\u00d7  ", v)), size = 1.85, hjust = 1,
+                position = position_nudge(y = -.26), show.legend = FALSE)
+    else NULL } +
   geom_text(aes(label = lab), vjust = -1.3, size = 2.2, fontface = "bold") +
+  geom_text(data = duo_note, aes(x, Group, label = lab), inherit.aes = FALSE,
+            size = 1.9, colour = "grey30", fontface = "italic", hjust = .5) +
+  scale_x_continuous(trans = "log2", breaks = c(.25, .5, 1, 2, 4, 8),
+                     labels = c("0.25\u00d7", "0.5\u00d7", "1\u00d7", "2\u00d7", "4\u00d7", "8\u00d7")) +
   facet_wrap(~ panel, nrow = 1, scales = "free_x") +
   scale_colour_manual(values = OI, guide = "none") +
   scale_fill_manual(values = OI, guide = "none") +
@@ -781,12 +879,12 @@ f2b <- ggplot(bill, aes(v, Group, colour = Group)) +
   # aligns panel a's left edge to this row - so c's long labels were pushing a's
   # whole plot area to the right, leaving the big empty gap beside a's y-title.
   # The regions are already in panel a's legend; c does not need to repeat them.
-  scale_y_discrete(labels = SHORT, expand = expansion(add = c(.75, .95))) +
+  scale_y_discrete(limits = ordb, labels = SHORT,
+                   expand = expansion(add = c(.85, .95))) +
   labs(x = NULL, y = NULL,
-       title = "The bill for three degrees",
-       subtitle = paste0("Both are 37 → 40 °C ratios, and the right one is the left one's ",
-                         "mirror:\ncost = (respiration 40÷37) ÷ (growth 40÷37).  ",
-                         "1 = no change.")) +
+       title = "Physiological change from 37 to 40 °C",
+       subtitle = paste0("\u25cf hierarchical estimate   \u00b7 isolates   ",
+                         "\u25c6 median among 40 \u00b0C growth-positive   \u25cb isolate without growth at 40 \u00b0C")) +
   th + theme(axis.text.y = element_text(size = 6.8, face = "italic"),
              axis.line.y = element_blank(), axis.ticks.y = element_blank(),
              panel.grid.major.y = element_line(linewidth = .2, colour = "grey94"),
@@ -805,7 +903,7 @@ f2b <- ggplot(bill, aes(v, Group, colour = Group)) +
 # reserves that width for EVERY panel above it - which is what pushed panel a's
 # y-title far left and left the big empty gap. The subtitle names the species.
 TINY <- c(Clade1 = "I", Clade2 = "II", Clade3 = "III", Clade4 = "IV",
-          glab = "glab", para = "para")
+          glab = "glab", para = "para", Hae = "hae", Duo = "duo")
 CONp <- CON %>%
   dplyr::mutate(lab = paste0(TINY[a], " vs ", TINY[b])) %>%
   dplyr::arrange(ratio) %>%
@@ -816,13 +914,13 @@ f2c <- ggplot(CONp, aes(ratio, lab)) +
   geom_vline(xintercept = 1, colour = "grey30", linewidth = .45) +
   geom_linerange(aes(xmin = lo, xmax = hi, colour = credible), linewidth = .85) +
   geom_point(aes(colour = credible), size = 2) +
-  scale_colour_manual(values = c(`TRUE` = RED, `FALSE` = "grey70"), guide = "none") +
+  scale_colour_manual(values = c(`TRUE` = "grey15", `FALSE` = "grey72"), guide = "none") +
   scale_x_log10(breaks = c(.3, .5, .7, 1, 1.5, 2)) +
-  labs(x = "Ratio of relative respiratory cost at 40 \u00b0C   (< 1 = the first taxon pays less)", y = NULL,
-       title = sprintf("%d of %d clade differences resolve", .nres, nrow(CON)),
-       subtitle = paste0("I–IV = C. auris clades. All four credibly pay less than C. parapsilosis; ",
-                         "Clade IV is\ncheapest of all. Only the two grey pairs (I vs II, I vs III) ",
-                         "cannot be separated.")) +
+  labs(x = "Ratio of relative R/G at 40 \u00b0C   (< 1 = the first taxon pays less)", y = NULL,
+       title = "Posterior pairwise contrasts in relative R/G at 40 \u00b0C",
+       subtitle = paste0("I–IV = C. auris clades; hae = C. haemulonii, ",
+                         "duo = C. duobushaemulonii.\n",
+                         "Dark = 95% CrI excludes 1; light = not separable. Contrasts involving duo extrapolate beyond 38 \u00b0C.")) +
   th + theme(axis.text.y = element_text(size = 6.6),
              axis.line.y = element_blank(), axis.ticks.y = element_blank(),
              panel.grid.major.y = element_line(linewidth = .2, colour = "grey94"))
@@ -884,11 +982,12 @@ f2e <- ggplot(brdg, aes(Topt, cost, colour = Group)) +
   scale_colour_manual(values = OI, guide = "none") +
   scale_fill_manual(values = OI, guide = "none") +
   scale_y_log10(breaks = c(1.2, 1.5, 2, 2.5), labels = c("1.2×", "1.5×", "2×", "2.5×")) +
-  labs(x = "Environmental optimum, T_opt (°C)  →  more thermotolerant",
-       y = "Cost of a fever (×)  →  worse",
-       title = "Warmer-adapted taxa tend to pay a lower fever cost",
-       subtitle = paste0("The warmer a taxon's optimum, the less a fever costs it — ",
-                         "Casadevall's\nhypothesis, as two measured traits.")) +
+  labs(x = "Fitted growth T_opt under assay conditions (°C)",
+       y = "Change in R/G, 40 vs 37 °C (×)",
+       title = "Higher fitted growth optima, smaller modeled fever costs",
+       subtitle = paste0("Exploratory comparative pattern (consistent with thermal ",
+                         "restriction): both axes derive\nfrom the same fitted curves; ",
+                         "four of seven taxa are C. auris clades.")) +
   th + theme(plot.margin = margin(4, 10, 3, 4))
 
 
@@ -912,19 +1011,81 @@ f2e <- ggplot(brdg, aes(Topt, cost, colour = Group)) +
 # strip and panel a's y-title is flung to the far left of that strip, leaving a
 # big empty gap. free() lets a keep its own natural margin. (patchwork >= 1.2;
 # if unavailable, the terse contrast/bill labels above keep the gap small anyway.)
-A_panel <- tryCatch(patchwork::free(f2def, side = "l"),
-                    error = function(e) f2def)
-B_panel <- tryCatch(patchwork::free(f2e,   side = "l"),
-                    error = function(e) f2e)
-
-FIG2 <- A_panel + B_panel + f2b + f2c +
-  patchwork::plot_layout(
-    design = "AB\nCC\nDD",
-    heights = c(1.15, 0.72, 0.72)) +
+# RESTRUCTURED (reviewer pass): the main figure keeps only the two panels that
+# carry the fever story - the R/G cost curves (a) and the 37->40 change (b).
+# The Topt-vs-fever-cost scatter (exploratory, axes share a data source) and the
+# exhaustive pairwise contrasts move to Supplementary as standalone figures.
+# ============================================================================
+# FIGURE 2 - CONSEQUENCES (assembled here because it needs f2b, defined above):
+#   a  apparent-CUE curves           (f1d)
+#   b  CUE optima vs body temp        (f1e)
+#   c  37->40 C change: retention + dR/G  (f2b)
+# The full relative-R/G cost curves (f2def) are a monotonic transform of the CUE
+# curves and move to the Supplement (FIG_SUPP_relative_RG).
+# ============================================================================
+FIG2 <- f1d + f1e + f2b +
+  patchwork::plot_layout(design = "AB\nCC", widths = c(0.58, 0.42),
+                         heights = c(1, 0.95)) +
   patchwork::plot_annotation(tag_levels = "a") &
-  theme(plot.tag = element_text(size = 10, face = "bold"),
-        plot.margin = margin(4, 11, 4, 4))
-save_fig(FIG2, "FIG2_the_bill", 210, w_mm = 183)
+  theme(plot.tag = element_text(size = 10, face = "bold"))
+if (exists("fig_keep_add")) fig_keep_add("FIG2_consequences")
+save_fig(FIG2, "FIG2_consequences", 200)
+
+# ---- Supplementary figures ---------------------------------------------------
+# Relative-R/G cost curves (monotonic transform of Fig 2a); Topt-vs-fever-cost
+# scatter and pairwise contrasts (exploratory, retired from main text).
+if (exists("fig_keep_add")) fig_keep_add(c("FIG_SUPP_relative_RG",
+                                           "FIG_SUPP_topt_vs_fever_cost",
+                                           "FIG_SUPP_pairwise_contrasts"))
+save_fig(f2def, "FIG_SUPP_relative_RG", 110, w_mm = 150)
+save_fig(f2e, "FIG_SUPP_topt_vs_fever_cost", 95, w_mm = 120)
+save_fig(f2c, "FIG_SUPP_pairwise_contrasts", 110, w_mm = 150)
+
+# ---- Leave-one-group-out robustness of the Topt vs fever-cost association ----
+# Recomputes the posterior Spearman correlation (same .Tm/.Cm draw matrices as
+# above) dropping one group at a time, plus a version collapsing the four
+# C. auris clades to their per-draw mean (phylogenetic-clustering check).
+if (exists("fig_keep_add")) fig_keep_add("FIG_SUPP_loo_correlation")
+.loo_rows <- lapply(GRPS, function(g) {
+  keep <- setdiff(GRPS, g)
+  r <- vapply(seq_len(nd), function(j) {
+    a <- .Tm[j, keep]; b <- .Cm[j, keep]
+    if (any(!is.finite(a)) || any(!is.finite(b))) return(NA_real_)
+    .spear(a, b) }, numeric(1))
+  r <- r[is.finite(r)]
+  tibble::tibble(what = paste0("without ", GROUP_LABEL_1L[g]),
+                 med = stats::median(r), lo = qq(r, .025), hi = qq(r, .975),
+                 pneg = mean(r < 0))
+})
+.r_coll <- vapply(seq_len(nd), function(j) {
+  au <- c("Clade1", "Clade2", "Clade3", "Clade4")
+  a <- c(mean(.Tm[j, au]), .Tm[j, c("para", "Hae", "Duo")])
+  b <- c(mean(.Cm[j, au]), .Cm[j, c("para", "Hae", "Duo")])
+  if (any(!is.finite(a)) || any(!is.finite(b))) return(NA_real_)
+  .spear(a, b) }, numeric(1))
+.r_coll <- .r_coll[is.finite(.r_coll)]
+loo_df <- dplyr::bind_rows(
+  tibble::tibble(what = "all seven taxa", med = rho_med, lo = rho_lo, hi = rho_hi,
+                 pneg = rho_pneg),
+  dplyr::bind_rows(.loo_rows),
+  tibble::tibble(what = "C. auris clades collapsed (n = 4 taxa)",
+                 med = stats::median(.r_coll), lo = qq(.r_coll, .025),
+                 hi = qq(.r_coll, .975), pneg = mean(.r_coll < 0))) %>%
+  dplyr::mutate(what = factor(what, levels = rev(what)))
+f_loo <- ggplot(loo_df, aes(med, what)) +
+  geom_vline(xintercept = 0, colour = "grey55", linewidth = .4) +
+  geom_linerange(aes(xmin = lo, xmax = hi), linewidth = .9, colour = "grey30") +
+  geom_point(size = 2.2, colour = "grey10") +
+  geom_text(aes(label = sprintf("P(\u03c1<0) = %.2f", pneg)), vjust = -1.1,
+            size = 2.0, colour = "grey35") +
+  coord_cartesian(xlim = c(-1.05, 1.05)) +
+  labs(x = "Posterior Spearman \u03c1 (growth T_opt vs 37\u219240 \u00b0C change in R/G)",
+       y = NULL,
+       title = "Leave-one-out robustness of the comparative association",
+       subtitle = "Point = posterior median, line = 95% CrI; exploratory (taxa are phylogenetically structured).") +
+  th + theme(axis.line.y = element_blank(), axis.ticks.y = element_blank(),
+             panel.grid.major.y = element_line(linewidth = .2, colour = "grey94"))
+save_fig(f_loo, "FIG_SUPP_loo_correlation", 90, w_mm = 140)
 
 
 

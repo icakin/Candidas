@@ -1364,6 +1364,16 @@ server <- function(input, output, session) {
   })
   output$excl_count <- renderText(sprintf("Excluded samples: %d", nrow(excl_df())))
   observe({ tryCatch(readr::write_csv(excl_df(), excl_csv), error = function(e) NULL) })
+
+  # Final flush when the browser window closes - belt and braces. Everything
+  # already auto-saves on change; this guarantees one last write of BOTH files
+  # at session end so nothing set in the final moments is ever lost.
+  session$onSessionEnded(function() {
+    isolate({
+      tryCatch(readr::write_csv(win_df(),  out_csv),  error = function(e) NULL)
+      tryCatch(readr::write_csv(excl_df(), excl_csv), error = function(e) NULL)
+    })
+  })
   output$excl_dl <- downloadHandler(
     filename = function() "plot_exclude_points.csv",
     content = function(file) readr::write_csv(excl_df(), file)
@@ -1431,11 +1441,17 @@ server <- function(input, output, session) {
   if (identical(Sys.getenv("CANDIDAS_HEADLESS"), "1"))   return(FALSE)
   if (identical(Sys.getenv("CANDIDAS_RUN_APP"), "1"))    return(TRUE)
   if ("--app" %in% commandArgs(trailingOnly = TRUE))     return(TRUE)
+  # Direct `Rscript scripts/04_trim_selector.R` launches the app (no flag
+  # needed). A batch run that SOURCES this file (run_all etc.) has a different
+  # --file= target, so it stays headless and nothing blocks.
+  .file_arg <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+  if (length(.file_arg) == 1 &&
+      grepl("04_trim_selector\\.R$", sub("^--file=", "", .file_arg))) return(TRUE)
   interactive()
 }
 
 if (.candidas_run_app()) {
-  shinyApp(ui, server)
+  shiny::runApp(shinyApp(ui, server), launch.browser = TRUE)
 } else {
   message("04_trim_selector.R: headless - ui/server defined, app NOT launched, ",
           "nothing written\n  (results/tables/manual_fit_windows.csv + ",

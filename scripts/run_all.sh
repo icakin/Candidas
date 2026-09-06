@@ -32,6 +32,7 @@
 #                          runs offline and 16 needs its output.
 #   16 supplementary_figs  run here, as its own stage (needs 13 + etc-GEM data).
 #   17 schematic.py        run here, as its own stage (python3 + matplotlib).
+#   20 fig4_etcgem.py      run here ALWAYS - Figure 4, reads committed gem/ outputs.
 #
 #   10 n0_term_test        DELIBERATELY NOT RUN - diagnostic, not a pipeline stage.
 #   18 n0_treatment_panel  DELIBERATELY NOT RUN - diagnostic, not a pipeline stage.
@@ -168,7 +169,7 @@ else
 fi
 
 # ---------------------------------------------------------------------------
-# 1. R pipeline: 02, 03, 06, 07, 08, 09, 11, 12, 14, 15
+# 1. R pipeline: 02, 03, 06, 07, 08, 09, 11, 12, 14, 15, 15_fig3  (+ python 20)
 # ---------------------------------------------------------------------------
 if [ "${SKIP_R:-0}" != "1" ]; then
   stage "1/4 R pipeline 02-15 (run_all.R)" "$LOG_DIR/r_pipeline_${STAMP}.log" \
@@ -193,6 +194,17 @@ if [ "${SKIP_R:-0}" != "1" ]; then
     fi
   else
     echo ""; echo "etc-GEM figure stages skipped (RUN_ETCGEM_FIGS=1 to enable)."
+  fi
+
+  # 20 is Figure 4 and is NOT optional: it is a main manuscript figure. It reads
+  # only committed JSON/CSV from gem/ (numpy, pandas, matplotlib), so it needs
+  # neither cobra nor the network. Regenerate its inputs deliberately with
+  # gem/etcgem_counterfactual.py, gem/dyn_sparse.py and gem/counts_at_44.py.
+  if command -v python3 >/dev/null 2>&1; then
+    stage "3/4 20_fig4_etcgem.py (Figure 4)" "$LOG_DIR/py_20_${STAMP}.log" \
+      python3 "$HERE/20_fig4_etcgem.py"
+  else
+    echo ""; echo "!! python3 not on PATH - 20_fig4_etcgem.py NOT run (Figure 4 stale)."
   fi
 else
   echo ""; echo "SKIP_R=1 -> R pipeline skipped."

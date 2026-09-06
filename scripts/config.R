@@ -128,7 +128,7 @@ scatter_K_png              <- file.path(figures_dir, "scatter_K_O2_rate_vs_T.png
 # isolate code (OTU) assignment used by 01_convert_xlsx.R: the first group's
 # rows A/B/C become isolates 1,2,3; the second group's rows become 4,5,6; and so
 # on, so every isolate across the whole dataset gets a unique code 1..18.
-STRAIN_GROUPS <- c("Clade1", "Clade2", "Clade3", "Clade4", "glab", "para")
+STRAIN_GROUPS <- c("Clade1", "Clade2", "Clade3", "Clade4", "glab", "para", "Hae", "Duo")
 
 # Species behind each group (used only for labels/reference).
 GROUP_SPECIES <- c(
@@ -137,7 +137,9 @@ GROUP_SPECIES <- c(
   Clade3 = "Candida auris (Clade III)",
   Clade4 = "Candida auris (Clade IV)",
   glab   = "Candida glabrata",
-  para   = "Candida parapsilosis"
+  para   = "Candida parapsilosis",
+  Hae    = "Candida haemulonii",
+  Duo    = "Candida duobushaemulonii"
 )
 
 # ---- Clade metadata (for figure labels and the discussion) -------------------
@@ -150,7 +152,9 @@ GROUP_ORIGIN <- c(
   Clade3 = "Africa",
   Clade4 = "South America",
   glab   = NA_character_,
-  para   = NA_character_
+  para   = NA_character_,
+  Hae    = NA_character_,
+  Duo    = NA_character_
 )
 
 # Published clade phenotypes, for the DISCUSSION only - never for a figure claim.
@@ -201,7 +205,9 @@ GROUP_PHENOTYPE <- c(
   Clade3 = "aggregating",
   Clade4 = "highest mortality, MDR",
   glab   = NA_character_,
-  para   = NA_character_
+  para   = NA_character_,
+  Hae    = NA_character_,
+  Duo    = NA_character_
 )
 
 # Display label: species + origin where there is one.
@@ -211,7 +217,9 @@ GROUP_LABEL <- c(
   Clade3 = "C. auris III\n(Africa)",
   Clade4 = "C. auris IV\n(South America)",
   glab   = "C. glabrata",
-  para   = "C. parapsilosis"
+  para   = "C. parapsilosis",
+  Hae    = "C. haemulonii",
+  Duo    = "C. duobushaemulonii"
 )
 GROUP_LABEL_1L <- c(
   Clade1 = "C. auris I (South Asia)",
@@ -219,7 +227,9 @@ GROUP_LABEL_1L <- c(
   Clade3 = "C. auris III (Africa)",
   Clade4 = "C. auris IV (South America)",
   glab   = "C. glabrata",
-  para   = "C. parapsilosis"
+  para   = "C. parapsilosis",
+  Hae    = "C. haemulonii",
+  Duo    = "C. duobushaemulonii"
 )
 
 # Plate geometry: isolates occupy rows A/B/C, replicates occupy columns 1..5.

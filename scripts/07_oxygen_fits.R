@@ -1061,11 +1061,19 @@ if (exists("PLOT_EXCLUDE_POINTS") && is.data.frame(PLOT_EXCLUDE_POINTS) &&
   results <- results %>% dplyr::anti_join(.ex, by = c("T", "OTU", "Replicate"))
 }
 
-# NOTE: zero-growth curves are NOT discarded automatically here. YOU decide, in
-# 04_trim_selector.R ("Exclude ALL zero-growth curves"), and 06 simply obeys
-# whatever plot_exclude_points.csv says. The has_curvature / rt_curv / O2-drawdown
-# flags are still computed and written out - they are what 04 uses to FIND the
-# zero-growth curves for you - but nothing acts on them behind your back.
+# (2) ZERO-GROWTH curves: has_curvature == FALSE (r * window below CURV_MIN_RT).
+# These are auto-excluded - a curve with no measurable curvature has no r, so its
+# growth and CUE would be noise. Logged in removed_points.csv as zero_growth_auto.
+.zg <- results %>% dplyr::filter(!(has_curvature %in% TRUE))
+if (nrow(.zg) > 0) {
+  .removed$zero_growth_auto <- .zg %>%
+    dplyr::transmute(T, OTU, Replicate, reason = "zero_growth_auto")
+  results <- results %>% dplyr::filter(has_curvature %in% TRUE)
+  message(sprintf(
+    "AUTO-EXCLUDED %d zero-growth curve(s) (has_curvature = FALSE): %s",
+    nrow(.zg),
+    paste(sprintf("T%g OTU%d %s", .zg$T, .zg$OTU, .zg$Replicate), collapse = "; ")))
+}
 
 .rm_tbl <- dplyr::bind_rows(.removed)
 if (nrow(.rm_tbl) > 0) {
@@ -1073,10 +1081,9 @@ if (nrow(.rm_tbl) > 0) {
                    file.path(tables_dir, "removed_points.csv"))
 }
 message(sprintf(
-  "Removed %d of %d curves - all of them excluded by YOU in 04. %d curves remain.",
+  "Removed %d of %d curves (04 exclusions + auto zero-growth). %d curves remain.",
   .n_before - nrow(results), .n_before, nrow(results)))
 message("  -> gone from BOTH growth and respiration, and from every plot. See tables/removed_points.csv")
-message("  -> nothing else is discarded automatically. Use 04 to mark what you want gone.")
 
 readr::write_csv(results, derived_csv)
 

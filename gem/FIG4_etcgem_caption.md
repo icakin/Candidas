@@ -11,6 +11,14 @@ is NOT that enzyme thermal biology has been ruled out as a mechanism; see the se
 caveat below, which is the strongest argument against the figure and is stated here rather
 than left for a referee to derive.*
 
+*This is a different model from the one cut from the earlier draft, and the text should say
+so plainly. That version was a single reconstruction with parameters tuned until the
+species separated. This one builds a reconstruction per species from that species' own
+genome, fits three shape parameters and one scale to* C. auris *alone, freezes them, and
+then predicts the other three. The relatives are therefore out-of-sample, so their failure
+is informative rather than built in. The earlier version could not make that distinction,
+which is why it could not support a conclusion.*
+
 ## CAPTION
 
 **Figure 4 | The thermal divergence is not reproduced by any metabolic mechanism, because
@@ -343,7 +351,7 @@ panel B's claim is independent of all three.
    unfolding enthalpy of 101 kJ mol⁻¹, against 250–600 for cooperative globular proteins
    (w = 1.5–3.6 °C). Setting w = 2.2 °C from first principles, with SCALE refitted to hold
    *C. auris* permissive growth, reduces the required *T*~m~ separation from 32.4 to
-   18.0 °C — still 34× the 0.53 °C available. The broad response function is not a free
+   18.0 °C, still 44× the 0.41 °C available (34× against the pre-deduplication 0.53 °C). The broad response function is not a free
    choice: the predictor assigns enzymes within a single proteome a *T*~opt~ spread of
    sd 8.13 °C, and a narrow response makes those enzymes unaffordable.
 
@@ -367,6 +375,76 @@ Shifting the single strongest bottleneck enzyme barely lowers 40 °C growth, bec
 redistributes: mitochondrial ATP-synthase and alternative dehydrogenase reactions adjust to
 absorb the loss. No small enzyme set forms a controlling bottleneck. Because the growth
 optimum is unique, alternative optimal flux distributions do not change these µ values.
+
+## DOES THE PUBLISHED YEAST etcGEM CONTRADICT US? NO, AND THE REASON MATTERS
+
+A referee will reach for Li et al. (2021, *Nat Commun* 12:190), whose enzyme- and
+temperature-constrained yeast model reproduces *S. cerevisiae*'s thermal behaviour well. If
+an etcGEM works there, why not here? Five facts from the paper itself (read in full, not
+from the abstract):
+
+**1. Their unfitted model failed exactly where ours does.** Their *Prior* etcGEM, built
+from literature *T*~m~ values (N(51.9, 5.9) for enzymes without a measurement) and
+machine-learned *T*~opt~ values (Tome, RMSE 13 °C), reproduced growth only below 30 °C and
+"failed at temperatures above 30 °C" (their Supplementary Fig. 2). That model is the same
+kind of object as ours: parameters from sequence and databases, no growth data from the
+target species. It could not reproduce the thermal behaviour of the single best-studied
+eukaryote until it was fitted to that eukaryote's measured phenotype.
+
+**2. The fit was to the phenotype it then reproduces.** The *Posterior* parameters were
+inferred by SMC-ABC against aerobic and anaerobic batch growth at eight temperatures each
+and chemostat CO₂, ethanol and glucose fluxes at six, with R² of the posterior ensemble
+above 0.9. The parameter that moved was *T*~opt~ (59% of enzymes changed variance, 26%
+changed mean); *T*~m~ barely moved and stayed at r = 0.97 with the measured values. The
+model fits the curve after being shown the curve, within one species. That is legitimate
+and useful, and it is not a test of whether the genome carries the thermal ceiling. Our
+test is the one they did not attempt: fit on one species, freeze, predict three others
+from sequence alone.
+
+**3. Their lethal temperature is set by the tail, not the median.** Measured yeast *T*~m~
+has a mean of 52 °C and a minimum of 40 °C. In the *Posterior* model only 9 of 764 enzymes
+(1%) have *T*~m~ below the 42 °C lethal point (ERG1, ATP1, ALA1, KRS1, SER1, HEM1, PDB1,
+ADH1, TRP3), and those nine are what terminate growth. Our predicted *T*~m~ distributions
+come from a sequence regressor and are compressed toward their centre, so the ceiling in our
+model tracks the median enzyme. This is the structural reason the model sits at 53 °C: a
+per-enzyme two-state unfolding model with real *T*~m~ values has a weak tail that sets the
+limit; a predicted distribution without that tail cannot.
+
+**4. ERG1 moves the growth rate, not the ceiling.** Squalene epoxidase (ERG1) had a median
+flux-control coefficient at 40 °C an order of magnitude above every other enzyme. Replacing
+it with the *Kluyveromyces marxianus* ortholog gave a strain that outgrew wild type at
+40 °C after two passages. At 42 °C the predicted gain was 0.01 to 0.06 h⁻¹ and no
+significant growth difference was measured; the model needed ten enzymes rescued together
+to restore growth there. So the sterol result is about performance in the superoptimal
+range, not about lifting the limit. Independently, evolving *S. cerevisiae* to grow above
+40 °C converges on the C-5 sterol desaturase and shifts ergosterol to fecosterol (Caspeta
+et al. 2014, *Science* 346:75–78). Both lines put the weak point in the membrane rather than
+in the catalytic thermostability of central metabolism, which is where our negative result
+points.
+
+**5. They state the limitation we found.** The Discussion says the two-state denaturation
+and macromolecular rate theory "may be oversimplified for some enzymes" and that the fitting
+data came mainly from the superoptimal range. We reached the same place from the other side:
+correcting the unfolding width to a physical value moved our limit by less than 1 °C.
+
+Bottom line for a referee: the published yeast etcGEM does not contradict Fig 4, it
+anticipates it. An etcGEM parameterised from sequence alone did not reproduce yeast above
+30 °C in their hands either; it worked once fitted to the species it describes.
+
+## THE REQUIREMENT IS AN UPPER BOUND, AND WE SHOULD SAY SO FIRST
+
+Flux balance analysis routes flux optimally: at every temperature the model finds the best
+available redistribution of the network, with no regulatory delay, no misallocation and no
+cost to switching. A real cell does not. So the model is systematically biased *against*
+collapse, and the interspecies separation it demands — 33 °C in enzyme *T*~m~ — is an
+**upper bound** on what a comparable but non-optimising cell would need.
+
+This cuts in the honest direction and is worth stating before a referee does. It does not
+rescue the enzyme layer: the bound would have to fall by more than an order of magnitude to
+meet the 0.41 °C the sequences supply or the 1.6 °C measured in the congeneric benchmark,
+and no plausible inefficiency does that. But it does mean the 33 °C should be read as "at
+least this much would be needed in a perfectly efficient cell", not as a point estimate of
+a biological requirement.
 
 ## VERDICT
 

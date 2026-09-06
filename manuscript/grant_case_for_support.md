@@ -96,10 +96,11 @@ alternative oxidase, separates families rather than thermal phenotypes. Coarse
 proteome-composition indices appear to correlate with thermal optimum until the
 pseudoreplication is corrected: collapsing the four near-identical *C. auris* clades to one
 phylogenetic point removes the association, and the index that appears predictive separates
-the two families completely, independent of thermal optimum. Most tellingly, those four
-clades differ by 2.7 °C in carbon-use-efficiency optimum while being 25 times less divergent
-than the nearest species split. Thermal performance is evolutionarily labile and is not
-predicted by coarse gene content.
+the two families completely, independent of thermal optimum. The between-species contrasts
+carry the point on their own: *C. auris* is far more thermotolerant than the *haemulonii*
+complex despite being 25 times closer to it than to *C. parapsilosis*, which in turn
+converges with that complex on a cool optimum and an expensive fever. Thermal performance
+is evolutionarily labile and is not predicted by coarse gene content.
 
 Third, the available transcriptional evidence does not resolve what is different. In the
 public clade-resolved RNA-seq dataset we identified, generated under a single controlled
@@ -156,6 +157,81 @@ melting temperature, so the predicted limit tracks the median enzyme melting poi
 which is why the limit must be measured directly. Identifying the process that does set it
 is the central aim of this proposal.
 
+## Prior work, and what remains genuinely open
+
+The mechanisms of fungal thermotolerance have been studied for two decades, but almost
+always one component at a time and rarely tied to the temperature at which a cell actually
+dies. Reading that literature against our own data shows precisely which questions are
+answered and which are not.
+
+**Why the trait matters is settled.** Mammalian endothermy excludes roughly 6% of fungal
+species per degree between 27 and 40 °C, and the cost–benefit optimum of that thermal
+barrier sits at about 36.7 °C, close to actual body temperature (Bergman & Casadevall
+2010). Thermotolerance is therefore the trait that admits an environmental fungus to the
+mammalian niche, which is why *C. auris* is dangerous and why this question is worth
+answering.
+
+**Individual candidate systems are described, but not ranked or tied to the limit.** The
+*C. auris* membrane lipidome has been characterised in detail, 582 lipid species across
+phospholipids, sphingolipids and sterols, but at a single growth temperature (30 °C) and in
+the context of drug resistance rather than heat (Shahi et al. 2020); it has never been
+profiled across the thermal gradient or linked to the death temperature. The heat-shock
+machinery, Hsp90 above all, is well studied in *Candida*, but as a signalling hub for
+morphogenesis and drug tolerance, not as the determinant of the upper thermal limit.
+Protein melting temperatures have been catalogued across the tree of life by thermal
+proteome profiling (Jarzab et al. 2020), but that atlas measures intrinsic protein
+stability in vitro at a reference condition and includes no *Candida* pathogen; it does not
+tell us which proteins actually aggregate inside a cell at its organismal limit, nor whether
+that differs between species. In short, each candidate has been looked at in isolation, none
+across temperature to the point of death, and none against the others.
+
+**No one has asked which system fails first.** The order in which membrane integrity,
+proteostasis and mitochondrial function collapse as a fungal cell approaches its thermal
+limit has, to our knowledge, never been resolved. The analogous question is answered in
+animals, where mitochondrial capacity is argued to set the thermal limit (oxygen- and
+capacity-limited thermal tolerance), and in mammalian-cell hyperthermia, but not in fungi.
+This is the gap Aim 1 fills, and our quantitative 9–14 °C model-to-observation gap gives it
+a defined target that no prior study has had.
+
+**Experimental evolution to heat has a precedent and, tellingly, no single answer.** Evolving
+*Saccharomyces cerevisiae* to grow at ≥40 °C converges on mutations in the C-5 sterol
+desaturase that shift ergosterol to fecosterol, i.e. a membrane solution (Caspeta et al.
+2014). But evolving the pathogen *Cryptococcus neoformans* for thermotolerance instead
+converges on the HOG stress-response pathway, with otherwise divergent routes (Chen et al.
+2024, bioRxiv). Different organisms take different routes, so the outcome in the *C. auris*
+relatives is genuinely unknown, and asking whether they converge on the same solution that
+naturally thermotolerant lineages already carry is a novel and falsifiable question, not a
+foregone conclusion. This is Aim 3.
+
+**One study has proposed a mechanism — and its own data show why the question is still
+open.** Xiao et al. (2025) is the closest prior work: a direct comparison of *C. auris* with
+*C. haemulonii* var. *vulnera* and *C. duobushaemulonii* by RNA-seq and physiology at
+37–41 °C (relatives tested to 39 °C in growth curves, and by spot assay to 41 °C, where they
+do not grow). They show that heat stress raises intracellular pyruvate and reactive oxygen
+in all three species, that supplementing pyruvate lowers ROS and raises survival while a
+pyruvate-kinase inhibitor does the reverse — in every strain, relatives included — and that
+enhanced iron uptake aids *C. auris*. This is a genuine mechanistic lead, and it is
+regulatory and metabolite-level rather than a difference in gene content, consistent with
+our own finding that the answer lies in how capacity is deployed rather than in what is
+encoded. But two features of their own results define the space this proposal occupies.
+First, pyruvate accumulation is a *shared* heat response — their data show the relatives
+accumulate it too — so it cannot by itself explain why *C. auris* survives where they die;
+the interspecies differentiator is not established. Second, every assay sits at or below
+41 °C and measures survival at a sublethal stress temperature, not a shift in the growth
+*limit*: whether any intervention moves the temperature boundary — lets a relative grow
+where it otherwise cannot, or lowers *C. auris*'s limit — was not tested, and the lethal
+range where our 13 °C model gap lies is untouched. Their oxidative-stress and
+alternative-oxidase findings nonetheless point squarely at the mitochondrial arm we propose.
+Xiao et al. therefore sharpen our aims into named, falsifiable hypotheses rather than
+pre-empting them.
+
+The novelty of this proposal therefore does not rest on any single assay, several of which
+have been applied to *C. auris* before. It rests on integration: profiling all three
+candidate systems across the same thermal gradient in the same isolates, resolving their
+order of failure against a model-defined target, and testing that order against
+hypothesis-free experimental evolution and against a phylogenetically controlled species
+panel. That combination has not been attempted for any fungal pathogen.
+
 ## Aims
 
 **Aim 1. Establish the uncensored thermal limit and the temporal order of failure.**
@@ -169,7 +245,16 @@ the most plausible upstream event and prioritise the causal perturbations in Aim
 **Aim 2. Test causality, and quantify regulatory and bioenergetic allocation.** Correlated
 failure is not causal failure, so we will perturb each system independently and ask which
 perturbation moves the thermal limit, giving priority to whichever system Aim 1 identifies
-as failing earliest and most selectively between *C. auris* and its relatives. In the same experiments we will resolve the
+as failing earliest and most selectively between *C. auris* and its relatives. This is also
+where we settle the leading published hypothesis directly. Xiao et al. (2025) implicate
+pyruvate and oxidative-stress control, but at sublethal temperatures and as a response
+shared by all three species, so they measure survival rate, not the growth boundary. We
+will make the boundary the readout: supplement the relatives with pyruvate (and iron) and
+ask whether their growth *limit* rises toward *C. auris*'s, and suppress the pathway in
+*C. auris* and ask whether its limit falls. A boundary that moves shows the mechanism sets
+the limit; a boundary that does not shows pyruvate is a shared coping response rather than
+the determinant. This is the interspecies limit-shift test their design could not deliver,
+because their assays stopped below the lethal range. In the same experiments we will resolve the
 regulatory-versus-bioenergetic question that our own analysis identifies as unresolved:
 absolute, spike-in-calibrated proteomics under these thermal conditions, together with
 direct measurement of the carbon quota across temperature, which currently enters the
@@ -201,6 +286,42 @@ this project will identify the cellular process that sets that limit, and provid
 framework and a candidate cellular vulnerability for understanding the emergence of
 thermotolerant fungal pathogens more generally.
 
+
+## References
+
+Bergman A, Casadevall A. Mammalian endothermy optimally restricts fungi and metabolic
+costs. *mBio* 2010;1(5):e00212-10. doi:10.1128/mBio.00212-10
+
+Caspeta L, Chen Y, Ghiaci P, Feizi A, Buskov S, Hallström BM, Petranovic D, Nielsen J.
+Altered sterol composition renders yeast thermotolerant. *Science* 2014;346(6205):75–78.
+doi:10.1126/science.1258137
+
+Chen Y, et al. Distinct routes to thermotolerance in the fungal pathogen *Cryptococcus
+neoformans*. *bioRxiv* 2024. doi:10.1101/2024.04.08.588590 *(preprint — confirm the peer-
+reviewed version and full author list before submission).*
+
+Jarzab A, Kurzawa N, Hopf T, et al. Meltome atlas—thermal proteome stability across the
+tree of life. *Nature Methods* 2020;17(5):495–503. doi:10.1038/s41592-020-0801-4
+
+Shahi G, Kumar M, Skwarecki AS, et al. A detailed lipidomic study of human pathogenic fungi
+*Candida auris*. *FEMS Yeast Research* 2020;20(6):foaa045. doi:10.1093/femsyr/foaa045
+
+Xiao W, Zhou H, Huang J, Xin C, Zhang J, Wen H, Song Z. Comparative analyses of the
+biological characteristics, fluconazole resistance, and heat adaptation mechanisms of
+*Candida auris* and members of the *Candida haemulonii* complex. *Applied and Environmental
+Microbiology* 2025;91(4):e02406-24. doi:10.1128/aem.02406-24
+
+Walunjkar N, et al. [thermal proteome profiling of *Saccharomyces cerevisiae* and
+*S. uvarum*]. *Molecular Biology and Evolution* 2025;42(7):msaf137.
+doi:10.1093/molbev/msaf137 *(cited in Figure 4; verify author list and title against the
+published version).*
+
+Lockhart SR, et al. Simultaneous emergence of multidrug-resistant *Candida auris* on three
+continents confirmed by whole-genome sequencing and epidemiological analyses. *Clin Infect
+Dis* 2017;64(2):134–140.
+
+World Health Organization. WHO fungal priority pathogens list to guide research, development
+and public health action. Geneva: WHO; 2022.
 ---
 
 ## Sources for every number above

@@ -287,9 +287,11 @@ for (i in seq_len(nrow(fever))) {
 # 3) FIGURE
 # =============================================================================
 OI <- c(Clade1 = "#0072B2", Clade2 = "#56B4E9", Clade3 = "#009E73",
-        Clade4 = "#E69F00", glab = "#CC79A7", para = "#D55E00")
+        Clade4 = "#E69F00", glab = "#CC79A7", para = "#D55E00",
+        Hae = "#999999", Duo = "#000000")
 LAB <- c(Clade1 = "C. auris I", Clade2 = "C. auris II", Clade3 = "C. auris III",
-         Clade4 = "C. auris IV", glab = "C. glabrata", para = "C. parapsilosis")
+         Clade4 = "C. auris IV", glab = "C. glabrata", para = "C. parapsilosis",
+         Hae = "C. haemulonii", Duo = "C. duobushaemulonii")
 
 theme_pub <- theme_classic(base_size = 8) +
   theme(axis.text = element_text(size = 7, colour = "grey20"),

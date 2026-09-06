@@ -21,23 +21,49 @@ arrangement, whatever the short-term convenience of a Word round-trip, because:
 
 ## 2. Final state
 
-`manuscript/v3.qmd` references ten figures, all by path into
-`results/`. `manuscript/draft/v3_quarto/media/` has been deleted.
+`manuscript/v3.qmd` references six figures, all by path into `results/`.
+`manuscript/draft/v3_quarto/media/` has been deleted.
 
 | # | Manuscript figure | Path referenced from `v3.qmd` | Producing script |
 |---|---|---|---|
-| 1 | Figure 1 — growth/respiration decoupling | `../../../results/figures/manuscript/FIG1_decoupling.png` | `14_main_figures.R` |
-| 2 | Figure 2 — the carbon cost of fever | `../../../results/figures/manuscript/FIG2_the_bill.png` | `14_main_figures.R` |
-| 3 | Figure 3 — etc-GEM pipeline schematic | `../../../results/figures/manuscript/FIG_model_schematic.png` | `17_schematic.py` |
-| 4 | Figure 4 — capacity axis | `../../../results/figures/manuscript/FIG_MODEL.png` | `14_main_figures.R` |
-| 5 | Supp. Fig. 1 — capacity vs coding variation | `../../../results/figures/manuscript/FIG_MODEL_SUPP_validation.png` | `16_supplementary_figures.R` |
-| 6 | Supp. Fig. 2 — self-consistency | `../../../results/figures/manuscript/FIG_MODEL_SUPP_consistency.png` | `14_main_figures.R` |
-| 7 | Supp. Fig. 3 — equilibration sensitivity | `../../../results/figures/Fig_temperature_equilibration.png` | `08_temperature_equilibration_sensitivity.R` |
-| 8 | Supp. Fig. 4 — respiration + envelope | `../../../results/figures/fig_bayes_resp_arrhenius.png` | `11_bayesian_plots.R` |
-| 9 | Supp. Fig. 5 — CUE + envelope | `../../../results/figures/fig_bayes_cue_by_clade.png` | `11_bayesian_plots.R` |
-| 10 | **Supp. Fig. 6 — N0 treatment panel** | `../../../results/figures/Fig_n0_treatment_panel.png` | `18_n0_treatment_panel.R` |
+| 1 | Figure 1 — growth/respiration decoupling | `../results/figures/manuscript/FIG1_decoupling.png` | `14_main_figures.R` |
+| 2 | Figure 2 — the carbon cost of fever | `../results/figures/manuscript/FIG2_consequences.png` | `14_main_figures.R` |
+| 3 | Supp. Fig. 1 — equilibration sensitivity | `../results/figures/Fig_temperature_equilibration.png` | `08_temperature_equilibration_sensitivity.R` |
+| 4 | Supp. Fig. 2 — respiration + envelope | `../results/figures/fig_bayes_resp_arrhenius.png` | `11_bayesian_plots.R` |
+| 5 | Supp. Fig. 3 — CUE + envelope | `../results/figures/fig_bayes_cue_by_clade.png` | `11_bayesian_plots.R` |
+| 6 | Supp. Fig. 4 — N0 treatment panel | `../results/figures/Fig_n0_treatment_panel.png` | `18_n0_treatment_panel.R` |
 
-**Two directories, deliberately.** `14` and `16` write into
+**Built but not yet placed.** Two finished main-figure candidates exist as files with
+their own generators and captions, and are deliberately NOT referenced by `v3.qmd` while
+their placement is undecided:
+
+| Figure | File | Generator | Caption |
+|---|---|---|---|
+| thermal/phylogeny discordance | `results/figures/manuscript/FIG3_discordance.png` | `scripts/15_fig3.R` | `gem/FIG3_v8_caption.md` |
+| etcGEM counterfactual | `results/figures/manuscript/FIG4_etcgem_counterfactual.png` | `scripts/20_fig4_etcgem.py` | `gem/FIG4_etcgem_caption.md` |
+
+A draft of `v3.qmd` carrying both, with their captions and placeholder Results text, is
+kept at `manuscript/v3_withfig34_20260904.qmd`. Adopting it is a single file copy; until
+then this table describes what the manuscript actually references, which is the point of
+the document.
+
+**Superseded numbering.** Earlier revisions of this document listed the etc-GEM pipeline
+schematic (`FIG_model_schematic.png`, `17_schematic.py`) as Figure 3 and the capacity axis
+(`FIG_MODEL.png`, `14_main_figures.R`) as Figure 4, and listed a ten-figure manuscript.
+Neither was in fact referenced by `v3.qmd`; the document had drifted from the file it
+describes. Those two figures remain unreferenced and should be placed in the supplement or
+dropped deliberately rather than left in this table.
+
+**A broken reference this table did not catch.** Until 2026-09-04, `v3.qmd` referenced
+`FIG2_the_bill.png`, which has never existed in the repository. `14_main_figures.R` writes
+`FIG2_consequences` via `save_fig()`, but its own OUTPUTS header comment named
+`FIG2_the_bill.png`, and the manuscript followed the comment. Figure 2 therefore could not
+render. Both the manuscript path and the stale comment are corrected, and the comment now
+says explicitly that the name follows `save_fig()` and not the header. The lesson for this
+document is that listing a path is not the same as checking it resolves; the check is one
+line and is now recorded in §6.
+
+**Two directories, deliberately.** `14`, `15` and `16` write into
 `results/figures/manuscript/`; `08`, `11` and `18` write into `results/figures/`.
 Copying the latter into `manuscript/` would tidy the paths at the cost of a second
 copy of each figure — and the existing top-level/`manuscript/` duplicates have already
@@ -242,3 +268,18 @@ lands. Merging bottom-up works only if every merge happens before its parent is
 consumed, which is a race nobody should have to win. If GitHub's "merge" button
 is used on a stack, check afterwards that the branch you merged *into* is still
 an ancestor of `main`.
+
+
+---
+
+## 6. Path check
+
+Every path referenced by the manuscript must resolve. This is the check, and it is the one
+that would have caught the Figure 2 break on the day it was introduced:
+
+```
+cd manuscript && grep -o '(\.\./results/figures[^)]*)' v3.qmd | tr -d '()' \
+  | while read p; do [ -f "$p" ] && echo "OK      $p" || echo "MISSING $p"; done
+```
+
+As of 2026-09-04 all six resolve.
