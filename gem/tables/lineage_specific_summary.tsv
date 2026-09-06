@@ -1,0 +1,22 @@
+direction	accession	description	mitochondrial
+gained	XP_085450927.1	OST5 family protein	
+gained	XP_085451337.1	cell envelope integrity TolA family protein	
+gained	XP_085453148.1	adenosine deaminase family protein	
+gained	XP_085453870.1	NAD-dependent epimerase/dehydratase family protein	
+gained	XP_085454104.1	electron transfer flavoprotein regulatory factor 1	yes
+gained	XP_085454573.1	Stf2p	
+gained	XP_085455072.1	protein PET117	yes
+lost	XP_025340214.1	Hgt20p	
+lost	XP_025340285.1	cytochrome c oxidase subunit VII	yes
+lost	XP_025340945.1	palmitoyltransferase	
+lost	XP_025341173.1	tyrosine protein phosphatase	
+lost	XP_025342054.1	U2 snRNP complex subunit	
+lost	XP_025342116.1	Crd2p	
+lost	XP_025342286.1	glutathione-independent methylglyoxalase	
+lost	XP_025342539.1	mitochondrial 54S ribosomal mL49 domain-containing protein	yes
+lost	XP_025342562.1	Tim12p	yes
+lost	XP_025343042.1	exosome non-catalytic core subunit	
+lost	XP_025343325.1	endopeptidase catalytic subunit	
+lost	XP_025343462.1	leucine-rich repeat domain-containing protein	
+lost	XP_025343889.1	4a-hydroxytetrahydrobiopterin dehydratase	
+lost	XP_025343979.1	2-deoxyglucose-6-phosphatase	

@@ -148,10 +148,10 @@ Not part of the current manuscript pipeline:
 - `13_capacity_expression.R` — RNA-seq test of the fitted capacity parameter
 - `16_supplementary_figures.R` — etc-GEM diagnostic supplementaries
 - `17_schematic.py` — the etc-GEM pipeline schematic
-- the Figure 3 (etc-GEM) block inside `14_main_figures.R`; its Figure 1 and
+- the Figure 3 (etc-GEM) block inside `16_fig1_fig2.R`; its Figure 1 and
   Figure 2 blocks remain part of the pipeline
 
-`run_all.R` still calls `14_main_figures.R`, which will regenerate the unused
+`run_all.R` still calls `16_fig1_fig2.R`, which will regenerate the unused
 etc-GEM figure alongside Figures 1 and 2. That is harmless; the manuscript does not
 reference it.
 
@@ -159,9 +159,9 @@ reference it.
 
 | Manuscript figure | File | Produced by |
 |---|---|---|
-| Figure 1 | `results/figures/manuscript/FIG1_decoupling.png` | `14_main_figures.R` |
-| Figure 2 | `results/figures/manuscript/FIG2_the_bill.png` | `14_main_figures.R` |
+| Figure 1 | `results/figures/manuscript/FIG1_decoupling.png` | `16_fig1_fig2.R` |
+| Figure 2 | `results/figures/manuscript/FIG2_the_bill.png` | `16_fig1_fig2.R` |
 | Supplementary 1 | `results/figures/Fig_temperature_equilibration.png` | `08_temperature_equilibration_sensitivity.R` |
-| Supplementary 2 | `results/figures/fig_bayes_resp_arrhenius.png` | `11_bayesian_plots.R` / `15_uncertainty_bands.R` |
-| Supplementary 3 | `results/figures/fig_bayes_cue_by_clade.png` | `11_bayesian_plots.R` / `15_uncertainty_bands.R` |
-| Supplementary 4 | `results/figures/Fig_n0_treatment_panel.png` | `18_n0_treatment_panel.R` |
+| Supplementary 2 | `results/figures/fig_bayes_resp_arrhenius.png` | `11_bayesian_plots.R` / `13_uncertainty_bands.R` |
+| Supplementary 3 | `results/figures/fig_bayes_cue_by_clade.png` | `11_bayesian_plots.R` / `13_uncertainty_bands.R` |
+| Supplementary 4 | `results/figures/Fig_n0_treatment_panel.png` | `15_n0_treatment_panel.R` |

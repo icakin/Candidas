@@ -7,7 +7,7 @@ disagreement with this file rather than as silent drift.
 Regenerate the whole figure with:
 
     python3 gem/build_measured_tpc.py          # panel A's measured curve
-    python3 scripts/20_fig4_etcgem.py          # the figure
+    python3 scripts/18_fig4.R          # the figure
 
 ## What the figure asserts
 

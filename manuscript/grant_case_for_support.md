@@ -333,7 +333,7 @@ congeneric benchmark) into formal citations and drop the file paths.*
 | Claim | Source |
 |---|---|
 | 20 isolates, 7 lineages, 12 temperatures, 5 wells each | `results/tables/Oxygen_Data_Filtered.csv` |
-| q is a fixed per-taxon constant (1320 fg C/cell; 5280 for *C. parapsilosis*), so G/q = r exactly and panel 1a's h⁻¹ label is exact | `results/tables/derived_N0_R_results_with_carbon.csv`; `scripts/14_main_figures.R` lines 388–396 |
+| q is a fixed per-taxon constant (1320 fg C/cell; 5280 for *C. parapsilosis*), so G/q = r exactly and panel 1a's h⁻¹ label is exact | `results/tables/derived_N0_R_results_with_carbon.csv`; `scripts/16_fig1_fig2.R` lines 388–396 |
 | growth optimum 33–36 °C; respiration monotonic; LOO favours Arrhenius | Fig. 1a,b |
 | E_G 0.83–1.14 eV, E_R 0.30–0.52 eV, difference credible in all five | Fig. 1c |
 | scale-free CUE optimum 26.1–31.5 °C, 5.5–10.9 °C below 37, P > 0.9999; assumes T-independent q | Fig. 1d,e and the c/q identity |

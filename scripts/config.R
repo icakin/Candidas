@@ -535,7 +535,7 @@ FIG_KEEP <- c(
 #
 # WHY THIS EXISTS. FIG_KEEP is a plain global, and config.R re-assigns it on
 # every source(). Several scripts invoke another script that sources config.R
-# again - 10_n0_term_test.R and 18_n0_treatment_panel.R both call
+# again - 10_n0_term_test.R and 15_n0_treatment_panel.R both call
 # 09_bayesian_models.R, whose `source(file.path(.this_dir, "config.R"))` is
 # local = FALSE and therefore re-evaluates in the GLOBAL environment whoever
 # called it. Any append to FIG_KEEP made by the caller is silently wiped by the

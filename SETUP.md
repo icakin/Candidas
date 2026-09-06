@@ -283,7 +283,7 @@ etc-GEM engine is a different matter, and it is worth being explicit about it:
 >
 > This is why `scripts/run_all.sh` leaves the etc-GEM stage **off by default**. The
 > outputs it would produce are vendored at `outputs/supp_data/` and are what
-> `14_main_figures.R` and `16_supplementary_figures.R` actually read.
+> `16_fig1_fig2.R` and `16_supplementary_figures.R` actually read.
 
 ---
 
@@ -334,7 +334,7 @@ In RStudio, "Run App" works as it always did.
 
 ### The two diagnostics (10, 18) — run these deliberately, never in a batch
 
-`10_n0_term_test.R` and `18_n0_treatment_panel.R` ask how much the between-clade
+`10_n0_term_test.R` and `15_n0_treatment_panel.R` ask how much the between-clade
 respiration ordering leans on the N0 back-projection. They answer it by **refitting**
 the Bayesian respiration model two and three times respectively, and each alternative
 fit is written over `results/tables/bayes_resp_arr_summary.csv` and `results/rds/`.
@@ -342,11 +342,11 @@ They restore `derived_N0_R_results_with_carbon.csv` but not those. So:
 
 ```bash
 Rscript scripts/10_n0_term_test.R          # ~2 Bayesian fits
-Rscript scripts/18_n0_treatment_panel.R    # ~3 Bayesian fits; Supplementary Fig. 6
+Rscript scripts/15_n0_treatment_panel.R    # ~3 Bayesian fits; Supplementary Fig. 6
 # then put the published fit back:
 Rscript scripts/09_bayesian_models.R && Rscript scripts/11_bayesian_plots.R \
-  && Rscript scripts/12_carbon_tax.R && Rscript scripts/14_main_figures.R \
-  && Rscript scripts/15_uncertainty_bands.R
+  && Rscript scripts/12_carbon_tax.R && Rscript scripts/16_fig1_fig2.R \
+  && Rscript scripts/13_uncertainty_bands.R
 ```
 
 `run_all.sh` deliberately leaves both out for that reason, and says so in its header.

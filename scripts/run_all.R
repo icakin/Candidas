@@ -56,13 +56,13 @@ run_script <- function(name) {
 }
 for (s in c("02_longdata.R","03_trimming.R","06_inoculation.R","07_oxygen_fits.R",
             "08_temperature_equilibration_sensitivity.R","09_bayesian_models.R",
-            "11_bayesian_plots.R","12_carbon_tax.R","14_main_figures.R",
-            "15_uncertainty_bands.R","15_fig3.R")) {
+            "11_bayesian_plots.R","12_carbon_tax.R","16_fig1_fig2.R",
+            "13_uncertainty_bands.R","17_fig3.R")) {
   run_script(s)
 }
 message("\n", strrep("=",70))
 message("Done: data, models, diagnostics, main figures (incl. Fig 3), bands.")
 message("Run 13_capacity_expression.R (downloads GEO), 16_supplementary_figures.R")
 message("(needs 13 + etc-GEM outputs), and 17_schematic.py (python3) separately.")
-message("Fig 4 is python: run_all.sh runs scripts/20_fig4_etcgem.py as its own stage.")
+message("Fig 4 is python: run_all.sh runs scripts/18_fig4.R as its own stage.")
 message(strrep("=",70))

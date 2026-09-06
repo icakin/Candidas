@@ -60,5 +60,5 @@ Rscript reports/tools/c2_extract_Tinternal.R
 ```
 
 Note that the run trees were produced before the script renumbering; the arm
-mechanism they used is described in `N0_SENSITIVITY.md`, and `18_n0_treatment_panel.R`
+mechanism they used is described in `N0_SENSITIVITY.md`, and `15_n0_treatment_panel.R`
 is the maintained successor for the three-treatment comparison.

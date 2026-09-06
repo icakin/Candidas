@@ -1,6 +1,6 @@
 # Figure 4 — title, caption and Methods text
 
-Generator: `scripts/20_fig4_etcgem.py` → `results/figures/manuscript/FIG4_etcgem_counterfactual.png`
+Generator: `scripts/18_fig4.R` → `results/figures/manuscript/FIG4_etcgem_counterfactual.png`
 
 ## TITLE
 Within the etcGEM, sequence-predicted enzyme thermal properties are insufficient to
@@ -468,7 +468,7 @@ python3 gem/etcgem_counterfactual.py      # counterfactual_results.json, counter
 python3 gem/dyn_sparse.py Tm              # dyn_sparse_Tm.json   (60 steps, pool 80)
 python3 gem/dyn_sparse.py Topt            # dyn_sparse_Topt.json
 python3 gem/counts_at_44.py               # counts_at_44.json  (same criterion as Fig 3)
-python3 scripts/20_fig4_etcgem.py         # the figure
+python3 scripts/18_fig4.R         # the figure
 ```
 
 Supporting analyses, not required for the figure:

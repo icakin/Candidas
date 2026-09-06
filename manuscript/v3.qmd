@@ -53,6 +53,59 @@ The three-degree step from body temperature (37 °C) to fever (40 °C) captures 
 
 We next asked whether the variation in fever cost was related to each taxon's broader thermal adaptation. As an exploratory observation resting on only five taxa, and one partly geometrically coupled to the growth curve, the environmental growth optimum was negatively associated with the cost of a fever: the more thermotolerant a taxon, the less a fever cost it (Fig. 2b). Computed as a posterior over Spearman's ρ (propagating parameter uncertainty rather than treating the five taxon medians as fixed), the correlation was ρ = −1.00 (95% CrI −1.00 to −0.70; P(ρ \< 0) \> 0.999), with *C. parapsilosis* at the cool-optimum, expensive-fever extreme and *C. auris* Clade IV at the warm-optimum, cheap-fever extreme. With five taxa ρ is confined to a coarse grid of attainable values, and −1.00 denotes an exact reversal of the two rankings rather than a precisely estimated coefficient; the posterior median accordingly shifts by one grid step under trivial perturbation, so the sign and not the magnitude is the interpretable quantity. The respiration activation energy is an independent parameter that could have broken the relationship and did not; with only five points, however, we report the association as suggestive, to be tested directly with additional species. It is consistent with environmental thermal selection contributing to tolerance of the mammalian host.
 
+# **High-temperature growth is discordant with phylogenomic proximity**
+
+<!-- DRAFT TEXT, inserted with the figures. Rewrite in your own voice; the numbers are
+     checked against results/figures/manuscript/FIG3_discordance.png and its generator
+     scripts/17_fig3.R. -->
+
+The taxa assayed span a range of phylogenomic distance wide enough to ask whether
+high-temperature growth tracks relatedness. It does not. At 40 °C, growth was detected in
+12 of 12 *C. auris* isolates and in 3 of 8 isolates of the other three species (Fisher's
+exact *P* = 0.0036; risk difference +0.62, 95% CI +0.22 to +0.86, Newcombe hybrid-score
+method), while the two closest sampled relatives, *C. haemulonii* and
+*C. duobushaemulonii*, sit at patristic distances of only 0.33 to 0.35 substitutions
+site⁻¹ from *C. auris* and differ sharply in phenotype (Fig. 3). Treated as a continuous
+quantity, which avoids any threshold, isolate-level curvature at 40 °C gives the same
+answer: Mann–Whitney *P* = 1.0 × 10⁻³, medians 2.34 against 0.45. The contrast is stable across every analytic choice tested, including the well
+summary, the positivity rule, the oxygen-drawdown floor and leaving out each comparator
+species in turn.
+
+![](../results/figures/manuscript/FIG3_discordance.png){width="6.6in"}
+
+**Figure 3 | High-temperature growth in *C. auris* is discordant with phylogenomic proximity.** (**A**) Branch-length-scaled maximum-likelihood phylogram, rooted with *C. parapsilosis* as outgroup; scale bar, 0.2 substitutions site⁻¹. (**B**) Fraction of sampled isolates with growth detected at 40 °C, aligned to the tips, with 95% Wilson intervals; *n/N* gives the counts behind each fraction. An isolate scored positive at a temperature if at least one of its wells was positive. The intervals are wide in the relatives (*n* = 2, 3 and 3) and are drawn rather than suppressed: on the counts alone these three species are not separable from one another, so no ordering among the relatives (for example the outgroup *C. parapsilosis* at 2/3 against the two closest relatives at 1/5) is claimed; the tested contrast is *C. auris* against the pooled non-auris isolates. (**C**) The primary, threshold-free result. Isolate-level curvature at 40 °C, every isolate plotted, bar at the species median: *C. auris* (*n* = 12) against the other species pooled (*n* = 8), Mann–Whitney *P* = 1.0 × 10⁻³, medians 2.34 against 0.45. The cut is drawn for reference only; this test does not use it. The separation is not complete: one *C. haemulonii* isolate falls inside the *C. auris* range and two *C. parapsilosis* isolates fall just below the cut (common-language effect size P(auris > relative) = 0.95). (**D**) Secondary, count-based contrast at 40 °C: risk difference +0.62 (95% CI +0.22 to +0.86, Newcombe hybrid-score method), *C. auris* 12/12 versus pooled non-auris 3/8, Fisher's exact *P* = 0.0036.
+
+**Growth detection and thresholds.** Growth was inferred from the dissolved-oxygen trace, not measured independently. An exponential respiration model was fitted to each well and growth was called present when the dimensionless curvature rt = *r* × window length reached the cut and the well had consumed at least 2 mg L⁻¹ of oxygen over the trace. The curvature term identifies the bend that accompanies accumulating biomass; as *r* → 0 the model collapses to a straight line, that is, constant respiration without growth. The drawdown term excludes wells with no metabolic signal, in which the fitted *r* is noise. A well failing either term is a negative rather than a missing observation, so denominators are all sampled isolates throughout. Wells were included when the fit was valid with no parameter at a bound, *r*² ≥ 0.90 and *n* ≥ 50 points. The cut, rt = 1.05, is the midpoint of the largest gap in the pooled isolate-level distribution (0.62 to 1.48); it is derived from these data rather than prespecified, but is selected without reference to species labels, so it cannot have been chosen to favour the contrast. At the pipeline's pre-existing criterion of rt > 0.5 the counts are 12/12 versus 4/8 (*P* = 0.014), so the result does not depend on it. The per-isolate highest temperature with growth quoted in the figure notes uses that pre-existing rt > 0.5 criterion; the species medians are identical under either cut (44, 38, 38 and 40 °C). Individual isolates exceed those medians: one *C. haemulonii* isolate grew at 44 °C and one *C. parapsilosis* isolate at 42 °C. Sample sizes are *C. auris n* = 12 (three isolates from each of four clades), *C. haemulonii n* = 3, *C. duobushaemulonii n* = 2 and *C. parapsilosis n* = 3, with about five wells per isolate per temperature across 22–44 °C in 2 °C steps. Conclusions apply to the sampled isolates and taxa. Generated by `scripts/17_fig3.R`.
+
+# **Predicted enzyme thermal properties do not reproduce the divergence**
+
+<!-- DRAFT TEXT. Numbers checked against gem/counterfactual_results.json and the
+     mechanism table in gem/FIG4_etcgem_caption.md. -->
+
+We asked next whether that divergence could be reproduced by the property most often
+invoked to explain thermal tolerance, the thermal behaviour of metabolic enzymes. Using
+enzyme-constrained genome-scale models of all four species, with per-enzyme melting
+temperatures and thermal optima predicted from sequence, we posed a two-sided sufficiency
+test: what minimum interspecies difference in a model parameter makes *C. auris* still
+grow at 44 °C while the median relative fails by 40 °C, without driving permissive growth
+at 34 °C below 0.7 times its baseline? The calibrated models predict detectable growth at
+44 °C for all four species, against the observed 10/12, 1/3, 0/2 and 0/3 (Fig. 4a).
+Reproducing the observed boundary requires roughly 33 °C of interspecies separation in
+enzyme melting temperature or 16 °C in thermal optimum, against paired ortholog
+differences of 0.52 °C and 0.48 °C respectively, and against 1.6 °C, the largest
+proteome-wide separation yet measured between congeneric yeasts whose growth limits differ
+by 8 °C (Fig. 4b, c). Ten mechanisms were tested against the same two-sided criterion,
+spanning enzyme thermostability, thermal optima, catalytic rate, proteome capacity and its
+temperature-dependent reallocation, targeted enzyme sets, maintenance energetics and
+oxygen availability; none satisfies it (Supplementary Table 1). The failure is not
+attributable to the models being too insensitive in an obvious way: correcting the fitted
+unfolding width to the value implied by protein thermodynamics halves the requirement and
+does not close it.
+
+![](../results/figures/manuscript/FIG4_etcgem_counterfactual.png){width="6.6in"}
+
+**Figure 4 | The thermal divergence is not reproduced by any metabolic mechanism, because the parameters it would have to act on do not separate the species.** (**a**) The calibrated etcGEM predicts detectable growth at 44 °C for all four species (bars, model-predicted µ, maximum feasible capacity rather than establishment; detection 0.05 h⁻¹). Observed isolate-level detection at 44 °C is annotated (*n/N*), scored by the same oxygen-trace criterion as Fig. 3. Bars and *n/N* are different quantities, model prediction against observed counts. (**b**) Per-enzyme melting temperature predicted from sequence, as kernel densities for each proteome, on an axis spanning the separation the model requires (32.5 °C, red); at that scale the four species are one line. Inset, the same distributions magnified. Pairing enzymes by shared reaction, *C. auris*'s are predicted 0.52 °C more thermostable than *C. haemulonii*'s (*n* = 1041 pairs, *P* = 1 × 10⁻¹¹) and 0.37 °C above *C. duobushaemulonii*'s; against *C. parapsilosis* the difference is −0.13 °C and not significant. The signal is real, consistent in sign for the two closest relatives, and roughly 63× smaller than required. (**c**) Interspecies separation predicted from sequence, and independently measured in an analogous species pair, against the minimum the model requires. The measured anchor is *S. cerevisiae* against *S. uvarum*, congeners whose growth thermal limits differ by 8 °C, where thermal proteome profiling gives a mean ortholog difference of 1.6 °C over 827 pairs. (**d**) Dynamic sparse test: predicted 40 °C growth as bottleneck enzymes are shifted −8 °C, added best-first from a pool of the 80 strongest flux-weighted candidates, with marginal effects recomputed after every addition. After 60 enzymes, growth has plateaued far above detection for every relative and both parameters. Values are model-implied minima, not biological estimates; this is a sufficiency and falsification test, not causal inference; 44 °C is assay-censored. Generated by `scripts/18_fig4.R`.
+
 # **Near-identical coding sequences do not account for the clade differences**
 
 The four C. *auris* clades differ up to two-fold in peak growth rate, and measurably in the cost of a fever, yet their reference proteomes are near-identical: median whole-proteome amino-acid identity is 99.4--100% across clades I--IV by reciprocal best-hit alignment. Broad coding-sequence divergence is therefore an unlikely explanation for the physiological differences reported here, which points instead to regulatory, post-transcriptional, post-translational or bioenergetic differences in how metabolic capacity is deployed rather than in what is encoded.
@@ -101,7 +154,7 @@ Growth and respiratory carbon flux were expressed on a matched per-cell basis, s
 
 ![](../results/figures/Fig_n0_treatment_panel.png){width="6.6in" height="3.0in"}
 
-**Supplementary Figure 4.** The between-clade respiration activation energy under three treatments of the inoculum back-projection. Each panel shows the hierarchical Bayesian Arrhenius activation energy E~R~ per clade (posterior median; bars, 95% credible interval), refitting the same model under: (left) the published back-projection, N0 = N_inoc·exp(r·Δt); (centre) the equilibration-corrected N0, recomputed from the logged internal vial temperature over the onset window; and (right) the term removed entirely, N0 = N_inoc. The C. *auris*-versus-*C. parapsilosis* separation is preserved across all three, but the finer ordering within C. *auris* is not: Clade IV holds the lowest activation energy under the published and equilibration-corrected treatments and moves to fourth of five when the term is removed. The term-free case is not the physical null (the inoculum grows before the fit window), so it bounds the correction from the opposite side rather than representing the correct value; it is shown to make the dependence explicit. Generated by `scripts/18_n0_treatment_panel.R`.
+**Supplementary Figure 4.** The between-clade respiration activation energy under three treatments of the inoculum back-projection. Each panel shows the hierarchical Bayesian Arrhenius activation energy E~R~ per clade (posterior median; bars, 95% credible interval), refitting the same model under: (left) the published back-projection, N0 = N_inoc·exp(r·Δt); (centre) the equilibration-corrected N0, recomputed from the logged internal vial temperature over the onset window; and (right) the term removed entirely, N0 = N_inoc. The C. *auris*-versus-*C. parapsilosis* separation is preserved across all three, but the finer ordering within C. *auris* is not: Clade IV holds the lowest activation energy under the published and equilibration-corrected treatments and moves to fourth of five when the term is removed. The term-free case is not the physical null (the inoculum grows before the fit window), so it bounds the correction from the opposite side rather than representing the correct value; it is shown to make the dependence explicit. Generated by `scripts/15_n0_treatment_panel.R`.
 
 #
 

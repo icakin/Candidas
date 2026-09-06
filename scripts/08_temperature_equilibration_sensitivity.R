@@ -115,7 +115,7 @@ summ <- d %>% group_by(T) %>% summarise(
   cue_swing_hi   = quantile(cue_swing, .75),
   growth_swing = 0, .groups = "drop")
 readr::write_csv(summ, file.path(tables_dir, "temperature_equilibration_sensitivity.csv"))
-# per-vial corrected values, so 15_uncertainty_bands.R can combine the temperature
+# per-vial corrected values, so 13_uncertainty_bands.R can combine the temperature
 # component with replicate scatter into one honest band.
 readr::write_csv(
   d %>% select(T, OTU, Replicate, clade, respiration_fgC_h, resp_corr,

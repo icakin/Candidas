@@ -1,0 +1,15 @@
+{
+  "median_within_stratum_r": {
+    "C_tot_O2_mg_per_L": -0.07425852276294792,
+    "biomass_integral_cells_min_per_L": 0.6348364358128439,
+    "R_O2_mg_cell_min": -0.6774392357887814
+  },
+  "loso_mae": {
+    "temp_only": 0.1418,
+    "plus_total_O2": 0.1417,
+    "plus_O2_per_inoc_cell": 0.2442,
+    "plus_O2_per_biomass_CIRCULAR": 0.1214
+  },
+  "identity": "R_O2_mg_cell_min == C_tot_O2_mg_per_L / biomass_integral_cells_min_per_L (exact)",
+  "conclusion": "no non-circular respiratory information about growth beyond temperature"
+}

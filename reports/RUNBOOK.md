@@ -94,13 +94,13 @@ Rscript scripts/04_trim_selector.R --app     # or CANDIDAS_RUN_APP=1 Rscript ...
 the published set:
 
 ```bash
-Rscript scripts/18_n0_treatment_panel.R       # Supplementary Figure 6, ~24 min
+Rscript scripts/15_n0_treatment_panel.R       # Supplementary Figure 6, ~24 min
 Rscript scripts/09_bayesian_models.R && Rscript scripts/11_bayesian_plots.R \
-  && Rscript scripts/12_carbon_tax.R && Rscript scripts/14_main_figures.R \
-  && Rscript scripts/15_uncertainty_bands.R
+  && Rscript scripts/12_carbon_tax.R && Rscript scripts/16_fig1_fig2.R \
+  && Rscript scripts/13_uncertainty_bands.R
 ```
 
-**`19_rk_covariance_check.R`** is a standalone diagnostic and is in no runner.
+**`14_rk_covariance_check.R`** is a standalone diagnostic and is in no runner.
 
 ---
 

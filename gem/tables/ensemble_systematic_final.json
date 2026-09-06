@@ -1,0 +1,24 @@
+{
+  "N": 500,
+  "viable": 148,
+  "pheno_and_viable": 0,
+  "pheno_total": 1,
+  "rank": 0.282,
+  "rank_ci": [
+    0.24433577544329282,
+    0.32298855823618094
+  ],
+  "pheno_ci": [
+    0,
+    0.02530004952529478
+  ],
+  "viable_reaching_required": 3,
+  "sigmas": {
+    "Topt": 12.26,
+    "Tm": 7.57
+  },
+  "seeds": [
+    2024,
+    99
+  ]
+}

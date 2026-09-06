@@ -1,0 +1,22 @@
+{
+  "optimum_MAE": {
+    "genome": 2.5,
+    "null": 2.5,
+    "trivial_median": 1.5
+  },
+  "curve_RMSE": {
+    "genome": 0.183,
+    "null": 0.17,
+    "trivial_meancurve": 0.226
+  },
+  "norm_RMSE": {
+    "genome": 0.26,
+    "null": 0.238
+  },
+  "mu_at_first_nogrowth": {
+    "genome": 0.59,
+    "null": 0.5,
+    "observed": 0.0
+  },
+  "note": "out-of-fold LOOCV; genome-specific thermal layer adds no advantage over identical-profile null; model does not beat trivial median-optimum baseline; ecGEM beats trivial mean-curve baseline on whole-curve RMSE (captures broad structure)."
+}

@@ -47,7 +47,7 @@
 #       They also cost tens of minutes each. Run them deliberately, then re-run
 #       09 -> 11 -> 12 -> 14 -> 15 to restore the published set:
 #           Rscript scripts/10_n0_term_test.R
-#           Rscript scripts/18_n0_treatment_panel.R     # Supplementary Fig. 6
+#           Rscript scripts/15_n0_treatment_panel.R     # Supplementary Fig. 6
 #
 #   etc-GEM (python)       OPTIONAL, OFF BY DEFAULT - see RUN_ETCGEM below.
 #
@@ -201,10 +201,10 @@ if [ "${SKIP_R:-0}" != "1" ]; then
   # neither cobra nor the network. Regenerate its inputs deliberately with
   # gem/etcgem_counterfactual.py, gem/dyn_sparse.py and gem/counts_at_44.py.
   if command -v python3 >/dev/null 2>&1; then
-    stage "3/4 20_fig4_etcgem.py (Figure 4)" "$LOG_DIR/py_20_${STAMP}.log" \
-      python3 "$HERE/20_fig4_etcgem.py"
+    stage "3/4 18_fig4.R (Figure 4)" "$LOG_DIR/py_20_${STAMP}.log" \
+      python3 "$HERE/18_fig4.R"
   else
-    echo ""; echo "!! python3 not on PATH - 20_fig4_etcgem.py NOT run (Figure 4 stale)."
+    echo ""; echo "!! python3 not on PATH - 18_fig4.R NOT run (Figure 4 stale)."
   fi
 else
   echo ""; echo "SKIP_R=1 -> R pipeline skipped."

@@ -1,0 +1,2864 @@
+reaction,kegg_R,EC,evidence_class,GPR
+TR1000858_PLAS__plas,,,orphan_no_species_evidence,
+R00894__cyto,R00894,6.3.2.2,KO->R,XP_025343215.1
+TO1000190_PLAS__plas,,,orphan_no_species_evidence,
+R03416__mito,R03416,3.1.1.5,KO->R,XP_025340069.1
+R03936__cyto,R03936,3.7.1.3,KO->R,XP_025342242.1
+TO1000087_PLAS__plas,,,orphan_no_species_evidence,
+TI2903709_PLAS__plas,,,orphan_no_species_evidence,
+R00658__cyto,R00658,4.2.1.11,KO->R,XP_025342243.1
+R00763__cyto,R00763,3.1.3.46,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1
+R12120__cyto,R12120,1.14.14.154,EC,XP_025344294.1
+TO1000027_PLAS__plas,,,orphan_no_species_evidence,
+TI1001573_PLAS__plas,,,orphan_no_species_evidence,
+D_Galactose__extr,,,exchange/biomass,
+EX_C00214__extr,,,exchange/biomass,
+R08657__mito,R08657,1.1.5.3,EC,XP_025340956.1
+R04355__cyto,R04355,2.3.1.179;2.3.1.41;2.3.1.85;2.3.1.86,KO->R,XP_025343463.1 or XP_025343608.1
+R04591__cyto,R04591,6.3.2.6,KO->R,XP_025341488.1
+R02485__cyto,R02485,3.5.4.5,EC,XP_025343059.1
+TO0000654_PLAS__plas,,,orphan_no_species_evidence,
+TR1012174_PLAS__plas,,,orphan_no_species_evidence,
+TR0012678_PLAS__plas,,,orphan_no_species_evidence,
+TI1001017_PLAS__plas,,,orphan_no_species_evidence,
+R00527__cyto,R00527,3.1.2.12,KO->R,XP_025340056.1
+R02590__cyto,R02590,2.7.7.15,KO->R,XP_025341674.1
+R01351__cyto,R01351,3.1.1.23,EC,XP_025339641.1 or XP_025340436.1 or XP_025341324.1 or XP_025341506.1 or XP_025342842.1 or XP_025342913.1 or XP_025343593.1 or XP_025344529.1
+TR1000092_PLAS__plas,,,orphan_no_species_evidence,
+T_2_Oxobutanoate_c00109_MitoCyto__mito,,,orphan_no_species_evidence,
+R11104__pero,R11104,3.6.1.22,KO->R,XP_025343934.1
+T_L_Proline_c00148_CytoMito__mito,,,orphan_no_species_evidence,
+R03893__cyto,R03893,3.1.1.45,KO->R,XP_025343544.1
+R00489__cyto,R00489,4.1.1.11;4.1.1.15,KO->R,XP_025341373.1 or XP_025343228.1
+R03352__cyto,R03352,3.1.2.4,EC,XP_025339645.1 or XP_025341137.1 or XP_025342529.1
+EX_C01217__extr,,,exchange/biomass,
+R04726__pero,R04726,2.3.1.41,KO->R,XP_025343463.1 or XP_025343608.1
+TO3000451_PLAS__plas,,,orphan_no_species_evidence,
+TI3000208_PLAS__plas,,,orphan_no_species_evidence,
+TO3000418_PLAS__plas,,,orphan_no_species_evidence,
+TO0000138_PLAS__plas,,,orphan_no_species_evidence,
+TZ3101592_PLAS__plas,,,orphan_no_species_evidence,
+TZ3101599_PLAS__plas,,,orphan_no_species_evidence,
+TZ3101579_PLAS__plas,,,orphan_no_species_evidence,
+TR1011953_PLAS__plas,,,orphan_no_species_evidence,
+TO1000117_PLAS__plas,,,orphan_no_species_evidence,
+R00848__mito,R00848,1.1.5.3,KO->R,XP_025340956.1
+EX_C00881__extr,,,exchange/biomass,
+R07895__cyto,R07895,2.3.1.16,KO->R,XP_025344328.1
+T__R__Pantoate_c00522_MitoCyto__mito,,,orphan_no_species_evidence,
+EX_C02341__extr,,,exchange/biomass,
+R01072__cyto,R01072,2.4.2.14,KO->R,XP_025343583.1
+TR2000091_PLAS__plas,,,orphan_no_species_evidence,
+R01187__cyto,R01187,3.1.3.25,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1
+TZ3101609_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00455__extr,,,exchange/biomass,
+R02464__cyto,R02464,4.1.2.27,KO->R,XP_025343721.1
+R00548__cyto,R00548,3.1.3.102;3.1.3.2,KO->R,XP_025343649.1 or XP_025344333.1 or XP_025344334.1
+R00768__cyto,R00768,2.6.1.16,KO->R,XP_025341162.1
+TO1000060_PLAS__plas,,,orphan_no_species_evidence,
+T_Adenosine_3_5_biphosphate_c00054_MitoCyto__mito,,,orphan_no_species_evidence,
+TR0012375_PLAS__plas,,,orphan_no_species_evidence,
+R00243__cyto,R00243,1.4.1.14;1.4.1.2;1.4.1.3,KO->R,XP_025341877.1
+R03293__cyto,R03293,1.5.1.2,KO->R,XP_025340638.1
+R05484__cyto,R05484,,orphan_no_species_evidence,
+TO1000220_PLAS__plas,,,orphan_no_species_evidence,
+TI2000119_PLAS__plas,,,orphan_no_species_evidence,
+TR2000264_PLAS__plas,,,orphan_no_species_evidence,
+TO1000020_PLAS__plas,,,orphan_no_species_evidence,
+R04639__cyto,R04639,3.5.4.16,KO->R,XP_025341690.1
+TO0000032_CytoPero__pero,,,orphan_no_species_evidence,
+EX_C00219__extr,,,exchange/biomass,
+EX_C00865__extr,,,exchange/biomass,
+TO1000493_PLAS__plas,,,orphan_no_species_evidence,
+TI2903702_PLAS__plas,,,orphan_no_species_evidence,
+R03657__cyto,R03657,2.7.4.6,KO->R,XP_025340926.1 or XP_025342179.1
+TI1000926_PLAS__plas,,,orphan_no_species_evidence,
+R01466__cyto,R01466,4.2.3.1,KO->R,XP_025344615.1
+R03652__cyto,R03652,6.1.1.18,KO->R,XP_025340437.1
+R02295__cyto,R02295,2.4.2.1,KO->R,XP_025343966.1
+T_Glycolaldehyde_c00266_CytoExtr_____plas,,,orphan_no_species_evidence,
+EX_C03454__extr,,,exchange/biomass,
+TI2903679_PLAS__plas,,,orphan_no_species_evidence,
+R09419__cyto,R09419,2.3.1.199,KO->R,XP_025340013.1 or XP_025342920.1
+R09076__cyto,R09076,,KO->R,XP_025344769.1
+T_2_Methylbutanal_c02223_MitoCyto__mito,,,orphan_no_species_evidence,
+TZ3100209_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00750__extr,,,exchange/biomass,
+Maltose_transport_reaction__plas,,,orphan_no_species_evidence,
+R07764__cyto,R07764,4.2.1.59,EC,XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+TI2903659_PLAS__plas,,,orphan_no_species_evidence,
+R00827__cyto,R00827,2.1.1.6,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341223.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+R02249__cyto,R02249,3.1.3.33,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1
+R03357__cyto,R03357,1.1.1.101,EC,XP_025340417.1 or XP_025340439.1 or XP_025340664.1 or XP_025341008.1 or XP_025341340.1 or XP_025341358.1 or XP_025343513.1
+EX_C01753__extr,,,exchange/biomass,
+R02874__cyto,R02874,1.14.14.17,KO->R,XP_025342230.1
+R00248__cyto,R00248,1.4.1.13;1.4.1.3;1.4.1.4,KO->R,XP_025339610.1 or XP_025339952.1
+R01372__cyto,R01372,1.13.11.27,KO->R,XP_025342817.1
+R08310__cyto,R08310,1.1.1.1,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+R02654__cyto,R02654,2.8.3.10,orphan_no_species_evidence,
+TI2903699_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100166_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100199_PLAS__plas,,,orphan_no_species_evidence,
+T_CMP_CTP_antiport__plas,,,orphan_no_species_evidence,
+R02003__cyto,R02003,2.5.1.10,KO->R,XP_025340303.1 or XP_025343264.1
+TI1000017_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102083_PLAS__plas,,,orphan_no_species_evidence,
+R04955__cyto,R04955,1.3.1.9,EC,XP_025339979.1 or XP_025340151.1
+TZ3102076_PLAS__plas,,,orphan_no_species_evidence,
+TR2000161_PLAS__plas,,,orphan_no_species_evidence,
+TI3001118_PLAS__plas,,,orphan_no_species_evidence,
+R00674__cyto,R00674,4.2.1.122;4.2.1.20,KO->R,XP_025340496.1
+R07070__cyto,R07070,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+R02849__cyto,R02849,2.7.1.1,EC,XP_025342548.1 or XP_025343090.1 or XP_025343315.1 or XP_025344429.1
+R02413__cyto,R02413,1.1.1.25;1.1.1.282,KO->R,XP_025343755.1
+TO1000330_PLAS__plas,,,orphan_no_species_evidence,
+TI3001105_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100139_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100119_PLAS__plas,,,orphan_no_species_evidence,
+R01398__cyto,R01398,2.1.3.3,KO->R,XP_025344522.1
+R04208__cyto,R04208,6.3.3.1,KO->R,XP_025343214.1
+R12366__cyto,R12366,1.1.1.170;1.1.1.418,EC,XP_025339777.1 or XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+TZ3100126_PLAS__plas,,,orphan_no_species_evidence,
+TI3001125_PLAS__plas,,,orphan_no_species_evidence,
+R01030__cyto,R01030,3.1.4.2;3.1.4.46,KO->R,XP_025341788.1
+R08306__mito,R08306,1.1.1.1,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+TZ3100106_PLAS__plas,,,orphan_no_species_evidence,
+TI1000506_PLAS__plas,,,orphan_no_species_evidence,
+R00264__cyto,R00264,1.2.1.26;1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+TR2900008_PLAS__plas,,,orphan_no_species_evidence,
+R03416__cyto,R03416,3.1.1.5,KO->R,XP_025340069.1
+Ex_Ethylamine_c00797__extr,,,exchange/biomass,
+T_Pyridoxal_phosphate_Residue_M8424_CytoExtr__plas,,,orphan_no_species_evidence,
+TO0001977_PLAS__plas,,,orphan_no_species_evidence,
+TR1000129_PLAS__plas,,,orphan_no_species_evidence,
+TR0015555_PLAS__plas,,,orphan_no_species_evidence,
+TI1000586_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00082__extr,,,exchange/biomass,
+TZ2900041_PLAS__plas,,,orphan_no_species_evidence,
+R08551__cyto,R08551,1.6.2.4,EC,XP_025344606.1
+R08821__cyto,R08821,,orphan_no_species_evidence,
+EX_C01327__extr,,,exchange/biomass,
+R01956__cyto,R01956,2.6.1.7,KO->R,XP_025342955.1
+R02722__cyto,R02722,4.2.1.20,KO->R,XP_025340496.1
+TO0011839_PLAS__plas,,,orphan_no_species_evidence,
+TZ3101442_PLAS__plas,,,orphan_no_species_evidence,
+TZ3103146_PLAS__plas,,,orphan_no_species_evidence,
+R00220__pero,R00220,4.3.1.17,KO->R,XP_025340320.1 or XP_025341535.1 or XP_025342032.1
+TZ3102096_PLAS__plas,,,orphan_no_species_evidence,
+R02549__cyto,R02549,1.2.1.19;1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+R02029__mito,R02029,3.1.3.27,KO->R,XP_025342718.1
+TI1000250_PLAS__plas,,,orphan_no_species_evidence,
+R02739__cyto,R02739,5.1.3.15;5.3.1.9,KO->R,XP_025339672.1 or XP_025342634.1
+R08221__cyto,R08221,3.5.4.5,EC,XP_025343059.1
+R00351__pero,R00351,2.3.3.1;2.3.3.3,KO->R,XP_025341180.1
+R08310__mito,R08310,1.1.1.1,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+R07180__cyto,R07180,1.11.1.15,orphan_no_species_evidence,
+R01330__cyto,R01330,2.7.1.1,EC,XP_025342548.1 or XP_025343090.1 or XP_025343315.1 or XP_025344429.1
+TO0000311_PLAS__plas,,,orphan_no_species_evidence,
+R01626__mito,R01626,2.3.1.39,KO->R,XP_025344154.1
+TI3000068_PLAS__plas,,,orphan_no_species_evidence,
+R05801__cyto,R05801,2.7.1.151,EC,XP_025344429.1
+EX_C00104__extr,,,exchange/biomass,
+R00227__cyto,R00227,3.1.2.1,EC,XP_025341137.1 or XP_025342529.1
+R01220__mito,R01220,1.5.1.5,KO->R,XP_025341200.1 or XP_025342445.1
+R02439__mito,R02439,2.7.1.16,EC,XP_025344429.1
+R02746__pero,R02746,3.1.1.5,KO->R,XP_025340069.1
+TO0000408_PLAS__plas,,,orphan_no_species_evidence,
+T_Glycine_c00037_MitoCyto__mito,,,orphan_no_species_evidence,
+TI3001351_PLAS__plas,,,orphan_no_species_evidence,
+T_L_Carnitine_c00318_MitoCyto__mito,,,orphan_no_species_evidence,
+R01288__cyto,R01288,2.5.1.48,KO->R,XP_025340376.1
+R07396__cyto,R07396,2.6.1.5;2.6.1.57,EC,XP_025340820.1
+TO0000035_PLAS__plas,,,orphan_no_species_evidence,
+R04566__cyto,R04566,1.1.1.100;2.3.1.85;2.3.1.86,KO->R,XP_025341358.1 or XP_025343463.1
+R02853__cyto,R02853,2.7.1.19,EC,XP_025344429.1
+TO0000010_PeroCyto__pero,,,orphan_no_species_evidence,
+TO0000015_PLAS__plas,,,orphan_no_species_evidence,
+R03036__cyto,R03036,3.6.1.9,EC,XP_025341681.1 or XP_025342527.1 or XP_025343724.1 or XP_025344566.1
+R08162__cyto,R08162,3.1.2.14,EC,XP_025341137.1 or XP_025342529.1
+R05002__cyto,R05002,2.4.1.132,EC,XP_025339775.1 or XP_025339818.1 or XP_025339831.1 or XP_025340143.1 or XP_025340331.1 or XP_025340511.1 or XP_025340596.1 or XP_025340690.1 or XP_025340837.1 or XP_025341057.1 or XP_025341058.1 or XP_025341084.1 or XP_025341507.1 or XP_025341540.1 or XP_025341718.1 or XP_025342118.1 or XP_025342294.1 or XP_025342315.1 or XP_025342569.1 or XP_025343076.1 or XP_025343501.1 or XP_025343660.1 or XP_025343782.1 or XP_025344251.1 or XP_025344349.1 or XP_025344360.1 or XP_025344658.1
+TR1000085_PLAS__plas,,,orphan_no_species_evidence,
+TO0010516_PLAS__plas,,,orphan_no_species_evidence,
+T_L_Aspartate_Glutamate_Antiport__mito,,,orphan_no_species_evidence,
+T_Malate_Orhophosphate_Antiport__mito,,,orphan_no_species_evidence,
+TO1000343_PLAS__plas,,,orphan_no_species_evidence,
+R01960__cyto,R01960,1.14.13.9,KO->R,XP_025340157.1
+EX_C00134__extr,,,exchange/biomass,
+R11216__cyto,R11216,2.1.1.319;2.1.1.320;2.1.1.321,KO->R,XP_025341468.1
+TO0000274_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00024__extr,,,exchange/biomass,
+TZ3106856_PLAS__plas,,,orphan_no_species_evidence,
+T_3_methyl_2_oxobutunoic_acid_c00141_CytoMito__mito,,,orphan_no_species_evidence,
+TO1002027_PLAS__plas,,,orphan_no_species_evidence,
+R02113__cyto,R02113,2.4.1.173,EC,XP_025339775.1 or XP_025339818.1 or XP_025339831.1 or XP_025340143.1 or XP_025340331.1 or XP_025340511.1 or XP_025340596.1 or XP_025340690.1 or XP_025340837.1 or XP_025341057.1 or XP_025341058.1 or XP_025341084.1 or XP_025341226.1 or XP_025341507.1 or XP_025341540.1 or XP_025341718.1 or XP_025342118.1 or XP_025342294.1 or XP_025342315.1 or XP_025342569.1 or XP_025343076.1 or XP_025343501.1 or XP_025343782.1 or XP_025344251.1 or XP_025344349.1 or XP_025344360.1 or XP_025344658.1
+R01051__cyto,R01051,2.7.1.15,KO->R,XP_025342921.1
+TR1000065_PLAS__plas,,,orphan_no_species_evidence,
+R00974__cyto,R00974,3.5.4.1,KO->R,XP_025342707.1
+R03661__cyto,R03661,6.1.1.15,KO->R,XP_025340630.1 or XP_025343820.1
+R00344__mito,R00344,6.4.1.1,KO->R,XP_025342524.1
+R07024__cyto,R07024,3.2.2.30,KO->R,XP_025343711.1 or XP_025344035.1
+TO3000375_PLAS__plas,,,orphan_no_species_evidence,
+TO1000054_PLAS__plas,,,orphan_no_species_evidence,
+R00278__cyto,R00278,1.4.3.5,KO->R,XP_025339716.1 or XP_025344481.1
+EX_C04377__extr,,,exchange/biomass,
+R04430__cyto,R04430,1.3.1.10;1.3.1.39;2.3.1.85;2.3.1.86,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+TR1000478_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00718__extr,,,exchange/biomass,
+R07084__cyto,R07084,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+EX_C00010__extr,,,exchange/biomass,
+TO1001607_PLAS__plas,,,orphan_no_species_evidence,
+TI3000294_PLAS__plas,,,orphan_no_species_evidence,
+R01965__cyto,R01965,3.2.1.165,EC,XP_025342675.1 or XP_025344668.1
+Homocysteine__extr,,,exchange/biomass,
+TZ3100042_PLAS__plas,,,orphan_no_species_evidence,
+TR1002679_PLAS__plas,,,orphan_no_species_evidence,
+EX_C05966__extr,,,exchange/biomass,
+R02558__cyto,R02558,3.2.1.118;3.2.1.21,KO->R,XP_025340834.1 or XP_025341985.1 or XP_025344382.1
+R02017__cyto,R02017,1.17.4.1,KO->R,XP_025340212.1 or XP_025342434.1 or XP_025344702.1
+R00602__cyto,R00602,1.11.1.21;1.11.1.6;1.11.1.7,KO->R,XP_025343574.1
+R10280__cyto,R10280,5.1.99.6,orphan_no_species_evidence,
+R04964__cyto,R04964,1.1.1.100;2.3.1.85;2.3.1.86,KO->R,XP_025341358.1 or XP_025343463.1
+R08289__cyto,R08289,,orphan_no_species_evidence,
+R01736__cyto,R01736,3.1.2.6,KO->R,XP_025339554.1
+R01626__cyto,R01626,2.3.1.39;2.3.1.85;2.3.1.86,KO->R,XP_025344154.1
+R05733__cyto,R05733,1.14.18.9,EC,XP_025342329.1 or XP_025342552.1
+EX_C00008__extr,,,exchange/biomass,
+R04969__cyto,R04969,1.3.1.9,EC,XP_025339979.1 or XP_025340151.1
+R01209__mito,R01209,4.2.1.9,KO->R,XP_025342005.1
+TO2903036_PLAS__plas,,,orphan_no_species_evidence,
+EX_C04317__extr,,,exchange/biomass,
+R00316__cyto,R00316,6.2.1.1,KO->R,XP_025340510.1 or XP_025342973.1
+T_Dihydropteorate_c00921_MitoCyto__mito,,,orphan_no_species_evidence,
+EX_C00954__extr,,,exchange/biomass,
+TR1000322_PLAS__plas,,,orphan_no_species_evidence,
+R00328__cyto,R00328,3.6.1.42;3.6.1.5;3.6.1.6,KO->R,XP_025339769.1 or XP_025343798.1
+EX_C11554__extr,,,exchange/biomass,
+R03601__cyto,R03601,2.5.1.47,EC,XP_025340642.1
+TI1000809_PLAS__plas,,,orphan_no_species_evidence,
+TI1000346_PLAS__plas,,,orphan_no_species_evidence,
+TI2903795_PLAS__plas,,,orphan_no_species_evidence,
+TR0011684_PLAS__plas,,,orphan_no_species_evidence,
+R08120__cyto,R08120,3.1.1.45,KO->R,XP_025343544.1
+R00390__cyto,R00390,6.2.1.3,KO->R,XP_025341276.1
+R01600__cyto,R01600,2.7.1.1;2.7.1.2,KO->R,XP_025342548.1 or XP_025343090.1 or XP_025343315.1
+R01710__cyto,R01710,1.4.3.5,KO->R,XP_025339716.1 or XP_025344481.1
+TR0000150_PLAS__plas,,,orphan_no_species_evidence,
+EX_Methanol__extr,,,exchange/biomass,
+TO3001121_PLAS__plas,,,orphan_no_species_evidence,
+TI3000275_PLAS__plas,,,orphan_no_species_evidence,
+R03217__cyto,R03217,2.5.1.48,KO->R,XP_025340376.1
+EX_C00120__extr,,,exchange/biomass,
+R07134__cyto,R07134,1.1.1.250,KO->R,XP_025342327.1
+TO1000053_PLAS__plas,,,orphan_no_species_evidence,
+R01140__cyto,R01140,1.14.14.52,orphan_no_species_evidence,
+R12188__cyto,R12188,4.4.1.13,KO->R,XP_025340817.1
+R02670__cyto,R02670,1.11.1.21;1.11.1.6,KO->R,XP_025343574.1
+T_Guanosine_c00387_CytoMito__mito,,,orphan_no_species_evidence,
+R04533__cyto,R04533,1.1.1.100;2.3.1.85;2.3.1.86,KO->R,XP_025341358.1 or XP_025343463.1
+R02024__cyto,R02024,1.17.4.1,KO->R,XP_025340212.1 or XP_025342434.1 or XP_025344702.1
+R04859__cyto,R04859,2.5.1.47;2.5.1.49,KO->R,XP_025340642.1
+R00988__cyto,R00988,3.5.1.9,KO->R,XP_025341542.1
+R10065__cyto,R10065,2.7.1.151,EC,XP_025344429.1
+R11216__mito,R11216,2.1.1.320,KO->R,XP_025341468.1
+TR0000027_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00003__extr,,,exchange/biomass,
+R04371__cyto,R04371,4.2.1.114;4.2.1.36,KO->R,XP_025340917.1
+R07091__cyto,R07091,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+R01431__cyto,R01431,1.1.1.21;1.1.1.307,KO->R,XP_025339676.1 or XP_025340417.1
+R01321__cyto,R01321,2.7.8.2,EC,XP_025343691.1
+EX_C00015__extr,,,exchange/biomass,
+R07406__cyto,R07406,1.1.1.262,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+TZ3104719_PLAS__plas,,,orphan_no_species_evidence,
+R09882__mito,R09882,3.6.1.60,EC,XP_025341681.1 or XP_025342527.1 or XP_025343724.1 or XP_025344566.1
+TO3000515_PLAS__plas,,,orphan_no_species_evidence,
+T_Raffinose_c00492_ExtrCyto__plas,,,orphan_no_species_evidence,
+R00227__mito,R00227,3.1.2.1,EC,XP_025341137.1 or XP_025342529.1
+TI2000186_PLAS__plas,,,orphan_no_species_evidence,
+TR0000190_PLAS__plas,,,orphan_no_species_evidence,
+R10928__cyto,R10928,3.1.3.95,KO->R,XP_025344595.1
+EX_C14819__extr,,,exchange/biomass,
+TO0000184_PLAS__plas,,,orphan_no_species_evidence,
+R03648__cyto,R03648,6.1.1.22,KO->R,XP_025343818.1 or XP_025343821.1
+TZ3102030_PLAS__plas,,,orphan_no_species_evidence,
+R03107__cyto,R03107,2.5.1.56;2.5.1.57,orphan_no_species_evidence,
+R05616__cyto,R05616,2.5.1.39,EC,XP_025341956.1
+T_alpha_isoprpylmalate_c02504_CytoMito__mito,,,orphan_no_species_evidence,
+TR0012438_PLAS__plas,,,orphan_no_species_evidence,
+TO0011893_PLAS__plas,,,orphan_no_species_evidence,
+R01799__mito,R01799,2.7.7.41,KO->R,XP_025340309.1
+R09376__cyto,R09376,1.1.1.302,KO->R,XP_025342919.1
+R11101__cyto,R11101,4.3.1.19,EC,XP_025340320.1 or XP_025341535.1 or XP_025342032.1
+R00772__cyto,R00772,5.3.1.8,KO->R,XP_025343487.1
+R02059__cyto,R02059,3.5.1.25,KO->R,XP_025343088.1
+TO1002197_PLAS__plas,,,orphan_no_species_evidence,
+R01698__mito,R01698,1.8.1.4,KO->R,XP_025339830.1
+R04751__cyto,R04751,1.3.3.6;1.3.8.1;1.3.8.7;1.3.8.8,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+TO0000467_PLAS__plas,,,orphan_no_species_evidence,
+Ex_Raffinose_c00492__extr,,,exchange/biomass,
+R00937__mito,R00937,1.5.1.3,KO->R,XP_025339718.1
+R11312__cyto,R11312,2.5.1.3,EC,XP_025344068.1
+R02404__mito,R02404,6.2.1.5,KO->R,XP_025339919.1
+TI0000108_PLAS__plas,,,orphan_no_species_evidence,
+T_Isopentenyl_diphosphate_c00129_MitoCyto__mito,,,orphan_no_species_evidence,
+TZ3103147_PLAS__plas,,,orphan_no_species_evidence,
+R05510__cyto,R05510,3.1.1.45,KO->R,XP_025343544.1
+R09477__cyto,R09477,1.1.1.307,KO->R,XP_025339676.1
+Oxygen_O2_transport_reaction__plas,,,orphan_no_species_evidence,
+R04430__mito,R04430,1.3.1.104,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+TO0000061_PLAS__plas,,,orphan_no_species_evidence,
+TR1000019_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00387__extr,,,exchange/biomass,
+EX_C20190__extr,,,exchange/biomass,
+TO0000021_PLAS__plas,,,orphan_no_species_evidence,
+TO1000227_PLAS__plas,,,orphan_no_species_evidence,
+TZ2900048_PLAS__plas,,,orphan_no_species_evidence,
+R05168__cyto,R05168,3.5.1.25,EC,XP_025341376.1 or XP_025342627.1 or XP_025343088.1 or XP_025343826.1
+R04920__cyto,R04920,2.7.8.1,EC,XP_025343691.1
+TZ3104855_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100043_PLAS__plas,,,orphan_no_species_evidence,
+TR1000059_PLAS__plas,,,orphan_no_species_evidence,
+R02235__mito,R02235,1.5.1.3,KO->R,XP_025339718.1
+TZ3106842_PLAS__plas,,,orphan_no_species_evidence,
+R05506__cyto,R05506,2.3.1.16,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344328.1 or XP_025344518.1
+TO1003530_PLAS__plas,,,orphan_no_species_evidence,
+R05887__cyto,R05887,,orphan_no_species_evidence,
+R04144__cyto,R04144,6.3.4.13,KO->R,XP_025343214.1
+TI3000171_PLAS__plas,,,orphan_no_species_evidence,
+R01900__pero,R01900,,orphan_no_species_evidence,
+R03758__cyto,R03758,1.1.1.381,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+R00708__cyto,R00708,1.2.1.88,KO->R,XP_025341706.1
+EX_C00059__extr,,,exchange/biomass,
+EX_C00828__extr,,,exchange/biomass,
+R01279__pero,R01279,1.3.3.6,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+TI3000288_PLAS__plas,,,orphan_no_species_evidence,
+R10170__cyto,R10170,4.2.1.33,KO->R,XP_025344540.1
+R05234__cyto,R05234,1.1.1.1,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+R03158__cyto,R03158,3.1.2.4,KO->R,XP_025339645.1
+TZ3100165_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102326_PLAS__plas,,,orphan_no_species_evidence,
+R00159__cyto,R00159,3.6.1.39;3.6.1.5,KO->R,XP_025339769.1 or XP_025343798.1
+R00662__cyto,R00662,3.6.1.8;3.6.1.9,EC,XP_025341681.1 or XP_025342527.1 or XP_025343724.1 or XP_025344566.1
+TZ2900062_PLAS__plas,,,orphan_no_species_evidence,
+R12404__cyto,R12404,1.1.1.170,KO->R,XP_025339777.1
+R10115__cyto,R10115,2.3.1.179;2.3.1.41,KO->R,XP_025343608.1
+R02668__cyto,R02668,3.7.1.3,KO->R,XP_025342242.1
+R10548__cyto,R10548,2.7.4.21,KO->R,XP_025340333.1
+R12399__cyto,R12399,1.1.1.270,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1 or XP_025341826.1
+TO0000275_PLAS__plas,,,orphan_no_species_evidence,
+EX_C03885__extr,,,exchange/biomass,
+EX_Histidine__extr,,,exchange/biomass,
+TI2903789_PLAS__plas,,,orphan_no_species_evidence,
+TO3000624_PLAS__plas,,,orphan_no_species_evidence,
+TO3001129_PLAS__plas,,,orphan_no_species_evidence,
+R03492__cyto,R03492,3.2.1.52,EC,XP_025341196.1 or XP_025342675.1 or XP_025344668.1
+R00332__cyto,R00332,2.7.4.8,KO->R,XP_025343386.1
+R12024__mito,R12024,3.5.1.128,KO->R,XP_025339708.1
+R01752__cyto,R01752,1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+TO1000923_PLAS__plas,,,orphan_no_species_evidence,
+R04582__cyto,R04582,6.3.4.10,EC,XP_025341958.1
+N_Acetyl_D_glucosamine__extr,,,exchange/biomass,
+R04967__mito,R04967,1.3.1.104,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+TO0012582_PLAS__plas,,,orphan_no_species_evidence,
+EX_C01762__extr,,,exchange/biomass,
+TO2902906_PLAS__plas,,,orphan_no_species_evidence,
+R02617__cyto,R02617,2.3.1.15,EC,XP_025339641.1 or XP_025341357.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025343071.1 or XP_025343346.1 or XP_025343885.1 or XP_025344008.1 or XP_025344518.1
+TI1000023_PLAS__plas,,,orphan_no_species_evidence,
+R01086__cyto,R01086,4.3.2.1,KO->R,XP_025343822.1
+R10056__cyto,R10056,1.14.11.27;1.14.11.65,EC,XP_025340369.1 or XP_025343247.1 or XP_025343248.1 or XP_025343469.1 or XP_025343712.1 or XP_025343981.1 or XP_025344482.1
+R02396__cyto,R02396,2.3.1.7,KO->R,XP_025340381.1
+TO0000227_PLAS__plas,,,orphan_no_species_evidence,
+EX_C05684__extr,,,exchange/biomass,
+H__transport_reaction__plas,,,orphan_no_species_evidence,
+R00756__cyto,R00756,1.14.14.30,KO->R,XP_025340245.1 or XP_025341699.1
+R04863__cyto,R04863,1.2.1.95,KO->R,XP_025340420.1
+R10827__cyto,R10827,4.2.1.134,KO->R,XP_025344739.1 or XP_025344740.1
+R07497__cyto,R07497,,KO->R,XP_025340233.1
+EX_C01419__extr,,,exchange/biomass,
+Ex_L_Sorbose_c00247__extr,,,exchange/biomass,
+R01663__cyto,R01663,3.5.4.12,KO->R,XP_025343812.1
+R04941__cyto,R04941,4.4.1.13,KO->R,XP_025340817.1
+TR2918343_PLAS__plas,,,orphan_no_species_evidence,
+R11099__pero,R11099,4.3.1.17,KO->R,XP_025340538.1
+R05046__cyto,R05046,3.5.4.16,KO->R,XP_025341690.1
+Ex_Arbutin_c06186__extr,,,exchange/biomass,
+EX_C00033__extr,,,exchange/biomass,
+Ex_Pirydoxal_phosphate_Residue_M8424__extr,,,exchange/biomass,
+R00582__cyto,R00582,3.1.3.3,KO->R,XP_025340340.1
+R04536__cyto,R04536,1.1.1.100;2.3.1.85;2.3.1.86,KO->R,XP_025341358.1 or XP_025343463.1
+EX_C00116__extr,,,exchange/biomass,
+TI1000264_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100035_PLAS__plas,,,orphan_no_species_evidence,
+TO0000247_PLAS__plas,,,orphan_no_species_evidence,
+EX_C03892__extr,,,exchange/biomass,
+TZ3101483_PLAS__plas,,,orphan_no_species_evidence,
+EX_C11557__extr,,,exchange/biomass,
+R11005__mito,R11005,1.14.19.18,EC,XP_025341927.1 or XP_025342281.1
+R00405__mito,R00405,6.2.1.5,KO->R,XP_025339919.1
+TO1000226_PLAS__plas,,,orphan_no_species_evidence,
+R00770__cyto,R00770,2.7.1.11,EC,XP_025340245.1 or XP_025341699.1 or XP_025344429.1
+TZ3103367_PLAS__plas,,,orphan_no_species_evidence,
+R06194__cyto,R06194,,orphan_no_species_evidence,
+TR2000037_PLAS__plas,,,orphan_no_species_evidence,
+TI0012500_PLAS__plas,,,orphan_no_species_evidence,
+TO0000009_PLAS__plas,,,orphan_no_species_evidence,
+TO3000437_PLAS__plas,,,orphan_no_species_evidence,
+TO0000132_PLAS__plas,,,orphan_no_species_evidence,
+R08281__mito,R08281,1.1.1.1,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+TO0000022_PLAS__plas,,,orphan_no_species_evidence,
+TO0000042_PLAS__plas,,,orphan_no_species_evidence,
+TO3000457_PLAS__plas,,,orphan_no_species_evidence,
+T_O_acetylcarnitine_c02571_MitoCyto__mito,,,orphan_no_species_evidence,
+R02731__cyto,R02731,3.1.3.46,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1
+R04946__cyto,R04946,2.5.1.48,KO->R,XP_025340376.1
+TO0000069_PLAS__plas,,,orphan_no_species_evidence,
+TR1011451_PLAS__plas,,,orphan_no_species_evidence,
+R00014__mito,R00014,1.2.4.1,KO->R,XP_025339759.1 or XP_025341159.1 or XP_025341626.1 or XP_025342530.1 or XP_025343139.1 or XP_025343925.1
+R00177__cyto,R00177,2.5.1.6,KO->R,XP_025344315.1
+R11220__cyto,R11220,2.1.1.320,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+R00209__mito,R00209,1.2.4.1;1.8.1.4;2.3.1.12,KO->R,XP_025339830.1 or XP_025342530.1 or XP_025343139.1 or XP_025344579.1
+R01279__cyto,R01279,1.3.3.6;1.3.8.7;1.3.8.8;1.3.8.9,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+R04962__mito,R04962,1.3.1.104,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+TR1000161_PLAS__plas,,,orphan_no_species_evidence,
+R02326__cyto,R02326,6.1.1.4,KO->R,XP_025339680.1
+R09367__cyto,R09367,,orphan_no_species_evidence,
+R00904__cyto,R00904,1.2.1.19;1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+TO1003163_PLAS__plas,,,orphan_no_species_evidence,
+R11005__cyto,R11005,1.14.19.18,EC,XP_025341927.1 or XP_025342281.1
+R04889__mito,R04889,1.2.1.5,orphan_no_species_evidence,
+TO0000117_PLAS__plas,,,orphan_no_species_evidence,
+R00515__cyto,R00515,3.6.1.65;3.6.1.8;3.6.1.9,EC,XP_025341681.1 or XP_025342527.1 or XP_025343724.1 or XP_025344566.1
+R03450__mito,R03450,3.1.3.43,EC,XP_025340854.1 or XP_025341097.1 or XP_025341834.1 or XP_025342096.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1
+R00341__cyto,R00341,5.1.1.24,KO->R,XP_025341195.1
+R08281__cyto,R08281,1.1.1.1,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+EX_C00143__extr,,,exchange/biomass,
+R00925__cyto,R00925,6.2.1.1;6.2.1.17,KO->R,XP_025340510.1 or XP_025342973.1
+R03970__cyto,R03970,2.3.2.2,KO->R,XP_025341618.1
+R00086__cyto,R00086,3.6.1.15;3.6.1.3;3.6.1.5;3.6.1.8,KO->R,XP_025339769.1 or XP_025343798.1
+TO0000137_PLAS__plas,,,orphan_no_species_evidence,
+R03259__cyto,R03259,3.1.4.17,EC,XP_025340413.1 or XP_025341393.1 or XP_025342282.1 or XP_025343755.1 or XP_025343935.1
+TI1001101_PLAS__plas,,,orphan_no_species_evidence,
+R00236__cyto,R00236,6.2.1.1,KO->R,XP_025340510.1 or XP_025342973.1
+R04962__cyto,R04962,1.3.1.10;1.3.1.39;2.3.1.85;2.3.1.86,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+EX_C00148__extr,,,exchange/biomass,
+TZ3102062_PLAS__plas,,,orphan_no_species_evidence,
+R02731__mito,R02731,3.1.3.46,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1
+R11220__mito,R11220,2.1.1.320,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+R00081__mito,R00081,,orphan_no_species_evidence,
+R08964__cyto,R08964,2.7.4.24,KO->R,XP_025344155.1
+R01274__cyto,R01274,3.1.2.2;3.1.2.22,KO->R,XP_025340293.1
+R09510__cyto,R09510,1.14.11.27;1.14.11.65;1.14.11.66;1.14.11.67;1.14.11.68;1.14.11.69,EC,XP_025340369.1 or XP_025340637.1 or XP_025343247.1 or XP_025343248.1 or XP_025343469.1 or XP_025343712.1 or XP_025343981.1 or XP_025344482.1
+T_Fumarate_Succinate_Antiport_MitoCyto__mito,,,orphan_no_species_evidence,
+R02283__cyto,R02283,2.6.1.11,orphan_no_species_evidence,
+R04557__cyto,R04557,1.3.1.48,EC,XP_025339979.1 or XP_025340151.1
+R00751__cyto,R00751,4.1.2.48;4.1.2.5,KO->R,XP_025343692.1 or XP_025344547.1
+TI1000424_PLAS__plas,,,orphan_no_species_evidence,
+TI1002374_PLAS__plas,,,orphan_no_species_evidence,
+R00513__cyto,R00513,2.7.1.213;2.7.1.48,KO->R,XP_025340880.1
+TI1000404_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102327_PLAS__plas,,,orphan_no_species_evidence,
+T_Orthophosphate_transport__mito,,,orphan_no_species_evidence,
+TO1000221_PLAS__plas,,,orphan_no_species_evidence,
+T_Phosphatidate_c00416_MitoCyto__mito,,,orphan_no_species_evidence,
+TI1000705_PLAS__plas,,,orphan_no_species_evidence,
+R03313__cyto,R03313,1.2.1.41,KO->R,XP_025344557.1
+R02026__cyto,R02026,,KO->R,XP_025340376.1 or XP_025340642.1
+TI2903701_PLAS__plas,,,orphan_no_species_evidence,
+R04355__pero,R04355,2.3.1.41,KO->R,XP_025343463.1 or XP_025343608.1
+TI1000186_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100113_PLAS__plas,,,orphan_no_species_evidence,
+TR0012554_PLAS__plas,,,orphan_no_species_evidence,
+EX_C12126__extr,,,exchange/biomass,
+R04922__cyto,R04922,2.7.8.2,EC,XP_025343691.1
+TI1000064_PLAS__plas,,,orphan_no_species_evidence,
+T00485__mito,,,orphan_no_species_evidence,
+R04037__cyto,R04037,3.5.4.19,KO->R,XP_025340600.1
+R04779__cyto,R04779,2.7.1.11,KO->R,XP_025340245.1 or XP_025341699.1
+TR2900015_PLAS__plas,,,orphan_no_species_evidence,
+TO0001607_PLAS__plas,,,orphan_no_species_evidence,
+R04726__cyto,R04726,2.3.1.179;2.3.1.41;2.3.1.85;2.3.1.86,KO->R,XP_025343463.1 or XP_025343608.1
+R02109__cyto,R02109,3.2.1.33,KO->R,XP_025340354.1
+EX_C00031__extr,,,exchange/biomass,
+R02340__cyto,R02340,4.1.2.8;4.2.1.20,KO->R,XP_025340496.1
+TO0003705_PLAS__plas,,,orphan_no_species_evidence,
+TO0000119_PLAS__plas,,,orphan_no_species_evidence,
+R03066__cyto,R03066,2.6.1.74,KO->R,XP_025344187.1
+TO0009049_PLAS__plas,,,orphan_no_species_evidence,
+TI3000280_PLAS__plas,,,orphan_no_species_evidence,
+R01574__cyto,R01574,1.1.1.116;1.1.1.117,KO->R,XP_025341347.1 or XP_025341617.1
+R03777__pero,R03777,1.3.3.6,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+TZ3102029_PLAS__plas,,,orphan_no_species_evidence,
+R10951__cyto,R10951,2.7.1.150,KO->R,XP_025343878.1
+R00287__cyto,R00287,3.6.1.45;3.6.1.8;3.6.1.9,EC,XP_025341681.1 or XP_025342527.1 or XP_025343724.1 or XP_025344566.1
+EX_C00054__extr,,,exchange/biomass,
+TI1000084_PLAS__plas,,,orphan_no_species_evidence,
+R04301__cyto,R04301,2.1.1.6,KO->R,XP_025341223.1
+R02106__cyto,R02106,1.7.3.3,KO->R,XP_025342819.1
+TR1000291_PLAS__plas,,,orphan_no_species_evidence,
+R01880__cyto,R01880,2.7.1.48,EC,XP_025340880.1 or XP_025344429.1
+TO0000060_PLAS__plas,,,orphan_no_species_evidence,
+R01302__cyto,R01302,4.1.3.40,orphan_no_species_evidence,
+R01708__cyto,R01708,1.1.1.65,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+TR1000381_PLAS__plas,,,orphan_no_species_evidence,
+R01317__cyto,R01317,3.5.1.24;3.5.1.74,KO->R,XP_025342985.1
+TZ3101591_PLAS__plas,,,orphan_no_species_evidence,
+R01818__cyto,R01818,5.4.2.8,KO->R,XP_025341134.1
+TI1000610_PLAS__plas,,,orphan_no_species_evidence,
+R05824__cyto,R05824,,orphan_no_species_evidence,
+EX_C00127__extr,,,exchange/biomass,
+R02061__cyto,R02061,1.17.1.1,KO->R,XP_025343264.1
+T_4_aminobenzoate_c00568__plas,,,orphan_no_species_evidence,
+TI1000767_PLAS__plas,,,orphan_no_species_evidence,
+R02687__cyto,R02687,3.1.1.3,KO->R,XP_025341509.1 or XP_025342692.1 or XP_025342985.1 or XP_025344138.1
+TO1000184_PLAS__plas,,,orphan_no_species_evidence,
+TO1000104_PLAS__plas,,,orphan_no_species_evidence,
+R04206__cyto,R04206,4.2.1.11,EC,XP_025340868.1 or XP_025341358.1 or XP_025342243.1 or XP_025344234.1
+EX_C01277__extr,,,exchange/biomass,
+EX_C05528__extr,,,exchange/biomass,
+R07888__cyto,R07888,1.3.3.6,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+R9737__mito,,2.1.1.201,EC,XP_025339772.1 or XP_025340288.1 or XP_025340746.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+R12329__cyto,R12329,3.5.1.3,EC,XP_025341086.1 or XP_025341376.1 or XP_025342627.1 or XP_025343826.1
+R00257__cyto,R00257,6.3.5.1,KO->R,XP_025343057.1
+R07947__cyto,R07947,,orphan_no_species_evidence,
+TO1002679_PLAS__plas,,,orphan_no_species_evidence,
+R08362__pero,R08362,1.11.1.15,orphan_no_species_evidence,
+R04426__cyto,R04426,1.1.1.85,KO->R,XP_025342199.1
+TO1000268_PLAS__plas,,,orphan_no_species_evidence,
+R06063__cyto,R06063,,orphan_no_species_evidence,
+R03013__cyto,R03013,3.1.3.15,KO->R,XP_025343819.1
+EX_C00221__extr,,,exchange/biomass,
+R08244__cyto,R08244,6.3.5.2,KO->R,XP_025342826.1
+TZ3101621_PLAS__plas,,,orphan_no_species_evidence,
+TZ3101593_PLAS__plas,,,orphan_no_species_evidence,
+R00424__cyto,R00424,3.5.4.16,KO->R,XP_025341690.1
+R10288__cyto,R10288,4.2.1.93,EC,XP_025340794.1 or XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+R04756__cyto,R04756,5.3.3.8,orphan_no_species_evidence,
+R10178__cyto,R10178,2.6.1.96,orphan_no_species_evidence,
+R01926__cyto,R01926,2.7.1.91,KO->R,XP_025342374.1
+TZ2900007_PLAS__plas,,,orphan_no_species_evidence,
+TZ2900034_PLAS__plas,,,orphan_no_species_evidence,
+R01706__cyto,R01706,2.3.1.85;3.1.2.14,EC,XP_025339641.1 or XP_025341137.1 or XP_025341509.1 or XP_025341523.1 or XP_025342529.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344518.1
+EX_C00001__extr,,,exchange/biomass,
+R04866__cyto,R04866,2.1.1.354;2.1.1.355;2.1.1.356;2.1.1.357;2.1.1.359;2.1.1.360;2.1.1.362;2.1.1.59;2.1.1.60,KO->R,XP_025340045.1 or XP_025340588.1 or XP_025342033.1
+R00014__cyto,R00014,4.1.1.1,KO->R,XP_025339759.1 or XP_025341159.1 or XP_025341626.1 or XP_025342530.1 or XP_025343139.1 or XP_025343925.1
+R03425__mito,R03425,1.4.4.2,KO->R,XP_025340725.1
+R00754__cyto,R00754,1.1.1.1;1.1.1.71,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+R03197__cyto,R03197,4.1.1.37,KO->R,XP_025344347.1
+TO1011451_PLAS__plas,,,orphan_no_species_evidence,
+R03643__cyto,R03643,1.5.1.9,KO->R,XP_025344478.1 or XP_025344479.1 or XP_025344480.1
+EX_C00458__extr,,,exchange/biomass,
+R02746__mito,R02746,3.1.1.5,KO->R,XP_025340069.1
+R10953__cyto,R10953,2.7.1.151,EC,XP_025344429.1
+R01054__cyto,R01054,3.6.1.13;3.6.1.21;3.6.1.53,KO->R,XP_025344566.1
+EX_C00473__extr,,,exchange/biomass,
+R01290__cyto,R01290,4.2.1.22,KO->R,XP_025344688.1
+R02715__mito,R02715,1.1.3.37,KO->R,XP_025344774.1
+TO1000467_PLAS__plas,,,orphan_no_species_evidence,
+R04559__cyto,R04559,4.3.2.2,KO->R,XP_025339664.1
+R02324__cyto,R02324,2.7.1.22,KO->R,XP_025342790.1
+R00754__mito,R00754,1.1.1.1,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+R05487__mito,R05487,1.14.14.54,orphan_no_species_evidence,
+T_CO2_c00011_ExtrCyto__plas,,,orphan_no_species_evidence,
+EX_C06423__extr,,,exchange/biomass,
+R07505__cyto,R07505,1.14.19.20,EC,XP_025341927.1 or XP_025343182.1
+TI2903680_PLAS__plas,,,orphan_no_species_evidence,
+R04506__cyto,R04506,1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+TR0011624_PLAS__plas,,,orphan_no_species_evidence,
+TI2903716_PLAS__plas,,,orphan_no_species_evidence,
+TO0000343_PLAS__plas,,,orphan_no_species_evidence,
+TZ5900012_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100088_PLAS__plas,,,orphan_no_species_evidence,
+TO3001128_PLAS__plas,,,orphan_no_species_evidence,
+Ex_Ethanol_c00469__extr,,,exchange/biomass,
+R03348__mito,R03348,2.4.2.19,KO->R,XP_025343218.1
+EX_C00627__extr,,,exchange/biomass,
+EX_C00647__extr,,,exchange/biomass,
+EX_Ammonia__extr,,,exchange/biomass,
+R04428__cyto,R04428,2.3.1.85;2.3.1.86;4.2.1.59,KO->R,XP_025344154.1 or XP_025344234.1
+R04501__cyto,R04501,1.14.14.85,orphan_no_species_evidence,
+TI2903796_PLAS__plas,,,orphan_no_species_evidence,
+EX_C04115__extr,,,exchange/biomass,
+TI2903686_PLAS__plas,,,orphan_no_species_evidence,
+R08575__cyto,R08575,2.2.1.2,KO->R,XP_025342550.1
+R07762__pero,R07762,2.3.1.41,KO->R,XP_025340013.1 or XP_025342920.1 or XP_025343608.1
+R01007__cyto,R01007,2.7.8.15,EC,XP_025341848.1 or XP_025343691.1
+TO2903017_PLAS__plas,,,orphan_no_species_evidence,
+R04444__mito,R04444,1.2.1.88,KO->R,XP_025341706.1
+R00897__cyto,R00897,2.5.1.47;2.5.1.65,KO->R,XP_025340642.1
+TZ3102312_PLAS__plas,,,orphan_no_species_evidence,
+R10147__cyto,R10147,4.3.3.7,KO->R,XP_025343283.1
+EX_C11887__extr,,,exchange/biomass,
+R12657__mito,R12657,2.1.1.64,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+R08639__cyto,R08639,5.4.2.2;5.4.2.5,KO->R,XP_025340691.1 or XP_025343401.1
+EX_C06254__extr,,,exchange/biomass,
+EX_C00315__extr,,,exchange/biomass,
+TZ5900018_PLAS__plas,,,orphan_no_species_evidence,
+R01993__cyto,R01993,3.5.2.3,orphan_no_species_evidence,
+R02872__cyto,R02872,2.5.1.21,KO->R,XP_025344713.1
+TR1000342_PLAS__plas,,,orphan_no_species_evidence,
+R10700__cyto,R10700,2.3.1.86,KO->R,XP_025344154.1
+R01021__cyto,R01021,2.7.1.32,KO->R,XP_025341645.1
+R07389__cyto,R07389,2.7.8.2,EC,XP_025343691.1
+R10089__cyto,R10089,4.3.3.6,KO->R,XP_025342045.1 or XP_025342046.1
+EX_C00310__extr,,,exchange/biomass,
+R00896__cyto,R00896,2.6.1.1,orphan_no_species_evidence,
+R11166__cyto,R11166,3.1.1.97,KO->R,XP_025341878.1
+R08306__cyto,R08306,1.1.1.1,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+5_10_MMethylenetetrahydrofolate_Mitochondrial_transport__mito,,,orphan_no_species_evidence,
+EX_C00363__extr,,,exchange/biomass,
+R02091__cyto,R02091,2.7.1.48,EC,XP_025340880.1 or XP_025344429.1
+TO0003530_PLAS__plas,,,orphan_no_species_evidence,
+R04500__cyto,R04500,,orphan_no_species_evidence,
+TO0000924_PLAS__plas,,,orphan_no_species_evidence,
+R02746__cyto,R02746,3.1.1.5,KO->R,XP_025340069.1
+TR1000411_PLAS__plas,,,orphan_no_species_evidence,
+R03361__cyto,R03361,2.7.1.67,KO->R,XP_025340080.1 or XP_025340983.1 or XP_025344301.1
+Melibiose_transport_reaction__plas,,,orphan_no_species_evidence,
+TR2000064_PLAS__plas,,,orphan_no_species_evidence,
+R07330__cyto,R07330,2.1.1.6,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341223.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+R00126__cyto,R00126,2.7.7.53,KO->R,XP_025344278.1
+T_Glycolaldehyde_c00266_CytoMito__mito,,,orphan_no_species_evidence,
+TO2903030_PLAS__plas,,,orphan_no_species_evidence,
+R05578__cyto,R05578,6.1.1.24,KO->R,XP_025342339.1
+R07110__cyto,R07110,3.3.2.10,orphan_no_species_evidence,
+TO1001401_PLAS__plas,,,orphan_no_species_evidence,
+R04887__cyto,R04887,2.1.1.6,KO->R,XP_025341223.1
+EX_C00704__extr,,,exchange/biomass,
+EX_C05212__extr,,,exchange/biomass,
+R03530__cyto,R03530,2.7.4.6,KO->R,XP_025339680.1
+TO0000164_PLAS__plas,,,orphan_no_species_evidence,
+R11571__cyto,R11571,,orphan_no_species_evidence,
+EX_C06197__extr,,,exchange/biomass,
+R04221__cyto,R04221,1.4.3.3,KO->R,XP_025341810.1 or XP_025342276.1 or XP_025343797.1 or XP_025344644.1
+T_L_Arginine_c00062_MitoCyto__mito,,,orphan_no_species_evidence,
+R04001__cyto,R04001,4.2.1.33,KO->R,XP_025344540.1
+R07116__cyto,R07116,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+R04882__mito,R04882,1.2.1.5,orphan_no_species_evidence,
+TI1000069_PLAS__plas,,,orphan_no_species_evidence,
+R02098__cyto,R02098,2.7.4.4;2.7.4.9,KO->R,XP_025344098.1
+R03471__cyto,R03471,2.7.1.49,KO->R,XP_025341791.1
+R01775__cyto,R01775,1.1.1.3,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+EX_C00195__extr,,,exchange/biomass,
+R00086__mito,R00086,3.6.1.3,KO->R,XP_025339769.1 or XP_025343798.1
+TO1000274_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00253__extr,,,exchange/biomass,
+TI2903665_PLAS__plas,,,orphan_no_species_evidence,
+TO0013383_PLAS__plas,,,orphan_no_species_evidence,
+R02096__cyto,R02096,2.7.1.48,EC,XP_025340880.1 or XP_025344429.1
+R02101__cyto,R02101,2.1.1.45,KO->R,XP_025340161.1
+TO1000125_PLAS__plas,,,orphan_no_species_evidence,
+R01070__cyto,R01070,4.1.2.13,KO->R,XP_025342563.1
+TR1000053_PLAS__plas,,,orphan_no_species_evidence,
+R11945__mito,R11945,7.1.1.2,KO->R,XP_025340306.1 or XP_025340447.1 or XP_025340557.1 or XP_025340818.1 or XP_025341271.1 or XP_025343428.1 or XP_025344565.1
+TZ3104753_PLAS__plas,,,orphan_no_species_evidence,
+R03409__cyto,R03409,3.6.1.11;3.6.1.40,KO->R,XP_025344078.1
+R02748__cyto,R02748,2.4.2.1;2.4.2.4,KO->R,XP_025343966.1
+R01496__cyto,R01496,2.3.1.24;2.3.1.291,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344518.1
+R00239__cyto,R00239,2.7.2.11,KO->R,XP_025341954.1
+TO0000027_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00364__extr,,,exchange/biomass,
+R10035__cyto,R10035,3.2.1.21,KO->R,XP_025340834.1 or XP_025341985.1 or XP_025344382.1
+EX_C00256__extr,,,exchange/biomass,
+TI1000275_PLAS__plas,,,orphan_no_species_evidence,
+R06516__cyto,R06516,4.1.2.27,KO->R,XP_025343721.1
+R00995__pero,R00995,4.1.1.112,EC,XP_025340244.1
+R02093__cyto,R02093,2.7.4.6,KO->R,XP_025339680.1
+TZ3101289_PLAS__plas,,,orphan_no_species_evidence,
+R07111__cyto,R07111,3.3.2.10,orphan_no_species_evidence,
+R01056__cyto,R01056,5.3.1.6,KO->R,XP_025342165.1
+TR1002175_PLAS__plas,,,orphan_no_species_evidence,
+R02047__mito,R02047,1.1.1.31,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+R01665__cyto,R01665,2.7.4.25,KO->R,XP_025342018.1
+R01059__cyto,R01059,2.7.1.28,KO->R,XP_025344224.1
+TO0003282_PLAS__plas,,,orphan_no_species_evidence,
+TI1000567_PLAS__plas,,,orphan_no_species_evidence,
+R05041__cyto,R05041,,orphan_no_species_evidence,
+TO1000304_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00422__extr,,,exchange/biomass,
+TZ3100050_PLAS__plas,,,orphan_no_species_evidence,
+TZ3105263_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102097_PLAS__plas,,,orphan_no_species_evidence,
+R00129__cyto,R00129,4.2.1.93,EC,XP_025340794.1 or XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+EX_C01132__extr,,,exchange/biomass,
+TR1000419_PLAS__plas,,,orphan_no_species_evidence,
+TI0011837_PLAS__plas,,,orphan_no_species_evidence,
+R02372__cyto,R02372,2.7.1.48,EC,XP_025340880.1 or XP_025344429.1
+Ex_Urea_c00086__extr,,,exchange/biomass,
+EX_C00036__extr,,,exchange/biomass,
+R08359__cyto,R08359,2.5.1.16,KO->R,XP_025340257.1 or XP_025342943.1
+R02094__cyto,R02094,2.7.4.12;2.7.4.9,KO->R,XP_025344098.1
+TZ3100198_PLAS__plas,,,orphan_no_species_evidence,
+EX_C19084__extr,,,exchange/biomass,
+R01724__cyto,R01724,6.3.4.21,KO->R,XP_025343708.1
+TR2900009_PLAS__plas,,,orphan_no_species_evidence,
+R08091__cyto,R08091,2.3.1.16,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344328.1 or XP_025344518.1
+R00191__cyto,R00191,3.1.4.17;3.1.4.53,KO->R,XP_025340413.1
+TO1000059_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100041_PLAS__plas,,,orphan_no_species_evidence,
+TR0000012_PLAS__plas,,,orphan_no_species_evidence,
+R03018__cyto,R03018,2.7.1.33,EC,XP_025344429.1
+TZ3106857_PLAS__plas,,,orphan_no_species_evidence,
+R07113__cyto,R07113,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+TI2903692_PLAS__plas,,,orphan_no_species_evidence,
+TI1000388_PLAS__plas,,,orphan_no_species_evidence,
+R11945__cyto,R11945,7.1.1.2,KO->R,XP_025340306.1 or XP_025340447.1 or XP_025340557.1 or XP_025340818.1 or XP_025341271.1 or XP_025343428.1 or XP_025344565.1
+Phosphatidylethanolamine_Mitochondrial_transport_yeast_specific__mito,,,orphan_no_species_evidence,
+TO1000322_PLAS__plas,,,orphan_no_species_evidence,
+R00569__cyto,R00569,3.6.1.5,KO->R,XP_025339769.1 or XP_025343798.1
+R03238__cyto,R03238,2.7.1.11,KO->R,XP_025340245.1 or XP_025341699.1
+TO0000054_PLAS__plas,,,orphan_no_species_evidence,
+R07003__cyto,R07003,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+TR0000021_PLAS__plas,,,orphan_no_species_evidence,
+R07384__cyto,R07384,2.7.8.1,EC,XP_025343691.1
+TO2903029_PLAS__plas,,,orphan_no_species_evidence,
+R03348__cyto,R03348,2.4.2.19,KO->R,XP_025343218.1
+R07274__cyto,R07274,2.5.1.47;2.5.1.65,EC,XP_025340642.1
+R05639__cyto,R05639,1.3.1.70,EC,XP_025339979.1 or XP_025340151.1
+R07494__cyto,R07494,1.1.1.170,KO->R,XP_025339777.1
+TZ3100118_PLAS__plas,,,orphan_no_species_evidence,
+R03458__cyto,R03458,1.1.1.193,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+EX_C12270__extr,,,exchange/biomass,
+R10828__mito,R10828,1.3.1.93,EC,XP_025339979.1 or XP_025340151.1
+EX_C03968__extr,,,exchange/biomass,
+R07896__pero,R07896,1.3.3.6,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+EX_C07086__extr,,,exchange/biomass,
+R02030__mito,R02030,2.7.8.41,KO->R,XP_025344126.1
+TO1000345_PLAS__plas,,,orphan_no_species_evidence,
+R01857__cyto,R01857,2.7.4.6,KO->R,XP_025339680.1
+EX_D_Glucosamine__extr,,,exchange/biomass,
+TR1000250_PLAS__plas,,,orphan_no_species_evidence,
+R05846__cyto,R05846,,orphan_no_species_evidence,
+EX_C00149__extr,,,exchange/biomass,
+TO1003279_PLAS__plas,,,orphan_no_species_evidence,
+TZ3103148_PLAS__plas,,,orphan_no_species_evidence,
+R12173__cyto,R12173,1.14.19.1,KO->R,XP_025340728.1 or XP_025341309.1
+R00710__cyto,R00710,1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+R04420__cyto,R04420,5.3.1.23,KO->R,XP_025341333.1
+R02568__cyto,R02568,4.1.2.13,KO->R,XP_025342563.1
+TI1000558_PLAS__plas,,,orphan_no_species_evidence,
+R03304__cyto,R03304,2.1.1.6,KO->R,XP_025341223.1
+TO0000809_PLAS__plas,,,orphan_no_species_evidence,
+R00026__cyto,R00026,3.2.1.21,KO->R,XP_025340834.1 or XP_025341985.1 or XP_025344382.1
+R02250__cyto,R02250,3.1.1.3,KO->R,XP_025341509.1 or XP_025342692.1 or XP_025342985.1 or XP_025344138.1
+TZ3102088_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100174_PLAS__plas,,,orphan_no_species_evidence,
+R00590__pero,R00590,4.3.1.17,KO->R,XP_025341535.1 or XP_025342032.1
+R10633__cyto,R10633,2.3.1.286,KO->R,XP_025341128.1 or XP_025341419.1
+TI3001536_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102048_PLAS__plas,,,orphan_no_species_evidence,
+R01324__mito,R01324,4.2.1.3,EC,XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+TO0000822_PLAS__plas,,,orphan_no_species_evidence,
+R03422__cyto,R03422,3.1.4.37,EC,XP_025341393.1 or XP_025342282.1 or XP_025342458.1 or XP_025343755.1 or XP_025343935.1
+EX_e_biomass__cyto,,,exchange/biomass,
+R00275__cyto,R00275,1.15.1.1,EC,XP_025340031.1 or XP_025340907.1 or XP_025341786.1 or XP_025344236.1
+R07394__cyto,R07394,3.1.3.77;3.1.3.87,KO->R,XP_025341302.1
+TO1000275_PLAS__plas,,,orphan_no_species_evidence,
+TI1000085_PLAS__plas,,,orphan_no_species_evidence,
+R00964__cyto,R00964,,KO->R,XP_025340880.1
+EX_C04146__extr,,,exchange/biomass,
+TZ3100114_PLAS__plas,,,orphan_no_species_evidence,
+R11218__cyto,R11218,2.1.1.320,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+R00939__mito,R00939,1.5.1.3,KO->R,XP_025339718.1
+TZ3106841_PLAS__plas,,,orphan_no_species_evidence,
+R09087__cyto,R09087,,KO->R,XP_025340333.1
+R12119__cyto,R12119,1.14.14.154,EC,XP_025344294.1
+R02850__cyto,R02850,2.7.1.1,EC,XP_025342548.1 or XP_025343090.1 or XP_025343315.1 or XP_025344429.1
+EX_C01260__extr,,,exchange/biomass,
+TO1003705_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102031_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00026__extr,,,exchange/biomass,
+TI1003282_PLAS__plas,,,orphan_no_species_evidence,
+EX_C04230__extr,,,exchange/biomass,
+R00621__mito,R00621,1.2.4.2,KO->R,XP_025343511.1
+TO1000215_PLAS__plas,,,orphan_no_species_evidence,
+TO1002555_PLAS__plas,,,orphan_no_species_evidence,
+R03084__cyto,R03084,4.2.1.10,KO->R,XP_025341294.1 or XP_025343755.1
+EX_C00559__extr,,,exchange/biomass,
+TO1000092_PLAS__plas,,,orphan_no_species_evidence,
+R07411__cyto,R07411,2.5.1.141,orphan_no_species_evidence,
+R00867__cyto,R00867,2.7.1.1;2.7.1.4,KO->R,XP_025342548.1 or XP_025343090.1 or XP_025343315.1
+EX_C00021__extr,,,exchange/biomass,
+R07491__cyto,R07491,1.14.19.20,KO->R,XP_025343182.1
+R01083__cyto,R01083,4.3.2.2,KO->R,XP_025339664.1
+R02978__cyto,R02978,1.1.1.102,KO->R,XP_025340061.1
+TO0000346_PLAS__plas,,,orphan_no_species_evidence,
+R08282__mito,R08282,1.2.1.5,orphan_no_species_evidence,
+TR1000117_PLAS__plas,,,orphan_no_species_evidence,
+TI3001213_PLAS__plas,,,orphan_no_species_evidence,
+TO1011953_PLAS__plas,,,orphan_no_species_evidence,
+R02035__cyto,R02035,3.1.1.31,KO->R,XP_025342457.1 or XP_025343114.1
+TZ3101607_PLAS__plas,,,orphan_no_species_evidence,
+R12427__mito,R12427,2.3.1.181,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344518.1
+R00342__mito,R00342,1.1.1.37,KO->R,XP_025339631.1
+R00428__cyto,R00428,3.5.4.16,KO->R,XP_025341690.1
+R12152__cyto,R12152,4.3.2.10,EC,XP_025343053.1
+R02694__cyto,R02694,2.3.1.20,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344518.1
+R04725__cyto,R04725,1.3.1.10;1.3.1.39;2.3.1.85;2.3.1.86,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+TI2000430_PLAS__plas,,,orphan_no_species_evidence,
+R03363__cyto,R03363,3.1.3.64;3.1.3.67,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1 or XP_025344595.1
+TO2903015_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102314_PLAS__plas,,,orphan_no_species_evidence,
+R00651__cyto,R00651,2.5.1.49,KO->R,XP_025340642.1
+EX_C00407__extr,,,exchange/biomass,
+TI1011893_PLAS__plas,,,orphan_no_species_evidence,
+TO2903035_PLAS__plas,,,orphan_no_species_evidence,
+R07509__cyto,R07509,1.14.18.9,KO->R,XP_025342329.1 or XP_025342552.1
+R04945__cyto,R04945,2.5.1.48,KO->R,XP_025340376.1
+EX_C07649__extr,,,exchange/biomass,
+TO1000135_PLAS__plas,,,orphan_no_species_evidence,
+TR1000926_PLAS__plas,,,orphan_no_species_evidence,
+T_L_Glutamate_c00025_CytoMito__mito,,,orphan_no_species_evidence,
+R04293__cyto,R04293,,orphan_no_species_evidence,
+TO0000586_PLAS__plas,,,orphan_no_species_evidence,
+R02665__cyto,R02665,1.13.11.6,KO->R,XP_025342424.1
+R00402__cyto,R00402,1.3.1.6,EC,XP_025339979.1 or XP_025340151.1
+R00782__cyto,R00782,4.4.1.1;4.4.1.13;4.4.1.28,KO->R,XP_025340817.1 or XP_025342154.1
+EX_C00369__extr,,,exchange/biomass,
+R07981__cyto,R07981,1.7.3.3,KO->R,XP_025342819.1
+R00900__cyto,R00900,1.8.1.10,orphan_no_species_evidence,
+R09877__cyto,R09877,3.6.1.58,EC,XP_025341681.1 or XP_025342527.1 or XP_025343724.1 or XP_025344566.1
+TO0000186_PLAS__plas,,,orphan_no_species_evidence,
+R00870__cyto,R00870,1.1.1.138,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+TZ3100051_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00051__extr,,,exchange/biomass,
+Ribitol_transport_reaction__plas,,,orphan_no_species_evidence,
+TR0000075_PLAS__plas,,,orphan_no_species_evidence,
+R00127__mito,R00127,2.7.4.3,KO->R,XP_025341922.1 or XP_025342799.1
+TO1000085_PLAS__plas,,,orphan_no_species_evidence,
+TI2903717_PLAS__plas,,,orphan_no_species_evidence,
+R03650__cyto,R03650,6.1.1.16,KO->R,XP_025341931.1
+R00342__cyto,R00342,1.1.1.299;1.1.1.37,KO->R,XP_025339631.1
+T_Pantothenate_c00864_MitoCyto__mito,,,orphan_no_species_evidence,
+T_Acetate_c00033_MitoCyto__mito,,,orphan_no_species_evidence,
+TZ3101614_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00208__extr,,,exchange/biomass,
+TO0000203_PLAS__plas,,,orphan_no_species_evidence,
+R07762__cyto,R07762,2.3.1.179;2.3.1.199;2.3.1.41,KO->R,XP_025340013.1 or XP_025342920.1 or XP_025343608.1
+TZ3102321_PLAS__plas,,,orphan_no_species_evidence,
+R05098__cyto,R05098,,orphan_no_species_evidence,
+EX_C00270__extr,,,exchange/biomass,
+R06590__cyto,R06590,2.2.1.1,KO->R,XP_025340731.1
+R01899__mito,R01899,1.1.1.42,KO->R,XP_025339834.1 or XP_025341569.1
+EX_C00330__extr,,,exchange/biomass,
+R04953__cyto,R04953,1.1.1.100;2.3.1.85;2.3.1.86,KO->R,XP_025341358.1 or XP_025343463.1
+R03921__cyto,R03921,3.1.4.16,KO->R,XP_025344742.1
+TR1000054_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00157__extr,,,exchange/biomass,
+TI2903684_PLAS__plas,,,orphan_no_species_evidence,
+TO0000053_PLAS__plas,,,orphan_no_species_evidence,
+R02408__cyto,R02408,4.4.1.1;4.4.1.13;4.4.1.35,KO->R,XP_025340817.1 or XP_025342154.1
+R09420__cyto,R09420,1.1.1.146;1.1.1.184;1.3.1.20,EC,XP_025339979.1 or XP_025340151.1 or XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+R00778__cyto,R00778,4.2.1.69,KO->R,XP_025343065.1
+TO1000858_PLAS__plas,,,orphan_no_species_evidence,
+TO2902934_PLAS__plas,,,orphan_no_species_evidence,
+TO0021423_PLAS__plas,,,orphan_no_species_evidence,
+TO3001137_PLAS__plas,,,orphan_no_species_evidence,
+T_NH3_Mitochondrial_transport__mito,,,orphan_no_species_evidence,
+R04543__cyto,R04543,1.1.1.100;2.3.1.85;2.3.1.86,KO->R,XP_025341358.1 or XP_025343463.1
+TR0000108_PLAS__plas,,,orphan_no_species_evidence,
+R12152__mito,R12152,4.3.2.10,EC,XP_025343053.1
+R03968__cyto,R03968,4.2.1.33,KO->R,XP_025344540.1
+TO1000478_PLAS__plas,,,orphan_no_species_evidence,
+TZ3103374_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00216__extr,,,exchange/biomass,
+R00181__cyto,R00181,3.5.4.17;3.5.4.6,KO->R,XP_025341790.1
+R02297__cyto,R02297,2.4.2.1,KO->R,XP_025343966.1
+R04982__cyto,R04982,,orphan_no_species_evidence,
+R03469__cyto,R03469,2.7.1.68,EC,XP_025344429.1
+TR1900007_PLAS__plas,,,orphan_no_species_evidence,
+R00702__cyto,R00702,2.5.1.21;2.5.1.96,KO->R,XP_025344713.1
+T_Glycerone_c00111_MitoCyto__mito,,,orphan_no_species_evidence,
+R01954__cyto,R01954,6.3.4.5,KO->R,XP_025339557.1
+EX_C04911__extr,,,exchange/biomass,
+R00089__cyto,R00089,4.6.1.1,orphan_no_species_evidence,
+TI1002175_PLAS__plas,,,orphan_no_species_evidence,
+TO1002016_PLAS__plas,,,orphan_no_species_evidence,
+TZ3103131_PLAS__plas,,,orphan_no_species_evidence,
+TZ2900063_PLAS__plas,,,orphan_no_species_evidence,
+R00372__cyto,R00372,2.6.1.4;2.6.1.44,orphan_no_species_evidence,
+TO1000182_PLAS__plas,,,orphan_no_species_evidence,
+R00529__cyto,R00529,2.7.7.4,KO->R,XP_025343523.1
+R11218__mito,R11218,2.1.1.320,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+Ex_L_Asparagine_c00152__extr,,,exchange/biomass,
+R00710__mito,R00710,1.2.1.3;1.2.1.5,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+R04762__cyto,R04762,2.1.1.6,KO->R,XP_025341223.1
+R03528__cyto,R03528,4.4.1.13,EC,XP_025340817.1
+R01074__cyto,R01074,6.2.1.11;6.3.4.10;6.3.4.11;6.3.4.15;6.3.4.9,KO->R,XP_025341958.1
+EX_C04489__extr,,,exchange/biomass,
+TZ3102104_PLAS__plas,,,orphan_no_species_evidence,
+R03596__cyto,R03596,1.8.1.9,KO->R,XP_025343959.1
+EX_C14818__extr,,,exchange/biomass,
+R07951__pero,R07951,4.2.1.119,EC,XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+R05889__cyto,R05889,,orphan_no_species_evidence,
+TZ2900026_PLAS__plas,,,orphan_no_species_evidence,
+R12085__cyto,R12085,2.3.1.271,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344518.1
+R00494__cyto,R00494,3.4.19.13,KO->R,XP_025341618.1
+R06366__cyto,R06366,1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+EX_C00063__extr,,,exchange/biomass,
+R06527__cyto,R06527,2.3.1.24,KO->R,XP_025341830.1 or XP_025343808.1
+TI2903660_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00181__extr,,,exchange/biomass,
+R00114__cyto,R00114,1.4.1.13,KO->R,XP_025339952.1
+TI1000118_PLAS__plas,,,orphan_no_species_evidence,
+TO0000482_PLAS__plas,,,orphan_no_species_evidence,
+R03654__cyto,R03654,6.1.1.14,KO->R,XP_025343651.1
+R09644__cyto,R09644,3.1.3.81,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1
+R03772__cyto,R03772,3.1.1.65,KO->R,XP_025341983.1
+R04483__cyto,R04483,1.1.1.170,EC,XP_025339777.1 or XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+R00927__cyto,R00927,2.3.1.16;2.3.1.9,KO->R,XP_025344328.1
+EX_C00499__extr,,,exchange/biomass,
+R04952__pero,R04952,2.3.1.41,KO->R,XP_025343463.1 or XP_025343608.1
+R00719__cyto,R00719,3.6.1.5,KO->R,XP_025339769.1 or XP_025343798.1
+R03050__mito,R03050,2.2.1.6,KO->R,XP_025341159.1 or XP_025341626.1
+R04949__cyto,R04949,3.2.1.21,KO->R,XP_025340834.1 or XP_025341985.1 or XP_025344382.1
+TZ3102095_PLAS__plas,,,orphan_no_species_evidence,
+R03659__cyto,R03659,6.1.1.10,KO->R,XP_025341681.1 or XP_025341686.1
+TR1000343_PLAS__plas,,,orphan_no_species_evidence,
+R04911__cyto,R04911,3.5.1.9,KO->R,XP_025341542.1
+R04960__pero,R04960,2.3.1.41,KO->R,XP_025343463.1 or XP_025343608.1
+R11319__cyto,R11319,2.7.4.3,KO->R,XP_025342799.1
+R04360__mito,R04360,1.1.1.101,KO->R,XP_025340664.1 or XP_025341340.1 or XP_025343513.1
+R00122__cyto,R00122,3.6.1.5,KO->R,XP_025339769.1 or XP_025343798.1
+R07948__cyto,R07948,1.3.3.6,EC,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+R01354__cyto,R01354,6.2.1.1;6.2.1.17,KO->R,XP_025340510.1 or XP_025342973.1
+TR1009049_PLAS__plas,,,orphan_no_species_evidence,
+R00330__cyto,R00330,2.7.4.6,KO->R,XP_025339680.1
+T_L_Valine_c00183_MitoCyto__mito,,,orphan_no_species_evidence,
+EX_C00022__extr,,,exchange/biomass,
+R01082__cyto,R01082,4.2.1.2,KO->R,XP_025344070.1
+R00994__cyto,R00994,1.1.1.85,KO->R,XP_025342199.1
+R00335__cyto,R00335,3.6.1.5;3.6.5.1;3.6.5.2;3.6.5.3;3.6.5.4;3.6.5.5;3.6.5.6,KO->R,XP_025339769.1 or XP_025343798.1
+R04360__cyto,R04360,1.1.1.101,KO->R,XP_025340664.1 or XP_025341340.1 or XP_025343513.1
+EX_C00681__extr,,,exchange/biomass,
+R05069__mito,R05069,1.1.1.86,KO->R,XP_025340578.1
+EX_C00055__extr,,,exchange/biomass,
+R09365__cyto,R09365,2.1.1.13;2.1.1.14,KO->R,XP_025342317.1
+EX_C00114__extr,,,exchange/biomass,
+EX_C01054__extr,,,exchange/biomass,
+TO1000412_PLAS__plas,,,orphan_no_species_evidence,
+R01320__cyto,R01320,2.1.1.71,KO->R,XP_025343496.1
+R03096__cyto,R03096,3.5.1.4,KO->R,XP_025344152.1 or XP_025344428.1
+R04957__cyto,R04957,2.3.1.179;2.3.1.41;2.3.1.85;2.3.1.86,KO->R,XP_025343463.1 or XP_025343608.1
+EX_C00068__extr,,,exchange/biomass,
+R04586__cyto,R04586,3.2.1.52,EC,XP_025341196.1 or XP_025342675.1 or XP_025344668.1
+TI2903697_PLAS__plas,,,orphan_no_species_evidence,
+R00369__cyto,R00369,2.6.1.44,orphan_no_species_evidence,
+TI1000132_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102055_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100038_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100131_PLAS__plas,,,orphan_no_species_evidence,
+R00647__cyto,R00647,1.1.3.8,orphan_no_species_evidence,
+TR1000610_PLAS__plas,,,orphan_no_species_evidence,
+R01899__cyto,R01899,1.1.1.42,KO->R,XP_025339834.1 or XP_025341569.1
+R12026__cyto,R12026,2.4.2.59,EC,XP_025344508.1
+R07238__cyto,R07238,2.1.1.107,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025343349.1 or XP_025344269.1 or XP_025344279.1
+TZ3100121_PLAS__plas,,,orphan_no_species_evidence,
+TO0000926_PLAS__plas,,,orphan_no_species_evidence,
+TI1000039_PLAS__plas,,,orphan_no_species_evidence,
+TO3001143_PLAS__plas,,,orphan_no_species_evidence,
+TR2900053_PLAS__plas,,,orphan_no_species_evidence,
+TO1000281_PLAS__plas,,,orphan_no_species_evidence,
+TR1000767_PLAS__plas,,,orphan_no_species_evidence,
+R07364__cyto,R07364,1.13.11.54,KO->R,XP_025342620.1
+R03646__cyto,R03646,6.1.1.19,KO->R,XP_025339899.1
+TO1002175_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102024_PLAS__plas,,,orphan_no_species_evidence,
+R00115__cyto,R00115,1.8.1.7,KO->R,XP_025343104.1
+EX_C00460__extr,,,exchange/biomass,
+EX_C04637__extr,,,exchange/biomass,
+R09099__cyto,R09099,2.1.2.1,KO->R,XP_025342547.1 or XP_025343133.1
+EX_C06620__extr,,,exchange/biomass,
+TI3000293_PLAS__plas,,,orphan_no_species_evidence,
+R04640__cyto,R04640,5.3.1.16,orphan_no_species_evidence,
+R11319__mito,R11319,2.7.4.3,KO->R,XP_025342799.1
+R05842__cyto,R05842,3.3.2.10,orphan_no_species_evidence,
+TO1000118_PLAS__plas,,,orphan_no_species_evidence,
+TZ3101581_PLAS__plas,,,orphan_no_species_evidence,
+T_FAD_FMN_Antiport__mito,,,orphan_no_species_evidence,
+T_Galactitol_c01697_ExtrCyto__plas,,,orphan_no_species_evidence,
+EX_C00283__extr,,,exchange/biomass,
+TR1000060_PLAS__plas,,,orphan_no_species_evidence,
+EX_C05356__extr,,,exchange/biomass,
+R03992__cyto,R03992,2.3.1.97,EC,XP_025339641.1 or XP_025340443.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344518.1
+R00926__cyto,R00926,6.2.1.1;6.2.1.17,KO->R,XP_025340510.1 or XP_025342973.1
+TR2900022_PLAS__plas,,,orphan_no_species_evidence,
+T_ATP_synthase__mito,,7.1.1.2,EC,XP_025340306.1 or XP_025340447.1 or XP_025340557.1 or XP_025340818.1 or XP_025341271.1 or XP_025343428.1 or XP_025344565.1
+EX_C03715__extr,,,exchange/biomass,
+R09366__cyto,R09366,4.4.1.1;4.4.1.13,KO->R,XP_025342154.1
+T_Isocitrate_c00311_CytoMito__mito,,,orphan_no_species_evidence,
+TO0000156_PLAS__plas,,,orphan_no_species_evidence,
+TI2903711_PLAS__plas,,,orphan_no_species_evidence,
+R04578__cyto,R04578,,orphan_no_species_evidence,
+R02124__cyto,R02124,1.1.1.1;1.1.1.105,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+R00271__cyto,R00271,,KO->R,XP_025342007.1 or XP_025343668.1
+TR0019001_PLAS__plas,,,orphan_no_species_evidence,
+TR1001977_PLAS__plas,,,orphan_no_species_evidence,
+R01579__cyto,R01579,3.5.1.35;3.5.1.38,EC,XP_025341376.1 or XP_025342627.1 or XP_025343826.1
+R08121__cyto,R08121,3.1.1.45,KO->R,XP_025343544.1
+R00156__cyto,R00156,2.7.4.6,KO->R,XP_025339680.1
+R08283__mito,R08283,1.2.1.5,orphan_no_species_evidence,
+TO1000419_PLAS__plas,,,orphan_no_species_evidence,
+R03552__cyto,R03552,2.3.1.48,EC,XP_025339641.1 or XP_025340633.1 or XP_025341509.1 or XP_025341523.1 or XP_025342456.1 or XP_025342531.1 or XP_025342789.1 or XP_025343109.1 or XP_025343420.1 or XP_025343590.1 or XP_025343893.1 or XP_025344008.1 or XP_025344518.1
+R00217__mito,R00217,1.1.1.38,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1 or XP_025342797.1
+R02410__cyto,R02410,3.2.1.26,KO->R,XP_025344742.1
+R00707__cyto,R00707,1.2.1.88,KO->R,XP_025341706.1
+R01959__cyto,R01959,3.5.1.9,KO->R,XP_025341542.1
+R11527__cyto,R11527,3.1.3.106;3.1.3.2,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343649.1 or XP_025343755.1 or XP_025344333.1 or XP_025344334.1
+TO1000066_PLAS__plas,,,orphan_no_species_evidence,
+R00409__pero,R00409,4.1.3.30,KO->R,XP_025340519.1
+R07892__pero,R07892,1.3.3.6,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+R01201__cyto,R01201,2.7.1.59,EC,XP_025344429.1
+TI3001056_PLAS__plas,,,orphan_no_species_evidence,
+EX_C05847__extr,,,exchange/biomass,
+TO0000169_PLAS__plas,,,orphan_no_species_evidence,
+TO1008367_PLAS__plas,,,orphan_no_species_evidence,
+R10828__cyto,R10828,1.3.1.93,EC,XP_025339979.1 or XP_025340151.1
+R01858__cyto,R01858,2.7.1.40,KO->R,XP_025340747.1
+R04958__cyto,R04958,1.3.1.9,EC,XP_025339979.1 or XP_025340151.1
+TO3000350_PLAS__plas,,,orphan_no_species_evidence,
+R05724__cyto,R05724,1.14.12.17,EC,XP_025341213.1
+TZ3101598_PLAS__plas,,,orphan_no_species_evidence,
+TR1000274_PLAS__plas,,,orphan_no_species_evidence,
+R05071__cyto,R05071,5.4.99.3,KO->R,XP_025340578.1
+EX_C02191__extr,,,exchange/biomass,
+R12185__cyto,R12185,,orphan_no_species_evidence,
+R00876__cyto,R00876,2.7.1.1,EC,XP_025342548.1 or XP_025343090.1 or XP_025343315.1 or XP_025344429.1
+TZ3100200_PLAS__plas,,,orphan_no_species_evidence,
+EX_C02348__extr,,,exchange/biomass,
+TO3000759_PLAS__plas,,,orphan_no_species_evidence,
+TZ5900004_PLAS__plas,,,orphan_no_species_evidence,
+T_CoA_c00010_CytoMito__mito,,,orphan_no_species_evidence,
+TZ3105059_PLAS__plas,,,orphan_no_species_evidence,
+R09375__cyto,R09375,1.1.1.302,KO->R,XP_025342919.1
+R01920__cyto,R01920,2.5.1.16,KO->R,XP_025340257.1 or XP_025342943.1
+R00494__mito,R00494,3.4.19.13,KO->R,XP_025341618.1
+R00217__cyto,R00217,1.1.1.40,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1 or XP_025342797.1
+R05064__cyto,R05064,3.1.2.4,KO->R,XP_025339645.1
+R00715__cyto,R00715,1.5.1.7,KO->R,XP_025340359.1
+R07140__cyto,R07140,1.1.1.284,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341281.1 or XP_025341358.1
+TO1000048_PLAS__plas,,,orphan_no_species_evidence,
+R05840__cyto,R05840,,orphan_no_species_evidence,
+EX_C00123__extr,,,exchange/biomass,
+TO0000266_PLAS__plas,,,orphan_no_species_evidence,
+R01138__cyto,R01138,2.7.1.40,KO->R,XP_025340747.1
+R01641__cyto,R01641,2.2.1.1,KO->R,XP_025340731.1
+Ex_2_Keto_D_Gluconic_acid_c06473__extr,,,exchange/biomass,
+4_Aminobenzoate__extr,,,exchange/biomass,
+R05068__mito,R05068,,KO->R,XP_025340578.1
+TZ3105331_PLAS__plas,,,orphan_no_species_evidence,
+R00472__pero,R00472,2.3.3.9,KO->R,XP_025341421.1
+R00875__cyto,R00875,1.1.1.14;1.1.1.15,KO->R,XP_025340416.1
+R03875__cyto,R03875,2.1.1.354;2.1.1.355;2.1.1.356;2.1.1.357;2.1.1.359;2.1.1.360;2.1.1.361;2.1.1.59;2.1.1.60,KO->R,XP_025340045.1 or XP_025340588.1 or XP_025342033.1
+TZ3100138_PLAS__plas,,,orphan_no_species_evidence,
+R00274__cyto,R00274,1.11.1.9,KO->R,XP_025340580.1 or XP_025340969.1
+Methyl_beta_D_galactoside__extr,,,exchange/biomass,
+TO1003285_PLAS__plas,,,orphan_no_species_evidence,
+T_Fumarate_c00122_CytoMito__mito,,,orphan_no_species_evidence,
+R00714__cyto,R00714,1.2.1.16;1.2.1.79,KO->R,XP_025341251.1 or XP_025344650.1
+TI0000926_PLAS__plas,,,orphan_no_species_evidence,
+TZ3101620_PLAS__plas,,,orphan_no_species_evidence,
+R03655__cyto,R03655,6.1.1.21,KO->R,XP_025339652.1
+R00158__cyto,R00158,2.7.4.14;2.7.4.22,KO->R,XP_025342018.1
+EX_C00064__extr,,,exchange/biomass,
+TR1014859_PLAS__plas,,,orphan_no_species_evidence,
+R03435__cyto,R03435,3.1.4.11,EC,XP_025341393.1 or XP_025342282.1 or XP_025343755.1 or XP_025343935.1
+EX_C00122__extr,,,exchange/biomass,
+R07136__cyto,R07136,1.1.1.337;1.1.1.37,KO->R,XP_025339631.1
+R01139__cyto,R01139,2.7.1.1,EC,XP_025342548.1 or XP_025343090.1 or XP_025343315.1 or XP_025344429.1
+R04480__cyto,R04480,2.3.1.23,KO->R,XP_025344008.1
+EX_C04737__extr,,,exchange/biomass,
+TO1000424_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00020__extr,,,exchange/biomass,
+R02940__cyto,R02940,1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+R01175__cyto,R01175,1.3.3.6;1.3.8.1;1.3.8.7,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+EX_C05697__extr,,,exchange/biomass,
+TO0000082_PLAS__plas,,,orphan_no_species_evidence,
+R02199__mito,R02199,2.6.1.42,KO->R,XP_025343425.1
+R03098__cyto,R03098,1.2.1.95,KO->R,XP_025340420.1
+R02530__cyto,R02530,3.5.1.33,KO->R,XP_025341095.1
+TR0000099_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100045_PLAS__plas,,,orphan_no_species_evidence,
+TO2902878_PLAS__plas,,,orphan_no_species_evidence,
+TO1012844_PLAS__plas,,,orphan_no_species_evidence,
+R04954__cyto,R04954,2.3.1.85;2.3.1.86;4.2.1.59,KO->R,XP_025344154.1 or XP_025344234.1
+R01799__cyto,R01799,2.7.7.41,KO->R,XP_025340309.1
+R00342__pero,R00342,1.1.1.37,KO->R,XP_025339631.1
+R04988__mito,R04988,2.1.1.222,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+TZ3100125_PLAS__plas,,,orphan_no_species_evidence,
+R06154__cyto,R06154,1.4.3.21,KO->R,XP_025340831.1 or XP_025341286.1
+R00711__mito,R00711,1.2.1.5,orphan_no_species_evidence,
+EX_C00526__extr,,,exchange/biomass,
+R07679__cyto,R07679,1.3.2.3,orphan_no_species_evidence,
+EX_C00025__extr,,,exchange/biomass,
+R03991__cyto,R03991,2.3.1.155;2.3.1.16,KO->R,XP_025344328.1
+R04544__cyto,R04544,2.3.1.85;2.3.1.86;4.2.1.59,KO->R,XP_025344154.1 or XP_025344234.1
+EX_C00242__extr,,,exchange/biomass,
+R03332__cyto,R03332,3.1.4.11;3.1.4.3;4.6.1.13,KO->R,XP_025340215.1
+R04231__cyto,R04231,6.3.2.5,orphan_no_species_evidence,
+EX_C00378__extr,,,exchange/biomass,
+TR2900000_PLAS__plas,,,orphan_no_species_evidence,
+R00185__cyto,R00185,2.7.1.20;2.7.1.74,KO->R,XP_025340778.1
+TI3001537_PLAS__plas,,,orphan_no_species_evidence,
+TZ2900039_PLAS__plas,,,orphan_no_species_evidence,
+R11098__cyto,R11098,4.3.1.19,KO->R,XP_025340538.1
+TO3000570_PLAS__plas,,,orphan_no_species_evidence,
+TI3000287_PLAS__plas,,,orphan_no_species_evidence,
+TO1000246_PLAS__plas,,,orphan_no_species_evidence,
+R01397__cyto,R01397,2.1.3.2,KO->R,XP_025343786.1
+TO0000029_PLAS__plas,,,orphan_no_species_evidence,
+T_Riboflavin_c00255_MitoCyto__mito,,,orphan_no_species_evidence,
+T_Orthophosphate_c00009_ExtrCyto__plas,,,orphan_no_species_evidence,
+EX_C04549__extr,,,exchange/biomass,
+TO3001124_PLAS__plas,,,orphan_no_species_evidence,
+5_Phospho_alpha_D_ribose_1_diphosphate__extr,,,exchange/biomass,
+R07763__cyto,R07763,1.1.1.100,KO->R,XP_025341358.1
+TZ3102320_PLAS__plas,,,orphan_no_species_evidence,
+R05196__cyto,R05196,2.3.1.86,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025343463.1 or XP_025344008.1 or XP_025344154.1 or XP_025344518.1
+T_2_Dehydropantoate_c00966_MitoCyto__mito,,,orphan_no_species_evidence,
+R03774__cyto,R03774,1.14.14.81,KO->R,XP_025341978.1
+TO0000250_PLAS__plas,,,orphan_no_species_evidence,
+R07393__cyto,R07393,3.1.3.77;5.3.2.5,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1 or XP_025344459.1
+R01108__cyto,R01108,1.8.5.1,KO->R,XP_025343970.1
+TO2903034_PLAS__plas,,,orphan_no_species_evidence,
+TO1001977_PLAS__plas,,,orphan_no_species_evidence,
+R02695__mito,R02695,1.2.1.5,orphan_no_species_evidence,
+TI3000282_PLAS__plas,,,orphan_no_species_evidence,
+T_L_Tryptophan_c00078_MitoCyto__mito,,,orphan_no_species_evidence,
+EX_C00183__extr,,,exchange/biomass,
+R04100__cyto,R04100,5.3.3.8,orphan_no_species_evidence,
+TO0000099_PLAS__plas,,,orphan_no_species_evidence,
+R02382__cyto,R02382,1.4.3.21;1.4.3.4;1.4.9.2,KO->R,XP_025340831.1 or XP_025341286.1
+TR0001607_PLAS__plas,,,orphan_no_species_evidence,
+R00965__cyto,R00965,4.1.1.23,EC,XP_025340244.1
+R11219__cyto,R11219,2.1.1.319,KO->R,XP_025341468.1
+R03300__mito,R03300,1.2.1.5,orphan_no_species_evidence,
+TI3001119_PLAS__plas,,,orphan_no_species_evidence,
+R00619__cyto,R00619,2.7.6.2,KO->R,XP_025339906.1
+EX_C04145__extr,,,exchange/biomass,
+R12118__cyto,R12118,1.14.14.154,EC,XP_025344294.1
+TR1012844_PLAS__plas,,,orphan_no_species_evidence,
+TI2903783_PLAS__plas,,,orphan_no_species_evidence,
+T_Histidine_Residue_M8423_CytoExtr__plas,,,orphan_no_species_evidence,
+TI1000322_PLAS__plas,,,orphan_no_species_evidence,
+R06830__cyto,R06830,1.1.1.276;1.1.1.387,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+R01518__cyto,R01518,5.4.2.11;5.4.2.12,KO->R,XP_025340516.1 or XP_025341764.1
+T_H2O_c00001_MitoCyto__mito,,,orphan_no_species_evidence,
+EX_C03372__extr,,,exchange/biomass,
+R06650__cyto,R06650,,orphan_no_species_evidence,
+R00022__cyto,R00022,3.1.1.67,KO->R,XP_025341196.1
+R01234__cyto,R01234,3.1.4.17;3.1.4.35,KO->R,XP_025340413.1
+TI3001272_PLAS__plas,,,orphan_no_species_evidence,
+R01049__cyto,R01049,2.7.6.1,KO->R,XP_025340933.1 or XP_025341871.1 or XP_025342004.1 or XP_025344156.1
+R00711__cyto,R00711,1.2.1.4,orphan_no_species_evidence,
+TO0000017_PLAS__plas,,,orphan_no_species_evidence,
+TO0000550_PLAS__plas,,,orphan_no_species_evidence,
+R00999__cyto,R00999,2.5.1.48,KO->R,XP_025340376.1
+TO1000264_PLAS__plas,,,orphan_no_species_evidence,
+R07237__cyto,R07237,2.1.1.107,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025343349.1 or XP_025344269.1 or XP_025344279.1
+TZ3102060_PLAS__plas,,,orphan_no_species_evidence,
+R04014__cyto,R04014,3.1.2.14;3.1.2.21,EC,XP_025341137.1 or XP_025342529.1
+TO0002374_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00188__extr,,,exchange/biomass,
+R02750__cyto,R02750,2.7.1.15,KO->R,XP_025342921.1
+R07896__cyto,R07896,1.3.3.6,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+R06835__cyto,R06835,3.1.1.45,KO->R,XP_025343544.1
+R03527__cyto,R03527,3.2.1.21,KO->R,XP_025340834.1 or XP_025341985.1 or XP_025344382.1
+TZ3102307_PLAS__plas,,,orphan_no_species_evidence,
+R07104__mito,R07104,1.2.1.5,orphan_no_species_evidence,
+R04956__mito,R04956,1.3.1.104,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+R07395__cyto,R07395,3.1.3.77,KO->R,XP_025344459.1
+R02222__cyto,R02222,1.14.19.1,KO->R,XP_025340728.1 or XP_025341309.1
+R11217__cyto,R11217,2.1.1.319,KO->R,XP_025341468.1
+Fatty_acid__cyto,,,orphan_no_species_evidence,
+TI2000023_PLAS__plas,,,orphan_no_species_evidence,
+TO0000342_PLAS__plas,,,orphan_no_species_evidence,
+R04764__cyto,R04764,2.1.1.6,KO->R,XP_025341223.1
+EX_C00462__extr,,,exchange/biomass,
+EX_C00158__extr,,,exchange/biomass,
+T_L_Threonine_c00188_MitoCyto__mito,,,orphan_no_species_evidence,
+R03804__cyto,R03804,3.5.1.3,EC,XP_025341086.1 or XP_025341376.1 or XP_025342627.1 or XP_025343826.1
+R04952__cyto,R04952,2.3.1.179;2.3.1.41;2.3.1.85;2.3.1.86,KO->R,XP_025343463.1 or XP_025343608.1
+R01513__cyto,R01513,1.1.1.95,KO->R,XP_025342378.1
+R05845__cyto,R05845,,orphan_no_species_evidence,
+R02473__cyto,R02473,6.3.2.1,KO->R,XP_025342843.1
+R01325__cyto,R01325,4.2.1.3,EC,XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+T_CO2_c00011_MitoCyto__mito,,,orphan_no_species_evidence,
+TO1000767_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100173_PLAS__plas,,,orphan_no_species_evidence,
+R07235__mito,R07235,2.1.1.64,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+TO0000249_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00245__extr,,,exchange/biomass,
+TO3000349_PLAS__plas,,,orphan_no_species_evidence,
+R03613__cyto,R03613,6.3.1.14,KO->R,XP_025342180.1
+R04983__cyto,R04983,2.1.1.201,EC,XP_025339772.1 or XP_025340288.1 or XP_025340746.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+R07953__cyto,R07953,2.3.1.16;2.3.1.176,KO->R,XP_025344328.1
+CMP__transport___plas,,,orphan_no_species_evidence,
+R00836__cyto,R00836,2.4.1.15,EC,XP_025339641.1 or XP_025339775.1 or XP_025339818.1 or XP_025339831.1 or XP_025340143.1 or XP_025340331.1 or XP_025340511.1 or XP_025340596.1 or XP_025340690.1 or XP_025340837.1 or XP_025340862.1 or XP_025341057.1 or XP_025341058.1 or XP_025341084.1 or XP_025341507.1 or XP_025341540.1 or XP_025341718.1 or XP_025342118.1 or XP_025342294.1 or XP_025342315.1 or XP_025342569.1 or XP_025343076.1 or XP_025343501.1 or XP_025343782.1 or XP_025344251.1 or XP_025344349.1 or XP_025344360.1 or XP_025344658.1
+R02251__cyto,R02251,2.3.1.20,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344518.1
+TI2903691_PLAS__plas,,,orphan_no_species_evidence,
+EX_C16487__extr,,,exchange/biomass,
+R07760__cyto,R07760,4.2.1.134,KO->R,XP_025344739.1 or XP_025344740.1
+T_O2_c00007_MitoCyto__mito,,,orphan_no_species_evidence,
+TR1000644_PLAS__plas,,,orphan_no_species_evidence,
+TO3000685_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100040_PLAS__plas,,,orphan_no_species_evidence,
+R08163__cyto,R08163,3.1.2.14,EC,XP_025341137.1 or XP_025342529.1
+EX_C00655__extr,,,exchange/biomass,
+TI3001086_PLAS__plas,,,orphan_no_species_evidence,
+R00968__cyto,R00968,2.7.1.48,KO->R,XP_025340880.1
+TR0000082_PLAS__plas,,,orphan_no_species_evidence,
+R01325__mito,R01325,4.2.1.3,EC,XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+EX_C00376__extr,,,exchange/biomass,
+R07859__cyto,R07859,,KO->R,XP_025342985.1
+EX_C05973__extr,,,exchange/biomass,
+R04957__pero,R04957,2.3.1.41,KO->R,XP_025343463.1 or XP_025343608.1
+EX_C01230__extr,,,exchange/biomass,
+R07015__cyto,R07015,1.3.1.20,EC,XP_025339979.1 or XP_025340151.1
+TI1000119_PLAS__plas,,,orphan_no_species_evidence,
+TZ3101440_PLAS__plas,,,orphan_no_species_evidence,
+R02848__cyto,R02848,2.7.1.1,EC,XP_025342548.1 or XP_025343090.1 or XP_025343315.1 or XP_025344429.1
+TR0001157_PLAS__plas,,,orphan_no_species_evidence,
+R01676__cyto,R01676,3.5.4.3,KO->R,XP_025342585.1 or XP_025344426.1
+TI2903673_PLAS__plas,,,orphan_no_species_evidence,
+TZ3101586_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00244__extr,,,exchange/biomass,
+R00650__cyto,R00650,2.1.1.10,KO->R,XP_025339683.1
+T_Ethanol_transport_reaction__mito,,,orphan_no_species_evidence,
+R01896__cyto,R01896,1.1.1.14;1.1.1.9,KO->R,XP_025340416.1
+TO0000064_PLAS__plas,,,orphan_no_species_evidence,
+TI1000051_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100201_PLAS__plas,,,orphan_no_species_evidence,
+R00430__cyto,R00430,1.1.1.270,KO->R,XP_025340747.1
+TO0003387_PLAS__plas,,,orphan_no_species_evidence,
+R03681__cyto,R03681,2.4.1.186,KO->R,XP_025339849.1 or XP_025344485.1
+R07011__cyto,R07011,,orphan_no_species_evidence,
+R04604__cyto,R04604,6.3.4.11,EC,XP_025341958.1
+R01230__cyto,R01230,6.3.5.2,KO->R,XP_025342826.1
+R07761__cyto,R07761,1.3.1.93,EC,XP_025339979.1 or XP_025340151.1
+R04325__cyto,R04325,2.1.2.2,KO->R,XP_025341283.1
+TR1000263_PLAS__plas,,,orphan_no_species_evidence,
+R01326__cyto,R01326,2.7.1.1;2.7.1.7,KO->R,XP_025342548.1 or XP_025343090.1 or XP_025343315.1
+R01827__cyto,R01827,2.2.1.2,KO->R,XP_025342550.1
+R02697__mito,R02697,1.2.1.5,orphan_no_species_evidence,
+TZ3105297_PLAS__plas,,,orphan_no_species_evidence,
+TI2000041_PLAS__plas,,,orphan_no_species_evidence,
+R03186__cyto,R03186,1.11.1.11,orphan_no_species_evidence,
+EX_C00712__extr,,,exchange/biomass,
+R02317__cyto,R02317,1.2.1.31;1.4.1.18,orphan_no_species_evidence,
+TZ3102319_PLAS__plas,,,orphan_no_species_evidence,
+TI2903696_PLAS__plas,,,orphan_no_species_evidence,
+TI0009049_PLAS__plas,,,orphan_no_species_evidence,
+R00524__cyto,R00524,3.5.1.49,KO->R,XP_025343677.1
+R07892__cyto,R07892,1.3.3.6,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+R03777__cyto,R03777,1.3.3.6;1.3.8.7;1.3.8.8,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+R06522__cyto,R06522,4.2.1.84,EC,XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+EX_C04233__extr,,,exchange/biomass,
+R03118__cyto,R03118,2.4.1.34,KO->R,XP_025339819.1 or XP_025339868.1 or XP_025342314.1
+R01548__cyto,R01548,2.7.1.48,EC,XP_025340880.1 or XP_025344429.1
+TO0001608_PLAS__plas,,,orphan_no_species_evidence,
+Ex_Hydrazine_c05361__extr,,,exchange/biomass,
+R03180__cyto,R03180,3.5.1.4,KO->R,XP_025344152.1 or XP_025344428.1
+R12429__mito,R12429,6.3.1.20,orphan_no_species_evidence,
+TO2903016_PLAS__plas,,,orphan_no_species_evidence,
+R00308__cyto,R00308,3.2.1.39;3.2.1.58,KO->R,XP_025340400.1 or XP_025342042.1 or XP_025343635.1
+R03302__mito,R03302,1.2.1.5,orphan_no_species_evidence,
+TI1000310_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00187__extr,,,exchange/biomass,
+R00967__cyto,R00967,2.7.1.48,EC,XP_025340880.1 or XP_025344429.1
+R08198__cyto,R08198,1.1.1.95,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1 or XP_025342378.1
+T_all_trans_nonaprenyl_diphosphate_c04145_MitoCyto__mito,,,orphan_no_species_evidence,
+TR0003387_PLAS__plas,,,orphan_no_species_evidence,
+TO1000610_PLAS__plas,,,orphan_no_species_evidence,
+R07950__cyto,R07950,,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+TI2903700_PLAS__plas,,,orphan_no_species_evidence,
+R04730__cyto,R04730,6.3.2.25,EC,XP_025342561.1
+R02909__cyto,R02909,1.13.11.52,KO->R,XP_025339653.1
+EX_C00212__extr,,,exchange/biomass,
+R01547__cyto,R01547,2.7.4.11;2.7.4.3,KO->R,XP_025341922.1 or XP_025342799.1
+TZ3104787_PLAS__plas,,,orphan_no_species_evidence,
+R03778__cyto,R03778,2.3.1.16,KO->R,XP_025344328.1
+R01177__cyto,R01177,1.3.8.1,KO->R,XP_025343189.1 or XP_025344328.1
+TR1000135_PLAS__plas,,,orphan_no_species_evidence,
+R00742__mito,R00742,6.4.1.2,KO->R,XP_025339867.1
+Ex_Salicin_c01451__extr,,,exchange/biomass,
+R10852__cyto,R10852,1.1.1.381,KO->R,XP_025340439.1
+TZ3100206_PLAS__plas,,,orphan_no_species_evidence,
+R07012__cyto,R07012,,orphan_no_species_evidence,
+R04673__mito,R04673,2.2.1.6,KO->R,XP_025341159.1 or XP_025341626.1
+EX_C05662__extr,,,exchange/biomass,
+EX_C00153__extr,,,exchange/biomass,
+R07891__cyto,R07891,2.3.1.16,KO->R,XP_025344328.1
+R12428__mito,R12428,2.3.1.181,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344518.1
+TZ3101487_PLAS__plas,,,orphan_no_species_evidence,
+R01268__cyto,R01268,3.5.1.19,KO->R,XP_025343826.1
+EX_C17349__extr,,,exchange/biomass,
+R01015__cyto,R01015,2.4.1.205,KO->R,XP_025341029.1
+EX_C00096__extr,,,exchange/biomass,
+R01731__cyto,R01731,2.6.1.57;2.6.1.78,EC,XP_025340820.1
+TO2903040_PLAS__plas,,,orphan_no_species_evidence,
+R00028__cyto,R00028,3.2.1.20,EC,XP_025342675.1 or XP_025344668.1
+TI0012572_PLAS__plas,,,orphan_no_species_evidence,
+TO1000129_PLAS__plas,,,orphan_no_species_evidence,
+R10851__cyto,R10851,1.1.1.381,KO->R,XP_025340439.1
+R08193__cyto,R08193,5.4.2.3,KO->R,XP_025343368.1
+EX_C08813__extr,,,exchange/biomass,
+R02164__mito,R02164,,KO->R,XP_025339942.1 or XP_025340009.1 or XP_025341211.1 or XP_025342135.1 or XP_025342953.1
+R07486__cyto,R07486,1.14.19.20,KO->R,XP_025343182.1
+R04326__cyto,R04326,2.1.2.2,KO->R,XP_025341283.1
+TZ3100057_PLAS__plas,,,orphan_no_species_evidence,
+R01986__cyto,R01986,1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+TI1000161_PLAS__plas,,,orphan_no_species_evidence,
+TI1000381_PLAS__plas,,,orphan_no_species_evidence,
+R12205__cyto,R12205,,KO->R,XP_025341927.1
+TR2900023_PLAS__plas,,,orphan_no_species_evidence,
+R01327__cyto,R01327,2.7.1.1,EC,XP_025342548.1 or XP_025343090.1 or XP_025343315.1 or XP_025344429.1
+TZ3100120_PLAS__plas,,,orphan_no_species_evidence,
+R07324__cyto,R07324,5.5.1.4,KO->R,XP_025341275.1
+R03460__cyto,R03460,2.5.1.19,KO->R,XP_025343755.1
+EX_C01081__extr,,,exchange/biomass,
+TR0000532_PLAS__plas,,,orphan_no_species_evidence,
+TO3001142_PLAS__plas,,,orphan_no_species_evidence,
+TI1000467_PLAS__plas,,,orphan_no_species_evidence,
+TR1002555_PLAS__plas,,,orphan_no_species_evidence,
+R03245__cyto,R03245,2.7.4.2,KO->R,XP_025344245.1
+R03300__cyto,R03300,1.2.1.29,orphan_no_species_evidence,
+R06838__cyto,R06838,3.1.1.45,KO->R,XP_025343544.1
+R11063__cyto,R11063,2.1.1.10,KO->R,XP_025339683.1
+TI2903678_PLAS__plas,,,orphan_no_species_evidence,
+R07766__mito,R07766,2.3.1.181,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344518.1
+R07765__cyto,R07765,1.3.1.9,EC,XP_025339979.1 or XP_025340151.1
+EX_C04730__extr,,,exchange/biomass,
+R07109__cyto,R07109,3.3.2.10,orphan_no_species_evidence,
+R01395__cyto,R01395,2.7.2.2,KO->R,XP_025343407.1 or XP_025343786.1
+TZ3106835_PLAS__plas,,,orphan_no_species_evidence,
+R07392__cyto,R07392,4.2.1.109,KO->R,XP_025340838.1
+TI0000022_PLAS__mito,,,orphan_no_species_evidence,
+TO0000705_PLAS__plas,,,orphan_no_species_evidence,
+R02695__cyto,R02695,1.2.1.29;1.2.1.53,orphan_no_species_evidence,
+Ex_Cadaverine_c01672__extr,,,exchange/biomass,
+R05000__mito,R05000,2.5.1.39,KO->R,XP_025341956.1
+R10634__cyto,R10634,2.3.1.286,KO->R,XP_025341128.1 or XP_025341419.1
+TZ3102090_PLAS__plas,,,orphan_no_species_evidence,
+R00963__cyto,R00963,3.1.3.5,KO->R,XP_025343207.1
+R01549__cyto,R01549,2.7.1.48,EC,XP_025340880.1 or XP_025344429.1
+R02315__cyto,R02315,1.5.1.10,KO->R,XP_025343500.1
+TR2900005_PLAS__plas,,,orphan_no_species_evidence,
+R01010__cyto,R01010,3.1.3.1;3.1.3.2,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343649.1 or XP_025343755.1 or XP_025344333.1 or XP_025344334.1 or XP_025344545.1
+R04769__cyto,R04769,4.2.99.24,orphan_no_species_evidence,
+EX_C00309__extr,,,exchange/biomass,
+R00802__cyto,R00802,3.2.1.20;3.2.1.26;3.2.1.48,KO->R,XP_025344742.1
+TO0012500_PLAS__plas,,,orphan_no_species_evidence,
+R00189__cyto,R00189,6.3.1.5;6.3.5.1,EC,XP_025343057.1
+Ex_Hydroxylamine_c00192__extr,,,exchange/biomass,
+R10040__cyto,R10040,3.2.1.21,KO->R,XP_025340834.1 or XP_025341985.1 or XP_025344382.1
+TR0011765_PLAS__plas,,,orphan_no_species_evidence,
+R01011__mito,R01011,2.7.1.29,KO->R,XP_025344224.1
+EX_C00094__extr,,,exchange/biomass,
+EX_C01674__extr,,,exchange/biomass,
+TO1000895_PLAS__plas,,,orphan_no_species_evidence,
+R07010__cyto,R07010,,orphan_no_species_evidence,
+R01826__cyto,R01826,2.5.1.54,KO->R,XP_025343046.1 or XP_025343882.1
+R01013__cyto,R01013,2.3.1.42,EC,XP_025339641.1 or XP_025341357.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025343071.1 or XP_025343346.1 or XP_025343885.1 or XP_025344008.1 or XP_025344518.1
+TO1014859_PLAS__plas,,,orphan_no_species_evidence,
+TZ2900051_PLAS__plas,,,orphan_no_species_evidence,
+TO0000041_PLAS__plas,,,orphan_no_species_evidence,
+all_trans_pentaprenyl_diphosphate_Mitochondrial_transport___mito,,,orphan_no_species_evidence,
+R02534__cyto,R02534,2.1.1.6,KO->R,XP_025341223.1
+TO3001136_PLAS__plas,,,orphan_no_species_evidence,
+EX_C04672__extr,,,exchange/biomass,
+R01730__cyto,R01730,1.3.1.13,KO->R,XP_025344244.1
+TR1001101_PLAS__plas,,,orphan_no_species_evidence,
+R02756__mito,R02756,1.1.1.101,KO->R,XP_025340664.1 or XP_025341340.1 or XP_025343513.1
+TI1000107_PLAS__plas,,,orphan_no_species_evidence,
+e_Carbohydrates__cyto,,,orphan_no_species_evidence,
+R02038__cyto,R02038,2.7.7.14,KO->R,XP_025341378.1
+R04390__cyto,R04390,1.2.1.95,KO->R,XP_025340420.1
+R02814__cyto,R02814,3.1.2.14,EC,XP_025341137.1 or XP_025342529.1
+EX_C03150__extr,,,exchange/biomass,
+R04892__mito,R04892,1.2.1.5,orphan_no_species_evidence,
+R02536__cyto,R02536,1.2.1.39,orphan_no_species_evidence,
+R01923__pero,R01923,2.3.1.21,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344518.1
+TR1000084_PLAS__plas,,,orphan_no_species_evidence,
+R03243__cyto,R03243,2.6.1.9,KO->R,XP_025340654.1
+R00188__cyto,R00188,3.1.3.7;3.1.3.97,KO->R,XP_025340955.1
+R00961__cyto,R00961,3.6.1.5;3.6.1.6;3.6.1.64,KO->R,XP_025339769.1 or XP_025343798.1
+TR1000424_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00029__extr,,,exchange/biomass,
+TI0012802_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00249__extr,,,exchange/biomass,
+R04672__mito,R04672,2.2.1.6,KO->R,XP_025341159.1 or XP_025341626.1
+R02756__cyto,R02756,1.1.1.101,KO->R,XP_025340664.1 or XP_025341340.1 or XP_025343513.1
+TR1002197_PLAS__plas,,,orphan_no_species_evidence,
+TO0019001_PLAS__plas,,,orphan_no_species_evidence,
+R01829__cyto,R01829,4.1.2.13,KO->R,XP_025342563.1
+TO1012174_PLAS__plas,,,orphan_no_species_evidence,
+R06521__cyto,R06521,3.1.3.4,EC,XP_025340854.1 or XP_025341539.1 or XP_025341834.1 or XP_025342582.1 or XP_025342652.1 or XP_025342725.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1 or XP_025344313.1
+R07606__cyto,R07606,2.3.1.183,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344518.1
+R02537__mito,R02537,1.2.1.5,orphan_no_species_evidence,
+TO0000023_PLAS__plas,,,orphan_no_species_evidence,
+R02976__cyto,R02976,2.7.1.91,KO->R,XP_025342374.1
+TI2000035_PLAS__plas,,,orphan_no_species_evidence,
+R04328__cyto,R04328,1.1.1.170;1.1.1.270;1.14.18.9,EC,XP_025339777.1 or XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1 or XP_025341826.1 or XP_025342329.1 or XP_025342552.1
+R02161__mito,R02161,7.1.1.2,EC,XP_025340306.1 or XP_025340447.1 or XP_025340557.1 or XP_025340818.1 or XP_025341271.1 or XP_025343428.1 or XP_025344565.1
+TI1001567_PLAS__plas,,,orphan_no_species_evidence,
+R00742__cyto,R00742,6.4.1.2,KO->R,XP_025339867.1
+TO1000019_PLAS__plas,,,orphan_no_species_evidence,
+R03522__cyto,R03522,3.1.6.1;3.1.6.8,KO->R,XP_025343711.1 or XP_025343970.1 or XP_025344035.1
+R01231__cyto,R01231,6.3.5.2,KO->R,XP_025342826.1
+R04391__cyto,R04391,2.7.1.33,EC,XP_025344429.1
+R04891__mito,R04891,1.2.1.5,orphan_no_species_evidence,
+R06740__cyto,R06740,1.4.3.21,KO->R,XP_025340831.1 or XP_025341286.1
+TR1000066_PLAS__plas,,,orphan_no_species_evidence,
+R00962__cyto,R00962,2.7.1.48,EC,XP_025340880.1 or XP_025344429.1
+R07108__cyto,R07108,3.3.2.10,orphan_no_species_evidence,
+R07489__cyto,R07489,1.14.19.41,EC,XP_025341927.1 or XP_025343525.1
+TR0000138_PLAS__plas,,,orphan_no_species_evidence,
+R00187__cyto,R00187,3.6.1.29,EC,XP_025341681.1 or XP_025342527.1 or XP_025343724.1 or XP_025344566.1
+TR1000227_PLAS__plas,,,orphan_no_species_evidence,
+R01013__mito,R01013,2.3.1.42,EC,XP_025339641.1 or XP_025341357.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025343071.1 or XP_025343346.1 or XP_025343885.1 or XP_025344008.1 or XP_025344518.1
+TO0010516_EXTR__extr,,,orphan_no_species_evidence,
+R03024__cyto,R03024,3.1.3.1;3.1.3.2;3.1.3.41,KO->R,XP_025341664.1 or XP_025341841.1
+R01890__cyto,R01890,2.7.7.15,KO->R,XP_025341674.1
+R00801__cyto,R00801,3.2.1.10;3.2.1.20;3.2.1.26;3.2.1.48,KO->R,XP_025344742.1
+R00245__cyto,R00245,1.2.1.88,KO->R,XP_025341706.1
+R01011__cyto,R01011,2.7.1.29,KO->R,XP_025344224.1
+R04171__cyto,R04171,2.6.1.7,KO->R,XP_025342955.1
+R06520__cyto,R06520,3.1.3.4,KO->R,XP_025339851.1
+R00235__cyto,R00235,6.2.1.1,KO->R,XP_025340510.1 or XP_025342973.1
+R00940__mito,R00940,1.5.1.3,KO->R,XP_025339718.1
+R01512__cyto,R01512,2.7.2.3,KO->R,XP_025341015.1
+TZ3101612_PLAS__plas,,,orphan_no_species_evidence,
+R07477__cyto,R07477,2.5.1.46,EC,XP_025341167.1
+R02236__cyto,R02236,1.5.1.3,KO->R,XP_025339718.1
+R05066__cyto,R05066,1.1.1.35,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+TI3001308_PLAS__plas,,,orphan_no_species_evidence,
+TI0013383_PLAS__plas,,,orphan_no_species_evidence,
+R00256__mito,R00256,4.3.2.10;6.3.4.2;6.3.5.5,KO->R,XP_025343407.1 or XP_025343786.1
+TI0011839_PLAS__plas,,,orphan_no_species_evidence,
+R00082__mito,R00082,,orphan_no_species_evidence,
+R03534__mito,R03534,1.1.99.2,orphan_no_species_evidence,
+R06517__cyto,R06517,2.3.1.24;2.3.1.291,KO->R,XP_025341830.1 or XP_025343808.1
+R00104__cyto,R00104,2.7.1.23,KO->R,XP_025343829.1 or XP_025344569.1
+TO0000108_PLAS__plas,,,orphan_no_species_evidence,
+R03103__cyto,R03103,1.2.1.31,orphan_no_species_evidence,
+R02472__cyto,R02472,1.1.1.169,KO->R,XP_025339842.1 or XP_025340982.1 or XP_025343159.1
+R03239__cyto,R03239,2.7.1.11,KO->R,XP_025340245.1 or XP_025341699.1
+R10952__cyto,R10952,3.1.4.11,EC,XP_025341393.1 or XP_025342282.1 or XP_025343755.1 or XP_025343935.1
+TI2903719_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00053__extr,,,exchange/biomass,
+R12433__mito,R12433,6.3.1.20,orphan_no_species_evidence,
+TO1001217_PLAS__plas,,,orphan_no_species_evidence,
+EX_C02059__extr,,,exchange/biomass,
+R06927__cyto,R06927,1.1.1.1,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+EX_C00294__extr,,,exchange/biomass,
+EX_C00506__extr,,,exchange/biomass,
+TR2900011_PLAS__plas,,,orphan_no_species_evidence,
+EX_C11537__extr,,,exchange/biomass,
+R02536__mito,R02536,1.2.1.5,orphan_no_species_evidence,
+R10711__cyto,R10711,2.4.1.252,EC,XP_025339775.1 or XP_025339818.1 or XP_025339831.1 or XP_025340143.1 or XP_025340331.1 or XP_025340511.1 or XP_025340596.1 or XP_025340690.1 or XP_025340837.1 or XP_025341057.1 or XP_025341058.1 or XP_025341084.1 or XP_025341507.1 or XP_025341540.1 or XP_025341718.1 or XP_025342118.1 or XP_025342294.1 or XP_025342315.1 or XP_025342569.1 or XP_025343076.1 or XP_025343501.1 or XP_025343782.1 or XP_025344251.1 or XP_025344349.1 or XP_025344360.1 or XP_025344658.1
+TO0000161_PLAS__plas,,,orphan_no_species_evidence,
+R00197__cyto,R00197,1.1.2.3,KO->R,XP_025340672.1 or XP_025341036.1
+TO3000408_PLAS__plas,,,orphan_no_species_evidence,
+R07198__cyto,R07198,,orphan_no_species_evidence,
+R04173__cyto,R04173,2.6.1.52,KO->R,XP_025340322.1
+TO0000291_PLAS__plas,,,orphan_no_species_evidence,
+TO1000210_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00184__extr,,,exchange/biomass,
+TO1000100_PLAS__plas,,,orphan_no_species_evidence,
+TO1000107_PLAS__plas,,,orphan_no_species_evidence,
+R01325__pero,R01325,4.2.1.3,EC,XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+R00087__cyto,R00087,3.6.1.8;3.6.1.9,EC,XP_025341681.1 or XP_025342527.1 or XP_025343724.1 or XP_025344566.1
+TZ3101582_PLAS__plas,,,orphan_no_species_evidence,
+TO1000017_PLAS__plas,,,orphan_no_species_evidence,
+R00814__cyto,R00814,1.3.1.20,EC,XP_025339979.1 or XP_025340151.1
+R02100__cyto,R02100,3.6.1.23,KO->R,XP_025343733.1
+R08770__mito,R08770,4.1.1.98,KO->R,XP_025344139.1
+TO0000121_PLAS__plas,,,orphan_no_species_evidence,
+R06064__cyto,R06064,,orphan_no_species_evidence,
+R02088__cyto,R02088,3.1.3.89,KO->R,XP_025342351.1 or XP_025343207.1
+EX_C00032__extr,,,exchange/biomass,
+R00709__mito,R00709,1.1.1.41,KO->R,XP_025341282.1 or XP_025341845.1
+TZ3101419_PLAS__plas,,,orphan_no_species_evidence,
+R00945__mito,R00945,2.1.2.1,KO->R,XP_025342547.1 or XP_025343133.1
+R10783__cyto,R10783,1.1.1.1,EC,XP_025340417.1 or XP_025340439.1 or XP_025340682.1 or XP_025340730.1 or XP_025341008.1 or XP_025341281.1 or XP_025341358.1 or XP_025341719.1
+R04558__mito,R04558,4.3.2.10,KO->R,XP_025343053.1
+TR1000345_PLAS__plas,,,orphan_no_species_evidence,
+R09511__cyto,R09511,1.14.11.27;1.14.11.65;1.14.11.67,EC,XP_025340369.1 or XP_025340637.1 or XP_025343247.1 or XP_025343248.1 or XP_025343469.1 or XP_025343712.1 or XP_025343981.1 or XP_025344482.1
+T_L_Asparagine_c00152_MitoCyto__mito,,,orphan_no_species_evidence,
+TR1011893_PLAS__plas,,,orphan_no_species_evidence,
+R00214__cyto,R00214,1.1.1.39,KO->R,XP_025342797.1
+TI2903712_PLAS__plas,,,orphan_no_species_evidence,
+R07215__cyto,R07215,4.1.99.16;4.2.3.22,KO->R,XP_025343182.1
+EX_C05442__extr,,,exchange/biomass,
+TR1000305_PLAS__plas,,,orphan_no_species_evidence,
+R05640__cyto,R05640,1.14.14.154,KO->R,XP_025344294.1
+R04883__mito,R04883,1.2.1.5,orphan_no_species_evidence,
+TI0019001_PLAS__plas,,,orphan_no_species_evidence,
+TO1000250_PLAS__plas,,,orphan_no_species_evidence,
+TI1003530_PLAS__plas,,,orphan_no_species_evidence,
+TZ3101619_PLAS__plas,,,orphan_no_species_evidence,
+R11097__cyto,R11097,1.14.19.41,EC,XP_025341927.1 or XP_025343525.1
+R07105__cyto,R07105,1.1.1.1,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+R01969__cyto,R01969,2.4.2.1;2.4.2.4,KO->R,XP_025343966.1
+e_Biomass__cyto,,,exchange/biomass,
+R00514__cyto,R00514,2.7.1.14,KO->R,XP_025339769.1 or XP_025343798.1
+R00497__cyto,R00497,6.3.2.3,KO->R,XP_025340184.1
+EX_C00299__extr,,,exchange/biomass,
+TO2903033_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00079__extr,,,exchange/biomass,
+TR1000365_PLAS__plas,,,orphan_no_species_evidence,
+R01392__pero,R01392,1.1.1.79;1.1.1.81,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+R02920__cyto,R02920,2.1.1.6,KO->R,XP_025341223.1
+R04216__cyto,R04216,2.4.99.18,KO->R,XP_025342133.1
+TI1000343_PLAS__plas,,,orphan_no_species_evidence,
+TI2903792_PLAS__plas,,,orphan_no_species_evidence,
+TI3001291_PLAS__plas,,,orphan_no_species_evidence,
+R01402__cyto,R01402,2.4.2.28,KO->R,XP_025340851.1
+R08280__cyto,R08280,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+R04457__cyto,R04457,2.5.1.78,KO->R,XP_025341915.1
+EX_C03483__extr,,,exchange/biomass,
+R04998__cyto,R04998,3.2.1.21,KO->R,XP_025340834.1 or XP_025341985.1 or XP_025344382.1
+EX_C00958__extr,,,exchange/biomass,
+TO0000404_PLAS__plas,,,orphan_no_species_evidence,
+TO1001573_PLAS__plas,,,orphan_no_species_evidence,
+R00425__cyto,R00425,3.5.4.25,KO->R,XP_025343429.1
+EX_C04144__extr,,,exchange/biomass,
+R08280__mito,R08280,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+R00996__cyto,R00996,4.3.1.19,KO->R,XP_025340320.1 or XP_025341535.1 or XP_025342032.1
+R04867__cyto,R04867,2.1.1.354;2.1.1.355;2.1.1.356;2.1.1.358;2.1.1.359;2.1.1.360;2.1.1.59;2.1.1.60,KO->R,XP_025340045.1 or XP_025340588.1 or XP_025342033.1
+R07400__cyto,R07400,1.4.3.3,KO->R,XP_025341810.1 or XP_025342276.1 or XP_025343797.1 or XP_025344644.1
+R01018__cyto,R01018,2.7.1.108,KO->R,XP_025342287.1
+R02282__cyto,R02282,2.3.1.35,KO->R,XP_025344629.1
+TR1003282_PLAS__plas,,,orphan_no_species_evidence,
+TO0000411_PLAS__plas,,,orphan_no_species_evidence,
+R11896__cyto,R11896,3.6.1.23,KO->R,XP_025343733.1
+TR1000215_PLAS__plas,,,orphan_no_species_evidence,
+R00835__cyto,R00835,1.1.1.363,KO->R,XP_025344388.1
+TO1000277_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00379__extr,,,exchange/biomass,
+TO0000424_PLAS__plas,,,orphan_no_species_evidence,
+R02971__cyto,R02971,2.7.1.33;2.7.1.34,EC,XP_025344429.1
+TR1000069_PLAS__plas,,,orphan_no_species_evidence,
+TI0000138_PLAS__plas,,,orphan_no_species_evidence,
+R08360__cyto,R08360,1.11.1.15,orphan_no_species_evidence,
+R05691__cyto,R05691,1.1.1.270,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1 or XP_025341826.1
+TO0002175_PLAS__plas,,,orphan_no_species_evidence,
+R04558__cyto,R04558,4.3.2.10,KO->R,XP_025343053.1
+EX_C00074__extr,,,exchange/biomass,
+R07100__cyto,R07100,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+R04321__cyto,R04321,2.7.8.2,EC,XP_025343691.1
+TO0001101_PLAS__plas,,,orphan_no_species_evidence,
+T_Quinolinate_c03722_MitoCyto__mito,,,orphan_no_species_evidence,
+R02472__mito,R02472,1.1.1.169,KO->R,XP_025339842.1 or XP_025340982.1 or XP_025343159.1
+R03665__cyto,R03665,6.1.1.9,KO->R,XP_025341336.1
+R07456__cyto,R07456,4.3.3.6,KO->R,XP_025342045.1 or XP_025342046.1
+R02493__cyto,R02493,2.7.1.35,KO->R,XP_025340981.1 or XP_025342691.1
+R01790__cyto,R01790,3.2.1.20,KO->R,XP_025342331.1
+R06863__cyto,R06863,2.2.1.1,EC,XP_025340731.1
+TZ3101369_PLAS__plas,,,orphan_no_species_evidence,
+TZ2900038_PLAS__plas,,,orphan_no_species_evidence,
+TR2000118_PLAS__plas,,,orphan_no_species_evidence,
+TO0000051_PLAS__plas,,,orphan_no_species_evidence,
+R00214__mito,R00214,1.1.1.38,KO->R,XP_025342797.1
+R02962__cyto,R02962,,orphan_no_species_evidence,
+TZ2900058_PLAS__plas,,,orphan_no_species_evidence,
+TI1000117_PLAS__plas,,,orphan_no_species_evidence,
+R11861__mito,R11861,4.3.2.7,KO->R,XP_025340647.1
+TO1000307_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00112__extr,,,exchange/biomass,
+EX_C03272__extr,,,exchange/biomass,
+R10179__cyto,R10179,2.6.1.96,orphan_no_species_evidence,
+R04537__cyto,R04537,2.3.1.85;2.3.1.86;4.2.1.59,KO->R,XP_025344154.1 or XP_025344234.1
+TI3000278_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00002__extr,,,exchange/biomass,
+TI1000060_PLAS__plas,,,orphan_no_species_evidence,
+TI1000053_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00353__extr,,,exchange/biomass,
+R08539__cyto,R08539,1.6.2.4,EC,XP_025344606.1
+TI3000141_PLAS__plas,,,orphan_no_species_evidence,
+R00725__cyto,R00725,2.7.1.1,EC,XP_025342548.1 or XP_025343090.1 or XP_025343315.1 or XP_025344429.1
+R04300__cyto,R04300,1.4.3.21;1.4.3.4;1.4.9.2,KO->R,XP_025340831.1 or XP_025341286.1
+TR1000009_PLAS__plas,,,orphan_no_species_evidence,
+R00256__cyto,R00256,1.4.1.13;1.4.1.14;1.4.7.1;3.5.1.38;4.3.2.10;4.3.3.6;6.3.4.2;6.3.5.13;6.3.5.2;6.3.5.4,KO->R,XP_025343407.1 or XP_025343786.1
+R02747__mito,R02747,3.1.1.5,KO->R,XP_025340069.1
+TO2902879_PLAS__plas,,,orphan_no_species_evidence,
+TI3001238_PLAS__plas,,,orphan_no_species_evidence,
+R00755__cyto,R00755,4.1.1.1,KO->R,XP_025339759.1 or XP_025343925.1
+R01318__cyto,R01318,2.3.1.23,KO->R,XP_025344008.1
+R00066__cyto,R00066,2.5.1.9,KO->R,XP_025344326.1
+R03424__cyto,R03424,6.1.1.10,KO->R,XP_025343496.1
+R09832__cyto,R09832,3.6.1.55,EC,XP_025340797.1 or XP_025341681.1 or XP_025342527.1 or XP_025343724.1 or XP_025344566.1
+R03314__cyto,R03314,,orphan_no_species_evidence,
+R02142__cyto,R02142,2.4.2.22;2.4.2.8,KO->R,XP_025340346.1
+R00945__cyto,R00945,2.1.2.1,KO->R,XP_025342547.1 or XP_025343133.1
+Formate_transport_reaction__plas,,,orphan_no_species_evidence,
+H__transport_reaction_Pero__pero,,,orphan_no_species_evidence,
+R11875__cyto,R11875,1.14.13.239,orphan_no_species_evidence,
+R06364__cyto,R06364,2.7.8.1,EC,XP_025343691.1
+TZ3103363_PLAS__plas,,,orphan_no_species_evidence,
+TO3001398_PLAS__plas,,,orphan_no_species_evidence,
+R00479__pero,R00479,4.1.3.1,KO->R,XP_025340519.1
+TI2903662_PLAS__plas,,,orphan_no_species_evidence,
+R01648__cyto,R01648,2.6.1.19,KO->R,XP_025339724.1 or XP_025340590.1
+R07316__cyto,R07316,3.5.1.110;4.2.1.104,EC,XP_025340868.1 or XP_025341358.1 or XP_025341376.1 or XP_025342627.1 or XP_025343826.1 or XP_025344234.1
+R04427__cyto,R04427,2.1.1.41,KO->R,XP_025342659.1
+TR1000275_PLAS__plas,,,orphan_no_species_evidence,
+R01868__cyto,R01868,1.3.1.14,KO->R,XP_025341256.1
+R05551__cyto,R05551,3.5.1.4,KO->R,XP_025344152.1 or XP_025344428.1
+R11765__mito,R11765,1.5.1.3,KO->R,XP_025339718.1
+TO1000084_PLAS__plas,,,orphan_no_species_evidence,
+R00713__cyto,R00713,1.2.1.16;1.2.1.24,KO->R,XP_025341251.1 or XP_025344650.1
+TZ3100052_PLAS__plas,,,orphan_no_species_evidence,
+EX_C01262__extr,,,exchange/biomass,
+EX_C00159__extr,,,exchange/biomass,
+TR1001608_PLAS__plas,,,orphan_no_species_evidence,
+R10057__cyto,R10057,1.14.18.9,KO->R,XP_025342329.1 or XP_025342552.1
+TI2903706_PLAS__plas,,,orphan_no_species_evidence,
+TI2000679_PLAS__plas,,,orphan_no_species_evidence,
+R03166__cyto,R03166,,orphan_no_species_evidence,
+TI3000175_PLAS__plas,,,orphan_no_species_evidence,
+TI0001607_PLAS__plas,,,orphan_no_species_evidence,
+EX_C05848__extr,,,exchange/biomass,
+EX_C00121__extr,,,exchange/biomass,
+TZ3104116_PLAS__plas,,,orphan_no_species_evidence,
+TI2903676_PLAS__plas,,,orphan_no_species_evidence,
+R03269__cyto,R03269,4.1.1.36,KO->R,XP_025340620.1 or XP_025341071.1
+R02878__cyto,R02878,1.1.1.1;1.1.1.73,EC,XP_025340417.1 or XP_025340439.1 or XP_025340682.1 or XP_025340730.1 or XP_025341008.1 or XP_025341281.1 or XP_025341358.1 or XP_025341719.1
+R00434__cyto,R00434,4.6.1.1;4.6.1.2,orphan_no_species_evidence,
+TI3000740_PLAS__plas,,,orphan_no_species_evidence,
+R07481__cyto,R07481,2.1.1.41,KO->R,XP_025342659.1
+T_ATP_ADP_Antiport__mito,,,orphan_no_species_evidence,
+R01137__cyto,R01137,2.7.4.6,KO->R,XP_025339680.1
+R11193__cyto,R11193,2.1.1.317,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341420.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+R02135__cyto,R02135,3.1.3.1;3.1.3.100;3.1.3.2,KO->R,XP_025343649.1 or XP_025344333.1 or XP_025344334.1 or XP_025344545.1
+TI2903785_PLAS__plas,,,orphan_no_species_evidence,
+R00987__cyto,R00987,3.7.1.3,KO->R,XP_025342242.1
+T_Cadaverine_c01672_ExtrCyto__plas,,,orphan_no_species_evidence,
+TO1000586_PLAS__plas,,,orphan_no_species_evidence,
+R01039__cyto,R01039,1.1.1.156,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+TI1000227_PLAS__plas,,,orphan_no_species_evidence,
+R09372__cyto,R09372,1.8.1.9,KO->R,XP_025343959.1
+TO0000870_PLAS__plas,,,orphan_no_species_evidence,
+R07092__cyto,R07092,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+TR1000705_PLAS__plas,,,orphan_no_species_evidence,
+R00155__cyto,R00155,3.6.1.5;3.6.1.6,KO->R,XP_025339769.1 or XP_025343798.1
+R02294__cyto,R02294,2.4.2.1,KO->R,XP_025343966.1
+R00391__cyto,R00391,2.3.1.16,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344328.1 or XP_025344518.1
+R04963__cyto,R04963,2.3.1.179;2.3.1.41;2.3.1.85;2.3.1.86,KO->R,XP_025343463.1 or XP_025343608.1
+TI2903705_PLAS__plas,,,orphan_no_species_evidence,
+R09220__cyto,R09220,3.1.1.45,KO->R,XP_025343544.1
+EX_C00049__extr,,,exchange/biomass,
+TO1000367_PLAS__plas,,,orphan_no_species_evidence,
+TR1000125_PLAS__plas,,,orphan_no_species_evidence,
+TO3001131_PLAS__plas,,,orphan_no_species_evidence,
+e_Cofactor__cyto,,,orphan_no_species_evidence,
+R00010__cyto,R00010,3.2.1.28,KO->R,XP_025339566.1 or XP_025340541.1
+TO1000263_PLAS__plas,,,orphan_no_species_evidence,
+EX_C16502__extr,,,exchange/biomass,
+R01639__cyto,R01639,2.7.1.17,KO->R,XP_025340357.1
+TZ3100059_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00016__extr,,,exchange/biomass,
+R10052__cyto,R10052,1.1.1.85,KO->R,XP_025342199.1
+R08159__cyto,R08159,3.1.2.14,EC,XP_025341137.1 or XP_025342529.1
+TO0000314_PLAS__plas,,,orphan_no_species_evidence,
+TO0000567_PLAS__plas,,,orphan_no_species_evidence,
+R11034__cyto,R11034,4.2.1.159,EC,XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+R01373__cyto,R01373,4.2.1.51;4.2.1.91,EC,XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+R04701__cyto,R04701,,orphan_no_species_evidence,
+R00670__cyto,R00670,4.1.1.17,KO->R,XP_025340227.1
+TI0012582_PLAS__plas,,,orphan_no_species_evidence,
+TR2900004_PLAS__plas,,,orphan_no_species_evidence,
+Succinyl_CoA_Mitochondrial_transport__mito,,,orphan_no_species_evidence,
+TO1000023_PLAS__plas,,,orphan_no_species_evidence,
+R11861__cyto,R11861,4.3.2.7,KO->R,XP_025340647.1
+TI1000923_PLAS__plas,,,orphan_no_species_evidence,
+R04956__cyto,R04956,1.3.1.10;1.3.1.39;2.3.1.85;2.3.1.86,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+R00277__cyto,R00277,1.4.3.5,KO->R,XP_025339716.1 or XP_025344481.1
+R05329__cyto,R05329,2.5.1.46,EC,XP_025341167.1
+Starch_transport_reaction__plas,,,orphan_no_species_evidence,
+R00549__cyto,R00549,2.7.1.26,EC,XP_025344429.1
+R02923__pero,R02923,1.4.3.3,KO->R,XP_025341810.1 or XP_025342276.1 or XP_025343797.1 or XP_025344644.1
+EX_C11038__extr,,,exchange/biomass,
+T_L_Lysinine_c00047_MitoCyto__mito,,,orphan_no_species_evidence,
+R08548__cyto,R08548,3.1.3.68,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1 or XP_025343979.1
+R01870__cyto,R01870,2.4.2.10,KO->R,XP_025340922.1
+TO3000545_PLAS__plas,,,orphan_no_species_evidence,
+TZ3104549_PLAS__plas,,,orphan_no_species_evidence,
+R05844__cyto,R05844,,orphan_no_species_evidence,
+R00057__cyto,R00057,1.8.3.2,EC,XP_025342352.1 or XP_025342416.1
+R03051__mito,R03051,1.1.1.86,KO->R,XP_025340578.1
+R00996__mito,R00996,4.3.1.19,KO->R,XP_025340320.1 or XP_025341535.1 or XP_025342032.1
+R03438__cyto,R03438,2.3.1.23;2.3.1.63,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344518.1
+R02058__cyto,R02058,2.3.1.4,KO->R,XP_025342647.1
+TO0000135_PLAS__plas,,,orphan_no_species_evidence,
+R04968__cyto,R04968,2.3.1.179;2.3.1.41;2.3.1.85;2.3.1.86,KO->R,XP_025343463.1 or XP_025343608.1
+TZ3101485_PLAS__plas,,,orphan_no_species_evidence,
+R05734__cyto,R05734,1.14.18.9,EC,XP_025342329.1 or XP_025342552.1
+R10116__cyto,R10116,1.14.13.228,KO->R,XP_025341358.1
+TI0000310_PLAS__plas,,,orphan_no_species_evidence,
+R05070__mito,R05070,4.2.1.9,KO->R,XP_025342005.1
+R05286__cyto,R05286,1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+TZ3100103_PLAS__plas,,,orphan_no_species_evidence,
+R07362__cyto,R07362,1.13.11.52,EC,XP_025339587.1 or XP_025339653.1
+TI3000031_PLAS__plas,,,orphan_no_species_evidence,
+R04959__mito,R04959,1.3.1.104,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+R02016__cyto,R02016,1.8.1.9,KO->R,XP_025343959.1
+TZ3102046_PLAS__plas,,,orphan_no_species_evidence,
+TR2900025_PLAS__plas,,,orphan_no_species_evidence,
+TR1000119_PLAS__plas,,,orphan_no_species_evidence,
+R01529__cyto,R01529,5.1.3.1,KO->R,XP_025339753.1
+TZ3100169_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100129_PLAS__plas,,,orphan_no_species_evidence,
+R01039__mito,R01039,1.1.1.156,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+R01526__cyto,R01526,2.7.1.47,KO->R,XP_025339846.1
+EX_C00341__extr,,,exchange/biomass,
+R00221__cyto,R00221,4.3.1.18,KO->R,XP_025341212.1
+e_Protein__cyto,,,orphan_no_species_evidence,
+TI3000071_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100116_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102059_PLAS__plas,,,orphan_no_species_evidence,
+R05455__cyto,R05455,,orphan_no_species_evidence,
+R07025__cyto,R07025,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+R00767__cyto,R00767,2.7.1.11,EC,XP_025340245.1 or XP_025341699.1 or XP_025344429.1
+R07899__cyto,R07899,1.2.1.3,KO->R,XP_025344328.1
+R04972__cyto,R04972,4.1.1.37,KO->R,XP_025344347.1
+R06875__cyto,R06875,3.1.3.64,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1 or XP_025344595.1
+TO0000381_PLAS__plas,,,orphan_no_species_evidence,
+R01964__cyto,R01964,2.7.1.1,EC,XP_025342548.1 or XP_025343090.1 or XP_025343315.1 or XP_025344429.1
+R10994__cyto,R10994,6.3.2.3,KO->R,XP_025340184.1
+TI3001135_PLAS__plas,,,orphan_no_species_evidence,
+EX_C11930__extr,,,exchange/biomass,
+EX_C00011__extr,,,exchange/biomass,
+R00052__cyto,R00052,1.11.1.10,EC,XP_025342312.1
+R02557__cyto,R02557,2.4.2.1,KO->R,XP_025343966.1
+R03222__cyto,R03222,1.3.3.4,KO->R,XP_025342372.1
+R12403__cyto,R12403,1.14.18.9,KO->R,XP_025342329.1 or XP_025342552.1
+R00006__mito,R00006,2.2.1.6,KO->R,XP_025341159.1 or XP_025341626.1
+TZ3102086_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00062__extr,,,exchange/biomass,
+R01863__cyto,R01863,2.4.2.1;2.4.2.15,KO->R,XP_025343966.1
+TO0000388_PLAS__plas,,,orphan_no_species_evidence,
+TO1000346_PLAS__plas,,,orphan_no_species_evidence,
+R01177__pero,R01177,1.3.8.1,KO->R,XP_025343189.1 or XP_025344328.1
+R02887__cyto,R02887,3.2.1.21;3.2.1.74,KO->R,XP_025340834.1 or XP_025341985.1 or XP_025344382.1
+TO0011953_PLAS__plas,,,orphan_no_species_evidence,
+H2O_transport_reaction_Pero__pero,,,orphan_no_species_evidence,
+R03220__cyto,R03220,1.3.3.3,KO->R,XP_025344025.1
+R11674__pero,R11674,1.3.1.108,EC,XP_025339979.1 or XP_025340151.1
+R00551__cyto,R00551,3.5.3.1,KO->R,XP_025341789.1
+R00830__mito,R00830,2.3.1.37,KO->R,XP_025341038.1
+TO1000154_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00065__extr,,,exchange/biomass,
+TZ3102103_PLAS__plas,,,orphan_no_species_evidence,
+Sucrose_transport_reaction__plas,,,orphan_no_species_evidence,
+EX_Glycolaldehyde__extr,,,exchange/biomass,
+TZ3103130_PLAS__plas,,,orphan_no_species_evidence,
+R09541__cyto,R09541,1.16.1.9,orphan_no_species_evidence,
+TO2000002_PLAS__plas,,,orphan_no_species_evidence,
+R02236__mito,R02236,1.5.1.3,KO->R,XP_025339718.1
+R03319__cyto,R03319,5.4.2.2,EC,XP_025340691.1 or XP_025343401.1
+R03990__cyto,R03990,1.3.3.6;1.3.8.7;1.3.8.8;1.3.8.9,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+R10120__cyto,R10120,1.1.1.100,KO->R,XP_025341358.1
+R08775__cyto,R08775,1.14.99.60,orphan_no_species_evidence,
+EX_C04756__extr,,,exchange/biomass,
+R05615__cyto,R05615,2.5.1.39,KO->R,XP_025341956.1
+R00709__cyto,R00709,1.1.1.286;1.1.1.41,KO->R,XP_025341282.1 or XP_025341845.1
+R07083__cyto,R07083,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+R04959__cyto,R04959,1.3.1.10;1.3.1.39;2.3.1.85;2.3.1.86,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+R05725__cyto,R05725,1.14.12.17,EC,XP_025341213.1
+R00936__mito,R00936,1.2.1.27,KO->R,XP_025339718.1
+R03660__cyto,R03660,6.1.1.20,KO->R,XP_025339829.1 or XP_025340477.1 or XP_025344041.1
+T_O2_c00007_CytoMito__mito,,,orphan_no_species_evidence,
+R10826__cyto,R10826,1.1.1.330,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+TI2903663_PLAS__plas,,,orphan_no_species_evidence,
+TO0000065_PLAS__plas,,,orphan_no_species_evidence,
+TR0000242_PLAS__plas,,,orphan_no_species_evidence,
+R03869__cyto,R03869,3.5.1.4,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+TR1000895_PLAS__plas,,,orphan_no_species_evidence,
+R02894__cyto,R02894,1.4.3.3,KO->R,XP_025341810.1 or XP_025342276.1 or XP_025343797.1 or XP_025344644.1
+R02291__cyto,R02291,1.2.1.11,KO->R,XP_025340761.1
+TZ3101576_PLAS__plas,,,orphan_no_species_evidence,
+R03330__cyto,R03330,3.1.3.64,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1 or XP_025344595.1
+TO1001101_PLAS__plas,,,orphan_no_species_evidence,
+R12405__cyto,R12405,1.1.1.270,KO->R,XP_025341826.1
+T_D_Erythrose_4_phosphate_c00279_MitoCyto__mito,,,orphan_no_species_evidence,
+R00771__cyto,R00771,5.3.1.9,KO->R,XP_025339672.1
+EX_C00007__extr,,,exchange/biomass,
+EX_C02431__extr,,,exchange/biomass,
+R00895__mito,R00895,2.6.1.1,orphan_no_species_evidence,
+R07034__cyto,R07034,1.11.1.9,EC,XP_025340580.1 or XP_025340969.1
+TO3000372_PLAS__plas,,,orphan_no_species_evidence,
+R04968__pero,R04968,2.3.1.41,KO->R,XP_025343463.1 or XP_025343608.1
+R00842__mito,R00842,1.1.1.8,KO->R,XP_025340587.1 or XP_025340796.1
+R01004__cyto,R01004,3.6.1.43,KO->R,XP_025339803.1
+R00678__cyto,R00678,1.13.11.11;1.13.11.52,KO->R,XP_025339653.1
+TO0000277_PLAS__plas,,,orphan_no_species_evidence,
+R01057__cyto,R01057,5.4.2.2;5.4.2.7,KO->R,XP_025340691.1 or XP_025343401.1
+R04509__cyto,R04509,2.7.4.7,KO->R,XP_025341791.1
+R10208__cyto,R10208,4.2.1.59,KO->R,XP_025344234.1
+TI0000067_PLAS__plas,,,orphan_no_species_evidence,
+R05826__cyto,R05826,,orphan_no_species_evidence,
+R00465__pero,R00465,1.1.1.79,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+EX_C00234__extr,,,exchange/biomass,
+R02412__cyto,R02412,2.7.1.71,KO->R,XP_025343755.1
+R02508__cyto,R02508,2.5.1.48,KO->R,XP_025340376.1
+R01135__cyto,R01135,6.3.4.4,KO->R,XP_025341844.1
+TR1000822_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00534__extr,,,exchange/biomass,
+TO3000467_PLAS__plas,,,orphan_no_species_evidence,
+R04035__cyto,R04035,3.6.1.31,KO->R,XP_025340600.1
+R05483__cyto,R05483,,orphan_no_species_evidence,
+R02543__cyto,R02543,2.3.1.24,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344518.1
+R08360__pero,R08360,1.11.1.15,orphan_no_species_evidence,
+R07460__mito,R07460,2.8.1.7,KO->R,XP_025342200.1
+EX_C15782__extr,,,exchange/biomass,
+TZ3100115_PLAS__plas,,,orphan_no_species_evidence,
+TI1000066_PLAS__plas,,,orphan_no_species_evidence,
+TI3000297_PLAS__plas,,,orphan_no_species_evidence,
+TR2900010_PLAS__plas,,,orphan_no_species_evidence,
+T_Pyruvate_c00022_CytoMito__mito,,,orphan_no_species_evidence,
+R03656__cyto,R03656,6.1.1.5,KO->R,XP_025341179.1 or XP_025343198.1
+TZ3102067_PLAS__plas,,,orphan_no_species_evidence,
+R02985__cyto,R02985,3.2.1.117;3.2.1.21,KO->R,XP_025340834.1 or XP_025341985.1 or XP_025344382.1
+TI3000277_PLAS__plas,,,orphan_no_species_evidence,
+TO0000039_PLAS__plas,,,orphan_no_species_evidence,
+R04963__pero,R04963,2.3.1.41,KO->R,XP_025343463.1 or XP_025343608.1
+TI0000190_PLAS__plas,,,orphan_no_species_evidence,
+R04209__cyto,R04209,4.1.1.21,KO->R,XP_025342929.1
+R00847__mito,R00847,2.7.1.30,KO->R,XP_025341769.1
+TO0000107_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102047_PLAS__plas,,,orphan_no_species_evidence,
+TR1000041_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102310_PLAS__plas,,,orphan_no_species_evidence,
+TR2000558_PLAS__plas,,,orphan_no_species_evidence,
+TO0000182_PLAS__plas,,,orphan_no_species_evidence,
+R02760__mito,R02760,2.3.1.51,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342466.1 or XP_025342531.1 or XP_025342789.1 or XP_025342937.1 or XP_025342985.1 or XP_025344008.1 or XP_025344518.1
+TO1000822_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00386__extr,,,exchange/biomass,
+TI2903793_PLAS__plas,,,orphan_no_species_evidence,
+R04724__cyto,R04724,1.3.1.9,EC,XP_025339979.1 or XP_025340151.1
+TR2918348_PLAS__plas,,,orphan_no_species_evidence,
+TI3000272_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00344__extr,,,exchange/biomass,
+TO0000367_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102032_PLAS__plas,,,orphan_no_species_evidence,
+TO2903014_PLAS__plas,,,orphan_no_species_evidence,
+TO0000430_PLAS__plas,,,orphan_no_species_evidence,
+R09030__cyto,R09030,5.3.1.6,EC,XP_025342165.1
+R01130__cyto,R01130,1.1.1.205,KO->R,XP_025342064.1
+R00289__cyto,R00289,2.7.7.64;2.7.7.9,KO->R,XP_025343707.1
+H2O_transport_reaction__plas,,,orphan_no_species_evidence,
+TR0000009_PLAS__plas,,,orphan_no_species_evidence,
+TZ3106840_PLAS__plas,,,orphan_no_species_evidence,
+R00895__cyto,R00895,2.6.1.1;2.6.1.3,orphan_no_species_evidence,
+Ex_Lactose_c00243__extr,,,exchange/biomass,
+R00659__cyto,R00659,2.7.1.40,EC,XP_025340747.1 or XP_025344429.1
+R02527__cyto,R02527,1.1.1.78,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+TR1000186_PLAS__plas,,,orphan_no_species_evidence,
+TR0011422_PLAS__plas,,,orphan_no_species_evidence,
+TI0011715_PLAS__plas,,,orphan_no_species_evidence,
+R01315__cyto,R01315,3.1.1.4,KO->R,XP_025342985.1
+R00769__cyto,R00769,2.7.1.11,EC,XP_025340245.1 or XP_025341699.1 or XP_025344429.1
+R01009__cyto,R01009,2.4.1.83,KO->R,XP_025339630.1 or XP_025339981.1
+TO2903032_PLAS__plas,,,orphan_no_species_evidence,
+TO1000051_PLAS__plas,,,orphan_no_species_evidence,
+R02133__cyto,R02133,3.5.99.2,KO->R,XP_025341791.1
+R01071__cyto,R01071,2.4.2.17,KO->R,XP_025342571.1
+EX_C00177__extr,,,exchange/biomass,
+Ergosterol__extr,,,exchange/biomass,
+R01800__cyto,R01800,2.7.8.8,KO->R,XP_025342612.1
+R07149__cyto,R07149,1.1.1.170,EC,XP_025339777.1 or XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+TO0003279_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00515__extr,,,exchange/biomass,
+R01352__cyto,R01352,3.1.1.23,EC,XP_025339641.1 or XP_025340436.1 or XP_025341324.1 or XP_025341506.1 or XP_025342842.1 or XP_025342913.1 or XP_025343593.1 or XP_025344529.1
+EX_C01885__extr,,,exchange/biomass,
+R03658__cyto,R03658,6.1.1.6,KO->R,XP_025341031.1 or XP_025344585.1
+TI2903688_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00250__extr,,,exchange/biomass,
+EX_C06427__extr,,,exchange/biomass,
+R00694__cyto,R00694,2.6.1.1;2.6.1.5;2.6.1.57;2.6.1.9,KO->R,XP_025340372.1 or XP_025340654.1 or XP_025340820.1
+TZ3102080_PLAS__plas,,,orphan_no_species_evidence,
+TO1000644_PLAS__plas,,,orphan_no_species_evidence,
+TI1000550_PLAS__plas,,,orphan_no_species_evidence,
+R01961__cyto,R01961,2.7.1.1;2.7.1.8,KO->R,XP_025342548.1 or XP_025343090.1 or XP_025343315.1
+EX_C04927__extr,,,exchange/biomass,
+R02964__cyto,R02964,1.6.5.2,KO->R,XP_025344478.1 or XP_025344479.1 or XP_025344480.1
+EX_C00381__extr,,,exchange/biomass,
+R07506__cyto,R07506,1.14.19.41,KO->R,XP_025343525.1
+R00009__pero,R00009,1.11.1.21;1.11.1.6,KO->R,XP_025343574.1
+R08632__cyto,R08632,4.4.1.1,EC,XP_025342154.1
+R11911__cyto,R11911,1.14.13.239,orphan_no_species_evidence,
+R12356__cyto,R12356,1.3.3.6,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+TO1000128_PLAS__plas,,,orphan_no_species_evidence,
+TO2902943_PLAS__plas,,,orphan_no_species_evidence,
+TI2903668_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100205_PLAS__plas,,,orphan_no_species_evidence,
+TO0000322_PLAS__plas,,,orphan_no_species_evidence,
+TO3001126_PLAS__plas,,,orphan_no_species_evidence,
+R02090__cyto,R02090,2.7.4.12,KO->R,XP_025343386.1
+EX_C04884__extr,,,exchange/biomass,
+R02245__cyto,R02245,2.7.1.36,KO->R,XP_025342824.1
+R00842__cyto,R00842,1.1.1.8;1.1.1.94,KO->R,XP_025340587.1 or XP_025340796.1
+TZ3101370_PLAS__plas,,,orphan_no_species_evidence,
+R01221__cyto,R01221,2.1.2.10,KO->R,XP_025339830.1 or XP_025339990.1 or XP_025340725.1 or XP_025343944.1
+R01073__cyto,R01073,2.4.2.18,KO->R,XP_025343141.1
+TR1000023_PLAS__plas,,,orphan_no_species_evidence,
+TR1000133_PLAS__plas,,,orphan_no_species_evidence,
+TI2903695_PLAS__plas,,,orphan_no_species_evidence,
+R04960__cyto,R04960,2.3.1.179;2.3.1.41;2.3.1.85;2.3.1.86,KO->R,XP_025343463.1 or XP_025343608.1
+R05802__cyto,R05802,2.7.1.150,KO->R,XP_025343878.1
+TR1001401_PLAS__plas,,,orphan_no_species_evidence,
+R05764__cyto,R05764,2.1.1.145,KO->R,XP_025341396.1 or XP_025343343.1
+TI0013384_PLAS__plas,,,orphan_no_species_evidence,
+R05048__cyto,R05048,3.5.4.16,KO->R,XP_025341690.1
+R12400__cyto,R12400,2.7.1.40,EC,XP_025340747.1 or XP_025344429.1
+R03283__cyto,R03283,1.2.1.3;1.2.1.47,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+R04072__cyto,R04072,2.4.1.109,KO->R,XP_025339553.1 or XP_025340804.1 or XP_025341386.1 or XP_025344077.1 or XP_025344089.1
+T_4_Hydroxy_2_oxoglutarate_c01127_MitoCyto__mito,,,orphan_no_species_evidence,
+EX_C00491__extr,,,exchange/biomass,
+TR1000809_PLAS__plas,,,orphan_no_species_evidence,
+TZ5900021_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00019__extr,,,exchange/biomass,
+R07009__cyto,R07009,,orphan_no_species_evidence,
+EX_C00239__extr,,,exchange/biomass,
+TZ3100175_PLAS__plas,,,orphan_no_species_evidence,
+R05800__cyto,R05800,2.7.1.151,EC,XP_025344429.1
+R07350__cyto,R07350,1.14.14.129,orphan_no_species_evidence,
+EX_C00459__extr,,,exchange/biomass,
+R03672__cyto,R03672,,orphan_no_species_evidence,
+EX_C03479__extr,,,exchange/biomass,
+TI1001977_PLAS__plas,,,orphan_no_species_evidence,
+R12121__cyto,R12121,1.14.14.154,EC,XP_025344294.1
+TI2000266_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100168_PLAS__plas,,,orphan_no_species_evidence,
+T_4_aminobenzoate_c00568_MitoCyto___mito,,,orphan_no_species_evidence,
+R01411__cyto,R01411,3.5.4.1,KO->R,XP_025342707.1
+R04440__mito,R04440,,KO->R,XP_025340578.1
+EX_C00081__extr,,,exchange/biomass,
+R00893__cyto,R00893,1.13.11.20,KO->R,XP_025343646.1
+R10455__cyto,R10455,2.5.1.108,KO->R,XP_025341572.1
+TO0012572_PLAS__plas,,,orphan_no_species_evidence,
+R01682__cyto,R01682,4.1.1.15;4.1.1.29,KO->R,XP_025341373.1 or XP_025343228.1
+EX_C03428__extr,,,exchange/biomass,
+R10039__cyto,R10039,3.2.1.21,KO->R,XP_025340834.1 or XP_025341985.1 or XP_025344382.1
+TO1000381_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00550__extr,,,exchange/biomass,
+R01221__mito,R01221,1.4.4.2;1.8.1.4;2.1.2.10,KO->R,XP_025339830.1 or XP_025339990.1 or XP_025340725.1 or XP_025343944.1
+EX_C00440__extr,,,exchange/biomass,
+TO0000084_PLAS__plas,,,orphan_no_species_evidence,
+TO1000098_PLAS__plas,,,orphan_no_species_evidence,
+Ex_Galactitol_c01697__extr,,,exchange/biomass,
+R01462__cyto,R01462,3.5.1.5,KO->R,XP_025342500.1 or XP_025342985.1 or XP_025344149.1
+Ex_Sucrose_c00089__extr,,,exchange/biomass,
+EX_C00705__extr,,,exchange/biomass,
+R01978__cyto,R01978,2.3.3.10,KO->R,XP_025344775.1
+R06861__cyto,R06861,2.2.1.1;2.2.1.3,EC,XP_025340731.1
+R01132__cyto,R01132,2.4.2.8,KO->R,XP_025340346.1
+EX_C00257__extr,,,exchange/biomass,
+R07004__cyto,R07004,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+R01055__mito,R01055,4.2.1.70,KO->R,XP_025342479.1
+R00127__cyto,R00127,2.7.4.3,KO->R,XP_025341922.1 or XP_025342799.1
+R03035__cyto,R03035,2.7.7.3,EC,XP_025339650.1 or XP_025340440.1 or XP_025341381.1
+R01771__cyto,R01771,2.7.1.39,KO->R,XP_025344293.1
+R03674__cyto,R03674,,orphan_no_species_evidence,
+R05577__cyto,R05577,6.1.1.12;6.1.1.23,KO->R,XP_025340186.1 or XP_025343715.1
+TR1000104_PLAS__plas,,,orphan_no_species_evidence,
+R07759__cyto,R07759,1.1.1.330,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+R04929__cyto,R04929,2.7.7.4,KO->R,XP_025343523.1
+R02540__cyto,R02540,1.2.1.3,KO->R,XP_025344152.1 or XP_025344428.1
+Ex_D_Tryptophan_c00525__extr,,,exchange/biomass,
+R03920__cyto,R03920,2.7.1.1;2.7.1.4,KO->R,XP_025342548.1 or XP_025343090.1 or XP_025343315.1
+R00517__cyto,R00517,2.7.1.48,KO->R,XP_025340880.1
+R00084__cyto,R00084,2.5.1.61,KO->R,XP_025343181.1
+EX_C13425__extr,,,exchange/biomass,
+R00036__cyto,R00036,4.2.1.24,KO->R,XP_025341759.1
+TI3000010_PLAS__plas,,,orphan_no_species_evidence,
+TO0000412_PLAS__plas,,,orphan_no_species_evidence,
+R01618__cyto,R01618,2.7.7.53,KO->R,XP_025344278.1
+Creatinine__extr,,,exchange/biomass,
+TO0001017_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102085_PLAS__plas,,,orphan_no_species_evidence,
+EX_C01801__extr,,,exchange/biomass,
+R02097__cyto,R02097,2.7.1.21,EC,XP_025344429.1
+TR1000249_PLAS__plas,,,orphan_no_species_evidence,
+R01776__cyto,R01776,2.3.1.31,KO->R,XP_025341226.1 or XP_025343241.1
+T_Acetaldehyde_c00084_MitoCyto__mito,,,orphan_no_species_evidence,
+R00017__mito,R00017,1.11.1.5,orphan_no_species_evidence,
+R03347__cyto,R03347,2.7.1.173,KO->R,XP_025342790.1
+R11165__cyto,R11165,2.1.1.314,KO->R,XP_025343273.1
+R02371__cyto,R02371,2.7.1.48,EC,XP_025340880.1 or XP_025344429.1
+EX_C00641__extr,,,exchange/biomass,
+R03237__cyto,R03237,2.7.1.11,KO->R,XP_025340245.1 or XP_025341699.1
+TR1002738_PLAS__plas,,,orphan_no_species_evidence,
+R00238__cyto,R00238,2.3.1.16;2.3.1.9,KO->R,XP_025343189.1 or XP_025344328.1
+TO3000758_PLAS__plas,,,orphan_no_species_evidence,
+R05799__cyto,R05799,2.7.4.24,KO->R,XP_025344155.1
+R01001__cyto,R01001,4.4.1.1,KO->R,XP_025342154.1
+R00348__cyto,R00348,3.1.2.14;3.1.2.21,KO->R,XP_025341086.1
+TI1014859_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102309_PLAS__plas,,,orphan_no_species_evidence,
+R00908__cyto,R00908,2.6.1.19;2.6.1.55,KO->R,XP_025339724.1 or XP_025340590.1
+EX_C00147__extr,,,exchange/biomass,
+TO0012802_PLAS__plas,,,orphan_no_species_evidence,
+R04429__cyto,R04429,1.3.1.9,EC,XP_025339979.1 or XP_025340151.1
+R02156__cyto,R02156,1.13.11.24,EC,XP_025339587.1 or XP_025343342.1
+TO0000010_PLAS__plas,,,orphan_no_species_evidence,
+R01229__cyto,R01229,2.4.2.22;2.4.2.7;2.4.2.8,KO->R,XP_025340346.1
+R10845__cyto,R10845,2.6.1.107;2.6.1.57,EC,XP_025340820.1
+R00253__cyto,R00253,6.3.1.2,KO->R,XP_025344736.1
+TI1012174_PLAS__plas,,,orphan_no_species_evidence,
+T_Succinate_c00042_PeroCyto__pero,,,orphan_no_species_evidence,
+TZ3101626_PLAS__plas,,,orphan_no_species_evidence,
+TR1001573_PLAS__plas,,,orphan_no_species_evidence,
+R03990__pero,R03990,1.3.3.6,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+TI2903677_PLAS__plas,,,orphan_no_species_evidence,
+TO1001567_PLAS__plas,,,orphan_no_species_evidence,
+EX_C05980__extr,,,exchange/biomass,
+R01819__cyto,R01819,5.3.1.8,KO->R,XP_025343487.1
+R04881__cyto,R04881,2.1.1.6,KO->R,XP_025341223.1
+R00970__cyto,R00970,2.7.1.48,EC,XP_025340880.1 or XP_025344429.1
+R07770__mito,R07770,6.3.1.20,orphan_no_species_evidence,
+R03236__cyto,R03236,2.7.1.11;2.7.1.144;2.7.1.56,KO->R,XP_025340245.1 or XP_025341699.1
+R03083__cyto,R03083,4.2.3.4,KO->R,XP_025343755.1
+R06519__cyto,R06519,1.14.19.17,KO->R,XP_025339651.1
+R02688__cyto,R02688,3.1.1.3,EC,XP_025339641.1 or XP_025340436.1 or XP_025341324.1 or XP_025341506.1 or XP_025341509.1 or XP_025342692.1 or XP_025342842.1 or XP_025342913.1 or XP_025342985.1 or XP_025343593.1 or XP_025344138.1 or XP_025344529.1
+EX_C01290__extr,,,exchange/biomass,
+TI1000019_PLAS__plas,,,orphan_no_species_evidence,
+R04944__cyto,R04944,2.5.1.48,KO->R,XP_025340376.1
+TR1000586_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100058_PLAS__plas,,,orphan_no_species_evidence,
+EX_C06424__extr,,,exchange/biomass,
+TO1000119_PLAS__plas,,,orphan_no_species_evidence,
+R03362__cyto,R03362,2.7.1.137;2.7.1.154,KO->R,XP_025343157.1
+R02092__cyto,R02092,3.6.1.5,KO->R,XP_025339769.1 or XP_025343798.1
+R07168__cyto,R07168,1.5.1.20,KO->R,XP_025342293.1 or XP_025343176.1
+R12658__mito,R12658,1.14.13.240,orphan_no_species_evidence,
+EX_C05981__extr,,,exchange/biomass,
+R03194__cyto,R03194,2.1.1.107,KO->R,XP_025343349.1
+EX_C04058__extr,,,exchange/biomass,
+EX_C05809__extr,,,exchange/biomass,
+R04928__cyto,R04928,2.7.1.25,EC,XP_025344429.1
+R11100__pero,R11100,4.3.1.17,EC,XP_025341535.1 or XP_025342032.1
+R04880__cyto,R04880,1.1.1.1,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+R00734__cyto,R00734,2.6.1.1;2.6.1.5;2.6.1.57;2.6.1.9,KO->R,XP_025340372.1 or XP_025340654.1 or XP_025340820.1
+R04990__cyto,R04990,2.1.1.201,EC,XP_025339772.1 or XP_025340288.1 or XP_025340746.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+TO3000583_PLAS__plas,,,orphan_no_species_evidence,
+R08307__mito,R08307,1.2.1.5,orphan_no_species_evidence,
+R04770__cyto,R04770,4.4.1.1;4.4.1.11,KO->R,XP_025342154.1
+R08095__cyto,R08095,2.3.1.16,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344328.1 or XP_025344518.1
+R02747__cyto,R02747,3.1.1.5,KO->R,XP_025340069.1
+R09698__pero,R09698,4.2.1.119,EC,XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+R03067__cyto,R03067,2.5.1.15,KO->R,XP_025344187.1
+R04502__cyto,R04502,2.4.1.142,EC,XP_025339775.1 or XP_025339818.1 or XP_025339831.1 or XP_025340143.1 or XP_025340331.1 or XP_025340511.1 or XP_025340596.1 or XP_025340690.1 or XP_025340837.1 or XP_025341057.1 or XP_025341058.1 or XP_025341084.1 or XP_025341380.1 or XP_025341507.1 or XP_025341540.1 or XP_025341718.1 or XP_025342118.1 or XP_025342294.1 or XP_025342315.1 or XP_025342569.1 or XP_025343076.1 or XP_025343501.1 or XP_025343782.1 or XP_025344251.1 or XP_025344349.1 or XP_025344360.1 or XP_025344658.1
+R03628__cyto,R03628,1.13.11.52,KO->R,XP_025339653.1
+R01830__cyto,R01830,2.2.1.1,KO->R,XP_025340731.1
+R00085__cyto,R00085,3.6.1.5,EC,XP_025339769.1 or XP_025341681.1 or XP_025342527.1 or XP_025343724.1 or XP_025343798.1 or XP_025344566.1
+R00776__pero,R00776,4.3.2.3,KO->R,XP_025342395.1
+TI0000022_CytoPero__pero,,,orphan_no_species_evidence,
+TO3000565_PLAS__plas,,,orphan_no_species_evidence,
+R00251__cyto,R00251,3.5.2.9,KO->R,XP_025340210.1
+L_Aspartate_c00049_CytoMito__mito,,,orphan_no_species_evidence,
+R04996__mito,R04996,1.2.1.5,orphan_no_species_evidence,
+TI3001535_PLAS__plas,,,orphan_no_species_evidence,
+R02760__cyto,R02760,2.3.1.51,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342466.1 or XP_025342531.1 or XP_025342789.1 or XP_025342937.1 or XP_025342985.1 or XP_025344008.1 or XP_025344518.1
+R05590__cyto,R05590,3.5.1.4,KO->R,XP_025344152.1 or XP_025344428.1
+R04445__mito,R04445,1.2.1.88,KO->R,XP_025341706.1
+R09844__cyto,R09844,2.5.1.58,KO->R,XP_025342390.1 or XP_025342829.1
+R04888__mito,R04888,1.2.1.5,orphan_no_species_evidence,
+R07385__cyto,R07385,3.1.4.4,KO->R,XP_025343243.1
+TI2000039_PLAS__plas,,,orphan_no_species_evidence,
+R01388__cyto,R01388,1.1.1.26;1.1.1.29,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+TI0000082_PLAS__plas,,,orphan_no_species_evidence,
+R03459__cyto,R03459,3.5.4.26,EC,XP_025343059.1
+TI2903707_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00311__extr,,,exchange/biomass,
+R01664__cyto,R01664,3.1.3.89,KO->R,XP_025342351.1 or XP_025343207.1
+R04494__cyto,R04494,2.4.1.141,EC,XP_025339775.1 or XP_025339818.1 or XP_025339831.1 or XP_025340143.1 or XP_025340331.1 or XP_025340511.1 or XP_025340596.1 or XP_025340690.1 or XP_025340837.1 or XP_025341057.1 or XP_025341058.1 or XP_025341084.1 or XP_025341507.1 or XP_025341540.1 or XP_025341718.1 or XP_025342118.1 or XP_025342294.1 or XP_025342315.1 or XP_025342449.1 or XP_025342569.1 or XP_025343076.1 or XP_025343501.1 or XP_025343782.1 or XP_025344251.1 or XP_025344349.1 or XP_025344360.1 or XP_025344658.1
+R04725__mito,R04725,1.3.1.104,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+R03457__cyto,R03457,4.2.1.19,EC,XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+R00519__cyto,R00519,1.17.1.9,KO->R,XP_025341210.1
+TR2900018_PLAS__plas,,,orphan_no_species_evidence,
+e_RNA__cyto,,,orphan_no_species_evidence,
+TR1000923_PLAS__plas,,,orphan_no_species_evidence,
+R02433__cyto,R02433,2.6.1.1,orphan_no_species_evidence,
+TR0002649_PLAS__plas,,,orphan_no_species_evidence,
+R00190__cyto,R00190,2.4.2.7;2.4.2.8,KO->R,XP_025343063.1
+EX_C00864__extr,,,exchange/biomass,
+R00530__cyto,R00530,2.7.7.5,KO->R,XP_025344278.1
+R00959__cyto,R00959,5.4.2.2;5.4.2.5,KO->R,XP_025340691.1 or XP_025343401.1
+R00516__cyto,R00516,2.7.1.48,EC,XP_025340880.1 or XP_025344429.1
+T_L_Methionine_c00073_CytoMito__mito,,,orphan_no_species_evidence,
+R03899__cyto,R03899,1.5.3.13;1.5.3.17,KO->R,XP_025344769.1
+EX_C00751__extr,,,exchange/biomass,
+R00691__cyto,R00691,4.2.1.51;4.2.1.91,EC,XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+TZ3100163_PLAS__plas,,,orphan_no_species_evidence,
+R01224__cyto,R01224,2.1.2.7,KO->R,XP_025342293.1
+R08358__cyto,R08358,,orphan_no_species_evidence,
+R00626__cyto,R00626,3.1.3.1;3.1.3.2,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343649.1 or XP_025343755.1 or XP_025344333.1 or XP_025344334.1 or XP_025344545.1
+EX_C00037__extr,,,exchange/biomass,
+R02529__cyto,R02529,1.4.3.21;1.4.3.4,KO->R,XP_025340831.1 or XP_025341286.1
+R00200__cyto,R00200,2.7.1.40,KO->R,XP_025340747.1
+EX_C00255__extr,,,exchange/biomass,
+R02484__cyto,R02484,2.4.2.1;2.4.2.2;2.4.2.3;2.4.2.4,EC,XP_025343966.1 or XP_025344508.1
+R07495__cyto,R07495,1.1.1.270,KO->R,XP_025341826.1
+R07168__mito,R07168,1.5.1.20,KO->R,XP_025342293.1 or XP_025343176.1
+TI3000781_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00035__extr,,,exchange/biomass,
+R04773__cyto,R04773,2.1.1.71,KO->R,XP_025341681.1 or XP_025341686.1
+R01226__cyto,R01226,2.1.2.11,KO->R,XP_025341094.1
+TO0000858_PLAS__plas,,,orphan_no_species_evidence,
+EX_C03313__extr,,,exchange/biomass,
+R07002__cyto,R07002,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+R09736__mito,R09736,2.1.1.163,KO->R,XP_025340746.1
+EX_C00314__extr,,,exchange/biomass,
+R08637__cyto,R08637,,orphan_no_species_evidence,
+TO0000438_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00088__extr,,,exchange/biomass,
+R00627__cyto,R00627,3.5.1.9,EC,XP_025341376.1 or XP_025341542.1 or XP_025342627.1 or XP_025343826.1
+TI2903674_PLAS__plas,,,orphan_no_species_evidence,
+TZ3103364_PLAS__plas,,,orphan_no_species_evidence,
+TZ3103150_PLAS__plas,,,orphan_no_species_evidence,
+EX_C05983__extr,,,exchange/biomass,
+TZ3105093_PLAS__plas,,,orphan_no_species_evidence,
+TI1000129_PLAS__plas,,,orphan_no_species_evidence,
+R11337__cyto,R11337,1.1.1.399,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1 or XP_025342378.1
+R02095__cyto,R02095,3.6.1.39;3.6.1.5,KO->R,XP_025339769.1 or XP_025343798.1
+R02102__cyto,R02102,3.1.3.89,KO->R,XP_025342351.1 or XP_025343207.1
+R04496__cyto,R04496,2.1.1.100,KO->R,XP_025344711.1
+R00192__cyto,R00192,3.3.1.1,KO->R,XP_025341739.1
+TI2903683_PLAS__plas,,,orphan_no_species_evidence,
+R02918__cyto,R02918,6.1.1.1,KO->R,XP_025340954.1 or XP_025344264.1
+TZ3100211_PLAS__plas,,,orphan_no_species_evidence,
+R00310__mito,R00310,4.99.1.1,KO->R,XP_025344009.1
+R03516__cyto,R03516,2.7.11.4,EC,XP_025341339.1 or XP_025342403.1 or XP_025342572.1 or XP_025343092.1 or XP_025344536.1
+R00847__cyto,R00847,2.7.1.30,KO->R,XP_025341769.1
+R02457__pero,R02457,1.4.3.3,KO->R,XP_025341810.1 or XP_025342276.1 or XP_025343797.1 or XP_025344644.1
+TZ2900064_PLAS__plas,,,orphan_no_species_evidence,
+TR1000017_PLAS__plas,,,orphan_no_species_evidence,
+TR1000035_PLAS__plas,,,orphan_no_species_evidence,
+TO1000161_PLAS__plas,,,orphan_no_species_evidence,
+TI2000227_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00475__extr,,,exchange/biomass,
+EX_C01241__extr,,,exchange/biomass,
+e_Lipids__cyto,,,orphan_no_species_evidence,
+TZ3101600_PLAS__plas,,,orphan_no_species_evidence,
+R01497__cyto,R01497,2.4.1.80,KO->R,XP_025342001.1
+TI1011953_PLAS__plas,,,orphan_no_species_evidence,
+R00082__cyto,R00082,,orphan_no_species_evidence,
+EX_C00365__extr,,,exchange/biomass,
+Ex_Creatine_c00300__extr,,,exchange/biomass,
+TI3001183_PLAS__plas,,,orphan_no_species_evidence,
+T_S_Adenosyl_L_Methionine_c00019_CytoMito__mito,,,orphan_no_species_evidence,
+R03012__cyto,R03012,1.1.1.23,KO->R,XP_025340600.1
+R04090__cyto,R04090,,orphan_no_species_evidence,
+R03858__cyto,R03858,2.3.1.16,KO->R,XP_025344328.1
+EX_C00267__extr,,,exchange/biomass,
+R07094__cyto,R07094,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+R04961__cyto,R04961,1.3.1.9,EC,XP_025339979.1 or XP_025340151.1
+H2O2_transport_reaction_Pero__pero,,,orphan_no_species_evidence,
+R11893__mito,R11893,1.17.4.1,KO->R,XP_025340212.1 or XP_025344702.1
+EX_C00080__extr,,,exchange/biomass,
+R08279__cyto,R08279,,orphan_no_species_evidence,
+TR1000220_PLAS__plas,,,orphan_no_species_evidence,
+Ex_Ribitol_c00474__extr,,,exchange/biomass,
+TO1000305_PLAS__plas,,,orphan_no_species_evidence,
+R03038__cyto,R03038,6.1.1.7,KO->R,XP_025343988.1
+TZ3105025_PLAS__plas,,,orphan_no_species_evidence,
+EX_C04002__extr,,,exchange/biomass,
+R02732__mito,R02732,2.7.1.105,KO->R,XP_025344229.1
+TO1011893_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00013__extr,,,exchange/biomass,
+R01214__mito,R01214,2.6.1.42;2.6.1.6,KO->R,XP_025343425.1
+TI1000065_PLAS__plas,,,orphan_no_species_evidence,
+TI1001608_PLAS__plas,,,orphan_no_species_evidence,
+R04556__cyto,R04556,1.3.1.48,EC,XP_025339979.1 or XP_025340151.1
+TO0000021_EXTR__extr,,,orphan_no_species_evidence,
+R10992__cyto,R10992,2.6.1.44,orphan_no_species_evidence,
+EX_C00318__extr,,,exchange/biomass,
+TI1000135_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102058_PLAS__plas,,,orphan_no_species_evidence,
+R04023__cyto,R04023,2.7.11.7,EC,XP_025341339.1 or XP_025342403.1 or XP_025342572.1 or XP_025343092.1 or XP_025344536.1
+TO0013385_PLAS__plas,,,orphan_no_species_evidence,
+TI1000035_PLAS__plas,,,orphan_no_species_evidence,
+TR0010516_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100164_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102068_PLAS__plas,,,orphan_no_species_evidence,
+R09251__cyto,R09251,2.5.1.85,orphan_no_species_evidence,
+EX_C00144__extr,,,exchange/biomass,
+EX_C00262__extr,,,exchange/biomass,
+R04966__cyto,R04966,1.3.1.9,EC,XP_025339979.1 or XP_025340151.1
+R02737__cyto,R02737,2.4.1.15,KO->R,XP_025339641.1 or XP_025340862.1
+TZ3100124_PLAS__plas,,,orphan_no_species_evidence,
+R08558__cyto,R08558,1.1.1.1,EC,XP_025340417.1 or XP_025340439.1 or XP_025340682.1 or XP_025340730.1 or XP_025341008.1 or XP_025341281.1 or XP_025341358.1 or XP_025341719.1
+TZ3100104_PLAS__plas,,,orphan_no_species_evidence,
+EX_C02686__extr,,,exchange/biomass,
+R02619__cyto,R02619,2.6.1.1,orphan_no_species_evidence,
+R03971__cyto,R03971,2.3.2.2,KO->R,XP_025341618.1
+TZ3100204_PLAS__plas,,,orphan_no_species_evidence,
+TO1000365_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00380__extr,,,exchange/biomass,
+TZ3101051_PLAS__plas,,,orphan_no_species_evidence,
+TO1000395_PLAS__plas,,,orphan_no_species_evidence,
+EX_C04712__extr,,,exchange/biomass,
+R10920__cyto,R10920,1.14.11.48,EC,XP_025340369.1 or XP_025343247.1 or XP_025343248.1 or XP_025343469.1 or XP_025343712.1 or XP_025343981.1 or XP_025344482.1
+R07888__pero,R07888,1.3.3.6,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+EX_C00415__extr,,,exchange/biomass,
+R11323__cyto,R11323,3.6.1.9,EC,XP_025341681.1 or XP_025342527.1 or XP_025343724.1 or XP_025344566.1
+Dihydrofolate_Mitochondrial_transport___mito,,,orphan_no_species_evidence,
+R03443__cyto,R03443,1.2.1.38,KO->R,XP_025343569.1
+R00178__cyto,R00178,4.1.1.50,KO->R,XP_025340113.1
+EX_C02960__extr,,,exchange/biomass,
+TO3000526_PLAS__plas,,,orphan_no_species_evidence,
+R03417__pero,R03417,3.1.1.5,KO->R,XP_025340069.1
+R11572__cyto,R11572,,orphan_no_species_evidence,
+TZ3101474_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102041_PLAS__plas,,,orphan_no_species_evidence,
+R02678__cyto,R02678,1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+TZ3101444_PLAS__plas,,,orphan_no_species_evidence,
+R02868__cyto,R02868,2.7.1.1,EC,XP_025342548.1 or XP_025343090.1 or XP_025343315.1 or XP_025344429.1
+R04441__cyto,R04441,4.2.1.9,KO->R,XP_025342005.1
+T_3_methyl_2_oxobutonoate_c00141_MitoCyto__mito,,,orphan_no_species_evidence,
+TZ3101627_PLAS__plas,,,orphan_no_species_evidence,
+TO1000082_PLAS__plas,,,orphan_no_species_evidence,
+e_DNA__cyto,,,orphan_no_species_evidence,
+TO0000506_PLAS__plas,,,orphan_no_species_evidence,
+R08769__mito,R08769,2.1.1.222,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+R10088__cyto,R10088,4.3.3.6,EC,XP_025342045.1 or XP_025342046.1
+R00008__pero,R00008,4.1.3.17,orphan_no_species_evidence,
+R01286__cyto,R01286,4.4.1.13,KO->R,XP_025340817.1
+R08773__cyto,R08773,,orphan_no_species_evidence,
+R07035__cyto,R07035,1.11.1.9,EC,XP_025340580.1 or XP_025340969.1
+EX_C00669__extr,,,exchange/biomass,
+R08020__cyto,R08020,,orphan_no_species_evidence,
+TI3001233_PLAS__plas,,,orphan_no_species_evidence,
+TR1000107_PLAS__plas,,,orphan_no_species_evidence,
+TR0000048_PLAS__plas,,,orphan_no_species_evidence,
+R00160__cyto,R00160,3.6.1.18;3.6.1.9,EC,XP_025341681.1 or XP_025342527.1 or XP_025343724.1 or XP_025344566.1
+R03004__cyto,R03004,3.6.1.9,KO->R,XP_025343934.1
+5_Aminopentanal_transport_reaction__plas,,,orphan_no_species_evidence,
+R05085__cyto,R05085,2.6.1.52,KO->R,XP_025340322.1
+R03663__cyto,R03663,6.1.1.3,KO->R,XP_025340405.1 or XP_025341288.1
+TR0000268_PLAS__plas,,,orphan_no_species_evidence,
+TI2903704_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00072__extr,,,exchange/biomass,
+R08240__cyto,R08240,1.1.1.205,KO->R,XP_025342064.1
+R01280__pero,R01280,6.2.1.3,KO->R,XP_025341276.1
+R01214__cyto,R01214,2.6.1.42;2.6.1.6,KO->R,XP_025343425.1
+R04404__cyto,R04404,3.1.3.36,KO->R,XP_025344582.1
+TI1000411_PLAS__plas,,,orphan_no_species_evidence,
+R04162__cyto,R04162,3.1.3.4,EC,XP_025340854.1 or XP_025341539.1 or XP_025341834.1 or XP_025342582.1 or XP_025342652.1 or XP_025342725.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1 or XP_025344313.1
+R02957__cyto,R02957,1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+R01801__mito,R01801,2.7.8.5,EC,XP_025343691.1
+R03451__cyto,R03451,1.14.11.8,KO->R,XP_025339677.1
+R09881__cyto,R09881,3.6.1.61,EC,XP_025341681.1 or XP_025342527.1 or XP_025343724.1 or XP_025344566.1
+R04535__cyto,R04535,2.3.1.85;2.3.1.86;4.2.1.59,KO->R,XP_025344154.1 or XP_025344234.1
+R01126__cyto,R01126,3.1.3.99,KO->R,XP_025340854.1 or XP_025343207.1
+R02056__cyto,R02056,2.1.1.17,KO->R,XP_025341888.1 or XP_025343496.1
+R02111__cyto,R02111,2.4.1.1,KO->R,XP_025340354.1 or XP_025340424.1
+R00943__cyto,R00943,6.3.4.3,KO->R,XP_025341200.1 or XP_025342445.1
+R07758__cyto,R07758,2.3.1.199,KO->R,XP_025340013.1 or XP_025342920.1
+EX_C00178__extr,,,exchange/biomass,
+TI2903744_PLAS__plas,,,orphan_no_species_evidence,
+TZ3101584_PLAS__plas,,,orphan_no_species_evidence,
+R09409__cyto,R09409,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+R05334__cyto,R05334,4.5.1.5,orphan_no_species_evidence,
+R01624__cyto,R01624,2.3.1.38;2.3.1.85;2.3.1.86,KO->R,XP_025344154.1
+TO1000009_PLAS__plas,,,orphan_no_species_evidence,
+TZ5900003_PLAS__plas,,,orphan_no_species_evidence,
+R01654__cyto,R01654,6.3.2.12;6.3.2.17,EC,XP_025342767.1 or XP_025343670.1
+TO0000003_CytoPero__pero,,,orphan_no_species_evidence,
+EX_C00296__extr,,,exchange/biomass,
+EX_C05512__extr,,,exchange/biomass,
+TZ3106838_PLAS__plas,,,orphan_no_species_evidence,
+R04125__cyto,R04125,2.1.2.10,KO->R,XP_025343944.1
+R00259__cyto,R00259,2.3.1.1,KO->R,XP_025344629.1
+R02019__cyto,R02019,1.17.4.1,KO->R,XP_025340212.1 or XP_025342434.1 or XP_025344702.1
+T_Pantetheine_4_phosphate_c01134_MitoCyto__mito,,,orphan_no_species_evidence,
+R08237__cyto,R08237,2.4.2.8,EC,XP_025340346.1 or XP_025344508.1
+R01163__cyto,R01163,1.1.1.23,KO->R,XP_025340600.1
+R02335__cyto,R02335,2.4.1.16,KO->R,XP_025341366.1 or XP_025341926.1 or XP_025342260.1 or XP_025343048.1
+TZ3100091_PLAS__plas,,,orphan_no_species_evidence,
+R00896__mito,R00896,2.6.1.1,orphan_no_species_evidence,
+EX_C04248__extr,,,exchange/biomass,
+R03942__cyto,R03942,1.1.1.173,KO->R,XP_025341984.1
+TI3000296_PLAS__plas,,,orphan_no_species_evidence,
+R00570__cyto,R00570,2.7.4.6,KO->R,XP_025339680.1
+T_Ethanol_c00469_CytoMito__mito,,,orphan_no_species_evidence,
+R03815__mito,R03815,1.8.1.4,KO->R,XP_025339830.1
+R00508__cyto,R00508,3.1.3.7,KO->R,XP_025340955.1
+R09222__cyto,R09222,3.1.1.45,KO->R,XP_025343544.1
+R01244__cyto,R01244,1.1.1.66,KO->R,XP_025342259.1
+TO1000065_PLAS__plas,,,orphan_no_species_evidence,
+TI2903737_PLAS__plas,,,orphan_no_species_evidence,
+R08245__cyto,R08245,2.4.2.8,EC,XP_025340346.1 or XP_025344508.1
+R01933__cyto,R01933,2.3.1.61,KO->R,XP_025339830.1 or XP_025340084.1
+EX_C00077__extr,,,exchange/biomass,
+EX_C01189__extr,,,exchange/biomass,
+Ammonia_NH3_transport_reaction__plas,,,orphan_no_species_evidence,
+R08773__mito,R08773,,orphan_no_species_evidence,
+TR1000087_PLAS__plas,,,orphan_no_species_evidence,
+TO1000438_PLAS__plas,,,orphan_no_species_evidence,
+R04433__mito,R04433,1.5.5.1,EC,XP_025340125.1
+T_Adenine_c00147_MitoCyto__mito,,,orphan_no_species_evidence,
+R06171__cyto,R06171,,KO->R,XP_025343692.1 or XP_025344547.1
+TR2000269_PLAS__plas,,,orphan_no_species_evidence,
+TO1003282_PLAS__plas,,,orphan_no_species_evidence,
+TR1000467_PLAS__plas,,,orphan_no_species_evidence,
+R00321__cyto,R00321,3.5.1.4,EC,XP_025341376.1 or XP_025342627.1 or XP_025343826.1 or XP_025344152.1 or XP_025344428.1
+TO0000223_PLAS__plas,,,orphan_no_species_evidence,
+TR1000330_PLAS__plas,,,orphan_no_species_evidence,
+TI2000703_PLAS__plas,,,orphan_no_species_evidence,
+EX_C04438__extr,,,exchange/biomass,
+TO1001608_PLAS__plas,,,orphan_no_species_evidence,
+TI2903664_PLAS__plas,,,orphan_no_species_evidence,
+TO0000066_PLAS__plas,,,orphan_no_species_evidence,
+EX_C04598__extr,,,exchange/biomass,
+R00512__cyto,R00512,2.7.4.25,KO->R,XP_025342018.1
+R09827__cyto,R09827,3.1.3.36;3.1.3.86,KO->R,XP_025344582.1
+R00258__mito,R00258,2.6.1.2,KO->R,XP_025340878.1
+R03950__cyto,R03950,2.1.1.107,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025343349.1 or XP_025344269.1 or XP_025344279.1
+TO0000033_PLAS__plas,,,orphan_no_species_evidence,
+R00760__cyto,R00760,2.7.1.1;2.7.1.4,KO->R,XP_025342548.1 or XP_025343090.1 or XP_025343315.1
+R08772__mito,R08772,2.1.1.222,KO->R,XP_025339947.1
+EX_C00018__extr,,,exchange/biomass,
+R02327__cyto,R02327,2.7.1.48,EC,XP_025340880.1 or XP_025344429.1
+R00895__pero,R00895,2.6.1.1,orphan_no_species_evidence,
+TZ3101610_PLAS__plas,,,orphan_no_species_evidence,
+EX_C04501__extr,,,exchange/biomass,
+TO1000029_PLAS__plas,,,orphan_no_species_evidence,
+TR1000310_PLAS__plas,,,orphan_no_species_evidence,
+R02767__cyto,R02767,1.1.1.100,KO->R,XP_025341358.1
+R02466__cyto,R02466,4.1.1.15;4.1.1.29,KO->R,XP_025341373.1 or XP_025343228.1
+TR0000588_PLAS__plas,,,orphan_no_species_evidence,
+R11957__cyto,R11957,2.3.1.268,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344518.1
+R11679__cyto,R11679,,KO->R,XP_025340420.1
+EX_C11556__extr,,,exchange/biomass,
+TO1000924_PLAS__plas,,,orphan_no_species_evidence,
+R01184__cyto,R01184,1.13.99.1,KO->R,XP_025340307.1
+TO1000069_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00047__extr,,,exchange/biomass,
+T_Succinate_c00042_MitoCyto__mito,,,orphan_no_species_evidence,
+TI1000644_PLAS__plas,,,orphan_no_species_evidence,
+TO1000411_PLAS__plas,,,orphan_no_species_evidence,
+R04247__cyto,R04247,2.7.7.14,KO->R,XP_025341378.1
+R12449__mito,R12449,6.3.1.20,orphan_no_species_evidence,
+R12402__cyto,R12402,1.1.1.270,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1 or XP_025341826.1
+TR1000567_PLAS__plas,,,orphan_no_species_evidence,
+EX_C04593__extr,,,exchange/biomass,
+R01185__cyto,R01185,3.1.3.25,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1
+EX_C04475__extr,,,exchange/biomass,
+TI2000051_PLAS__plas,,,orphan_no_species_evidence,
+R08549__mito,R08549,1.2.4.2;1.8.1.4,KO->R,XP_025339830.1 or XP_025340084.1 or XP_025343511.1
+EX_C00106__extr,,,exchange/biomass,
+R04463__cyto,R04463,6.3.5.3,KO->R,XP_025343700.1
+R01248__cyto,R01248,1.5.1.2,KO->R,XP_025340638.1
+R00174__cyto,R00174,2.7.1.35,KO->R,XP_025340981.1 or XP_025342691.1
+R03199__cyto,R03199,5.4.99.7,EC,XP_025344216.1
+TI2903710_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100171_PLAS__plas,,,orphan_no_species_evidence,
+R02057__cyto,R02057,2.7.8.1,EC,XP_025343691.1
+R01528__cyto,R01528,1.1.1.351;1.1.1.44,KO->R,XP_025343524.1
+R02239__cyto,R02239,3.1.3.4;3.1.3.81,KO->R,XP_025341539.1 or XP_025342582.1 or XP_025342725.1 or XP_025344313.1
+R04903__cyto,R04903,1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+R02115__cyto,R02115,3.1.1.13,EC,XP_025339641.1 or XP_025340436.1 or XP_025341324.1 or XP_025341506.1 or XP_025342500.1 or XP_025342842.1 or XP_025342913.1 or XP_025342985.1 or XP_025343593.1 or XP_025344149.1 or XP_025344529.1
+R08178__cyto,R08178,3.1.2.2,EC,XP_025341137.1 or XP_025342529.1
+R00512__mito,R00512,2.7.4.14,KO->R,XP_025342018.1
+R04184__cyto,R04184,3.2.1.52,EC,XP_025341196.1 or XP_025342675.1 or XP_025344668.1
+R00829__cyto,R00829,2.3.1.16;2.3.1.174,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344328.1 or XP_025344518.1
+R03503__cyto,R03503,2.7.6.3,KO->R,XP_025344187.1
+TI3000040_PLAS__plas,,,orphan_no_species_evidence,
+R05238__cyto,R05238,1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+R00220__cyto,R00220,4.3.1.19,KO->R,XP_025340320.1 or XP_025341535.1 or XP_025342032.1
+R07349__cyto,R07349,1.3.1.74,EC,XP_025339979.1 or XP_025340151.1
+EX_C00009__extr,,,exchange/biomass,
+TI3001250_PLAS__plas,,,orphan_no_species_evidence,
+R04747__cyto,R04747,2.3.1.16,KO->R,XP_025344328.1
+R08549__cyto,R08549,2.3.1.61,KO->R,XP_025339830.1 or XP_025340084.1 or XP_025343511.1
+R01802__cyto,R01802,2.7.8.11,KO->R,XP_025342546.1
+R03223__cyto,R03223,2.5.1.3,KO->R,XP_025344068.1
+TI1000858_PLAS__plas,,,orphan_no_species_evidence,
+R00004__cyto,R00004,3.6.1.1,EC,XP_025340002.1 or XP_025341681.1 or XP_025342527.1 or XP_025342822.1 or XP_025343724.1 or XP_025344566.1
+R07069__cyto,R07069,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+TZ3102074_PLAS__plas,,,orphan_no_species_evidence,
+R03321__cyto,R03321,5.3.1.9,KO->R,XP_025339672.1
+R06223__cyto,R06223,2.5.1.21,KO->R,XP_025344713.1
+TI3001187_PLAS__plas,,,orphan_no_species_evidence,
+R00224__cyto,R00224,4.1.1.1,EC,XP_025339759.1 or XP_025340244.1 or XP_025343925.1
+R03662__cyto,R03662,6.1.1.11,KO->R,XP_025340024.1 or XP_025342279.1
+TR1002374_PLAS__plas,,,orphan_no_species_evidence,
+T_L_Serine_c00065_MitoCyto__mito,,,orphan_no_species_evidence,
+R00161__cyto,R00161,2.7.7.2,KO->R,XP_025341416.1
+R05237__cyto,R05237,2.3.1.16,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+R12401__cyto,R12401,1.1.1.270,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1 or XP_025341826.1
+R12067__mito,R12067,1.14.99.60,orphan_no_species_evidence,
+R06917__cyto,R06917,1.1.1.1,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+R04754__cyto,R04754,1.3.3.6;1.3.8.7;1.3.8.8,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+R00220__mito,R00220,4.3.1.19,KO->R,XP_025340320.1 or XP_025341535.1 or XP_025342032.1
+R03857__pero,R03857,1.3.3.6,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+R00942__cyto,R00942,6.3.2.17,KO->R,XP_025343670.1
+R01251__cyto,R01251,1.5.1.2,KO->R,XP_025340638.1
+R00267__mito,R00267,1.1.1.42,KO->R,XP_025339834.1 or XP_025341569.1
+R04534__cyto,R04534,1.1.1.100;2.3.1.85;2.3.1.86,KO->R,XP_025341358.1 or XP_025343463.1
+TO1000291_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100140_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00570__extr,,,exchange/biomass,
+TO1002738_PLAS__plas,,,orphan_no_species_evidence,
+R04742__cyto,R04742,1.1.1.211;1.1.1.35,KO->R,XP_025344328.1
+T_L_Tyrosine_c00082_MitoCyto__mito,,,orphan_no_species_evidence,
+EX_C00350__extr,,,exchange/biomass,
+R02521__cyto,R02521,1.13.11.27,KO->R,XP_025342817.1
+TZ3100130_PLAS__plas,,,orphan_no_species_evidence,
+TO1000242_PLAS__plas,,,orphan_no_species_evidence,
+R02018__cyto,R02018,1.17.4.1,KO->R,XP_025340212.1 or XP_025342434.1 or XP_025344702.1
+TO0001573_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102034_PLAS__plas,,,orphan_no_species_evidence,
+R07023__cyto,R07023,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+TZ3100208_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00508__extr,,,exchange/biomass,
+TZ3104651_PLAS__plas,,,orphan_no_species_evidence,
+R11043__cyto,R11043,1.14.19.6,KO->R,XP_025341927.1 or XP_025344710.1
+TI2903658_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102304_PLAS__plas,,,orphan_no_species_evidence,
+TZ3106855_PLAS__plas,,,orphan_no_species_evidence,
+EX_C04036__extr,,,exchange/biomass,
+R01430__cyto,R01430,1.1.1.179,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+R04965__cyto,R04965,2.3.1.85;2.3.1.86;4.2.1.59,KO->R,XP_025344154.1 or XP_025344234.1
+Sterol__cyto,,,orphan_no_species_evidence,
+Ex_Imidazole_c01589__extr,,,exchange/biomass,
+R10991__cyto,R10991,2.6.1.42,KO->R,XP_025343425.1
+R00986__cyto,R00986,4.1.3.27,KO->R,XP_025342318.1 or XP_025343020.1
+TR1000493_PLAS__plas,,,orphan_no_species_evidence,
+R02740__cyto,R02740,5.3.1.9,KO->R,XP_025339672.1
+TZ3100170_PLAS__plas,,,orphan_no_species_evidence,
+R01909__cyto,R01909,2.7.1.35,KO->R,XP_025340981.1 or XP_025342691.1
+R08557__cyto,R08557,1.1.1.1,EC,XP_025340417.1 or XP_025340439.1 or XP_025340682.1 or XP_025340730.1 or XP_025341008.1 or XP_025341281.1 or XP_025341358.1 or XP_025341719.1
+TI3000279_PLAS__plas,,,orphan_no_species_evidence,
+R04027__cyto,R04027,1.4.3.21,KO->R,XP_025340831.1 or XP_025341286.1
+EX_C04308__extr,,,exchange/biomass,
+R07408__cyto,R07408,2.6.1.82,orphan_no_species_evidence,
+R01090__cyto,R01090,2.6.1.42;2.6.1.6;2.6.1.67,KO->R,XP_025343425.1
+TZ3103348_PLAS__plas,,,orphan_no_species_evidence,
+R12406__cyto,R12406,1.1.1.170,EC,XP_025339777.1 or XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1
+TO0000222_PLAS__plas,,,orphan_no_species_evidence,
+TO0001217_PLAS__plas,,,orphan_no_species_evidence,
+R02300__cyto,R02300,2.1.2.10,KO->R,XP_025343944.1
+R00267__cyto,R00267,1.1.1.42,KO->R,XP_025339834.1 or XP_025341569.1
+R04970__mito,R04970,1.3.1.104,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+TR1000404_PLAS__plas,,,orphan_no_species_evidence,
+TR1000304_PLAS__plas,,,orphan_no_species_evidence,
+TI0013385_PLAS__plas,,,orphan_no_species_evidence,
+TO1000035_PLAS__plas,,,orphan_no_species_evidence,
+EX_C09382__extr,,,exchange/biomass,
+R03816__cyto,R03816,1.6.5.2,KO->R,XP_025344478.1 or XP_025344479.1 or XP_025344480.1
+R10121__cyto,R10121,4.2.1.59,EC,XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+TO0000129_PLAS__plas,,,orphan_no_species_evidence,
+TO3000450_PLAS__plas,,,orphan_no_species_evidence,
+R08231__cyto,R08231,2.4.2.10,EC,XP_025340922.1 or XP_025344508.1
+TO1000311_PLAS__plas,,,orphan_no_species_evidence,
+TI2903681_PLAS__plas,,,orphan_no_species_evidence,
+EX_C01595__extr,,,exchange/biomass,
+R02241__cyto,R02241,2.3.1.51,KO->R,XP_025342466.1 or XP_025342937.1 or XP_025342985.1 or XP_025344008.1
+TI2903694_PLAS__plas,,,orphan_no_species_evidence,
+TR0012849_PLAS__plas,,,orphan_no_species_evidence,
+TO1000218_PLAS__plas,,,orphan_no_species_evidence,
+R07026__cyto,R07026,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+R02021__cyto,R02021,1.8.4.8,KO->R,XP_025342625.1
+T_L_Isoleucine_c00407_MitoCyto__mito,,,orphan_no_species_evidence,
+TO3000642_PLAS__plas,,,orphan_no_species_evidence,
+R08557__mito,R08557,1.1.1.1,EC,XP_025340417.1 or XP_025340439.1 or XP_025340682.1 or XP_025340730.1 or XP_025341008.1 or XP_025341281.1 or XP_025341358.1 or XP_025341719.1
+TR1000064_PLAS__plas,,,orphan_no_species_evidence,
+TO0000003_PLAS__plas,,,orphan_no_species_evidence,
+TZ3101611_PLAS__plas,,,orphan_no_species_evidence,
+Ex_D_Glucuronate_c00191__extr,,,exchange/biomass,
+TO0000056_PLAS__plas,,,orphan_no_species_evidence,
+TR1000550_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00504__extr,,,exchange/biomass,
+R00765__cyto,R00765,2.7.1.90,KO->R,XP_025343089.1
+TR0011456_PLAS__plas,,,orphan_no_species_evidence,
+TI2000161_PLAS__plas,,,orphan_no_species_evidence,
+Ex_Mannitol_c00392__extr,,,exchange/biomass,
+R02241__mito,R02241,2.3.1.51,KO->R,XP_025342466.1 or XP_025342937.1 or XP_025342985.1 or XP_025344008.1
+R00985__cyto,R00985,4.1.3.27,KO->R,XP_025342318.1 or XP_025343020.1
+TO1000039_PLAS__plas,,,orphan_no_species_evidence,
+TR2000193_PLAS__plas,,,orphan_no_species_evidence,
+R06983__cyto,R06983,1.1.1.284,KO->R,XP_025341281.1
+R01468__cyto,R01468,2.7.1.82,KO->R,XP_025342724.1
+R10281__cyto,R10281,4.2.3.142,orphan_no_species_evidence,
+TO1000249_PLAS__plas,,,orphan_no_species_evidence,
+TI0000506_PLAS__plas,,,orphan_no_species_evidence,
+R05779__mito,R05779,3.6.1.52,EC,XP_025341681.1 or XP_025342527.1 or XP_025343328.1 or XP_025343724.1 or XP_025344566.1
+R08232__cyto,R08232,2.7.1.48,KO->R,XP_025340880.1
+TI1000041_PLAS__plas,,,orphan_no_species_evidence,
+R08558__mito,R08558,1.1.1.1,EC,XP_025340417.1 or XP_025340439.1 or XP_025340682.1 or XP_025340730.1 or XP_025341008.1 or XP_025341281.1 or XP_025341358.1 or XP_025341719.1
+R05731__cyto,R05731,1.14.14.154,KO->R,XP_025344294.1
+R04970__cyto,R04970,1.3.1.10;1.3.1.39;2.3.1.85;2.3.1.86,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+R00004__mito,R00004,3.6.1.1,EC,XP_025340002.1 or XP_025341681.1 or XP_025342527.1 or XP_025342822.1 or XP_025343724.1 or XP_025344566.1
+EX_C02737__extr,,,exchange/biomass,
+R00268__cyto,R00268,1.1.1.42,KO->R,XP_025339834.1 or XP_025341569.1
+R02732__cyto,R02732,2.7.1.105,KO->R,XP_025344229.1
+TO1000132_PLAS__plas,,,orphan_no_species_evidence,
+TI1000291_PLAS__plas,,,orphan_no_species_evidence,
+TO1000342_PLAS__plas,,,orphan_no_species_evidence,
+R05233__cyto,R05233,1.1.1.1,KO->R,XP_025340682.1 or XP_025340730.1 or XP_025341281.1 or XP_025341719.1
+R05511__cyto,R05511,3.1.1.45,KO->R,XP_025343544.1
+R10993__cyto,R10993,6.3.2.2,KO->R,XP_025343215.1
+EX_C02679__extr,,,exchange/biomass,
+Ex_Melibiose_c05402__extr,,,exchange/biomass,
+R02237__mito,R02237,6.3.2.17,KO->R,XP_025342767.1 or XP_025343670.1
+R01280__cyto,R01280,6.2.1.3,KO->R,XP_025341276.1
+R01968__cyto,R01968,3.1.3.89,KO->R,XP_025342351.1 or XP_025343207.1
+R05086__cyto,R05086,4.2.3.1,KO->R,XP_025344615.1
+R03916__cyto,R03916,2.3.2.2,KO->R,XP_025341618.1
+R00137__cyto,R00137,2.7.7.1;2.7.7.18,KO->R,XP_025342640.1 or XP_025343751.1
+TO2000558_PLAS__plas,,,orphan_no_species_evidence,
+TO1000041_PLAS__plas,,,orphan_no_species_evidence,
+T_4_aminobutanoate_c00334_MitoCyto__mito,,,orphan_no_species_evidence,
+R01598__cyto,R01598,6.2.1.15,orphan_no_species_evidence,
+R03005__cyto,R03005,2.7.7.1;2.7.7.18,KO->R,XP_025342640.1 or XP_025343751.1
+EX_C00073__extr,,,exchange/biomass,
+Cellobiose__extr,,,exchange/biomass,
+TZ3101628_PLAS__plas,,,orphan_no_species_evidence,
+R03664__cyto,R03664,6.1.1.2,KO->R,XP_025342903.1 or XP_025343964.1
+TO1000186_PLAS__plas,,,orphan_no_species_evidence,
+TI1000274_PLAS__plas,,,orphan_no_species_evidence,
+R06982__cyto,R06982,4.4.1.22,orphan_no_species_evidence,
+R02613__cyto,R02613,1.4.3.21;1.4.3.4,KO->R,XP_025340831.1 or XP_025341286.1
+TO0000310_PLAS__plas,,,orphan_no_species_evidence,
+TI0000027_PLAS__plas,,,orphan_no_species_evidence,
+TZ3106850_PLAS__plas,,,orphan_no_species_evidence,
+R01218__cyto,R01218,1.5.1.15,KO->R,XP_025341853.1
+TZ3100105_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00416__extr,,,exchange/biomass,
+TZ3101583_PLAS__plas,,,orphan_no_species_evidence,
+TO1019001_PLAS__plas,,,orphan_no_species_evidence,
+TO1000156_PLAS__plas,,,orphan_no_species_evidence,
+R02953__cyto,R02953,4.4.1.13,EC,XP_025340817.1
+TO1000266_PLAS__plas,,,orphan_no_species_evidence,
+R01872__cyto,R01872,1.1.1.24;1.1.1.282,KO->R,XP_025341083.1
+T_Indole_3_acetaldehyde_c00637_MitoCyto__mito,,,orphan_no_species_evidence,
+R02082__cyto,R02082,1.1.1.34,KO->R,XP_025340375.1
+TO2902938_PLAS__plas,,,orphan_no_species_evidence,
+TZ3103347_PLAS__plas,,,orphan_no_species_evidence,
+R04405__cyto,R04405,2.1.1.14,KO->R,XP_025342317.1
+R03482__cyto,R03482,3.5.1.89,EC,XP_025341376.1 or XP_025341397.1 or XP_025342627.1 or XP_025343826.1
+TR2900020_PLAS__plas,,,orphan_no_species_evidence,
+TO0000032_PLAS__plas,,,orphan_no_species_evidence,
+TR2900007_PLAS__plas,,,orphan_no_species_evidence,
+R02055__mito,R02055,4.1.1.65,KO->R,XP_025340389.1 or XP_025341685.1
+EX_C00448__extr,,,exchange/biomass,
+R05333__cyto,R05333,2.3.1.158,KO->R,XP_025340238.1
+R03416__pero,R03416,3.1.1.5,KO->R,XP_025340069.1
+R04780__cyto,R04780,3.1.3.11,KO->R,XP_025342485.1
+TZ3102087_PLAS__plas,,,orphan_no_species_evidence,
+TR1000051_PLAS__plas,,,orphan_no_species_evidence,
+alpha_alpha_Trehalose_transport_reaction__plas,,,orphan_no_species_evidence,
+TO3001046_PLAS__plas,,,orphan_no_species_evidence,
+TO0000019_PLAS__plas,,,orphan_no_species_evidence,
+R10685__cyto,R10685,,KO->R,XP_025340326.1
+TO0013384_PLAS__plas,,,orphan_no_species_evidence,
+R02867__cyto,R02867,2.7.1.1,EC,XP_025342548.1 or XP_025343090.1 or XP_025343315.1 or XP_025344429.1
+TZ3102057_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00137__extr,,,exchange/biomass,
+T_5_Phospho_alpha_D_ribose_1_dipohosphate_c00119_CytoMito__mito,,,orphan_no_species_evidence,
+TI1000104_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102027_PLAS__plas,,,orphan_no_species_evidence,
+R01213__mito,R01213,2.3.3.13,KO->R,XP_025344135.1
+R08176__cyto,R08176,3.1.2.2,EC,XP_025341137.1 or XP_025342529.1
+EX_C00130__extr,,,exchange/biomass,
+R07937__cyto,R07937,2.3.1.16;2.3.1.176,KO->R,XP_025344328.1
+R01310__cyto,R01310,1.1.1.45,KO->R,XP_025343243.1
+R04563__cyto,R04563,6.3.4.9,EC,XP_025341958.1
+R02736__cyto,R02736,1.1.1.363,KO->R,XP_025344388.1
+R04967__cyto,R04967,1.3.1.10;1.3.1.39;2.3.1.85;2.3.1.86,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+EX_C00078__extr,,,exchange/biomass,
+EX_C00507__extr,,,exchange/biomass,
+R00268__mito,R00268,1.1.1.42,KO->R,XP_025339834.1 or XP_025341569.1
+TI3000207_PLAS__plas,,,orphan_no_species_evidence,
+R01714__cyto,R01714,4.2.3.5,KO->R,XP_025340088.1
+R08512__cyto,R08512,2.5.1.18,EC,XP_025343711.1 or XP_025343970.1 or XP_025344035.1
+TR1000201_PLAS__plas,,,orphan_no_species_evidence,
+R02237__cyto,R02237,6.3.2.12;6.3.2.17,KO->R,XP_025342767.1 or XP_025343670.1
+R00722__cyto,R00722,2.7.4.6,KO->R,XP_025339680.1
+TI1000342_PLAS__plas,,,orphan_no_species_evidence,
+R03449__cyto,R03449,2.7.11.2,EC,XP_025339709.1 or XP_025341339.1 or XP_025342403.1 or XP_025342572.1 or XP_025343092.1 or XP_025344536.1
+TR0000209_PLAS__plas,,,orphan_no_species_evidence,
+TR1000156_PLAS__plas,,,orphan_no_species_evidence,
+R01934__cyto,R01934,1.1.1.286;1.1.1.87,KO->R,XP_025339622.1
+TZ3102052_PLAS__plas,,,orphan_no_species_evidence,
+TI2903703_PLAS__plas,,,orphan_no_species_evidence,
+R00416__cyto,R00416,2.7.7.23,KO->R,XP_025341770.1
+R02457__cyto,R02457,1.4.3.3,KO->R,XP_025341810.1 or XP_025342276.1 or XP_025343797.1 or XP_025344644.1
+R00485__cyto,R00485,3.5.1.1;3.5.1.38;3.5.5.4,KO->R,XP_025341277.1
+R00103__cyto,R00103,3.6.1.9,KO->R,XP_025343934.1
+R10117__cyto,R10117,4.2.1.59,EC,XP_025340868.1 or XP_025341358.1 or XP_025344234.1
+R05861__cyto,R05861,1.4.3.19;1.4.3.3,EC,XP_025341810.1 or XP_025342276.1 or XP_025343797.1 or XP_025344644.1
+T_Oxaloacetate_c00036_MitoCyto__mito,,,orphan_no_species_evidence,
+TI1009049_PLAS__plas,,,orphan_no_species_evidence,
+TO1000404_PLAS__plas,,,orphan_no_species_evidence,
+R00132__cyto,R00132,4.2.1.1,KO->R,XP_025342332.1
+Ex_L_Lactate_M8432__extr,,,exchange/biomass,
+R03417__mito,R03417,3.1.1.5,KO->R,XP_025340069.1
+T_Phosphatidylserine_c02737_MitoCyto__mito,,,orphan_no_species_evidence,
+R03102__cyto,R03102,1.2.1.31,orphan_no_species_evidence,
+TR1000346_PLAS__plas,,,orphan_no_species_evidence,
+TR0000239_PLAS__plas,,,orphan_no_species_evidence,
+R00946__cyto,R00946,2.1.1.13,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+TZ3102040_PLAS__plas,,,orphan_no_species_evidence,
+R01287__cyto,R01287,2.5.1.49,KO->R,XP_025340642.1
+R01470__cyto,R01470,3.1.4.2;3.1.4.46,KO->R,XP_025341788.1
+R10712__cyto,R10712,2.5.1.3,KO->R,XP_025344068.1
+TO1000108_PLAS__plas,,,orphan_no_species_evidence,
+TO1000201_PLAS__plas,,,orphan_no_species_evidence,
+R00130__cyto,R00130,2.7.1.24,KO->R,XP_025343158.1
+R00100__cyto,R00100,1.6.2.2,KO->R,XP_025340368.1 or XP_025340793.1 or XP_025344777.1
+TR0003396_PLAS__plas,,,orphan_no_species_evidence,
+R08771__mito,R08771,2.1.1.114,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+TZ3103365_PLAS__plas,,,orphan_no_species_evidence,
+EX_C01530__extr,,,exchange/biomass,
+TO1000809_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00794__extr,,,exchange/biomass,
+R03635__cyto,R03635,3.2.1.26,KO->R,XP_025344742.1
+R02144__cyto,R02144,2.1.1.22,KO->R,XP_025342085.1
+TR0011652_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102069_PLAS__plas,,,orphan_no_species_evidence,
+R04568__cyto,R04568,2.3.1.85;2.3.1.86;4.2.1.59,KO->R,XP_025344154.1 or XP_025344234.1
+R00261__cyto,R00261,4.1.1.15,KO->R,XP_025341373.1 or XP_025343228.1
+R00858__cyto,R00858,1.8.1.2,KO->R,XP_025344085.1
+Thioredoxin__extr,,,exchange/biomass,
+R00762__cyto,R00762,3.1.3.11,KO->R,XP_025342485.1
+R01569__cyto,R01569,3.1.3.35;3.1.3.89,KO->R,XP_025342351.1 or XP_025343207.1
+R10463__cyto,R10463,2.7.7.87,KO->R,XP_025339699.1
+R08774__mito,R08774,2.1.1.201,EC,XP_025339772.1 or XP_025340288.1 or XP_025340746.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+R03444__cyto,R03444,4.2.1.114,KO->R,XP_025340868.1
+R04711__cyto,R04711,2.1.1.114,EC,XP_025339772.1 or XP_025340288.1 or XP_025340960.1 or XP_025341101.1 or XP_025341151.1 or XP_025341435.1 or XP_025341442.1 or XP_025342344.1 or XP_025342368.1 or XP_025342777.1 or XP_025343160.1 or XP_025344269.1 or XP_025344279.1
+4_Hydroxybenzoate_Mitochondrial_transport___mito,,,orphan_no_species_evidence,
+TO1000016_PLAS__plas,,,orphan_no_species_evidence,
+TZ3101363_PLAS__plas,,,orphan_no_species_evidence,
+TI0001017_PLAS__plas,,,orphan_no_species_evidence,
+R00885__cyto,R00885,2.7.7.13,KO->R,XP_025342482.1
+R05052__cyto,R05052,2.6.1.1;2.6.1.23,orphan_no_species_evidence,
+TZ3102102_PLAS__plas,,,orphan_no_species_evidence,
+R00226__cyto,R00226,2.2.1.6,KO->R,XP_025341159.1 or XP_025341626.1
+R01068__cyto,R01068,4.1.2.13,KO->R,XP_025342563.1
+TZ3103157_PLAS__plas,,,orphan_no_species_evidence,
+R05553__cyto,R05553,4.1.3.38,orphan_no_species_evidence,
+R00480__cyto,R00480,2.7.2.4,KO->R,XP_025340370.1
+TI3001194_PLAS__plas,,,orphan_no_species_evidence,
+EX_C08362__extr,,,exchange/biomass,
+R01652__cyto,R01652,1.1.1.85,EC,XP_025340417.1 or XP_025340439.1 or XP_025341008.1 or XP_025341358.1 or XP_025342199.1
+R00724__cyto,R00724,2.7.1.40,EC,XP_025340747.1 or XP_025344429.1
+TI2903708_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00135__extr,,,exchange/biomass,
+EX_C01251__extr,,,exchange/biomass,
+R01843__cyto,R01843,2.7.1.11,EC,XP_025340245.1 or XP_025341699.1 or XP_025344429.1
+TO3000519_PLAS__plas,,,orphan_no_species_evidence,
+R00483__cyto,R00483,6.3.1.1;6.3.5.4,EC,XP_025342990.1 or XP_025343471.1
+R02053__cyto,R02053,3.1.1.4,KO->R,XP_025342985.1
+R07093__cyto,R07093,2.5.1.18,KO->R,XP_025343711.1 or XP_025344035.1
+TO0000923_PLAS__plas,,,orphan_no_species_evidence,
+TO0000190_PLAS__plas,,,orphan_no_species_evidence,
+R10119__cyto,R10119,2.3.1.179;2.3.1.41,KO->R,XP_025343608.1
+TO3000387_PLAS__plas,,,orphan_no_species_evidence,
+TI0000039_PLAS__plas,,,orphan_no_species_evidence,
+Oxygen_transport_reaction_CytoPero__pero,,,orphan_no_species_evidence,
+TO0014859_PLAS__plas,,,orphan_no_species_evidence,
+R01845__cyto,R01845,3.1.3.11,EC,XP_025340854.1 or XP_025341834.1 or XP_025342485.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1
+R08238__cyto,R08238,2.4.2.8,EC,XP_025340346.1 or XP_025344508.1
+TZ3100210_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100203_PLAS__plas,,,orphan_no_species_evidence,
+TO0012174_PLAS__plas,,,orphan_no_species_evidence,
+TZ3106849_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00075__extr,,,exchange/biomass,
+R03139__cyto,R03139,1.4.3.21;1.4.3.22,KO->R,XP_025340831.1 or XP_025341286.1
+TO3001440_PLAS__plas,,,orphan_no_species_evidence,
+R03417__cyto,R03417,3.1.1.5,KO->R,XP_025340069.1
+TZ3101431_PLAS__plas,,,orphan_no_species_evidence,
+TO1000248_PLAS__plas,,,orphan_no_species_evidence,
+R02332__cyto,R02332,2.7.1.48,EC,XP_025340880.1 or XP_025344429.1
+TI1000822_PLAS__plas,,,orphan_no_species_evidence,
+R00667__cyto,R00667,2.6.1.13,KO->R,XP_025340645.1
+R03504__cyto,R03504,4.1.2.25,KO->R,XP_025344187.1
+R03857__cyto,R03857,1.3.3.6;1.3.8.7;1.3.8.8,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+R01655__mito,R01655,3.5.4.9,KO->R,XP_025341200.1 or XP_025342445.1
+TR1000266_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100128_PLAS__plas,,,orphan_no_species_evidence,
+TO0008721_PLAS__plas,,,orphan_no_species_evidence,
+TO3000605_PLAS__plas,,,orphan_no_species_evidence,
+R00887__cyto,R00887,,orphan_no_species_evidence,
+TO1000133_PLAS__plas,,,orphan_no_species_evidence,
+R01786__cyto,R01786,2.7.1.1;2.7.1.2,KO->R,XP_025342548.1 or XP_025343090.1 or XP_025343315.1
+R08707__cyto,R08707,3.5.1.52,EC,XP_025340952.1 or XP_025341376.1 or XP_025342627.1 or XP_025343826.1
+TO0011715_PLAS__plas,,,orphan_no_species_evidence,
+R01127__cyto,R01127,3.5.4.10,KO->R,XP_025341005.1
+EX_C00105__extr,,,exchange/biomass,
+R01931__cyto,R01931,2.8.1.1,KO->R,XP_025343096.1
+TZ2900054_PLAS__plas,,,orphan_no_species_evidence,
+R02055__cyto,R02055,4.1.1.65,KO->R,XP_025340389.1 or XP_025341685.1
+R03260__cyto,R03260,2.5.1.48,KO->R,XP_025340376.1
+R02747__pero,R02747,3.1.1.5,KO->R,XP_025340069.1
+EX_C01194__extr,,,exchange/biomass,
+R04930__cyto,R04930,4.4.1.1,KO->R,XP_025342154.1
+EX_C00295__extr,,,exchange/biomass,
+TR1000016_PLAS__plas,,,orphan_no_species_evidence,
+TR0000314_PLAS__plas,,,orphan_no_species_evidence,
+R07935__cyto,R07935,,orphan_no_species_evidence,
+R02331__cyto,R02331,2.7.4.6,KO->R,XP_025339680.1
+R00851__cyto,R00851,2.3.1.15,KO->R,XP_025341357.1 or XP_025343071.1 or XP_025343346.1 or XP_025343885.1
+R02649__cyto,R02649,2.7.2.8,KO->R,XP_025343569.1
+R07280__cyto,R07280,3.1.3.104,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1
+R01404__cyto,R01404,1.3.1.10;1.3.1.39,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+EX_C00322__extr,,,exchange/biomass,
+R00009__cyto,R00009,1.11.1.21;1.11.1.6,KO->R,XP_025343574.1
+R00668__cyto,R00668,2.6.1.13,EC,XP_025340645.1
+TO1000064_PLAS__plas,,,orphan_no_species_evidence,
+R01067__cyto,R01067,2.2.1.1,KO->R,XP_025340731.1
+R08361__cyto,R08361,,orphan_no_species_evidence,
+TO1000705_PLAS__plas,,,orphan_no_species_evidence,
+EX_C01904__extr,,,exchange/biomass,
+R04751__pero,R04751,1.3.3.6,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+TO1000388_PLAS__plas,,,orphan_no_species_evidence,
+R00351__mito,R00351,2.3.3.1;2.3.3.16;2.3.3.3,KO->R,XP_025341180.1
+TZ2900036_PLAS__plas,,,orphan_no_species_evidence,
+TI3000046_PLAS__plas,,,orphan_no_species_evidence,
+TO1000550_PLAS__plas,,,orphan_no_species_evidence,
+R02422__cyto,R02422,3.5.3.4,KO->R,XP_025344173.1
+TO1002374_PLAS__plas,,,orphan_no_species_evidence,
+R03291__cyto,R03291,1.5.1.2,KO->R,XP_025340638.1
+TI3001077_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00043__extr,,,exchange/biomass,
+R02053__mito,R02053,3.1.1.4,KO->R,XP_025342985.1
+R00572__cyto,R00572,2.7.1.40,EC,XP_025340747.1 or XP_025344429.1
+R04378__cyto,R04378,2.4.2.7,KO->R,XP_025343063.1
+R01900__mito,R01900,2.7.1.53,EC,XP_025344429.1
+R01716__cyto,R01716,2.6.1.85,KO->R,XP_025342541.1
+R01158__cyto,R01158,1.1.1.23,KO->R,XP_025340600.1
+TZ3102075_PLAS__plas,,,orphan_no_species_evidence,
+TR0002803_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00101__extr,,,exchange/biomass,
+R03509__cyto,R03509,5.3.1.24,orphan_no_species_evidence,
+TO0000588_PLAS__plas,,,orphan_no_species_evidence,
+TR0011455_PLAS__plas,,,orphan_no_species_evidence,
+R09136__cyto,R09136,3.1.1.45,KO->R,XP_025343544.1
+R00350__cyto,R00350,1.8.1.3,orphan_no_species_evidence,
+R10688__cyto,R10688,3.4.17.21,EC,XP_025343290.1 or XP_025343307.1 or XP_025344750.1
+R01658__cyto,R01658,2.5.1.1,KO->R,XP_025340303.1 or XP_025343264.1
+TZ3102328_PLAS__plas,,,orphan_no_species_evidence,
+TI0000212_PLAS__plas,,,orphan_no_species_evidence,
+EX_C02336__extr,,,exchange/biomass,
+R01061__cyto,R01061,1.2.1.12;1.2.1.59,KO->R,XP_025340452.1 or XP_025344088.1
+R11896__mito,R11896,3.6.1.23,KO->R,XP_025343733.1
+R00571__cyto,R00571,6.3.4.2,KO->R,XP_025341782.1
+R02051__cyto,R02051,3.1.4.4,KO->R,XP_025343243.1
+R01900__cyto,R01900,2.7.1.53,EC,XP_025344429.1
+R00578__cyto,R00578,6.3.5.4,KO->R,XP_025342990.1 or XP_025343471.1
+TO0000767_PLAS__plas,,,orphan_no_species_evidence,
+R04125__mito,R04125,2.1.2.10,KO->R,XP_025343944.1
+R10092__cyto,R10092,4.2.1.1,KO->R,XP_025342332.1
+TO0011837_PLAS__plas,,,orphan_no_species_evidence,
+TI2002869_PLAS__plas,,,orphan_no_species_evidence,
+R11231__cyto,R11231,1.2.1.31,orphan_no_species_evidence,
+TO0000610_PLAS__plas,,,orphan_no_species_evidence,
+R11399__cyto,R11399,2.4.1.109,KO->R,XP_025339553.1 or XP_025340804.1 or XP_025341386.1 or XP_025344077.1 or XP_025344089.1
+R09944__cyto,R09944,2.7.1.174,KO->R,XP_025340471.1
+R01216__cyto,R01216,4.1.2.12,orphan_no_species_evidence,
+TZ3100089_PLAS__plas,,,orphan_no_species_evidence,
+R09077__cyto,R09077,1.5.3.17,KO->R,XP_025344769.1
+TO1000567_PLAS__plas,,,orphan_no_species_evidence,
+R08362__cyto,R08362,1.11.1.15,orphan_no_species_evidence,
+R00351__cyto,R00351,2.3.3.1;2.3.3.3,KO->R,XP_025341180.1
+D_Galacturonate__extr,,,exchange/biomass,
+R00139__cyto,R00139,2.7.4.6,KO->R,XP_025339680.1
+R04065__cyto,R04065,1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+EX_C05993__extr,,,exchange/biomass,
+EX_C00577__extr,,,exchange/biomass,
+alpha_alpha_Trehalose__extr,,,exchange/biomass,
+R00299__cyto,R00299,2.7.1.1;2.7.1.2,KO->R,XP_025342548.1 or XP_025343090.1 or XP_025343315.1
+TZ3100141_PLAS__plas,,,orphan_no_species_evidence,
+T_NADH_CytoPero__pero,,,orphan_no_species_evidence,
+R01404__mito,R01404,1.3.1.104,KO->R,XP_025339979.1 or XP_025340151.1 or XP_025344154.1
+ATP_maintenance_NGAM__cyto,,,orphan_no_species_evidence,
+TI3000243_PLAS__plas,,,orphan_no_species_evidence,
+TR2000024_PLAS__plas,,,orphan_no_species_evidence,
+R00509__cyto,R00509,2.7.1.25,EC,XP_025344429.1
+R03947__cyto,R03947,1.3.1.76,KO->R,XP_025344558.1
+R02423__cyto,R02423,3.5.3.9,orphan_no_species_evidence,
+R05641__cyto,R05641,1.3.1.71,KO->R,XP_025341362.1
+R11895__cyto,R11895,2.7.4.6,KO->R,XP_025339680.1
+EX_C00044__extr,,,exchange/biomass,
+TO0000154_PLAS__plas,,,orphan_no_species_evidence,
+R08648__mito,R08648,2.2.1.6,KO->R,XP_025341159.1 or XP_025341626.1
+Erythritol__extr,,,exchange/biomass,
+5_Aminopentanal__extr,,,exchange/biomass,
+R01715__cyto,R01715,5.4.99.5,KO->R,XP_025343085.1
+R05050__cyto,R05050,1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+R03508__cyto,R03508,1.1.1.50,KO->R,XP_025343020.1
+R11891__mito,R11891,2.7.4.14,KO->R,XP_025342018.1
+TO1021423_PLAS__plas,,,orphan_no_species_evidence,
+TO2903025_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100176_PLAS__plas,,,orphan_no_species_evidence,
+TZ3100123_PLAS__plas,,,orphan_no_species_evidence,
+TO1000654_PLAS__plas,,,orphan_no_species_evidence,
+R04620__cyto,R04620,3.1.3.1,KO->R,XP_025344545.1
+TR1003530_PLAS__plas,,,orphan_no_species_evidence,
+TR1000218_PLAS__plas,,,orphan_no_species_evidence,
+R10687__cyto,R10687,3.4.17.21,EC,XP_025343290.1 or XP_025343307.1 or XP_025344750.1
+EX_C00417__extr,,,exchange/biomass,
+R02587__cyto,R02587,3.1.3.68,EC,XP_025340854.1 or XP_025341834.1 or XP_025342652.1 or XP_025342994.1 or XP_025343016.1 or XP_025343521.1 or XP_025343755.1 or XP_025343979.1
+EX_C01190__extr,,,exchange/biomass,
+TO1000138_PLAS__plas,,,orphan_no_species_evidence,
+TI2903774_PLAS__plas,,,orphan_no_species_evidence,
+R01561__cyto,R01561,2.4.2.1,KO->R,XP_025343966.1
+R07281__cyto,R07281,4.1.99.12,orphan_no_species_evidence,
+R11232__cyto,R11232,,orphan_no_species_evidence,
+R01281__cyto,R01281,2.3.1.50,KO->R,XP_025342760.1
+R11892__mito,R11892,2.7.4.14,KO->R,XP_025342018.1
+R07934__cyto,R07934,1.3.3.6,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+R02147__cyto,R02147,2.4.2.1;2.4.2.15,KO->R,XP_025343966.1
+R00390__pero,R00390,6.2.1.3,KO->R,XP_025341276.1
+R01123__cyto,R01123,5.3.3.2,KO->R,XP_025344271.1
+TZ3101604_PLAS__plas,,,orphan_no_species_evidence,
+TZ3102039_PLAS__plas,,,orphan_no_species_evidence,
+R01939__cyto,R01939,2.6.1.39,KO->R,XP_025340820.1
+TR1000039_PLAS__plas,,,orphan_no_species_evidence,
+R00355__mito,R00355,2.6.1.1,orphan_no_species_evidence,
+TO1003387_PLAS__plas,,,orphan_no_species_evidence,
+R11894__cyto,R11894,2.7.4.6,KO->R,XP_025339680.1
+TO3001127_PLAS__plas,,,orphan_no_species_evidence,
+R02702__cyto,R02702,1.13.11.52,KO->R,XP_025339653.1
+R01878__cyto,R01878,3.5.4.5,EC,XP_025343059.1
+R00573__cyto,R00573,6.3.4.2,KO->R,XP_025341782.1
+EX_C00042__extr,,,exchange/biomass,
+R09074__cyto,R09074,1.5.3.13;1.5.3.17,KO->R,XP_025344769.1
+TZ3102311_PLAS__plas,,,orphan_no_species_evidence,
+TO1000207_PLAS__plas,,,orphan_no_species_evidence,
+TR1000132_PLAS__plas,,,orphan_no_species_evidence,
+EX_C00320__extr,,,exchange/biomass,
+TO1000121_PLAS__plas,,,orphan_no_species_evidence,
+R08146__cyto,R08146,1.2.1.3,KO->R,XP_025340335.1 or XP_025343288.1 or XP_025343693.1
+TR1001017_PLAS__plas,,,orphan_no_species_evidence,
+R04439__cyto,R04439,1.1.1.86,KO->R,XP_025340578.1
+R02864__cyto,R02864,4.99.1.4,KO->R,XP_025344558.1
+EX_C01346__extr,,,exchange/biomass,
+R04560__cyto,R04560,2.1.2.3,KO->R,XP_025341005.1
+TO0000246_PLAS__plas,,,orphan_no_species_evidence,
+R00078__mito,R00078,1.16.3.1,KO->R,XP_025341880.1
+R11893__cyto,R11893,1.17.4.1,KO->R,XP_025340212.1 or XP_025344702.1
+TZ3106844_PLAS__plas,,,orphan_no_species_evidence,
+R02425__cyto,R02425,3.5.2.5,KO->R,XP_025340150.1
+TZ3100090_PLAS__plas,,,orphan_no_species_evidence,
+R04754__pero,R04754,1.3.3.6,KO->R,XP_025340743.1 or XP_025340904.1 or XP_025340905.1
+R02923__cyto,R02923,1.4.3.3,KO->R,XP_025341810.1 or XP_025342276.1 or XP_025343797.1 or XP_025344644.1
+EX_C01288__extr,,,exchange/biomass,
+R10686__cyto,R10686,,KO->R,XP_025341635.1
+R04936__cyto,R04936,3.3.1.1,orphan_no_species_evidence,
+TO0000085_PLAS__plas,,,orphan_no_species_evidence,
+EX_C02112__extr,,,exchange/biomass,
+R05586__cyto,R05586,2.3.1.16,EC,XP_025339641.1 or XP_025341509.1 or XP_025341523.1 or XP_025342531.1 or XP_025342789.1 or XP_025344008.1 or XP_025344328.1 or XP_025344518.1
+TI2903652_PLAS__plas,,,orphan_no_species_evidence,
+TO2902926_PLAS__plas,,,orphan_no_species_evidence,
+R02865__cyto,R02865,2.7.1.1,EC,XP_025342548.1 or XP_025343090.1 or XP_025343315.1 or XP_025344429.1
+S_Adenosyl_L_Homocysteine_c00021_CytoMito__mito,,,orphan_no_species_evidence,
+EX_C00638__extr,,,exchange/biomass,
+EX_C00916__extr,,,exchange/biomass,
+R01121__cyto,R01121,4.1.1.33,KO->R,XP_025344126.1
+R00355__cyto,R00355,2.6.1.1,orphan_no_species_evidence,
+sn_Glycerol_3_phosphate_transport_mitochondrial__plas,,,orphan_no_species_evidence,
