@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""thermal_sensitivity.py — the model's thermal sensitivity against nature's.
+"""22_thermal_sensitivity.py — the model's thermal sensitivity against nature's.
 
 Every earlier test asked how far a parameter must move to kill growth at ONE temperature.
 That answer (32.5 C of Tm) is hard to compare with anything measured, because no

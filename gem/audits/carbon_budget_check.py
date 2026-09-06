@@ -11,9 +11,9 @@ pass by having been tuned to the growth rates.
 
 Measured side: results/tables/derived_N0_R_results_with_carbon.csv already carries CUE
 and resp_over_growth per well, from the oxygen traces. Live wells only (drawdown >= 2.0
-mg/L), the same dead-well filter as Fig 3 and gem/counts_at_44.py.
+mg/L), the same dead-well filter as Fig 3 and gem/21_counts_at_44.py.
 
-Model side: the machinery of gem/etcgem_counterfactual.py verbatim — same medium, same
+Model side: the machinery of gem/19_etcgem_counterfactual.py verbatim — same medium, same
 enzyme-pool constraint, same activation function, same calibration — so what comes out is
 a property of their etcGEM, not of a model rebuilt here. Reproducing their committed
 baseline mu to 3 dp (auris 34/40/42/44 = 0.799/0.664/0.560/0.447) is the check on that.
@@ -62,7 +62,7 @@ def therm_maps(sp):
             statistics.median(tmv.values()) if tmv else 54.0)
 
 
-def setup_pool(sp):                                   # identical to etcgem_counterfactual.py
+def setup_pool(sp):                                   # identical to 19_etcgem_counterfactual.py
     xml, medf = SP[sp]
     m = cobra.io.read_sbml_model(str(MODELS /  xml)); med = pd.read_csv(INPUTS / medf)
     EX = {r.id for r in m.reactions if r.id.startswith(("EX_", "Drain")) or r.boundary}

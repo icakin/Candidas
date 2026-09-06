@@ -1,0 +1,7 @@
+param,threshold,median_required
+Tm,0.03,
+Topt,0.03,17.19
+Tm,0.05,32.54
+Topt,0.05,15.62
+Tm,0.1,27.72
+Topt,0.1,12.89

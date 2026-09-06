@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""run_seq2tm.py -- Seq2Tm melting-temperature prediction over a whole proteome FASTA.
+"""15_run_seq2tm.py -- Seq2Tm melting-temperature prediction over a whole proteome FASTA.
 
 WHY THIS EXISTS
 gem/thermal_tm.csv covers only the 3,042 enzymes that appear in the metabolic models.
@@ -27,12 +27,12 @@ DIFFERENCES FROM UPSTREAM code/seq2tm.py, all mechanical
 The arithmetic is unchanged: the head's output is multiplied by 100 exactly as upstream.
 
 RUN
-    python3 run_seq2tm.py in.faa out.csv --ckpt /path/model_tm_window.3_r2.0.76.pth \\
+    python3 15_run_seq2tm.py in.faa out.csv --ckpt /path/model_tm_window.3_r2.0.76.pth \\
                                          --code /path/Seq2Topt/code
 or set SEQ2TOPT_CKPT and SEQ2TOPT_CODE and omit them.
 
 CHECK IT FIRST
-    python3 run_seq2tm.py --selfcheck gem/thermal_tm.csv --ckpt ... --code ...
+    python3 15_run_seq2tm.py --selfcheck gem/thermal_tm.csv --ckpt ... --code ...
 re-predicts 200 enzymes already in that table and reports the agreement. If the numbers
 do not match, this pipeline is not the one that produced the paper's values and nothing
 computed from its output is comparable with them. Do that before the full run.

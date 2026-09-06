@@ -1,22 +1,21 @@
-# Candida Oxygen Pipeline (temperature × isolate)
+# scripts/ — the R pipeline (temperature × isolate respirometry)
 
 ## Overview
 
-This project analyses how temperature modulates the respiration of several
-**Candida isolates**. Raw data are dissolved-oxygen time-series recorded on a
-PreSens 24-well SDR plate at multiple temperatures. There is no pH or dose
-treatment.
+Raw data are dissolved-oxygen time series from a PreSens 24-well SDR plate reader, one
+plate per group per temperature, at 22, 24, …, 44 °C (12 temperatures). Eight groups,
+three isolates each, five replicate wells per isolate:
 
-The isolates belong to six clade/species **groups**:
+| group | species | isolates |
+|---|---|---|
+| `Clade1`–`Clade4` | *Candida auris*, clades I–IV | 2068–2070, 2071–2073, 2074–2076, 2077–2079 |
+| `Hae` | *C. haemulonii* | 1724, 1768, 1769 |
+| `Duo` | *C. duobushaemulonii* | 1770, 1771 (+ one failed) |
+| `para` | *C. parapsilosis* | 2051–2053 |
+| `glab` | *C. glabrata* | 2048–2050 |
 
-- `Clade1`–`Clade4` — *Candida auris*, four clades from four geographical regions
-- `glab` — *Candida glabrata*
-- `para` — *Candida parapsilosis*
-
-- **Temperature**: 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44 °C (12 levels).
-- **Isolate (OTU)**: a unique integer code `1`…`18` (3 isolates per group × 6
-  groups). Each code carries a human-readable display name you set in Step 1.
-- **Replicate**: `R1`, `R2`, …, `R5`.
+Isolate codes 1–24 are assigned in the `STRAIN_GROUPS` order in `config.R`; display
+names live in `results/tables/otu_names.csv`.
 
 ### Plate layout — the key fact
 
@@ -41,30 +40,50 @@ into the tidy CSVs the pipeline expects. In the app you:
 
 - tick the files to convert (all recognised groups are pre-ticked);
 - type an **isolate name** for rows A/B/C of each group (free text — the
-  strain/isolate ID). The CSV headers use safe codes `OTU1`…`OTU18`; your names
-  are written to `tables/otu_names.csv` and shown in every result table and plot;
+  strain/isolate ID). The CSV headers use safe codes `OTU1`…`OTU24`; your names
+  are written to `results/tables/otu_names.csv` and shown in every result table and plot;
 - set the **temperature** per file (auto-filled from the plate's measured `Tm`
   column; editable).
 
 Run it in RStudio (open `01_convert_xlsx.R` → **Run App**) or with
 `Rscript scripts/01_convert_xlsx.R`. It writes one `<name>_Oxygen.csv` per file
 into `data/`, with columns `Time, T, OTU<c>_R1, …, OTU<c>_R5` for the plate's 3
-isolates, plus `tables/otu_names.csv`.
+isolates, plus `results/tables/otu_names.csv`.
 
-## Script Map
+## Script map (running order)
 
-| Script | What it does | Key inputs | Key outputs |
+Every script sources `config.R` (shared paths, constants, isolate registry, the figure
+whitelist). `run_all.R` runs the non-interactive ones in order; `run_all.sh` wraps that with
+the C11 report and the manuscript render, logged and timed.
+
+| # | script | what it does | writes |
 |---|---|---|---|
-| `01_convert_xlsx.R` | Interactive Shiny app: raw PreSens `.xlsx` → tidy CSV; sets isolate display names & codes | `data/*.xlsx` | `data/*_Oxygen.csv`, `tables/otu_names.csv` |
-| `05_cell_sizes.R` | OPTIONAL Shiny app: average cell volume per isolate → carbon per cell | (typed in) | `tables/otu_cell_sizes.csv` |
-| `config.R` | Shared paths, constants, isolate registry, helpers | - | sourced by all |
-| `02_longdata.R` | Wide → long; splits `OTU<c>_R<r>` into `OTU` + `Replicate` | `data/*_Oxygen.csv` | `tables/Oxygen_All_Long.csv` |
-| `03_trimming.R` | Spline-based trimming with optional manual overrides | `tables/Oxygen_All_Long.csv` | `tables/Oxygen_Data_Filtered.csv`, trimming-diagnostics PDF |
-| `04_trim_selector.R` | OPTIONAL Shiny app to review/override each curve's fit window | `03_trimming.R` outputs | `tables/manual_fit_windows.csv`, `tables/plot_exclude_points.csv` |
-| `07_oxygen_fits.R` | nlsLM fits per series; carbon unit conversions; isolate-coloured plots; derives growth, respiration, CUE; **frequentist Sharpe-Schoolfield + Boltzmann-Arrhenius thermal fits per isolate** | filtered data + trim metadata | `tables/derived_N0_R_results_with_carbon.csv`, `tables/sharpe_schoolfield_*_coefs.csv`, `tables/arrhenius_*_coefs.csv`, `tables/activation_energy_summary.csv`, `tables/cue_quadratic_fit_coefs.csv`, overlay + CUE + `activation_energy_by_otu` PNGs |
-| `08_auto_trim.R` | OPTIONAL automatic alternative to `04`: for each raw curve, fits the exponential over a family of candidate windows, picks the window with the cleanest/most-stable `r` (gated toward the isolate's trend), and discards curves no window can rescue. Writes the same files `04` does, so `06` uses them | `tables/Oxygen_Data_Filtered.csv` (from `03`) | `tables/manual_fit_windows.csv`, `tables/plot_exclude_points.csv`, `tables/auto_trim_log.csv` |
-| `09_rmse_trim.R` | OPTIONAL, simpler alternative to `08`. **Windows are NOT changed.** The only lever is each curve's raw-fit RMSE: it scans RMSE cutoffs, fits the growth SS at each, and stops at the **knee** (diminishing returns), then discards any points still problematic. Guardrails cap how much can be dropped | `derived_N0_R_results_with_carbon.csv` + `fit_metrics.csv` (from `06`) | `tables/plot_exclude_points.csv`, `tables/rmse_trim_discarded.csv`, `tables/rmse_trim_log.csv`, `tables/rmse_trim_growth_ss.csv`, `figures/rmse_trim_diagnostics.pdf` |
-| `07_tpc_refine.R` | OPTIONAL robust TPC refinement: growth = Sharpe-Schoolfield; respiration = best of Arrhenius / exponential / quadratic / SS by AICc. Robust (Tukey IRLS) fits **flag which points to trim to get the best model**, and mark them on per-isolate diagnostic plots | `tables/derived_N0_R_results_with_carbon.csv` | `tables/tpc_growth_ss_coefs.csv`, `tables/tpc_respiration_model_selection.csv`, `tables/tpc_respiration_aicc_table.csv`, `tables/tpc_flagged_points.csv`, `tables/plot_exclude_points_suggested.csv`, `figures/TPC_refined_growth.pdf` / `_respiration.pdf` (+ PNGs) |
+| 00 | `00_install.R` | restore the pinned R library (`renv.lock`), check Stan | |
+| 01 | `01_convert_xlsx.R` | **Shiny app**: PreSens `.xlsx` → tidy `.csv`, isolate names | `data/*_Oxygen.csv`, `results/tables/otu_names.csv` |
+| 02 | `02_longdata.R` | wide → long | `results/tables/Oxygen_All_Long.csv` |
+| 03 | `03_trimming.R` | spline-based trimming of each trace, diagnostics | `Oxygen_Data_Filtered.csv`, `Oxygen_Trimmed_Series_Metadata.csv` |
+| 04 | `04_trim_selector.R` | **Shiny app**: review/override each curve's fit window | `manual_fit_windows.csv`, `plot_exclude_points.csv` |
+| 05 | `05_cell_sizes.R` | **Shiny app**: cell volume per isolate → carbon per cell | `otu_cell_sizes.csv` |
+| 06 | `06_inoculation.R` | **Shiny app**: inoculation density per group (sourced headless in a batch run) | `otu_inoc.csv` |
+| 07 | `07_oxygen_fits.R` | per-well exponential fits; growth, respiration and CUE in carbon units; frequentist Sharpe-Schoolfield and Arrhenius per isolate | `derived_N0_R_results_with_carbon.csv`, `fit_coefficients_long.csv`, `fit_metrics.csv`, … |
+| 08 | `08_temperature_equilibration_sensitivity.R` | how much each quantity moves with the onset-temperature assumption | `temperature_equilibration_*.csv`, **Supp Fig 1** |
+| 09 | `09_bayesian_models.R` | hierarchical Bayesian TPCs (brms): growth Sharpe-Schoolfield, respiration Arrhenius | `results/rds/bayes_*.rds`, `bayes_*.csv` (slow) |
+| 10 | `10_n0_term_test.R` | diagnostic: the r·δ back-projection term (refits 09; run deliberately) | |
+| 11 | `11_bayesian_plots.R` | posterior curves, contrasts, CUE by clade/isolate | `fig_bayes_*.png` incl. **Supp Figs 2, 3** |
+| 12 | `12_carbon_tax.R` | the carbon cost of 37 → 40 °C, per isolate and group | `carbon_tax_*.csv`, `FIG_carbon_tax.png` |
+| 13 | `13_uncertainty_bands.R` | respiration and CUE with the equilibration uncertainty combined | `fig_*_uncertainty.png` |
+| 14 | `14_rk_covariance_check.R` | diagnostic: does dropping cov(r, K) misstate the uncertainty? | `fig_rk_covariance_check.png` |
+| 15 | `15_n0_treatment_panel.R` | the between-clade respiration E under three N₀ treatments (refits 09; run deliberately) | **Supp Fig 4** |
+| — | `fig_common.R` | shared by 16 and 17: loads the 09 fits, draw-level quantities, theme, palette, `save_fig()`, Figure 1 panels | |
+| 16 | `16_fig1.R` | **Figure 1** growth and respiration decouple | `results/figures/manuscript/FIG1_decoupling.png` |
+| 17 | `17_fig2.R` | **Figure 2** the carbon cost of fever, + four supplementary panels | `FIG2_consequences.png`, `FIG_SUPP_*.png` |
+| 18 | `18_fig3.R` | **Figure 3** high-temperature growth vs phylogeny (reads `phylo/trees/pg_rooted.nwk`) | `FIG3_discordance.{png,pdf}` |
+| 19 | `19_fig4.R` | **Figure 4** the etcGEM counterfactual (reads `gem/tables/`; see `gem/README.md`) | `FIG4_etcgem_counterfactual.{png,pdf}` |
+| 21 | `21_figures_all.R` | runs 16–19 in one command | |
+
+The four Shiny apps are not run in a batch: their outputs are committed inputs. 10, 14
+and 15 overwrite the published Bayesian respiration summary while they run; after any of
+them, re-run 09 → 11 → 12 → 16 → 17.
 
 ## Schema
 
@@ -82,20 +101,15 @@ row per `(T, OTU, Replicate)` combination, with the derived quantities
 `growth_fgC_h`, `respiration_fgC_h`, `CUE`, `resp_over_growth`, plus their
 biomass-corrected analogues `growth_C_per_C_h` and `respiration_C_per_C_h`.
 
-## How to Run
+## How to run
 
-Once the CSVs exist (Step 1), run the full pipeline:
+Once the CSVs exist (Step 1):
 
-```r
-source("scripts/run_all.R")
 ```
-
-Step by step:
-
-```r
-source("scripts/02_longdata.R")
-source("scripts/03_trimming.R")
-source("scripts/07_oxygen_fits.R")
+Rscript scripts/run_all.R          # 02 03 06 07 08 09 11 12 13, then Figures 1-4
+bash scripts/run_all.sh            # the same, plus the C11 report and the manuscript render, logged
+Rscript scripts/21_figures_all.R   # figures only
+Rscript scripts/18_fig3.R          # any single script runs on its own
 ```
 
 ## What to Edit Per Project
@@ -118,50 +132,18 @@ source("scripts/07_oxygen_fits.R")
   windows/exclusions you set in `04_trim_selector.R` (auto-saved to `tables/`).
   Set it to `FALSE` to ignore the app and use automatic trimming for every curve.
 
-> Thermal-performance fitting is **frequentist only** (nlsLM Sharpe-Schoolfield
-> and lm-based Boltzmann-Arrhenius, one curve per isolate, in `07_oxygen_fits.R`).
-> There is no Bayesian / MCMC stage in this build.
+> `07_oxygen_fits.R` fits frequentist Sharpe-Schoolfield and Boltzmann-Arrhenius curves
+> per isolate (fast, for diagnostics). The curves the manuscript reports come from the
+> hierarchical Bayesian fits in `09_bayesian_models.R`.
 
 ---
 
-## Scripts NOT part of the current manuscript (etc-GEM model work)
+## The etc-GEM that was cut, and the one that replaced it
 
-The enzyme- and temperature-constrained genome-scale model (etc-GEM) analysis has
-been **removed from the manuscript**. An audit found that the model was built once
-from a single proteome and reused for every clade, so its "genome-only predictions
-are identical across clades" result was a property of the build rather than a
-finding; that the fitted `kcat_scale` parameter scales predicted growth exactly
-linearly and correlates 0.996 with measured peak growth, so it restates the data it
-was fitted to; that the proteome pool budget is calibrated rather than fixed, making
-it non-identifiable against `kcat_scale`; that one clade's measured peak growth
-exceeds the model's feasible maximum; and that a three-parameter empirical curve
-reproduces the fit equally well. A flux-variability analysis had already shown that
-oxygen consumption at fixed growth is not uniquely determined, so the model permits
-rather than predicts respiration.
-
-The code is retained here for a separate methods paper, where the per-clade build,
-the `kcat_scale` x pool identifiability, the binding-constraint analysis and an
-out-of-sample respiration prediction can be done properly.
-
-Not part of the current manuscript pipeline:
-
-- `13_capacity_expression.R` — RNA-seq test of the fitted capacity parameter
-- `16_supplementary_figures.R` — etc-GEM diagnostic supplementaries
-- `17_schematic.py` — the etc-GEM pipeline schematic
-- the Figure 3 (etc-GEM) block inside `16_fig1_fig2.R`; its Figure 1 and
-  Figure 2 blocks remain part of the pipeline
-
-`run_all.R` still calls `16_fig1_fig2.R`, which will regenerate the unused
-etc-GEM figure alongside Figures 1 and 2. That is harmless; the manuscript does not
-reference it.
-
-## Figures used by the current manuscript
-
-| Manuscript figure | File | Produced by |
-|---|---|---|
-| Figure 1 | `results/figures/manuscript/FIG1_decoupling.png` | `16_fig1_fig2.R` |
-| Figure 2 | `results/figures/manuscript/FIG2_the_bill.png` | `16_fig1_fig2.R` |
-| Supplementary 1 | `results/figures/Fig_temperature_equilibration.png` | `08_temperature_equilibration_sensitivity.R` |
-| Supplementary 2 | `results/figures/fig_bayes_resp_arrhenius.png` | `11_bayesian_plots.R` / `13_uncertainty_bands.R` |
-| Supplementary 3 | `results/figures/fig_bayes_cue_by_clade.png` | `11_bayesian_plots.R` / `13_uncertainty_bands.R` |
-| Supplementary 4 | `results/figures/Fig_n0_treatment_panel.png` | `15_n0_treatment_panel.R` |
+An earlier single-proteome etc-GEM (one model reused for every clade, its capacity
+parameter restating the growth data) was removed from the manuscript in August 2026; its
+two R scripts, schematic, vendored outputs and the GEO expression test are in
+`archive/old_etcgem/` for the record. The model in the current Figure 4 is different: one
+reconstruction per species from its own genome, calibrated on *C. auris* alone and frozen,
+then predicting the relatives. It lives in `gem/` (Python) and is documented in
+`gem/README.md` and `gem/FIG4_LOCKED.md`.

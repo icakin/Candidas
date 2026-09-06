@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ngam_falsification.py — the two-sided sufficiency test on the MAINTENANCE axis.
 
-Exactly the structure of gem/etcgem_counterfactual.py, applied to the one mechanism that
+Exactly the structure of gem/19_etcgem_counterfactual.py, applied to the one mechanism that
 is not already in the model and already dead. The etcGEM pins non-growth-associated
 maintenance at a single constant (3.89 mmol ATP/gDW/h), identical for every species and
 identical at every temperature: the model assumes that being at 44 C costs a cell no more

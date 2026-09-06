@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""build_etcgem_tpc.py - assemble sequence-driven growth TPCs from the enzyme- and
+"""18_build_etcgem_tpc.py - assemble sequence-driven growth TPCs from the enzyme- and
 temperature-constrained GEMs, calibrate on C. auris, and predict the other species.
 
 Temperature model (transparent, uses the directly-predicted per-enzyme parameters):

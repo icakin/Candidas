@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""build_measured_tpc.py — the measured thermal performance curve, with dead wells kept.
+"""17_build_measured_tpc.py — the measured thermal performance curve, with dead wells kept.
 
 REPLACES the hand-built gem/measured_tpc_honest.csv, which was honest in the middle of
 the range and not at the top.

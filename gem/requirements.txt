@@ -1,0 +1,28 @@
+# Python environment for the etcGEM layer (gem/). Two tiers.
+#
+# TIER 1: the metabolic model, calibration, counterfactuals and every audit (scripts 02-03,
+# 06-09, 11, 13, 16-25 and gem/audits/). Pure CPU, minutes to run. These are the versions the
+# committed tables were regenerated and checked against on 2026-09-06 (Python 3.11.15, GLPK
+# solver via optlang/swiglpk):
+cobra==0.32.1
+optlang==1.9.1
+swiglpk==5.0.13
+pandas==2.3.3
+numpy==2.4.4
+scipy==1.17.1
+biopython==1.88
+# plus DIAMOND 2.1.9 in PATH for 07_rbh_orthologs.py and the lineage/census audits.
+#
+# TIER 2: the two sequence-based predictors, run once to produce gem/tables/kcat_*.tsv and
+# thermal_{topt,tm}.csv (scripts 10, 14, 15 and the seq2tm audits). Need PyTorch; CPU is fine.
+# Install into the same environment or a separate one (SEQ2TOPT_* and PYTHON env vars let
+# the shell scripts point at it). The predictions are deterministic for a given checkpoint,
+# but Seq2Topt/Seq2Tm's output depends on batch composition (see 14_run_seq2topt_seq2tm.sh);
+# torch minor version does not change them.
+torch>=2.1,<3
+fair-esm==2.0.0
+rdkit>=2023.9
+requests>=2.31
+#
+# 12_fetch_kegg_smiles.py additionally needs network access to rest.kegg.jp; its output
+# gem/inputs/kegg_smiles.tsv is tracked so it need not be re-run.

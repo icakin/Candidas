@@ -3,7 +3,7 @@
 after every addition, so bottlenecks exposed by rerouting are caught) + BEAM search over
 pairs and triples among the strongest candidates. Requires BOTH constraints at the end:
 mu(40) < detection AND mu(34) >= permissive floor. Also documents where flux reroutes.
-Run:  python3 dyn_sparse.py Tm   /   python3 dyn_sparse.py Topt
+Run:  python3 20_dyn_sparse.py Tm   /   python3 20_dyn_sparse.py Topt
 """
 import os, sys, cobra, pandas as pd, numpy as np, json, statistics, itertools
 from pathlib import Path
@@ -36,7 +36,7 @@ def setup_pool(sp):
         if str(row['exchange_id']) in EX: m.reactions.get_by_id(str(row['exchange_id'])).lower_bound=-3
     # ATP maintenance irreversible and forced in every species. iDC1003 (C. parapsilosis)
     # ships it REVERSIBLE at lb=-3.9 and the solver runs it backwards, making ATP from
-    # ADP + Pi. Must match etcgem_counterfactual.py or the two disagree about baselines.
+    # ADP + Pi. Must match 19_etcgem_counterfactual.py or the two disagree about baselines.
     for _rid in ('ATP_maintenance_NGAM__cyto','ATP_Maintenance__cyto'):
         if _rid in m.reactions:
             _r=m.reactions.get_by_id(_rid); _v=abs(_r.upper_bound); _r.bounds=(_v,_v)

@@ -88,7 +88,7 @@ their pinned version, so they build from source:
 | `nlme` | 3.1-168 | dependency of `mgcv` |
 | `mvtnorm` | 1.3-3 | `brms` |
 | `nleqslv` | 3.3.5 | `brms` |
-| `edgeR` | 4.8.2 | `13_capacity_expression.R` |
+| `edgeR` | 4.8.2 | `archive/old_etcgem/13_capacity_expression.R` (archived; still in renv.lock) |
 
 (`minpack.lm`, `quadprog`, `RcppEigen` and `statmod` also link Fortran but do
 currently have binaries at their pins. That can change at any time — install the
@@ -160,7 +160,7 @@ why the check is part of the installer and not an optional extra.
 
 ### 5. Bioconductor — a different failure mode {#bioconductor-prereq}
 
-`edgeR` is Bioconductor, not CRAN, and `13_capacity_expression.R` needs it. This
+`edgeR` is Bioconductor, not CRAN, and the archived `13_capacity_expression.R` needs it (it stays in `renv.lock`). This
 fails differently from a compile problem: without Bioconductor repositories
 configured, `renv::restore()` cannot **find** the package at all, whatever
 toolchain you have.
@@ -217,7 +217,7 @@ Re-activate conda afterwards; nothing in this project needs it.
 
 ### What has and has not been verified
 
-**Verified on the reference machine** (the one in `env/versions.json`): the
+**Verified on the reference machine** (the one in `docs/env/versions.json`): the
 package-by-package analysis above — which packages contain compiled code, which
 link Fortran or a named system library, and which pinned versions do or do not
 have a CRAN binary today — was measured directly from `renv.lock` and from the
@@ -234,13 +234,11 @@ unnecessary — that feedback is the only way this gets confirmed.
 
 ## Install
 
-Clone **with submodules** — the etc-GEM model lives in one:
+Clone:
 
 ```bash
 git clone --recursive https://github.com/icakin/Candidas.git
 cd Candidas
-# already cloned without --recursive?
-git submodule update --init --recursive
 ```
 
 Then — **after** working through
@@ -250,8 +248,8 @@ Then — **after** working through
 # 1. R side  (checks prerequisites, restores renv.lock, verifies Stan)
 Rscript scripts/00_install.R
 
-# 2. Python side  (only 17_schematic.py needs Python in a default run)
-python3 -m pip install numpy matplotlib
+# 2. Python side (only needed to regenerate the etcGEM tables in gem/; see gem/README.md)
+python3 -m pip install -r gem/requirements.txt
 ```
 
 and, once, the PDF engine:
@@ -266,24 +264,16 @@ quarto install tinytex
 |---|---|---|
 | R packages | `renv.lock` | 170 packages, R 4.5.2, CRAN + **Bioconductor 3.22** (edgeR 4.8.2, limma 3.66.0). `renv::restore()` handles both. Verified to cover every package the eighteen numbered scripts load. |
 | Stan | via `renv.lock` | rstan 2.32.7 / StanHeaders 2.32.10 / Stan 2.32.2. **`09_bayesian_models.R` never sets `backend`, so brms uses its default: rstan.** cmdstanr is not used. |
-| Everything, as measured | `env/versions.json` | Every version above, read from the live environment. |
-| Committed inputs and outputs | `env/baseline_checksums_*.txt` | SHA-256 of every tracked file under `data/`, `results/`, and the etc-GEM outputs. Re-run the pipeline and diff against these to prove nothing moved. |
+| Everything, as measured | `docs/env/versions.json` | Every version above, read from the live environment. |
+| Committed inputs and outputs | `docs/env/baseline_checksums_*.txt` | SHA-256 of every tracked file under `data/`, `results/`, and the etc-GEM outputs. Re-run the pipeline and diff against these to prove nothing moved. |
 
-**Not pinned: the Python side.** There is no Python lockfile on `main`.
-`17_schematic.py` needs only numpy and matplotlib, so that is low risk — but the
-etc-GEM engine is a different matter, and it is worth being explicit about it:
-
-> `cauris_etcgem/requirements.txt` asks for
-> `pip install git+https://github.com/GabYvonDurocher/etcGEMs` with **no ref**. That
-> tracks `main`, so the model can change under the committed results with no version
-> bump, no tag and no record. A `requirements.lock` that pins the engine to a commit
-> exists, but on a **later submodule commit than the one this repository points at**,
-> so it is not reachable from here. Until the submodule pointer is moved, regenerating
-> the etc-GEM outputs is an unpinned operation.
->
-> This is why `scripts/run_all.sh` leaves the etc-GEM stage **off by default**. The
-> outputs it would produce are vendored at `outputs/supp_data/` and are what
-> `16_fig1_fig2.R` and `16_supplementary_figures.R` actually read.
+**The Python side (`gem/`).** Pinned in `gem/requirements.txt`: tier 1 (cobra 0.32.1,
+GLPK via optlang/swiglpk, pandas, numpy, scipy, biopython) runs the metabolic model and
+every audit in minutes; tier 2 (torch, fair-esm, rdkit) is only for the two deep-learning
+predictors, which were run once and whose outputs are committed. `gem/README.md` has the
+run order and says which committed tables were regenerated and checked. `run_all.sh`
+leaves the Python stage off by default because Figure 4 reads committed tables and the
+predictors are sensitive to input order; `RUN_GEM=1` re-runs the deterministic part.
 
 ---
 
@@ -298,15 +288,12 @@ Fully unattended: no prompts, no browser. Per-stage timing, with a tee'd log in
 
 | Stage | What it runs |
 |---|---|
-| 0 (optional, off) | etc-GEM Python pipeline — `RUN_ETCGEM=1` to enable, see above |
-| 1 | `Rscript scripts/run_all.R` → **02 → 03 → 06 → 07 → 08 → 09 → 11 → 12 → 14 → 15** |
-| 2 | `13_capacity_expression.R` |
-| 3 | `16_supplementary_figures.R` |
-| 4 | `17_schematic.py` |
+| 0 (optional, off) | `gem/17 18 19 21 26` — the deterministic etcGEM tables; `RUN_GEM=1` to enable |
+| 1 | `Rscript scripts/run_all.R` → **02 → 03 → 06 → 07 → 08 → 09 → 11 → 12 → 13 → 16 → 17 → 18 → 19** |
+| 2 | `reports/C11_scale_free/R/01–05` (the scale-free CUE numbers and the clade contrasts) |
 | 3 | `quarto render v3.qmd` in `manuscript/` → `manuscript/v3.pdf` |
 
-Knobs (all optional): `RUN_ETCGEM`, `ETCGEM_STAGES`, `RUN_ETCGEM_FIGS`, `SKIP_R`, `SKIP_RENDER`,
-`LOG_DIR`.
+Knobs (all optional): `RUN_GEM`, `SKIP_R`, `SKIP_C11`, `SKIP_RENDER`, `LOG_DIR`.
 
 ### The four click-driven apps (01, 04, 05, 06)
 
@@ -342,11 +329,11 @@ They restore `derived_N0_R_results_with_carbon.csv` but not those. So:
 
 ```bash
 Rscript scripts/10_n0_term_test.R          # ~2 Bayesian fits
-Rscript scripts/15_n0_treatment_panel.R    # ~3 Bayesian fits; Supplementary Fig. 6
+Rscript scripts/15_n0_treatment_panel.R    # ~3 Bayesian fits; Supplementary Fig. 4
 # then put the published fit back:
 Rscript scripts/09_bayesian_models.R && Rscript scripts/11_bayesian_plots.R \
-  && Rscript scripts/12_carbon_tax.R && Rscript scripts/16_fig1_fig2.R \
-  && Rscript scripts/13_uncertainty_bands.R
+  && Rscript scripts/12_carbon_tax.R && Rscript scripts/13_uncertainty_bands.R \
+  && Rscript scripts/16_fig1.R && Rscript scripts/17_fig2.R
 ```
 
 `run_all.sh` deliberately leaves both out for that reason, and says so in its header.
@@ -355,8 +342,8 @@ Rscript scripts/09_bayesian_models.R && Rscript scripts/11_bayesian_plots.R \
 
 ## Expected runtime and disk
 
-Measured on the machine in `env/versions.json` (Apple silicon, 16 cores),
-`RUN_ETCGEM` off.
+Measured on the machine in `docs/env/versions.json` (Apple silicon, 16 cores),
+`RUN_GEM` off.
 
 | Stage | Wall time |
 |---|---|
@@ -373,15 +360,16 @@ Measured on the machine in `env/versions.json` (Apple silicon, 16 cores),
 | `quarto render` (docx + pdf) | ~1 min |
 | **Total (see `logs/run_all_*.log` for the measured figure)** | **see the SUMMARY block at the end of the log** |
 
-If `RUN_ETCGEM=1`, add roughly 35 min: the `calibrate` (differential evolution,
-4 clades) and `bayes` (15³ emulator grid, then 4 × 32-walker × 4000-step emcee)
-stages dominate.
+If `RUN_GEM=1`, add a few minutes (the calibration in `gem/18_build_etcgem_tpc.py` and
+the uniform-shift counterfactual in `19`). The greedy/beam search (`gem/20_dyn_sparse.py`,
+hours) and the predictors are never part of `run_all.sh`; see `gem/README.md`.
 
 Disk:
 
 | Item | Size |
 |---|---|
-| repository (with submodule) | ~350 MB |
+| repository | ~420 MB (of which gem/models 38 MB, phylo/proteomes 31 MB) |
+| `gem/external/` (fetch_external.sh; only for re-running the predictors) | ~9 GB, 8.8 of it KOfam profiles |
 | `renv/library` | ~1.5 GB (mostly symlinks into the renv cache) |
 | TinyTeX | ~500 MB |
 | rendered manuscript | ~10 MB |
@@ -390,13 +378,6 @@ Disk:
 ---
 
 ## Troubleshooting
-
-**`supp_data/ not found` from 14 or 16.** The vendored copy at `outputs/supp_data/`
-is missing, or the submodule is not populated:
-
-```bash
-git submodule update --init --recursive
-```
 
 **Stan will not compile.** Run `Rscript scripts/00_install.R` and read its
 instructions. On macOS start with `xcode-select --install`, then
@@ -441,7 +422,7 @@ script-directory block.
 
 **PDF render fails.** `quarto install tinytex`. If a system TeX is also on your
 `PATH`, note that quarto prefers its own TinyTeX; both are recorded in
-`env/versions.json` so a version difference is not mistaken for drift.
+`docs/env/versions.json` so a version difference is not mistaken for drift.
 
 **The manuscript did not pick up a regenerated figure.** It cannot: the v3
 manuscript embeds extracted bitmaps rather than referencing

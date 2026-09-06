@@ -27,10 +27,13 @@ _to_delete/
 /etcGEMs/
 
 # --- etcGEM layer: third-party code, weights and databases (gem/fetch_external.sh) ---
-/gem/external/
 /gem/tables/lineage_work/
 /gem/tables/cg_work/
 /gem/tables/rbh/*.dmnd
+/gem/tables/dlkcat_input_*.tsv
+/gem/tables/dlkcat_*.log
+/gem/external/
+/phylo/trees/work/
 __pycache__/
 
 # --- run logs ---

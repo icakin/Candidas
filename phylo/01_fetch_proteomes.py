@@ -14,7 +14,7 @@ Uses only the standard library.
 import io, json, os, re, sys, time, urllib.parse, urllib.request, zipfile
 
 API = "https://api.ncbi.nlm.nih.gov/datasets/v2alpha"
-OUT = os.path.expanduser("~/Desktop/Projects/Candidas/phylo/proteomes")
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "proteomes")
 os.makedirs(OUT, exist_ok=True)
 
 # (tag, NCBI taxon name, strain hint or None)

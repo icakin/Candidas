@@ -28,7 +28,7 @@ same reaction in their species' model (kcat_reaction_<sp>.csv, best_gene per rea
     python3 padding_sensitivity.py --gem gem --nopad gem/thermal_tm_batch1.csv
 
 WHERE thermal_tm_batch1.csv COMES FROM
-    python3 gem/run_seq2tm.py --seqs-from gem/thermal_tm.csv \
+    python3 gem/15_run_seq2tm.py --seqs-from gem/thermal_tm.csv \
             gem/thermal_tm_batch1.csv --batch-size 1
 """
 import argparse

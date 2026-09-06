@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""paired_dedup_audit.py -- is the paired thermal-parameter difference pseudo-replicated?
+"""24_paired_dedup_audit.py -- is the paired thermal-parameter difference pseudo-replicated?
 
 Figure 4B/C pair enzymes by REACTION: 19_fig4_etcgem.py merges the two species' kcat
 tables on 'reaction' and reads each side's best_gene. A gene catalysing several reactions

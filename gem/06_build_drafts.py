@@ -1,24 +1,31 @@
-#!/usr/bin/env python3
-"""14_build_drafts.py - build hae/duo draft GEMs from the curated C. auris
-scaffold (iRV973), genome-driven, per the GECKO-review requirements.
+"""06_build_drafts.py -- sequence-linked GPRs for C. auris, C. haemulonii and C. duobushaemulonii
+from the curated iRV973 scaffold and each species' own KO annotation.
 
-Method (scaffold projection, NOT deletion-only):
-  * keep the auris reaction network functional (do NOT delete on sparse evidence);
-  * assign each metabolic reaction's GPR from the TARGET species' own genes, by
-    evidence: KO->KEGG-reaction (primary) then KO->EC (secondary);
-  * reactions with no species evidence are KEPT but GPR-cleared and flagged as
-    orphan/gap-fill (the honest 'no target evidence' class);
-  * ALL foreign auris gene IDs are removed.
-Limitation (disclosed): KO/EC evidence yields isozyme OR rules; enzyme-complex
-AND structure from the curated GPRs is not reconstructed (would need CJI97 gene
-sequences, which are unobtainable for this assembly). Calibration species
-(auris, parapsilosis) keep their fully curated GPRs - only the drafts use this.
+Why the same procedure is applied to C. auris itself. iRV973's gene-protein-reaction rules
+use B8441 GenBank locus tags (CJI97_*) that exist in no protein-sequence database, so the
+curated model cannot be linked to sequences as published. Re-keying it by the procedure
+below onto the B8441 RefSeq proteome (XP_ accessions) gives auris_iRV973_rekeyed.xml, the
+model every downstream script uses; regenerating it here reproduces the committed file's
+GPRs reaction for reaction (checked 2026-09-06: 2510 of 2510 metabolic reactions).
 
-    python3 gem/14_build_drafts.py
-Inputs : gem/models/auris_iRV973.xml, gem/ko_reaction.list,
-         gem/kofam/{ko_list,hae_ko.txt,duo_ko.txt}
-Outputs: gem/models/{haemulonii,duobushaemulonii}_draft.xml
-         gem/{haemulonii,duobushaemulonii}_evidence.csv
+Method (scaffold projection, NOT deletion-only), identical for the three species:
+  * keep the auris reaction network intact (no deletion on sparse evidence);
+  * assign each metabolic reaction's GPR from the TARGET species' own genes, by evidence:
+    KO -> KEGG reaction (primary, via inputs/ko_reaction.list) then KO -> EC number
+    (secondary, via KOfam's ko_list), the KOs coming from KofamScan (04_kofam_annotate.sh);
+  * reactions with no species evidence are KEPT but GPR-cleared and flagged orphan;
+  * all CJI97 ids are removed, so every gene in every model has a sequence.
+Limitation (disclosed): KO/EC evidence yields isozyme-OR rules. The curated enzyme-complex
+AND structure is not reconstructed, for C. auris either; the models have only a handful of
+transporter complexes, so all GPRs are treated as isozyme OR (gem/audits/sens_complex.py
+tests the SUM-of-subunits alternative).
+C. parapsilosis keeps its curated iDC1003 GPRs, which are already CPAR2_ locus tags.
+
+    python3 gem/06_build_drafts.py
+Inputs : gem/models/auris_iRV973.xml, gem/inputs/ko_reaction.list,
+         gem/inputs/kofam/{auris,hae,duo}_ko.txt, gem/external/kofam/ko_list
+Outputs: gem/models/auris_iRV973_rekeyed.xml, {haemulonii,duobushaemulonii}_draft.xml
+         gem/tables/{auris,haemulonii,duobushaemulonii}_evidence.csv
 """
 import cobra, re, collections, csv
 from pathlib import Path
@@ -50,8 +57,9 @@ def rx_ecs(r):
     return {x for e in a for x in re.split(r"[;, ]+",e) if re.match(r"\d+\.\d+\.\d+\.\d+",x)}
 
 tmpl=cobra.io.read_sbml_model(str(TMPL))
-for tag,ko in [("haemulonii","hae_ko.txt"),("duobushaemulonii","duo_ko.txt")]:
-    r2g,ec2g=species_maps(KOF/ko); m=tmpl.copy(); m.id=f"{tag}_draft"
+OUT={"auris":"auris_iRV973_rekeyed.xml","haemulonii":"haemulonii_draft.xml","duobushaemulonii":"duobushaemulonii_draft.xml"}
+for tag,ko in [("auris","auris_ko.txt"),("haemulonii","hae_ko.txt"),("duobushaemulonii","duo_ko.txt")]:
+    r2g,ec2g=species_maps(KOF/ko); m=tmpl.copy(); m.id=OUT[tag][:-4]
     rows=[]
     for r in m.reactions:
         cls=None; genes=set()
@@ -69,8 +77,8 @@ for tag,ko in [("haemulonii","hae_ko.txt"),("duobushaemulonii","duo_ko.txt")]:
         rows.append((r.id, base_R(r.id) or "", ";".join(sorted(rx_ecs(r))), cls,
                      r.gene_reaction_rule))
     cobra.manipulation.remove_genes(m,[g for g in list(m.genes) if not g.reactions],remove_reactions=False)
-    cobra.io.write_sbml_model(m,str(MODELS/f"{tag}_draft.xml"))
-    with open(GEM/f"{tag}_evidence.csv","w",newline="") as fh:
+    cobra.io.write_sbml_model(m,str(MODELS/OUT[tag]))
+    with open(TABLES/f"{tag}_evidence.csv","w",newline="") as fh:
         w=csv.writer(fh); w.writerow(["reaction","kegg_R","EC","evidence_class","GPR"]); w.writerows(rows)
     ev=collections.Counter(r[3] for r in rows)
     foreign=sum(1 for g in m.genes if not g.id.startswith("XP_"))

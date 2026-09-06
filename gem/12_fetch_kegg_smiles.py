@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""fetch_kegg_smiles.py - get SMILES for the KEGG compounds the DLKcat run needs.
-Run on the Mac (internet):  python3 gem/fetch_kegg_smiles.py
+"""12_fetch_kegg_smiles.py - get SMILES for the KEGG compounds the DLKcat run needs.
+Run on the Mac (internet):  python3 gem/12_fetch_kegg_smiles.py
 Reads gem/kegg_compounds_needed.txt, writes gem/kegg_smiles.tsv (kegg<TAB>SMILES).
 Needs rdkit (conda install -c conda-forge rdkit) + requests. ~1000 compounds, ~10 min.
 """

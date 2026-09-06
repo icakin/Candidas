@@ -1,5 +1,5 @@
 # =============================================================================
-# 17_fig3.R - FIGURE 3: high-temperature growth vs phylogenomic proximity
+# 18_fig3.R - FIGURE 3: high-temperature growth vs phylogenomic proximity
 #
 # Canonical generator. Reproduces FIG3_v8 exactly and replaces the earlier
 # port of phylo/make_fig3.py (the febrile-persistence figure), which is retired.
@@ -24,7 +24,7 @@
 # the counts at the pipeline's own pre-existing CURV_MIN_RT = 0.5.
 #
 # Needs only: dplyr, readr  (base graphics; no ggplot2 / patchwork / ape).
-# Run:  Rscript scripts/17_fig3.R      or  source() it in RStudio.
+# Run:  Rscript scripts/18_fig3.R      or  source() it in RStudio.
 # =============================================================================
 suppressPackageStartupMessages({ library(dplyr); library(readr) })
 
@@ -216,7 +216,7 @@ induce <- function(nd, keep) {
   nd$kids <- k; nd$tips <- unlist(lapply(k, `[[`, "tips")); nd
 }
 
-TR <- induce(annotate(read_newick(file.path(root, "phylo", "pg_rooted.nwk"))), TIP)
+TR <- induce(annotate(read_newick(file.path(root, "phylo", "trees", "pg_rooted.nwk"))), TIP)
 TR$depth <- 0                                     # draw from the induced root
 rowy <- setNames(seq_along(SPP) - 1, TIP[SPP])
 yof  <- function(nd) mean(rowy[nd$tips])

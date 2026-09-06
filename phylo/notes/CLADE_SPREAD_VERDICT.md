@@ -5,7 +5,7 @@ carry the premise on its own.
 
 ## What was quoted
 
-`phylo/phylogenomics_results.md` states that the four *C. auris* clades differ by 2.74 °C
+`phylo/notes/phylogenomics_results.md` states that the four *C. auris* clades differ by 2.74 °C
 in CUE optimum while their genome signature is flat. That number came from the **fitted**
 (Sharpe–Schoolfield, per-cell) optima, which inherit the N0 = N_inoc·e^(r·δ)
 back-projection. Within-*auris* fine structure from that route is exactly the class of

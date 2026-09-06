@@ -26,8 +26,8 @@ arrangement, whatever the short-term convenience of a Word round-trip, because:
 
 | # | Manuscript figure | Path referenced from `v3.qmd` | Producing script |
 |---|---|---|---|
-| 1 | Figure 1 — growth/respiration decoupling | `../results/figures/manuscript/FIG1_decoupling.png` | `16_fig1_fig2.R` |
-| 2 | Figure 2 — the carbon cost of fever | `../results/figures/manuscript/FIG2_consequences.png` | `16_fig1_fig2.R` |
+| 1 | Figure 1 — growth/respiration decoupling | `../results/figures/manuscript/FIG1_decoupling.png` | `16_fig1.R / 17_fig2.R` |
+| 2 | Figure 2 — the carbon cost of fever | `../results/figures/manuscript/FIG2_consequences.png` | `16_fig1.R / 17_fig2.R` |
 | 3 | Supp. Fig. 1 — equilibration sensitivity | `../results/figures/Fig_temperature_equilibration.png` | `08_temperature_equilibration_sensitivity.R` |
 | 4 | Supp. Fig. 2 — respiration + envelope | `../results/figures/fig_bayes_resp_arrhenius.png` | `11_bayesian_plots.R` |
 | 5 | Supp. Fig. 3 — CUE + envelope | `../results/figures/fig_bayes_cue_by_clade.png` | `11_bayesian_plots.R` |
@@ -39,8 +39,8 @@ their placement is undecided:
 
 | Figure | File | Generator | Caption |
 |---|---|---|---|
-| thermal/phylogeny discordance | `results/figures/manuscript/FIG3_discordance.png` | `scripts/17_fig3.R` | `gem/FIG3_v8_caption.md` |
-| etcGEM counterfactual | `results/figures/manuscript/FIG4_etcgem_counterfactual.png` | `scripts/18_fig4.R` | `gem/FIG4_etcgem_caption.md` |
+| thermal/phylogeny discordance | `results/figures/manuscript/FIG3_discordance.png` | `scripts/18_fig3.R` | `gem/FIG3_v8_caption.md` |
+| etcGEM counterfactual | `results/figures/manuscript/FIG4_etcgem_counterfactual.png` | `scripts/19_fig4.R` | `gem/FIG4_etcgem_caption.md` |
 
 A draft of `v3.qmd` carrying both, with their captions and placeholder Results text, is
 kept at `manuscript/v3_withfig34_20260904.qmd`. Adopting it is a single file copy; until
@@ -49,13 +49,13 @@ the document.
 
 **Superseded numbering.** Earlier revisions of this document listed the etc-GEM pipeline
 schematic (`FIG_model_schematic.png`, `17_schematic.py`) as Figure 3 and the capacity axis
-(`FIG_MODEL.png`, `16_fig1_fig2.R`) as Figure 4, and listed a ten-figure manuscript.
+(`FIG_MODEL.png`, `16_fig1.R / 17_fig2.R`) as Figure 4, and listed a ten-figure manuscript.
 Neither was in fact referenced by `v3.qmd`; the document had drifted from the file it
 describes. Those two figures remain unreferenced and should be placed in the supplement or
 dropped deliberately rather than left in this table.
 
 **A broken reference this table did not catch.** Until 2026-09-04, `v3.qmd` referenced
-`FIG2_the_bill.png`, which has never existed in the repository. `16_fig1_fig2.R` writes
+`FIG2_the_bill.png`, which has never existed in the repository. `16_fig1.R / 17_fig2.R` writes
 `FIG2_consequences` via `save_fig()`, but its own OUTPUTS header comment named
 `FIG2_the_bill.png`, and the manuscript followed the comment. Figure 2 therefore could not
 render. Both the manuscript path and the stale comment are corrected, and the comment now
@@ -160,7 +160,7 @@ move, and why:
 
 ## 5. The duplicate figures under `results/figures/`
 
-`16_fig1_fig2.R`'s `save_fig()` writes **only** to `results/figures/manuscript/`.
+`16_fig1.R / 17_fig2.R`'s `save_fig()` writes **only** to `results/figures/manuscript/`.
 The top-level copies of `FIG1_decoupling.png`, `FIG2_the_bill.png`, `FIG_MODEL.png` and
 `FIG_MODEL_SUPP_validation.png` are therefore **not** rewritten by the pipeline — they
 are older files, and they differ from the `manuscript/` copies (mean abs. pixel

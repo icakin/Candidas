@@ -39,8 +39,31 @@ SP = {'auris':            ('auris_iRV973_rekeyed.xml',    'medium_iRV973_auris.c
       'duobushaemulonii': ('duobushaemulonii_draft.xml',  'medium_iRV973_auris.csv'),
       'parapsilosis':     ('parapsilosis_iDC1003.xml',    'medium_iDC1003_parapsilosis.csv')}
 
+# where each species' protein sequences come from, keyed by the gene ids the models use
+PROTEOME = {'auris':            PROTEOMES / 'auris_cladeI.faa',        # B8441 RefSeq, XP_ ids
+            'haemulonii':       PROTEOMES / 'haemulonii.faa',          # RefSeq, XP_ ids
+            'duobushaemulonii': PROTEOMES / 'duobushaemulonii.faa',    # RefSeq, XP_ ids
+            'parapsilosis':     INPUTS / 'parap_uniprot.tsv'}          # UniProt UP000005221; CPAR2_ locus tags
+
+def load_proteome(sp):
+    """gene id -> amino-acid sequence for one species (terminal '*' and 'X' removed).
+    RefSeq FASTA is keyed by record id; the UniProt TSV by every name in its
+    'Gene Names (ordered locus)' column, first entry winning."""
+    import pandas as pd
+    path = PROTEOME[sp]; out = {}
+    if path.suffix == '.tsv':
+        t = pd.read_csv(path, sep='\t', dtype=str).fillna('')
+        for _, r in t.iterrows():
+            for g in r['Gene Names (ordered locus)'].split():
+                out.setdefault(g, r['Sequence'])
+    else:
+        from Bio import SeqIO
+        for rec in SeqIO.parse(str(path), 'fasta'):
+            out.setdefault(rec.id, str(rec.seq))
+    return {k: v.rstrip('*').replace('X', '') for k, v in out.items()}
+
 for _d in (TABLES,):
     _d.mkdir(parents=True, exist_ok=True)
 
 __all__ = ['GEM', 'ROOT', 'INPUTS', 'MODELS', 'TABLES', 'EXTERNAL', 'NOTES',
-           'RESULTS_TABLES', 'RESULTS_FIGURES', 'PROTEOMES', 'SP']
+           'RESULTS_TABLES', 'RESULTS_FIGURES', 'PROTEOMES', 'PROTEOME', 'SP', 'load_proteome']

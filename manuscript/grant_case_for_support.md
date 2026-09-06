@@ -333,7 +333,7 @@ congeneric benchmark) into formal citations and drop the file paths.*
 | Claim | Source |
 |---|---|
 | 20 isolates, 7 lineages, 12 temperatures, 5 wells each | `results/tables/Oxygen_Data_Filtered.csv` |
-| q is a fixed per-taxon constant (1320 fg C/cell; 5280 for *C. parapsilosis*), so G/q = r exactly and panel 1a's h⁻¹ label is exact | `results/tables/derived_N0_R_results_with_carbon.csv`; `scripts/16_fig1_fig2.R` lines 388–396 |
+| q is a fixed per-taxon constant (1320 fg C/cell; 5280 for *C. parapsilosis*), so G/q = r exactly and panel 1a's h⁻¹ label is exact | `results/tables/derived_N0_R_results_with_carbon.csv`; `scripts/16_fig1.R / 17_fig2.R` lines 388–396 |
 | growth optimum 33–36 °C; respiration monotonic; LOO favours Arrhenius | Fig. 1a,b |
 | E_G 0.83–1.14 eV, E_R 0.30–0.52 eV, difference credible in all five | Fig. 1c |
 | scale-free CUE optimum 26.1–31.5 °C, 5.5–10.9 °C below 37, P > 0.9999; assumes T-independent q | Fig. 1d,e and the c/q identity |
@@ -345,7 +345,7 @@ congeneric benchmark) into formal citations and drop the file paths.*
 | 10/12 vs 1/8 isolates at 44 °C (assay ceiling) | `gem/counts_at_44.json` |
 | whole-proteome identity 99.4–100% across clades I–IV | manuscript, coding-sequence section |
 | GSE165762 median log2FC −0.005 vs +0.031, Wilcoxon P = 0.93 | manuscript, same section |
-| 2,931 orthologs; 600-gene supermatrix; all nodes 1.00; 25× divergence | `phylo/phylogenomics_results.md` |
+| 2,931 orthologs; 600-gene supermatrix; all nodes 1.00; 25× divergence | `phylo/notes/phylogenomics_results.md` |
 | thermal-machinery copy number invariant; AOX the family-tracking exception | same |
 | composition correlation collapses on phylogenetic collapse | same |
 | ten formulations; β 8.1 vs 0.241; 87% vs 10–30% | `gem/FIG4_etcgem_caption.md` |

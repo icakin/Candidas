@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""11_inspect_models.py - report the structure of each curated GEM so harmonisation
-decisions are made from fact, not assumption. Run BEFORE 12_harmonise.
+"""02_inspect_models.py - report the structure of each curated GEM so harmonisation
+decisions are made from fact, not assumption. Run BEFORE 03 (medium mapping).
 
-    python3 gem/11_inspect_models.py
+    python3 gem/02_inspect_models.py
 
 Needs: cobra (pip install cobra). Reads gem/models/*.xml, writes gem/model_report.md.
 Harmonisation depends entirely on what this reveals: namespace prefix, compartment
@@ -16,7 +16,7 @@ from gempaths import *  # GEM, ROOT, INPUTS, MODELS, TABLES, EXTERNAL, RESULTS_T
 
 GEM = Path(__file__).resolve().parent
 MODELS = GEM / "models"
-OUT = GEM / "model_report.md"
+OUT = NOTES / "model_report.md"
 
 def guess_namespace(ids):
     # BiGG metabolites look like glc__D_c; MetaCyc/KEGG/other differ
@@ -51,7 +51,7 @@ def report(path):
 def main():
     xmls = sorted(MODELS.glob("*.xml"))
     if not xmls:
-        print("No .xml in", MODELS, "- run 10_fetch_curated_models.sh first."); return
+        print("No .xml in", MODELS, "- run 01_fetch_curated_models.sh first."); return
     blocks=[]; models={}
     for p in xmls:
         try:

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""12_apply_medium_fba.py - apply a resolved per-model YMS medium and run the three
+"""03_apply_medium_fba.py - apply a resolved per-model YMS medium and run the three
 preregistered nutrient scenarios (min / proxy / rich) with a POOLED amino-acid
 carbon budget (not 20 free caps). Verified working on iDC1003 (parapsilosis).
 
-    python3 gem/12_apply_medium_fba.py \\
+    python3 gem/03_apply_medium_fba.py \\
         gem/models/parapsilosis_iDC1003.xml \\
         gem/medium_iDC1003_parapsilosis.csv
 
@@ -11,7 +11,7 @@ Needs: cobra, pandas. Writes gem/medium_fba_<model>.csv.
 
 Per-model medium maps resolve the abstract medium_YMS.csv onto each model's real
 exchange ids + namespace (iDC1003 is KEGG; iRV973 may differ - make its own map
-after 11_inspect_models.py). Columns: role, exchange_id, kegg, name, setting, note.
+after 02_inspect_models.py). Columns: role, exchange_id, kegg, name, setting, note.
 `setting`: OPEN | FIT (carbon, scaled) | AA_POOL (pooled budget) | ABSENT.
 """
 import sys, re
@@ -52,13 +52,13 @@ def run(model, med, scenario):
 
 def main():
     if len(sys.argv) < 3:
-        print("usage: python3 12_apply_medium_fba.py <model.xml> <medium_map.csv>"); return
+        print("usage: python3 03_apply_medium_fba.py <model.xml> <medium_map.csv>"); return
     model = cobra.io.read_sbml_model(sys.argv[1])
     med = pd.read_csv(sys.argv[2])
     rows = [dict(scenario=s, growth_per_h=round(run(model, med, s), 4))
             for s in ("scenario_min", "scenario_proxy", "scenario_rich")]
     df = pd.DataFrame(rows)
-    out = GEM / f"medium_fba_{Path(sys.argv[1]).stem}.csv"
+    out = TABLES / f"medium_fba_{Path(sys.argv[1]).stem}.csv"
     df.to_csv(out, index=False)
     print(df.to_string(index=False)); print("\nwrote", out)
     print("Sanity: growth must rise min->proxy->rich. If min is already high AND "

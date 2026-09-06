@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""loocv_nested.py — species-held-out validation of the etcGEM, fully nested.
+"""25_loocv_nested.py — species-held-out validation of the etcGEM, fully nested.
 
 WHAT IT IS FOR
 The etcGEM's shape parameters and scale were fitted to C. auris alone. So the model
@@ -29,8 +29,8 @@ The optimum error is also reported, but it is the weaker half: all four optima l
 
 RUN
     cd <repo root>
-    python3 gem/loocv_nested.py              # full fit, roughly 1.5-2 h
-    FAST=1 python3 gem/loocv_nested.py       # reduced optimiser budget, roughly 25 min
+    python3 gem/25_loocv_nested.py              # full fit, roughly 1.5-2 h
+    FAST=1 python3 gem/25_loocv_nested.py       # reduced optimiser budget, roughly 25 min
 
 FAST=1 halves the optimiser budget. A worse fit makes the model look worse, so any
 failure it reports is pessimistic rather than flattering; use it to check the pipeline,
@@ -151,7 +151,7 @@ for held in SPP:
     #   truncated - a species not assayed above its last measured point, where it was
     #               still growing, has no failure either. (This applied to
     #               C. duobushaemulonii under the old measured TPC, which was built from
-    #               the fit table and so stopped at 38 C; build_measured_tpc.py now takes
+    #               the fit table and so stopped at 38 C; 17_build_measured_tpc.py now takes
     #               the denominator from the raw traces, and it fails at 40 C.)
     # In both cases there is nothing to evaluate against and the fold reports NA.
     dead = mm[mm <= DETECT]

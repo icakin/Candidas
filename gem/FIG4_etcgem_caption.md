@@ -1,6 +1,6 @@
 # Figure 4 — title, caption and Methods text
 
-Generator: `scripts/18_fig4.R` → `results/figures/manuscript/FIG4_etcgem_counterfactual.png`
+Generator: `scripts/19_fig4.R` → `results/figures/manuscript/FIG4_etcgem_counterfactual.png`
 
 ## TITLE
 Within the etcGEM, sequence-predicted enzyme thermal properties are insufficient to
@@ -31,7 +31,7 @@ minute and converted to h⁻¹ by ×60; it involves no carbon-quota assumption a
 therefore directly comparable with the model's µ). Dashed grey, the etcGEM prediction.
 Dotted line, the 0.05 h⁻¹ detection floor. Every assayed temperature carries a point,
 including the zeros: these are observed failures, not missing data. The measured curve is
-built by `gem/build_measured_tpc.py`, which takes its denominator from the raw oxygen
+built by `gem/17_build_measured_tpc.py`, which takes its denominator from the raw oxygen
 traces — the record of what was actually run — rather than from the fitted-parameter
 table. That distinction matters: a dead culture gives a flat trace, which cannot be
 fitted, so at temperatures where every well died the fit table holds no rows at all and
@@ -45,7 +45,7 @@ enters as an observed zero rather than as a missing observation. Red crosses mar
 stronger condition, temperatures at which **every** well was dead: *C. duobushaemulonii*
 at 40–44 °C and *C. parapsilosis* at 42–44 °C. *C. haemulonii*'s zeros at 40–44 °C carry
 no cross, because 5 of 15 wells there still grew even though the median well did not.
-*C. auris* is the calibration target and is labelled as such: `build_etcgem_tpc.py` fits
+*C. auris* is the calibration target and is labelled as such: `18_build_etcgem_tpc.py` fits
 the three shape parameters and the scale factor to its curve alone and then freezes them,
 so its close agreement is in-sample and is not evidence of general accuracy. The three
 relatives are out-of-sample. The model tracks them to about 36 °C and then does not
@@ -109,7 +109,7 @@ assay-censored, with 10/12 *C. auris* isolates still growing there.
 ## SPECIES-HELD-OUT VALIDATION (methods; answers the obvious objection to panel A)
 
 Panel A's agreement with *C. auris* is in-sample, so a referee can reasonably ask whether
-the relatives fail only because they were never fitted. `gem/loocv_nested.py` answers it
+the relatives fail only because they were never fitted. `gem/25_loocv_nested.py` answers it
 by holding out one species, refitting **every** fitted quantity — σ, *w*, *P* and the
 scale — on the other three, and then predicting the held-out one. Nothing applied to the
 held-out species has seen its data. This replaces `loocv_all.py`, which froze *w* and *P*
@@ -196,7 +196,7 @@ Collapsing to unique (auris gene, relative gene) pairs changes the numbers as fo
 
 A cluster bootstrap resampling pairs rather than rows gives the same intervals
 ([0.20, 0.63] for *T*~m~ against *C. haemulonii*), so the widening is a property of the
-data and not of how ties were collapsed. `gem/paired_dedup_audit.py` reproduces all three
+data and not of how ties were collapsed. `gem/24_paired_dedup_audit.py` reproduces all three
 versions.
 
 The *T*~m~ conclusion strengthens: the difference is smaller, so the fold gap rises from
@@ -463,24 +463,25 @@ combinations. The convergent negative across every regime supports the title.
 Every input is regenerable from the repository:
 
 ```
-python3 gem/build_measured_tpc.py         # gem/measured_tpc_honest.csv, panel A's measured curve
-python3 gem/etcgem_counterfactual.py      # counterfactual_results.json, counterfactual_sweep.csv
-python3 gem/dyn_sparse.py Tm              # dyn_sparse_Tm.json   (60 steps, pool 80)
-python3 gem/dyn_sparse.py Topt            # dyn_sparse_Topt.json
-python3 gem/counts_at_44.py               # counts_at_44.json  (same criterion as Fig 3)
-python3 scripts/18_fig4.R         # the figure
+python3 gem/17_build_measured_tpc.py         # gem/tables/measured_tpc_honest.csv, panel A's measured curve
+python3 gem/19_etcgem_counterfactual.py      # counterfactual_results.json, counterfactual_sweep.csv
+python3 gem/20_dyn_sparse.py Tm              # dyn_sparse_Tm.json   (60 steps, pool 80)
+python3 gem/20_dyn_sparse.py Topt            # dyn_sparse_Topt.json
+python3 gem/21_counts_at_44.py               # counts_at_44.json  (same criterion as Fig 3)
+python3 gem/26_fig4_tables.py                # gem/tables/fig4/*.csv, everything the figure draws
+Rscript scripts/19_fig4.R                    # the figure
 ```
 
 Supporting analyses, not required for the figure:
 
 ```
-python3 gem/loocv_nested.py               # species-held-out validation (~16 min, 4 folds)
-python3 gem/paired_dedup_audit.py         # reaction-level vs unique-pair paired statistics
-python3 gem/carbon_budget_check.py        # RQ and carbon-use-efficiency disclosure
-python3 gem/atp_audit.py                  # energy-generating-cycle test
-python3 gem/ngam_falsification.py         # maintenance-axis rows of the table
-python3 gem/more_mechanisms.py            # joint, weakest-link and oxygen rows
+python3 gem/25_loocv_nested.py               # species-held-out validation (~16 min, 4 folds)
+python3 gem/24_paired_dedup_audit.py         # reaction-level vs unique-pair paired statistics
+python3 gem/audits/carbon_budget_check.py        # RQ and carbon-use-efficiency disclosure
+python3 gem/audits/atp_audit.py                  # energy-generating-cycle test
+python3 gem/audits/ngam_falsification.py         # maintenance-axis rows of the table
+python3 gem/audits/more_mechanisms.py            # joint, weakest-link and oxygen rows
 ```
 
-`ONLY=<species>` re-runs `dyn_sparse.py` for one relative and merges into the existing
+`ONLY=<species>` re-runs `20_dyn_sparse.py` for one relative and merges into the existing
 JSON, rather than recomputing relatives whose model has not changed.

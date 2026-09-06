@@ -106,9 +106,15 @@ to *C.* One sentence in the Methods should acknowledge the reclassifications and
 that the older combinations are retained for continuity with the clinical literature —
 a referee will otherwise raise it.
 
-## Files
-- `pg_rooted.nwk` — final rooted phylogenomic tree
-- `supermatrix.faa` — 600-gene concatenated alignment
-- `core_orthologs.json` — the 2,931 single-copy ortholog map
-- `thermal_census.csv`, `proteome_signatures.csv`, `signature_vs_phenotype.csv`
-- `FIG_phylogenomics.png`
+## Files (after the 2026-09-06 reorganisation)
+- `phylo/01_fetch_proteomes.py` — the ten proteomes -> `phylo/proteomes/` (tracked)
+- `phylo/02_phylogenomic_tree.sh` — the tree procedure above, written down; the committed
+  `phylo/trees/pg_rooted.nwk` and `trees/supermatrix.faa.gz` are the original run's (the
+  600-gene sample and `core_orthologs.json` of that run were not saved, so a re-run
+  reproduces the topology, not byte-identical branch lengths)
+- `phylo/03_thermal_census.py` -> `phylo/tables/thermal_census.csv` (reproduces the committed table exactly)
+- `phylo/04_proteome_signatures.py` -> `phylo/tables/proteome_signatures.csv` (reproduces exactly)
+- `phylo/tables/signature_vs_phenotype.csv` — the signatures joined to `results/tables/fig_values.csv`
+  (Topt, Tcue, fever cost), made interactively for the correlation test above
+- `phylo/trees/pg_noCl.nwk` — the tree without *C. lusitaniae*
+- Figure 3 (`scripts/18_fig3.R`) reads `phylo/trees/pg_rooted.nwk`

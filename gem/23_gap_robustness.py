@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""gap_robustness.py — does the model's thermal-limit gap survive correcting its defects?
+"""23_gap_robustness.py — does the model's thermal-limit gap survive correcting its defects?
 
 THE CLAIM THE GRANT MAKES
 The etcGEM's own predicted failure temperature (the T at which predicted growth falls
@@ -28,7 +28,7 @@ defects, and the grant's central premise stands.
 OBSERVED LIMITS (this study): C. auris ~44-45 C (grows at 44, pilot no-growth at 45);
 relatives ~40 C. The model limit is compared against these.
 
-Run:  python3 gap_robustness.py [repo_root]     (needs cobra + the models; run on device)
+Run:  python3 23_gap_robustness.py [repo_root]     (needs cobra + the models; run on device)
 """
 import sys, json, statistics
 from pathlib import Path

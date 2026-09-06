@@ -1,5 +1,12 @@
 # RUNBOOK — Candidas, from scratch
 
+> **2026-09-06.** The repository was reorganised after this runbook was last updated
+> (scripts renumbered, the `cauris_etcgem` submodule and `outputs/supp_data/` removed, the
+> etcGEM layer now in `gem/` with its own README). The current instructions are `README.md`,
+> `SETUP.md`, `scripts/README.md` and `gem/README.md`; this file stands as the record of
+> the August packaging and its stage names no longer match `run_all.sh`.
+
+
 What to run, in what order, what it should take, and what to check at each stage.
 
 **Updated 2026-08-11.** The original was written for C1, before the script
@@ -96,7 +103,7 @@ the published set:
 ```bash
 Rscript scripts/15_n0_treatment_panel.R       # Supplementary Figure 6, ~24 min
 Rscript scripts/09_bayesian_models.R && Rscript scripts/11_bayesian_plots.R \
-  && Rscript scripts/12_carbon_tax.R && Rscript scripts/16_fig1_fig2.R \
+  && Rscript scripts/12_carbon_tax.R && Rscript scripts/16_fig1.R / 17_fig2.R \
   && Rscript scripts/13_uncertainty_bands.R
 ```
 

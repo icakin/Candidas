@@ -4,69 +4,29 @@
 # =============================================================================
 #   bash scripts/run_all.sh
 #
-# Everything is tee'd to logs/ and every stage is timed.
+# Everything is tee'd to logs/ and every stage is timed. Three stages:
 #
-# ----------------------------------------------------------------------------
-# WHERE EACH OF THE EIGHTEEN SCRIPTS RUNS, AND WHY
-# ----------------------------------------------------------------------------
-#   01 convert_xlsx        Shiny app.  NOT RUN. Its outputs (data/*_Oxygen.csv,
-#                          results/tables/otu_names.csv) are committed INPUTS.
-#   02 longdata            \
-#   03 trimming             |
-#   06 inoculation          |  run by `Rscript scripts/run_all.R`, in this order.
-#   07 oxygen_fits          |  06 is a Shiny app: it is SOURCED headless, which
-#   08 temperature_equil.   |  defines the app and returns without launching it
-#   09 bayesian_models      |  (its results/tables/otu_inoc.csv is a committed
-#   11 bayesian_plots       |  INPUT read by 07, not regenerated here).
-#   12 carbon_tax           |
-#   14 main_figures         |  08's per-curve table is an input to 15.
-#   15 uncertainty_bands   /
-#   04 trim_selector       Shiny app.  NOT RUN. results/tables/manual_fit_windows.csv
-#                          and plot_exclude_points.csv are committed INPUTS that
-#                          config.R reads when USE_APP_TRIM_FILES is TRUE.
-#   05 cell_sizes          Shiny app.  NOT RUN. results/tables/otu_cell_sizes.csv
-#                          is a committed INPUT.
-#   13 capacity_expression run here, as its own stage. It is not in run_all.R
-#                          because it used to download from GEO; the count matrix
-#                          is now committed at data/expression/GSE165762/, so it
-#                          runs offline and 16 needs its output.
-#   16 supplementary_figs  run here, as its own stage (needs 13 + etc-GEM data).
-#   17 schematic.py        run here, as its own stage (python3 + matplotlib).
-#   20 fig4_etcgem.py      run here ALWAYS - Figure 4, reads committed gem/ outputs.
+#   1. R pipeline (scripts/run_all.R): 02 03 06 07 08 09 11 12 13, then Figures 1-4
+#      (16-19). The four Shiny apps (01, 04, 05, 06) are not launched: their outputs
+#      (data/*_Oxygen.csv, results/tables/{otu_names,manual_fit_windows,
+#      plot_exclude_points,otu_cell_sizes,otu_inoc}.csv) are committed INPUTS.
+#      10, 14 and 15 are diagnostics that refit the respiration model under alternative
+#      treatments and are deliberately NOT run here (see run_all.R's header).
+#   2. C11 scale-free report (reports/C11_scale_free/R/01-05): the manuscript's
+#      scale-free numbers are produced there, so it regenerates with the pipeline.
+#   3. quarto render of manuscript/v3.qmd.
 #
-#   10 n0_term_test        DELIBERATELY NOT RUN - diagnostic, not a pipeline stage.
-#   18 n0_treatment_panel  DELIBERATELY NOT RUN - diagnostic, not a pipeline stage.
-#       Both answer "how much does the between-clade ordering lean on the N0
-#       back-projection?" by REFITTING the Bayesian respiration model two and
-#       three times respectively, writing each alternative fit over
-#       results/tables/bayes_resp_arr_summary.csv and results/rds/. They restore
-#       derived_N0_R_results_with_carbon.csv but NOT those other outputs, so a
-#       run that ended with either of them would leave the published bayes_*
-#       tables holding an ALTERNATIVE fit. 10's own header says so: "re-run
-#       09_bayesian_models.R normally afterwards to refresh the published ones."
-#       They also cost tens of minutes each. Run them deliberately, then re-run
-#       09 -> 11 -> 12 -> 14 -> 15 to restore the published set:
-#           Rscript scripts/10_n0_term_test.R
-#           Rscript scripts/15_n0_treatment_panel.R     # Supplementary Fig. 6
-#
-#   etc-GEM (python)       OPTIONAL, OFF BY DEFAULT - see RUN_ETCGEM below.
+# THE PYTHON etcGEM LAYER (gem/) IS NOT RUN HERE. Figure 4 (19_fig4.R) reads the tables
+# it writes, which are committed. Regenerating them is a deliberate act with its own
+# environment (gem/requirements.txt) and run order (gem/README.md); the sequence
+# predictors depend on batch composition, so a casual re-run could silently move the
+# committed numbers. RUN_GEM=1 runs the cheap, deterministic part (17 -> 26) first.
 #
 # ENVIRONMENT (all optional):
-#   RUN_ETCGEM=1     also regenerate the etc-GEM outputs from the Python engine
-#                    in the cauris_etcgem submodule. Off by default because the
-#                    outputs it produces are VENDORED at outputs/supp_data/ (see
-#                    commit "Vendor etc-GEM supp_data outputs so clean checkout
-#                    reproduces model figures"), and because main does not pin
-#                    the Python engine - the requirements.lock that pins it lives
-#                    on a submodule commit this repository does not reference.
-#                    Turning it on without that pin can silently change the model
-#                    under the committed figures.
-#   ETCGEM_STAGES    which etc-GEM stages to run when RUN_ETCGEM=1 (default: all)
+#   RUN_GEM=1        regenerate gem/tables/ from the committed models and predictor
+#                    outputs before the R pipeline (needs gem/requirements.txt tier 1)
 #   SKIP_R=1         skip the R pipeline
-#   SKIP_C11=1       skip the C11 scale-free report (reports/C11_scale_free/).
-#                    ON by default: the manuscript's scale-free numbers are
-#                    produced there rather than under scripts/, so it has to
-#                    regenerate with the pipeline or those numbers drift.
+#   SKIP_C11=1       skip the C11 scale-free report
 #   SKIP_RENDER=1    skip the manuscript render (and the C11 report render)
 #   LOG_DIR          log destination        (default: <root>/logs)
 # =============================================================================
@@ -141,71 +101,28 @@ exec > >(tee -a "$MAIN_LOG") 2>&1
 
 banner "Candidas full pipeline   $(date '+%Y-%m-%d %H:%M:%S')"
 echo "  root        : $ROOT"
-echo "  RUN_ETCGEM  : ${RUN_ETCGEM:-0}"
+echo "  RUN_GEM     : ${RUN_GEM:-0}"
 echo "  logs        : $LOG_DIR"
 
 # ---------------------------------------------------------------------------
-# 0. etc-GEM (python) - optional, off by default
+# 0. etcGEM tables (python) - optional, off by default
 # ---------------------------------------------------------------------------
-if [ "${RUN_ETCGEM:-0}" = "1" ]; then
-  PYBIN="$ROOT/cauris_etcgem/.venv/bin/python"
-  if [ ! -x "$PYBIN" ]; then
-    echo ""
-    echo "!! RUN_ETCGEM=1 but there is no virtualenv at $PYBIN"
-    echo "   cd cauris_etcgem && python3 -m venv .venv \\"
-    echo "     && .venv/bin/python -m pip install -r requirements.txt"
-    exit 1
-  fi
-  stage "0/5 etc-GEM (optional) (python, ${ETCGEM_STAGES:-all})" "$LOG_DIR/etcgem_${STAMP}.log" \
-    env PYTHONUNBUFFERED=1 "$PYBIN" \
-        "$ROOT/cauris_etcgem/strains/eci_cauris/scripts/generate_model_data.py" \
-        ${ETCGEM_STAGES:-all}
+if [ "${RUN_GEM:-0}" = "1" ]; then
+  PY="${PYTHON:-python3}"
+  for s in 17_build_measured_tpc 18_build_etcgem_tpc 19_etcgem_counterfactual 21_counts_at_44 26_fig4_tables; do
+    stage "0/4 gem/$s.py" "$LOG_DIR/gem_${s}_${STAMP}.log" "$PY" "$ROOT/gem/$s.py"
+  done
+  echo "  (20_dyn_sparse.py, hours, and the predictors are not re-run here; see gem/README.md)"
 else
-  echo ""
-  echo "etc-GEM stage SKIPPED (RUN_ETCGEM is not 1)."
-  echo "  The outputs it would produce are vendored at outputs/supp_data/ and are"
-  echo "  what 14 and 16 read. main does not pin the Python engine, so regenerating"
-  echo "  them is a deliberate act, not part of an unattended run."
+  echo ""; echo "etcGEM stage skipped (RUN_GEM=1 to regenerate gem/tables/ from the committed models)."
 fi
 
 # ---------------------------------------------------------------------------
-# 1. R pipeline: 02, 03, 06, 07, 08, 09, 11, 12, 14, 15, 15_fig3  (+ python 20)
+# 1. R pipeline: 02 03 06 07 08 09 11 12 13 16 17 18 19  (run_all.R)
 # ---------------------------------------------------------------------------
 if [ "${SKIP_R:-0}" != "1" ]; then
-  stage "1/4 R pipeline 02-15 (run_all.R)" "$LOG_DIR/r_pipeline_${STAMP}.log" \
+  stage "1/4 R pipeline + Figures 1-4 (run_all.R)" "$LOG_DIR/r_pipeline_${STAMP}.log" \
     Rscript "$HERE/run_all.R"
-
-  # 13, 16 and 17 belong to the etc-GEM model work, which is NOT part of the
-  # current manuscript (see scripts/README.md). They are off by default: 13
-  # downloads from GEO, and all three produce figures the manuscript no longer
-  # references. Set RUN_ETCGEM_FIGS=1 to run them.
-  if [ "${RUN_ETCGEM_FIGS:-0}" = "1" ]; then
-    stage "3/4 13_capacity_expression.R (etc-GEM, needs network)" "$LOG_DIR/r_13_${STAMP}.log" \
-      Rscript "$HERE/13_capacity_expression.R"
-
-    stage "3/4 16_supplementary_figures.R (etc-GEM)" "$LOG_DIR/r_16_${STAMP}.log" \
-      Rscript "$HERE/16_supplementary_figures.R"
-
-    if command -v python3 >/dev/null 2>&1; then
-      stage "3/4 17_schematic.py (etc-GEM)" "$LOG_DIR/py_17_${STAMP}.log" \
-        python3 "$HERE/17_schematic.py"
-    else
-      echo ""; echo "!! python3 not on PATH - 17_schematic.py NOT run."
-    fi
-  else
-    echo ""; echo "etc-GEM figure stages skipped (RUN_ETCGEM_FIGS=1 to enable)."
-  fi
-
-  # 20 is Figure 4 and is NOT optional: it is a main manuscript figure. It reads
-  # only committed JSON/CSV from gem/ (numpy, pandas, matplotlib), so it needs
-  # neither cobra nor the network. Regenerate its inputs deliberately with
-  # gem/etcgem_counterfactual.py, gem/dyn_sparse.py and gem/counts_at_44.py.
-  if command -v python3 >/dev/null 2>&1; then
-    stage "3/4 18_fig4.R (Figure 4)" "$LOG_DIR/py_20_${STAMP}.log" \
-      python3 "$HERE/18_fig4.R"
-  else
-    echo ""; echo "!! python3 not on PATH - 18_fig4.R NOT run (Figure 4 stale)."
-  fi
 else
   echo ""; echo "SKIP_R=1 -> R pipeline skipped."
 fi
@@ -233,7 +150,7 @@ fi
 if [ "${SKIP_C11:-0}" != "1" ]; then
   C11_DIR="$ROOT/reports/C11_scale_free"
   if [ -d "$C11_DIR/R" ]; then
-    for f in 01_balance_quantity 02_scale_free 03_gap_decomposition 04_figures; do
+    for f in 01_balance_quantity 02_scale_free 03_gap_decomposition 04_figures 05_clade_contrasts; do
       stage "2/4 C11 $f" "$LOG_DIR/c11_${f}_${STAMP}.log" \
         Rscript "$C11_DIR/R/$f.R"
     done
