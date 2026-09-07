@@ -79,3 +79,6 @@ manuscript/**/*.toc
 # --- render side-products ---
 manuscript/v3.tex
 reports/C11_scale_free/*.docx
+
+# desktop app scratch
+/Claude outputs/
