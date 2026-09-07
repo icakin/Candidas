@@ -6,9 +6,8 @@ disagreement with this file rather than as silent drift.
 
 Regenerate the whole figure with:
 
-    python3 gem/17_build_measured_tpc.py     # panel A's measured curve
-    python3 gem/26_fig4_tables.py            # flatten the etcGEM JSON into gem/tables/fig4/*.csv
-    Rscript scripts/19_fig4.R                # the figure (R, base graphics, since 2026-09-06)
+    python3 gem/17_build_measured_tpc.py          # panel A's measured curve
+    python3 scripts/18_fig4.R          # the figure
 
 ## What the figure asserts
 
@@ -46,14 +45,25 @@ exactly where the collapse it is meant to show occurs.
 *C. haemulonii* wells still grow at 40–44 °C. Only *C. duobushaemulonii* (40–44) and
 *C. parapsilosis* (42–44) earn a cross.
 
-## Known limitation, not yet resolved
+## The Seq2Tm padding artefact, resolved (2026-09-07)
 
 Seq2Tm feeds padded batches to the model with no attention mask, so a protein's predicted
 *T*~m~ depends on which proteins share its batch: batch=4 against batch=1 moves the same
-protein by up to 5.36 °C, sd 1.27 °C, on 200 *C. auris* enzymes. `gem/tables/thermal_tm.csv` was
-produced at batch=4 and is reproduced exactly at that setting (max difference 0.0000 °C,
-r = 1.000000, verified in file order). The paired means should be robust, since 432 pairs
-average unbiased noise and paired proteins sit in different files, but this has not been
-confirmed: `gem/15_run_seq2tm.py --seqs-from ... --batch-size 1` followed by
-`gem/audits/padding_sensitivity.py` tests whether the artefact is biased per species. Until that
-runs, the methods should state the limitation.
+protein by up to 5.36 °C, sd 1.27 °C. `gem/tables/thermal_tm.csv` was produced at batch=4
+and is reproduced exactly at that setting (max difference 0.0000 °C, r = 1.000000, verified
+in file order).
+
+This is now checked rather than assumed. Re-running the predictor at batch=1 (no padding
+at all) and recomputing the paired difference (`gem/audits/padding_sensitivity.py`):
+
+- Per-species offset from padding: auris +0.40, haemulonii +0.41, duobushaemulonii +0.43,
+  parapsilosis +0.25 °C. The auris and close-relative offsets are almost identical, so they
+  cancel in the paired comparison; the spread across species is 0.19 °C.
+- Deduplicated paired Δ*T*~m~ (auris − haemulonii): **0.411 °C with padding, 0.456 °C
+  without**. Removing the padding *widens* the difference, so the published value is the
+  conservative one and the fold gap moves from 79× to 71×, not the other way.
+
+The artefact is therefore unbiased with respect to species and does not inflate the result;
+Fig 4B stands as published. To reproduce:
+`gem/15_run_seq2tm.py --seqs-from gem/tables/thermal_tm.csv gem/tables/thermal_tm_batch1.csv --batch-size 1`
+then `gem/audits/padding_sensitivity.py --nopad gem/tables/thermal_tm_batch1.csv`.
