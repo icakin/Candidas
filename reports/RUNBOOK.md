@@ -165,7 +165,7 @@ missing, the path is wrong, not the pipeline — see
   known defect, recorded as residual item 2 in
   [`MANUSCRIPT_FIGURE_LINKAGE.md`](MANUSCRIPT_FIGURE_LINKAGE.md), not a failure.
 * `manuscript/v3.pdf` is 15 pages with 6 figures.
-* `env/baseline_checksums_*.txt` — re-run and diff against these to prove nothing
+* ~~`env/baseline_checksums_*.txt`~~ removed 2026-09-07: a checksum baseline cannot hold across machines (PDF timestamps, plot jitter, brms date stamps); git is the record, and the check is `git status` on the text tables after a re-run. Re-run and diff against git to prove nothing
   under `data/`, `results/` or the etc-GEM outputs moved.
 
 ---

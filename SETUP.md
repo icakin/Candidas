@@ -265,7 +265,7 @@ quarto install tinytex
 | R packages | `renv.lock` | 170 packages, R 4.5.2, CRAN + **Bioconductor 3.22** (edgeR 4.8.2, limma 3.66.0). `renv::restore()` handles both. Verified to cover every package the eighteen numbered scripts load. |
 | Stan | via `renv.lock` | rstan 2.32.7 / StanHeaders 2.32.10 / Stan 2.32.2. **`09_bayesian_models.R` never sets `backend`, so brms uses its default: rstan.** cmdstanr is not used. |
 | Everything, as measured | `docs/env/versions.json` | Every version above, read from the live environment. |
-| Committed inputs and outputs | `docs/env/baseline_checksums_*.txt` | SHA-256 of every tracked file under `data/`, `results/`, and the etc-GEM outputs. Re-run the pipeline and diff against these to prove nothing moved. |
+| Committed inputs and outputs | git | Every input and output is tracked, so `git status` after a re-run is the check: the text tables must come back unchanged (they do; see the 2026-09-07 run), while PDFs (embedded timestamps), PNGs (font and device variation) and the brms `.rds` files (each fit is date-stamped) are expected to differ and are not byte-verified. |
 
 **The Python side (`gem/`).** Pinned in `gem/requirements.txt`: tier 1 (cobra 0.32.1,
 GLPK via optlang/swiglpk, pandas, numpy, scipy, biopython) runs the metabolic model and
