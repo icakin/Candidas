@@ -75,3 +75,7 @@ manuscript/**/*.toc
 /renv/sandbox/
 /renv/staging/
 
+
+# --- render side-products ---
+manuscript/v3.tex
+reports/C11_scale_free/*.docx
