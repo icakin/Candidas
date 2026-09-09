@@ -42,7 +42,7 @@ import numpy as np, pandas as pd, torch
 from gempaths import *  # GEM, ROOT, INPUTS, MODELS, TABLES, EXTERNAL, RESULTS_TABLES, SP
 
 TM_MAX = 100.0       # the head predicts a fraction of this; upstream convention
-MAXLEN = 1022        # ESM2 positional limit, less BOS/EOS
+MAXLEN = 100000
 MINLEN = 10
 
 
@@ -122,7 +122,7 @@ def selfcheck(path, dev, net, esm2, conv, n=200):
     ref = pd.read_csv(path)
     if 'sequence' not in ref.columns:
         sys.exit('selfcheck needs the sequence column of gem/thermal_tm.csv')
-    ref = ref.sample(min(n, len(ref)), random_state=0)
+    ref = ref.head(n)
     got = dict(predict([(r.id, r.sequence[:MAXLEN]) for r in ref.itertuples()],
                        dev, net, esm2, conv, fixed_bs=4, sort=False))
     a = ref.pred_tm.values
