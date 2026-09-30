@@ -4,8 +4,6 @@ author:
   - name: Ilgaz Cakin
     affiliations:
       - ref: lsi
-    email: "[corresponding email]"
-    corresponding: true
   - name: Neil A. R. Gow
     affiliations:
       - ref: mrc
@@ -19,6 +17,8 @@ author:
     affiliations:
       - ref: lsi
       - ref: geo
+    email: g.yvon-durocher@exeter.ac.uk
+    corresponding: true
 affiliations:
   - id: lsi
     name: Living Systems Institute, University of Exeter, Exeter, UK
