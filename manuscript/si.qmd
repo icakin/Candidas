@@ -1,6 +1,38 @@
 ---
 title: "Supplementary Information for: Growth and respiration diverge across the febrile range in *Candida auris* and its relatives"
-author: "Ilgaz Cakin, Neil A. R. Gow, Ian Leaves, Nicholas Smirnoff, Samraat Pawar, Gabriel Yvon-Durocher"
+author:
+  - name: Ilgaz Cakin
+    affiliations:
+      - ref: lsi
+  - name: Neil A. R. Gow
+    affiliations:
+      - ref: mrc
+  - name: Ian Leaves
+    affiliations:
+      - ref: mrc
+  - name: Nicholas Smirnoff
+    affiliations:
+      - ref: bio
+  - name: Samraat Pawar
+    affiliations:
+      - ref: icl
+  - name: Gabriel Yvon-Durocher
+    affiliations:
+      - ref: lsi
+      - ref: geo
+    email: g.yvon-durocher@exeter.ac.uk
+    corresponding: true
+affiliations:
+  - id: lsi
+    name: Living Systems Institute, University of Exeter, Exeter, UK
+  - id: mrc
+    name: MRC Centre for Medical Mycology, University of Exeter, Exeter, UK
+  - id: bio
+    name: Biosciences, Faculty of Health and Life Sciences, University of Exeter, Exeter, UK
+  - id: icl
+    name: Department of Life Sciences, Imperial College London, Silwood Park Campus, Ascot, UK
+  - id: geo
+    name: Department of Geography, Faculty of Environment, Science and Economy, University of Exeter, Exeter, UK
 format:
   pdf:
     pdf-engine: xelatex
