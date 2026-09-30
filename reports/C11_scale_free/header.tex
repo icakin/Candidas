@@ -1,0 +1,11 @@
+% Matches manuscript/draft/header.tex conventions (float + small bold-label
+% captions), minus lineno: this is a technical report with many wide tables,
+% and line numbers collide with them.
+\usepackage{float}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{etoolbox}
+\usepackage{longtable}
+\usepackage{booktabs}
+% wide comparison tables: step down one size so they fit the 1in margins
+\AtBeginEnvironment{longtable}{\footnotesize}
+\AtBeginEnvironment{tabular}{\footnotesize}
