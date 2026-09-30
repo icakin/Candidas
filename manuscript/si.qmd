@@ -1,5 +1,5 @@
 ---
-title: "Supplementary Information for: The metabolic cost of the febrile host in Candida auris and its relatives"
+title: "Supplementary Information for: Growth and respiration diverge across the febrile range in *Candida auris* and its relatives"
 author: "Ilgaz Cakin, Neil A. R. Gow, Ian Leaves, Nicholas Smirnoff, Samraat Pawar, Gabriel Yvon-Durocher"
 format:
   pdf:
@@ -34,6 +34,8 @@ engine: markdown
 **Phylogenetic signal in the limit.** The isolate-level loss temperature was modelled as limit~i~ = μ + u~g(i)~ + e~i~, with u a multivariate normal group effect whose covariance is the shared root-to-ancestor path length between the seven groups on the supermatrix tree (re-rooted at their common ancestor and scaled to unit mean variance), and e an independent isolate residual. The share h² = σ~p~²/(σ~p~² + σ~e~²) was fitted by maximum likelihood on a grid; with isolates attached at their group's tip it is Pagel's λ. Censored isolates (>44 °C) were imputed uniformly on (44, 48] over 200 imputations and the estimates pooled. Significance was assessed by a likelihood-ratio test of σ~p~² = 0 against the boundary χ² mixture and by a permutation null shuffling the limits across isolates (20,000 draws). Setting the censored limits to 44 or 46 °C instead gives h² = 0.68 and 0.58.
 
 **Predictive test.** Whether sub-febrile metabolism forecasts high-temperature failure was tested using only fits restricted to 22–38 °C, validated by leave-one-isolate-out with the complete isolate withheld, and scored by mean absolute error against the observed temperature of growth loss (likelihood-model limits, censored isolates scored as correct when predicted ≥ 44 °C) and by held-out log predictive score for the binary outcomes. The concordance between the cost-multiplier crossings and the observed loss temperature was computed per taxon from a logistic fit of the vial-level growth calls against temperature, over the taxa whose loss lies inside the assay range.
+
+**Phylogenomic tree with recorded software versions.** The tree was rebuilt from the same proteomes with recorded versions (DIAMOND 2.1.9, MAFFT 7.505, FastTree 2.1.11): the more sensitive DIAMOND release recovers 3,658 single-copy orthologs, and a 600-gene sample from them gives the identical topology with every node at 1.00 and patristic distances within 5% of the reference tree used here.
 
 # **Supplementary figures**
 
