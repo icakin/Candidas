@@ -348,7 +348,7 @@ All analysis code, including the oxygen-dynamics fitting, the per-vial likelihoo
 
 # **Acknowledgements**
 
-[To be added.]
+We thank the MRC Centre for Medical Mycology at the University of Exeter for providing the isolates used in this study.
 
 # **Author contributions**
 
