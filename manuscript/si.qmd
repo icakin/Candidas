@@ -1,6 +1,6 @@
 ---
 title: "Supplementary Information for: The metabolic cost of the febrile host in Candida auris and its relatives"
-author: "Ilgaz Cakin, Neil A. R. Gow, Nicholas Smirnoff, Samraat Pawar, Gabriel Yvon-Durocher"
+author: "Ilgaz Cakin, Neil A. R. Gow, Ian Leaves, Nicholas Smirnoff, Samraat Pawar, Gabriel Yvon-Durocher"
 format:
   pdf:
     pdf-engine: xelatex

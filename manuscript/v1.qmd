@@ -343,11 +343,11 @@ these measurements leave open.
 
 # **Data availability**
 
-The raw PreSens oxygen exports for all 1,200 vials, the manually selected fit window for every trace, the blinded trace archive with its sealed key, the per-vial likelihood-model results, the posterior draws of every fitted curve and the source data behind every figure are available at https://github.com/icakin/Candidas and deposited at Zenodo (DOI [to be inserted before submission]). The public RNA-seq dataset re-analysed here is GEO GSE165762, and the genome assemblies are listed under Phylogenomics in Methods.
+The raw PreSens oxygen exports for all 1,200 vials, the manually selected fit window for every trace, the blinded trace archive with its sealed key, the per-vial likelihood-model results, the posterior draws of every fitted curve and the source data behind every figure are available at https://github.com/icakin/Candidas and deposited at Zenodo (DOI 10.5281/zenodo.23062367). The public RNA-seq dataset re-analysed here is GEO GSE165762, and the genome assemblies are listed under Phylogenomics in Methods.
 
 # **Code availability**
 
-All analysis code, including the oxygen-dynamics fitting, the per-vial likelihood model (`reprocess/lik_model.py`), the pre-registered classifier with its four hashed protocol versions, the hierarchical Stan models and the script producing each figure, is at https://github.com/icakin/Candidas (archived at Zenodo, DOI [to be inserted before submission]), with the R environment pinned in `renv.lock`. The README maps every figure to the script that draws it.
+All analysis code, including the oxygen-dynamics fitting, the per-vial likelihood model (`reprocess/lik_model.py`), the pre-registered classifier with its four hashed protocol versions, the hierarchical Stan models and the script producing each figure, is at https://github.com/icakin/Candidas (archived at Zenodo, DOI 10.5281/zenodo.23062367), with the R environment pinned in `renv.lock`. The README maps every figure to the script that draws it.
 
 # **Acknowledgements**
 
@@ -355,7 +355,7 @@ We thank the MRC Centre for Medical Mycology at the University of Exeter for pro
 
 # **Author contributions**
 
-I.C. designed the study, performed the respirometry and the optical-density validation, inspected and windowed every trace, wrote the analysis code, analysed the data and wrote the manuscript. N.A.R.G. provided the isolates and advised on *Candida* biology. I.L. isolated and prepared all fungal isolates used in the study. N.S. advised on the metabolic interpretation. S.P. contributed to the thermal performance modelling. G.Y.-D. conceived and supervised the study. All authors commented on the manuscript. [Draft: co-authors to confirm.]
+G.Y.-D. conceived the study and supervised the project. I.C. designed the study, performed the respirometry and the optical-density validation, inspected and windowed every trace, wrote the analysis code, analysed the data and wrote the manuscript. N.A.R.G. provided the isolates and advised on *Candida* biology. I.L. isolated and prepared all fungal isolates used in the study. N.S. advised on the metabolic interpretation. S.P. advised on the thermal performance modelling. G.Y.-D., S.P. and N.S. acquired the funding. G.Y.-D. edited the manuscript. All authors approved the final manuscript.
 
 # **Competing interests**
 
