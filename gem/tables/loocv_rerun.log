@@ -1,0 +1,24 @@
+repo /Users/ilgazcakin/Desktop/Projects/Candidas
+code a4b3561   budget maxiter=70 starts=2
+building models
+   auris
+   haemulonii
+   duobushaemulonii
+5480 does not conform to 'http(s)://identifiers.org/collection/id' or'http(s)://identifiers.org/COLLECTION:id
+   parapsilosis
+
+held out            sigma      w      P  scale  opt m  opt p  fail T   frac   h^-1   min
+auris               11.44  13.54  0.608   0.90     36     34     nan    nan    nan   5.5
+haemulonii          10.43  13.43  0.892   0.80     30     34      40   0.80   0.51   4.2
+duobushaemulonii    10.92  13.31  0.423   1.40     32     34      40   0.79   0.32   2.9
+parapsilosis        11.14  13.43  0.328   1.99     32     34      40   0.85   0.56   3.1
+
+mean |optimum error| = 2.5 C
+predicted growth at each species' observed failure temperature
+  fraction of the model's own peak : auris=nan, haemulonii=0.80, duobushaemulonii=0.79, parapsilosis=0.85
+  h^-1, training-set scale         : auris=nan, haemulonii=0.51, duobushaemulonii=0.32, parapsilosis=0.56
+
+folds with an OBSERVED failure temperature: 3 of 4
+  auris: no failure to evaluate against (censored: still growing at the assay ceiling)
+
+wrote /Users/ilgazcakin/Desktop/Projects/Candidas/gem/loocv_nested_results.csv

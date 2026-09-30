@@ -1,0 +1,505 @@
+species,source_name,proteome_source,n_prot,tmin,tmax,division,order
+Absidia glauca Hagem 1908,Absidia glauca,Uniprot,14825,4,37, Mucoromycota, Mucoromycetes
+Actinomortierella wolfii (B.S. Mehrotra & Baijal) Vandepol & Bonito 2020,Mortierella wolfii,NCBI,8361,14,48, Mucoromycota, Mortierellomycetes
+Agaricus bisporus (J.E. Lange) Imbach 1946,Agaricus bisporus,Uniprot,11675,7.5,34, Basidiomycota, Agaricomycetes
+"Akanthomyces lecanii (Zimm.) Spatafora, Kepler & B. Shrestha 2017",Lecanicillium lecanii,Uniprot,11019,12,34, Ascomycota, Pezizomycotina
+Albugo candida (Pers. ex J.F. Gmel.) Roussel 1806,Albugo candida,Uniprot,13200,0,25, Albuginales,
+Allomyces arbusculus E.J. Butler 1911,Allomyces arbuscula,NCBI,8889,21,41, Blastocladiomycota, Blastocladiales
+Allomyces macrogynus (R. Emers.) R. Emers. & C.M. Wilson 1954,Allomyces macrogynus,Uniprot,18611,20,40, Blastocladiomycota, Blastocladiales
+Alternaria alternata (Fr.) Keissl. 1912,Alternaria alternata,Uniprot,13463,-2,40, Ascomycota, Pezizomycotina
+Alternaria arborescens E.G. Simmons 1999,Alternaria arborescens,NCBI,12924,5,34, Ascomycota, Pezizomycotina
+Alternaria brassicicola (Schwein.) Wiltshire 1947,Alternaria brassicicola,JGI,10514,-2,40, Ascomycota, Pezizomycotina
+Alternaria gaisen Nagano ex Bokura 1924,Alternaria gaisen,NCBI,13201,10,40, Ascomycota, Pezizomycotina
+Alternaria longipes (Ellis & Everh.) E.W. Mason 1928,Alternaria longipes,JGI,13219,12,34.5, Ascomycota, Pezizomycotina
+Alternaria solani Sorauer 1896,Alternaria solani,JGI,12258,0,42, Ascomycota, Pezizomycotina
+Amanita muscaria (L.) Lam. 1783,Amanita muscaria,Uniprot,17947,8,30, Basidiomycota, Agaricomycetes
+Amanita rubescens Pers. 1797,Amanita rubescens,NCBI,16076,14,35, Basidiomycota, Agaricomycetes
+Amorphotheca resinae Parbery 1969,Amorphotheca resinae,Uniprot,9640,13,41, Ascomycota, Pezizomycotina
+Amylocarpus encephaloides Curr. 1859,Amylocarpus encephaloides,Uniprot,11868,5,28, Ascomycota, Pezizomycotina
+Aphanomyces euteiches Drechsler 1925,Aphanomyces euteiches,Uniprot,19021,6.5,37, Saprolegniales,
+"Apophysomyces ossiformis E. Álvarez, Stchigel, Cano, Deanna A. Sutton & Guarro 2010",Apophysomyces ossiformis,Uniprot,9501,15,48, Mucoromycota, Mucoromycetes
+Armillaria mellea (Vahl) P. Kumm. 1871,Armillaria mellea,NCBI,15646,7,30, Basidiomycota, Agaricomycetes
+Armillaria ostoyae (Romagn.) Herink 1973,Armillaria ostoyae,Uniprot,22192,3,32, Basidiomycota, Agaricomycetes
+Arthrobotrys oligosporus Fresen. 1850,Arthrobotrys oligospora ,Uniprot,11478,7,40, Ascomycota, Pezizomycotina
+Artomyces pyxidatus (Pers.) Jülich 1982,Artomyces pyxidatus,NCBI,15125,10,30, Basidiomycota, Agaricomycetes
+Ascosphaera apis (Maaßen ex Claussen) L.S. Olive & Spiltoir 1955,Ascosphaera apis,Uniprot,6442,22,45, Ascomycota, Pezizomycotina
+Aspergillus alliaceus Thom & Church 1945,Aspergillus alliaceus,NCBI,13098,15,40, Ascomycota, Pezizomycotina
+Aspergillus awamori Nakaz. 1907,Aspergillus awamori,NCBI,11224,12,40, Ascomycota, Pezizomycotina
+Aspergillus caespitosus Raper & Thom 1944,Aspergillus  caespitosus,JGI,10889,20,48, Ascomycota, Pezizomycotina
+"Aspergillus calidoustus Varga, Houbraken & Samson 2008",Aspergillus calidoustus,Uniprot,15115,5,40, Ascomycota, Pezizomycotina
+Aspergillus campestris M. Chr. 1982,Aspergillus campestris,NCBI,9756,10,35, Ascomycota, Pezizomycotina
+Aspergillus candidus Link 1809,Aspergillus candidus,Uniprot,9639,10,30, Ascomycota, Pezizomycotina
+Aspergillus carbonarius (Bainier) Thom 1916,Aspergillus carbonarius,Uniprot,11034,9,40, Ascomycota, Pezizomycotina
+Aspergillus chevalieri (L. Mangin) Thom & Church 1926,Aspergillus chevalieri,Uniprot,10232,12,42, Ascomycota, Pezizomycotina
+Aspergillus coremiiformis Bartoli & Maggi 1979,Aspergillus coremiiformis,Uniprot,9078,10,30, Ascomycota, Pezizomycotina
+Aspergillus elegans Gasperini 1887,Aspergillus elegans,JGI,13286,12,40, Ascomycota, Pezizomycotina
+"Aspergillus felis Barrs, van Doorn, Varga & Samson 2013",Aspergillus felis,Uniprot,10242,12,47, Ascomycota, Pezizomycotina
+Aspergillus fischeri Wehmer 1907,Aspergillus fischeri,Uniprot,9702,17,48, Ascomycota, Pezizomycotina
+Aspergillus flavipes (Bainier & R. Sartory) Thom & Church 1926,Aspergillus flavipes,JGI,13390,11,37.5, Ascomycota, Pezizomycotina
+Aspergillus flavus Link 1809,Aspergillus oryzae,Uniprot,11429,16,46, Ascomycota, Pezizomycotina
+"Aspergillus fumigatiaffinis S.B. Hong, Frisvad & Samson 2006",Aspergillus  fumigatiaffinis,Uniprot,10467,10,45, Ascomycota, Pezizomycotina
+Aspergillus fumigatus Fresen. 1863,Aspergillus fumigatus,Uniprot,9647,12,48, Ascomycota, Pezizomycotina
+Aspergillus glaucus (L.) Link 1809,Aspergillus glaucus,Uniprot,11244,8,40, Ascomycota, Pezizomycotina
+Aspergillus insuetus (Bainier) Thom & Church 1929,Aspergillus insuetus,NCBI,15210,0,40, Ascomycota, Pezizomycotina
+Aspergillus japonicus Saito 1906,Aspergillus japonicus,NCBI,12022,11,40, Ascomycota, Pezizomycotina
+Aspergillus nidulans (Eidam) G. Winter 1884,Aspergillus nidulans,Uniprot,10561,10,44, Ascomycota, Pezizomycotina
+Aspergillus niger Tiegh. 1867,Aspergillus niger,Uniprot,14069,3,47, Ascomycota, Pezizomycotina
+Aspergillus ochraceus G. Wilh. 1877,Aspergillus ochraceus,JGI,12066,10,47, Ascomycota, Pezizomycotina
+"Aspergillus ruber (Jos. König, Spieck. & W. Bremer) Thom & Church 1926",Eurotium rubrum,Uniprot,10054,11,38, Ascomycota, Pezizomycotina
+Aspergillus sclerotioniger Samson & Frisvad 2004,Aspergillus sclerotioniger ,Uniprot,12304,11,39, Ascomycota, Pezizomycotina
+"Aspergillus subalbidus Visagie, Hirooka & Samson 2014",Aspergillus subalbidus,JGI,9411,10,37, Ascomycota, Pezizomycotina
+"Aspergillus taichungensis Yaguchi, Someya & Udagawa 1995",Aspergillus taichungensis,NCBI,9689,10,40, Ascomycota, Pezizomycotina
+Aspergillus terreus Thom 1918,Aspergillus terreus,Uniprot,10118,12,48, Ascomycota, Pezizomycotina
+Aspergillus tubingensis Mosseray 1934,Aspergillus tubingensis ,Uniprot,12318,15,39, Ascomycota, Pezizomycotina
+"Aspergillus udagawae Y. Horie, Miyaji & Nishim. 1995",Aspergillus udagawae,Uniprot,10796,10,42, Ascomycota, Pezizomycotina
+Aspergillus varians Wehmer 1899,Aspergillus varians,JGI,10839,8,35, Ascomycota, Pezizomycotina
+Aspergillus wentii Wehmer 1896,Aspergillus wentii,Uniprot,12389,8,37, Ascomycota, Pezizomycotina
+"Aureobasidium melanogenum (Herm.-Nijh.) Zalar, Gostincar & Gunde-Cim. 2014",Aureobasidium melanogenum,Uniprot,22224,15,37, Ascomycota, Pezizomycotina
+Aureobasidium pullulans (de Bary & Löwenthal) G. Arnaud 1918,Aureobasidium pullulans,Uniprot,11844,6,42, Ascomycota, Pezizomycotina
+"Aureobasidium subglaciale (Zalar, de Hoog & Gunde-Cim.) Zalar, de Hoog & Gunde-Cim. 2014",Aureobasidium subglaciale ,Uniprot,10792,4,30, Ascomycota, Pezizomycotina
+"Auricularia subglabra Looney, Birkebak & Matheny 2013",Auricularia subglabra,Uniprot,5290,10,36, Basidiomycota, Agaricomycetes
+Beauveria bassiana (Bals.-Criv.) Vuill. 1912,Beauveria bassiana,Uniprot,10656,14,34, Ascomycota, Pezizomycotina
+Beauveria brongniartii (Sacc.) Petch 1926,Beauveria brongniartii,NCBI,9595,7,35, Ascomycota, Pezizomycotina
+Bipolaris oryzae (Breda de Haan) Shoemaker 1959,Bipolaris oryzae,NCBI,12002,2,41, Ascomycota, Pezizomycotina
+Bipolaris sorokiniana Shoemaker 1959,Bipolaris sorokiniana,Uniprot,10748,1,39, Ascomycota, Pezizomycotina
+Bipolaris zeicola (G.L. Stout) Shoemaker 1959,Bipolaris zeicola,Uniprot,12851,10,35, Ascomycota, Pezizomycotina
+Biscogniauxia marginata (Fr.) Pouzar 1979,Biscogniauxia marginata,NCBI,11381,5,35, Ascomycota, Pezizomycotina
+Bisifusarium dimerum (Penz.) L. Lombard & Crous 2015,Bisifusarium dimerum,JGI,13482,5,37.5, Ascomycota, Pezizomycotina
+"Blastomyces parvus (C.W. Emmons & Ashburn) Y.P. Jiang, Sigler & de Hoog 2018",Blastomyces parvus,Uniprot,8197,6,40, Ascomycota, Pezizomycotina
+"Blastomyces percusus Dukik, J.F. Muñoz, Sigler & de Hoog 2017",Blastomyces percursus,Uniprot,10283,11,35, Ascomycota, Pezizomycotina
+"Blastomyces silverae Y.P. Jiang, Sigler & de Hoog 2018",Blastomyces silverae,Uniprot,8561,8,34, Ascomycota, Pezizomycotina
+Blumeria graminis (DC.) Speer 1975,Blumeria graminis,Uniprot,8255,10,25, Ascomycota, Pezizomycotina
+"Boeremia exigua (Desm.) Aveskamp, Gruyter & Verkley 2010",Boeremia exigua,NCBI,12871,15,40, Ascomycota, Pezizomycotina
+Boletus edulis Bull. 1782,Boletus edulis,NCBI,18718,18,32, Basidiomycota, Agaricomycetes
+boletus variegatus,Boletus variegatus,NCBI,17069,7,28, Basidiomycota, Agaricomycetes
+Bondarzewia mesenterica (Schaeff.) Kreisel 1984,Bondarzewia mesenterica,Uniprot,10514,5,32, Basidiomycota, Agaricomycetes
+Botryosphaeria dothidea (Moug.) Ces. & De Not. 1863,Botryosphaeria dothidea,Uniprot,13104,8,37, Ascomycota, Pezizomycotina
+Botrytis cinerea Pers. 1801,Botrytis cinerea,Uniprot,11741,-2,39.5, Ascomycota, Pezizomycotina
+Botrytis elliptica (Berk.) Cooke 1901,Botrytis elliptica,Uniprot,12555,5,25, Ascomycota, Pezizomycotina
+"Botrytis fragariae C. Plesken, M. Hahn & R.W.S. Weber 2017",Botrytis fragariae,Uniprot,12345,3,31, Ascomycota, Pezizomycotina
+Cadophora malorum (Kidd & Beaumont) W. Gams 2000,Cadophora malorum,Uniprot,16399,-2,28, Ascomycota, Pezizomycotina
+Calcarisporiella thermophila (H.C. Evans) de Hoog 1974,Calcarisporiella thermophila,NCBI,11749,19,55, Mucoromycota, Calcarisporiellales
+Candida albicans (C.P. Robin) Berkhout 1923,Candida albicans,Uniprot,6758,20,44, Ascomycota, Saccharomycotina
+Candida auris Satoh & Makimura 2009,Candida auris,Uniprot,5409,25,42, Ascomycota, Saccharomycotina
+Candida boidinii C. Ramírez 1953,Candida boidinii,Uniprot,6988,3,36, Ascomycota, Saccharomycotina
+"Candida maltosa Komag., Nakase & Katsuya 1964",Candida maltosa,Uniprot,5976,6,42, Ascomycota, Saccharomycotina
+Candida parapsilosis (Ashford) Langeron & Talice 1932,Candida parapsilosis,Uniprot,5777,28,47, Ascomycota, Saccharomycotina
+Candida tropicalis (Castell.) Berkhout 1923,Candida tropicalis,Uniprot,6226,15,42, Ascomycota, Saccharomycotina
+Candida viswanathii Sandu & H.S. Randhawa 1962,Candida viswanathii,Uniprot,10576,10,37, Ascomycota, Saccharomycotina
+Capronia coronata Samuels 1987,Capronia coronata ,Uniprot,9230,4,33, Ascomycota, Pezizomycotina
+Catenaria anguillulae Sorokin 1876,Catenaria anguillulae,Uniprot,12590,13,37, Blastocladiomycota, Blastocladiales
+Ceratocystis fimbriata Ellis & Halst. 1890,Ceratocystis fimbriata,Uniprot,7264,9.5,35.25, Ascomycota, Pezizomycotina
+Ceratocystis piceae (Münch) B.K. Bakshi 1950,Ophiostoma piceae,Uniprot,8878,2.5,36, Ascomycota, Pezizomycotina
+Cercospora beticola Sacc. 1876,Cercospora beticola,NCBI,13144,2.5,37.8, Ascomycota, Pezizomycotina
+Cercospora zeae-maydis Tehon & E.Y. Daniels 1925,Cercospora zeae-maydis,Uniprot,12005,6,35, Ascomycota, Pezizomycotina
+Ceriporiopsis subvermispora (Pilát) Gilb. & Ryvarden 1985,Gelatoporia subvermispora,Uniprot,12077,15,39, Basidiomycota, Agaricomycetes
+Chaetomium globosum Kunze 1817,Chaetomium globosum,Uniprot,11038,9,39, Ascomycota, Pezizomycotina
+"Chaetomium olivicolor K. Rodr., Stchigel & Guarro 2002",Chaetomium olivicolor,NCBI,11706,15,48, Ascomycota, Pezizomycotina
+Choanephora cucurbitarum (Berk. & Ravenel) Thaxt. 1903,Choanephora cucurbitarum,Uniprot,11924,9,35, Mucoromycota, Mucoromycetes
+"Cladophialophora bantiana (Sacc.) de Hoog, Kwon-Chung & McGinnis 1995",Cladophialophora bantiana,NCBI,12762,17,45, Ascomycota, Pezizomycotina
+"Cladophialophora carrionii (Trejos) de Hoog, Kwon-Chung & McGinnis 1995",Cladophialophora carrionii,Uniprot,11181,10,37, Ascomycota, Pezizomycotina
+"Cladophialophora immunda Badali, M.M. Satow, Prenaf.-Boldú & de Hoog 2008",Cladophialophora immunda,Uniprot,12829,10,37, Ascomycota, Pezizomycotina
+"Cladophialophora psammophila Badali, Prenaf.-Boldú, Guarro & de Hoog 2011",Cladophialophora psammophila,Uniprot,13417,25,39, Ascomycota, Pezizomycotina
+Cladophialophora yegresii de Hoog 2007,Cladophialophora yegresii,Uniprot,10118,10,35, Ascomycota, Pezizomycotina
+"Cladosporium halotolerans Zalar, de Hoog & Gunde-Cim. 2007",Cladosporium halotolerans,NCBI,9709,6,33, Ascomycota, Pezizomycotina
+Cladosporium sphaerospermum Penz. 1882,Cladosporium sphaerospermum,JGI,8807,10,34, Ascomycota, Pezizomycotina
+Claviceps purpurea (Fr.) Tul. 1853,Claviceps purpurea ,Uniprot,8814,0,30, Ascomycota, Pezizomycotina
+Clavispora lusitaniae Rodr. Mir. 1979,Clavispora lusitaniae,Uniprot,5932,10,46, Ascomycota, Saccharomycotina
+Coccidioides immitis C.W. Stiles 1896,Coccidioides immitis,Uniprot,9587,10,42, Ascomycota, Pezizomycotina
+"Coccidioides posadasii M.C. Fisher, G.L. Koenig, T.J. White & J.W. Taylor 2002",Coccidioides posadasii,Uniprot,10209,18,42, Ascomycota, Pezizomycotina
+Cochliobolus heterostrophus (Drechsler) Drechsler 1934,Bipolaris maydis,Uniprot,12852,5.5,43, Ascomycota, Pezizomycotina
+Colletotrichum aenigma B.S. Weir & P.R. Johnst. 2012,Colletotrichum aenigma,NCBI,15211,11,36, Ascomycota, Pezizomycotina
+Colletotrichum falcatum Went 1893,Colletotrichum falcatum,NCBI,15618,6.5,37.5, Ascomycota, Pezizomycotina
+Colletotrichum fioriniae (Marcelino & Gouli) Pennycook 2017,Colletotrichum fioriniae ,Uniprot,13759,5,35, Ascomycota, Pezizomycotina
+"Colletotrichum fructicola Prihast., L. Cai & K.D. Hyde 2009",Colletotrichum fructicola ,Uniprot,17182,0,34, Ascomycota, Pezizomycotina
+Colletotrichum gloeosporioides (Penz.) Penz. & Sacc. 1884,Colletotrichum gloeosporioides,Uniprot,16388,0,38, Ascomycota, Pezizomycotina
+Colletotrichum godetiae Neerg. 1950,Colletotrichum godetiae,NCBI,16071,5,31, Ascomycota, Pezizomycotina
+Colletotrichum graminicola (Ces.) G.W. Wilson 1914,Colletotrichum graminicola,Uniprot,12019,12,37, Ascomycota, Pezizomycotina
+Colletotrichum higginsianum Sacc. 1917,Colletotrichum higginsianum,Uniprot,12820,8,35, Ascomycota, Pezizomycotina
+"Colletotrichum liriopes Damm, P.F. Cannon & Crous 2009",Colletotrichum liriopes,Uniprot,13983,6,42, Ascomycota, Pezizomycotina
+"Colletotrichum lupini (Bondar) Damm, P.F. Cannon & Crous 2012",Colletotrichum lupini,Uniprot,18335,5,30, Ascomycota, Pezizomycotina
+Colletotrichum nymphaeae (Pass.) Aa 1978,Colletotrichum nymphaeae,NCBI,14404,10,32, Ascomycota, Pezizomycotina
+Colletotrichum trifolii Bain 1906,Colletotrichum trifolii,Uniprot,12236,10,35, Ascomycota, Pezizomycotina
+Coniophora puteana (Schumach.) P. Karst. 1868,Coniophora puteana,Uniprot,13735,3,40, Basidiomycota, Agaricomycetes
+Coniosporium apollinis Sterfl. 1997,Coniosporium apollinis,Uniprot,9306,9,29, Ascomycota, Pezizomycotina
+"Coprinellus micaceus (Bull.) Vilgalys, Hopple & Jacq. Johnson 2001",Coprinellus micaceus,Uniprot,23011,15,37, Basidiomycota, Agaricomycetes
+"Cordyceps fumosorosea (Wize) Kepler, B. Shrestha & Spatafora 2017",Cordyceps fumosorosea,Uniprot,10050,5,32, Ascomycota, Pezizomycotina
+Cordyceps militaris (L.) Fr. 1818,Cordyceps militaris,Uniprot,9651,7,32, Ascomycota, Pezizomycotina
+Corynascus sepedonium (C.W. Emmons) Arx 1973,Corynascus sepedonium,NCBI,10628,12,46, Ascomycota, Pezizomycotina
+Corynespora cassiicola (Berk. & M.A. Curtis) C.T. Wei 1950,Corynespora cassiicola ,JGI,17166,6,38, Ascomycota, Pezizomycotina
+Cronartium quercuum (Berk.) Miyabe ex Shirai 1899,Cronartium quercuum,Uniprot,13711,8,37, Basidiomycota, Pucciniomycetes
+Cronartium ribicola J.C. Fisch. 1872,Cronartium ribicola,JGI,14868,0.5,26.7, Basidiomycota, Pucciniomycetes
+"Cryomyces antarcticus Selbmann, de Hoog, Mazzaglia, Friedmann & Onofri 2005",Cryomyces antarcticus,NCBI,9378,-10,27, Ascomycota, Pezizomycotina
+"Cryomyces minteri Selbmann, de Hoog, Mazzaglia, Friedmann & Onofri 2005",Cryomyces minteri,Uniprot,13291,-7,28, Ascomycota, Pezizomycotina
+Cryphonectria parasitica (Murrill) M.E. Barr 1978,Cryphonectria parasitica,Uniprot,11564,4.5,38.75, Ascomycota, Pezizomycotina
+Cryptococcus neoformans (San Felice) Vuill. 1901,Cryptococcus neoformans,Uniprot,6604,15,39, Basidiomycota, Tremellomycetes
+Cubamyces menziesii (Berk.) Lücking 2020,"Trametes menziesii,",NCBI,12530,15,45, Basidiomycota, Agaricomycetes
+Curvularia clavata B.L. Jain 1962,Curvularia clavata,Uniprot,10140,5,38, Ascomycota, Pezizomycotina
+"Curvularia kusanoi (Y. Nisik.) Manamgoda, Rossman & K.D. Hyde 2014",Curvularia kusanoi,Uniprot,11490,7.5,35, Ascomycota, Pezizomycotina
+Curvularia lunata (Wakker) Boedijn 1933,Curvularia lunata,JGI,12131,20,35, Ascomycota, Pezizomycotina
+"Cyberlindnera jadinii (Sartory, R. Sartory, J. Weill & J. Mey.) Minter 2009",Cyberlindnera jadinii,Uniprot,5994,19,37, Ascomycota, Saccharomycotina
+Cyclocybe cylindracea (DC.) Vizzini & Angelini 2014,Agrocybe cylindracea,Uniprot,13316,14,31, Basidiomycota, Agaricomycetes
+"Cystobasidium minutum (Cif. & Redaelli) Yurkov, Kachalkin, H.M. Daniel, M. Groenew., Libkind, V. de García, Zalar, Gouliam., Boekhout & Begerow 2014",Rhodotorula minuta,NCBI,7814,4,30, Basidiomycota, Cystobasidiomycetes
+Cytospora chrysosperma (Pers.) Fr. 1823,Cytospora chrysosperma,Uniprot,9818,3,35, Ascomycota, Pezizomycotina
+Cytospora leucostoma (Pers.) Sacc. 1881,Cytospora leucostoma,Uniprot,10071,5,40, Ascomycota, Pezizomycotina
+Cytospora mali Grove 1935,Valsa mali ,Uniprot,10741,5,37.5, Ascomycota, Pezizomycotina
+Daedalea quercina (L.) Pers. 1801,Daedalea quercina,Uniprot,12169,5,44, Basidiomycota, Agaricomycetes
+Daldinia eschscholtzii (Ehrenb.) Rehm 1904,Daldinia eschscholtzii,NCBI,10466,13,42, Ascomycota, Pezizomycotina
+Debaryomyces delbrueckii (Lindner) Kudryavtsev 1954,Torulaspora delbrueckii,Uniprot,4966,2.8,40, Ascomycota, Pezizomycotina
+Debaryomyces hansenii (Zopf) Lodder & Kreger-van Rij 1984,Debaryomyces hansenii,Uniprot,6284,2,38, Ascomycota, Saccharomycotina
+Dekkera bruxellensis Van der Walt 1964,Brettanomyces bruxellensis,Uniprot,4857,3,31, Ascomycota, Saccharomycotina
+Diaporthe citri (H.S. Fawc.) F.A. Wolf 1926,Diaporthe citri,NCBI,15763,4,40, Ascomycota, Pezizomycotina
+Dichomitus squalens (P. Karst.) D.A. Reid 1965,Dichomitus squalens,Uniprot,15221,19,42, Basidiomycota, Agaricomycetes
+"Didymella lentis W.J. Kaiser, B.C. Wang & J.D. Rogers 1997",Ascochyta lentis,Uniprot,11599,7,32, Ascomycota, Pezizomycotina
+Dothistroma septosporum (Dorogin) M. Morelet 1968,Dothistroma septosporum,Uniprot,12399,3,33, Ascomycota, Pezizomycotina
+Drepanopeziza brunnea (Ellis & Everh.) Rossman & W.C. Allen 2017,Marssonina brunnea ,Uniprot,10037,2,30, Ascomycota, Pezizomycotina
+Earliella scabrosa (Pers.) Gilb. & Ryvarden 1985,Earliella scabrosa,NCBI,17743,4,30, Basidiomycota, Agaricomycetes
+Elsinoe fawcettii Bitanc. & Jenkins 1936,Elsinoe fawcettii,NCBI,10170,0,36, Ascomycota, Pezizomycotina
+"Emergomyces africanus Dukik, C. Kenyon, Govender, I.S. Schwartz & de Hoog 2017",Emergomyces africanus,Uniprot,8745,9,38, Ascomycota, Pezizomycotina
+emergomyces crescens,Emergomyces crescens,Uniprot,8899,7,30, Ascomycota, Pezizomycotina
+"Emergomyces pasteurianus (Drouhet, E. Guého & Gori) Dukik, Sigler & de Hoog 2017",Emergomyces pasteurianus,Uniprot,8944,6,40, Ascomycota, Pezizomycotina
+Emericella sydowii (Bainier & Sartory) Pitt & A.D. Hocking 2022,Aspergillus sydowii,Uniprot,13568,12,40, Ascomycota, Pezizomycotina
+Emericella versicolor (Vuill.) Pitt & A.D. Hocking 2022,Aspergillus versicolor ,Uniprot,13222,4,40, Ascomycota, Pezizomycotina
+Epicoccum nigrum Link 1816,Epicoccum nigrum,Uniprot,12021,8,30, Ascomycota, Pezizomycotina
+Eremothecium gossypii (S.F. Ashby & W. Nowell) Kurtzman 1995,Eremothecium gossypii,Uniprot,4758,20,40, Ascomycota, Saccharomycotina
+Erysiphe necator Schwein. 1832,Erysiphe necator,Uniprot,6482,10,37.8, Ascomycota, Pezizomycotina
+Eutypa lata (Pers.) Tul. & C. Tul. 1863,Eutypa lata,Uniprot,11684,5,30, Ascomycota, Pezizomycotina
+Exidia glandulosa (Bull.) Fr. 1822,Exidia glandulosa,Uniprot,26305,7,35, Basidiomycota, Agaricomycetes
+Exophiala alcalophila Goto & Sugiy. 1982,Exophiala alcalophila,JGI,12081,7,38, Ascomycota, Pezizomycotina
+"Exophiala aquamarina de Hoog, V.A. Vicente, Najafz., Harrak, Badali, Seyedm. & Nyaoke 2011",Exophiala aquamarina,Uniprot,13118,2,36, Ascomycota, Pezizomycotina
+Exophiala dermatitidis (Kano) de Hoog 1977,Exophiala dermatitidis,Uniprot,9285,9,42, Ascomycota, Pezizomycotina
+Exophiala spinifera (H.S. Nielsen & Conant) McGinnis 1977,Exophiala spinifera,Uniprot,12047,13,38, Ascomycota, Pezizomycotina
+Exophiala viscosa,Exophiala viscosa,NCBI,11345,4,28, Ascomycota, Pezizomycotina
+Exserohilum turcicum (Pass.) K.J. Leonard & Suggs 1974,Exserohilum turcicum,Uniprot,11687,7.5,35, Ascomycota, Pezizomycotina
+Fabisporus sanguineus (L.) Zmitr. 2001,Pycnoporus sanguineus,JGI,14165,4,45, Basidiomycota, Agaricomycetes
+Fomes fomentarius (L.) Fr. 1849,Fomes fomentarius,NCBI,14756,5,38, Basidiomycota, Agaricomycetes
+Fomitiporia mediterranea M. Fisch. 2002,Fomitiporia mediterranea,Uniprot,531,10,33, Basidiomycota, Agaricomycetes
+"Fonsecaea multimorphosa Najafz., V.A. Vicente, J. Sun bis, Meis & de Hoog 2011",Fonsecaea multimorphosa ,Uniprot,12368,11,39, Ascomycota, Pezizomycotina
+Friedmanniomyces endolithicus Onofri 1999,Friedmanniomyces endolithicus,Uniprot,17901,-5,25, Ascomycota, Pezizomycotina
+"Friedmanniomyces simplex Selbmann, de Hoog, Mazzaglia, Friedmann & Onofri 2005",Friedmanniomyces simplex,Uniprot,13631,-7,24, Ascomycota, Pezizomycotina
+Fulvia fulva (Cooke) Cif. 1954,Fulvia fulva,Uniprot,14687,0.5,35, Ascomycota, Pezizomycotina
+Fusarium acuminatum Ellis & Everh. 1895,Fusarium acuminatum,Mycocosm,11342,5,37.5, Ascomycota, Pezizomycotina
+Fusarium anthophilum (A. Braun) Wollenw. 1916,Fusarium anthophilum,NCBI,14797,5,37.5, Ascomycota, Pezizomycotina
+Fusarium avenaceum (Fr.) Sacc. 1886,Fusarium avenaceum,Uniprot,11232,-10,38, Ascomycota, Pezizomycotina
+"Fusarium beomiforme P.E. Nelson, Toussoun & L.W. Burgess 1988",Fusarium beomiforme,Uniprot,14518,5,40, Ascomycota, Pezizomycotina
+Fusarium circinatum Nirenberg & O'Donnell 1998,Fusarium circinatum,NCBI,13905,5,30, Ascomycota, Pezizomycotina
+Fusarium culmorum (Wm.G. Sm.) Sacc. 1892,Fusarium culmorum,Uniprot,12360,0.5,38, Ascomycota, Pezizomycotina
+Fusarium equiseti (Corda) Sacc. 1886,Fusarium equiseti,JGI,13772,5,37.5, Ascomycota, Pezizomycotina
+Fusarium fujikuroi Nirenberg 1976,Fusarium moniliforme,Uniprot,15890,3,40, Ascomycota, Pezizomycotina
+Fusarium graminearum Schwabe 1839,Fusarium graminearum,Uniprot,14145,3,39, Ascomycota, Pezizomycotina
+Fusarium graminum Corda 1837,Fusarium graminum,NCBI,11163,5,37.5, Ascomycota, Pezizomycotina
+Fusarium heterosporum Nees & T. Nees 1818,Fusarium heterosporum,Uniprot,11330,5,37.5, Ascomycota, Pezizomycotina
+Fusarium langsethiae Torp & Nirenberg 2004,Fusarium langsethiae,Uniprot,11939,8,35, Ascomycota, Pezizomycotina
+Fusarium lateritium Nees 1816,Fusarium lateritium,JGI,15798,5,35.75, Ascomycota, Pezizomycotina
+Fusarium longipes Wollenw. & Reinking 1925,Fusarium longipes,Uniprot,11420,5,37.5, Ascomycota, Pezizomycotina
+"Fusarium oligoseptatum T. Aoki, M.T. Kasson, S. Freeman, D.M. Geiser & K. O’Donnell 2018",Fusarium oligoseptatum,Uniprot,17739,7,35, Ascomycota, Pezizomycotina
+Fusarium oxysporum Schltdl. 1824,Fusarium oxysporum,Uniprot,15431,3,40, Ascomycota, Pezizomycotina
+Fusarium phyllophilum Nirenberg & O'Donnell 1998,Fusarium phyllophilum,Uniprot,14159,7,35, Ascomycota, Pezizomycotina
+Fusarium poae (Peck) Wollenw. 1913,Fusarium poae,Uniprot,14048,5,37, Ascomycota, Pezizomycotina
+Fusarium proliferatum (Matsush.) Nirenberg ex Gerlach & Nirenberg 1982,Fusarium proliferatum,NCBI,16143,4.5,32, Ascomycota, Pezizomycotina
+Fusarium pseudograminearum O'Donnell & T. Aoki 1999,Fusarium pseudograminearum,Uniprot,12448,4,30, Ascomycota, Pezizomycotina
+Fusarium redolens Wollenw. 1913,Fusarium redolens,Uniprot,17005,4.5,37.5, Ascomycota, Pezizomycotina
+Fusarium sambucinum Fuckel 1870,Fusarium roseum,Mycocosm,12893,0,38, Ascomycota, Pezizomycotina
+Fusarium solani (Mart.) Sacc. 1881,Fusarium solani,Uniprot,17641,5,39, Ascomycota, Pezizomycotina
+Fusarium sporotrichioides Sherb. 1915,Fusarium sporotrichioides,Uniprot,11960,3,34, Ascomycota, Pezizomycotina
+Fusarium tricinctum (Corda) Sacc. 1886,Fusarium tricinctum,Uniprot,14098,0,38, Ascomycota, Pezizomycotina
+"Fusarium vanettenii O'Donnell, Geiser, Kasson & T. Aoki 2020",Neocosmospora pisi,Uniprot,15709,5,37.5, Ascomycota, Pezizomycotina
+Gaeumannomyces graminis (Sacc.) Arx & D.L. Olivier 1952,Gaeumannomyces graminis,JGI,14655,2.5,35, Ascomycota, Pezizomycotina
+"Ganoderma sinense J.D. Zhao, L.W. Hsu & X.Q. Zhang 1979",Ganoderma sinense,Uniprot,15394,14,37, Basidiomycota, Agaricomycetes
+Geotrichum candidum Link 1809,Geotrichum candidum,Uniprot,5187,2,38, Ascomycota, Saccharomycotina
+"Globisporangium splendens (Hans Braun) Uzuhashi, Tojo & Kakish. 2010",Globisporangium splendens,NCBI,17350,10,37.5, Pythiales,
+Gloeophyllum trabeum (Pers.) Murrill 1908,Gloeophyllum trabeum,Uniprot,11735,5,48, Basidiomycota, Agaricomycetes
+Gloeosporium orbiculare (Berk.) Berk. 1876,Colletotrichum orbiculare,Uniprot,13227,4,34.5, Ascomycota, Pezizomycotina
+Grifola frondosa (Dicks.) Gray 1821,Grifola frondosa,Uniprot,14985,8,32, Basidiomycota, Agaricomycetes
+"Grosmannia clavigera (Rob.-Jeffr. & R.W. Davidson) Zipfel, Z.W. de Beer & M.J. Wingf. 2006",Grosmannia clavigera,Uniprot,8311,7,34, Ascomycota, Pezizomycotina
+Gymnopilus junonius (Fr.) P.D. Orton 1960,Gymnopilus junonius,Uniprot,16326,10,30, Basidiomycota, Agaricomycetes
+"Hanseniaspora uvarum (Niehaus) Shehata, Mrak & Phaff ex M.T. Sm. 1984",Hanseniaspora uvarum,Uniprot,4059,8,40, Ascomycota, Saccharomycotina
+Hasegawaea japonica (Yukawa & Maki) Y. Yamada & I. Banno 1987,Schizosaccharomyces japonicus,Uniprot,4852,20,40, Ascomycota, Schizosaccharomycetes
+Hericium coralloides (Scop.) Pers. 1794,Hericium coralloides,JGI,12369,5,37, Basidiomycota, Agaricomycetes
+Hericium flagellum (Scop.) Pers. 1797,Hericium alpestre,Uniprot,11000,5,34, Basidiomycota, Agaricomycetes
+Heterobasidion annosum (Fr.) Bref. 1888,Heterobasidion annosum,Uniprot,13148,5,44, Basidiomycota, Agaricomycetes
+"Hirsutella minnesotensis Sen Y. Chen, Xing Z. Liu & F.J. Chen 2000",Hirsutella minnesotensis,Uniprot,9072,5,20, Ascomycota, Pezizomycotina
+Hirsutella rhossiliensis Minter & B.L. Brady 1980,Hirsutella rhossiliensis,Uniprot,11905,9,36, Ascomycota, Pezizomycotina
+Histoplasma capsulatum Darling 1906,Histoplasma capsulatum,NCBI,9254,12,33, Ascomycota, Pezizomycotina
+Hortaea werneckii (Horta) Nishim. & Miyaji 1984,Hortaea werneckii,Uniprot,16466,5,35, Ascomycota, Pezizomycotina
+"Humicola hyalothermophila Moub., Mazen & Abdel-Hafez 1979",Humicola hyalothermophila,JGI,9529,17,52, Ascomycota, Pezizomycotina
+Hymenopellis radicata (Relhan) R.H. Petersen 2010,Oudemansiella radicata,NCBI,27479,7,35, Basidiomycota, Agaricomycetes
+"Hymenoscyphus fraxineus (T. Kowalski) Baral, Queloz & Hosoya 2014",Hymenoscyphus fraxineus,Uniprot,13821,3,30, Ascomycota, Pezizomycotina
+Hypholoma lateritium (Schaeff.) P. Kumm. 1871,Hypholoma lateritium,Uniprot,17633,10,27, Basidiomycota, Agaricomycetes
+"Hyphopichia burtonii (Boidin, Pignal, Lehodey, Vey & Abadie) Arx & Van der Walt 1976",Hyphopichia burtonii,Uniprot,5993,6.12,37, Ascomycota, Saccharomycotina
+Hypsizygus marmoreus (Peck) H.E. Bigelow 1976,Hypsizygus marmoreus,Uniprot,16572,8,39, Basidiomycota, Agaricomycetes
+Ilyonectria robusta (A.A. Hildebr.) A. Cabral & Crous 2012,Ilyonectria robusta,NCBI,20498,3,28, Ascomycota, Pezizomycotina
+Issatchenkia orientalis Kudryavtsev 1960,Pichia kudriavzevii,Uniprot,5146,15,46, Ascomycota, Saccharomycotina
+Kluyveromyces lactis (Stell.-Dekk.) Van der Walt 1971,Kluyveromyces lactis,Uniprot,5048,10,37, Ascomycota, Saccharomycotina
+Kluyveromyces marxianus (E.C. Hansen) Van der Walt 1971,Candida macedoniensis,JGI,,2,47, Ascomycota, Saccharomycotina
+"Komagataella pastoris (Guillierm.) Y. Yamada, M. Matsuda, K. Maeda & Mikata 1995",Komagataella pastoris,Mycocosm,5057,9,34, Ascomycota, Saccharomycotina
+"Lachancea meyersii Fell, Statzell & Kurtzman 2004",Lachancea meyersii,NCBI,4998,0,35, Ascomycota, Saccharomycotina
+"Lachancea quebecensis K.C. Freel, G. Charron, J.B. Leducq, C.R. Landry & J. Schacherer 2015",Lachancea quebecansis,JGI,5074,4,37, Ascomycota, Saccharomycotina
+Lachancea thermotolerans (Filippov) Kurtzman 2003,Lachancea thermotolerans,Uniprot,5093,10,49, Ascomycota, Saccharomycotina
+Lactarius controversus Pers. 1800,Lactarius controversus,JGI,13305,7,31, Basidiomycota, Agaricomycetes
+Lactarius deliciosus (L.) Gray 1821,Lactarius deliciosus,NCBI,18194,8,34, Basidiomycota, Agaricomycetes
+Lactifluus volemus (Fr.) Kuntze 1891,Lactarius volemus,NCBI,14968,8,33, Basidiomycota, Agaricomycetes
+Laetiporus sulphureus (Bull.) Murrill 1920,Laetiporus sulphureus,Uniprot,13707,10.5,40, Basidiomycota, Agaricomycetes
+Lasiodiplodia theobromae (Pat.) Griffon & Maubl. 1909,Lasiodiplodia theobromae,NCBI,13054,8.4,38.5, Ascomycota, Pezizomycotina
+Lentinula edodes (Berk.) Pegler 1976,Lentinula edodes,Uniprot,12046,9,32, Basidiomycota, Agaricomycetes
+Lentinus tigrinus (Bull.) Fr. 1825,Lentinus tigrinus ,Uniprot,15504,7,43, Basidiomycota, Agaricomycetes
+Lenzites betulinus (L.) Fr. 1838,Lenzites betulina,JGI,13239,4,40, Basidiomycota, Agaricomycetes
+Leptosphaeria maculans Ces. & De Not. 1863,Leptosphaeria maculans,Uniprot,12608,7,30, Ascomycota, Pezizomycotina
+Leucosporidium creatinivorum (Golubev) M. Groenew. & Q.M. Wang 2020,Leucosporidiella creatinivora,Uniprot,9828,-2,25, Basidiomycota, Microbotryomycetes
+Lichtheimia corymbifera (Cohn) Vuill. 1903,Lichtheimia corymbifera,Uniprot,12138,11,51, Mucoromycota, Mucoromycetes
+"Lichtheimia hyalospora (Saito) Kerst. Hoffm., Walther & K. Voigt 2009",Lichtheimia hyalospora,NCBI,12055,7,41, Mucoromycota, Mucoromycetes
+Lichtheimia ornata (A.K. Sarbhoy) Alastr.-Izq. & Walther 2010,Lichtheimia ornata,NCBI,13019,15,48, Mucoromycota, Mucoromycetes
+Lipomyces starkeyi Lodder & Kreger-van Rij 1952,Lipomyces starkeyi,Uniprot,8135,14,31, Ascomycota, Saccharomycotina
+Macrophomina phaseolina (Tassi) Goid. 1947,Macrophomina phaseolina ,Uniprot,13804,8,42, Ascomycota, Pezizomycotina
+"Madurella fahalii de Hoog, Van Diepen., Maghoub & Sande 2012",Madurella fahalii,NCBI,11353,5,41, Ascomycota, Pezizomycotina
+Madurella mycetomatis ,Madurella mycetomatis ,NCBI,10707,10,40, Ascomycota, Pezizomycotina
+"Malassezia globosa Midgley, E. Guého & J. Guillot 1996",Malassezia globosa,Uniprot,4273,20,39, Basidiomycota, Malasseziomycetes
+Malassezia pachydermatis (Weidman) C.W. Dodge 1935,Malassezia pachydermatis,Uniprot,4201,25,41, Basidiomycota, Malasseziomycetes
+"Malassezia restricta E. Guého, J. Guillot & Midgley 1996",Malassezia restricta,Uniprot,4097,26,33, Basidiomycota, Malasseziomycetes
+Malassezia sympodialis R.B. Simmons & E. Guého 1990,Malassezia sympodia,Uniprot,4490,25,40, Basidiomycota, Malasseziomycetes
+Malassezia vespertilionis J.M. Lorch & Vanderwolf 2018,Malassezia vespertilionis,Uniprot,3791,7,37, Basidiomycota, Malasseziomycetes
+Malbranchea cinnamomea (Lib.) Oorschot & de Hoog 1984,Malbranchea cinnamomea,NCBI,9034,30,57, Ascomycota, Pezizomycotina
+Melampsora laricis-populina Kleb. 1902,Melampsora larici-populina,Uniprot,16237,11,25, Basidiomycota, Pucciniomycetes
+Melampsora lini (Ehrenb.) Thüm. 1878,Melampsora lini,JGI,16335,0.5,30, Basidiomycota, Pucciniomycetes
+"Metacordyceps chlamydosporia (H.C. Evans) G.H. Sung, J.M. Sung, Hywel-Jones & Spatafora 2007",Pochonia chlamydosporia ,Uniprot,14143,13,37, Ascomycota, Pezizomycotina
+"Metarhizium acridum (Driver & Milner) J.F. Bisch., S.A. Rehner & Humber 2009",Metarhizium acridum,Uniprot,9830,0,38, Ascomycota, Pezizomycotina
+Metarhizium anisopliae (Metschn.) Sorokin 1883,Metarhizium anisopliae,Uniprot,11404,15,35, Ascomycota, Pezizomycotina
+Metarhizium brunneum Petch 1935,Metarhizium brunneum,Mycocosm,11420,15,33, Ascomycota, Pezizomycotina
+"Metarhizium majus (J.R. Johnst.) J.F. Bisch., S.A. Rehner & Humber 2009",Metarhizium majus ,Uniprot,11394,4,37, Ascomycota, Pezizomycotina
+"Metarhizium robertsii J.F. Bisch., S.A. Rehner & Humber 2009",Metarhizium robertsii,NCBI,11688,19,42, Ascomycota, Pezizomycotina
+Metschnikowia bicuspidata (Metschn.) T. Kamienski 1900,Metschnikowia bicuspidata ,Uniprot,4707,0,30, Ascomycota, Saccharomycotina
+Metschnikowia fructicola Kurtzman & Droby 2001,Metschnikowia fructicola,JGI,7362,4,35, Ascomycota, Saccharomycotina
+Metschnikowia gruessii Gim.-Jurado 1992,Metschnikowia gruessii,JGI,7148,8,30, Ascomycota, Saccharomycotina
+Metschnikowia koreensis,Metschnikowia koreensis,JGI,6234,21,35, Ascomycota, Saccharomycotina
+Metschnikowia pulcherrima Pitt & M.W. Mill. 1968,Metschnikowia pulcherrima,Uniprot,6907,6,30, Ascomycota, Saccharomycotina
+Meyerozyma guilliermondii (Wick.) Kurtzman & M. Suzuki 2010,Meyerozyma guilliermondii,Uniprot,5919,15,47, Ascomycota, Saccharomycotina
+Microdochium bolleyi (R. Sprague) de Hoog & Herm.-Nijh. 1977,Microdochium bolleyi,Uniprot,13164,4,34, Ascomycota, Pezizomycotina
+Microdochium nivale (Fr.) Samuels & I.C. Hallett 1983,Microdochium nivale,NCBI,11788,0,32, Ascomycota, Pezizomycotina
+Microsporum canis E. Bodin ex Guég. 1902,Microsporum canis,NCBI,8765,18,38, Ascomycota, Pezizomycotina
+Millerozyma farinosa (Lindner) Kurtzman & M. Suzuki 2010,Millerozyma farinosa,Uniprot,8851,25,53, Ascomycota, Saccharomycotina
+Moelleriella libera (Syd. & P. Syd.) P. Chaverri & M. Liu 2008,Moelleriella libera ,Uniprot,8458,14,31, Ascomycota, Pezizomycotina
+Monascus olei Piedallu 1910,Monascus purpureus,Uniprot,8080,18,46, Ascomycota, Pezizomycotina
+Monascus ruber Tiegh. 1884,Monascus ruber,JGI,9650,17,44, Ascomycota, Pezizomycotina
+Monilinia fructicola (G. Winter) Honey 1928,Monilinia fructicola,Uniprot,12118,0,33, Ascomycota, Pezizomycotina
+Monilinia fructigena (Pers.) Honey 1936,Monilinia fructigena,Uniprot,10442,0,35, Ascomycota, Pezizomycotina
+Monilinia laxa (Aderh. & Ruhland) Honey 1945,Monilinia laxa,Uniprot,11157,0,33, Ascomycota, Pezizomycotina
+"Moniliophthora roreri (Cif.) H.C. Evans, Stalpers, Samson & Benny 1978",Moniliophthora roreri,Uniprot,19789,15,33, Basidiomycota, Agaricomycetes
+Morchella esculenta (L.) Pers. 1794,Morchella conica,Uniprot,11577,5,32, Ascomycota, Pezizomycotina
+Morchella eximia Boud. 1910,Morchella eximia,JGI,11510,7,31, Ascomycota, Pezizomycotina
+"Morchella importuna M. Kuo, O'Donnell & T.J. Volk 2012",Morchella importuna,NCBI,11642,5,30, Ascomycota, Pezizomycotina
+Mortierella alpina Peyronel 1913,Mortierella alpina,Uniprot,10605,0,35, Mucoromycota,
+Mortierella antarctica,Mortierella antarctica,JGI,10312,0,32, Mucoromycota,
+Mortierella verticillata,Mortierella verticillata,JGI,12569,-3,27, Mucoromycota,
+Mucidula mucida (Schrad.) Pat. 1887,Oudemansiella mucida,NCBI,18561,10,30, Basidiomycota, Agaricomycetes
+Mucor circinelloides Tiegh. 1875,Mucor ambiguus,Uniprot,12143,7,37, Mucoromycota, Mucoromycetes
+Mucor endophyticus (R.Y. Zheng & H. Jiang) J. Pawlowska & Walther 2013,Rhizomucor endophyticus ,JGI,11445,5,36, Mucoromycota, Mucoromycetes
+Mucor lusitanicus Bruderl. 1916,Mucor lusitanicus,Uniprot,11584,7,36, Mucoromycota, Mucoromycetes
+Mucor piriformis A. Fisch. 1892,Mucor piriformis,JGI,11449,0,26, Mucoromycota, Mucoromycetes
+Mucor plumbeus Bonord. 1864,Mucor plumbeus,Uniprot,11657,7,34, Mucoromycota, Mucoromycetes
+Mucor racemosus Fresen. 1850,Mucor racemosus,JGI,11269,0,33, Mucoromycota, Mucoromycetes
+Mycosarcoma maydis Bref. 1912,Ustilago maydis,Uniprot,6788,7.5,40, Basidiomycota, Ustilaginomycetes
+Mycosphaerella linicola Naumov 1926,Mycosphaerella linicola,Uniprot,13096,5,32, Ascomycota, Pezizomycotina
+"Mycothermus thermophilus (Cooney & R. Emers.) X. Wei Wang, Houbraken & D.O. Natvig 2018",Mycothermus thermophilus,NCBI,10952,28,57, Ascomycota, Pezizomycotina
+Myriangium duriaei Mont. & Berk. 1845,Myriangium duriaei ,Uniprot,10673,0,25, Ascomycota, Pezizomycotina
+Nadsonia fulvescens (Nadson & Konok.) Syd. 1912,Nadsonia elongata,Uniprot,5635,0,30, Ascomycota, Saccharomycotina
+"Naganishia adeliensis (Scorzetti, I. Petrescu, Yarrow & Fell) Xin Zhan Liu, F.Y. Bai, M. Groenew. & Boekhout 2015",Cryptococcus adeliensis,NCBI,7686,5,30, Basidiomycota, Tremellomycetes
+"Naganishia albida (Saito) Xin Zhan Liu, F.Y. Bai, M. Groenew. & Boekhout 2015",Naganishia albida,NCBI,6828,4,25, Basidiomycota, Tremellomycetes
+"Naganishia friedmannii (Vishniac) Xin Zhan Liu, F.Y. Bai, M. Groenew. & Boekhout 2015",Naganishia friedmannii,NCBI,7205,-3,25, Basidiomycota, Tremellomycetes
+"Naganishia liquefaciens (Saito & M. Ota) Xin Zhan Liu, F.Y. Bai, M. Groenew. & Boekhout 2015",Naganishia liquefaciens,Uniprot,6879,3,37, Basidiomycota, Tremellomycetes
+"Naganishia vishniacii (Vishniac & Hempfling) Xin Zhan Liu, F.Y. Bai, M. Groenew. & Boekhout 2015",Cryptococcus vishniacii,JGI,6711,-1,21, Basidiomycota, Tremellomycetes
+Nakaseomyces glabratus (H.W. Anderson) Sugita & M. Takash. 2022,Torulopsis glabrata,Uniprot,5187,5,40, Ascomycota, Saccharomycotina
+Neoantrodia serialis (Fr.) Audet 2017,Neoantrodia serialis,NCBI,17406,4,35, Basidiomycota, Agaricomycetes
+"Neofusicoccum parvum (Pennycook & Samuels) Crous, Slippers & A.J.L. Phillips 2006",Botryosphaeria parva ,Uniprot,10365,4,35, Ascomycota, Pezizomycotina
+"Neofusicoccum ribis (Slippers, Crous & M.J. Wingf.) Crous, Slippers & A.J.L. Phillips 2006",Neofusicoccum ribis,NCBI,12143,10,35, Ascomycota, Pezizomycotina
+Neolentinus lepideus (Fr.) Redhead & Ginns 1985,Lentinus lepideus,Uniprot,13106,3,40, Basidiomycota, Agaricomycetes
+Neonectria ditissima (Tul. & C. Tul.) Samuels & Rossman 2006,Nectria ditissima,Uniprot,12683,2,37.5, Ascomycota, Pezizomycotina
+Neosartorya clavata (Desm.) Pitt & A.D. Hocking 2022,Aspergillus clavatus,Uniprot,9140,1,42, Ascomycota, Pezizomycotina
+Neurospora crassa Shear & B.O. Dodge 1927,Neurospora crassa,Uniprot,9759,2,44, Ascomycota, Pezizomycotina
+Neurospora tetrasperma Shear & B.O. Dodge 1927,Neurospora tetrasperma ,Uniprot,11177,15,45, Ascomycota, Pezizomycotina
+Nigrospora oryzae (Berk. & Broome) Petch 1924,Nigrospora oryzae,JGI,13375,9,47, Ascomycota, Pezizomycotina
+Obba rivulosa (Berk. & M.A. Curtis) Miettinen & Rajchenb. 2012,Poria rivulosa,Uniprot,13191,12,40, Basidiomycota, Agaricomycetes
+Oculimacula yallundae (Wallwork & Spooner) Crous & W. Gams 2003,Pseudocercosporella herpotrichoides,NCBI,16562,-2.5,30, Ascomycota, Pezizomycotina
+"Ogataea polymorpha (Morais & M.H. Maia) Y. Yamada, K. Maeda & Mikata 1994",Hansenula polymorpha,Uniprot,6801,9,52, Ascomycota, Saccharomycotina
+Oidiodendron majus G.L. Barron 1962,Oidiodendron maius,Uniprot,16696,10,35, Ascomycota, Pezizomycotina
+"Ophiocordyceps sinensis (Berk.) G.H. Sung, J.M. Sung, Hywel-Jones & Spatafora 2007",Ophiocordyceps sinensis,Uniprot,8866,4,25, Ascomycota, Pezizomycotina
+Hymenopellis radicata (Relhan) R.H. Petersen 2010,Oudemansiella radicata,NCBI,27479,8,35, Basidiomycota, Tremellomycetes
+Pachysolen tannophilus Boidin & Adzet 1958,Pachysolen tannophilus,Uniprot,5643,11,39, Ascomycota, Saccharomycotina
+Paecilomyces variotii Bainier 1907,Paecilomyces variotii,Uniprot,9264,8,47, Ascomycota, Pezizomycotina
+"Papiliotrema laurentii (Kuff.) Xin Zhan Liu, F.Y. Bai, M. Groenew. & Boekhout 2015",Papiliotrema laurentii,NCBI,7537,5,37, Basidiomycota, Tremellomycetes
+"Parastagonospora nodorum (Berk.) Quaedvl., Verkley & Crous 2013",Parastagonospora nodorum,NCBI,16002,4,35, Ascomycota, Pezizomycotina
+Paxillus involutus (Batsch) Fr. 1838,Paxillus involutus,Uniprot,11649,2,28, Basidiomycota, Agaricomycetes
+"Penicillium angulare S.W. Peterson, E.M. Bayer & Wicklow 2004",Penicillium angulare,Uniprot,13712,10,35, Ascomycota, Pezizomycotina
+Penicillium antarcticum A.D. Hocking & C.F. McRae 1999,Penicillium antarcticum,Uniprot,11372,-3,30, Ascomycota, Pezizomycotina
+Penicillium aurantiogriseum Dierckx 1901,Penicillium aurantiogriseum,Uniprot,11550,-5,30, Ascomycota, Pezizomycotina
+Penicillium brevicompactum Dierckx 1901,Penicillium brevicompactum,Uniprot,12015,-2,30, Ascomycota, Pezizomycotina
+Penicillium capsulatum Raper & Fennell 1948,Penicillium capsulatum,Uniprot,10686,15,35, Ascomycota, Pezizomycotina
+Penicillium chrysogenum Thom 1910,Penicillium chrysogenum,NCBI,11980,1,37.5, Ascomycota, Pezizomycotina
+Penicillium citreonigrum Dierckx 1901,Penicillium citreonigrum,JGI,12602,2.5,37.5, Ascomycota, Pezizomycotina
+Penicillium citrinum Thom 1910,Penicillium citrinum,Uniprot,11663,5,42, Ascomycota, Pezizomycotina
+Penicillium commune Thom 1910,Penicillium commune,JGI,11761,7,36, Ascomycota, Pezizomycotina
+Penicillium decumbens Thom 1910,Penicillium decumbens,Uniprot,7144,10,40, Ascomycota, Pezizomycotina
+Penicillium digitatum (Pers.) Sacc. 1881,Penicillium digitatum,Uniprot,9101,0,35, Ascomycota, Pezizomycotina
+Penicillium expansum Link 1809,Penicillium expansum,Uniprot,11060,-4,43, Ascomycota, Pezizomycotina
+Penicillium glabrum (Wehmer) Westling 1911,Penicillium glabrum,JGI,12328,0,30, Ascomycota, Pezizomycotina
+Penicillium italicum Wehmer 1894,Penicillium italicum,Uniprot,9993,-3,32.5, Ascomycota, Pezizomycotina
+Penicillium olsonii Bainier & Sartory 1912,Penicillium olsonii,Uniprot,9525,4,32, Ascomycota, Pezizomycotina
+Penicillium oxalicum Currie & Thom 1915,Penicillium oxalicum,Uniprot,9977,4,36, Ascomycota, Pezizomycotina
+Penicillium polonicum K.W. Zaleski 1927,Penicillium polonicum,Uniprot,10627,10,28, Ascomycota, Pezizomycotina
+Penicillium roqueforti Thom 1906,Penicillium roqueforti,NCBI,9762,3,34, Ascomycota, Pezizomycotina
+Penicillium rubens Biourge 1923,Penicillium rubens,Uniprot,12788,5,30, Ascomycota, Pezizomycotina
+"Penicillium salamii G. Perrone, Frisvad, Samson & Houbraken 2014",Penicillium salamii,Uniprot,10048,4,29, Ascomycota, Pezizomycotina
+Penicillium solitum Westling 1911,Penicillium patulum,Uniprot,9628,2,16, Ascomycota, Pezizomycotina
+Penicillium verrucosum Dierckx 1901,Penicillium verrucosum,NCBI,11559,10,36, Ascomycota, Pezizomycotina
+Peronosclerospora sorghi (W. Weston & Uppal) C.G. Shaw 1978,Peronosclerospora sorghi,NCBI,19118,10,30, Peronosporales,
+Peronospora destructor (Berk.) Casp. ex Berk. 1860,Peronospora destructor,NCBI,13463,3,28, Peronosporales,
+peronospora farinosa,Peronospora farinosa,NCBI,10408,0.5,30, Peronosporales,
+Pestalotiopsis fici Steyaert 1949,Pestalotiopsis fici,Uniprot,15412,8,45, Ascomycota, Pezizomycotina
+"Phaeoacremonium minimum (Tul. & C. Tul.) Gramaje, L. Mostert & Crous 2015",Phaeoacremonium minimum ,Uniprot,8833,7,35, Ascomycota, Pezizomycotina
+"Phaeomoniella chlamydospora (W. Gams, Crous, M.J. Wingf. & Mugnai) Crous & W. Gams 2000",Phaeomoniella chlamydospora,Uniprot,6907,7,37, Ascomycota, Pezizomycotina
+Phakopsora pachyrhizi Syd. & P. Syd. 1914,Phakopsora pachyrhizi,NCBI,18162,17,35, Basidiomycota, Pucciniomycetes
+Phanerochaete carnosa (Burt) Parmasto 1967,Phanerochaete carnosa,Uniprot,13867,8,32, Basidiomycota, Agaricomycetes
+Phanerodontia chrysosporium (Burds.) Hjortstam & Ryvarden 2010,Phanerochaete chrysosporium,JGI,12524,7,49, Basidiomycota, Agaricomycetes
+Phlebia radiata Fr. 1821,Phlebia radiata,JGI,14629,5,34, Basidiomycota, Agaricomycetes
+Phlebiopsis gigantea (Fr.) Jülich 1978,Phlebiopsis gigantea,Uniprot,11848,7,31, Basidiomycota, Agaricomycetes
+Phycomyces blakesleeanus Burgeff 1925,Phycomyces blakesleeanus,Uniprot,16154,7,32, Mucoromycota, Mucoromycetes
+Phycomyces nitens (C. Agardh) Kunze 1823,Phycomyces nitens,NCBI,11980,0,34, Mucoromycota, Mucoromycetes
+Phyllosticta citricarpa (McAlpine) Aa 1973,Phyllosticta citricarpa,NCBI,10084,11,38, Ascomycota, Pezizomycotina
+Phytophthora boehmeriae Sawada 1927,Phytophthora boehmeriae,Uniprot,11927,9,35, Peronosporales,
+Phytophthora cactorum (Lebert & Cohn) J. Schröt. 1886,Phytophthora cactorum,Uniprot,23094,4,38, Peronosporales,
+Phytophthora cinnamomi Rands 1922,Phytophthora cinnamomi,NCBI,19137,5,35, Peronosporales,
+Phytophthora citrophthora (R.E. Sm. & E.H. Sm.) Leonian 1925,Phytophthora citrophthora,NCBI,16447,5,37, Peronosporales,
+Phytophthora infestans (Mont.) de Bary 1876,Phytophthora infestans,Uniprot,19701,1.5,36.5, Peronosporales,
+phytophthora nicotianae,Phytophthora nicotianae,Uniprot,15887,5,44, Peronosporales,
+Pichia membranifaciens (E.C. Hansen) E.C. Hansen 1904,Pichia membranifaciens,Uniprot,4160,0,45, Ascomycota, Saccharomycotina
+Pisolithus arhizus (Scop.) Rauschert 1959,Pisolithus tinctorius,Uniprot,22400,10,33, Basidiomycota, Agaricomycetes
+"Plenodomus tracheiphilus (Petri) Gruyter, Aveskamp & Verkley 2012",Plenodomus tracheiphilus,Uniprot,13190,10,30, Ascomycota, Pezizomycotina
+Pleurotus eryngii (DC.) Quél. 1872,Pleurotus eryngii,Uniprot,15897,9,38, Basidiomycota, Agaricomycetes
+Pleurotus ostreatus (Jacq.) P. Kumm. 1871,Pleurotus ostreatus,Uniprot,12186,10,36, Basidiomycota, Agaricomycetes
+Pneumocystis carinii P. Delanoë & Delanoë 1912,Pneumocystis carinii,NCBI,3646,28,40, Ascomycota, Pneumocystomycetes
+Pneumocystis jirovecii Frenkel 1976,Pneumocystis jirovecii,Uniprot,3419,33,39, Ascomycota, Pneumocystomycetes
+Podila verticillata (Linnem.) Vandepol & Bonito 2020,Podila verticillata,Uniprot,1503,0,24, Mucoromycota,
+Porostereum spadiceum (Pers.) Hjortstam & Ryvarden 1990,Porostereum spadiceum,JGI,16879,5,35, Basidiomycota, Agaricomycetes
+Pseudocercospora fijiensis (M. Morelet) Deighton 1976,Pseudocercospora fijiensis,Uniprot,13043,12,36, Ascomycota, Pezizomycotina
+Pseudocercospora musae (Zimm.) Deighton 1976,Mycosphaerella musicola,Uniprot,10380,9,32, Ascomycota, Pezizomycotina
+Pseudogymnoascus destructans (Blehert & Gargas) Minnis & D.L. Lindner 2013,Pseudogymnoascus destructans,Uniprot,9073,4,19.8, Ascomycota, Pezizomycotina
+Puccinia coronata Corda 1837,Puccinia coronata,Uniprot,25533,1,35, Basidiomycota, Pucciniomycetes
+Puccinia graminis Pers. 1794,Puccinia graminis,Uniprot,15688,1.75,35, Basidiomycota, Pucciniomycetes
+Puccinia recondita Roberge ex Desm. 1857,Puccinia triticina,Uniprot,11497,0,31.5, Basidiomycota, Pucciniomycetes
+Puccinia sorghi Schwein. 1832,Puccinia sorghi,Uniprot,21032,4,32, Basidiomycota, Pucciniomycetes
+Puccinia striiformis Westend. 1854,Puccinia striiformis,Uniprot,14973,0,32, Basidiomycota, Pucciniomycetes
+"Purpureocillium lilacinum (Thom) Luangsa-ard, Houbraken, Hywel-Jones & Samson 2011",Purpureocillium lilacinum,Uniprot,11750,15,33, Ascomycota, Pezizomycotina
+Pyrenophora teres Drechsler 1923,Pyrenophora teres,Uniprot,11705,4,33, Ascomycota, Pezizomycotina
+Pyrenophora tritici-repentis (Died.) Drechsler 1923,Pyrenophora tritici-repentis,Uniprot,12062,7.5,35, Ascomycota, Pezizomycotina
+Pyricularia grisea Cooke ex Sacc. 1886,Pyricularia grisea,Uniprot,12446,8.5,37, Ascomycota, Pezizomycotina
+Pyricularia oryzae Cavara 1892,Pyricularia oryzae,Uniprot,12681,8.5,39, Ascomycota, Pezizomycotina
+Rasamsonia byssochlamydoides (Stolk & Samson) Houbraken & Frisvad 2011,Rasamsonia byssochlamydoides,NCBI,9924,19,50, Ascomycota, Pezizomycotina
+Rasamsonia emersonii (Stolk) Houbraken & Frisvad 2011,Rasamsonia emersonii,Uniprot,9842,38,60, Ascomycota, Pezizomycotina
+Recurvomyces mirabilis Selbmann & de Hoog 2008,Recurvomyces mirabilis,NCBI,10917,-5,22, Ascomycota, Pezizomycotina
+Rhinocladiella mackenziei (C.K. Campb. & Al-Hedaithy) Arzanlou & Crous 2007,Rhinocladiella mackenziei,Uniprot,11378,9,42, Ascomycota, Pezizomycotina
+Rhizoctonia solani J.G. Kühn 1858,Rhizoctonia solani,Uniprot,11878,8,39, Basidiomycota, Agaricomycetes
+Rhizomucor pusillus (Lindt) Schipper 1978,Rhizomucor pusillus,NCBI,10986,18,52, Mucoromycota, Mucoromycetes
+Rhizophlyctis rosea (de Bary & Woronin) A. Fisch. 1892,Rhizophlyctis rosea,NCBI,12571,15,35, Chytridiomycota, Mucoromycetes
+Rhizopus arrhizus A. Fisch. 1892,Rhizopus oryzae,Uniprot,15531,1.5,48, Mucoromycota, Mucoromycetes
+Rhizopus microsporus Tiegh. 1875,Rhizopus microsporus,Uniprot,11322,1.5,58, Mucoromycota, Mucoromycetes
+Rhizopus stolonifer (Ehrenb.) Vuill. 1902,Rhizopus stolonifer,Uniprot,13951,1,41, Mucoromycota, Mucoromycetes
+"Rhodonia placenta (Fr.) Niemelä, K.H. Larss. & Schigel 2005",Oligoporus placenta,Uniprot,8983,3,35, Basidiomycota, Agaricomycetes
+Rhodotorula glutinis (Fresen.) F.C. Harrison 1927,Rhodotorula glutinis,JGI,8277,0,33, Basidiomycota, Microbotryomycetes
+Rhodotorula graminis Di Menna 1958,Rhodotorula graminis,Uniprot,7225,21,36, Basidiomycota, Microbotryomycetes
+Rhodotorula mucilaginosa (A. Jörg.) F.C. Harrison 1927,Rhodotorula mucilaginosa,JGI,7934,4,36, Basidiomycota, Microbotryomycetes
+"Rhodotorula toruloides (I. Banno) Q.M. Wang, F.Y. Bai, M. Groenew. & Boekhout 2015",Rhodosporidium toruloides ,Uniprot,2816,10,30, Basidiomycota, Microbotryomycetes
+Rozella allomycetis Foust 1937,Rozella allomycis,Uniprot,6337,18,40,Cryptomycota,
+Russula emetica (Schaeff.) Pers. 1796,Russula emetica,NCBI,13214,10,33, Basidiomycota, Agaricomycetes
+Saccharomyces arboricola F.Y. Bai & S.A. Wang 2008,Saccharomyces arboricola,Uniprot,3653,4,35, Ascomycota, Saccharomycotina
+Saccharomyces cerevisiae (Desm.) Meyen 1838,Saccharomyces cerevisiae,Uniprot,6060,2.84,45.39, Ascomycota, Saccharomycotina
+"Saccharomyces eubayanus J.P. Samp., Libkind, Hittinger, P. Gonç., E. Valério, C. Gonç., Dover & M. Johnst. 2011",Saccharomyces eubayanus,NCBI,5379,7,38, Ascomycota, Saccharomycotina
+"Saccharomyces kudriavzevii G.I. Naumov, S.A. James, E.S. Naumova, E.J. Louis & I.N. Roberts 2000",Saccharomyces kudriavzevii,Uniprot,3745,4.29,36.8, Ascomycota, Saccharomycotina
+"Saccharomyces mikatae G.I. Naumov, S.A. James, E.S. Naumova, E.J. Louis & I.N. Roberts 2000",Saccharomyces mikatae,Mycocosm,5576,1.79,40.2, Ascomycota, Saccharomycotina
+Saccharomyces paradoxus Bach.-Raich. 1914,Saccharomyces paradoxus,Mycocosm,5528,1.69,41.65, Ascomycota, Saccharomycotina
+Saccharomyces pastorianus Reess 1870,Saccharomyces pastorianus,Mycocosm,10760,21,34, Ascomycota, Saccharomycotina
+"Saitozyma podzolica (Babeva & Reshetova) Xin Zhan Liu, F.Y. Bai, M. Groenew. & Boekhout 2015",Cryptococcus podzolicus,Uniprot,10205,4,30, Basidiomycota, Tremellomycetes
+Scheffersomyces shehatae (H.R. Buckley & Uden) H. Urbina & M. Blackw. 2012,Candida shehatae,JGI,6035,10,40, Ascomycota, Saccharomycotina
+Scheffersomyces stipitis (Pignal) Kurtzman & M. Suzuki 2010,Pichia stipitis,Uniprot,5797,8,39, Ascomycota, Saccharomycotina
+Schizophyllum commune Fr. 1815,Schizophyllum commune,Uniprot,13124,4,45, Basidiomycota, Agaricomycetes
+"Schizosaccharomyces cryophilus Helston, J.A. Box, Wen Tang & Peter Baumann 2010",Schizosaccharomyces cryophilus,Uniprot,5135,16,30, Ascomycota, Schizosaccharomycetes
+Schizosaccharomyces octosporus Beij. 1897,Schizosaccharomyces octosporus,NCBI,4986,16,34, Ascomycota, Schizosaccharomycetes
+Schizosaccharomyces pombe Lindner 1893,Schizosaccharomyces pombe ,Uniprot,5117,15,40, Ascomycota, Schizosaccharomycetes
+Sclerotinia borealis Bubák & Vleugel 1917,Sclerotinia borealis,Uniprot,10165,-5,15, Ascomycota, Pezizomycotina
+Sclerotinia nivalis I. Saito 1997,Sclerotinia nivalis,Uniprot,13085,8,28, Ascomycota, Pezizomycotina
+Sclerotinia sclerotiorum (Lib.) de Bary 1884,Sclerotinia sclerotiorum,Uniprot,14445,0,37, Ascomycota, Pezizomycotina
+Serpula himantioides (Fr.) P. Karst. 1884,Serpula himantioides,JGI,13805,3,36, Basidiomycota, Agaricomycetes
+Serpula lacrymans (Wulfen) J. Schröt. 1888,Serpula lacrymans,Uniprot,14339,0,32, Basidiomycota, Agaricomycetes
+Sodiomyces alcalophilus (G. Okada) Giraldo López & Crous 2019,Acremonium alcalophilum,NCBI,9497,12,38, Ascomycota, Pezizomycotina
+Sordaria macrospora Auersw. 1866,Sordaria macrospora ,Uniprot,9890,4,42, Ascomycota, Pezizomycotina
+Sporisorium reilianum (J.G. Kühn) Langdon & Full. 1978,Sporisorium reilianum,Mycocosm,6682,16,36, Basidiomycota, Ustilaginomycetes
+Stereum hirsutum (Willd.) Pers. 1800,Stereum hirsutum,Uniprot,1613,3,38, Basidiomycota, Agaricomycetes
+Stromatinia cepivora (Berk.) Whetzel 1945,Stromatinia cepivora,NCBI,11107,5,29, Ascomycota, Pezizomycotina
+Stropharia rugosoannulata Farl. ex Murrill 1922,Stropharia rugosoannulata,JGI,17978,10,34, Basidiomycota, Agaricomycetes
+Suillus grevillei (Klotzsch) Singer 1945,Suillus grevillei,NCBI,15528,8,31, Basidiomycota, Agaricomycetes
+Suillus luteus (L.) Roussel 1796,Suillus luteus,Uniprot,18271,8,31, Basidiomycota, Agaricomycetes
+Suillus punctipes (Peck) Singer 1945,Suillus punctipes,JGI,14249,4,33, Basidiomycota, Agaricomycetes
+Synchytrium endobioticum (Schilb.) Percival 1909,Synchytrium endobioticum,Uniprot,7895,0,30, Chytridiomycota,
+Syzygites megalocarpus Ehrenb. 1818,Syzygites megalocarpus,JGI,10698,5,30, Mucoromycota, Mucoromycetes
+"Talaromyces amestolkiae N. Yilmaz, Houbraken, Frisvad & Samson 2012",Talaromyces amestolkiae,Uniprot,10407,7,42, Ascomycota, Pezizomycotina
+"Talaromyces islandicus (Sopp) Samson, N. Yilmaz, Frisvad & Seifert 2011",Penicillium islandicum,Uniprot,9928,10,42, Ascomycota, Pezizomycotina
+"Talaromyces marneffei (Segretain, Capponi & Sureau) Samson, N. Yilmaz, Frisvad & Seifert 2011",Talaromyces marneffei,Uniprot,10028,8,39, Ascomycota, Pezizomycotina
+"Talaromyces pinophilus (Hedgc.) Samson, N. Yilmaz, Frisvad & Seifert 2011",Penicillium pinophilum,NCBI,10912,8,38, Ascomycota, Pezizomycotina
+Talaromyces stipitatus (Thom ex C.W. Emmons) C.R. Benj. 1955,Talaromyces stipitatus,Uniprot,12468,7,41, Ascomycota, Pezizomycotina
+Taphrina deformans (Berk.) Tul. 1866,Taphrina deformans,Uniprot,4650,8.5,28, Ascomycota, Taphrinomycetes
+Thamnidium elegans Link 1809,Thamnidium elegans,Uniprot,9698,0,27, Mucoromycota, Mucoromycetes
+Thelephora terrestris Ehrh. ex Fr. 1821,Thelephora terrestris,Uniprot,13184,4,30, Basidiomycota, Agaricomycetes
+Thermoascus aurantiacus Miehe 1907,Thermoascus aurantiacus,NCBI,8761,31,61, Ascomycota, Pezizomycotina
+Thermoascus crustaceus (Apinis & Chesters) Stolk 1965,Thermoascus crustaceus,NCBI,10452,21,55, Ascomycota, Pezizomycotina
+Thermoascus thermophilus (Sopp) Arx 1970,Thermoascus thermophilus,NCBI,6881,20,52.5, Ascomycota, Pezizomycotina
+Thermocarpiscus australiensis (Tansey & M.A. Jack) X. Wei Wang & Houbraken 2022,Thielavia australiensis,JGI,10296,20,60, Ascomycota, Pezizomycotina
+Thermochaetoides thermophila (La Touche) X. Wei Wang & Houbraken 2022,Chaetomium thermophilum,Uniprot,7186,31,64, Ascomycota, Pezizomycotina
+Thermomyces dupontii (Griffon & Maubl.) Houbraken & Samson 2014,Thermomyces dupontii,NCBI,7560,28,60, Ascomycota, Pezizomycotina
+Thermomyces lanuginosus Tsikl. 1899,Thermomyces lanuginosus,NCBI,8128,34,62, Ascomycota, Pezizomycotina
+Thermomyces stellatus (Bunce) Apinis 1963,Thermomyces stellatus,NCBI,10380,16,52, Ascomycota, Pezizomycotina
+"Thermothelomyces hinnuleus (Awao & Udagawa) Y. Marín, Stchigel, Guarro & Cano 2015",Myceliophthora hinnulea,NCBI,7355,25,59, Ascomycota, Pezizomycotina
+Thermothelomyces myriococcoides X. Wei Wang & Houbraken 2022,Myriococcum thermophilum,NCBI,8734,25,55, Ascomycota, Pezizomycotina
+"Thermothelomyces thermophilus (Apinis) Y. Marín, Stchigel, Guarro & Cano 2015",Thermothelomyces thermophilus,Uniprot,9079,25,60, Ascomycota, Pezizomycotina
+Thermothielavioides terrestris (Apinis) X. Wei Wang & Houbraken 2019,Thielavia terrestris,Uniprot,9760,32,50, Ascomycota, Pezizomycotina
+Tilletia laevis J.G. Kühn 1873,Tilletia laevis,NCBI,9799,4,36, Basidiomycota, Exobasidiomycetes
+Tilletiopsis washingtonensis Nyland 1950,Tilletiopsis washingtonensis,Uniprot,7005,4,22.5, Basidiomycota, Exobasidiomycetes
+Tolypocladium inflatum W. Gams 1971,Tolypocladium inflatum,JGI,9998,8,45, Ascomycota, Pezizomycotina
+Trametes cingulata Berk. 1854,Trametes cingulata,NCBI,14108,14,55, Basidiomycota, Agaricomycetes
+Trametes gibbosa (Pers.) Fr. 1838,Trametes gibbosa,NCBI,12038,10,40, Basidiomycota, Agaricomycetes
+Trametes versicolor (L.) Lloyd 1921,Trametes versicolor,Uniprot,1022,0,40, Basidiomycota, Agaricomycetes
+Trametopsis cervina (Schwein.) Tomšovský 2008,Trametes cervina,NCBI,11835,18,55, Basidiomycota, Agaricomycetes
+Triangularia anserina (Rabenh.) X. Wei Wang & Houbraken 2019,Podospora anserina,Uniprot,10657,8,36, Ascomycota, Pezizomycotina
+Trichoderma citrinoviride Bissett 1984,Trichoderma citrinoviride,Uniprot,9734,12,43, Ascomycota, Pezizomycotina
+Trichoderma harzianum Rifai 1969,Trichoderma harzianum,Uniprot,14048,5,36, Ascomycota, Pezizomycotina
+Trichoderma parceramosum Bissett 1992,Trichoderma atroviride,Mycocosm,13583,12,32, Ascomycota, Pezizomycotina
+Trichoderma reesei E.G. Simmons 1977,Trichoderma reesei,Uniprot,9113,20,45, Ascomycota, Pezizomycotina
+"Trichoderma virens (J.H. Mill., Giddens & A.A. Foster) Arx 1987",Trichoderma virens,Uniprot,12383,5,37, Ascomycota, Pezizomycotina
+Tricholoma matsutake (S. Ito & S. Imai) Singer 1943,Tricholoma matsutake,NCBI,22781,5,31, Basidiomycota, Agaricomycetes
+Trichophyton benhamiae (Ajello & S.L. Cheng) Y. Gräser & de Hoog 2018,Trichophyton benhamiae,Uniprot,7976,16,41, Ascomycota, Pezizomycotina
+Trichophyton equinum Gedoelst 1902,Trichophyton equinum,NCBI,8676,19,42, Ascomycota, Pezizomycotina
+Trichophyton rubrum (Castell.) Sabour. 1911,Trichophyton rubrum,Uniprot,7033,19,43, Ascomycota, Pezizomycotina
+Trichothecium roseum (Pers.) Link 1809,Trichothecium roseum,NCBI,9102,0,35, Ascomycota, Pezizomycotina
+Tuber borchii Vittad. 1831,Tuber borchii ,Uniprot,12324,3,36, Ascomycota, Pezizomycotina
+Tuber brumale Vittad. 1831,Tuber brumale,NCBI,12380,3,30, Ascomycota, Pezizomycotina
+Tuber melanosporum Vittad. 1831,Tuber melanosporum,Uniprot,7494,12,34, Ascomycota, Pezizomycotina
+Ustilaginoidea virens (Cooke) Takah. 1896,Ustilaginoidea virens,Uniprot,8297,15,35, Ascomycota, Pezizomycotina
+Ustilago hordei (Pers.) Lagerh. 1889,Ustilago hordei,NCBI,7449,-1,35, Basidiomycota, Ustilaginomycetes
+Ustilago nuda (C.N. Jensen) Kellerm. & Swingle 1890,Ustilago nuda,NCBI,6887,1.5,35, Basidiomycota, Ustilaginomycetes
+Ustilago tritici (Bjerk.) Rostr. 1890,Tilletia tritici,NCBI,6809,0,35, Basidiomycota, Ustilaginomycetes
+Vanderbylia fraxinea (Bull.) D.A. Reid 1973,Perenniporia fraxinea,JGI,11428,10,33, Basidiomycota, Agaricomycetes
+Venturia effusa (G. Winter) Rossman & W.C. Allen 2016,Venturia effusa,Uniprot,10819,15,30, Ascomycota, Pezizomycotina
+Venturia inaequalis (Cooke) G. Winter 1875,Venturia inaequalis,Uniprot,10094,0,33.5, Ascomycota, Pezizomycotina
+Verruconis gallopava (W.B. Cooke) Samerp. & de Hoog 2013,Verruconis gallopava,Uniprot,9813,21,45, Ascomycota, Pezizomycotina
+Verticillium alboatrum Reinke & Berthold 1879,Verticillium albo-atrum,Uniprot,10233,4.4,37, Ascomycota, Pezizomycotina
+Verticillium dahliae Kleb. 1913,Verticillium dahliae,Uniprot,9670,5,36, Ascomycota, Pezizomycotina
+Volvariella volvacea (Bull.) Singer 1951,Volvariella volvacea,NCBI,11448,25,43, Basidiomycota, Agaricomycetes
+Vuilleminia comedens (Nees) Maire 1902,Vuilleminia comedens,JGI,22331,3,33, Basidiomycota, Agaricomycetes
+"Wickerhamomyces anomalus (E.C. Hansen) Kurtzman, Robnett & Bas.-Powers 2008",Wickerhamomyces anomalus,Uniprot,6406,25,53, Ascomycota, Saccharomycotina
+Xylaria arbuscula Sacc. 1878,Xylaria arbuscula,Uniprot,11454,5,35, Ascomycota, Pezizomycotina
+Xylaria hypoxylon (L.) Grev. 1824,Xylaria hypoxylon,Uniprot,11037,0,30, Ascomycota, Pezizomycotina
+Xylaria polymorpha (Pers.) Grev. 1824,Xylaria polymorpha,NCBI,12349,0,30, Ascomycota, Pezizomycotina
+"Yamadazyma tenuis (Diddens & Lodder) M.A.B. Haase, Kominek, Q.K. Langdon, Kurtzman & Hittinger 2017",Candida tenuis,Uniprot,5540,15,35, Ascomycota, Saccharomycotina
+"Yarrowia lipolytica (Wick., Kurtzman & Herman) Van der Walt & Arx 1981",Yarrowia lipolytica,Uniprot,6449,0,30, Ascomycota, Saccharomycotina
+Zasmidium cellare (Pers.) Fr. 1849,Zasmidium cellare,Uniprot,16014,20,44, Ascomycota, Pezizomycotina
+Zygosaccharomyces mellis Fabian & Quinet 1928,Saccharomyces mellis,NCBI,4740,20,39, Ascomycota, Saccharomycotina
+Zygosaccharomyces rouxii (Boutroux) Yarrow 1977,Zygosaccharomyces rouxii,Uniprot,4987,10,35, Ascomycota, Saccharomycotina
+Zymonema dermatitidis (Gilchrist & W.R. Stokes) C.W. Dodge 1935,Blastomyces dermatitidis,NCBI,11539,9,40, Ascomycota, Pezizomycotina
+Zymoseptoria tritici (Roberge ex Desm.) Quaedvl. & Crous 2011,Zymoseptoria tritici,Uniprot,10972,2.5,32.2, Ascomycota, Pezizomycotina

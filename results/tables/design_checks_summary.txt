@@ -1,0 +1,11 @@
+step_g	reader_boundary_excess_abs_step=-0.0169	perm_p=0.5466
+step_r	reader_boundary_excess_abs_step=0.0140	perm_p=0.3626
+       res_g              res_r            
+        mean    std size   mean    std size
+sdr                                        
+S-608  0.020  0.107  198 -0.043  0.264  198
+S-616 -0.017  0.283  101  0.230  0.363  101
+S-617 -0.026  0.114  200  0.140  0.235  200
+S-619 -0.027  0.186  161  0.013  0.329  161
+S-688 -0.003  0.166  200 -0.129  0.402  200
+S-701 -0.023  0.158  195 -0.108  0.314  195

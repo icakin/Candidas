@@ -1,0 +1,28 @@
+role,exchange_id,kegg,name,setting,note
+carbon,EX_C00031__extr,C00031,D-Glucose,FIT,"sucrose-derived hexose proxy; scale = calibration knob"
+oxygen,EX_C00007__extr,C00007,Oxygen,OPEN,aerobic
+nitrogen,EX_Ammonia__extr,C00014,Ammonia,OPEN,N source
+sulfate,EX_C00059__extr,C00059,Sulfate,OPEN,essential
+phosphate,EX_C00009__extr,C00009,Orthophosphate,OPEN,essential
+vitamin,EX_C00120__extr,C00120,Biotin,OPEN,"ESSENTIAL auxotrophy; YE supplies it"
+proton,EX_C00080__extr,C00080,H+,OPEN,free
+water,EX_C00001__extr,C00001,H2O,OPEN,free
+co2,EX_C00011__extr,C00011,CO2,OPEN,secretion
+aa_pool,EX_C00062__extr,C00062,L-Arginine,AA_POOL,nC=6
+aa_pool,EX_C00049__extr,C00049,L-Aspartate,AA_POOL,nC=4
+aa_pool,EX_C00064__extr,C00064,L-Glutamine,AA_POOL,nC=5
+aa_pool,EX_C00025__extr,C00025,L-Glutamate,AA_POOL,nC=5
+aa_pool,EX_C00037__extr,C00037,Glycine,AA_POOL,nC=2
+aa_pool,EX_C00135__extr,C00135,L-Histidine,AA_POOL,nC=6
+aa_pool,EX_C00407__extr,C00407,L-Isoleucine,AA_POOL,nC=6
+aa_pool,EX_C00123__extr,C00123,L-Leucine,AA_POOL,nC=6
+aa_pool,EX_C00047__extr,C00047,L-Lysine,AA_POOL,nC=6
+aa_pool,EX_C00073__extr,C00073,L-Methionine,AA_POOL,nC=5
+aa_pool,EX_C00079__extr,C00079,L-Phenylalanine,AA_POOL,nC=9
+aa_pool,EX_C00148__extr,C00148,L-Proline,AA_POOL,nC=5
+aa_pool,EX_C00065__extr,C00065,L-Serine,AA_POOL,nC=3
+aa_pool,EX_C00188__extr,C00188,L-Threonine,AA_POOL,nC=4
+aa_pool,EX_C00078__extr,C00078,L-Tryptophan,AA_POOL,nC=11
+aa_pool,EX_C00082__extr,C00082,L-Tyrosine,AA_POOL,nC=9
+aa_pool,EX_C00183__extr,C00183,L-Valine,AA_POOL,nC=5
+missing,,,L-Alanine/L-Asparagine/L-Cysteine,ABSENT,"no exchange in iRV973 - AA proxy uses 17/20"

@@ -1,0 +1,22 @@
+taxon,kingdom,limit,n,resp,inert,grow,f_resp
+C. auris I,Fungi,44,0,0,0,0,-1.0
+C. auris II,Fungi,42,15,14,0,1,1.0
+C. auris III,Fungi,44,0,0,0,0,-1.0
+C. auris IV,Fungi,44,0,0,0,0,-1.0
+C. duobushaemulonii,Fungi,38,30,13,17,0,0.43333333333333335
+C. haemulonii,Fungi,44,0,0,0,0,-1.0
+C. parapsilosis,Fungi,40,30,26,4,0,0.8666666666666667
+E. coli A,Bacteria,45,10,10,0,0,1.0
+E. coli B,Bacteria,47,5,5,0,0,1.0
+Soil OTU1,Bacteria,35,5,5,0,0,1.0
+Soil OTU11,Bacteria,25,15,11,4,0,0.7333333333333333
+Soil OTU13,Bacteria,30,10,4,5,1,0.5
+Soil OTU14,Bacteria,35,5,5,0,0,1.0
+Soil OTU15,Bacteria,30,10,5,5,0,0.5
+Soil OTU2,Bacteria,30,10,5,5,0,0.5
+Soil OTU20,Bacteria,40,0,0,0,0,-1.0
+Soil OTU4,Bacteria,35,5,5,0,0,1.0
+Soil OTU6,Bacteria,35,5,5,0,0,1.0
+Soil OTU7,Bacteria,35,5,0,5,0,0.0
+Soil OTU8,Bacteria,30,10,5,5,0,0.5
+Soil OTU9,Bacteria,35,5,4,0,1,1.0

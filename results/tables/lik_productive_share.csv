@@ -1,0 +1,241 @@
+group,isolate,T,tot,frac,clade
+Clade1,Clade1_2068,22,8.299999999999997,1.0,C. auris
+Clade1,Clade1_2068,24,12.900000000000002,1.0,C. auris
+Clade1,Clade1_2068,26,23.33,1.0,C. auris
+Clade1,Clade1_2068,28,38.67999999999999,1.0,C. auris
+Clade1,Clade1_2068,30,38.190000000000005,1.0,C. auris
+Clade1,Clade1_2068,32,39.33,1.0,C. auris
+Clade1,Clade1_2068,34,37.720000000000006,1.0,C. auris
+Clade1,Clade1_2068,36,37.550000000000004,1.0,C. auris
+Clade1,Clade1_2068,38,38.53,1.0,C. auris
+Clade1,Clade1_2068,40,37.78,1.0,C. auris
+Clade1,Clade1_2068,42,37.629999999999995,1.0,C. auris
+Clade1,Clade1_2068,44,33.870000000000005,0.7992323590197813,C. auris
+Clade1,Clade1_2069,22,10.95,1.0,C. auris
+Clade1,Clade1_2069,24,17.1,1.0,C. auris
+Clade1,Clade1_2069,26,28.29,1.0,C. auris
+Clade1,Clade1_2069,28,43.470000000000006,1.0,C. auris
+Clade1,Clade1_2069,30,38.980000000000004,1.0,C. auris
+Clade1,Clade1_2069,32,38.25,1.0,C. auris
+Clade1,Clade1_2069,34,40.75,1.0,C. auris
+Clade1,Clade1_2069,36,38.33,1.0,C. auris
+Clade1,Clade1_2069,38,37.209999999999994,1.0,C. auris
+Clade1,Clade1_2069,40,36.08,1.0,C. auris
+Clade1,Clade1_2069,42,33.59,0.7755284310806787,C. auris
+Clade1,Clade1_2069,44,33.24,0.38658243080625754,C. auris
+Clade1,Clade1_2070,22,7.879999999999999,1.0,C. auris
+Clade1,Clade1_2070,24,13.739999999999998,1.0,C. auris
+Clade1,Clade1_2070,26,20.439999999999998,1.0,C. auris
+Clade1,Clade1_2070,28,33.6,1.0,C. auris
+Clade1,Clade1_2070,30,38.519999999999996,1.0,C. auris
+Clade1,Clade1_2070,32,41.1,1.0,C. auris
+Clade1,Clade1_2070,34,39.94,1.0,C. auris
+Clade1,Clade1_2070,36,38.28,1.0,C. auris
+Clade1,Clade1_2070,38,38.14,1.0,C. auris
+Clade1,Clade1_2070,40,37.0,1.0,C. auris
+Clade1,Clade1_2070,42,39.169999999999995,1.0,C. auris
+Clade1,Clade1_2070,44,33.980000000000004,1.0,C. auris
+Clade2,Clade2_2071,22,6.859999999999999,1.0,C. auris
+Clade2,Clade2_2071,24,9.530000000000001,1.0,C. auris
+Clade2,Clade2_2071,26,15.490000000000002,1.0,C. auris
+Clade2,Clade2_2071,28,20.94,1.0,C. auris
+Clade2,Clade2_2071,30,38.599999999999994,1.0,C. auris
+Clade2,Clade2_2071,32,39.989999999999995,1.0,C. auris
+Clade2,Clade2_2071,34,39.54,1.0,C. auris
+Clade2,Clade2_2071,36,42.18,1.0,C. auris
+Clade2,Clade2_2071,38,39.22,1.0,C. auris
+Clade2,Clade2_2071,40,39.6,1.0,C. auris
+Clade2,Clade2_2071,42,28.18,0.5298083747338538,C. auris
+Clade2,Clade2_2071,44,16.23,0.0,C. auris
+Clade2,Clade2_2072,22,6.1899999999999995,1.0,C. auris
+Clade2,Clade2_2072,24,9.039999999999997,1.0,C. auris
+Clade2,Clade2_2072,26,11.420000000000002,0.7968476357267951,C. auris
+Clade2,Clade2_2072,28,19.17,1.0,C. auris
+Clade2,Clade2_2072,30,26.86,1.0,C. auris
+Clade2,Clade2_2072,32,36.160000000000004,1.0,C. auris
+Clade2,Clade2_2072,34,35.04,1.0,C. auris
+Clade2,Clade2_2072,36,41.940000000000005,1.0,C. auris
+Clade2,Clade2_2072,38,39.79,1.0,C. auris
+Clade2,Clade2_2072,40,34.82,1.0,C. auris
+Clade2,Clade2_2072,42,24.370000000000005,0.2810832991382848,C. auris
+Clade2,Clade2_2072,44,16.490000000000002,0.0,C. auris
+Clade2,Clade2_2073,22,5.709999999999999,1.0,C. auris
+Clade2,Clade2_2073,24,6.959999999999998,1.0,C. auris
+Clade2,Clade2_2073,26,9.790000000000003,1.0,C. auris
+Clade2,Clade2_2073,28,13.48,1.0,C. auris
+Clade2,Clade2_2073,30,18.67,1.0,C. auris
+Clade2,Clade2_2073,32,27.549999999999997,1.0,C. auris
+Clade2,Clade2_2073,34,22.98,1.0,C. auris
+Clade2,Clade2_2073,36,38.05,1.0,C. auris
+Clade2,Clade2_2073,38,37.4,1.0,C. auris
+Clade2,Clade2_2073,40,36.26,0.5719801434087148,C. auris
+Clade2,Clade2_2073,42,27.610000000000003,0.488228902571532,C. auris
+Clade2,Clade2_2073,44,9.75,0.0,C. auris
+Clade3,Clade3_2074,22,7.210000000000001,1.0,C. auris
+Clade3,Clade3_2074,24,12.129999999999995,1.0,C. auris
+Clade3,Clade3_2074,26,17.43,1.0,C. auris
+Clade3,Clade3_2074,28,26.029999999999998,1.0,C. auris
+Clade3,Clade3_2074,30,42.459999999999994,1.0,C. auris
+Clade3,Clade3_2074,32,40.78,1.0,C. auris
+Clade3,Clade3_2074,34,41.96,1.0,C. auris
+Clade3,Clade3_2074,36,39.26,1.0,C. auris
+Clade3,Clade3_2074,38,41.86,1.0,C. auris
+Clade3,Clade3_2074,40,38.68,1.0,C. auris
+Clade3,Clade3_2074,42,39.339999999999996,1.0,C. auris
+Clade3,Clade3_2074,44,32.699999999999996,0.8250764525993886,C. auris
+Clade3,Clade3_2075,22,5.860000000000001,1.0,C. auris
+Clade3,Clade3_2075,24,10.229999999999997,1.0,C. auris
+Clade3,Clade3_2075,26,17.51,1.0,C. auris
+Clade3,Clade3_2075,28,31.87,1.0,C. auris
+Clade3,Clade3_2075,30,41.55,1.0,C. auris
+Clade3,Clade3_2075,32,41.78,1.0,C. auris
+Clade3,Clade3_2075,34,42.42,1.0,C. auris
+Clade3,Clade3_2075,36,40.51,1.0,C. auris
+Clade3,Clade3_2075,38,42.10999999999999,1.0,C. auris
+Clade3,Clade3_2075,40,39.37,1.0,C. auris
+Clade3,Clade3_2075,42,41.33,1.0,C. auris
+Clade3,Clade3_2075,44,28.17,1.0,C. auris
+Clade3,Clade3_2076,22,6.41,1.0,C. auris
+Clade3,Clade3_2076,24,10.78,1.0,C. auris
+Clade3,Clade3_2076,26,18.92,1.0,C. auris
+Clade3,Clade3_2076,28,29.47,1.0,C. auris
+Clade3,Clade3_2076,30,42.71,1.0,C. auris
+Clade3,Clade3_2076,32,40.41,1.0,C. auris
+Clade3,Clade3_2076,34,43.010000000000005,1.0,C. auris
+Clade3,Clade3_2076,36,41.85,1.0,C. auris
+Clade3,Clade3_2076,38,42.68000000000001,1.0,C. auris
+Clade3,Clade3_2076,40,38.919999999999995,1.0,C. auris
+Clade3,Clade3_2076,42,41.78,1.0,C. auris
+Clade3,Clade3_2076,44,32.93,0.803218949286365,C. auris
+Clade4,Clade4_2077,22,5.860000000000001,1.0,C. auris
+Clade4,Clade4_2077,24,8.25,1.0,C. auris
+Clade4,Clade4_2077,26,12.500000000000002,1.0,C. auris
+Clade4,Clade4_2077,28,23.539999999999996,1.0,C. auris
+Clade4,Clade4_2077,30,38.65,1.0,C. auris
+Clade4,Clade4_2077,32,39.53,1.0,C. auris
+Clade4,Clade4_2077,34,38.029999999999994,1.0,C. auris
+Clade4,Clade4_2077,36,42.18,1.0,C. auris
+Clade4,Clade4_2077,38,38.97,1.0,C. auris
+Clade4,Clade4_2077,40,41.36,1.0,C. auris
+Clade4,Clade4_2077,42,38.47,1.0,C. auris
+Clade4,Clade4_2077,44,37.870000000000005,1.0,C. auris
+Clade4,Clade4_2078,22,6.240000000000002,1.0,C. auris
+Clade4,Clade4_2078,24,9.819999999999999,1.0,C. auris
+Clade4,Clade4_2078,26,15.009999999999998,1.0,C. auris
+Clade4,Clade4_2078,28,30.490000000000006,1.0,C. auris
+Clade4,Clade4_2078,30,40.38,1.0,C. auris
+Clade4,Clade4_2078,32,42.309999999999995,1.0,C. auris
+Clade4,Clade4_2078,34,39.86999999999999,1.0,C. auris
+Clade4,Clade4_2078,36,42.46,1.0,C. auris
+Clade4,Clade4_2078,38,38.989999999999995,1.0,C. auris
+Clade4,Clade4_2078,40,41.29999999999999,1.0,C. auris
+Clade4,Clade4_2078,42,36.15,1.0,C. auris
+Clade4,Clade4_2078,44,36.96,0.7819264069264069,C. auris
+Clade4,Clade4_2079,22,8.620000000000001,1.0,C. auris
+Clade4,Clade4_2079,24,11.08,1.0,C. auris
+Clade4,Clade4_2079,26,24.810000000000002,1.0,C. auris
+Clade4,Clade4_2079,28,32.53,1.0,C. auris
+Clade4,Clade4_2079,30,40.13,1.0,C. auris
+Clade4,Clade4_2079,32,43.21000000000001,1.0,C. auris
+Clade4,Clade4_2079,34,39.07,1.0,C. auris
+Clade4,Clade4_2079,36,43.06999999999999,1.0,C. auris
+Clade4,Clade4_2079,38,39.08,1.0,C. auris
+Clade4,Clade4_2079,40,40.709999999999994,1.0,C. auris
+Clade4,Clade4_2079,42,35.65,1.0,C. auris
+Clade4,Clade4_2079,44,27.809999999999995,0.4987414599065084,C. auris
+Duo,Duo_1770,22,8.720000000000004,1.0,relatives
+Duo,Duo_1770,24,16.0,1.0,relatives
+Duo,Duo_1770,26,22.68,1.0,relatives
+Duo,Duo_1770,28,34.37,1.0,relatives
+Duo,Duo_1770,30,38.76,1.0,relatives
+Duo,Duo_1770,32,34.08,1.0,relatives
+Duo,Duo_1770,34,38.790000000000006,1.0,relatives
+Duo,Duo_1770,36,33.400000000000006,1.0,relatives
+Duo,Duo_1770,38,12.18,0.6691297208538588,relatives
+Duo,Duo_1770,40,5.170000000000001,0.0,relatives
+Duo,Duo_1770,42,3.3500000000000005,0.0,relatives
+Duo,Duo_1770,44,1.8599999999999994,0.19892473118279583,relatives
+Duo,Duo_1771,22,5.970000000000001,1.0,relatives
+Duo,Duo_1771,24,14.600000000000001,1.0,relatives
+Duo,Duo_1771,26,16.03,1.0,relatives
+Duo,Duo_1771,28,31.42,1.0,relatives
+Duo,Duo_1771,30,36.370000000000005,1.0,relatives
+Duo,Duo_1771,32,34.57,1.0,relatives
+Duo,Duo_1771,34,39.019999999999996,1.0,relatives
+Duo,Duo_1771,36,32.620000000000005,1.0,relatives
+Duo,Duo_1771,38,14.42,1.0,relatives
+Duo,Duo_1771,40,6.48,0.0,relatives
+Duo,Duo_1771,42,2.790000000000001,0.0,relatives
+Duo,Duo_1771,44,2.339999999999998,0.35042735042735046,relatives
+Hae,Hae_1724,22,8.81,1.0,relatives
+Hae,Hae_1724,24,13.68,1.0,relatives
+Hae,Hae_1724,26,21.79,1.0,relatives
+Hae,Hae_1724,28,42.21,1.0,relatives
+Hae,Hae_1724,30,43.44,1.0,relatives
+Hae,Hae_1724,32,40.5,1.0,relatives
+Hae,Hae_1724,34,41.67999999999999,1.0,relatives
+Hae,Hae_1724,36,39.620000000000005,1.0,relatives
+Hae,Hae_1724,38,41.099999999999994,1.0,relatives
+Hae,Hae_1724,40,39.599999999999994,1.0,relatives
+Hae,Hae_1724,42,39.18000000000001,1.0,relatives
+Hae,Hae_1724,44,38.81,1.0,relatives
+Hae,Hae_1768,22,10.879999999999997,1.0,relatives
+Hae,Hae_1768,24,15.220000000000002,1.0,relatives
+Hae,Hae_1768,26,25.36,1.0,relatives
+Hae,Hae_1768,28,32.440000000000005,1.0,relatives
+Hae,Hae_1768,30,39.71,1.0,relatives
+Hae,Hae_1768,32,37.36000000000001,1.0,relatives
+Hae,Hae_1768,34,33.589999999999996,1.0,relatives
+Hae,Hae_1768,36,27.760000000000005,1.0,relatives
+Hae,Hae_1768,38,13.15,0.8053231939163498,relatives
+Hae,Hae_1768,40,5.5600000000000005,0.0,relatives
+Hae,Hae_1768,42,3.6499999999999986,0.0,relatives
+Hae,Hae_1768,44,2.620000000000001,0.19083969465648848,relatives
+Hae,Hae_1769,22,10.739999999999997,1.0,relatives
+Hae,Hae_1769,24,11.670000000000003,1.0,relatives
+Hae,Hae_1769,26,18.32,1.0,relatives
+Hae,Hae_1769,28,18.41,1.0,relatives
+Hae,Hae_1769,30,30.17,1.0,relatives
+Hae,Hae_1769,32,28.549999999999997,1.0,relatives
+Hae,Hae_1769,34,20.81,1.0,relatives
+Hae,Hae_1769,36,15.649999999999999,0.805111821086262,relatives
+Hae,Hae_1769,38,8.630000000000003,0.23522595596755494,relatives
+Hae,Hae_1769,40,4.23,0.0,relatives
+Hae,Hae_1769,42,2.84,0.18309859154929564,relatives
+Hae,Hae_1769,44,3.379999999999999,0.0,relatives
+para,para_2051,22,14.469999999999999,1.0,relatives
+para,para_2051,24,17.660000000000004,1.0,relatives
+para,para_2051,26,29.78,1.0,relatives
+para,para_2051,28,38.29,1.0,relatives
+para,para_2051,30,39.92,1.0,relatives
+para,para_2051,32,42.03999999999999,1.0,relatives
+para,para_2051,34,39.519999999999996,1.0,relatives
+para,para_2051,36,41.300000000000004,1.0,relatives
+para,para_2051,38,38.61,1.0,relatives
+para,para_2051,40,17.18,0.5948777648428406,relatives
+para,para_2051,42,8.93,0.0,relatives
+para,para_2051,44,4.840000000000002,0.0,relatives
+para,para_2052,22,11.069999999999999,1.0,relatives
+para,para_2052,24,17.9,1.0,relatives
+para,para_2052,26,26.01,1.0,relatives
+para,para_2052,28,42.129999999999995,1.0,relatives
+para,para_2052,30,42.15,1.0,relatives
+para,para_2052,32,42.95,1.0,relatives
+para,para_2052,34,39.60999999999999,1.0,relatives
+para,para_2052,36,42.84,1.0,relatives
+para,para_2052,38,38.99,1.0,relatives
+para,para_2052,40,29.959999999999997,0.7863818424566088,relatives
+para,para_2052,42,23.259999999999998,0.0,relatives
+para,para_2052,44,10.600000000000001,0.0,relatives
+para,para_2053,22,5.9399999999999995,1.0,relatives
+para,para_2053,24,19.44,1.0,relatives
+para,para_2053,26,14.24,1.0,relatives
+para,para_2053,28,44.66,1.0,relatives
+para,para_2053,30,34.28,1.0,relatives
+para,para_2053,32,41.8,1.0,relatives
+para,para_2053,34,39.7,1.0,relatives
+para,para_2053,36,42.89,1.0,relatives
+para,para_2053,38,30.11,1.0,relatives
+para,para_2053,40,12.200000000000003,0.2213114754098361,relatives
+para,para_2053,42,8.359999999999998,0.0,relatives
+para,para_2053,44,4.84,0.0,relatives

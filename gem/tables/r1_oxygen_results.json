@@ -1,0 +1,18 @@
+{
+  "loso_temp_only": {
+    "auris": 0.1511,
+    "parapsilosis": 0.1072,
+    "haemulonii": 0.1747,
+    "duobushaemulonii": 0.134
+  },
+  "loso_temp_plus_O2": {
+    "auris": 0.1284,
+    "parapsilosis": 0.0881,
+    "haemulonii": 0.1251,
+    "duobushaemulonii": 0.0947
+  },
+  "mean_temp_only": 0.1418,
+  "mean_temp_O2": 0.1091,
+  "finding": "O2 rises with T while growth falls (uncoupling); O2 adds out-of-fold growth info beyond T",
+  "baseline_to_beat_MAE": 0.109
+}

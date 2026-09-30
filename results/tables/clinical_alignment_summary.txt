@@ -1,0 +1,31 @@
+CLINICAL ALIGNMENT  (observation, not a test: 4 species, shared ancestry)
+
+SPECIES LEVEL  vs WHO fungal priority pathogens list 2022
+ species who_rank  who_group fever_cost fc_lo fc_hi growth_kept gk_lo gk_hi
+   auris        3   critical       1.43  1.32  1.53       0.818 0.773 0.881
+    para        2       high       1.92  1.56  2.39       0.595 0.476 0.726
+     Hae        1 not listed       1.95  1.67  2.34       0.601 0.500 0.695
+     Duo        1 not listed       6.13  2.74 11.63       0.193 0.102 0.434
+
+  posterior Spearman(fever cost, WHO rank)   = -0.95 [-0.95, -0.63], P(rho<0) = 1.000
+  posterior Spearman(growth kept, WHO rank)  = 0.63 [0.63, 0.95], P(rho>0) = 0.999
+  P(C. auris has the lowest fever cost of the four)      = 0.993
+  P(C. auris retains the most growth at 40 C)            = 0.996
+  P(cost ordering auris < para < Hae < Duo exactly)      = 0.541
+  P(both WHO-listed species cheaper than both unlisted)  = 0.547
+
+CLADE LEVEL  vs the otic-not-invasive phenotype of clade II (Chow et al. 2019)
+  clade fever_cost fc_lo fc_hi growth_kept Topt
+ Clade1       1.45  1.28  1.62       0.832 35.5
+ Clade2       1.68  1.39  1.99       0.689 34.8
+ Clade3       1.36  1.20  1.52       0.849 35.7
+ Clade4       1.24  1.11  1.37       0.899 36.4
+
+  P(clade II has the highest fever cost of the four)     = 0.916
+  P(clade II retains the least growth at 40 C)           = 0.948
+  P(clade II has the coolest growth optimum)             = 0.582
+
+The WHO list is built from case fatality, incidence, sequelae and resistance.
+It uses no thermal or metabolic information, so an alignment is not circular.
+It is still four species with shared ancestry: report as a pattern to be tested
+with more taxa, never as evidence of cause.

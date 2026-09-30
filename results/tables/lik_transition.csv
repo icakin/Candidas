@@ -1,0 +1,21 @@
+group,isolate,T_growthloss,growth_censored,T_last_growth,p_growth_40,p_growth_42,p_growth_44,n_wells,clade
+Clade1,Clade1_2068,,True,44.0,1.0,1.0,0.8,60,C. auris
+Clade1,Clade1_2069,44.0,False,42.0,1.0,0.8,0.4,60,C. auris
+Clade1,Clade1_2070,,True,44.0,1.0,1.0,1.0,60,C. auris
+Clade2,Clade2_2071,44.0,False,42.0,1.0,0.6,0.0,60,C. auris
+Clade2,Clade2_2072,42.0,False,40.0,1.0,0.4,0.0,60,C. auris
+Clade2,Clade2_2073,42.0,False,40.0,0.6,0.4,0.0,60,C. auris
+Clade3,Clade3_2074,,True,44.0,1.0,1.0,0.8,60,C. auris
+Clade3,Clade3_2075,,True,44.0,1.0,1.0,1.0,60,C. auris
+Clade3,Clade3_2076,,True,44.0,1.0,1.0,0.8,60,C. auris
+Clade4,Clade4_2077,,True,44.0,1.0,1.0,1.0,60,C. auris
+Clade4,Clade4_2078,,True,44.0,1.0,1.0,0.8,60,C. auris
+Clade4,Clade4_2079,44.0,False,42.0,1.0,1.0,0.4,60,C. auris
+Duo,Duo_1770,40.0,False,38.0,0.0,0.0,0.2,60,relatives
+Duo,Duo_1771,40.0,False,38.0,0.0,0.0,0.4,60,relatives
+Hae,Hae_1724,,True,44.0,1.0,1.0,1.0,60,relatives
+Hae,Hae_1768,40.0,False,38.0,0.0,0.0,0.2,60,relatives
+Hae,Hae_1769,38.0,False,36.0,0.0,0.2,0.0,60,relatives
+para,para_2051,42.0,False,40.0,0.6,0.0,0.0,60,relatives
+para,para_2052,42.0,False,40.0,0.8,0.0,0.0,60,relatives
+para,para_2053,40.0,False,38.0,0.2,0.0,0.0,60,relatives

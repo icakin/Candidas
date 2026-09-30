@@ -1,0 +1,41 @@
+group,isolate,bound,T_growthloss,growth_censored,T_resploss,resp_censored,window,p_growth_38,p_growth_40,p_growth_42,p_growth_44,p_responly_40,clade
+Clade1,Clade1_2068,P,,True,,True,,1.0,1.0,1.0,0.6,0.0,C. auris
+Clade1,Clade1_2068,R,44.0,False,,True,,1.0,1.0,0.8,0.4,0.0,C. auris
+Clade1,Clade1_2069,P,44.0,False,,True,,1.0,0.8,0.6,0.2,0.2,C. auris
+Clade1,Clade1_2069,R,42.0,False,,True,,1.0,0.6,0.2,0.0,0.2,C. auris
+Clade1,Clade1_2070,P,,True,,True,,0.8,1.0,0.8,0.8,0.0,C. auris
+Clade1,Clade1_2070,R,,True,,True,,0.6,0.8,0.4,0.8,0.0,C. auris
+Clade2,Clade2_2071,P,42.0,False,,True,,1.0,1.0,0.4,0.4,0.0,C. auris
+Clade2,Clade2_2071,R,42.0,False,,True,,1.0,1.0,0.0,0.0,0.0,C. auris
+Clade2,Clade2_2072,P,42.0,False,,True,,1.0,1.0,0.0,0.2,0.0,C. auris
+Clade2,Clade2_2072,R,42.0,False,,True,,1.0,0.8,0.0,0.0,0.0,C. auris
+Clade2,Clade2_2073,P,,True,,True,,1.0,0.2,0.4,0.8,0.8,C. auris
+Clade2,Clade2_2073,R,38.0,False,,True,,0.4,0.2,0.2,0.0,0.8,C. auris
+Clade3,Clade3_2074,P,44.0,False,,True,,1.0,1.0,1.0,0.4,0.0,C. auris
+Clade3,Clade3_2074,R,42.0,False,,True,,1.0,1.0,0.2,0.2,0.0,C. auris
+Clade3,Clade3_2075,P,,True,,True,,1.0,1.0,1.0,0.8,0.0,C. auris
+Clade3,Clade3_2075,R,44.0,False,,True,,1.0,1.0,0.6,0.2,0.0,C. auris
+Clade3,Clade3_2076,P,,True,,True,,1.0,1.0,1.0,0.6,0.0,C. auris
+Clade3,Clade3_2076,R,44.0,False,,True,,0.8,1.0,0.8,0.2,0.0,C. auris
+Clade4,Clade4_2077,P,,True,,True,,1.0,1.0,1.0,1.0,0.0,C. auris
+Clade4,Clade4_2077,R,44.0,False,,True,,1.0,1.0,0.8,0.2,0.0,C. auris
+Clade4,Clade4_2078,P,,True,,True,,1.0,1.0,1.0,1.0,0.0,C. auris
+Clade4,Clade4_2078,R,44.0,False,,True,,1.0,1.0,1.0,0.4,0.0,C. auris
+Clade4,Clade4_2079,P,44.0,False,,True,,1.0,1.0,0.8,0.4,0.0,C. auris
+Clade4,Clade4_2079,R,42.0,False,,True,,1.0,1.0,0.0,0.0,0.0,C. auris
+Duo,Duo_1770,P,44.0,False,,True,,0.6,0.8,0.6,0.0,0.2,relatives
+Duo,Duo_1770,R,38.0,False,,True,,0.0,0.0,0.0,0.0,0.2,relatives
+Duo,Duo_1771,P,40.0,False,,True,,1.0,0.4,0.4,0.2,0.6,relatives
+Duo,Duo_1771,R,40.0,False,,True,,1.0,0.0,0.0,0.0,0.6,relatives
+Hae,Hae_1724,P,,True,,True,,1.0,1.0,1.0,0.8,0.0,relatives
+Hae,Hae_1724,R,,True,,True,,1.0,1.0,0.6,0.8,0.0,relatives
+Hae,Hae_1768,P,44.0,False,,True,,1.0,0.6,0.8,0.4,0.4,relatives
+Hae,Hae_1768,R,38.0,False,,True,,0.4,0.0,0.0,0.0,0.4,relatives
+Hae,Hae_1769,P,38.0,False,,True,,0.2,0.4,0.0,0.2,0.6,relatives
+Hae,Hae_1769,R,36.0,False,,True,,0.0,0.0,0.0,0.0,0.6,relatives
+para,para_2051,P,40.0,False,,True,,1.0,0.2,0.4,0.2,0.8,relatives
+para,para_2051,R,38.0,False,,True,,0.4,0.0,0.0,0.0,0.8,relatives
+para,para_2052,P,42.0,False,,True,,1.0,0.6,0.2,0.4,0.4,relatives
+para,para_2052,R,40.0,False,,True,,1.0,0.0,0.0,0.0,0.4,relatives
+para,para_2053,P,,True,,True,,1.0,0.6,0.4,0.8,0.4,relatives
+para,para_2053,R,40.0,False,,True,,1.0,0.0,0.0,0.0,0.4,relatives

@@ -1,0 +1,265 @@
+{
+  "seq": {
+    "haemulonii": {
+      "dTopt_med": 0.005169510841369629,
+      "dTm_med": 0.14382600784301758,
+      "dTm_p1": -0.1867387890815735
+    },
+    "duobushaemulonii": {
+      "dTopt_med": 0.09106814861297607,
+      "dTm_med": 0.1583874225616455,
+      "dTm_p1": -0.2479047179222107
+    },
+    "parapsilosis": {
+      "dTopt_med": 0.9974294900894165,
+      "dTm_med": -0.5267083644866943,
+      "dTm_p1": 0.22997742891311646
+    }
+  },
+  "baseline": {
+    "auris": {
+      "34": 0.7988,
+      "40": 0.6635,
+      "42": 0.5599,
+      "44": 0.4474
+    },
+    "haemulonii": {
+      "34": 0.7305,
+      "40": 0.5884,
+      "42": 0.4891,
+      "44": 0.3833
+    },
+    "duobushaemulonii": {
+      "34": 0.5537,
+      "40": 0.4346,
+      "42": 0.3611,
+      "44": 0.2843
+    },
+    "parapsilosis": {
+      "34": 0.6717,
+      "40": 0.5914,
+      "42": 0.4973,
+      "44": 0.3906
+    }
+  },
+  "calib": {
+    "sig": 10.231397335263933,
+    "w": 8.788454874341648,
+    "P": 0.3569742369684501,
+    "SCALE": 2.0741244918339086,
+    "auris_fit_mse": 0.0035915070191607124
+  },
+  "mechanisms": {
+    "thr=0.03": {
+      "Tm": {
+        "auris_grows_at_44": true,
+        "per_rel": {
+          "haemulonii": {
+            "required": null,
+            "note": "cannot fail at 40C within +/-35C"
+          },
+          "duobushaemulonii": {
+            "required": null,
+            "note": "cannot fail at 40C within +/-35C"
+          },
+          "parapsilosis": {
+            "required": null,
+            "note": "cannot fail at 40C within +/-35C"
+          }
+        },
+        "median_required": null
+      },
+      "Topt": {
+        "auris_grows_at_44": true,
+        "per_rel": {
+          "haemulonii": {
+            "required": 17.6,
+            "perm_growth": 0.145,
+            "perm_baseline": 0.73,
+            "permissive_preserved": false
+          },
+          "duobushaemulonii": {
+            "required": 16.92,
+            "perm_growth": 0.128,
+            "perm_baseline": 0.554,
+            "permissive_preserved": false
+          },
+          "parapsilosis": {
+            "required": 17.19,
+            "perm_growth": 0.161,
+            "perm_baseline": 0.672,
+            "permissive_preserved": false
+          }
+        },
+        "median_required": 17.19
+      },
+      "pool_flat": {
+        "haemulonii": {
+          "Pfac": 0.063,
+          "growth40": 0.03,
+          "growth34": 0.039,
+          "growth34_baseline": 0.73,
+          "still_grows_permissive": false
+        },
+        "duobushaemulonii": {
+          "Pfac": 0.082,
+          "growth40": 0.03,
+          "growth34": 0.04,
+          "growth34_baseline": 0.554,
+          "still_grows_permissive": false
+        },
+        "parapsilosis": {
+          "Pfac": 0.106,
+          "growth40": 0.03,
+          "growth34": 0.03,
+          "growth34_baseline": 0.672,
+          "still_grows_permissive": false
+        }
+      }
+    },
+    "thr=0.05": {
+      "Tm": {
+        "auris_grows_at_44": true,
+        "per_rel": {
+          "haemulonii": {
+            "required": null,
+            "note": "cannot fail at 40C within +/-35C"
+          },
+          "duobushaemulonii": {
+            "required": 32.44,
+            "perm_growth": 0.112,
+            "perm_baseline": 0.554,
+            "permissive_preserved": false
+          },
+          "parapsilosis": {
+            "required": 32.64,
+            "perm_growth": 0.118,
+            "perm_baseline": 0.672,
+            "permissive_preserved": false
+          }
+        },
+        "median_required": 32.54
+      },
+      "Topt": {
+        "auris_grows_at_44": true,
+        "per_rel": {
+          "haemulonii": {
+            "required": 15.76,
+            "perm_growth": 0.206,
+            "perm_baseline": 0.73,
+            "permissive_preserved": false
+          },
+          "duobushaemulonii": {
+            "required": 14.94,
+            "perm_growth": 0.18,
+            "perm_baseline": 0.554,
+            "permissive_preserved": false
+          },
+          "parapsilosis": {
+            "required": 15.62,
+            "perm_growth": 0.213,
+            "perm_baseline": 0.672,
+            "permissive_preserved": false
+          }
+        },
+        "median_required": 15.62
+      },
+      "pool_flat": {
+        "haemulonii": {
+          "Pfac": 0.097,
+          "growth40": 0.05,
+          "growth34": 0.064,
+          "growth34_baseline": 0.73,
+          "still_grows_permissive": false
+        },
+        "duobushaemulonii": {
+          "Pfac": 0.127,
+          "growth40": 0.05,
+          "growth34": 0.065,
+          "growth34_baseline": 0.554,
+          "still_grows_permissive": false
+        },
+        "parapsilosis": {
+          "Pfac": 0.137,
+          "growth40": 0.05,
+          "growth34": 0.054,
+          "growth34_baseline": 0.672,
+          "still_grows_permissive": false
+        }
+      }
+    },
+    "thr=0.1": {
+      "Tm": {
+        "auris_grows_at_44": true,
+        "per_rel": {
+          "haemulonii": {
+            "required": 29.02,
+            "perm_growth": 0.206,
+            "perm_baseline": 0.73,
+            "permissive_preserved": false
+          },
+          "duobushaemulonii": {
+            "required": 25.81,
+            "perm_growth": 0.2,
+            "perm_baseline": 0.554,
+            "permissive_preserved": false
+          },
+          "parapsilosis": {
+            "required": 27.72,
+            "perm_growth": 0.201,
+            "perm_baseline": 0.672,
+            "permissive_preserved": false
+          }
+        },
+        "median_required": 27.72
+      },
+      "Topt": {
+        "auris_grows_at_44": true,
+        "per_rel": {
+          "haemulonii": {
+            "required": 12.89,
+            "perm_growth": 0.325,
+            "perm_baseline": 0.73,
+            "permissive_preserved": false
+          },
+          "duobushaemulonii": {
+            "required": 11.72,
+            "perm_growth": 0.284,
+            "perm_baseline": 0.554,
+            "permissive_preserved": false
+          },
+          "parapsilosis": {
+            "required": 12.95,
+            "perm_growth": 0.329,
+            "perm_baseline": 0.672,
+            "permissive_preserved": false
+          }
+        },
+        "median_required": 12.89
+      },
+      "pool_flat": {
+        "haemulonii": {
+          "Pfac": 0.18,
+          "growth40": 0.1,
+          "growth34": 0.126,
+          "growth34_baseline": 0.73,
+          "still_grows_permissive": false
+        },
+        "duobushaemulonii": {
+          "Pfac": 0.24,
+          "growth40": 0.1,
+          "growth34": 0.129,
+          "growth34_baseline": 0.554,
+          "still_grows_permissive": false
+        },
+        "parapsilosis": {
+          "Pfac": 0.216,
+          "growth40": 0.1,
+          "growth34": 0.114,
+          "growth34_baseline": 0.672,
+          "still_grows_permissive": false
+        }
+      }
+    }
+  }
+}

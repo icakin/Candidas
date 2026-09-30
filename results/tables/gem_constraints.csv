@@ -1,0 +1,5 @@
+species,n_isolates,cell_carbon_fg,gDW_per_cell,meas_r_per_h,meas_growth_fgC_cell_h,meas_resp_fgC_cell_h,meas_CUE,pred_growth_mmolC_gDW_h,pred_resp_mmolC_gDW_h,carbon_source_uptake_bound
+auris,12,1320.0,2.750e-12,0.0131,1033.8,572.5,0.7832,31.299,17.332,SET FROM YMS RECIPE
+Hae,3,1320.0,2.750e-12,0.008,635.7,599.6,0.4816,19.247,18.152,SET FROM YMS RECIPE
+Duo,2,1320.0,2.750e-12,0.0084,666.2,667.6,0.5047,20.169,20.213,SET FROM YMS RECIPE
+para,3,5280.0,1.100e-11,0.0095,3007.3,1811.0,0.5696,22.762,13.707,SET FROM YMS RECIPE

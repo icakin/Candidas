@@ -1,0 +1,5 @@
+species,opt_meas,opt_gen,opt_null,opt_tri,rmse_gen,rmse_null,rmse_tri,nrmse_gen,nrmse_null,firstNoGrowT,mu_nogrow_gen,mu_nogrow_null
+auris,36,34,34,,0.057,0.082,,0.071,0.102,,,
+haemulonii,30,34,34,,0.258,0.217,,0.419,0.351,40.0,0.495,0.424
+duobushaemulonii,32,34,34,,0.16,0.17,,0.225,0.238,,,
+parapsilosis,32,34,34,,0.256,0.21,,0.323,0.263,40.0,0.68,0.579

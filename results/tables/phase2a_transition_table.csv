@@ -1,0 +1,21 @@
+clade,taxon,isolate,T_loss_boundR,T_loss_boundP,p_growth_38,p_growth_40_R,p_growth_40_P,window_min_R,resp_loss
+C. auris,Clade1,Clade1_2068,44,>44,1.0,1.0,1.0,≥0,censored >44
+C. auris,Clade1,Clade1_2069,42,44,1.0,0.6,0.8,≥2,censored >44
+C. auris,Clade1,Clade1_2070,>44,>44,0.6,0.8,1.0,n.d.,censored >44
+C. auris,Clade2,Clade2_2071,42,42,1.0,1.0,1.0,≥2,censored >44
+C. auris,Clade2,Clade2_2072,42,42,1.0,0.8,1.0,≥2,censored >44
+C. auris,Clade2,Clade2_2073,38,>44,0.4,0.2,0.2,≥6,censored >44
+C. auris,Clade3,Clade3_2074,42,44,1.0,1.0,1.0,≥2,censored >44
+C. auris,Clade3,Clade3_2075,44,>44,1.0,1.0,1.0,≥0,censored >44
+C. auris,Clade3,Clade3_2076,44,>44,0.8,1.0,1.0,≥0,censored >44
+C. auris,Clade4,Clade4_2077,44,>44,1.0,1.0,1.0,≥0,censored >44
+C. auris,Clade4,Clade4_2078,44,>44,1.0,1.0,1.0,≥0,censored >44
+C. auris,Clade4,Clade4_2079,42,44,1.0,1.0,1.0,≥2,censored >44
+relatives,Duo,Duo_1770,38,44,0.0,0.0,0.8,≥6,censored >44
+relatives,Duo,Duo_1771,40,40,1.0,0.0,0.4,≥4,censored >44
+relatives,Hae,Hae_1724,>44,>44,1.0,1.0,1.0,n.d.,censored >44
+relatives,Hae,Hae_1768,38,44,0.4,0.0,0.6,≥6,censored >44
+relatives,Hae,Hae_1769,36,38,0.0,0.0,0.4,≥8,censored >44
+relatives,para,para_2051,38,40,0.4,0.0,0.2,≥6,censored >44
+relatives,para,para_2052,40,42,1.0,0.0,0.6,≥4,censored >44
+relatives,para,para_2053,40,>44,1.0,0.0,0.6,≥4,censored >44
